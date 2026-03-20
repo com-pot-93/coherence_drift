@@ -1,0 +1,35 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Retrieve Temperature Values)
+  1:task:(Retrieve Temperature Values) --> 2:exclusivegateway:{x}
+  2:exclusivegateway:{x} --> |Generate Standard Notification| 3:task:(Generate Standard Notification)
+  2:exclusivegateway:{x} --> |Proceed to Parallel Execution| 4:parallelgateway:{AND}
+  3:task:(Generate Standard Notification) --> 19:endevent:(((endevent)))
+  4:parallelgateway:{AND} --> 5:task:(Retrieve Container Status)
+  4:parallelgateway:{AND} --> 9:task:(Retrieve Client Location)
+  4:parallelgateway:{AND} --> 13:task:(Retrieve Goods Status)
+  5:task:(Retrieve Container Status) --> 6:task:(Estimate Container Status)
+  6:task:(Estimate Container Status) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Generate Container Change Request| 8:task:(Generate Container Change Request)
+  7:exclusivegateway:{x} --> |Proceed Directly| 17:parallelgateway:{AND}
+  8:task:(Generate Container Change Request) --> 17:parallelgateway:{AND}
+  9:task:(Retrieve Client Location) --> 10:task:(Estimate Distance)
+  10:task:(Estimate Distance) --> 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |Estimate Delivery Time| 12:task:(Estimate Delivery Time)
+  11:exclusivegateway:{x} --> |Proceed Directly| 17:parallelgateway:{AND}
+  12:task:(Estimate Delivery Time) --> 18:exclusivegateway:{x}
+  18:exclusivegateway:{x} --> |Generate Route Change Request| 16:task:(Generate Route Change Request)
+  18:exclusivegateway:{x} --> |Proceed Directly| 17:parallelgateway:{AND}
+  13:task:(Retrieve Goods Status) --> 14:task:(Estimate Goods Status)
+  14:task:(Estimate Goods Status) --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |Evaluate Damages| 20:task:(Evaluate Damages)
+  15:exclusivegateway:{x} --> |Proceed Directly| 17:parallelgateway:{AND}
+  16:task:(Generate Route Change Request) --> 17:parallelgateway:{AND}
+  17:parallelgateway:{AND} --> 21:task:(Send Generated Messages)
+  20:task:(Evaluate Damages) --> 22:exclusivegateway:{x}
+  22:exclusivegateway:{x} --> |Generate Removal Request| 23:task:(Generate Removal Request)
+  22:exclusivegateway:{x} --> |Generate Price Change Request| 24:task:(Generate Price Change Request)
+  23:task:(Generate Removal Request) --> 17:parallelgateway:{AND}
+  24:task:(Generate Price Change Request) --> 17:parallelgateway:{AND}
+  21:task:(Send Generated Messages) --> 19:endevent:(((endevent)))
+```

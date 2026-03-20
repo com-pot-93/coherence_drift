@@ -1,0 +1,7 @@
+The process starts with diagnosing non-specific low back pain. Depending on the outcome, the process either applies superficial heat or other non-pharmacological treatments, or it applies exercise or other non-pharmacological treatments.
+
+If superficial heat or other non-pharmacological treatments are applied, the process either prescribes an NSAID or SMR, or proceeds directly to a merging point. From both options, the process continues to another merging point.
+
+Alternatively, if exercise or other non-pharmacological treatments are applied, the process either prescribes an NSAID, or proceeds directly to another decision point. If an NSAID is prescribed, the process either prescribes an opioid or proceeds directly to a merging point. From both options, the process continues to another merging point. Alternatively, if the process skips prescribing an NSAID, it proceeds directly to the same merging point.
+
+From both merging points, the process continues to another merging point. Finally, the process ends.

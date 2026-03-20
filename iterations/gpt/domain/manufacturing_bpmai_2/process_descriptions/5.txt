@@ -1,0 +1,30 @@
+Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when a customer order is received.
+2. The order is then processed, and the necessary components required to fulfill the order are determined.
+3. At this point, it is checked whether any parts needed for the order are missing.
+   - If some parts are missing, the missing parts are purchased.
+   - Once the missing parts arrive, they are stocked.
+   - After stocking the arrived parts, the process continues.
+   - If no parts are missing, the process continues directly.
+4. The order is then moved to production.
+5. The items are produced.
+6. A quality check is performed on the produced items.
+7. The process then checks the result of the quality check.
+   - If the items pass the quality check, the process continues.
+   - If the items fail the quality check, follow-up production is initiated, and a quality re-check is performed. After the re-check, the process returns to the quality check decision point.
+8. If the items pass the quality check, they are filled into packaging.
+9. After packaging, it is checked whether any follow-up production is needed.
+   - If follow-up is needed, follow-up production is initiated, and a quality re-check is performed. After the re-check, the process returns to the packaging decision point.
+   - If no follow-up is needed, the items are packed and labeled.
+10. After packing and labeling, it is again checked whether any follow-up production is needed.
+    - If follow-up is needed, follow-up production is initiated, and a quality re-check is performed. After the re-check, the process returns to the packing and labeling decision point.
+    - If no follow-up is needed, the items are transported to the warehouse.
+11. After transportation to the warehouse, it is checked once more whether any follow-up production is needed.
+    - If follow-up is needed, follow-up production is initiated, and a quality re-check is performed. After the re-check, the process returns to the warehouse decision point.
+    - If no follow-up is needed, the items are sent to the customer.
+12. After the items are sent to the customer, the process continues to the next decision point.
+13. The process then follows a series of connections that lead back through previous decision points, ensuring that all necessary checks and follow-ups have been completed.
+14. Finally, the process ends.
+
+This process ensures that at every critical stage—after production, packaging, labeling, and warehousing—there is an opportunity to initiate follow-up production and quality re-checks if needed, before proceeding to the next step or completing the order.

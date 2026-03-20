@@ -1,0 +1,24 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:parallelgateway:{AND}
+    1:parallelgateway:{AND} --> 2:task:(Package Goods)
+    1:parallelgateway:{AND} --> 3:task:(Select Kind of Shipment)
+    2:task:(Package Goods) --> 4:parallelgateway:{AND}
+    3:task:(Select Kind of Shipment) --> 4:parallelgateway:{AND}
+    4:parallelgateway:{AND} --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} -->|Quotes Requested| 6:task:(Request Quotes from Carriers)
+    5:exclusivegateway:{x} -->|Quotes Not Requested| 7:task:(Fill in Post Label)
+    6:task:(Request Quotes from Carriers) --> 8:task:(Assign Carrier)
+    7:task:(Fill in Post Label) --> 9:task:(Check Insurance)
+    8:task:(Assign Carrier) --> 10:exclusivegateway:{x}
+    9:task:(Check Insurance) --> 10:exclusivegateway:{x}
+    10:exclusivegateway:{x} -->|Extra Insurance Needed| 11:task:(Take out Extra Insurance)
+    10:exclusivegateway:{x} -->|No Extra Insurance Needed| 12:parallelgateway:{AND}
+    11:task:(Take out Extra Insurance) --> 12:parallelgateway:{AND}
+    12:parallelgateway:{AND} --> 13:task:(Prepare Paperwork)
+    2:task:(Package Goods) --> 14:parallelgateway:{AND}
+    13:task:(Prepare Paperwork) --> 14:parallelgateway:{AND}
+    14:parallelgateway:{AND} --> 15:task:(Add Paperwork)
+    15:task:(Add Paperwork) --> 16:task:(Move Package to Pickup Area)
+    16:task:(Move Package to Pickup Area) --> 17:endevent:(((endevent)))
+```

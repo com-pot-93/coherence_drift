@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Booking Request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Process Request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Do not continue" language="text/javascript"/>
+    <alternative condition="Continue" language="text/javascript">
+      <call id="a9" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Continue Process</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="5">
+        <alternative condition="Negative outcome" language="text/javascript"/>
+        <alternative condition="Positive outcome" language="text/javascript">
+          <call id="a15" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Check Outcome in Detail</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a17" endpoint="" a:alt_id="7">
+            <parameters>
+              <label>Check Availability</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="8">
+            <alternative condition="Not available" language="text/javascript">
+              <call id="a21" endpoint="" a:alt_id="9">
+                <parameters>
+                  <label>Propose Alternative Time and Notify Requester</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Available" language="text/javascript">
+              <call id="a23" endpoint="" a:alt_id="10">
+                <parameters>
+                  <label>Notify Requester of Availability</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+          <call id="a25" endpoint="" a:alt_id="11">
+            <parameters>
+              <label>Wait for Requester Response</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="12">
+            <alternative condition="Booking confirmed" language="text/javascript">
+              <call id="a31" endpoint="" a:alt_id="13">
+                <parameters>
+                  <label>Mark Booking as Confirmed</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <loop mode="pre_test" condition="Escalation needed">
+                <call id="a39" endpoint="" a:alt_id="15">
+                  <parameters>
+                    <label>Handle Escalation</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a41" endpoint="" a:alt_id="16">
+                  <parameters>
+                    <label>Check Availability</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <choose mode="exclusive" a:alt_id="17">
+                  <alternative condition="Escalation resolved" language="text/javascript"/>
+                  <alternative condition="Escalation still needed" language="text/javascript">
+                    <call id="a39" endpoint="" a:alt_id="15">
+                      <parameters>
+                        <label>Handle Escalation</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <escape a:alt_id="-1"/>
+                  </alternative>
+                </choose>
+              </loop>
+            </alternative>
+            <alternative condition="Booking not confirmed" language="text/javascript">
+              <call id="a33" endpoint="" a:alt_id="18">
+                <parameters>
+                  <label>Mark Booking as Not Confirmed</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="19">
+                <alternative condition="No bill needed" language="text/javascript"/>
+                <alternative condition="Bill needed" language="text/javascript">
+                  <call id="a53" endpoint="" a:alt_id="20">
+                    <parameters>
+                      <label>Send Bill</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <loop mode="pre_test" condition="Further billing needed" a:alt_id="21" language="text/javascript">
+                    <call id="a57" endpoint="" a:alt_id="22">
+                      <parameters>
+                        <label>Send Additional Bill</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                  </loop>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

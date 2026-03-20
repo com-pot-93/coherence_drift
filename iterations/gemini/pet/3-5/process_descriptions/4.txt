@@ -1,0 +1,5 @@
+The process starts with collecting mail. Then, the collected mail is sorted and distributed. Next, the mail is opened, sorted, and registered. After that, a quality check is performed. Depending on the outcome of the quality check, the process either proceeds with compiling and sending requisitions or capturing matter details and taking fees.
+
+If the process proceeds with capturing matter details and taking fees, then two activities are performed in parallel: putting the receipt and posting documents, and capturing party details and printing the file. After both activities are completed, the process continues.
+
+Finally, the process ends after compiling and sending requisitions or after the parallel execution is completed.

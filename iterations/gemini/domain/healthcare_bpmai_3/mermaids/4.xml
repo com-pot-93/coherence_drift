@@ -1,0 +1,26 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Receive Call)
+    1:task:(Receive Call) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |Call Accepted| 3:task:(Add Patient to List)
+    2:exclusivegateway:{x} --> |Call Rejected| 4:exclusivegateway:{x}
+    3:task:(Add Patient to List) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Condition True| 6:subprocess:(Patient Control)
+    5:exclusivegateway:{x} --> |Condition False| 19:endevent:(((endevent)))
+    6:subprocess:(Patient Control) --> 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> |Yes| 8:task:(Escalation Event)
+    7:exclusivegateway:{x} --> |No| 11:exclusivegateway:{O}
+    8:task:(Escalation Event) --> 6:subprocess:(Patient Control)
+    6:subprocess:(Patient Control) --> 9:task:(Hospitalization and Childbirth)
+    9:task:(Hospitalization and Childbirth) --> 10:exclusivegateway:{x}
+    10:exclusivegateway:{x} --> |Special Treatment Needed| 11:inclusivegateway:{O}
+    10:exclusivegateway:{x} --> |Post-Hospitalization Care Needed| 11:inclusivegateway:{O}
+    6:subprocess:(Patient Control) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |Continue| 11:inclusivegateway:{O}
+    12:exclusivegateway:{x} --> |Loop to Escalation| 8:task:(Escalation Event)
+    11:inclusivegateway:{O} --> 13:inclusivegateway:{O}
+    13:inclusivegateway:{O} --> 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> 5:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> 19:endevent:(((endevent)))
+```

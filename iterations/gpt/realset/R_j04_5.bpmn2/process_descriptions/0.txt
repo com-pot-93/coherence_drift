@@ -1,0 +1,20 @@
+The process begins. First, an initial action is performed. After this, there is a step to check if the car is still registered.
+
+Based on the outcome of this check, the process can follow two different paths:
+
+- If the process continues (the specific condition is not detailed), the car owner is notified. After notifying the car owner, there is a check to see if the car has been brought to a mechanic.
+
+  - If the car has not been brought to a mechanic, the process continues with another action, followed by issuing a fine to the car owner. After the fine is issued, the process moves forward.
+
+  - If the car has been brought to a mechanic, information about the car’s problems is received. Then, a payment offer is made to the car owner. At this point, there are two possible paths:
+
+    - In one path, payment is transferred to the mechanic, and the process continues.
+    - In the other path, the process continues without transferring payment.
+
+    After either of these, confirmation of a successful repair is received. Then, the time for the next service is received. The process then moves forward.
+
+  After either the fine is issued or the next service time is received, the process continues to the next step.
+
+- If the car is not still registered (or the alternative condition applies), the process skips the notification and mechanic steps and moves directly to the next step.
+
+Finally, the process ends.

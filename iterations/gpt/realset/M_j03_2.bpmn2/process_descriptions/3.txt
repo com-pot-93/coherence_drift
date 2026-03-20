@@ -1,0 +1,41 @@
+Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins.
+2. First, a list of all the required parts is created.
+3. Next, an online search is conducted to find shops that sell these parts.
+4. After gathering information, the shop offering the lowest prices is selected.
+5. An order is then placed with the chosen shop.
+6. At this point, a decision is made: either to continue with the process or to stop.
+   - If the decision is to continue:
+     7. The order is sent to the online shop.
+     8. Three activities are carried out at the same time:
+        - An invoice is sent.
+        - The ordered items are delivered.
+        - Inventory records are updated.
+     9. Once all three activities are completed, the process continues.
+     10. The order is sent to the manufacturer.
+     11. The building process begins.
+     12. Now, there is a choice among several actions:
+         - Order the cheapest part.
+         - Order a part with faster delivery.
+         - Write a compliment email.
+         - Finish the project.
+     13. If "Order the cheapest part" is chosen, a series of checks and possible escalations follow, eventually returning to the previous decision point.
+     14. If "Order a part with faster delivery" is chosen, a similar series of checks and possible escalations occur, also returning to the previous decision point.
+     15. If "Write a compliment email" is chosen, checks and possible escalations are performed, then the process returns to the previous decision point.
+     16. If "Finish the project" is chosen, checks and possible escalations are performed, then the process returns to the previous decision point.
+     17. After any of these actions, the process returns to the earlier decision point to determine if more actions are needed.
+   - If the decision is to stop:
+     18. The process checks if more actions are needed.
+     19. If more actions are needed, the process allows for the following options:
+         - Order a part with faster delivery (with checks and possible escalations).
+         - Write a compliment email (with checks and possible escalations).
+         - Finish the project (with checks and possible escalations).
+         - Order the cheapest part (with checks and possible escalations).
+         - Or proceed to another check.
+     20. After any of these actions, the process returns to the previous check to see if more actions are needed.
+     21. If no more actions are needed, the process continues.
+20. Finally, the project is marked as finished.
+21. The process ends.
+
+This description follows the exact sequence and logic of the process model, including all decisions, parallel activities, and possible loops or escalations.

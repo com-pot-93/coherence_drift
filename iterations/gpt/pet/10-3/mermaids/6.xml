@@ -1,0 +1,40 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(MPOO starts deregistration at GO)
+2:task:(GO reviews and checks deregistration request)
+3:exclusivegateway:{x}
+4:task:(GO communicates rejection)
+5:exclusivegateway:{x}
+6:task:(Record decision not to continue with readmission)
+7:task:(GO provides preliminary confirmation)
+8:exclusivegateway:{x}
+9:task:(MPOO confirms to proceed with readmission)
+10:task:(Record confirmation to proceed)
+11:task:(GO acquires/changes equipment)
+12:task:(GO assigns itself as new MPO)
+13:task:(GO informs MPOO previous assignment ended)
+14:task:(GO notifies MPOO about new assignment)
+15:task:(GO informs MSPO about new assignment)
+16:task:(GO informs SP about new assignment)
+17:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(MPOO starts deregistration at GO)
+1:task:(MPOO starts deregistration at GO) --> 2:task:(GO reviews and checks deregistration request)
+2:task:(GO reviews and checks deregistration request) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Request rejected|4:task:(GO communicates rejection)
+3:exclusivegateway:{x} --> |Request not rejected|7:task:(GO provides preliminary confirmation)
+4:task:(GO communicates rejection) --> 5:exclusivegateway:{x}
+7:task:(GO provides preliminary confirmation) --> 8:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Do not continue with readmission|6:task:(Record decision not to continue with readmission)
+5:exclusivegateway:{x} --> |Continue with readmission|9:task:(MPOO confirms to proceed with readmission)
+8:exclusivegateway:{x} --> |Do not continue with readmission|6:task:(Record decision not to continue with readmission)
+8:exclusivegateway:{x} --> |Continue with readmission|9:task:(MPOO confirms to proceed with readmission)
+6:task:(Record decision not to continue with readmission) --> 17:endevent:(((endevent)))
+9:task:(MPOO confirms to proceed with readmission) --> 10:task:(Record confirmation to proceed)
+10:task:(Record confirmation to proceed) --> 11:task:(GO acquires/changes equipment)
+11:task:(GO acquires/changes equipment) --> 12:task:(GO assigns itself as new MPO)
+12:task:(GO assigns itself as new MPO) --> 13:task:(GO informs MPOO previous assignment ended)
+13:task:(GO informs MPOO previous assignment ended) --> 14:task:(GO notifies MPOO about new assignment)
+14:task:(GO notifies MPOO about new assignment) --> 15:task:(GO informs MSPO about new assignment)
+15:task:(GO informs MSPO about new assignment) --> 16:task:(GO informs SP about new assignment)
+16:task:(GO informs SP about new assignment) --> 17:endevent:(((endevent)))

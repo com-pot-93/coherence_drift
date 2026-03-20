@@ -1,0 +1,6 @@
+The process begins when a deregistration request is initiated. First, the request is started and then reviewed and verified. After this review, a decision is made:
+
+- If the request is rejected, the process moves to rejecting the deregistration. After the rejection, the process continues to the next step.
+- If the request receives preliminary confirmation, a preliminary confirmation is provided, and then the process continues to the next step.
+
+Regardless of whether the request was rejected or received preliminary confirmation, the process proceeds to assign the GO as the MSP. After this assignment, the MSPO is informed. Next, the MPO is notified, followed by informing the SP. The process concludes after these notifications.

@@ -1,0 +1,23 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Receive production order)
+    1:task:(Receive production order) --> 2:task:(Prepare production order)
+    2:task:(Prepare production order) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |true| 4:task:(Collect raw materials)
+    3:exclusivegateway:{x} --> |false| 16:task:(Send data to warehouse)
+    4:task:(Collect raw materials) --> 5:task:(Cutting)
+    5:task:(Cutting) --> 6:parallelgateway:{AND}
+    6:parallelgateway:{AND} --> 7:task:(Stitching)
+    6:parallelgateway:{AND} --> 8:task:(Printing)
+    7:task:(Stitching) --> 9:parallelgateway:{AND}
+    8:task:(Printing) --> 9:parallelgateway:{AND}
+    9:parallelgateway:{AND} --> 10:task:(Complete production)
+    10:task:(Complete production) --> 11:task:(Check quality)
+    11:task:(Check quality) --> 12:task:(Create quality report)
+    12:task:(Create quality report) --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> |condition1| 14:task:(Adjust settings)
+    13:exclusivegateway:{x} --> |condition2| 16:task:(Send data to warehouse)
+    14:task:(Adjust settings) --> 15:exclusivegateway:{x}
+    16:task:(Send data to warehouse) --> 15:exclusivegateway:{x}
+    15:exclusivegateway:{x} --> 17:endevent:(((endevent)))
+```

@@ -1,0 +1,34 @@
+The process begins with the initiation of the procedure. After this, a decision is made on whether to proceed. If the decision is not to proceed, the process ends immediately.
+
+If the process continues, the next step is to select a course. After selecting a course, another decision is made on whether to continue. If the decision is to stop, the process ends.
+
+If the process continues, the available dates for the selected course are shown. The user then selects a date. After the date is selected, another decision is made on whether to proceed. If the decision is to stop, the process ends.
+
+If the process continues, the account status is checked. Based on the result, there are two possible paths:
+
+1. **If the account status requires logging in:**
+   - The user logs in.
+   - The user provides payment information.
+   - The registration is completed.
+   - After completing registration, a decision is made on whether to continue. If the decision is to stop, the process ends.
+   - If the process continues, two actions happen at the same time: a message is sent to friends on social media, and a ticket is received. Once both actions are finished, the process continues.
+   - The process then moves to the next decision point.
+
+2. **If the account status requires checking university eligibility:**
+   - University eligibility is checked.
+   - A decision is made based on the eligibility check:
+     - If eligible, the user registers for the course.
+     - After registration, another decision is made:
+       - If registration fails, the process ends.
+       - If registration is successful, the registration is completed.
+       - After completing registration, a decision is made on whether to continue. If the decision is to stop, the process ends.
+       - If the process continues, two actions happen at the same time: a message is sent to friends on social media, and a ticket is received. Once both actions are finished, the process continues.
+     - If not eligible, an activation request is sent.
+     - The process waits for an activation response.
+     - After receiving the response, a decision is made:
+       - If activation fails, the process ends.
+       - If activation is successful, the registration is completed.
+       - After completing registration, a decision is made on whether to continue. If the decision is to stop, the process ends.
+       - If the process continues, two actions happen at the same time: a message is sent to friends on social media, and a ticket is received. Once both actions are finished, the process continues.
+
+After any of these paths are completed, the process returns to the previous decision points and continues until all possible actions are finished. Finally, the process ends.

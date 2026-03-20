@@ -1,0 +1,32 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Collect requirements)
+    1:task:(Collect requirements) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |true| 3:task:(Send requirements)
+    3:task:(Send requirements) --> 4:task:(draft received)
+    4:task:(draft received) --> 5:task:(Check feasibility)
+    5:task:(Check feasibility) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |branch 1| 7:task:(Refine requirements)
+    7:task:(Refine requirements) --> 17:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |branch 2| 8:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> |branch 1| 9:task:(Report for builing permit)
+    9:task:(Report for builing permit) --> 17:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> |branch 2| 17:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> 18:exclusivegateway:{x}
+    18:exclusivegateway:{x} --> 19:task:(Create order list)
+    19:task:(Create order list) --> 20:task:(Place order)
+    20:task:(Place order) --> 21:task:(Calculate effort)
+    21:task:(Calculate effort) --> 22:parallelgateway:{AND}
+    22:parallelgateway:{AND} --> 23:task:(Get order)
+    22:parallelgateway:{AND} --> 24:exclusivegateway:{x}
+    24:exclusivegateway:{x} --> |branch 1| 25:task:(Call friends)
+    25:task:(Call friends) --> 27:exclusivegateway:{x}
+    24:exclusivegateway:{x} --> |branch 2| 26:task:(Hire building company)
+    26:task:(Hire building company) --> 27:exclusivegateway:{x}
+    27:exclusivegateway:{x} --> 28:parallelgateway:{AND}
+    23:task:(Get order) --> 28:parallelgateway:{AND}
+    28:parallelgateway:{AND} --> 29:task:(Build house)
+    29:task:(Build house) --> 30:endevent:(((endevent)))
+    2:exclusivegateway:{x} --> |false| 30:endevent:(((endevent)))
+    18:exclusivegateway:{x} --> |false| 29:task:(Build house)
+```

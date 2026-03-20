@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <choose mode="exclusive" a:alt_id="1">
+    <alternative condition="Condition A is met" language="text/javascript">
+      <call id="a3" endpoint="" a:alt_id="2">
+        <parameters>
+          <label>Receive Expense Report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="3">
+        <alternative condition="Condition E is met" language="text/javascript">
+          <call id="a9" endpoint="" a:alt_id="4">
+            <parameters>
+              <label>Create New Employee Account</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="5">
+            <alternative condition="Condition G is met" language="text/javascript">
+              <call id="a15" endpoint="" a:alt_id="6">
+                <parameters>
+                  <label>Automatically Approve Report</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Condition G is not met" language="text/javascript">
+              <call id="a17" endpoint="" a:alt_id="7">
+                <parameters>
+                  <label>Supervisor Approves Report</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="Condition E is not met" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="40">
+            <alternative condition="Condition G is met" language="text/javascript">
+              <call id="a15" endpoint="" a:alt_id="6">
+                <parameters>
+                  <label>Automatically Approve Report</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Condition G is not met" language="text/javascript">
+              <call id="a17" endpoint="" a:alt_id="7">
+                <parameters>
+                  <label>Supervisor Approves Report</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="Condition A is not met" language="text/javascript">
+      <choose mode="exclusive" a:alt_id="14">
+        <alternative condition="Condition E is met" language="text/javascript">
+          <call id="a9" endpoint="" a:alt_id="4">
+            <parameters>
+              <label>Create New Employee Account</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="5">
+            <alternative condition="Condition G is met" language="text/javascript">
+              <call id="a15" endpoint="" a:alt_id="6">
+                <parameters>
+                  <label>Automatically Approve Report</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Condition G is not met" language="text/javascript">
+              <call id="a17" endpoint="" a:alt_id="7">
+                <parameters>
+                  <label>Supervisor Approves Report</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="Condition E is not met" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="40">
+            <alternative condition="Condition G is met" language="text/javascript">
+              <call id="a15" endpoint="" a:alt_id="6">
+                <parameters>
+                  <label>Automatically Approve Report</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Condition G is not met" language="text/javascript">
+              <call id="a17" endpoint="" a:alt_id="7">
+                <parameters>
+                  <label>Supervisor Approves Report</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+  <choose mode="exclusive" a:alt_id="8">
+    <alternative condition="Condition I is met" language="text/javascript">
+      <call id="a23" endpoint="" a:alt_id="9">
+        <parameters>
+          <label>Send Reimbursement to Bank Account</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="10">
+        <alternative condition="Condition K is met" language="text/javascript"/>
+        <alternative condition="Condition K is not met" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="12">
+            <alternative condition="Condition L is met" language="text/javascript">
+              <call id="a33" endpoint="" a:alt_id="13">
+                <parameters>
+                  <label>Approval in Progress Email</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Condition L is not met" language="text/javascript">
+              <choose mode="exclusive" a:alt_id="39">
+                <alternative condition="Condition M is met" language="text/javascript"/>
+                <alternative condition="Condition M is not met" language="text/javascript">
+                  <call id="a45" endpoint="" a:alt_id="42">
+                    <parameters>
+                      <label>Rejection Notice</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="Condition I is not met" language="text/javascript">
+      <choose mode="exclusive" a:alt_id="41">
+        <alternative condition="Condition K is met" language="text/javascript"/>
+        <alternative condition="Condition K is not met" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="12">
+            <alternative condition="Condition L is met" language="text/javascript">
+              <call id="a33" endpoint="" a:alt_id="13">
+                <parameters>
+                  <label>Approval in Progress Email</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Condition L is not met" language="text/javascript">
+              <choose mode="exclusive" a:alt_id="39">
+                <alternative condition="Condition M is met" language="text/javascript"/>
+                <alternative condition="Condition M is not met" language="text/javascript">
+                  <call id="a45" endpoint="" a:alt_id="42">
+                    <parameters>
+                      <label>Rejection Notice</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

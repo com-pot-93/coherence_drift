@@ -1,0 +1,11 @@
+The process starts with connecting to a management system. Then, a decision is made. If the condition is met, the process ends. Otherwise, the process continues with reading an order from the system. Another decision is made, and if the condition is not met, the process returns to the first decision. If the condition is met, the process splits into three parallel paths.
+
+In the first path, a decision is made. Depending on the outcome, either a delivery delay penalty is applied or an OK is given. Both options then merge back together.
+
+In the second path, a decision is made. Depending on the outcome, either a delivery delay penalty is applied or an OK is given. Both options then merge back together.
+
+In the third path, a decision is made. Depending on the outcome, either a delivery delay penalty is applied or an OK is given. Both options then merge back together.
+
+The three parallel paths then merge. After the merge, an OK is given for the arrived product, and the product is registered in the management system. The process then splits into two parallel paths: one to pack the product and another to request a courier. After both tasks are completed, the two paths merge, and the delivery is shipped.
+
+Finally, a decision is made. If the condition is false, an escalation event occurs, and the process ends. If the condition is true, the process returns to reading the order from the system.

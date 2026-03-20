@@ -1,0 +1,43 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Shipment Request)
+2:parallelgateway:{AND}
+3:task:(Package Goods)
+4:parallelgateway:{AND}
+5:parallelgateway:{AND}
+6:parallelgateway:{AND}
+7:exclusivegateway:{x}
+8:task:(Request Carrier Quotes)
+9:task:(Assign Carrier)
+10:task:(Prepare Carrier Paperwork)
+11:task:(Fill Out Post Label)
+12:exclusivegateway:{x}
+13:task:(Arrange Extra Insurance)
+14:task:(Prepare Postal Paperwork)
+15:parallelgateway:{AND}
+16:task:(Add Paperwork to Package)
+17:task:(Move Package to Pickup Area)
+18:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Shipment Request)
+1:task:(Receive Shipment Request) --> 2:parallelgateway:{AND}
+2:parallelgateway:{AND} --> 3:task:(Package Goods)
+2:parallelgateway:{AND} --> 5:parallelgateway:{AND}
+3:task:(Package Goods) --> 4:parallelgateway:{AND}
+5:parallelgateway:{AND} --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Carrier|8:task:(Request Carrier Quotes)
+7:exclusivegateway:{x} --> |Postal Service|11:task:(Fill Out Post Label)
+8:task:(Request Carrier Quotes) --> 9:task:(Assign Carrier)
+9:task:(Assign Carrier) --> 10:task:(Prepare Carrier Paperwork)
+10:task:(Prepare Carrier Paperwork) --> 6:parallelgateway:{AND}
+11:task:(Fill Out Post Label) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Extra Insurance Needed|13:task:(Arrange Extra Insurance)
+12:exclusivegateway:{x} --> |No Extra Insurance|14:task:(Prepare Postal Paperwork)
+13:task:(Arrange Extra Insurance) --> 14:task:(Prepare Postal Paperwork)
+14:task:(Prepare Postal Paperwork) --> 6:parallelgateway:{AND}
+6:parallelgateway:{AND} --> 4:parallelgateway:{AND}
+5:parallelgateway:{AND} --> 6:parallelgateway:{AND}
+4:parallelgateway:{AND} --> 15:parallelgateway:{AND}
+15:parallelgateway:{AND} --> 16:task:(Add Paperwork to Package)
+16:task:(Add Paperwork to Package) --> 17:task:(Move Package to Pickup Area)
+17:task:(Move Package to Pickup Area) --> 18:endevent:(((endevent)))

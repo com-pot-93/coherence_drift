@@ -1,0 +1,21 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Submit Office Supply Request)
+  1:task:(Submit Office Supply Request) --> 2:task:(Register Request)
+  2:task:(Register Request) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} -->|Condition A Met| 4:task:(Approval Process)
+  3:exclusivegateway:{x} -->|Condition A Not Met| 20:endevent:(((endevent)))
+  4:task:(Approval Process) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} -->|Not Approved| 6:task:(Review Comments and Resubmit)
+  6:task:(Review Comments and Resubmit) --> 4:task:(Approval Process)
+  5:exclusivegateway:{x} -->|Approved| 7:task:(Request Quotations)
+  7:task:(Request Quotations) --> 8:task:(Wait for Vendor Selection)
+  8:task:(Wait for Vendor Selection) --> 9:task:(Generate Purchase Order)
+  9:task:(Generate Purchase Order) --> 10:task:(Wait for Product Delivery)
+  10:task:(Wait for Product Delivery) --> 11:task:(Receive Invoice)
+  11:task:(Receive Invoice) --> 12:task:(Send Notification to User)
+  12:task:(Send Notification to User) --> 13:exclusivegateway:{x}
+  13:exclusivegateway:{x} -->|Condition B Met| 7:task:(Request Quotations)
+  13:exclusivegateway:{x} -->|Condition B Not Met| 14:task:(Trigger Escalation Event)
+  14:task:(Trigger Escalation Event) --> 5:exclusivegateway:{x}
+```

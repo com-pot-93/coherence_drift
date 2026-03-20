@@ -1,0 +1,7 @@
+The process begins with the start of the event. First, invitations are sent to friends. After the invitations are sent, game suggestions are requested from the friends. Once the suggestions are requested, the process continues by receiving the game suggestions.
+
+After receiving the suggestions, the next step is to select which games will be played. Once the games are selected, there is a decision point: if any of the chosen games need to be downloaded, the necessary games are downloaded before moving forward. If no downloads are needed, the process continues without downloading.
+
+After ensuring all games are ready, the next step is to ask friends if beer is needed for the party. Based on their responses, an estimate is made of the total amount of beer required. At this point, there is another decision: if more beer is needed, additional beer is bought. If there is already enough beer, the process continues without buying more.
+
+Finally, after making sure all preparations are complete, the final party preparations are made. Once these preparations are finished, the process comes to an end.

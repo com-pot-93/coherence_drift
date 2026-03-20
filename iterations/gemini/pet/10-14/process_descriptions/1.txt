@@ -1,0 +1,9 @@
+The process starts. Then, based on certain conditions, the process follows one of two paths.
+
+In the first path, the process follows another conditional split, where it can proceed in one of four ways based on different conditions. If Condition A is met, the MPOO sends the metering point operations bill to the GO. If Condition B is met, the MSPO sends the measurement bill to the GO. If Condition C is met, the MSPO sends the bill for additional readings to the GO. If Condition D is met, the MPOO sends the bill for the equipment acquisition to the GO.
+
+After any of these billing tasks, the GO examines the bill. The process then splits again based on whether the GO rejects or confirms the invoice. If the GO rejects the invoice, the GO rejects the invoice. If the GO confirms the invoice, the GO confirms the invoice with payment advice.
+
+In the second path, the MPOO sends the bill for the equipment acquisition to the MPON. The MPON then examines the bill. The process splits based on whether the MPON confirms or rejects the invoice. If the MPON confirms the invoice, the MPON confirms the invoice with payment advice. If the MPON rejects the invoice, the MPON rejects the invoice.
+
+Both paths converge, and the process ends.

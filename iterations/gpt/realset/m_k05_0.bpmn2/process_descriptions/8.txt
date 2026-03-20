@@ -1,0 +1,5 @@
+The process begins with a starting point. The first step is to collect requirements. After the requirements have been collected, a decision is made about whether to continue. If the decision is to continue, the requirements are sent forward.
+
+Once the requirements have been sent forward, the next step is to receive a draft. After receiving the draft, another decision is made about whether to continue. If the decision is to continue, a further condition is checked. If this condition is met, the draft is evaluated.
+
+After evaluating the draft, another decision is made about whether to proceed. If the decision is to proceed, the process continues through a series of checkpoints, one after another, until it reaches the end point, where the process finishes.

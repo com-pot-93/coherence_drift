@@ -1,0 +1,33 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Receive Customer Data)
+    1:task:(Receive Customer Data) --> 2:task:(Enter Data into CRM)
+    2:task:(Enter Data into CRM) --> 3:task:(Compare Data Accuracy)
+    3:task:(Compare Data Accuracy) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |Not Accurate| 5:task:(Correct Data)
+    4:exclusivegateway:{x} --> |Accurate| 6:exclusivegateway:{x}a
+    5:task:(Correct Data) --> 6:exclusivegateway:{x}a
+    6:exclusivegateway:{x}a --> 7:exclusivegateway:{x}b
+    7:exclusivegateway:{x}b --> |Yes| 8:task:(Create Customer Object)
+    7:exclusivegateway:{x}b --> |No| 9:task:(Prepare Contract Documents)
+    8:task:(Create Customer Object) --> 9:task:(Prepare Contract Documents)
+    9:task:(Prepare Contract Documents) --> 10:task:(Check Contract Documents)
+    10:task:(Check Contract Documents) --> 11:exclusivegateway:{x}c
+    11:exclusivegateway:{x}c --> |Issues Found| 12:task:(Analyze and Resolve Issues)
+    11:exclusivegateway:{x}c --> |No Issues Found| 13:exclusivegateway:{x}d
+    12:task:(Analyze and Resolve Issues) --> 13:exclusivegateway:{x}d
+    13:exclusivegateway:{x}d --> 14:task:(Send Confirmation and Request)
+    14:task:(Send Confirmation and Request) --> 15:task:(Check Request)
+    15:task:(Check Request) --> 16:exclusivegateway:{x}e
+    16:exclusivegateway:{x}e --> |Confirmed| 17:task:(Inform Suppliers)
+    16:exclusivegateway:{x}e --> |Not Confirmed| 18:exclusivegateway:{x}f
+    17:task:(Inform Suppliers) --> 19:task:(Initiate Demand Resolution)
+    19:task:(Initiate Demand Resolution) --> 18:exclusivegateway:{x}f
+    18:exclusivegateway:{x}f --> 20:task:(Communicate and Terminate Agreement)
+    20:task:(Communicate and Terminate Agreement) --> 21:exclusivegateway:{x}g
+    21:exclusivegateway:{x}g --> |Yes| 22:task:(Create CIS Contract)
+    21:exclusivegateway:{x}g --> |No| 23:task:(Check Contract Details)
+    22:task:(Create CIS Contract) --> 23:task:(Check Contract Details)
+    23:task:(Check Contract Details) --> 24:task:(Receive Meter Data)
+    24:task:(Receive Meter Data) --> 25:endevent:(((endevent)))
+```

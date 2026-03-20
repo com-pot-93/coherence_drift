@@ -1,0 +1,5 @@
+The process starts when a customer request is received. The request is then checked. Depending on the check, the process either proceeds directly to "Continue Process" if no registration is required, or it branches into two alternative registration paths: "Manual Registration" and "Automatic Registration". After either of these registration tasks is completed, the process merges back together and proceeds to "Continue Process".
+
+From "Continue Process", the process either skips a search step or proceeds to "Search Attraction Provider". If the search is performed, the process then either proceeds directly to a merge point if a condition is met, or it books an attraction. After booking, the booking status is checked. If the booking is confirmed, a confirmation is sent; otherwise, the process proceeds directly if the booking is rejected. After sending the confirmation or if the booking was rejected, the process merges back together and proceeds to the same merge point as the "Condition Met" path.
+
+From the merge point, the process merges again with the "Skip Search" path and proceeds to "Continue". Finally, a notification is sent, and the process ends.

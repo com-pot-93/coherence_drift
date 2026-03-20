@@ -1,0 +1,5 @@
+The process starts when a shipment request is received. Following this, the process splits into two parallel activities: packaging the goods and selecting the kind of shipment.
+
+For the 'select kind of shipment' activity, a decision is made. If the first option is chosen, the process requests quotes from carriers, assigns a carrier, and prepares paperwork. Alternatively, if the second option is chosen, the process fills in a post label and checks insurance. Another decision is then made: either take out extra insurance or proceed directly. After this decision, the process merges back.
+
+Once both the 'package goods' and either of the shipment selection paths are completed, the process merges. Paperwork is added, and the package is moved to the pickup area, which concludes the process.

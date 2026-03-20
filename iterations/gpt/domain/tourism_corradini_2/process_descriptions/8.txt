@@ -1,0 +1,17 @@
+The process begins with the start of the procedure. First, a search is conducted to find the customer. Once the customer is found, an offer is made to them.
+
+After making the offer, a decision is made about whether to continue. If the decision is to continue, an additional request is received from the customer. More details are then provided in response to this request. After providing more details, another decision is made about whether to proceed further.
+
+If at any point the decision is not to continue, the process moves forward to the next stage without handling additional requests or providing more details.
+
+Next, another decision is made about whether to continue. If the process continues, a booking request is received. After receiving the booking request, a bill is sent to the customer. Following this, there is another decision about whether to continue.
+
+If the process continues after sending the bill, payment is received from the customer. After receiving the payment, the process moves to the next stage. If the decision is not to continue at this point, the process also moves to the next stage, bypassing the payment step.
+
+After this, the process reaches another decision point. If the decision is positive, a check is performed. Once the check is performed, another decision is made. Depending on the outcome, the process either continues or moves to another decision point.
+
+If the process continues, travel is booked for the customer. After booking the travel, a booking confirmation is sent. Then, another decision is made about whether to continue. If the process continues, it moves forward. If not, the customer is contacted, and then the process continues.
+
+If at any point the decision is not to continue, the process loops back to perform the check again. After performing the check, the process escalates and returns to the previous decision point.
+
+Finally, after all decisions and actions are completed, the process ends.

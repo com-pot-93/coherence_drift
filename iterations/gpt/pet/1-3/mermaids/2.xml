@@ -1,0 +1,40 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Guest calls room service)
+2:task:(Manager answers and records order)
+3:task:(Submit order to kitchen)
+4:task:(Give order to sommelier)
+5:task:(Manager assigns order to waiter)
+6:parallelgateway:{AND}
+7:task:(Kitchen prepares order)
+8:task:(Sommelier prepares order)
+9:task:(Waiter prepares cart)
+10:parallelgateway:{AND}
+11:task:(Waiter delivers cart to guest)
+12:task:(Waiter returns to station)
+13:exclusivegateway:{x}
+14:task:(Waiter waits before billing)
+15:task:(Guest account debited)
+16:exclusivegateway:{x}
+17:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Guest calls room service)
+1:task:(Guest calls room service) --> 2:task:(Manager answers and records order)
+2:task:(Manager answers and records order) --> 3:task:(Submit order to kitchen)
+3:task:(Submit order to kitchen) --> 4:task:(Give order to sommelier)
+4:task:(Give order to sommelier) --> 5:task:(Manager assigns order to waiter)
+5:task:(Manager assigns order to waiter) --> 6:parallelgateway:{AND}
+6:parallelgateway:{AND} --> 7:task:(Kitchen prepares order)
+6:parallelgateway:{AND} --> 8:task:(Sommelier prepares order)
+6:parallelgateway:{AND} --> 9:task:(Waiter prepares cart)
+7:task:(Kitchen prepares order) --> 10:parallelgateway:{AND}
+8:task:(Sommelier prepares order) --> 10:parallelgateway:{AND}
+9:task:(Waiter prepares cart) --> 10:parallelgateway:{AND}
+10:parallelgateway:{AND} --> 11:task:(Waiter delivers cart to guest)
+11:task:(Waiter delivers cart to guest) --> 12:task:(Waiter returns to station)
+12:task:(Waiter returns to station) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Wait before billing|14:task:(Waiter waits before billing)
+13:exclusivegateway:{x} --> |Proceed to billing|15:task:(Guest account debited)
+14:task:(Waiter waits before billing) --> 15:task:(Guest account debited)
+15:task:(Guest account debited) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> 17:endevent:(((endevent)))

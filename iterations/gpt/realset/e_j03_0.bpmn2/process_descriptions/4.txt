@@ -1,0 +1,9 @@
+The process begins with the initiation of an assessment tool. After this, the type of incident must be specified. At this point, there are four possible types of incidents to choose from: Accident, Almost Accident, Severe Safety/Health Risk, or Defective Protective Equipment. Depending on the selected type, the process continues with a confirmation step specific to the chosen incident type.
+
+Once the incident type has been confirmed, the next step is to provide detailed information about the incident. After specifying the incident details, the process splits into two parallel paths, both of which must be completed before moving forward.
+
+In the first path, there is a decision point. If the choice is to proceed directly, the process continues along this path. Otherwise, additional notifications must be performed. These notifications involve three activities that can be carried out independently: contacting superiors, contacting accident insurance (Path 1), and deciding whether to contact the labour inspectorate. If the decision is to contact the labour inspectorate, this action is performed; otherwise, it is skipped. After all these notifications are completed, the process continues.
+
+In the second parallel path, there is another decision point. If the choice is to proceed directly, the process continues along this path. Otherwise, further notifications must be performed. These include contacting accident insurance (Path 2) and contacting the principal. Both of these actions can be performed independently. Once these notifications are completed, the process continues.
+
+After both parallel paths are completed, there is a final decision point. Here, the process can either continue directly or involve contacting private insurance. After either of these actions, the process proceeds to a review of the list of tasks. Following the review, the proposed tasks are executed, and the process concludes.

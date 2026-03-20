@@ -1,0 +1,22 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Purchase Product)
+1:task:(Purchase Product) --> 2:task:(Submit Expense Report)
+2:task:(Submit Expense Report) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} -->|Yes| 4:task:(Supervisor Review)
+4:task:(Supervisor Review) --> 5:task:(Approve Report)
+3:exclusivegateway:{x} -->|No| 5:task:(Approve Report)
+5:task:(Approve Report) --> 6:parallelgateway:{AND}
+6:parallelgateway:{AND} --> 7:parallelgateway:{AND}
+6:parallelgateway:{AND} --> 8:task:(Check Receipts)
+8:task:(Check Receipts) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} -->|Edit| 10:task:(Send Back for Editing)
+9:exclusivegateway:{x} -->|Escalate| 11:task:(Escalate)
+9:exclusivegateway:{x} -->|Confirm| 12:task:(Confirm Payment)
+10:task:(Send Back for Editing) --> 13:parallelgateway:{AND}
+11:task:(Escalate) --> 13:parallelgateway:{AND}
+12:task:(Confirm Payment) --> 13:parallelgateway:{AND}
+7:parallelgateway:{AND} --> 13:parallelgateway:{AND}
+13:parallelgateway:{AND} --> 14:task:(Escalate)
+14:task:(Escalate) --> 15:endevent:(((endevent)))
+```

@@ -1,0 +1,21 @@
+The process starts with reporting a vacancy to HR. Then, a decision is made. If the condition is true, the process continues; otherwise, it skips to a later stage.
+
+If the condition is true, another decision is made, and regardless of the outcome, the process proceeds. A job description is created, and the department is asked for clarification. Following this, a set of parallel paths converge.
+
+Next, a decision is made. If the answer is "Yes," another decision is made. If this answer is also "Yes," the process loops back to create the job description again, otherwise, if the answer is "No," a decision is made based on whether a condition is met. If the condition is met, the job description is submitted.
+
+After submitting the job description, a set of parallel paths converge. Then, a decision is made. If corrections are needed, the process loops back to create the job description again. If no corrections are needed, a decision is made based on whether a condition is met. If the condition is met, the job description is submitted again. If the condition is not met, the job is posted.
+
+After posting the job, a set of parallel paths converge. Then, a decision is made. If a condition is met, the job is posted again. If the condition is not met, a set of parallel paths converge.
+
+Following this, a set of parallel paths converge again. Then, a set of parallel paths converge.
+
+After submitting the job description, a set of parallel paths converge. Then, a set of parallel paths converge.
+
+If the initial condition for submitting the job description is not met, a set of parallel paths converge.
+
+Following this, a set of parallel paths converge.
+
+If the initial answer was "No," a signal is sent, and a set of parallel paths converge.
+
+Finally, a set of parallel paths converge, and the process ends.

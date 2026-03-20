@@ -1,0 +1,61 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+---
+
+The process begins with a starting point.
+
+At the first decision, a choice is made: either to proceed or not. If the decision is not to proceed, the process ends immediately. If the decision is to proceed, the process moves to a second decision point.
+
+At the second decision, again, there is a choice to proceed or not. If not, the process ends. If yes, the process continues to a third decision.
+
+At the third decision, the same choice is made: proceed or not. If not, the process ends. If yes, the process moves to a fourth decision.
+
+At the fourth decision, the choice is repeated: proceed or not. If not, the process ends. If yes, the process moves to a fifth decision.
+
+At the fifth decision, there are two possible outcomes:
+- If a certain condition is met, the process continues to load the front page.
+- If the condition is not met, an escalation is needed. In this case, the process loads the front page and continues as described below (see "Escalation Path").
+
+**Main Path (Condition Met):**
+
+After loading the front page, four activities are carried out at the same time:
+- Topic activity
+- Payment activity
+- Experience activity
+- Hobbies activity
+
+Once all four activities are completed, a request is sent. After sending the request, the process waits for an offer.
+
+At the next decision, if the process is to proceed, other offers are invalidated. Then, a weekly status update is sent, and a company status update is received. After that, the internship is finished.
+
+Following the completion of the internship, there is a series of decisions that determine whether to repeat certain actions or not. Specifically, the process checks if it should repeat a cycle. If so, it enters a loop where, depending on further decisions, a tweet about the company may be posted. This loop can repeat multiple times, with checks at each stage to determine whether to continue posting tweets or to escalate and return to a previous point in the process. If the decision is not to repeat, the process ends.
+
+If, at the point after finishing the internship, the process does not proceed, another set of decisions is made, similar to the previous loop, involving the possibility of posting tweets about the company, repeating the cycle, or ending the process.
+
+If, at the point of waiting for an offer, the decision is not to proceed, the process ends.
+
+**Escalation Path (Condition Not Met at Fifth Decision):**
+
+If the condition at the fifth decision is not met, an escalation is needed. The process then loads the front page and, just as in the main path, carries out four activities at the same time:
+- Topic activity
+- Payment activity
+- Experience activity
+- Hobbies activity
+
+After these activities, a request is sent, and the process waits for an offer.
+
+At the next decision, if the process is to proceed, other offers are invalidated, a weekly status update is sent, a company status update is received, and the internship is finished. After finishing the internship, the same series of decisions and loops regarding posting tweets about the company and repeating cycles are followed as in the main path.
+
+If, at the point of waiting for an offer, the decision is not to proceed, the process ends.
+
+**Summary of Decision Points:**
+
+At each major decision point (after each activity or set of activities), the process checks whether to proceed or not. If the decision is not to proceed at any of these points, the process ends.
+
+**Summary of Loops:**
+
+After finishing the internship, there are several nested cycles where the process may repeatedly post tweets about the company, with checks at each stage to determine whether to continue, escalate, or end the process.
+
+---
+
+This description follows the exact sequence and structure of the process as depicted in your model, ensuring that every step, decision, and possible path is included and clearly explained.

@@ -1,0 +1,33 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Open Battle.net)
+    1:task:(Open Battle.net) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |Branch 1| 3:task:(Enter account information)
+    3:task:(Enter account information) --> 4:task:(Click on the link in the received confirmation E-Mail)
+    2:exclusivegateway:{x} --> |Branch 2| 5:task:(Log int, and the process ends. Battle.net)
+    4:task:(Click on the link in the received confirmation E-Mail) --> 6:exclusivegateway:{x}
+    5:task:(Log int, and the process ends. Battle.net) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> 7:task:(Load account information)
+    7:task:(Load account information) --> 8:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> |Branch 1| 9:task:(Select payment)
+    8:exclusivegateway:{x} --> |Branch 2| 16:exclusivegateway:{x}
+    9:task:(Select payment) --> 10:exclusivegateway:{x}
+    10:exclusivegateway:{x} --> |Branch 1| 11:task:(Enter credit card information)
+    10:exclusivegateway:{x} --> |Branch 2| 12:task:(Enter IBAN and BIC)
+    11:task:(Enter credit card information) --> 13:exclusivegateway:{x}
+    12:task:(Enter IBAN and BIC) --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> 15:task:(Log into the game)
+    16:exclusivegateway:{x} --> 15:task:(Log into the game)
+    15:task:(Log into the game) --> 17:task:(Load ingame data and position)
+    17:task:(Load ingame data and position) --> 18:parallelgateway:{AND}
+    18:parallelgateway:{AND} --> 19:task:(Select realm)
+    18:parallelgateway:{AND} --> 20:task:(Select race)
+    18:parallelgateway:{AND} --> 21:task:(Select class)
+    19:task:(Select realm) --> 22:parallelgateway:{AND}
+    20:task:(Select race) --> 22:parallelgateway:{AND}
+    21:task:(Select class) --> 22:parallelgateway:{AND}
+    22:parallelgateway:{AND} --> 23:task:(Name the character)
+    23:task:(Name the character) --> 24:task:(Receive confirmation and selfies)
+    24:task:(Receive confirmation and selfies) --> 25:endevent:(((endevent)))
+```

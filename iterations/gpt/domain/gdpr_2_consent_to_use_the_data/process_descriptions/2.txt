@@ -1,0 +1,14 @@
+The process begins with a starting point. Immediately after, several activities are carried out at the same time:
+
+- Information is added about profiling logic.
+- Information is added about the right to rectify data.
+- Information is added about the right to access data.
+- Information is added about the right to erase data.
+- Information is added about data portability.
+- Information is added about withdrawing consent.
+- Information is added about lodging a complaint.
+- The legal basis for processing is retrieved.
+- The purposes for processing are retrieved.
+- The identity and contact details are retrieved.
+
+All of these activities happen independently and simultaneously. Once all of them are completed, the process continues by collecting information about consent. After this, consent is requested. When consent is given, the process continues and then comes to an end.

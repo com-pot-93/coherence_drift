@@ -1,0 +1,22 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Enter Machine Type and Serial Number)
+2:task:(Answer Series of Questions)
+3:task:(Select Option to Continue)
+4:task:(Check Entered Values)
+5:task:(Prompt User to Confirm Values)
+6:exclusivegateway:{x}
+7:task:(Finish Inspection)
+8:endevent:(((endevent)))
+9:exclusivegateway:{x}
+
+0:startevent:((startevent)) --> 1:task:(Enter Machine Type and Serial Number)
+1:task:(Enter Machine Type and Serial Number) --> 2:task:(Answer Series of Questions)
+2:task:(Answer Series of Questions) --> 3:task:(Select Option to Continue)
+3:task:(Select Option to Continue) --> 4:task:(Check Entered Values)
+4:task:(Check Entered Values) --> 5:task:(Prompt User to Confirm Values)
+5:task:(Prompt User to Confirm Values) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Confirmed|7:task:(Finish Inspection)
+6:exclusivegateway:{x} --> |Not Confirmed|9:exclusivegateway:{x}
+7:task:(Finish Inspection) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> 8:endevent:(((endevent)))

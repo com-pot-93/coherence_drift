@@ -1,0 +1,16 @@
+The process starts when a vacancy is reported to HR. HR then creates a job description.
+The process then splits into two alternative paths based on whether clarification is needed. If clarification is needed, the department is asked for clarification. Regardless of whether clarification was needed or not, the process merges back together.
+The process then splits again into two alternative paths based on whether clarification is needed. If clarification is needed, the department is asked for clarification. Regardless of whether clarification was needed or not, the process merges back together.
+The process then splits based on a condition. If the condition is met, the job description is submitted.
+The process then splits into two alternative paths based on whether a correction is needed. If no correction is needed, the process splits again based on a condition. If the condition is not met, an escalation event occurs, and the job is posted. If the condition is met, the job description is submitted. If a correction is needed, the description is corrected, and the job description is created.
+The process then splits into two alternative paths.
+The process then merges back together.
+The process then splits into two alternative paths.
+The process then merges back together.
+The process then splits based on a condition. If the condition is met, the job is posted.
+The process then splits into two alternative paths.
+The process then splits into two alternative paths.
+The process then merges back together.
+The process then merges back together.
+The process then merges back to the point where the job description was created.
+If the condition is not met, the process ends.

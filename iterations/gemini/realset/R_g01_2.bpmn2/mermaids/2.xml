@@ -1,0 +1,34 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Enter Manufacturer)
+    1:task:(Enter Manufacturer) --> 2:task:(Enter Model)
+    2:task:(Enter Model) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} -->|Yes| 4:exclusivegateway:{x}
+    3:exclusivegateway:{x} -->|No| 10:parallelgateway:{AND}
+    4:exclusivegateway:{x} -->|Yes| 5:task:(Enter Broken Part)
+    5:task:(Enter Broken Part) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} -->|No| 5:task:(Enter Broken Part)
+    6:exclusivegateway:{x} -->|Yes| 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} -->|No| 10:parallelgateway:{AND}
+    10:parallelgateway:{AND} --> 11:task:(Compute Parts List)
+    10:parallelgateway:{AND} --> 12:task:(Compute Necessary Tools)
+    11:task:(Compute Parts List) --> 13:parallelgateway:{AND}
+    12:task:(Compute Necessary Tools) --> 13:parallelgateway:{AND}
+    13:parallelgateway:{AND} --> 14:task:(Check List Against Inventory)
+    14:task:(Check List Against Inventory) --> 15:exclusivegateway:{x}
+    15:exclusivegateway:{x} -->|Yes| 18:task:(Generate Instructions)
+    15:exclusivegateway:{x} -->|No| 16:task:(Contact a Friend)
+    16:task:(Contact a Friend) --> 17:task:(Get Everything Else Needed)
+    17:task:(Get Everything Else Needed) --> 18:task:(Generate Instructions)
+    18:task:(Generate Instructions) --> 19:exclusivegateway:{x}
+    19:exclusivegateway:{x} -->|Yes| 21:exclusivegateway:{x}
+    19:exclusivegateway:{x} -->|No| 20:task:(Follow Instructions)
+    20:task:(Follow Instructions) --> 21:exclusivegateway:{x}
+    21:exclusivegateway:{x} -->|Yes| 21:exclusivegateway:{x}
+    21:exclusivegateway:{x} -->|No| 22:exclusivegateway:{x}
+    22:exclusivegateway:{x} -->|Yes| 24:task:(Send Phone to Expert)
+    22:exclusivegateway:{x} -->|No| 23:task:(Leave a Review)
+    23:task:(Leave a Review) --> 24:task:(Send Phone to Expert)
+    24:task:(Send Phone to Expert) --> 25:endevent:(((endevent)))
+```

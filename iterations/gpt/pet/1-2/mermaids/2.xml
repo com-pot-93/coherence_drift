@@ -1,0 +1,37 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive defective computer)
+2:task:(Examine computer)
+3:task:(Calculate repair costs)
+4:exclusivegateway:{x}
+5:task:(Customer takes computer home)
+6:parallelgateway:{AND}
+7:task:(Check hardware)
+8:task:(Check software)
+9:task:(Repair hardware)
+10:task:(Configure software)
+11:parallelgateway:{AND}
+12:exclusivegateway:{x}
+13:task:(Test system functionality)
+14:exclusivegateway:{x}
+15:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive defective computer)
+1:task:(Receive defective computer) --> 2:task:(Examine computer)
+2:task:(Examine computer) --> 3:task:(Calculate repair costs)
+3:task:(Calculate repair costs) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Customer declines repair|5:task:(Customer takes computer home)
+4:exclusivegateway:{x} --> |Continue repair|6:parallelgateway:{AND}
+5:task:(Customer takes computer home) --> 15:endevent:(((endevent)))
+6:parallelgateway:{AND} --> 7:task:(Check hardware)
+6:parallelgateway:{AND} --> 8:task:(Check software)
+7:task:(Check hardware) --> 9:task:(Repair hardware)
+8:task:(Check software) --> 10:task:(Configure software)
+9:task:(Repair hardware) --> 11:parallelgateway:{AND}
+10:task:(Configure software) --> 11:parallelgateway:{AND}
+11:parallelgateway:{AND} --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |System ready for testing|13:task:(Test system functionality)
+12:exclusivegateway:{x} --> |Not ready|15:endevent:(((endevent)))
+13:task:(Test system functionality) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |Test failed|13:task:(Test system functionality)
+14:exclusivegateway:{x} --> |Test passed|15:endevent:(((endevent)))

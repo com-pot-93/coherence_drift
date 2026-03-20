@@ -1,0 +1,44 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:exclusivegateway:{x}
+  2:endevent:(((endevent)))
+  3:exclusivegateway:{x}
+  4:exclusivegateway:{x}
+  5:task:(Production Planning)
+  6:task:(Assign Workers)
+  7:task:(Create Production Design)
+  8:task:(Deliver Product)
+  9:task:(Log Out Production)
+  10:task:(Quality Control Check)
+  11:exclusivegateway:{x}
+  12:exclusivegateway:{x}
+  13:task:(Register Finished Product)
+  14:task:(Move to Finished Goods Stock)
+  15:task:(Register Semi-Finished Product)
+  16:task:(Load to Semi-Finished Stock)
+  17:exclusivegateway:{x}
+  18:task:(Escalation)
+
+  0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+  1:exclusivegateway:{x} --> |false|2:endevent:(((endevent)))
+  1:exclusivegateway:{x} --> |true|3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |condition not met|5:task:(Production Planning)
+  5:task:(Production Planning) --> 6:task:(Assign Workers)
+  6:task:(Assign Workers) --> 7:task:(Create Production Design)
+  7:task:(Create Production Design) --> 8:task:(Deliver Product)
+  8:task:(Deliver Product) --> 9:task:(Log Out Production)
+  9:task:(Log Out Production) --> 10:task:(Quality Control Check)
+  10:task:(Quality Control Check) --> 3:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |condition met|11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |true|12:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |false|3:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> |finished|13:task:(Register Finished Product)
+  12:exclusivegateway:{x} --> |semi-finished|15:task:(Register Semi-Finished Product)
+  13:task:(Register Finished Product) --> 14:task:(Move to Finished Goods Stock)
+  14:task:(Move to Finished Goods Stock) --> 17:exclusivegateway:{x}
+  15:task:(Register Semi-Finished Product) --> 16:task:(Load to Semi-Finished Stock)
+  16:task:(Load to Semi-Finished Stock) --> 17:exclusivegateway:{x}
+  17:exclusivegateway:{x} --> |finished|18:task:(Escalation)
+  17:exclusivegateway:{x} --> |not finished|3:exclusivegateway:{x}
+  18:task:(Escalation) --> 3:exclusivegateway:{x}

@@ -1,0 +1,28 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Initiate Assessment Tool)
+  1:task:(Initiate Assessment Tool) --> 2:task:(Start Tool and Enter Incident Type)
+  2:task:(Start Tool and Enter Incident Type) --> 3:task:(Specify the Incident)
+  3:task:(Specify the Incident) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |First Path| 5:task:(Enter User or Victim Data)
+  4:exclusivegateway:{x} --> |Second Path| 24:task:(Contact Accident Insurance and Principal)
+  4:exclusivegateway:{x} --> |Third Path| 27:exclusivegateway:{x}
+  5:task:(Enter User or Victim Data) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Contact Superiors| 7:task:(Contact Superiors)
+  6:exclusivegateway:{x} --> |Otherwise| 8:parallelgateway:{AND}
+  8:parallelgateway:{AND} --> 9:task:(Contact Accident Insurance)
+  8:parallelgateway:{AND} --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |Condition Met| 11:task:(Contact Labor Inspectorate)
+  10:exclusivegateway:{x} --> |Otherwise| 12:parallelgateway:{AND}
+  9:task:(Contact Accident Insurance) --> 12:parallelgateway:{AND}
+  11:task:(Contact Labor Inspectorate) --> 12:parallelgateway:{AND}
+  12:parallelgateway:{AND} --> 13:parallelgateway:{AND}
+  7:task:(Contact Superiors) --> 13:parallelgateway:{AND}
+  24:task:(Contact Accident Insurance and Principal) --> 13:parallelgateway:{AND}
+  27:exclusivegateway:{x} --> |Condition Met| 28:task:(Contact Private Insurance)
+  27:exclusivegateway:{x} --> |Otherwise| 13:parallelgateway:{AND}
+  28:task:(Contact Private Insurance) --> 13:parallelgateway:{AND}
+  13:parallelgateway:{AND} --> 14:task:(Propose Tasks to User)
+  14:task:(Propose Tasks to User) --> 15:task:(Execute Proposed Task)
+  15:task:(Execute Proposed Task) --> 16:endevent:(((endevent)))
+```

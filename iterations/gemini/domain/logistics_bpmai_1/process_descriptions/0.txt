@@ -1,0 +1,9 @@
+The process starts when a shipment request is received. Then, the availability of the product is checked. Depending on the outcome, the process either proceeds to check the shipment address or directly prepares the products for shipment to a particular service station.
+
+If the shipment address is checked, the process continues to a decision point. Here, the process either assembles and sends an inbound shipment, which is then received and checked, before preparing the products for shipment to a particular service station; or the process prepares the products for a regional shipment. Both paths then merge.
+
+If the process skips the shipment address check, the products are prepared for shipment to a particular service station.
+
+After preparing the products for shipment to a particular service station, the process splits into two parallel paths that immediately join back together.
+
+Finally, the process merges the paths from checking the shipment address and skipping the shipment address check, and then ends.

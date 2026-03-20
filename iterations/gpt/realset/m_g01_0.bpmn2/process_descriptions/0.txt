@@ -1,0 +1,7 @@
+The process begins when a file is received. After receiving the file, a decision is made. If the outcome of this decision is positive, the process continues by heating up the bed and the extruder. Once the bed and extruder are heated, the system sends a status update.
+
+Following the status update, another decision is made. If the process is ready to proceed, the object is printed. After printing the object, a further decision is made. If the process is not yet complete, it loops back to the previous decision point to check again.
+
+If, after sending the status update, the process determines that it needs to heat up the bed and extruder again, it repeats the heating step. If an escalation occurs during this step, the process moves forward to the next decision point after printing. From there, the process loops back to the initial decision point after receiving the file.
+
+If, at any decision point, the process determines that it should not continue, the process ends.

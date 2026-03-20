@@ -1,0 +1,37 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(guest calls room service)
+2:task:(room service manager takes down the order)
+3:task:(room service manager submits an order ticket to a kitchen)
+4:task:(room service manager gives an order to the sommelier)
+5:task:(room service manager assigns the order to the waiter)
+6:parallelgateway:{AND}
+7:task:(kitchen and sommelier do tasks)
+8:task:(waiter readies a cart)
+9:parallelgateway:{AND}
+10:task:(waiter delivers a cart)
+11:task:(waiter returns to the room-service station)
+12:exclusivegateway:{x}
+13:task:(waiter waits to do the billing)
+14:task:(waiter debits guest ’ s account)
+15:exclusivegateway:{x}
+16:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(guest calls room service)
+1:task:(guest calls room service) --> 2:task:(room service manager takes down the order)
+2:task:(room service manager takes down the order) --> 3:task:(room service manager submits an order ticket to a kitchen)
+3:task:(room service manager submits an order ticket to a kitchen) --> 4:task:(room service manager gives an order to the sommelier)
+4:task:(room service manager gives an order to the sommelier) --> 5:task:(room service manager assigns the order to the waiter)
+5:task:(room service manager assigns the order to the waiter) --> 6:parallelgateway:{AND}
+6:parallelgateway:{AND} --> 7:task:(kitchen and sommelier do tasks)
+6:parallelgateway:{AND} --> 8:task:(waiter readies a cart)
+7:task:(kitchen and sommelier do tasks) --> 9:parallelgateway:{AND}
+8:task:(waiter readies a cart) --> 9:parallelgateway:{AND}
+9:parallelgateway:{AND} --> 10:task:(waiter delivers a cart)
+10:task:(waiter delivers a cart) --> 11:task:(waiter returns to the room-service station)
+11:task:(waiter returns to the room-service station) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |wait|13:task:(waiter waits to do the billing)
+12:exclusivegateway:{x} --> |debit|14:task:(waiter debits guest ’ s account)
+13:task:(waiter waits to do the billing) --> 15:exclusivegateway:{x}
+14:task:(waiter debits guest ’ s account) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> 16:endevent:(((endevent)))

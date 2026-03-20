@@ -1,0 +1,61 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Employee Submits Request)
+2:task:(Register Request in System)
+3:exclusivegateway:{x}
+4:task:(Send to Supervisor Review)
+5:task:(Supervisor Reviews Request)
+6:exclusivegateway:{x}
+7:task:(Return with Comments)
+8:task:(Employee Reviews Comments)
+9:exclusivegateway:{x}
+10:task:(Resubmit Request)
+11:task:(Withdraw Request)
+12:exclusivegateway:{x}
+13:task:(Forward to Purchase Department)
+14:exclusivegateway:{x}
+15:task:(Prepare Quotations)
+16:exclusivegateway:{x}
+17:task:(Select Vendor)
+18:exclusivegateway:{x}
+19:task:(Confirm Vendor)
+20:task:(Change Vendor)
+21:task:(Generate and Send Purchase Order)
+22:task:(Wait for Product Delivery)
+23:task:(Receive Invoice)
+24:exclusivegateway:{x}
+25:task:(Notify User of Status)
+26:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Employee Submits Request)
+1:task:(Employee Submits Request) --> 2:task:(Register Request in System)
+2:task:(Register Request in System) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Continue|4:task:(Send to Supervisor Review)
+3:exclusivegateway:{x} --> |Do not continue|26:endevent:(((endevent)))
+4:task:(Send to Supervisor Review) --> 5:task:(Supervisor Reviews Request)
+5:task:(Supervisor Reviews Request) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Not Approved|7:task:(Return with Comments)
+6:exclusivegateway:{x} --> |Approved|13:task:(Forward to Purchase Department)
+7:task:(Return with Comments) --> 8:task:(Employee Reviews Comments)
+8:task:(Employee Reviews Comments) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Resubmit|10:task:(Resubmit Request)
+9:exclusivegateway:{x} --> |Withdraw|11:task:(Withdraw Request)
+10:task:(Resubmit Request) --> 4:task:(Send to Supervisor Review)
+11:task:(Withdraw Request) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> 26:endevent:(((endevent)))
+13:task:(Forward to Purchase Department) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |Continue|15:task:(Prepare Quotations)
+14:exclusivegateway:{x} --> |Do not continue|26:endevent:(((endevent)))
+15:task:(Prepare Quotations) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |Vendor Selected|17:task:(Select Vendor)
+16:exclusivegateway:{x} --> |No Vendor|15:task:(Prepare Quotations)
+17:task:(Select Vendor) --> 18:exclusivegateway:{x}
+18:exclusivegateway:{x} --> |Vendor Confirmed|19:task:(Confirm Vendor)
+18:exclusivegateway:{x} --> |Change Vendor|15:task:(Prepare Quotations)
+19:task:(Confirm Vendor) --> 21:task:(Generate and Send Purchase Order)
+21:task:(Generate and Send Purchase Order) --> 22:task:(Wait for Product Delivery)
+22:task:(Wait for Product Delivery) --> 23:task:(Receive Invoice)
+23:task:(Receive Invoice) --> 24:exclusivegateway:{x}
+24:exclusivegateway:{x} --> |All Steps Complete|25:task:(Notify User of Status)
+24:exclusivegateway:{x} --> |Not Complete|15:task:(Prepare Quotations)
+25:task:(Notify User of Status) --> 26:endevent:(((endevent)))

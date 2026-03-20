@@ -1,0 +1,507 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Customer Data</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Enter Data into CRM</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Compare Data with Internal Records</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <loop mode="pre_test" condition="Incomplete or implausible">
+      <call id="a13" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Correct Data</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="7">
+        <alternative condition=""/>
+        <alternative condition="">
+          <choose mode="exclusive" a:alt_id="8">
+            <alternative condition="New object required" language="text/javascript">
+              <call id="a21" endpoint="" a:alt_id="9">
+                <parameters>
+                  <label>Create Customer Object</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="No new object" language="text/javascript"/>
+          </choose>
+          <call id="a27" endpoint="" a:alt_id="11">
+            <parameters>
+              <label>Prepare Contract Documents</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="13">
+            <alternative condition="Documents correct" language="text/javascript">
+              <choose mode="exclusive" a:alt_id="16">
+                <alternative condition="">
+                  <call id="a41" endpoint="" a:alt_id="17">
+                    <parameters>
+                      <label>CIS Sends Confirmation to Customer</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition=""/>
+              </choose>
+              <call id="a43" endpoint="" a:alt_id="18">
+                <parameters>
+                  <label>CIS Sends Request to Grid Operator</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a47" endpoint="" a:alt_id="19">
+                <parameters>
+                  <label>Grid Operator Checks Supplier Concurrence</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="20">
+                <alternative condition="Concurrence successful" language="text/javascript"/>
+                <alternative condition="Conflict detected" language="text/javascript">
+                  <call id="a53" endpoint="" a:alt_id="22">
+                    <parameters>
+                      <label>Grid Operator Informs Suppliers and Demands Resolution</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a55" endpoint="" a:alt_id="23">
+                    <parameters>
+                      <label>Resolve Conflict</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+              <call id="a51" endpoint="" a:alt_id="21">
+                <parameters>
+                  <label>Grid Operator Transmits Response Comment</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a63" endpoint="" a:alt_id="25">
+                <parameters>
+                  <label>Grid Operator Communicates with Old Supplier</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a65" endpoint="" a:alt_id="26">
+                <parameters>
+                  <label>Grid Operator Terminates Sales Agreement</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="27">
+                <alternative condition="CIS contract required" language="text/javascript">
+                  <call id="a69" endpoint="" a:alt_id="28">
+                    <parameters>
+                      <label>Create CIS Contract</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="No CIS contract" language="text/javascript"/>
+              </choose>
+              <call id="a75" endpoint="" a:alt_id="30">
+                <parameters>
+                  <label>Customer Checks Contract Details</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="31">
+                <alternative condition="Customer withdraws" language="text/javascript">
+                  <call id="a79" endpoint="" a:alt_id="32">
+                    <parameters>
+                      <label>Escalate and Loop to Supplier Concurrence Check</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a47" endpoint="" a:alt_id="19">
+                    <parameters>
+                      <label>Grid Operator Checks Supplier Concurrence</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="">
+                  <parallel wait="-1" cancel="last" a:alt_id="33">
+                    <parallel_branch>
+                      <call id="a85" endpoint="" a:alt_id="34">
+                        <parameters>
+                          <label>Grid Operator Transmits Meter Data</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </parallel_branch>
+                    <parallel_branch>
+                      <call id="a87" endpoint="" a:alt_id="35">
+                        <parameters>
+                          <label>Grid Operator Computes and Sends Final Billing to Old Supplier</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </parallel_branch>
+                    <parallel_branch>
+                      <call id="a89" endpoint="" a:alt_id="36">
+                        <parameters>
+                          <label>Old Supplier Creates and Sends Final Billing to Customer</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </parallel_branch>
+                  </parallel>
+                  <call id="a97" endpoint="" a:alt_id="38">
+                    <parameters>
+                      <label>Customer Service Receives and Imports Meter Data</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="Issues found" language="text/javascript">
+              <call id="a35" endpoint="" a:alt_id="14">
+                <parameters>
+                  <label>Analyze and Resolve Contract Issues</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a37" endpoint="" a:alt_id="15">
+                <parameters>
+                  <label>Generate New Contract Documents</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+          <escape a:alt_id="-1"/>
+        </alternative>
+      </choose>
+    </loop>
+    <choose mode="exclusive" a:alt_id="8">
+      <alternative condition="New object required" language="text/javascript">
+        <call id="a21" endpoint="" a:alt_id="9">
+          <parameters>
+            <label>Create Customer Object</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+      <alternative condition="No new object" language="text/javascript"/>
+    </choose>
+    <call id="a27" endpoint="" a:alt_id="11">
+      <parameters>
+        <label>Prepare Contract Documents</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <loop mode="pre_test" condition="true">
+      <loop mode="pre_test" condition="Issues found" a:alt_id="13" language="text/javascript">
+        <call id="a35" endpoint="" a:alt_id="14">
+          <parameters>
+            <label>Analyze and Resolve Contract Issues</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a37" endpoint="" a:alt_id="15">
+          <parameters>
+            <label>Generate New Contract Documents</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </loop>
+      <choose mode="exclusive" a:alt_id="16">
+        <alternative condition="">
+          <call id="a41" endpoint="" a:alt_id="17">
+            <parameters>
+              <label>CIS Sends Confirmation to Customer</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition=""/>
+      </choose>
+      <call id="a43" endpoint="" a:alt_id="18">
+        <parameters>
+          <label>CIS Sends Request to Grid Operator</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <loop mode="pre_test" condition="true">
+        <call id="a47" endpoint="" a:alt_id="19">
+          <parameters>
+            <label>Grid Operator Checks Supplier Concurrence</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="20">
+          <alternative condition="Concurrence successful" language="text/javascript"/>
+          <alternative condition="Conflict detected" language="text/javascript">
+            <call id="a53" endpoint="" a:alt_id="22">
+              <parameters>
+                <label>Grid Operator Informs Suppliers and Demands Resolution</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a55" endpoint="" a:alt_id="23">
+              <parameters>
+                <label>Resolve Conflict</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+        <call id="a51" endpoint="" a:alt_id="21">
+          <parameters>
+            <label>Grid Operator Transmits Response Comment</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a63" endpoint="" a:alt_id="25">
+          <parameters>
+            <label>Grid Operator Communicates with Old Supplier</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a65" endpoint="" a:alt_id="26">
+          <parameters>
+            <label>Grid Operator Terminates Sales Agreement</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="27">
+          <alternative condition="CIS contract required" language="text/javascript">
+            <call id="a69" endpoint="" a:alt_id="28">
+              <parameters>
+                <label>Create CIS Contract</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="No CIS contract" language="text/javascript"/>
+        </choose>
+        <call id="a75" endpoint="" a:alt_id="30">
+          <parameters>
+            <label>Customer Checks Contract Details</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="pre_test" condition="true" a:alt_id="31" language="text/javascript">
+          <call id="a79" endpoint="" a:alt_id="32">
+            <parameters>
+              <label>Escalate and Loop to Supplier Concurrence Check</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a47" endpoint="" a:alt_id="19">
+            <parameters>
+              <label>Grid Operator Checks Supplier Concurrence</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="20">
+            <alternative condition="Concurrence successful" language="text/javascript"/>
+            <alternative condition="Conflict detected" language="text/javascript">
+              <call id="a53" endpoint="" a:alt_id="22">
+                <parameters>
+                  <label>Grid Operator Informs Suppliers and Demands Resolution</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a55" endpoint="" a:alt_id="23">
+                <parameters>
+                  <label>Resolve Conflict</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+          <call id="a51" endpoint="" a:alt_id="21">
+            <parameters>
+              <label>Grid Operator Transmits Response Comment</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a63" endpoint="" a:alt_id="25">
+            <parameters>
+              <label>Grid Operator Communicates with Old Supplier</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a65" endpoint="" a:alt_id="26">
+            <parameters>
+              <label>Grid Operator Terminates Sales Agreement</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="27">
+            <alternative condition="CIS contract required" language="text/javascript">
+              <call id="a69" endpoint="" a:alt_id="28">
+                <parameters>
+                  <label>Create CIS Contract</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="No CIS contract" language="text/javascript"/>
+          </choose>
+          <call id="a75" endpoint="" a:alt_id="30">
+            <parameters>
+              <label>Customer Checks Contract Details</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </loop>
+        <parallel wait="-1" cancel="last" a:alt_id="33">
+          <parallel_branch>
+            <call id="a85" endpoint="" a:alt_id="34">
+              <parameters>
+                <label>Grid Operator Transmits Meter Data</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </parallel_branch>
+          <parallel_branch>
+            <call id="a87" endpoint="" a:alt_id="35">
+              <parameters>
+                <label>Grid Operator Computes and Sends Final Billing to Old Supplier</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </parallel_branch>
+          <parallel_branch>
+            <call id="a89" endpoint="" a:alt_id="36">
+              <parameters>
+                <label>Old Supplier Creates and Sends Final Billing to Customer</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </parallel_branch>
+        </parallel>
+        <call id="a97" endpoint="" a:alt_id="38">
+          <parameters>
+            <label>Customer Service Receives and Imports Meter Data</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </loop>
+    </loop>
+  </loop>
+</description>

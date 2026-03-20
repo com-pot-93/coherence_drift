@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <choose mode="exclusive" a:alt_id="1">
+    <alternative condition="To MPON" language="text/javascript">
+      <call id="a3" endpoint="" a:alt_id="2">
+        <parameters>
+          <label>Send bill to MPON</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a7" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>MPON examines the bill</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="4">
+        <alternative condition="Bill confirmed" language="text/javascript">
+          <call id="a11" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Send confirmation with payment advice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Bill rejected" language="text/javascript">
+          <call id="a13" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Invoice is rejected</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a17" endpoint="" a:alt_id="7">
+            <parameters>
+              <label>Wait</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="To GO" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="8">
+        <parameters>
+          <label>Send bill to GO</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a21" endpoint="" a:alt_id="9">
+        <parameters>
+          <label>GO examines the bill</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="10">
+        <alternative condition="Bill rejected" language="text/javascript">
+          <call id="a25" endpoint="" a:alt_id="11">
+            <parameters>
+              <label>Invoice is rejected</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a29" endpoint="" a:alt_id="13">
+            <parameters>
+              <label>Wait</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Bill confirmed" language="text/javascript">
+          <call id="a27" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>Send confirmation with payment advice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

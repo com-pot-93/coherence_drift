@@ -1,0 +1,38 @@
+Certainly! Here is a detailed, step-by-step description of the process as depicted in your model:
+
+---
+
+The process begins when a staff member asks the customer whether they would like to order just a burger or a menu (which includes additional items). Based on the customer's response, the process follows one of two paths:
+
+1. **If the customer chooses "Burger only":**
+   - The process moves directly to the next stage, skipping the preparation of drinks and side dishes.
+
+2. **If the customer chooses a menu:**
+   - Two activities happen at the same time:
+     - A drink is prepared.
+     - The staff asks the customer whether they would like wedges or fries as their side dish.
+       - If the customer chooses fries, fries are prepared.
+       - If the customer chooses wedges, wedges are prepared.
+   - Once both the drink and the chosen side dish are ready, the process continues.
+
+After handling the menu or burger-only choice, the next step is to prepare the burger.
+
+Once the burger is prepared, the staff checks if any further updates are needed. This check can happen up to three times, each time asking if more updates are required:
+- If at any point the answer is "No," the process moves forward.
+- If the answer is "Yes," the staff checks again, up to two more times.
+
+If, after these checks, it is determined that a status update is needed, the staff provides a status update to the customer. After each status update, the process checks again if another update is needed, and this can repeat as necessary.
+
+Once all necessary updates have been provided, the order is placed on the conveyor belt.
+
+After the order is placed on the conveyor belt, the process checks if more updates are needed after this step. If so, the staff provides the necessary updates, and this cycle can repeat as needed.
+
+Next, the process checks if a final status update is required. If a final update is needed, the staff provides it. After providing the final update, the process checks if the situation needs to be escalated. If escalation is required, the staff escalates the situation and then checks again if more updates are needed after the conveyor step.
+
+If no escalation is needed, or after escalation is handled, the process continues through a series of checks to ensure all necessary updates and escalations have been completed. These checks are repeated as needed, ensuring that the customer is kept informed and any issues are escalated appropriately.
+
+Finally, once all updates and escalations have been addressed, the process comes to an end.
+
+---
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step, decision, and possible repetition is included and clearly explained.

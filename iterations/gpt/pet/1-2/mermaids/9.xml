@@ -1,0 +1,48 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Receive Defective Computer)
+  2:task:(Examine Computer)
+  3:task:(Calculate Repair Costs)
+  4:task:(Discuss Costs with Customer)
+  5:exclusivegateway:{x}
+  6:task:(Return Computer to Customer)
+  7:exclusivegateway:{x}
+  8:task:(Repair Hardware)
+  9:task:(Check & Configure Software)
+  10:parallelgateway:{AND}
+  11:parallelgateway:{AND}
+  12:task:(Check if Computer is Ready)
+  13:exclusivegateway:{x}
+  14:task:(Wait Until Ready)
+  15:exclusivegateway:{x}
+  16:task:(Test System Functionality)
+  17:exclusivegateway:{x}
+  18:task:(Escalate Issue)
+  19:exclusivegateway:{x}
+  20:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Receive Defective Computer)
+  1:task:(Receive Defective Computer) --> 2:task:(Examine Computer)
+  2:task:(Examine Computer) --> 3:task:(Calculate Repair Costs)
+  3:task:(Calculate Repair Costs) --> 4:task:(Discuss Costs with Customer)
+  4:task:(Discuss Costs with Customer) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Customer declines|6:task:(Return Computer to Customer)
+  5:exclusivegateway:{x} --> |Customer approves|10:parallelgateway:{AND}
+  6:task:(Return Computer to Customer) --> 7:exclusivegateway:{x}
+  10:parallelgateway:{AND} --> 8:task:(Repair Hardware)
+  10:parallelgateway:{AND} --> 9:task:(Check & Configure Software)
+  8:task:(Repair Hardware) --> 11:parallelgateway:{AND}
+  9:task:(Check & Configure Software) --> 11:parallelgateway:{AND}
+  11:parallelgateway:{AND} --> 12:task:(Check if Computer is Ready)
+  12:task:(Check if Computer is Ready) --> 13:exclusivegateway:{x}
+  13:exclusivegateway:{x} --> |Ready|16:task:(Test System Functionality)
+  13:exclusivegateway:{x} --> |Not ready|14:task:(Wait Until Ready)
+  14:task:(Wait Until Ready) --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> 12:task:(Check if Computer is Ready)
+  16:task:(Test System Functionality) --> 17:exclusivegateway:{x}
+  17:exclusivegateway:{x} --> |Test successful|19:exclusivegateway:{x}
+  17:exclusivegateway:{x} --> |Test failed|18:task:(Escalate Issue)
+  18:task:(Escalate Issue) --> 19:exclusivegateway:{x}
+  19:exclusivegateway:{x} --> 16:task:(Test System Functionality)
+  7:exclusivegateway:{x} --> 20:endevent:(((endevent)))
+  19:exclusivegateway:{x} --> 20:endevent:(((endevent)))

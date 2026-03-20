@@ -1,0 +1,352 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Connect to Management System</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="Condition Not Met">
+    <call id="a7" endpoint="" a:alt_id="34">
+      <parameters>
+        <label>Read Order from System</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <choose mode="exclusive" a:alt_id="35">
+      <alternative condition="All Conditions Met" language="text/javascript">
+        <parallel wait="-1" cancel="last" a:alt_id="37">
+          <parallel_branch>
+            <choose mode="exclusive" a:alt_id="38">
+              <alternative condition="Condition Met" language="text/javascript">
+                <call id="a87" endpoint="" a:alt_id="39">
+                  <parameters>
+                    <label>Apply Delivery Delay Penalty</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="Condition Not Met" language="text/javascript">
+                <call id="a89" endpoint="" a:alt_id="40">
+                  <parameters>
+                    <label>Mark Task as OK</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+            </choose>
+            <call id="a95" endpoint="" a:alt_id="42">
+              <parameters>
+                <label>Merge 1</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </parallel_branch>
+          <parallel_branch>
+            <choose mode="exclusive" a:alt_id="44">
+              <alternative condition="Condition Met" language="text/javascript">
+                <call id="a99" endpoint="" a:alt_id="45">
+                  <parameters>
+                    <label>Apply Delivery Delay Penalty</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="Condition Not Met" language="text/javascript">
+                <call id="a101" endpoint="" a:alt_id="46">
+                  <parameters>
+                    <label>Mark Task as OK</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+            </choose>
+            <call id="a107" endpoint="" a:alt_id="48">
+              <parameters>
+                <label>Merge 2</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </parallel_branch>
+          <parallel_branch>
+            <choose mode="exclusive" a:alt_id="50">
+              <alternative condition="Condition Met" language="text/javascript">
+                <call id="a111" endpoint="" a:alt_id="51">
+                  <parameters>
+                    <label>Apply Delivery Delay Penalty</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="Condition Not Met" language="text/javascript">
+                <call id="a113" endpoint="" a:alt_id="52">
+                  <parameters>
+                    <label>Mark Task as OK</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+            </choose>
+            <call id="a119" endpoint="" a:alt_id="54">
+              <parameters>
+                <label>Merge 3</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </parallel_branch>
+        </parallel>
+        <call id="a123" endpoint="" a:alt_id="55">
+          <parameters>
+            <label>Mark Arrived Product as OK</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <parallel wait="-1" cancel="last" a:alt_id="56">
+          <parallel_branch>
+            <call id="a127" endpoint="" a:alt_id="57">
+              <parameters>
+                <label>Pack the Product</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </parallel_branch>
+          <parallel_branch>
+            <call id="a129" endpoint="" a:alt_id="58">
+              <parameters>
+                <label>Request a Courier</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </parallel_branch>
+        </parallel>
+        <call id="a135" endpoint="" a:alt_id="60">
+          <parameters>
+            <label>Delivery Shipped</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="61">
+          <alternative condition="Condition False" language="text/javascript">
+            <call id="a141" endpoint="" a:alt_id="62">
+              <parameters>
+                <label>Escalate</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="Condition True" language="text/javascript">
+            <call id="a69" endpoint="" a:alt_id="33">
+              <parameters>
+                <label>Read Order from System</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <escape a:alt_id="-1"/>
+          </alternative>
+        </choose>
+      </alternative>
+      <alternative condition="Condition Not Met" language="text/javascript">
+        <call id="a7" endpoint="" a:alt_id="34">
+          <parameters>
+            <label>Read Order from System</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <escape a:alt_id="-1"/>
+      </alternative>
+    </choose>
+  </loop>
+  <parallel wait="-1" cancel="last" a:alt_id="3">
+    <parallel_branch>
+      <choose mode="exclusive" a:alt_id="4">
+        <alternative condition="Condition Met" language="text/javascript">
+          <call id="a15" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Apply Delivery Delay Penalty</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Condition Not Met" language="text/javascript">
+          <call id="a17" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Mark Task as OK</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a23" endpoint="" a:alt_id="8">
+        <parameters>
+          <label>Merge 1</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <choose mode="exclusive" a:alt_id="10">
+        <alternative condition="Condition Met" language="text/javascript">
+          <call id="a27" endpoint="" a:alt_id="11">
+            <parameters>
+              <label>Apply Delivery Delay Penalty</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Condition Not Met" language="text/javascript">
+          <call id="a29" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>Mark Task as OK</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a35" endpoint="" a:alt_id="14">
+        <parameters>
+          <label>Merge 2</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <choose mode="exclusive" a:alt_id="16">
+        <alternative condition="Condition Met" language="text/javascript">
+          <call id="a39" endpoint="" a:alt_id="17">
+            <parameters>
+              <label>Apply Delivery Delay Penalty</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Condition Not Met" language="text/javascript">
+          <call id="a41" endpoint="" a:alt_id="18">
+            <parameters>
+              <label>Mark Task as OK</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a47" endpoint="" a:alt_id="20">
+        <parameters>
+          <label>Merge 3</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a51" endpoint="" a:alt_id="21">
+    <parameters>
+      <label>Mark Arrived Product as OK</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a53" endpoint="" a:alt_id="22">
+    <parameters>
+      <label>Register Product in Management System</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="23">
+    <parallel_branch>
+      <call id="a57" endpoint="" a:alt_id="24">
+        <parameters>
+          <label>Pack the Product</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a59" endpoint="" a:alt_id="25">
+        <parameters>
+          <label>Request a Courier</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a65" endpoint="" a:alt_id="27">
+    <parameters>
+      <label>Delivery Shipped</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="28">
+    <alternative condition="Condition True" language="text/javascript">
+      <call id="a69" endpoint="" a:alt_id="33">
+        <parameters>
+          <label>Read Order from System</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Condition False" language="text/javascript"/>
+  </choose>
+</description>

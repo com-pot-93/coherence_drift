@@ -1,0 +1,17 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Request booking)
+    1:task:(Request booking) --> 2:task:(Get booking request)
+    2:task:(Get booking request) --> 3:task:(Check availability)
+    3:task:(Check availability) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |Alternative not available| 5:task:(Propose alternative time)
+    5:task:(Propose alternative time) --> 6:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |Alternative available| 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> 7:task:(Send notification)
+    7:task:(Send notification) --> 8:task:(Get response)
+    8:task:(Get response) --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} --> |Response positive| 10:task:(Send the bill)
+    10:task:(Send the bill) --> 11:task:(Confirm booking)
+    9:exclusivegateway:{x} --> |Response negative| 11:task:(Confirm booking)
+    11:task:(Confirm booking) --> 12:endevent:(((endevent)))
+```

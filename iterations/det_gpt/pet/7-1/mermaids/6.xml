@@ -1,0 +1,41 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Manager checks the open leads)
+2:task:(Manager selects the top five leads)
+3:task:(Manager tells Sales Assistant to  contact the leads)
+4:exclusivegateway:{x}
+5:task:(Sales Assistant calls  customer)
+6:exclusivegateway:{x}
+7:exclusivegateway:{x}
+8:task:(Sales Assistant  sends a note to the Manager)
+9:task:(Manager  processes the lead)
+10:exclusivegateway:{x}
+11:exclusivegateway:{x}
+12:task:(Sales Assistant  sends a note to the Manager)
+13:task:(Manager  processes the lead)
+14:exclusivegateway:{x}
+15:exclusivegateway:{x}
+16:exclusivegateway:{x}
+17:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Manager checks the open leads)
+1:task:(Manager checks the open leads) --> 2:task:(Manager selects the top five leads)
+2:task:(Manager selects the top five leads) --> 3:task:(Manager tells Sales Assistant to  contact the leads)
+3:task:(Manager tells Sales Assistant to  contact the leads) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> 5:task:(Sales Assistant calls  customer)
+5:task:(Sales Assistant calls  customer) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Branch 1|7:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Branch 2|11:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Requires manager|8:task:(Sales Assistant  sends a note to the Manager)
+7:exclusivegateway:{x} --> |Lead does not require manager|15:exclusivegateway:{x}
+8:task:(Sales Assistant  sends a note to the Manager) --> 9:task:(Manager  processes the lead)
+9:task:(Manager  processes the lead) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> 16:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Requires manager|12:task:(Sales Assistant  sends a note to the Manager)
+11:exclusivegateway:{x} --> |Lead does not require manager|14:exclusivegateway:{x}
+12:task:(Sales Assistant  sends a note to the Manager) --> 13:task:(Manager  processes the lead)
+13:task:(Manager  processes the lead) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |true|4:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |false|17:endevent:(((endevent)))

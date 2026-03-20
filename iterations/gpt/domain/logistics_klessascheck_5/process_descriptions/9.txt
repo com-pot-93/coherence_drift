@@ -1,0 +1,15 @@
+The process begins with the start of the procedure. The first step is to package the product. Once the product is packaged, it is shipped.
+
+After shipping, a decision is made about how the product will be delivered. There are two possible paths:
+
+1. If the product is to be delivered to the customer’s door, the process continues with delivering the product to the door. After this, another decision is made to determine whether a receipt is needed:
+   - If a receipt is needed, a pick-up receipt is printed. The receipt is then posted, and the product is rerouted to a station. After rerouting, the process continues to the next decision point.
+   - If no receipt is needed, the process skips directly to the next decision point.
+
+2. If the product is to be delivered to a station, it is delivered there, and the process moves to the next decision point.
+
+At this stage, another decision is made to check if the product has been received back:
+- If the product has been received back, it is processed accordingly. After processing, the process moves to the final step.
+- If the product has not been received back, the process moves directly to the final step.
+
+Finally, the process concludes with the completion of the final step, and the procedure ends.

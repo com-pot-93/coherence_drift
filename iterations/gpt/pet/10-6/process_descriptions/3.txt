@@ -1,0 +1,7 @@
+The process begins when a dismissal is received from MSPN. After receiving the dismissal, the next step is for MSPO to review the dismissal. Once the review is complete, a decision is made.
+
+If the dismissal is rejected, the process continues with the rejection of the dismissal. After this, the process moves forward to the next decision point.
+
+If the dismissal is confirmed, the process continues with the confirmation of the dismissal. After this, the process also moves forward to the same decision point as above.
+
+Regardless of whether the dismissal was rejected or confirmed, the process then proceeds to a final step. Once the final step is completed, the process ends.

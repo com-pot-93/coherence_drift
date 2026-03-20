@@ -1,0 +1,1 @@
+The process starts. First, the customer is searched. Then, an offer is made. Depending on whether the offer is accepted or rejected, the process follows different paths. If the offer is accepted, the process proceeds directly to the end. If the offer is rejected, a customer request is created, details are provided, and then the process ends.

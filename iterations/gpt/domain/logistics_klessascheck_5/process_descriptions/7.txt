@@ -1,0 +1,15 @@
+The process begins when the product is packaged. Once the product is packaged, it is shipped.
+
+After shipping, a decision is made about the delivery method. If the product is to be delivered to the customer’s door, the process continues with the delivery to the door. After the delivery attempt to the door, another decision is made: whether a receipt is needed.
+
+If a receipt is needed, a pick-up receipt is printed. The printed receipt is then posted, and the product is rerouted to a station. After rerouting, the process continues to the next decision point.
+
+If no receipt is needed after the door delivery, the process skips directly to the next decision point.
+
+Alternatively, if the initial decision after shipping is to deliver the product to a station, the product is delivered to the station, and the process moves to the same decision point as above.
+
+At this decision point, it is determined whether the product has been received back. If the product has been received back, it is processed accordingly. After processing the received product, the process moves to the final step.
+
+If the product has not been received back, the process skips directly to the final step.
+
+After the final step is completed, the process ends.

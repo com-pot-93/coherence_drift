@@ -1,0 +1,13 @@
+The process starts with connecting to a management system. Then, based on a condition, the process either ends or proceeds to read an order from the system.
+
+After reading the order, the process enters a loop. Inside the loop, the process branches into two parallel paths.
+
+In the first path, the process further branches into two alternative paths. The first path involves contacting a wholesaler and reordering a product. Following the reorder, the process either applies a delivery delay penalty or gives an OK, based on a condition. The second path involves browsing the warehouse and withdrawing a product. After withdrawing the product, the process either applies a delivery delay penalty or gives an OK, based on a condition. Both paths then merge.
+
+In the second path, the process again branches into two alternative paths. The first path involves contacting a wholesaler and reordering a product. Following the reorder, the process either applies a delivery delay penalty or gives an OK, based on a condition. The second path involves browsing the warehouse and withdrawing a product. After withdrawing the product, the process either applies a delivery delay penalty or gives an OK, based on a condition. Both paths then merge.
+
+After both parallel paths merge, the process gives an OK for the arrived product and registers the product in the management system. Following this, the process splits into two parallel tasks: packing the product and requesting a courier. After both tasks are completed, the process ships the delivery.
+
+After shipping the delivery, the process checks a condition. If the condition is false, an escalation event occurs. If the condition is true, the process loops back to reading the order from the system, which may trigger an escalation event.
+
+Finally, the process returns to the initial gateway, creating a loop until the initial condition is met, at which point the process ends.

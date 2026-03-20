@@ -1,0 +1,13 @@
+The process begins with the start of the project. First, the project is initiated. After this, a basic design is developed. Once the design is ready, Lego brick sets are ordered. When the brick sets arrive, they are received and then sorted by size.
+
+After sorting, the process splits into three activities that happen at the same time: big bricks are placed in a container, medium bricks are placed in a container, and small bricks are placed in a container. Once all the bricks have been placed in their respective containers, the process continues.
+
+Next, a decision is made about whether to proceed with the project. If the decision is to proceed, the process moves forward; otherwise, the process ends.
+
+If the project proceeds, another decision is made to check if the process is ready to build subcomponents. If it is not ready, the process loops back to the previous decision about whether to proceed with the project. If it is ready, subcomponents are built.
+
+After building subcomponents, there is a check to determine what needs to happen next. If more subcomponents are needed, additional subcomponents are built. If more bricks are needed, more Lego bricks are ordered. If the process is ready for testing, it moves on to testing the subcomponents. All these options eventually lead back to the same point after their completion.
+
+Once the subcomponents are tested, another decision is made. If a redesign is needed, the subcomponent is redesigned. If the subcomponents are ready to be assembled, they are assembled. After either redesigning or assembling, the process returns to the earlier decision about readiness to build subcomponents.
+
+This cycle continues until the process is no longer ready to proceed, at which point the process ends.

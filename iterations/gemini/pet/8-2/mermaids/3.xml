@@ -1,0 +1,28 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Report Vacancy to HR)
+    1:task:(Report Vacancy to HR) --> 2:task:(Create Job Description)
+    2:task:(Create Job Description) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} -->|Clarification Needed| 4:task:(Ask Department for Clarification)
+    3:exclusivegateway:{x} -->|No Clarification Needed| 5:exclusivegateway:{x}
+    4:task:(Ask Department for Clarification) --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} -->|Clarification Needed| 7:task:(Ask Department for Clarification)
+    6:exclusivegateway:{x} -->|No Clarification Needed| 8:exclusivegateway:{x}
+    7:task:(Ask Department for Clarification) --> 8:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} -->|Condition Met| 10:task:(Submit Job Description)
+    9:exclusivegateway:{x} -->|Condition Not Met| 19:endevent:(((endevent)))
+    10:task:(Submit Job Description) --> 11:exclusivegateway:{x}
+    11:exclusivegateway:{x} -->|Correction Needed| 12:task:(Correct Description)
+    11:exclusivegateway:{x} -->|No Correction Needed| 13:exclusivegateway:{x}
+    12:task:(Correct Description) --> 2:task:(Create Job Description)
+    13:exclusivegateway:{x} --> 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} -->|Condition Met| 10:task:(Submit Job Description)
+    14:exclusivegateway:{x} -->|Condition Not Met| 15:task:(Post Job)
+    15:task:(Post Job) --> 16:exclusivegateway:{x}
+    16:exclusivegateway:{x} --> 17:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> 18:task:(Post Job)
+    17:exclusivegateway:{x} --> 19:endevent:(((endevent)))
+    18:task:(Post Job) --> 19:endevent:(((endevent)))
+```

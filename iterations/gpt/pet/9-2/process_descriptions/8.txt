@@ -1,0 +1,9 @@
+The process begins with the start of the procedure. The first step is to send a mortgage offer to the customer. After sending the offer, the process waits for a reply from the customer.
+
+Once a reply is received, a decision is made. If the case needs to be updated, the process continues by updating the case details. After updating the case, the work is archived, and then a cancellation is performed. Following the cancellation, the process moves to another decision point.
+
+If the case does not need to be updated, the process proceeds to perform administrative tasks. After these tasks are completed, another decision is made. If a request is needed, the process continues by requesting any outstanding documents from the customer. Once the documents are requested, the case details are updated, the work is archived, and a cancellation is performed. After the cancellation, the process moves to the next decision point.
+
+If no request is needed after the administrative tasks, the process skips directly to the next decision point.
+
+At the final decision point, regardless of the path taken—whether after updating the case and performing a cancellation, or after administrative tasks and any necessary requests and cancellations—the process comes together and then ends.

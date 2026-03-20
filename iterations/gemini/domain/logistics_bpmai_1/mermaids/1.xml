@@ -1,0 +1,23 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Receive Shipment Request)
+    1:task:(Receive Shipment Request) --> 2:task:(Check Product Availability)
+    2:task:(Check Product Availability) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |Available| 4:task:(Check Shipment Address)
+    3:exclusivegateway:{x} --> |Not Available| 14:task:(Prepare Products for Shipment to Service Station)
+    4:task:(Check Shipment Address) --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Inbound Shipment| 6:task:(Assemble and Send Inbound Shipment)
+    5:exclusivegateway:{x} --> |Regional Shipment| 10:task:(Prepare Products for Regional Shipment)
+    6:task:(Assemble and Send Inbound Shipment) --> 7:task:(Receive Inbound Shipment)
+    7:task:(Receive Inbound Shipment) --> 8:task:(Check Inbound Shipment)
+    8:task:(Check Inbound Shipment) --> 9:task:(Prepare Products for Shipment to Service Station)
+    10:task:(Prepare Products for Regional Shipment) --> 11:parallelgateway:{AND}
+    9:task:(Prepare Products for Shipment to Service Station) --> 11:parallelgateway:{AND}
+    11:parallelgateway:{AND} --> 12:parallelgateway:{AND}
+    12:parallelgateway:{AND} --> 13:exclusivegateway:{x}
+    14:task:(Prepare Products for Shipment to Service Station) --> 15:parallelgateway:{AND}
+    15:parallelgateway:{AND} --> 16:parallelgateway:{AND}
+    16:parallelgateway:{AND} --> 13:exclusivegateway:{x}
+    12:parallelgateway:{AND} --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> 17:endevent:(((endevent)))
+```

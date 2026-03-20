@@ -1,0 +1,78 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(sales department receives an order)
+2:exclusivegateway:{x}
+3:task:(sales department  accepts the bike order)
+4:task:(sales department informs the storehouse)
+5:task:(sales department  informs the engineering department)
+6:parallelgateway:{AND}
+7:task:(engineering department prepares for the bike assembling)
+8:task:(storehouse  processes the part list)
+9:task:(storehouse checks the  quantity of  parts)
+10:exclusivegateway:{x}
+11:exclusivegateway:{x}
+12:task:(storehouse  reserves the part)
+13:task:(storehouse back-orders the part)
+14:exclusivegateway:{x}
+15:task:(storehouse  reserves the part)
+16:task:(storehouse back-orders the part)
+17:exclusivegateway:{x}
+18:exclusivegateway:{x}
+19:task:(storehouse  reserves the part)
+20:task:(storehouse back-orders the part)
+21:exclusivegateway:{x}
+22:exclusivegateway:{x}
+23:task:(storehouse  reserves the part)
+24:task:(storehouse back-orders the part)
+25:task:(storehouse  processes the part list)
+26:task:(storehouse checks the  quantity of  parts)
+27:parallelgateway:{AND}
+28:task:(engineering department assembles the bicycle)
+29:task:(sales department ships the bicycle)
+30:parallelgateway:{AND}
+31:task:(sales department rejects the bike order)
+32:exclusivegateway:{x}
+33:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(sales department receives an order)
+1:task:(sales department receives an order) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |accept|3:task:(sales department  accepts the bike order)
+2:exclusivegateway:{x} --> |reject|31:task:(sales department rejects the bike order)
+3:task:(sales department  accepts the bike order) --> 4:task:(sales department informs the storehouse)
+4:task:(sales department informs the storehouse) --> 5:task:(sales department  informs the engineering department)
+5:task:(sales department  informs the engineering department) --> 6:parallelgateway:{AND}
+6:parallelgateway:{AND} --> 7:task:(engineering department prepares for the bike assembling)
+6:parallelgateway:{AND} --> 8:task:(storehouse  processes the part list)
+7:task:(engineering department prepares for the bike assembling) --> 27:parallelgateway:{AND}
+8:task:(storehouse  processes the part list) --> 9:task:(storehouse checks the  quantity of  parts)
+9:task:(storehouse checks the  quantity of  parts) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |D2 branch 1|11:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |D2 branch 2|14:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |D2 branch 3|18:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |branch 1|12:task:(storehouse  reserves the part)
+11:exclusivegateway:{x} --> |branch 2|13:task:(storehouse back-orders the part)
+12:task:(storehouse  reserves the part) --> 21:exclusivegateway:{x}
+13:task:(storehouse back-orders the part) --> 21:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |branch 1|15:task:(storehouse  reserves the part)
+14:exclusivegateway:{x} --> |branch 2|16:task:(storehouse back-orders the part)
+15:task:(storehouse  reserves the part) --> 21:exclusivegateway:{x}
+16:task:(storehouse back-orders the part) --> 21:exclusivegateway:{x}
+18:exclusivegateway:{x} --> |D7 branch 1|21:exclusivegateway:{x}
+18:exclusivegateway:{x} --> |D7 branch 2|19:task:(storehouse  reserves the part)
+18:exclusivegateway:{x} --> |D7 branch 3|20:task:(storehouse back-orders the part)
+19:task:(storehouse  reserves the part) --> 21:exclusivegateway:{x}
+20:task:(storehouse back-orders the part) --> 21:exclusivegateway:{x}
+21:exclusivegateway:{x} --> 22:exclusivegateway:{x}
+22:exclusivegateway:{x} --> |reserve|23:task:(storehouse  reserves the part)
+22:exclusivegateway:{x} --> |back-order|24:task:(storehouse back-orders the part)
+23:task:(storehouse  reserves the part) --> 25:task:(storehouse  processes the part list)
+24:task:(storehouse back-orders the part) --> 25:task:(storehouse  processes the part list)
+25:task:(storehouse  processes the part list) --> 26:task:(storehouse checks the  quantity of  parts)
+26:task:(storehouse checks the  quantity of  parts) --> 27:parallelgateway:{AND}
+27:parallelgateway:{AND} --> 28:task:(engineering department assembles the bicycle)
+27:parallelgateway:{AND} --> 29:task:(sales department ships the bicycle)
+28:task:(engineering department assembles the bicycle) --> 30:parallelgateway:{AND}
+29:task:(sales department ships the bicycle) --> 30:parallelgateway:{AND}
+30:parallelgateway:{AND} --> 32:exclusivegateway:{x}
+31:task:(sales department rejects the bike order) --> 32:exclusivegateway:{x}
+32:exclusivegateway:{x} --> 33:endevent:(((endevent)))

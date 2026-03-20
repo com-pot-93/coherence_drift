@@ -1,0 +1,17 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Decide to Place Order)
+  2:task:(Send Order to Supplier)
+  3:task:(Supplier Receives Order)
+  4:task:(Supplier Processes Order)
+  5:task:(Supplier Sends Invoice)
+  6:task:(Receive Invoice)
+  7:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Decide to Place Order)
+  1:task:(Decide to Place Order) --> 2:task:(Send Order to Supplier)
+  2:task:(Send Order to Supplier) --> 3:task:(Supplier Receives Order)
+  3:task:(Supplier Receives Order) --> 4:task:(Supplier Processes Order)
+  4:task:(Supplier Processes Order) --> 5:task:(Supplier Sends Invoice)
+  5:task:(Supplier Sends Invoice) --> 6:task:(Receive Invoice)
+  6:task:(Receive Invoice) --> 7:endevent:(((endevent)))

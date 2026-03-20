@@ -1,0 +1,18 @@
+The process begins. Immediately, two activities are carried out at the same time: one is to check if the baby is younger than two years, and the other is to identify the parent. Once both of these actions are completed, the process continues.
+
+Next, a decision is made based on certain conditions. If the conditions are met, the process proceeds by sending a notification to the employer. After the notification is sent, the process waits for confirmation from the employer. Once the confirmation is received, the parent takes maternity leave.
+
+After the parent has taken maternity leave, another decision is made regarding the specifics of the leave or any extensions. There are several possible scenarios at this point:
+
+- If the leave is split and the split is less than two months, the employer is notified about this. The process then waits for a notification from the employer regarding the split, and after receiving it, the parent takes leave following the split.  
+- If the leave is split and the split is more than three months, the employer is notified accordingly. The process waits for the employer’s notification about this split, and then the parent takes leave after the split.
+- If there is an extension and the extension is less than two months, the employer is notified. The process waits for the employer’s notification about the extension, and then the parent takes leave after the extension.
+- If there is an extension and the extension is more than three months, the employer is notified. The process waits for the employer’s notification about the extension, and then the parent takes leave after the extension.
+- If both parents are taking leave together, this is recorded.
+- If none of these situations apply, the process simply continues.
+
+After any of these scenarios, the process continues to the next step.
+
+If, at the earlier decision point, the conditions are not met, the process continues directly without notifying the employer or waiting for confirmation.
+
+Finally, the process comes to an end.

@@ -1,0 +1,6 @@
+The process begins when a measurement registration is submitted. After the submission, the application is reviewed. Based on the outcome of this review, there are two possible paths:
+
+- If the application is rejected, it is formally rejected.  
+- If the application is approved, it is formally approved.
+
+Regardless of whether the application was formally rejected or approved, the process continues in the same way. The next step is to assign an MSPN. After the MSPN is assigned, the MSPO is informed. Following this, the MPO is informed, and then the SP is informed. Once all these parties have been informed, the process ends.

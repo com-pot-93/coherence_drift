@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Enter login data</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Check if credentials are correct</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="true" language="text/javascript">
+      <choose mode="exclusive" a:alt_id="4">
+        <alternative condition="true" language="text/javascript">
+          <call id="a11" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Select product</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a15" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Add it to shopping cart</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a17" endpoint="" a:alt_id="7">
+            <parameters>
+              <label>Save item</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="false" language="text/javascript"/>
+      </choose>
+      <loop mode="pre_test" condition="true">
+        <call id="a11" endpoint="" a:alt_id="5">
+          <parameters>
+            <label>Select product</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="0">
+          <alternative condition="">
+            <call id="a15" endpoint="" a:alt_id="6">
+              <parameters>
+                <label>Add it to shopping cart</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a17" endpoint="" a:alt_id="7">
+              <parameters>
+                <label>Save item</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="">
+            <escape a:alt_id="-1"/>
+          </alternative>
+        </choose>
+      </loop>
+      <call id="a23" endpoint="" a:alt_id="9">
+        <parameters>
+          <label>Check if every selected item is in the shopping cart</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a25" endpoint="" a:alt_id="10">
+        <parameters>
+          <label>Confirm order</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <parallel wait="-1" cancel="last" a:alt_id="11">
+        <parallel_branch>
+          <call id="a29" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>Prepare shipment details</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a31" endpoint="" a:alt_id="13">
+            <parameters>
+              <label>Prepare payment details</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+      </parallel>
+      <call id="a37" endpoint="" a:alt_id="15">
+        <parameters>
+          <label>Enter payment data</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <parallel wait="-1" cancel="last" a:alt_id="16">
+        <parallel_branch>
+          <call id="a41" endpoint="" a:alt_id="17">
+            <parameters>
+              <label>Send payment data to bank institut</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a43" endpoint="" a:alt_id="18">
+            <parameters>
+              <label>Enter shipping details</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+      </parallel>
+      <choose mode="exclusive" a:alt_id="20">
+        <alternative condition="success" language="text/javascript">
+          <call id="a51" endpoint="" a:alt_id="21">
+            <parameters>
+              <label>Confirm and save order</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="failure" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="false" language="text/javascript"/>
+  </choose>
+</description>

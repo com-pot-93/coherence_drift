@@ -1,0 +1,43 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(report the vacancy to HR)
+    1:task:(report the vacancy to HR) --> 2:task:(HR creates a job description)
+    2:task:(HR creates a job description) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |condition1| 4:task:(HR asks the Department)
+    3:exclusivegateway:{x} --> |condition2| 29:endevent:(((endevent)))
+    4:task:(HR asks the Department) --> 5:task:(HR submits the job description for consideration)
+    5:task:(HR submits the job description for consideration) --> 6:task:(HR waits for the approval)
+    6:task:(HR waits for the approval) --> 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> 8:task:(HR submits the job description for consideration)
+    7:exclusivegateway:{x} --> 9:task:(HR submits the job description for consideration)
+    7:exclusivegateway:{x} --> 10:task:(HR submits the job description for consideration)
+    7:exclusivegateway:{x} --> 11:task:(HR submits the job description for consideration)
+    8:task:(HR submits the job description for consideration) --> 12:parallelgateway:{AND}
+    9:task:(HR submits the job description for consideration) --> 12:parallelgateway:{AND}
+    10:task:(HR submits the job description for consideration) --> 12:parallelgateway:{AND}
+    11:task:(HR submits the job description for consideration) --> 12:parallelgateway:{AND}
+    12:parallelgateway:{AND} --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> |true| 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> |true| 15:task:(HR submits the job description for consideration)
+    14:exclusivegateway:{x} --> |false| 16:exclusivegateway:{x}
+    16:exclusivegateway:{x} --> 17:task:(HR submits the job description for consideration)
+    16:exclusivegateway:{x} --> 18:task:(HR submits the job description for consideration)
+    17:task:(HR submits the job description for consideration) --> 19:parallelgateway:{AND}
+    18:task:(HR submits the job description for consideration) --> 20:task:(HR submits the job description for consideration)
+    20:task:(HR submits the job description for consideration) --> 21:task:(HR submits the job description for consideration)
+    21:task:(HR submits the job description for consideration) --> 22:task:(HR submits the job description for consideration)
+    22:task:(HR submits the job description for consideration) --> 23:task:(HR submits the job description for consideration)
+    23:task:(HR submits the job description for consideration) --> 19:parallelgateway:{AND}
+    15:task:(HR submits the job description for consideration) --> 19:parallelgateway:{AND}
+    19:parallelgateway:{AND} --> 24:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> |false| 25:exclusivegateway:{x}
+    25:exclusivegateway:{x} --> 26:task:(Department requests a correction)
+    26:task:(Department requests a correction) --> 27:task:(HR corrects the description)
+    27:task:(HR corrects the description) --> 24:exclusivegateway:{x}
+    24:exclusivegateway:{x} --> 28:exclusivegateway:{x}
+    28:exclusivegateway:{x} --> |true| 30:task:(HR submits the job description for consideration)
+    28:exclusivegateway:{x} --> |false| 31:exclusivegateway:{x}
+    31:exclusivegateway:{x} --> 32:task:(HR submits the job description for consideration)
+    32:task:(HR submits the job description for consideration) --> 29:endevent:(((endevent)))
+    30:task:(HR submits the job description for consideration) --> 29:endevent:(((endevent)))
+```

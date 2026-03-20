@@ -1,0 +1,32 @@
+Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when a shipment request is received.
+2. The next step is to check if the requested product is available.
+3. If the product is not available, the process moves directly towards completion.
+4. If the product is available, the process continues with further checks.
+5. The shipment address is then checked.
+6. The process evaluates the shipment address and determines the type of shipment required.
+7. If the shipment is to a service station, the process follows a specific path:
+    - Additional checks are performed to confirm the shipment type.
+    - If confirmed as a service station shipment, the inbound shipment is assembled.
+    - The inbound shipment is then sent.
+    - Once the inbound shipment is received, it is checked for accuracy and completeness.
+    - If the check fails, the inbound shipment is checked again.
+    - If the check passes, the products are prepared for the service station.
+    - The process checks if more product preparations are needed. If so, the preparation step is repeated.
+    - Once all preparations are complete, the process continues.
+    - The process then checks if it should repeat the shipment address check or if the process is complete.
+    - If repetition is needed, the shipment address is checked again.
+    - If the process is complete, it moves towards the end.
+8. If the shipment is determined to be a regional shipment, the process follows a different path:
+    - The products are prepared for regional shipment.
+    - The process checks whether to continue with further preparations for the service station or to end the process.
+    - If continuing, products are prepared for the service station, and checks are performed to determine if all preparations are complete or if more are needed. If more are needed, the preparation step is repeated.
+    - Once all checks are complete, the shipment address is checked again.
+    - The process then evaluates whether to repeat the shipment address check or to complete the process.
+    - If repetition is needed, the shipment address is checked again.
+    - If the process is complete, it moves towards the end.
+9. Throughout the process, after certain checks or preparations, there are points where the process may loop back to previous steps, such as rechecking the shipment address or repeating product preparations, depending on the results of the checks.
+10. Eventually, after all necessary checks, preparations, and possible repetitions, the process reaches its end.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step and decision point is included and described in clear, everyday language.

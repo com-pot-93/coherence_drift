@@ -1,0 +1,1 @@
+The process starts. Then, two activities, "Physical Examination" and "Perform Activity," are performed in parallel. After both activities are completed, the "Make Diagnosis" activity is performed. Based on the diagnosis, either "Surgical Intervention" or "Plan Surgery" is performed. Finally, the "Discharge Patient" activity is performed, and the process ends.

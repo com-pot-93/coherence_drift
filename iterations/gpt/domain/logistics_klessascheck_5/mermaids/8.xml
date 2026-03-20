@@ -1,0 +1,34 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Package Product)
+2:task:(Ship Product)
+3:exclusivegateway:{x}
+4:task:(Deliver to Door)
+5:exclusivegateway:{x}
+6:task:(Print Pick-up Receipt)
+7:task:(Post Receipt)
+8:task:(Reroute to Station)
+9:exclusivegateway:{x}
+10:task:(Deliver to Station)
+11:exclusivegateway:{x}
+12:task:(Process Received Product)
+13:task:(Final Step)
+14:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Package Product)
+1:task:(Package Product) --> 2:task:(Ship Product)
+2:task:(Ship Product) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Deliver to Door|4:task:(Deliver to Door)
+3:exclusivegateway:{x} --> |Deliver to Station|10:task:(Deliver to Station)
+4:task:(Deliver to Door) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Receipt needed|6:task:(Print Pick-up Receipt)
+5:exclusivegateway:{x} --> |No receipt needed|9:exclusivegateway:{x}
+6:task:(Print Pick-up Receipt) --> 7:task:(Post Receipt)
+7:task:(Post Receipt) --> 8:task:(Reroute to Station)
+8:task:(Reroute to Station) --> 9:exclusivegateway:{x}
+10:task:(Deliver to Station) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Product received back|12:task:(Process Received Product)
+11:exclusivegateway:{x} --> |Not received back|13:task:(Final Step)
+12:task:(Process Received Product) --> 13:task:(Final Step)
+13:task:(Final Step) --> 14:endevent:(((endevent)))

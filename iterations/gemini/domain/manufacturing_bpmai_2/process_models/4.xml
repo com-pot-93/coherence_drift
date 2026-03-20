@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Process Order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Determine Components</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="4">
+    <alternative condition="Parts Missing" language="text/javascript">
+      <call id="a9" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>Purchase Missing Parts</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a11" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Add to Stock</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Parts Available" language="text/javascript"/>
+  </choose>
+  <call id="a17" endpoint="" a:alt_id="7">
+    <parameters>
+      <label>Start Production</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a19" endpoint="" a:alt_id="9">
+    <parameters>
+      <label>Perform Quality Checks</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="10">
+    <alternative condition="Follow-up Required" language="text/javascript">
+      <call id="a23" endpoint="" a:alt_id="11">
+        <parameters>
+          <label>Carry Out Follow-up</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No Follow-up Required" language="text/javascript"/>
+  </choose>
+  <call id="a29" endpoint="" a:alt_id="13">
+    <parameters>
+      <label>Package Product</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a31" endpoint="" a:alt_id="14">
+    <parameters>
+      <label>Fill into Packaging</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a33" endpoint="" a:alt_id="15">
+    <parameters>
+      <label>Pack and Label</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a35" endpoint="" a:alt_id="16">
+    <parameters>
+      <label>Transport to Warehouse</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a37" endpoint="" a:alt_id="17">
+    <parameters>
+      <label>Send to Customer</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

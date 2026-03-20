@@ -1,0 +1,50 @@
+Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when a request is submitted.
+2. The submitted request is then registered.
+3. After registration, a decision is made on whether to continue with the process. If the decision is not to continue, the process ends here.
+4. If the process continues, an initial continuation check is performed.
+5. Another decision is made on whether to continue. If not, the process ends.
+6. If the process continues, a further check is carried out.
+7. Again, a decision is made on whether to continue. If not, the process ends.
+8. If the process continues, a condition is evaluated.
+9. If the result of the evaluation is negative, the process ends.
+10. If the result is positive, another decision is made on whether to proceed. If the decision is not to proceed, the process ends.
+11. If the process proceeds, a check is performed.
+12. The outcome of this check is evaluated. If the result is not favorable, the process ends.
+13. If the result is favorable, another decision is made. If the outcome is not positive, the process ends.
+14. If the outcome is positive, another decision is made. If the outcome is not positive, the process ends.
+15. If the outcome is positive, another decision is made. If the outcome is not positive, the process ends.
+16. If the outcome is positive, another decision is made. If the outcome is not positive, the process ends.
+17. If the outcome is positive, the request is reviewed by a supervisor.
+18. After the supervisor’s review, a decision is made. If the request is not approved, it is returned with comments.
+19. The employee reviews the comments and decides whether to resubmit the request or withdraw it.
+    - If the employee chooses to resubmit, the request is resubmitted and reviewed again by the supervisor.
+    - If the employee chooses to withdraw, the process ends.
+20. If the supervisor approves the request, it is forwarded to the purchasing department.
+21. The purchasing department performs a continuation check.
+22. A decision is made on whether to continue. If not, the process ends.
+23. If the process continues, a further purchasing check is performed.
+24. Another decision is made on whether to continue. If not, the process ends.
+25. If the process continues, another purchasing check is performed.
+26. The outcome of this check is evaluated. If the result is not favorable, the process ends.
+27. If the result is favorable, another decision is made. If the outcome is not positive, the process ends.
+28. If the outcome is positive, another decision is made. If the outcome is not positive, the process ends.
+29. If the outcome is positive, another decision is made. If the outcome is not positive, the process ends.
+30. If the outcome is positive, an additional purchase check is performed.
+31. After this check, a decision is made. If the outcome is not positive, the process ends.
+32. If the outcome is positive, preparations are made for quotations.
+33. A decision is made on whether to continue. If the process cannot continue, an additional purchase check is performed again.
+34. If a vendor is selected, the selection is confirmed.
+35. If changes are needed, preparations for quotations are repeated.
+36. If the vendor is confirmed, a purchase order is generated and sent.
+37. The process waits for the product to be delivered.
+38. Once the product is delivered, the invoice is received.
+39. A decision is made on whether everything is complete. If not, preparations for quotations are repeated.
+40. If everything is complete, the user is notified of the status.
+41. Final checks are performed.
+42. Final evaluations are carried out.
+43. Final steps are taken.
+44. The process then ends.
+
+Throughout the process, at each decision point, if the outcome is not favorable or the decision is not to continue, the process ends immediately at that point. If comments are returned, the employee has the option to resubmit or withdraw the request. If resubmitted, the supervisor reviews the request again. The process is structured so that only if all checks and decisions are positive does it proceed to the next stage, eventually resulting in the completion of the purchase and notification to the user.

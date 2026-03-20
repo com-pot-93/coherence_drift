@@ -1,0 +1,15 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Send symptoms and type to fridge service center)
+2:task:(Make appointment)
+3:task:(Check fridge)
+4:task:(Confirm fridge OK)
+5:task:(Rate facility)
+6:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Send symptoms and type to fridge service center)
+1:task:(Send symptoms and type to fridge service center) --> 2:task:(Make appointment)
+2:task:(Make appointment) --> 3:task:(Check fridge)
+3:task:(Check fridge) --> 4:task:(Confirm fridge OK)
+4:task:(Confirm fridge OK) --> 5:task:(Rate facility)
+5:task:(Rate facility) --> 6:endevent:(((endevent)))

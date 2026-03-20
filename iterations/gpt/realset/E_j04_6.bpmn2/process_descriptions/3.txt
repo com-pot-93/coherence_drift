@@ -1,0 +1,79 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+---
+
+The process begins with a starting point.
+
+1. **Initial Decision:**  
+   The process starts with a decision about whether to proceed. If the choice is not to proceed, the process ends immediately. If the choice is to proceed, the process moves to the next decision.
+
+2. **Second Decision:**  
+   Again, a decision is made about whether to continue. If the answer is no, the process ends. If yes, the process continues.
+
+3. **Third Decision:**  
+   The process asks once more whether to proceed. If the answer is no, the process ends. If yes, the process continues.
+
+4. **Fourth Decision:**  
+   The process reaches another decision point. If the answer is not to proceed, the process ends. If the answer is to proceed, the process continues.
+
+5. **Determine Condition:**  
+   At this stage, a condition is determined. If the condition is not met, the process follows an alternative path (described later). If the condition is met, the process continues.
+
+6. **Load Front Page:**  
+   The front page is loaded.
+
+7. **Complex Activity Section:**  
+   The process now enters a section where several activities can occur in parallel, and this section can follow one of three possible paths, depending on earlier decisions:
+
+   - **First Path:**  
+     The process splits into four parallel activities:
+     - Topic Activity
+     - Payment Activity
+     - Experience Activity
+     - Hobbies Activity  
+     Each activity is followed by a decision point, and after each is completed, the process waits for all four to finish before moving on.
+
+   - **Second Path:**  
+     The process splits into another set of four parallel activities:
+     - Topic Activity
+     - Payment Activity
+     - Experience Activity
+     - Hobbies Activity  
+     Each activity is again followed by a decision point, and after all are completed, the process continues.
+
+   - **Third Path:**  
+     The process splits into yet another set of four parallel activities:
+     - Topic Activity
+     - Payment Activity
+     - Experience Activity
+     - Hobbies Activity  
+     Each activity is followed by a decision point, and after all are completed, the process continues.
+
+   After completing the chosen set of parallel activities, the process continues.
+
+8. **Send Request and Wait for Offer:**  
+   The process sends a request and then waits for an offer. After waiting, a decision is made, and the process continues.
+
+9. **Alternative Path if Condition Was Not Met:**  
+   If the earlier condition was not met, the process follows a different path:
+   - An escalation is needed, and the front page is loaded again.
+   - The process then enters a similar section with parallel activities (Topic, Payment, Experience, Hobbies), each followed by a decision point.
+   - This section can also branch into another set of parallel activities, similar to the previous path.
+   - After all activities are completed, the process sends a request and waits for an offer, followed by a decision.
+
+10. **Post-Offer Activities:**  
+    After waiting for an offer, the process may proceed to invalidate other offers, send a weekly status update, receive a company status update, and finish the internship. After finishing the internship, a decision is made, and the process continues.
+
+11. **Final Steps:**  
+    At the end, the process may post a tweet about the company. After posting, the process checks if it should repeat this step or continue. Eventually, the process ends.
+
+---
+
+**Summary of Key Points:**
+- The process is driven by a series of decisions about whether to proceed.
+- At several points, the process splits into parallel activities (Topic, Payment, Experience, Hobbies), each followed by a check before continuing.
+- There are alternative paths depending on whether certain conditions are met.
+- After completing the main activities, the process involves sending requests, waiting for offers, and possibly handling escalations.
+- The process concludes with post-offer activities and may include posting a tweet about the company before ending.
+
+This description follows the exact sequence and structure of the process as depicted in your model, ensuring that all steps and decision points are included and described in the correct order.

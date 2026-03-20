@@ -1,0 +1,43 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model, using clear and plain language:
+
+---
+
+The process begins when a production order is received. Once the order is in hand, the next step is to prepare the necessary materials for the job. After the materials are ready, the door is assembled.
+
+After assembling the door, a decision is made about how to proceed with quality checking. There are three possible paths:
+
+1. **Skip Quality Check (direct):**  
+   - If the quality check is skipped directly, another decision is made about whether a quality report is satisfactory.
+     - If the report is satisfactory, the door is released.
+     - If the report is not satisfactory, the door must be fixed. After fixing, the process checks again if the report is satisfactory, repeating this cycle until the report is satisfactory and the door can be released.
+
+2. **Skip Quality Check (with inquiry):**  
+   - If the quality check is skipped but an inquiry is considered, another decision is made:
+     - If no inquiry is sent, the process checks if the report is satisfactory.
+       - If satisfactory, the door is released.
+       - If not, the door is fixed, and the process repeats the check until the report is satisfactory and the door is released.
+     - If an inquiry is sent, a quality check inquiry is sent out, and a response is awaited.
+       - Once the response is received, a quality check is conducted in response to the inquiry.
+       - After the check, a quality report is sent and then reviewed.
+       - The process then checks if the report is satisfactory.
+         - If satisfactory, the door is released.
+         - If not, the door is fixed, and the process repeats the check until the report is satisfactory and the door is released.
+
+3. **Perform Quality Check:**  
+   - If a quality check is performed, the check is carried out.
+   - After the check, a decision is made about whether the report is satisfactory.
+     - If satisfactory, the door is released.
+     - If not, the door is fixed, and the process repeats the check until the report is satisfactory and the door is released.
+   - Alternatively, after the quality check, there may be a decision about whether to send an inquiry:
+     - If no inquiry is sent, the process checks if the report is satisfactory, following the same cycle as above.
+     - If an inquiry is sent, a quality check inquiry is sent, a response is received, and a quality check is conducted in response.
+       - After this, a quality report is sent and reviewed.
+       - The process then checks if the report is satisfactory, repeating the cycle of fixing and checking as needed until the door can be released.
+
+Throughout the process, whenever the report is not satisfactory, the door is fixed, and the process loops back to check the report again. This cycle continues until the report is satisfactory and the door is released.
+
+Once the door is released, the process comes to an end.
+
+---
+
+This description follows the exact sequence and logic of the process model, ensuring that every step, decision, and possible loop is included and clearly explained.

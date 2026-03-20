@@ -1,0 +1,13 @@
+The process begins when the assessment tool is started. Once the tool is ready for use, the user is prompted to enter the type of incident. At this point, the user must choose one of four options for the incident type: Accident, Almost Accident, Severe Safety/Health Risk, or Defective Protective Equipment.
+
+Depending on the selected incident type, the user proceeds to a corresponding step to confirm their choice. After this, the process continues to a step where the user is asked to specify details about the incident.
+
+Next, the process splits into two possible paths. In the first path, the user is prompted to enter either their own data or the victim’s data, depending on the situation. After entering the relevant data, the process continues.
+
+The next step involves contacting relevant parties. The process allows for two possible actions: contacting superiors, or proceeding to a set of parallel actions. If the user chooses to contact superiors, this is done before moving on. Otherwise, the process continues with two actions that can happen at the same time: contacting accident insurance, and deciding whether to contact the labour inspectorate. If the labour inspectorate is to be contacted, this is done; otherwise, this step is skipped. Once both actions are completed, the process continues.
+
+In the second possible path after specifying the incident, two actions are carried out at the same time: contacting accident insurance and contacting the principal. Both actions must be completed before the process continues.
+
+After these steps, the process reaches a decision point. The user can either continue with the process or choose to contact private insurance. If private insurance is contacted, this is done before proceeding. In either case, the process moves on to the next step.
+
+The user is then presented with a list of tasks to perform. After reviewing these tasks, the user executes the proposed tasks. Once all tasks are completed, the process ends.

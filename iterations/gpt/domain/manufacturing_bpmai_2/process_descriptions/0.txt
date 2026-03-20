@@ -1,0 +1,7 @@
+The process begins when a customer order is received. Once the order is received, the next step is to process the customer’s demand. After processing the demand, the required components are determined according to the planning.
+
+At this point, it is checked whether any parts are missing. If there are missing parts, these parts are purchased and put into stock. If there are no missing parts, or after the missing parts have been purchased and stocked, the process continues to the next step.
+
+Production is then performed. After production, quality checks are carried out on the product. If the product passes the quality checks, the process moves forward. If the product does not pass the quality checks, follow-up production is performed to address any issues. After the follow-up production, the product is checked again, and the process continues.
+
+Once the product has passed the quality checks, it is filled into packaging. After filling, the product is packed and labeled. The packed and labeled product is then transported to the warehouse. Finally, the product is sent to the customer, and the process ends.

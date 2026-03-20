@@ -1,0 +1,17 @@
+The process begins with the creation of a list of all necessary parts. Once this list is prepared, an online search is conducted to find shops that offer these parts. After searching, the shop with the lowest prices is selected. The next step is to place an order with the chosen shop.
+
+After the order is placed, a decision is made: the process can either continue with the next steps or stop. If the process stops, it ends immediately. If it continues, the online shop receives the order.
+
+When the online shop receives the order, three activities happen at the same time: an invoice is sent, the ordered items are delivered, and the inventory records are updated. All three of these actions must be completed before moving forward.
+
+Once these actions are finished, the manufacturer receives the order. The manufacturer then begins the building process. At this point, another decision is made: the process can either loop back to a previous decision about ordering the cheapest part, or move forward.
+
+If the process loops back, it returns to a point where another decision is made about how to proceed with ordering parts. Here, there are several options:
+- Order the cheapest available part,
+- Order a part with faster delivery,
+- Write a compliment email,
+- Or finish the project.
+
+After any of these actions are completed, the process returns to the previous decision point. This loop can repeat as needed.
+
+When the decision is finally made to finish the project, the process moves forward to the final step, which is to complete the project. After the project is finished, the process ends.

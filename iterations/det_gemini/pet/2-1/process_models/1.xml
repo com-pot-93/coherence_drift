@@ -1,0 +1,372 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>customer perceives service degradation</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>system sends problem parameters list to customer service</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>service employee enters a problem report into system</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="4">
+    <parameters>
+      <label>service employee compares problem report to the customer SLA</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a9" endpoint="" a:alt_id="5">
+    <parameters>
+      <label>service employee determines necessary counter measures</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="6">
+    <alternative condition="branch 1" language="text/javascript">
+      <call id="a13" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>electronic service determines the customer significance</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="branch 2" language="text/javascript">
+      <call id="a15" endpoint="" a:alt_id="8">
+        <parameters>
+          <label>service employee  links to an extra problem fix process</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="default" language="text/javascript"/>
+  </choose>
+  <call id="a23" endpoint="" a:alt_id="10">
+    <parameters>
+      <label>service employee  creates a detailed problem report</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a25" endpoint="" a:alt_id="11">
+    <parameters>
+      <label>service employee   sends problem report to Service Management</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a27" endpoint="" a:alt_id="12">
+    <parameters>
+      <label>service management deals with violations of quality</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a29" endpoint="" a:alt_id="13">
+    <parameters>
+      <label>service management investigates the problem</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="14">
+    <alternative condition="branch 1" language="text/javascript">
+      <call id="a33" endpoint="" a:alt_id="15">
+        <parameters>
+          <label>service management  performs the analysis</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a37" endpoint="" a:alt_id="16">
+        <parameters>
+          <label>service management  creates a trouble report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a35" endpoint="" a:alt_id="18">
+        <parameters>
+          <label>service management   sends  problem report to Resource Provisioning</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a41" endpoint="" a:alt_id="19">
+        <parameters>
+          <label>resource provisioning checks for potential issues</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="20">
+        <alternative condition="branch 1" language="text/javascript">
+          <call id="a45" endpoint="" a:alt_id="22">
+            <parameters>
+              <label>resource provisioning analyses the problem</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a49" endpoint="" a:alt_id="23">
+            <parameters>
+              <label>resource provisioning creates a trouble report</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="branch 2" language="text/javascript">
+          <call id="a47" endpoint="" a:alt_id="25">
+            <parameters>
+              <label>resource provisioning creates a service execution notification</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a55" endpoint="" a:alt_id="27">
+        <parameters>
+          <label>resource provisioning  sends a status report  to service management</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a59" endpoint="" a:alt_id="28">
+    <parameters>
+      <label>service management  prepares the final status report</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="29">
+    <alternative condition="branch 1" language="text/javascript">
+      <call id="a63" endpoint="" a:alt_id="30">
+        <parameters>
+          <label>service managementcreates a request for automatic resource restoration</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a69" endpoint="" a:alt_id="31">
+        <parameters>
+          <label>service management   sends request to resource provisioning</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a71" endpoint="" a:alt_id="32">
+        <parameters>
+          <label>resource provisioning receives the restoration request</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a73" endpoint="" a:alt_id="33">
+        <parameters>
+          <label>recource provisioning tracks all possible errors</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a75" endpoint="" a:alt_id="34">
+        <parameters>
+          <label>resource provisioning undertakes all necessary corrective actions</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a77" endpoint="" a:alt_id="35">
+        <parameters>
+          <label>resource provisioning creates a trouble-shooting report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a79" endpoint="" a:alt_id="36">
+        <parameters>
+          <label>resource provisioning  sends report to service management</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a81" endpoint="" a:alt_id="42">
+        <parameters>
+          <label>service management sends trouble-shooting report to customer service</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a85" endpoint="" a:alt_id="40">
+        <parameters>
+          <label>service management creates the problem resolution report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a87" endpoint="" a:alt_id="41">
+        <parameters>
+          <label>service management  sends the problem resolution report to customer service</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a89" endpoint="" a:alt_id="43">
+        <parameters>
+          <label>customer service receives the problem resolution report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="branch 2" language="text/javascript">
+      <call id="a65" endpoint="" a:alt_id="37">
+        <parameters>
+          <label>service management  sends  actual service performance  to the customer service</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a83" endpoint="" a:alt_id="38">
+        <parameters>
+          <label>customer service  receives the actual service performance</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="branch 3" language="text/javascript">
+      <call id="a67" endpoint="" a:alt_id="39">
+        <parameters>
+          <label>service management  undertakes corrective actions</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a85" endpoint="" a:alt_id="40">
+        <parameters>
+          <label>service management creates the problem resolution report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a87" endpoint="" a:alt_id="41">
+        <parameters>
+          <label>service management  sends the problem resolution report to customer service</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a89" endpoint="" a:alt_id="43">
+        <parameters>
+          <label>customer service receives the problem resolution report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <parallel wait="-1" cancel="last" a:alt_id="44">
+    <parallel_branch>
+      <call id="a97" endpoint="" a:alt_id="45">
+        <parameters>
+          <label>customer service  creates a report for customer</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a99" endpoint="" a:alt_id="46">
+        <parameters>
+          <label>customer service  reports an SLA violation rebate to billing &amp; collections</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a101" endpoint="" a:alt_id="47">
+        <parameters>
+          <label>billing &amp; collections adjusts the billing</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a107" endpoint="" a:alt_id="49">
+    <parameters>
+      <label>customer service sends report for the customer</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a109" endpoint="" a:alt_id="50">
+    <parameters>
+      <label>customer receives the report</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

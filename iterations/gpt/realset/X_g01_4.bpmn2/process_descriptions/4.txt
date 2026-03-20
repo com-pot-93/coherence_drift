@@ -1,0 +1,19 @@
+The process begins when a person initiates the procedure. The first decision is whether to proceed or not. If the person chooses not to proceed, the process ends immediately.
+
+If the person decides to continue, the next step is to select a course. After selecting a course, there is another decision point: the person can either continue or stop. If they choose not to continue, the process ends.
+
+If the person continues, the available dates for the selected course are shown. The person then selects a date. After choosing a date, there is another decision point: the person can either continue or stop. If they choose not to continue, the process ends.
+
+If the person continues, there is a check to determine whether the person already has an account. If the person has an account, they are prompted to log into their account, provide payment information, and complete the registration. After completing registration, there is a decision about whether to continue. If the person chooses not to continue, the process ends.
+
+If the person continues after registration, two activities happen at the same time: the person can tweet to friends, and they receive a ticket. After tweeting to friends, there is a decision point, but regardless of the outcome, the process continues. Similarly, after receiving the ticket, there is a decision point, but regardless of the outcome, the process continues. Once both tweeting and ticket receipt are completed, the process ends.
+
+If the person does not have an account, their account status is checked. If they are from an eligible university, they can register for the course. After attempting registration, there is a check to see if registration was successful. If registration fails, the process ends. If registration is successful, the person completes registration. After this, there is a decision about whether to continue. If the person chooses not to continue, the process ends.
+
+If the person continues, two activities happen at the same time: the person can tweet to friends, and they receive a ticket. After tweeting to friends, there is a decision point, but regardless of the outcome, the process continues. Similarly, after receiving the ticket, there is a decision point, but regardless of the outcome, the process continues. Once both tweeting and ticket receipt are completed, the process ends.
+
+If the person is not from an eligible university, an activation request is sent, and the process waits for an activation response. If activation fails, the process ends. If activation is successful, the person completes registration. After this, there is a decision about whether to continue. If the person chooses not to continue, the process ends.
+
+If the person continues, two activities happen at the same time: the person can tweet to friends, and they receive a ticket. After tweeting to friends, there is a decision point, but regardless of the outcome, the process continues. Similarly, after receiving the ticket, there is a decision point, but regardless of the outcome, the process continues. Once both tweeting and ticket receipt are completed, the process ends.
+
+At every major step—selecting a course, viewing available dates, selecting a date, and after registration—there are opportunities for the person to stop the process, which leads directly to the end. The process ensures that only those who meet the requirements and complete all necessary steps can finish registration and receive their ticket, with optional sharing to friends along the way.

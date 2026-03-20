@@ -1,0 +1,46 @@
+flowchart LR
+0:startevent:((startevent))
+1:exclusivegateway:{x}
+2:task:(Select Course)
+3:exclusivegateway:{x}
+4:task:(Show Available Dates)
+5:task:(Select Date)
+6:exclusivegateway:{x}
+7:exclusivegateway:{x}
+8:task:(Check University Registration)
+9:exclusivegateway:{x}
+10:task:(Register for Course)
+11:task:(Send Activation Request)
+12:task:(Wait for Response)
+13:parallelgateway:{AND}
+14:task:(Log Into Account)
+15:task:(Provide Payment Information)
+16:task:(Complete Registration)
+17:parallelgateway:{AND}
+18:task:(Tweet Friends)
+19:task:(Receive Ticket)
+20:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |Proceed|2:task:(Select Course)
+1:exclusivegateway:{x} --> |Do not proceed|20:endevent:(((endevent)))
+2:task:(Select Course) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Continue|4:task:(Show Available Dates)
+3:exclusivegateway:{x} --> |Do not continue|20:endevent:(((endevent)))
+4:task:(Show Available Dates) --> 5:task:(Select Date)
+5:task:(Select Date) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Account available|7:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |No account|13:parallelgateway:{AND}
+7:exclusivegateway:{x} --> |Registered at eligible university|10:task:(Register for Course)
+7:exclusivegateway:{x} --> |Not registered|11:task:(Send Activation Request)
+10:task:(Register for Course) --> 13:parallelgateway:{AND}
+11:task:(Send Activation Request) --> 12:task:(Wait for Response)
+12:task:(Wait for Response) --> 13:parallelgateway:{AND}
+13:parallelgateway:{AND} --> 14:task:(Log Into Account)
+14:task:(Log Into Account) --> 15:task:(Provide Payment Information)
+15:task:(Provide Payment Information) --> 16:task:(Complete Registration)
+16:task:(Complete Registration) --> 17:parallelgateway:{AND}
+17:parallelgateway:{AND} --> 18:task:(Tweet Friends)
+17:parallelgateway:{AND} --> 19:task:(Receive Ticket)
+18:task:(Tweet Friends) --> 20:endevent:(((endevent)))
+19:task:(Receive Ticket) --> 20:endevent:(((endevent)))

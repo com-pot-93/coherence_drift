@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="500"
+   height="300"
+   version="1.1"
+   id="svg20"
+   sodipodi:docname="det_gemini_realset.xlsx.svg"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs20" />
+  <sodipodi:namedview
+     id="namedview20"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="4.0466667"
+     inkscape:cx="249.95881"
+     inkscape:cy="189.53871"
+     inkscape:window-width="3440"
+     inkscape:window-height="1403"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg20" />
+  <line
+     x1="40"
+     y1="260"
+     x2="460"
+     y2="260"
+     stroke="black"
+     id="line1" />
+  <line
+     x1="40"
+     y1="40"
+     x2="40"
+     y2="260"
+     stroke="black"
+     id="line2"
+     style="fill:#5e5c64;stroke:#5e5c64" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,186.66666666666669 86.66666666666666,186.66666666666669 133.33333333333331,161.91666666666669 180.0,161.91666666666669 226.66666666666666,161.91666666666669 273.33333333333337,161.91666666666669 320.0,161.91666666666669 366.6666666666667,152.75 413.3333333333333,152.75 460.0,152.75"
+     id="polyline2"
+     style="stroke:#3584e4" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,144.86666666666667 86.66666666666666,127.26666666666665 133.33333333333331,127.26666666666665 180.0,127.26666666666665 226.66666666666666,127.26666666666665 273.33333333333337,127.26666666666665 320.0,127.26666666666665 366.6666666666667,118.46666666666667 413.3333333333333,118.46666666666667 460.0,138.08333333333331"
+     id="polyline3"
+     style="fill:none;stroke:#3584e4" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,216.0 86.66666666666666,216.0 133.33333333333331,216.0 180.0,216.0 226.66666666666666,216.0 273.33333333333337,216.0 320.0,216.0 366.6666666666667,216.0 413.3333333333333,216.0 460.0,216.0"
+     id="polyline4"
+     style="fill:#a51d2d;stroke:#a51d2d" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,48.46153846153845 86.66666666666666,48.46153846153845 133.33333333333331,48.46153846153845 180.0,48.46153846153845 226.66666666666666,48.46153846153845 273.33333333333337,48.46153846153845 320.0,48.46153846153845 366.6666666666667,48.46153846153845 413.3333333333333,48.46153846153845 460.0,48.46153846153845"
+     id="polyline5"
+     style="fill:#a51d2d;stroke:#a51d2d" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,118.94791666666669 86.66666666666666,118.94791666666669 133.33333333333331,118.3204365079365 180.0,94.00694444444443 226.66666666666666,94.00694444444443 273.33333333333337,81.21180555555557 320.0,81.21180555555557 366.6666666666667,79.98958333333334 413.3333333333333,68.83680555555554 460.0,69.1641865079365"
+     id="polyline6"
+     style="stroke:#3584e4" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,260.0 86.66666666666666,230.66666666666669 133.33333333333331,175.66666666666669 180.0,175.66666666666669 226.66666666666666,175.66666666666669 273.33333333333337,175.66666666666669 320.0,175.66666666666669 366.6666666666667,175.66666666666669 413.3333333333333,175.66666666666669 460.0,175.66666666666669"
+     id="polyline7"
+     style="stroke:#dc8add" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,201.18055555555554 86.66666666666666,195.94246031746033 133.33333333333331,186.77579365079367 180.0,186.77579365079367 226.66666666666666,182.84722222222223 273.33333333333337,182.84722222222223 320.0,182.84722222222223 366.6666666666667,182.84722222222223 413.3333333333333,182.84722222222223 460.0,182.84722222222223"
+     id="polyline8"
+     style="stroke:#3584e4" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,97.81547619047618 86.66666666666666,78.04166666666666 133.33333333333331,67.95833333333334 180.0,68.875 226.66666666666666,68.875 273.33333333333337,68.875 320.0,68.875 366.6666666666667,68.875 413.3333333333333,68.875 460.0,68.875"
+     id="polyline9"
+     style="stroke:#dc8add" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,178.11111111111114 86.66666666666666,193.4567901234568 133.33333333333331,189.11111111111111 180.0,193.4567901234568 226.66666666666666,193.4567901234568 273.33333333333337,181.42857142857144 320.0,181.42857142857144 366.6666666666667,181.42857142857144 413.3333333333333,181.42857142857144 460.0,181.42857142857144"
+     id="polyline11"
+     style="stroke:#3584e4" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,153.75833333333338 86.66666666666666,146.43611111111113 133.33333333333331,146.43611111111113 180.0,135.00277777777774 226.66666666666666,161.00277777777774 273.33333333333337,100.77777777777777 320.0,100.77777777777777 366.6666666666667,167.9666666666667 413.3333333333333,167.9666666666667 460.0,167.9666666666667"
+     id="polyline12"
+     style="fill:none;stroke:#3584e4" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,179.33333333333331 86.66666666666666,179.33333333333331 133.33333333333331,250.22222222222226 180.0,250.22222222222226 226.66666666666666,250.22222222222226 273.33333333333337,250.22222222222226 320.0,250.22222222222226 366.6666666666667,250.22222222222226 413.3333333333333,250.22222222222226 460.0,250.22222222222226"
+     id="polyline13"
+     style="stroke:#dc8add" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,141.30102040816328 86.66666666666666,99.58956916099774 133.33333333333331,99.58956916099774 180.0,99.58956916099774 226.66666666666666,95.57369614512473 273.33333333333337,98.36734693877551 320.0,98.36734693877551 366.6666666666667,65.5357142857143 413.3333333333333,65.5357142857143 460.0,65.5357142857143"
+     id="polyline14"
+     style="stroke:#3584e4" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,260.0 86.66666666666666,150.0 133.33333333333331,150.0 180.0,150.0 226.66666666666666,150.0 273.33333333333337,150.0 320.0,150.0 366.6666666666667,150.0 413.3333333333333,150.0 460.0,150.0"
+     id="polyline15"
+     style="fill:none;stroke:#dc8add" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,175.3846153846154 86.66666666666666,172.5641025641026 133.33333333333331,172.5641025641026 180.0,164.1025641025641 226.66666666666666,164.1025641025641 273.33333333333337,164.1025641025641 320.0,164.1025641025641 366.6666666666667,107.69230769230771 413.3333333333333,140.83333333333334 460.0,107.22222222222223"
+     id="polyline16"
+     style="stroke:#3584e4" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,260 86.66666666666666,260 133.33333333333331,260 180.0,260 226.66666666666666,260 273.33333333333337,260 320.0,260 366.6666666666667,260 413.3333333333333,260 460.0,260"
+     id="polyline17" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,260 86.66666666666666,260 133.33333333333331,260 180.0,260 226.66666666666666,260 273.33333333333337,260 320.0,260 366.6666666666667,260 413.3333333333333,260 460.0,260"
+     id="polyline18" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,260 86.66666666666666,260 133.33333333333331,260 180.0,260 226.66666666666666,260 273.33333333333337,260 320.0,260 366.6666666666667,260 413.3333333333333,260 460.0,260"
+     id="polyline19" />
+  <path
+     style="fill:#9a9996;stroke:#9a9996;stroke-width:0.755906;stroke-dasharray:3.02362, 3.02362;stroke-dashoffset:0"
+     d="M 460,39.2916 V 260"
+     id="path20" />
+  <path
+     style="fill:#9a9996;stroke:#9a9996;stroke-width:0.755906;stroke-dasharray:3.02362, 3.02362;stroke-dashoffset:0"
+     d="M 86.55818,39.291594 V 260"
+     id="path20-5" />
+  <path
+     style="fill:#9a9996;stroke:#9a9996;stroke-width:0.755906;stroke-dasharray:3.02362, 3.02362;stroke-dashoffset:0"
+     d="M 319.95932,39.291597 V 260"
+     id="path20-5-3" />
+  <path
+     style="fill:#9a9996;stroke:#9a9996;stroke-width:0.755906;stroke-dasharray:3.02362, 3.02362;stroke-dashoffset:0"
+     d="M 133.23841,39.291597 V 260"
+     id="path20-5-1" />
+  <path
+     style="fill:#9a9996;stroke:#9a9996;stroke-width:0.755906;stroke-dasharray:3.02362, 3.02362;stroke-dashoffset:0"
+     d="M 273.27909,39.291598 V 260"
+     id="path20-5-6" />
+  <path
+     style="fill:#9a9996;stroke:#9a9996;stroke-width:0.755906;stroke-dasharray:3.02362, 3.02362;stroke-dashoffset:0"
+     d="M 226.59886,39.291599 V 260"
+     id="path20-5-2" />
+  <path
+     style="fill:#9a9996;stroke:#9a9996;stroke-width:0.755906;stroke-dasharray:3.02362, 3.02362;stroke-dashoffset:0"
+     d="M 179.91864,39.291598 V 260"
+     id="path20-5-61" />
+  <path
+     style="fill:#9a9996;stroke:#9a9996;stroke-width:0.755906;stroke-dasharray:3.02362, 3.02362;stroke-dashoffset:0"
+     d="M 413.31977,39.2916 V 260"
+     id="path20-5-3-5" />
+  <path
+     style="fill:#9a9996;stroke:#9a9996;stroke-width:0.755906;stroke-dasharray:3.02362, 3.02362;stroke-dashoffset:0"
+     d="M 366.63955,39.2916 V 260"
+     id="path20-5-3-56" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,260 86.66666666666666,260 133.33333333333331,260 180.0,260 226.66666666666666,260 273.33333333333337,260 320.0,260 366.6666666666667,260 413.3333333333333,260 460.0,260"
+     id="polyline20"
+     style="fill:#2ec27e;stroke:#2ec27e" />
+  <polyline
+     fill="none"
+     stroke="green"
+     stroke-width="2"
+     points="40.0,95.52380952380952 86.66666666666666,95.52380952380952 133.33333333333331,95.52380952380952 180.0,95.52380952380952 226.66666666666666,95.52380952380952 273.33333333333337,95.52380952380952 320.0,95.52380952380952 366.6666666666667,95.52380952380952 413.3333333333333,95.52380952380952 460.0,95.52380952380952"
+     id="polyline10"
+     style="fill:#a51d2d;stroke:#a51d2d" />
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-size:16px;line-height:0.3;font-family:'Noto Serif Thai';-inkscape-font-specification:'Noto Serif Thai Italic';text-align:center;text-decoration-color:#000000;letter-spacing:-2px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#5e5c64;stroke:none;stroke-width:0.755906;stroke-dasharray:none;stroke-dashoffset:0"
+     x="-159.97223"
+     y="31.526539"
+     id="text20"
+     transform="rotate(-90)"><tspan
+       sodipodi:role="line"
+       id="tspan20"
+       x="-159.97223"
+       y="31.526539"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Noto Serif Thai';-inkscape-font-specification:'Noto Serif Thai';fill:#5e5c64;stroke:none">SCD</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-size:16px;line-height:0.3;font-family:'Noto Serif Thai';-inkscape-font-specification:'Noto Serif Thai Italic';text-align:center;text-decoration-color:#000000;letter-spacing:-2px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#5e5c64;stroke:none;stroke-width:0.755906;stroke-dasharray:none;stroke-dashoffset:0"
+     x="213.82381"
+     y="288.42297"
+     id="text20-3"><tspan
+       sodipodi:role="line"
+       id="tspan20-7"
+       x="213.82381"
+       y="288.42297"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Noto Serif Thai';-inkscape-font-specification:'Noto Serif Thai';fill:#5e5c64;stroke:none">Iterations</tspan></text>
+</svg>

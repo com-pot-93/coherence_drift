@@ -1,0 +1,72 @@
+flowchart LR
+0:startevent:((startevent))
+1:parallelgateway:{AND}
+2:task:(Add info about profiling logic, significance, consequences)
+3:subprocess:(Determine storage period or criteria)
+4:task:(Add info about right to rectify data)
+5:task:(Add info about right to access data)
+6:task:(Add info about right to erase data)
+7:task:(Add info about right to data portability)
+8:task:(Add info about right to withdraw consent)
+9:task:(Add info about right to lodge complaint)
+10:subprocess:(Check data source)
+11:subprocess:(Check international transfer)
+12:subprocess:(Check recipients)
+13:subprocess:(Check legitimate interests)
+14:task:(Retrieve legal basis for processing)
+15:task:(Retrieve purposes for processing)
+16:parallelgateway:{AND}
+17:parallelgateway:{AND}
+18:task:(Retrieve identity and contact details)
+19:subprocess:(Request and receive DPO details)
+20:parallelgateway:{AND}
+21:parallelgateway:{AND}
+22:task:(Collect info about consent)
+23:task:(Request consent)
+24:exclusivegateway:{x}
+25:task:(Continue process after consent)
+26:exclusivegateway:{x}
+27:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:parallelgateway:{AND}
+1:parallelgateway:{AND} --> 2:task:(Add info about profiling logic, significance, consequences)
+1:parallelgateway:{AND} --> 3:subprocess:(Determine storage period or criteria)
+1:parallelgateway:{AND} --> 4:task:(Add info about right to rectify data)
+1:parallelgateway:{AND} --> 5:task:(Add info about right to access data)
+1:parallelgateway:{AND} --> 6:task:(Add info about right to erase data)
+1:parallelgateway:{AND} --> 7:task:(Add info about right to data portability)
+1:parallelgateway:{AND} --> 8:task:(Add info about right to withdraw consent)
+1:parallelgateway:{AND} --> 9:task:(Add info about right to lodge complaint)
+1:parallelgateway:{AND} --> 10:subprocess:(Check data source)
+1:parallelgateway:{AND} --> 11:subprocess:(Check international transfer)
+1:parallelgateway:{AND} --> 12:subprocess:(Check recipients)
+1:parallelgateway:{AND} --> 13:subprocess:(Check legitimate interests)
+1:parallelgateway:{AND} --> 14:task:(Retrieve legal basis for processing)
+1:parallelgateway:{AND} --> 15:task:(Retrieve purposes for processing)
+1:parallelgateway:{AND} --> 17:parallelgateway:{AND}
+17:parallelgateway:{AND} --> 18:task:(Retrieve identity and contact details)
+17:parallelgateway:{AND} --> 19:subprocess:(Request and receive DPO details)
+18:task:(Retrieve identity and contact details) --> 20:parallelgateway:{AND}
+19:subprocess:(Request and receive DPO details) --> 20:parallelgateway:{AND}
+20:parallelgateway:{AND} --> 16:parallelgateway:{AND}
+2:task:(Add info about profiling logic, significance, consequences) --> 16:parallelgateway:{AND}
+3:subprocess:(Determine storage period or criteria) --> 16:parallelgateway:{AND}
+4:task:(Add info about right to rectify data) --> 16:parallelgateway:{AND}
+5:task:(Add info about right to access data) --> 16:parallelgateway:{AND}
+6:task:(Add info about right to erase data) --> 16:parallelgateway:{AND}
+7:task:(Add info about right to data portability) --> 16:parallelgateway:{AND}
+8:task:(Add info about right to withdraw consent) --> 16:parallelgateway:{AND}
+9:task:(Add info about right to lodge complaint) --> 16:parallelgateway:{AND}
+10:subprocess:(Check data source) --> 16:parallelgateway:{AND}
+11:subprocess:(Check international transfer) --> 16:parallelgateway:{AND}
+12:subprocess:(Check recipients) --> 16:parallelgateway:{AND}
+13:subprocess:(Check legitimate interests) --> 16:parallelgateway:{AND}
+14:task:(Retrieve legal basis for processing) --> 16:parallelgateway:{AND}
+15:task:(Retrieve purposes for processing) --> 16:parallelgateway:{AND}
+16:parallelgateway:{AND} --> 22:task:(Collect info about consent)
+22:task:(Collect info about consent) --> 23:task:(Request consent)
+23:task:(Request consent) --> 24:exclusivegateway:{x}
+24:exclusivegateway:{x} --> |Consent given|25:task:(Continue process after consent)
+24:exclusivegateway:{x} --> |Consent not given|25:task:(Continue process after consent)
+25:task:(Continue process after consent) --> 26:exclusivegateway:{x}
+26:exclusivegateway:{x} --> 27:endevent:(((endevent)))

@@ -1,0 +1,14 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Manager checks the open leads)
+  1:task:(Manager checks the open leads) --> 2:task:(Manager selects the top five leads)
+  2:task:(Manager selects the top five leads) --> 3:task:(Manager tells Sales Assistant to contact the leads)
+  3:task:(Manager tells Sales Assistant to contact the leads) --> 4:task:(Sales Assistant calls customer)
+  4:task:(Sales Assistant calls customer) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} -->|yes| 6:task:(Sales Assistant sends a note to the Manager)
+  5:exclusivegateway:{x} -->|no| 8:exclusivegateway:{x}
+  6:task:(Sales Assistant sends a note to the Manager) --> 7:task:(Manager processes the lead)
+  7:task:(Manager processes the lead) --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} -->|true| 4:task:(Sales Assistant calls customer)
+  8:exclusivegateway:{x} -->|false| 9:endevent:(((endevent)))
+```

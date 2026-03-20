@@ -1,0 +1,40 @@
+The process begins. First, a decision is made about whether to proceed or stop. If the process continues, the next step is to select a course. After selecting a course, another decision is made about whether to continue or stop. If the process continues, the available dates for the selected course are shown. Then, a date is selected.
+
+After the date is selected, another decision is made about whether to proceed or stop. If the process continues, the account status is checked. Based on the account status, there are two possible paths:
+
+**Path 1: Account Requires Login and Payment**
+- If the account requires login and payment, the user is prompted to log in.
+- After logging in, the user provides payment information.
+- Once payment information is provided, registration is completed.
+- After completing registration, there is a decision to either continue or stop.
+    - If continuing, two actions happen at the same time: a message is sent to friends, and a ticket is received.
+    - Once both actions are finished, the process continues.
+    - If stopping, the process moves forward without these actions.
+
+**Path 2: Account Requires University Eligibility Check**
+- If the account requires a university eligibility check, this check is performed.
+- After the check, there are three possible outcomes:
+    - **Outcome 1: Registration is Successful**
+        - Registration is completed.
+        - After completing registration, there is a decision to either continue or stop.
+            - If continuing, two actions happen at the same time: a message is sent to friends, and a ticket is received.
+            - Once both actions are finished, the process continues.
+            - If stopping, the process moves forward without these actions.
+    - **Outcome 2: Activation is Required**
+        - An activation request is sent.
+        - The process waits for an activation response.
+        - After receiving the response, there are two possibilities:
+            - If activation fails, the process moves forward.
+            - If activation succeeds, registration is completed.
+                - After completing registration, there is a decision to either continue or stop.
+                    - If continuing, two actions happen at the same time: a message is sent to friends, and a ticket is received.
+                    - Once both actions are finished, the process continues.
+                    - If stopping, the process moves forward without these actions.
+    - **Outcome 3: Registration Fails**
+        - The process moves forward.
+
+After any of these paths, the process continues to the next step.
+
+At each major decision point (after selecting a course, after showing available dates, after selecting a date, after checking account status, after completing registration, after checking university eligibility, after activation response, and after completing registration following activation), there is always an option to stop the process. If the process is stopped at any of these points, it moves directly towards the end.
+
+Finally, the process ends.

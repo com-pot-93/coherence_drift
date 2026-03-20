@@ -1,0 +1,1 @@
+The process begins. First, there is a step to connect to the management system. After this connection attempt, a decision is made. If the process is to continue, another decision point is reached immediately. After this second decision, the process ends.

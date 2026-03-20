@@ -1,0 +1,8 @@
+The process starts when the MSPN registers a measurement at the GO.
+Next, the GO examines the application of the MSPN.
+Based on the examination results, the process follows one of two alternative paths.
+In the first path, the GO rejects the application of the MSPN.
+In the second path, the GO confirms the application of the MSPN.
+Both paths converge, and the GO assigns the MSPN.
+After the assignment, the GO informs the MSPO, the MPO, and the SP about the MSPN assignment, in that order.
+The process ends after the SP is informed.

@@ -1,0 +1,16 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Decide to go public)
+1:task:(Decide to go public) --> 2:task:(Select Underwriters)
+2:task:(Select Underwriters) --> 3:task:(Prepare Registration Statement)
+3:task:(Prepare Registration Statement) --> 4:task:(Check Issue Compliance)
+4:task:(Check Issue Compliance) --> 5:parallelgateway:{AND}
+5:parallelgateway:{AND} --> 6:task:(Firm Up Issue Price and Arrange Road Show)
+5:parallelgateway:{AND} --> 7:task:(Await Approval of Registration Statement)
+6:task:(Firm Up Issue Price and Arrange Road Show) --> 8:parallelgateway:{AND}
+7:task:(Await Approval of Registration Statement) --> 8:parallelgateway:{AND}
+8:parallelgateway:{AND} --> 9:task:(Receive Clearance from SEC)
+9:task:(Receive Clearance from SEC) --> 10:task:(Fix Issue Price and Enter Firm Commitment)
+10:task:(Fix Issue Price and Enter Firm Commitment) --> 11:task:(Offer Stock to Public)
+11:task:(Offer Stock to Public) --> 12:endevent:(((endevent)))
+```

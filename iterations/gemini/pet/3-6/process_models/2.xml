@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <choose mode="exclusive" a:alt_id="1">
+    <alternative condition="">
+      <call id="a3" endpoint="" a:alt_id="2">
+        <parameters>
+          <label>Evaluate Claim Severity and Send Forms</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="4">
+        <alternative condition="">
+          <call id="a11" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Check Completeness of Forms</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="6">
+            <alternative condition="Forms Complete" language="text/javascript">
+              <call id="a17" endpoint="" a:alt_id="7">
+                <parameters>
+                  <label>Register Claim</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Forms Incomplete" language="text/javascript">
+              <call id="a19" endpoint="" a:alt_id="8">
+                <parameters>
+                  <label>Inform Claimant to Update Forms</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="Condition False" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="Insurance Inactive" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="12">
+        <parameters>
+          <label>Inform Claimant of Claim Rejection</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

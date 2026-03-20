@@ -1,0 +1,43 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Create Parts List)
+    1:task:(Create Parts List) --> 2:task:(Query Webshops)
+    2:task:(Query Webshops) --> 3:task:(Choose Cheapest Shop)
+    3:task:(Choose Cheapest Shop) --> 4:task:(Place Order)
+    4:task:(Place Order) --> 5:parallelgateway:{AND}
+    5:parallelgateway:{AND} --> 6:task:(Receive Order)
+    5:parallelgateway:{AND} --> 7:task:(Send Invoice)
+    5:parallelgateway:{AND} --> 8:task:(Deliver Order)
+    5:parallelgateway:{AND} --> 9:task:(Update Inventory)
+    6:task:(Receive Order) --> 10:parallelgateway:{AND}
+    7:task:(Send Invoice) --> 10:parallelgateway:{AND}
+    8:task:(Deliver Order) --> 10:parallelgateway:{AND}
+    9:task:(Update Inventory) --> 10:parallelgateway:{AND}
+    10:parallelgateway:{AND} --> 11:task:(Receive Order Again)
+    11:task:(Receive Order Again) --> 12:task:(Start Building Process)
+    12:task:(Start Building Process) --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> |Condition Met| 14:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> |Condition Not Met| 15:exclusivegateway:{x}
+    15:exclusivegateway:{x} --> |Condition Series Met| 16:task:(Order Faster Delivery)
+    15:exclusivegateway:{x} --> |Condition Series Not Met| 14:exclusivegateway:{x}
+    16:task:(Order Faster Delivery) --> 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> 17:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> |Condition Met| 18:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> |Condition Series Met| 18:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> |Condition Met| 18:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> |Condition Not Met| 18:exclusivegateway:{x}
+    18:exclusivegateway:{x} --> 19:exclusivegateway:{x}
+    19:exclusivegateway:{x} --> |Condition Series Met| 17:exclusivegateway:{x}
+    19:exclusivegateway:{x} --> |Condition Series Not Met| 20:exclusivegateway:{x}
+    20:exclusivegateway:{x} --> |Condition Series Met| 21:task:(Write Compliment Email)
+    20:exclusivegateway:{x} --> |Condition Series Not Met| 22:task:(Order Cheapest Part)
+    21:task:(Write Compliment Email) --> 23:inclusivegateway:{O}
+    22:task:(Order Cheapest Part) --> 23:inclusivegateway:{O}
+    23:inclusivegateway:{O} --> 17:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> 24:task:(Escalate)
+    24:task:(Escalate) --> 17:exclusivegateway:{x}
+    18:exclusivegateway:{x} --> 24:task:(Escalate)
+    24:task:(Escalate) --> 25:inclusivegateway:{O}
+    23:inclusivegateway:{O} --> 25:inclusivegateway:{O}
+    25:inclusivegateway:{O} --> 26:endevent:(((endevent)))
+```

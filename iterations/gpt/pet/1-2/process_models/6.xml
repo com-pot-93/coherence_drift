@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Defective Computer</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Examine Computer</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Calculate Repair Costs</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="4">
+    <parameters>
+      <label>Consult Customer</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="5">
+    <alternative condition="Decline Repair" language="text/javascript">
+      <call id="a11" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Customer Takes Computer Home</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Approve Repair" language="text/javascript">
+      <parallel wait="-1" cancel="last" a:alt_id="7">
+        <parallel_branch>
+          <call id="a17" endpoint="" a:alt_id="8">
+            <parameters>
+              <label>Check and Repair Hardware</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a19" endpoint="" a:alt_id="9">
+            <parameters>
+              <label>Check and Configure Software</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+      </parallel>
+      <choose mode="exclusive" a:alt_id="11">
+        <alternative condition="Ready" language="text/javascript"/>
+        <alternative condition="Ready" language="text/javascript">
+          <loop mode="pre_test" condition="true">
+            <call id="a29" endpoint="" a:alt_id="12">
+              <parameters>
+                <label>Wait Until Computer Ready</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <loop mode="pre_test" condition="Not Ready" a:alt_id="13" language="text/javascript">
+              <call id="a29" endpoint="" a:alt_id="12">
+                <parameters>
+                  <label>Wait Until Computer Ready</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </loop>
+            <call id="a27" endpoint="" a:alt_id="14">
+              <parameters>
+                <label>Test System Functionality</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </loop>
+        </alternative>
+      </choose>
+      <loop mode="pre_test" condition="true">
+        <call id="a27" endpoint="" a:alt_id="14">
+          <parameters>
+            <label>Test System Functionality</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="pre_test" condition="Test Failed" a:alt_id="15" language="text/javascript">
+          <call id="a41" endpoint="" a:alt_id="16">
+            <parameters>
+              <label>Escalate Issue</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a27" endpoint="" a:alt_id="14">
+            <parameters>
+              <label>Test System Functionality</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </loop>
+      </loop>
+    </alternative>
+  </choose>
+</description>

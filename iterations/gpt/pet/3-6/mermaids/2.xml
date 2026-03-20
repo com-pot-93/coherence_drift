@@ -1,0 +1,64 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Claim)
+2:task:(Check Insurance Status)
+3:exclusivegateway:{x}
+4:task:(Evaluate Claim Severity)
+5:exclusivegateway:{x}
+6:task:(Send Forms to Claimant)
+7:exclusivegateway:{x}
+8:task:(Receive Completed Forms)
+9:task:(Check Forms for Completeness)
+10:exclusivegateway:{x}
+11:task:(Register Claim)
+12:exclusivegateway:{x}
+13:task:(Inform Claimant to Update Forms)
+14:task:(Inform Claimant of Rejection)
+15:exclusivegateway:{x}
+16:task:(Escalate Process)
+17:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Claim)
+1:task:(Receive Claim) --> 2:task:(Check Insurance Status)
+2:task:(Check Insurance Status) --> 3:exclusivegateway:{x}
+
+%% Insurance status decision
+3:exclusivegateway:{x} --> |Continue|4:task:(Evaluate Claim Severity)
+3:exclusivegateway:{x} --> |Reject|15:exclusivegateway:{x}
+
+%% Severity evaluation
+4:task:(Evaluate Claim Severity) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Proceed|6:task:(Send Forms to Claimant)
+5:exclusivegateway:{x} --> |Do not proceed|14:task:(Inform Claimant of Rejection)
+
+%% After sending forms
+6:task:(Send Forms to Claimant) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Proceed|8:task:(Receive Completed Forms)
+7:exclusivegateway:{x} --> |Do not proceed|14:task:(Inform Claimant of Rejection)
+
+%% After receiving forms
+8:task:(Receive Completed Forms) --> 9:task:(Check Forms for Completeness)
+9:task:(Check Forms for Completeness) --> 10:exclusivegateway:{x}
+
+%% Forms completeness check
+10:exclusivegateway:{x} --> |Complete|11:task:(Register Claim)
+10:exclusivegateway:{x} --> |Incomplete|13:task:(Inform Claimant to Update Forms)
+10:exclusivegateway:{x} --> |Cannot proceed|16:task:(Escalate Process)
+
+%% After informing to update forms
+13:task:(Inform Claimant to Update Forms) --> 9:task:(Check Forms for Completeness)
+
+%% After registering claim
+11:task:(Register Claim) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Continue|6:task:(Send Forms to Claimant)
+12:exclusivegateway:{x} --> |End|17:endevent:(((endevent)))
+
+%% After informing of rejection (from severity or after sending forms)
+14:task:(Inform Claimant of Rejection) --> 15:exclusivegateway:{x}
+
+%% Decision after rejection
+15:exclusivegateway:{x} --> |Proceed|6:task:(Send Forms to Claimant)
+15:exclusivegateway:{x} --> |Cannot proceed|16:task:(Escalate Process)
+
+%% Escalation returns to insurance status decision
+16:task:(Escalate Process) --> 3:exclusivegateway:{x}

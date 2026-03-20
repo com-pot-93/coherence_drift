@@ -1,0 +1,13 @@
+The process begins with the start of the planning for a LAN party. First, invitations are sent out to friends. After the invitations are sent, the organizer asks the friends which games they would like to play at the party. Once the friends respond, the organizer receives a list of suggested games.
+
+With this list, the organizer then chooses which games will be played at the event. After the games are chosen, the process splits into two parallel tracks that are handled at the same time.
+
+In the first track, the organizer checks if the chosen date for the party is suitable. If the date is not suitable, the organizer changes the date and then checks again if the new date works. This cycle repeats until a suitable date is found. Once the date is confirmed as suitable, this part of the process is complete.
+
+In the second track, the organizer checks if the selected games need to be changed. If the games need to be changed, the organizer asks the guests again which games they want to play, and then checks once more if the games are suitable. This cycle continues until the games are confirmed as suitable. Once the games are finalized, this part of the process is complete.
+
+After both the date and the games have been confirmed, the organizer checks if any of the chosen games need to be downloaded. If downloads are needed, the organizer downloads the required games. If no downloads are needed, this step is skipped.
+
+Next, the organizer asks the friends how much beer they want for the party. Based on their responses, the organizer estimates the total amount of beer required. The organizer then checks if there is a need to buy beer. If more beer is needed, the organizer goes to the supermarket to buy it. If there is already enough beer, this step is skipped.
+
+Finally, after all preparations are complete, the organizer prepares for the LAN party. The process ends when all preparations are finished and everything is ready for the event.

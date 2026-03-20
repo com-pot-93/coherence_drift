@@ -1,0 +1,44 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Shipment Request)
+2:task:(Check Product Availability)
+3:exclusivegateway:{x}
+4:task:(Check Shipment Address)
+5:exclusivegateway:{x}
+6:task:(Assemble Inbound Shipment)
+7:task:(Send Inbound Shipment)
+8:task:(Receive Inbound Shipment)
+9:task:(Check Inbound Shipment)
+10:task:(Prepare Products for Service Station Shipment)
+11:exclusivegateway:{x}
+12:parallelgateway:{AND}
+13:task:(Next Step)
+14:parallelgateway:{AND}
+15:exclusivegateway:{x}
+16:task:(Prepare Products for Regional Shipment)
+17:exclusivegateway:{x}
+18:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Shipment Request)
+1:task:(Receive Shipment Request) --> 2:task:(Check Product Availability)
+2:task:(Check Product Availability) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Available|4:task:(Check Shipment Address)
+3:exclusivegateway:{x} --> |Not Available|18:endevent:(((endevent)))
+4:task:(Check Shipment Address) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Valid Address|6:task:(Assemble Inbound Shipment)
+5:exclusivegateway:{x} --> |Prepare Regional Shipment|16:task:(Prepare Products for Regional Shipment)
+6:task:(Assemble Inbound Shipment) --> 7:task:(Send Inbound Shipment)
+7:task:(Send Inbound Shipment) --> 8:task:(Receive Inbound Shipment)
+8:task:(Receive Inbound Shipment) --> 9:task:(Check Inbound Shipment)
+9:task:(Check Inbound Shipment) --> 10:task:(Prepare Products for Service Station Shipment)
+10:task:(Prepare Products for Service Station Shipment) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Path 1|12:parallelgateway:{AND}
+11:exclusivegateway:{x} --> |Path 2|12:parallelgateway:{AND}
+12:parallelgateway:{AND} --> 13:task:(Next Step)
+13:task:(Next Step) --> 14:parallelgateway:{AND}
+14:parallelgateway:{AND} --> 15:exclusivegateway:{x}
+16:task:(Prepare Products for Regional Shipment) --> 17:exclusivegateway:{x}
+17:exclusivegateway:{x} --> |Continue|15:exclusivegateway:{x}
+17:exclusivegateway:{x} --> |End|18:endevent:(((endevent)))
+15:exclusivegateway:{x} --> |To Service Station Shipment|10:task:(Prepare Products for Service Station Shipment)
+15:exclusivegateway:{x} --> |End|18:endevent:(((endevent)))

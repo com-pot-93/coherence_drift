@@ -1,0 +1,7 @@
+The process starts with the receipt of a data subject request. It is then checked whether the withdrawn data are relevant. Depending on the outcome of this check, the process either stops using the withdrawn data or informs the user that the withdrawal will stop all running business processes.
+
+If the process stops using the withdrawn data, it then communicates the withdrawal. After the communication, the process merges into a single flow.
+
+Alternatively, if the user is informed about the impact of the withdrawal, the process waits to receive a notification about continuation. After receiving the notification, the process either stops running business processes using the withdrawn data or proceeds directly. If the business processes are stopped, the process then stops using the withdrawn data and communicates the withdrawal. After the communication, the process merges into a single flow.
+
+Finally, the process ends.

@@ -1,0 +1,9 @@
+The process starts. Then, based on a condition, it either proceeds to load the front page or skips this step. If the front page is loaded, the process continues; otherwise, it skips directly to a later stage.
+
+Next, based on a condition, the process either initiates a set of parallel tasks or skips them. The parallel tasks involve working on a topic, payment, experience, and hobbies. Each of these tasks is followed by a conditional split where the process either continues or loops back to the same split. After each parallel task, the process merges back into a single flow.
+
+If the parallel tasks are initiated, the process merges back into a single flow after all parallel tasks are completed.
+
+The process then proceeds to send a request, wait until an offer arrives, and receive the offer. Following this, based on a condition, the process either invalidates all other offers, sends a status update every week, receives a status update from the company, and finishes the internship, or it loads the front page again.
+
+If the internship is finished, based on a condition, the process either tweets to friends about the company or skips this step. Finally, the process loops back to the beginning, or it ends.

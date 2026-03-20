@@ -1,0 +1,24 @@
+The process begins with a starting point. From there, a decision is made that leads to two possible paths.
+
+On the first path, another decision is made, which offers four different options:
+
+- If the first option is chosen, a bill for metering point operations is sent to the grid operator.
+- If the second option is chosen, a bill for measurement is sent to the grid operator.
+- If the third option is chosen, a bill for additional readings is sent to the grid operator.
+- If the fourth option is chosen, a bill for equipment acquisition is sent to the grid operator.
+
+Regardless of which of these four options is selected, the process continues in the same way: the grid operator receives the bill and examines it. After examining the bill, the grid operator makes a decision:
+
+- If the grid operator rejects the invoice, they formally reject it.
+- If the grid operator confirms the invoice, they confirm it and provide payment advice.
+
+After either rejecting or confirming the invoice, the process moves to a point where it waits for the other path to finish.
+
+On the second path from the initial decision, a bill for equipment acquisition is sent to the metering point operator network. The metering point operator network then examines the bill and makes a decision:
+
+- If the invoice is confirmed, the metering point operator network confirms it and provides payment advice.
+- If the invoice is rejected, the metering point operator network rejects it.
+
+After either confirming or rejecting the invoice, this path also moves to the same waiting point as the first path.
+
+Once both paths have reached this point, the process comes to an end.

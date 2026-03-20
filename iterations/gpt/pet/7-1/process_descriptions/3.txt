@@ -1,0 +1,13 @@
+The process begins with a starting point. Immediately after, a decision is made, and the process continues to another decision point. From here, if the choice is to proceed, the process moves forward to a new decision.
+
+At this stage, if the answer is "False," the process loops back to the previous decision point. If the answer is "True," the next step is to call the customer.
+
+After calling the customer, another decision is made, followed by yet another decision. At this point, if a note is required, a note is sent to the manager. The manager then processes the lead, and another decision is made.
+
+If the decision is to continue, the process advances to a series of further decisions, each time with the option to proceed or to return to calling the customer. If the choice is to proceed, the process continues through several more decision points in sequence.
+
+At one of these decision points, there is an option to escalate the issue. If escalation is chosen, the issue is escalated, and another decision is made. From here, the process can either continue forward through more decisions or return to calling the customer.
+
+Whenever the process returns to calling the customer, after the call, it loops back to the relevant previous decision point. This loop can occur at several stages, depending on the outcome of the decisions.
+
+Eventually, after passing through all the necessary decisions and actions, the process reaches its end point.

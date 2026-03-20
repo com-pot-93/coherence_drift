@@ -1,0 +1,51 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins.
+2. The first action is to run the machine.
+3. After running the machine, the connection is checked.
+4. A decision is made based on the result of the connection check.
+5. If the result is negative, the connection is checked again, and this cycle repeats until a positive result is obtained.
+6. Once a positive result is achieved, another decision is made.
+7. If the result is negative at this point, the connection is checked again, repeating this cycle until a positive result is obtained.
+8. When the connection is confirmed as positive, measurements are collected.
+9. After collecting measurements, a decision is made to determine if escalation is required.
+10. If escalation is required, the issue is escalated, and the process continues.
+11. If escalation is not required, the process continues without escalation.
+12. The next step is to calculate the OEE (Overall Equipment Effectiveness).
+13. After calculating OEE, two actions are performed at the same time: the machine is stopped, and an email is sent to the engineer.
+14. Once both actions are completed, two checks are performed in parallel: one after stopping the machine, and one after sending the email.
+15. After both checks are completed, a decision is made.
+16. If the result is positive, another decision is made.
+17. If the result of this decision is true, measurements are collected again.
+18. After collecting measurements again, another decision is made.
+19. If the result is positive, measurements are collected again, and this cycle repeats until a different result is obtained.
+20. If the result is not positive, or after the cycle ends, the process returns to the previous decision point.
+21. If the result is not positive at the earlier decision, two actions are performed in parallel: the machine is stopped again, and another email is sent.
+22. After both actions are completed, two checks are performed in parallel: one after stopping the machine again, and one after sending another email.
+23. After both checks are completed, a decision is made.
+24. If the result is positive, another decision is made.
+25. If the result of this decision is true, measurements are collected for the third time.
+26. After collecting measurements for the third time, another decision is made.
+27. If the result is positive, measurements are collected again, and this cycle repeats until a different result is obtained.
+28. If the result is not positive, or after the cycle ends, the process returns to the previous decision point.
+29. If the result is not positive at the earlier decision, two actions are performed in parallel: the machine is stopped for the third time, and a third email is sent.
+30. After both actions are completed, two checks are performed in parallel: one after stopping the machine for the third time, and one after sending the third email.
+31. After both checks are completed, a decision is made.
+32. If the result is positive, another decision is made.
+33. If the result of this decision is positive, another decision is made.
+34. If the result of this decision is true, measurements are collected for the fourth time.
+35. After collecting measurements for the fourth time, another decision is made.
+36. If the result is positive, measurements are collected again, and this cycle repeats until a different result is obtained.
+37. If the result is not positive, the final activity is performed.
+38. After the final activity, the process returns to the previous decision point.
+39. If the result is not positive at the earlier decision, another decision is made.
+40. If the result of this decision is true, the final activity is performed.
+41. After the final activity, another decision is made.
+42. If the result of this decision is true, measurements are collected for the fourth time.
+43. After collecting measurements for the fourth time, another decision is made.
+44. If the result is positive, measurements are collected again, and this cycle repeats until a different result is obtained.
+45. If the result is not positive, the final activity is performed.
+46. After the final activity, the process returns to the previous decision point.
+47. If the result is not positive at the earlier decision, the process ends.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step, decision, and repeated cycle is included and described in clear, plain language.

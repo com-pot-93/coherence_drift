@@ -1,0 +1,341 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Connect to Management System</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="Condition Met">
+    <choose mode="exclusive" a:alt_id="2">
+      <alternative condition="Condition Met" language="text/javascript">
+        <parallel wait="-1" cancel="last" a:alt_id="10">
+          <parallel_branch>
+            <choose mode="exclusive" a:alt_id="11">
+              <alternative condition="Condition Met" language="text/javascript">
+                <call id="a29" endpoint="" a:alt_id="12">
+                  <parameters>
+                    <label>Apply Delivery Delay Penalty</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="Condition Not Met" language="text/javascript">
+                <call id="a31" endpoint="" a:alt_id="13">
+                  <parameters>
+                    <label>OK</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+            </choose>
+          </parallel_branch>
+          <parallel_branch>
+            <choose mode="exclusive" a:alt_id="14">
+              <alternative condition="Condition Met" language="text/javascript">
+                <call id="a37" endpoint="" a:alt_id="15">
+                  <parameters>
+                    <label>Apply Delivery Delay Penalty</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="Condition Not Met" language="text/javascript">
+                <call id="a39" endpoint="" a:alt_id="16">
+                  <parameters>
+                    <label>OK</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+            </choose>
+          </parallel_branch>
+          <parallel_branch>
+            <choose mode="exclusive" a:alt_id="17">
+              <alternative condition="Condition Met" language="text/javascript">
+                <call id="a45" endpoint="" a:alt_id="18">
+                  <parameters>
+                    <label>Apply Delivery Delay Penalty</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="Condition Not Met" language="text/javascript">
+                <call id="a47" endpoint="" a:alt_id="20">
+                  <parameters>
+                    <label>OK</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+            </choose>
+          </parallel_branch>
+        </parallel>
+        <call id="a53" endpoint="" a:alt_id="21">
+          <parameters>
+            <label>OK for Arrived Product</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a55" endpoint="" a:alt_id="22">
+          <parameters>
+            <label>Register Product in Management System</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <parallel wait="-1" cancel="last" a:alt_id="23">
+          <parallel_branch>
+            <call id="a59" endpoint="" a:alt_id="24">
+              <parameters>
+                <label>Pack Product</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </parallel_branch>
+          <parallel_branch>
+            <call id="a61" endpoint="" a:alt_id="25">
+              <parameters>
+                <label>Request Courier</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </parallel_branch>
+        </parallel>
+        <call id="a67" endpoint="" a:alt_id="27">
+          <parameters>
+            <label>Ship Delivery</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="28">
+          <alternative condition="Condition True" language="text/javascript">
+            <call id="a7" endpoint="" a:alt_id="3">
+              <parameters>
+                <label>Read Order from System</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="0">
+              <alternative condition="">
+                <choose mode="exclusive" a:alt_id="4">
+                  <alternative condition="Condition Met" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="5">
+                      <alternative condition="Condition Met" language="text/javascript">
+                        <choose mode="exclusive" a:alt_id="6">
+                          <alternative condition="Condition Not Met" language="text/javascript"/>
+                          <alternative condition="Condition Met" language="text/javascript">
+                            <escape a:alt_id="-1"/>
+                          </alternative>
+                        </choose>
+                      </alternative>
+                      <alternative condition="Condition Not Met" language="text/javascript"/>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Condition Not Met" language="text/javascript"/>
+                </choose>
+              </alternative>
+              <alternative condition="">
+                <escape a:alt_id="-1"/>
+              </alternative>
+            </choose>
+          </alternative>
+          <alternative condition="Condition False" language="text/javascript">
+            <escape a:alt_id="-1"/>
+          </alternative>
+        </choose>
+      </alternative>
+      <alternative condition="Condition Not Met" language="text/javascript">
+        <call id="a7" endpoint="" a:alt_id="3">
+          <parameters>
+            <label>Read Order from System</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="0">
+          <alternative condition="">
+            <choose mode="exclusive" a:alt_id="4">
+              <alternative condition="Condition Met" language="text/javascript">
+                <choose mode="exclusive" a:alt_id="5">
+                  <alternative condition="Condition Met" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="6">
+                      <alternative condition="Condition Not Met" language="text/javascript"/>
+                      <alternative condition="Condition Met" language="text/javascript">
+                        <parallel wait="-1" cancel="last" a:alt_id="10">
+                          <parallel_branch>
+                            <choose mode="exclusive" a:alt_id="11">
+                              <alternative condition="Condition Met" language="text/javascript">
+                                <call id="a29" endpoint="" a:alt_id="12">
+                                  <parameters>
+                                    <label>Apply Delivery Delay Penalty</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                              </alternative>
+                              <alternative condition="Condition Not Met" language="text/javascript">
+                                <call id="a31" endpoint="" a:alt_id="13">
+                                  <parameters>
+                                    <label>OK</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                              </alternative>
+                            </choose>
+                          </parallel_branch>
+                          <parallel_branch>
+                            <choose mode="exclusive" a:alt_id="14">
+                              <alternative condition="Condition Met" language="text/javascript">
+                                <call id="a37" endpoint="" a:alt_id="15">
+                                  <parameters>
+                                    <label>Apply Delivery Delay Penalty</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                              </alternative>
+                              <alternative condition="Condition Not Met" language="text/javascript">
+                                <call id="a39" endpoint="" a:alt_id="16">
+                                  <parameters>
+                                    <label>OK</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                              </alternative>
+                            </choose>
+                          </parallel_branch>
+                          <parallel_branch>
+                            <choose mode="exclusive" a:alt_id="17">
+                              <alternative condition="Condition Met" language="text/javascript">
+                                <call id="a45" endpoint="" a:alt_id="18">
+                                  <parameters>
+                                    <label>Apply Delivery Delay Penalty</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                              </alternative>
+                              <alternative condition="Condition Not Met" language="text/javascript">
+                                <call id="a47" endpoint="" a:alt_id="20">
+                                  <parameters>
+                                    <label>OK</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                              </alternative>
+                            </choose>
+                          </parallel_branch>
+                        </parallel>
+                        <call id="a53" endpoint="" a:alt_id="21">
+                          <parameters>
+                            <label>OK for Arrived Product</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a55" endpoint="" a:alt_id="22">
+                          <parameters>
+                            <label>Register Product in Management System</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <parallel wait="-1" cancel="last" a:alt_id="23">
+                          <parallel_branch>
+                            <call id="a59" endpoint="" a:alt_id="24">
+                              <parameters>
+                                <label>Pack Product</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </parallel_branch>
+                          <parallel_branch>
+                            <call id="a61" endpoint="" a:alt_id="25">
+                              <parameters>
+                                <label>Request Courier</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </parallel_branch>
+                        </parallel>
+                        <call id="a67" endpoint="" a:alt_id="27">
+                          <parameters>
+                            <label>Ship Delivery</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="28">
+                          <alternative condition="Condition False" language="text/javascript"/>
+                          <alternative condition="Condition True" language="text/javascript">
+                            <call id="a7" endpoint="" a:alt_id="3">
+                              <parameters>
+                                <label>Read Order from System</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </alternative>
+                        </choose>
+                        <escape a:alt_id="-1"/>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Condition Not Met" language="text/javascript"/>
+                </choose>
+              </alternative>
+              <alternative condition="Condition Not Met" language="text/javascript"/>
+            </choose>
+          </alternative>
+          <alternative condition="">
+            <escape a:alt_id="-1"/>
+          </alternative>
+        </choose>
+      </alternative>
+    </choose>
+  </loop>
+</description>

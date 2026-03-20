@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Initiate Procedure</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="Proceed" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Select Course</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="4">
+        <alternative condition="Proceed" language="text/javascript">
+          <call id="a11" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Show Available Dates</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a15" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Select Date</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="7">
+            <alternative condition="Proceed" language="text/javascript">
+              <call id="a19" endpoint="" a:alt_id="8">
+                <parameters>
+                  <label>Check Account Status</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="9">
+                <alternative condition="Log in required" language="text/javascript">
+                  <call id="a25" endpoint="" a:alt_id="10">
+                    <parameters>
+                      <label>Prompt User to Log In</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a29" endpoint="" a:alt_id="11">
+                    <parameters>
+                      <label>Provide Payment Information</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a31" endpoint="" a:alt_id="12">
+                    <parameters>
+                      <label>Complete Registration</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="13">
+                    <alternative condition="">
+                      <parallel wait="-1" cancel="last" a:alt_id="14">
+                        <parallel_branch>
+                          <call id="a39" endpoint="" a:alt_id="15">
+                            <parameters>
+                              <label>Send Message to Friends</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </parallel_branch>
+                        <parallel_branch>
+                          <call id="a41" endpoint="" a:alt_id="16">
+                            <parameters>
+                              <label>Receive Ticket</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </parallel_branch>
+                      </parallel>
+                    </alternative>
+                    <alternative condition="Stop" language="text/javascript"/>
+                  </choose>
+                </alternative>
+                <alternative condition="Check university eligibility" language="text/javascript">
+                  <call id="a27" endpoint="" a:alt_id="19">
+                    <parameters>
+                      <label>Check University Eligibility</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="20">
+                    <alternative condition="Eligible" language="text/javascript">
+                      <call id="a51" endpoint="" a:alt_id="21">
+                        <parameters>
+                          <label>Complete Registration for Course</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="22">
+                        <alternative condition="">
+                          <parallel wait="-1" cancel="last" a:alt_id="14">
+                            <parallel_branch>
+                              <call id="a39" endpoint="" a:alt_id="15">
+                                <parameters>
+                                  <label>Send Message to Friends</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </parallel_branch>
+                            <parallel_branch>
+                              <call id="a41" endpoint="" a:alt_id="16">
+                                <parameters>
+                                  <label>Receive Ticket</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </parallel_branch>
+                          </parallel>
+                        </alternative>
+                        <alternative condition="Stop" language="text/javascript"/>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Not eligible" language="text/javascript">
+                      <call id="a53" endpoint="" a:alt_id="23">
+                        <parameters>
+                          <label>Send Activation Request</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a63" endpoint="" a:alt_id="24">
+                        <parameters>
+                          <label>Wait for Activation Response</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="25">
+                        <alternative condition="Activation fails" language="text/javascript"/>
+                        <alternative condition="Activation successful" language="text/javascript">
+                          <call id="a69" endpoint="" a:alt_id="26">
+                            <parameters>
+                              <label>Complete Registration</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="27">
+                            <alternative condition="">
+                              <parallel wait="-1" cancel="last" a:alt_id="14">
+                                <parallel_branch>
+                                  <call id="a39" endpoint="" a:alt_id="15">
+                                    <parameters>
+                                      <label>Send Message to Friends</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                </parallel_branch>
+                                <parallel_branch>
+                                  <call id="a41" endpoint="" a:alt_id="16">
+                                    <parameters>
+                                      <label>Receive Ticket</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                </parallel_branch>
+                              </parallel>
+                            </alternative>
+                            <alternative condition="Stop" language="text/javascript"/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Registration fails" language="text/javascript"/>
+                  </choose>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="Stop" language="text/javascript"/>
+          </choose>
+        </alternative>
+        <alternative condition="Stop" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="Stop" language="text/javascript"/>
+  </choose>
+</description>

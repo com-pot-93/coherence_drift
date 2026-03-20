@@ -1,0 +1,23 @@
+The process begins with a starting point. Immediately after, several activities are initiated at the same time:
+
+1. Information is added about the logic involved in profiling, its significance, and the expected consequences of processing.
+2. It is checked whether it is possible to determine the period for which personal data will be stored. If it is possible, the period is retrieved. If not, the criteria used to determine the period are retrieved. In both cases, the process continues.
+3. Information is added about the existence of the right to rectify personal data.
+4. Information is added about the existence of the right to access personal data.
+5. Information is added about the existence of the right to erase personal data.
+6. Information is added about the existence of the right to data portability.
+7. Information is added about the existence of the right to withdraw consent.
+8. Information is added about the existence of the right to lodge a complaint with a supervisory authority.
+9. It is checked whether the data has been obtained from the data subject. If it has, the process continues. If not, the source from which the personal data originated is retrieved, and then the process continues.
+10. It is checked whether personal data can be transferred internationally. If not, the process continues. If it can, information is added that personal data will be transferred internationally, and then the process continues.
+11. It is checked whether there are any recipients. If not, the process continues. If there are, the recipients are retrieved, and then the process continues.
+12. It is checked whether legitimate interests are present. If not, the process continues. If they are, the legitimate interests are retrieved, and then the process continues.
+13. The legal basis for processing is retrieved.
+14. The purposes for processing are retrieved.
+15. At the same time, two further activities are started:
+    - The identity and contact details are retrieved.
+    - Details about the Data Protection Officer (DPO) are requested. Once the request is made, the details are received from the DPO.
+
+After all these activities are completed, the process continues by collecting information about consent. Consent is then requested. If consent is received, the process continues. If consent is not given (negation is received), the process also continues.
+
+Finally, the process ends.

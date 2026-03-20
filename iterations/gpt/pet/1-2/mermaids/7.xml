@@ -1,0 +1,47 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive defective computer)
+2:task:(Examine computer)
+3:task:(Calculate repair costs)
+4:task:(Consult customer about repair)
+5:exclusivegateway:{x}
+6:task:(Return computer to customer)
+7:endevent:(((endevent)))
+8:task:(Perform repair activities)
+9:parallelgateway:{AND}
+10:task:(Check and repair hardware)
+11:task:(Check and configure software)
+12:parallelgateway:{AND}
+13:exclusivegateway:{x}
+14:task:(Check if computer is ready)
+15:exclusivegateway:{x}
+16:task:(Wait until computer is ready)
+17:task:(Test system functionality)
+18:exclusivegateway:{x}
+19:task:(Escalate issue)
+20:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive defective computer)
+1:task:(Receive defective computer) --> 2:task:(Examine computer)
+2:task:(Examine computer) --> 3:task:(Calculate repair costs)
+3:task:(Calculate repair costs) --> 4:task:(Consult customer about repair)
+4:task:(Consult customer about repair) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Declined|6:task:(Return computer to customer)
+5:exclusivegateway:{x} --> |Approved|8:task:(Perform repair activities)
+6:task:(Return computer to customer) --> 7:endevent:(((endevent)))
+8:task:(Perform repair activities) --> 9:parallelgateway:{AND}
+9:parallelgateway:{AND} --> 10:task:(Check and repair hardware)
+9:parallelgateway:{AND} --> 11:task:(Check and configure software)
+10:task:(Check and repair hardware) --> 12:parallelgateway:{AND}
+11:task:(Check and configure software) --> 12:parallelgateway:{AND}
+12:parallelgateway:{AND} --> 14:task:(Check if computer is ready)
+14:task:(Check if computer is ready) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> |Not ready|16:task:(Wait until computer is ready)
+15:exclusivegateway:{x} --> |Ready|17:task:(Test system functionality)
+16:task:(Wait until computer is ready) --> 14:task:(Check if computer is ready)
+17:task:(Test system functionality) --> 18:exclusivegateway:{x}
+18:exclusivegateway:{x} --> |Test failed|19:task:(Escalate issue)
+18:exclusivegateway:{x} --> |Test successful|13:exclusivegateway:{x}
+19:task:(Escalate issue) --> 17:task:(Test system functionality)
+13:exclusivegateway:{x} --> |Not ready|16:task:(Wait until computer is ready)
+13:exclusivegateway:{x} --> |Ready|20:endevent:(((endevent)))

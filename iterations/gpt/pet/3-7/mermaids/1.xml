@@ -1,0 +1,17 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Search for Police Report)
+2:task:(Gather Claim Documentation)
+3:task:(Review Information and Calculate Estimate)
+4:task:(Develop Action Plan)
+5:task:(Negotiate Settlement)
+6:task:(Communicate Outcome to Claimant)
+7:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Search for Police Report)
+1:task:(Search for Police Report) --> 2:task:(Gather Claim Documentation)
+2:task:(Gather Claim Documentation) --> 3:task:(Review Information and Calculate Estimate)
+3:task:(Review Information and Calculate Estimate) --> 4:task:(Develop Action Plan)
+4:task:(Develop Action Plan) --> 5:task:(Negotiate Settlement)
+5:task:(Negotiate Settlement) --> 6:task:(Communicate Outcome to Claimant)
+6:task:(Communicate Outcome to Claimant) --> 7:endevent:(((endevent)))

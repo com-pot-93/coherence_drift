@@ -1,0 +1,24 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Order)
+2:task:(Evaluate Order)
+3:exclusivegateway:{x}
+4:task:(Handle Order Rejection)
+5:task:(Inform Storehouse)
+6:task:(Notify Engineering Department)
+7:task:(Assemble Bicycle)
+8:task:(Ship Bicycle)
+9:exclusivegateway:{x}
+10:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Order)
+1:task:(Receive Order) --> 2:task:(Evaluate Order)
+2:task:(Evaluate Order) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Order rejected|4:task:(Handle Order Rejection)
+3:exclusivegateway:{x} --> |Order accepted|5:task:(Inform Storehouse)
+4:task:(Handle Order Rejection) --> 9:exclusivegateway:{x}
+5:task:(Inform Storehouse) --> 6:task:(Notify Engineering Department)
+6:task:(Notify Engineering Department) --> 7:task:(Assemble Bicycle)
+7:task:(Assemble Bicycle) --> 8:task:(Ship Bicycle)
+8:task:(Ship Bicycle) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> 10:endevent:(((endevent)))

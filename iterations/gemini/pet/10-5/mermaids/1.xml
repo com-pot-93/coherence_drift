@@ -1,0 +1,8 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Request Device Takeover Bid)
+1:task:(Request Device Takeover Bid) --> 2:task:(Send Tender for Equipment Takeover)
+2:task:(Send Tender for Equipment Takeover) --> 3:task:(Place Order)
+3:task:(Place Order) --> 4:task:(Confirm Order and Send Master Data)
+4:task:(Confirm Order and Send Master Data) --> 5:endevent:(((endevent)))
+```

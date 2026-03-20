@@ -1,0 +1,7 @@
+The process starts and immediately encounters a decision point.
+
+If the condition is true, the process proceeds to another decision point. If this second condition is true, a status is sent, and the process moves to a third decision point. If this third condition is true, an object is printed before the process merges back. If the third condition is false, the process merges back directly.
+
+If the second condition is false, the process merges back directly.
+
+If the initial condition is false, the process ends.

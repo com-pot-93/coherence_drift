@@ -1,0 +1,57 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model, using clear and plain language:
+
+---
+
+1. **The process begins** when a file is received.
+
+2. **The outcome of receiving the file is evaluated.**  
+   - If the outcome is negative, the process ends immediately.
+   - If the outcome is positive, the process continues.
+
+3. **A further check is performed.**  
+   - If the check is not successful, the process ends.
+   - If the check is successful, the process moves forward.
+
+4. **The bed and extruder are heated.**
+
+5. **A series of checks and actions follow, involving several possible paths:**
+   - After heating, the process checks if it should continue.
+   - If the process is ready to proceed, a status update is sent.
+   - After sending the status update, another check is performed.
+
+6. **Depending on the results of these checks, several actions can occur:**
+   - If the process needs to heat again, it returns to the step where the bed and extruder are heated.
+   - If the process is ready to proceed, the object is printed.
+   - If the process should not continue, an issue is escalated.
+
+7. **After printing the object, further checks are performed:**
+   - If the process needs to heat again, it returns to the heating step.
+   - If the process is ready to proceed, it continues with the next steps.
+   - If the process should not continue, an issue is escalated.
+
+8. **At various points, status updates are sent to inform about the current state.**
+
+9. **If an issue is escalated, the process may attempt to resolve it by:**
+   - Sending a status update.
+   - Attempting to heat the bed and extruder again.
+   - Printing the object if ready.
+   - If the process cannot continue after escalation, it ends.
+
+10. **Throughout the process, there are multiple opportunities to:**
+    - Repeat the heating step if necessary.
+    - Print the object if the process is ready.
+    - Send status updates after key actions.
+    - Escalate issues if the process cannot proceed.
+
+11. **The process continues through these cycles of checking, heating, printing, updating, and escalating until it reaches a point where:**
+    - The process is complete and ends, or
+    - An issue cannot be resolved and the process ends.
+
+---
+
+**Summary:**  
+The process starts with receiving a file and evaluating its outcome. If successful, it involves repeated cycles of heating the bed and extruder, checking readiness, printing the object, and sending status updates. At any point, if the process cannot proceed, an issue is escalated, and further attempts may be made to resolve it. The process ends either when all steps are completed successfully or when it is determined that the process cannot continue.
+
+---
+
+This description follows the exact sequence and logic of the process model you provided, ensuring that every step and decision point is included and described in the order they occur.

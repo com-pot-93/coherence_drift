@@ -1,0 +1,90 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:parallelgateway:{AND}
+  1:parallelgateway:{AND} --> 2:task:(Add "profiling about logic involved, significance and envisaged consequences of processing")
+  1:parallelgateway:{AND} --> 3:task:(Check if it is possible to determine the period for which personal data will be stored)
+  3:task:(Check if it is possible to determine the period for which personal data will be stored) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |condition1| 5:task:(Retrieve the period)
+  5:task:(Retrieve the period) --> 6:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |condition2| 7:task:(Retrieve the criteria used to determine the period)
+  7:task:(Retrieve the criteria used to determine the period) --> 6:exclusivegateway:{x}
+  1:parallelgateway:{AND} --> 8:task:(Add "existence of the right to rectify of personal data")
+  1:parallelgateway:{AND} --> 9:task:(Add "existence of the right to access personal data")
+  1:parallelgateway:{AND} --> 10:task:(Add "existence of the right to erase personal data")
+  1:parallelgateway:{AND} --> 11:task:(Add "existence of the right to data portability")
+  1:parallelgateway:{AND} --> 12:task:(Add "existence of the right to withdraw")
+  1:parallelgateway:{AND} --> 13:task:(Add "existence of the right to lodge a complaint to a supervisory authority")
+  1:parallelgateway:{AND} --> 14:task:(Check if data has been obtained from Data Subject)
+  14:task:(Check if data has been obtained from Data Subject) --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |condition1| 16:task:(Retrieve the source from which personal data are originated)
+  16:task:(Retrieve the source from which personal data are originated) --> 17:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |condition2| 17:exclusivegateway:{x}
+  1:parallelgateway:{AND} --> 18:task:(Check if personal data can be transferred internationally)
+  18:task:(Check if personal data can be transferred internationally) --> 19:exclusivegateway:{x}
+  19:exclusivegateway:{x} --> |condition1| 20:task:(Add "personal data will be transferred internationally")
+  20:task:(Add "personal data will be transferred internationally") --> 21:exclusivegateway:{x}
+  19:exclusivegateway:{x} --> |condition2| 21:exclusivegateway:{x}
+  1:parallelgateway:{AND} --> 22:task:(Check if recipients are present)
+  22:task:(Check if recipients are present) --> 23:exclusivegateway:{x}
+  23:exclusivegateway:{x} --> |condition1| 24:task:(Retrieve recipients)
+  24:task:(Retrieve recipients) --> 25:exclusivegateway:{x}
+  23:exclusivegateway:{x} --> |condition2| 25:exclusivegateway:{x}
+  1:parallelgateway:{AND} --> 26:task:(Check if legitimate interests are presents)
+  26:task:(Check if legitimate interests are presents) --> 27:exclusivegateway:{x}
+  27:exclusivegateway:{x} --> |condition1| 28:task:(Retrieve legitimate interests)
+  28:task:(Retrieve legitimate interests) --> 29:exclusivegateway:{x}
+  27:exclusivegateway:{x} --> |condition2| 29:exclusivegateway:{x}
+  1:parallelgateway:{AND} --> 30:task:(Retrieve processing legal basis)
+  1:parallelgateway:{AND} --> 31:task:(Retrieve processing purposses)
+  1:parallelgateway:{AND} --> 32:parallelgateway:{AND}
+  32:parallelgateway:{AND} --> 33:task:(Retrieve identity and contact details)
+  32:parallelgateway:{AND} --> 34:task:(Ask DPO details)
+  34:task:(Ask DPO details) --> 35:task:(Receive details From DPO)
+  35:task:(Receive details From DPO) --> 36:parallelgateway:{AND}
+  33:task:(Retrieve identity and contact details) --> 36:parallelgateway:{AND}
+  36:parallelgateway:{AND} --> 37:parallelgateway:{AND}
+  2:task:(Add "profiling about logic involved, significance and envisaged consequences of processing") --> 37:parallelgateway:{AND}
+  6:exclusivegateway:{x} --> 37:parallelgateway:{AND}
+  8:task:(Add "existence of the right to rectify of personal data") --> 37:parallelgateway:{AND}
+  9:task:(Add "existence of the right to access personal data") --> 37:parallelgateway:{AND}
+  10:task:(Add "existence of the right to erase personal data") --> 37:parallelgateway:{AND}
+  11:task:(Add "existence of the right to data portability") --> 37:parallelgateway:{AND}
+  12:task:(Add "existence of the right to withdraw") --> 37:parallelgateway:{AND}
+  13:task:(Add "existence of the right to lodge a complaint to a supervisory authority") --> 37:parallelgateway:{AND}
+  17:exclusivegateway:{x} --> 37:parallelgateway:{AND}
+  21:exclusivegateway:{x} --> 37:parallelgateway:{AND}
+  25:exclusivegateway:{x} --> 37:parallelgateway:{AND}
+  29:exclusivegateway:{x} --> 37:parallelgateway:{AND}
+  30:task:(Retrieve processing legal basis) --> 37:parallelgateway:{AND}
+  31:task:(Retrieve processing purposses) --> 37:parallelgateway:{AND}
+  37:parallelgateway:{AND} --> 38:task:(Collect consent information)
+  38:task:(Collect consent information) --> 39:task:(Ask consent)
+  39:task:(Ask consent) --> 40:exclusivegateway:{x}
+  40:exclusivegateway:{x} --> |condition1| 41:exclusivegateway:{x}
+  41:exclusivegateway:{x} --> |condition1| 42:task:(Receive consent)
+  42:task:(Receive consent) --> 47:exclusivegateway:{x}
+  41:exclusivegateway:{x} --> |condition2| 43:task:(Receive negation)
+  43:task:(Receive negation) --> 47:exclusivegateway:{x}
+  40:exclusivegateway:{x} --> |condition2| 44:exclusivegateway:{x}
+  44:exclusivegateway:{x} --> |condition1| 45:task:(Receive consent)
+  45:task:(Receive consent) --> 47:exclusivegateway:{x}
+  44:exclusivegateway:{x} --> |condition2| 46:task:(Receive negation)
+  46:task:(Receive negation) --> 47:exclusivegateway:{x}
+  40:exclusivegateway:{x} --> |condition3| 48:exclusivegateway:{x}
+  48:exclusivegateway:{x} --> |condition1| 49:task:(Receive consent)
+  49:task:(Receive consent) --> 53:exclusivegateway:{x}
+  48:exclusivegateway:{x} --> |condition2| 50:task:(Receive negation)
+  50:task:(Receive negation) --> 53:exclusivegateway:{x}
+  40:exclusivegateway:{x} --> |condition4| 51:exclusivegateway:{x}
+  51:exclusivegateway:{x} --> |condition1| 52:task:(Receive consent)
+  52:task:(Receive consent) --> 53:exclusivegateway:{x}
+  51:exclusivegateway:{x} --> |condition2| 54:task:(Receive negation)
+  54:task:(Receive negation) --> 53:exclusivegateway:{x}
+  40:exclusivegateway:{x} --> |condition5| 55:exclusivegateway:{x}
+  55:exclusivegateway:{x} --> |condition1| 56:task:(Receive consent)
+  56:task:(Receive consent) --> 53:exclusivegateway:{x}
+  55:exclusivegateway:{x} --> |condition2| 57:task:(Receive negation)
+  57:task:(Receive negation) --> 53:exclusivegateway:{x}
+  53:exclusivegateway:{x} --> 58:endevent:(((endevent)))
+  47:exclusivegateway:{x} --> 53:exclusivegateway:{x}
+```

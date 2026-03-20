@@ -1,0 +1,17 @@
+The process begins when a travel request is received. After receiving the request, a tour plan is prepared. Once the tour plan is ready, it is sent out.
+
+At this point, a decision is made about whether to continue with the process. If the decision is not to continue, the process ends immediately. If the process continues, another decision is made based on the outcome. If the outcome is negative, the process ends. If not, the process waits for a response.
+
+After waiting for a response, another decision is made about whether to continue. If the decision is not to continue, the process ends. If the process continues, yet another decision is made. If the decision is not to continue, the process ends. If the process continues, the tour is booked.
+
+Once the tour is booked, a further decision is made about whether to continue. If the decision is not to continue, the process ends. If the process continues, the customer is charged.
+
+After charging the customer, another decision is made about whether to continue. If the decision is not to continue, the process ends. If the process continues, a decision is made about whether the customer needs to be contacted. If contact is needed, the customer is contacted; if not, the process moves forward.
+
+Next, two actions happen at the same time: a bill is sent, and a booking confirmation is sent. After both actions are completed, another decision is made about whether the customer needs to be contacted. If contact is needed, the customer is contacted; if not, the process moves forward.
+
+Again, two actions happen at the same time: a bill is sent, and a booking confirmation is sent. After both actions are completed, another decision is made about whether the customer needs to be contacted. If contact is needed, the customer is contacted; if not, the process moves forward.
+
+This pattern repeats: after each set of sending a bill and booking confirmation together, a decision is made about contacting the customer. If contact is needed, the customer is contacted; if not, the process continues.
+
+This cycle of sending a bill and booking confirmation together, followed by a decision about contacting the customer, happens a total of four times. After the fourth time, the process ends.

@@ -1,0 +1,37 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Receive Customer Data)
+    1:task:(Receive Customer Data) --> 2:task:(Enter Data into CRM)
+    2:task:(Enter Data into CRM) --> 3:task:(Compare and Check Data)
+    3:task:(Compare and Check Data) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |Data Not Correct| 5:task:(Correct Data)
+    4:exclusivegateway:{x} --> |Data Correct| 6:exclusivegateway:{x}
+    5:task:(Correct Data) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |Yes| 7:task:(Create New Customer Object)
+    6:exclusivegateway:{x} --> |No| 8:task:(Prepare Contract Documents)
+    7:task:(Create New Customer Object) --> 8:task:(Prepare Contract Documents)
+    8:task:(Prepare Contract Documents) --> 9:task:(Check Contract Documents)
+    9:task:(Check Contract Documents) --> 10:exclusivegateway:{x}
+    10:exclusivegateway:{x} --> |Issues| 11:task:(Analyze and Resolve Issues)
+    10:exclusivegateway:{x} --> |No Issues| 12:task:(Send Confirmation & Request)
+    11:task:(Analyze and Resolve Issues) --> 12:task:(Send Confirmation & Request)
+    12:task:(Send Confirmation & Request) --> 13:task:(Check Request)
+    13:task:(Check Request) --> 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> |Conflict| 15:task:(Inform Suppliers & Demand Resolution)
+    14:exclusivegateway:{x} --> |No Conflict| 16:task:(Communicate & Terminate Agreement)
+    15:task:(Inform Suppliers & Demand Resolution) --> 16:task:(Communicate & Terminate Agreement)
+    16:task:(Communicate & Terminate Agreement) --> 17:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> |Yes| 18:task:(Create CIS Contract)
+    17:exclusivegateway:{x} --> |No| 19:task:(Check Contract Details)
+    18:task:(Create CIS Contract) --> 19:task:(Check Contract Details)
+    19:task:(Check Contract Details) --> 20:exclusivegateway:{x}
+    20:exclusivegateway:{x} --> |Confirm| 22:parallelgateway:{AND}
+    20:exclusivegateway:{x} --> |Withdraw| 22:parallelgateway:{AND}
+    21:task:(Transmit Power Meter Data) --> 22:parallelgateway:{AND}
+    23:task:(Create Final Billing) --> 22:parallelgateway:{AND}
+    22:parallelgateway:{AND} --> 24:task:(Receive Meter Data)
+    24:task:(Receive Meter Data) --> 25:endevent:(((endevent)))
+    19:task:(Check Contract Details)
+    21:task:(Transmit Power Meter Data)
+    23:task:(Create Final Billing)
+```

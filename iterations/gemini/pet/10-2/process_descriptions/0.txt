@@ -1,0 +1,11 @@
+The process starts when the Meter Point Operator Notified (MPON) reports a meter operation to the Grid Operator (GO). The GO then examines the application. Based on the examination, the process diverges.
+
+In one path, the GO rejects the application. Alternatively, the GO confirms the application. Regardless of whether the application is rejected or confirmed, the process merges, and the GO informs both the Meter Point Operator Owner (MPOO) and the Metered System Provider Operator (MSPO) about the registration confirmation. Following this, the MPON and the MPOO perform equipment acquisition and/or changes.
+
+After the equipment changes, the process branches again. The MPON either informs the GO about a failure or about a successful completion.
+
+If there is a failure, the GO is informed, and the process branches again. The GO either informs the MPON about the failure or confirms the failure of the assignment. Regardless of the path taken, the process merges.
+
+If the MPON reports a successful completion, the GO assigns the MPON and then confirms the assignment.
+
+Whether the equipment acquisition was successful or not, the process merges, and the GO informs the MPOO, the MSPO, and the Supplier (SP) about the assignment status of the MPON. The process then ends.

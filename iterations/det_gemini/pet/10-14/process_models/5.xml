@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <choose mode="exclusive" a:alt_id="1">
+    <alternative condition="">
+      <choose mode="exclusive" a:alt_id="2">
+        <alternative condition="Branch 1" language="text/javascript">
+          <call id="a7" endpoint="" a:alt_id="3">
+            <parameters>
+              <label>MPOO sends the metering point operations bill to the GO</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Branch 2" language="text/javascript">
+          <call id="a9" endpoint="" a:alt_id="4">
+            <parameters>
+              <label>MSPO sends the measurement bill to the GO</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Branch 3" language="text/javascript">
+          <call id="a11" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>MSPO sends the bill for additional readings to the GO</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Branch 4" language="text/javascript">
+          <call id="a13" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>the MPOO sends the bill for the equipment acquisition to the GO</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a23" endpoint="" a:alt_id="8">
+        <parameters>
+          <label>the GO examines the bill</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="9">
+        <alternative condition="Branch 1" language="text/javascript">
+          <call id="a27" endpoint="" a:alt_id="10">
+            <parameters>
+              <label>the GO rejects the invoice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Branch 2" language="text/javascript">
+          <call id="a29" endpoint="" a:alt_id="11">
+            <parameters>
+              <label>the GO confirms the invoice with payment advice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="Branch 2" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="20">
+        <parameters>
+          <label>MPOO sends the bill for the equipment acquisition to the MPON</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a37" endpoint="" a:alt_id="21">
+        <parameters>
+          <label>the MPON examines the bill</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="22">
+        <alternative condition="Branch 1" language="text/javascript">
+          <call id="a41" endpoint="" a:alt_id="23">
+            <parameters>
+              <label>the MPON confirms the invoice with payment advice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Branch 2" language="text/javascript"/>
+      </choose>
+    </alternative>
+  </choose>
+</description>

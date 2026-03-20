@@ -1,0 +1,22 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Send Invitations)
+  1:task:(Send Invitations) --> 2:task:(Request Game Preferences)
+  2:task:(Request Game Preferences) --> 3:task:(Choose Games)
+  3:task:(Choose Games) --> 4:parallelgateway:{AND}
+  4:parallelgateway:{AND} --> 5:task:(Propose LAN Party Date)
+  5:task:(Propose LAN Party Date) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} -->|No Issues| 10:parallelgateway:{AND}
+  6:exclusivegateway:{x} -->|Date Change Needed| 5:task:(Propose LAN Party Date)
+  4:parallelgateway:{AND} --> 7:task:(Ask Guests About Games)
+  7:task:(Ask Guests About Games) --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} -->|No Issues| 10:parallelgateway:{AND}
+  8:exclusivegateway:{x} -->|Games Change Needed| 7:task:(Ask Guests About Games)
+  10:parallelgateway:{AND} --> 11:task:(Download Games)
+  11:task:(Download Games) --> 12:task:(Request Beer Preferences)
+  12:task:(Request Beer Preferences) --> 13:exclusivegateway:{x}
+  13:exclusivegateway:{x} -->|Beer Missing| 14:task:(Buy Beer)
+  13:exclusivegateway:{x} -->|Beer OK| 15:task:(Prepare LAN Party)
+  14:task:(Buy Beer) --> 15:task:(Prepare LAN Party)
+  15:task:(Prepare LAN Party) --> 16:endevent:(((endevent)))
+```

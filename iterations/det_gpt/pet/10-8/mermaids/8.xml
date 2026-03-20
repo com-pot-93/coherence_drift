@@ -1,0 +1,26 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(MSPO deregisters at the GO)
+2:task:(GO verifies the deregistration)
+3:exclusivegateway:{x}
+4:task:(GO rejects the deregistration)
+5:task:(GO preliminarily confirms the deregistration)
+6:exclusivegateway:{x}
+7:task:(GO assigns himself as MSP)
+8:task:(GO informs the MSPO about the state of the assignment of the GO)
+9:task:(GO informs the MPO about the assignment of the GO)
+10:task:(GO informs the SP about the assignment of the GO)
+11:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(MSPO deregisters at the GO)
+1:task:(MSPO deregisters at the GO) --> 2:task:(GO verifies the deregistration)
+2:task:(GO verifies the deregistration) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Rejected|4:task:(GO rejects the deregistration)
+3:exclusivegateway:{x} --> |Preliminarily confirmed|5:task:(GO preliminarily confirms the deregistration)
+4:task:(GO rejects the deregistration) --> 6:exclusivegateway:{x}
+5:task:(GO preliminarily confirms the deregistration) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> 7:task:(GO assigns himself as MSP)
+7:task:(GO assigns himself as MSP) --> 8:task:(GO informs the MSPO about the state of the assignment of the GO)
+8:task:(GO informs the MSPO about the state of the assignment of the GO) --> 9:task:(GO informs the MPO about the assignment of the GO)
+9:task:(GO informs the MPO about the assignment of the GO) --> 10:task:(GO informs the SP about the assignment of the GO)
+10:task:(GO informs the SP about the assignment of the GO) --> 11:endevent:(((endevent))

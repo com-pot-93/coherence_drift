@@ -1,0 +1,26 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Receive Customer Request)
+  1:task:(Receive Customer Request) --> 2:task:(Check Request)
+  2:task:(Check Request) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Proceed| 16:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Registration Required| 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |Manual| 5:task:(Perform Manual Registration)
+  4:exclusivegateway:{x} --> |Automatic| 6:task:(Perform Automatic Registration)
+  5:task:(Perform Manual Registration) --> 7:inclusivegateway:{O}
+  6:task:(Perform Automatic Registration) --> 7:inclusivegateway:{O}
+  7:inclusivegateway:{O} --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |Search| 9:task:(Search for Attraction Provider)
+  8:exclusivegateway:{x} --> |Skip Search| 15:inclusivegateway:{O}
+  9:task:(Search for Attraction Provider) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |Condition Met| 15:inclusivegateway:{O}
+  10:exclusivegateway:{x} --> |Condition Not Met| 11:task:(Book Attraction)
+  11:task:(Book Attraction) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> |Rejected| 15:inclusivegateway:{O}
+  12:exclusivegateway:{x} --> |Confirmed| 13:task:(Send Confirmation to Customer)
+  13:task:(Send Confirmation to Customer) --> 15:inclusivegateway:{O}
+  16:exclusivegateway:{x} --> 17:inclusivegateway:{O}
+  15:inclusivegateway:{O} --> 17:inclusivegateway:{O}
+  17:inclusivegateway:{O} --> 18:task:(Send Notification to Customer)
+  18:task:(Send Notification to Customer) --> 19:endevent:(((endevent)))
+```

@@ -1,0 +1,15 @@
+The process starts and immediately encounters a decision point.
+
+If Condition A is met, the process receives an expense report and then encounters another decision point. If Condition E is met, a new employee account is created, followed by a parallel execution that merges back together, and then proceeds to another merge point. If Condition E is not met, the process skips the account creation and goes directly to the merge point.
+
+If Condition A is not met, the process skips the expense report reception and directly creates a new employee account, followed by a parallel execution that merges back together, and then proceeds to a merge point.
+
+From the merge point, the process encounters a decision point. If Condition G is met, the process encounters another decision point. If Condition G is met again, the report is automatically approved, and the process continues to a merge point. If Condition G is not met, the supervisor approves the report, and the process continues to the merge point.
+
+From the merge point, the process encounters another merge point. If Condition I is met, reimbursement is sent to the bank account, and the process continues to a merge point. If Condition I is not met, the process skips the reimbursement and goes directly to the merge point.
+
+From the merge point, the process encounters a decision point. If Condition K is met, the process skips to a merge point. Otherwise, the process encounters another decision point. If Condition L is met, an approval in progress email is sent, and the process continues to a merge point. Otherwise, the process encounters another decision point. If Condition M is not met, a rejection notice is sent, and the process continues to a merge point. If Condition M is met, the process skips the rejection notice and goes directly to the merge point.
+
+From the merge point, the process continues to another merge point, and then to the merge point.
+
+Finally, the process ends.

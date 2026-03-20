@@ -1,0 +1,3 @@
+The process begins when a request for a warrant of possession is received. After receiving this request, the next step is to retrieve the relevant SCT file. Once the file has been retrieved, the SCT warrant is forwarded to the Queensland Police.
+
+Following this, the physical SCT file is stored. The process then waits for a report from the police. When the police report is received, the SCT file is retrieved again. A new SCT document is then attached to the file. After attaching the new document, the updated SCT file is stored. This marks the end of the process.

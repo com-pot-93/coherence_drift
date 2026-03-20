@@ -1,0 +1,319 @@
+The process starts with developing a basic design. Then, a decision is made.
+
+If the first condition is true, the process continues by ordering Lego brick sets. Another decision is made, followed by sorting Lego bricks. Two more decisions are made concurrently, after which the process merges back together. Another decision is made, followed by sorting Lego bricks again. Two more decisions are made concurrently, after which the process merges back together. The process merges again.
+
+If the first condition is false, a different path is taken. Depending on whether "Condition M" is true or "Condition N" is true, either "Outcome M" or "Outcome N" is performed. After "Outcome M", two decisions are made concurrently, and the process merges. After "Outcome N", two decisions are made concurrently, and the process merges. Then, the process escalates and returns to the previous decision. Two more decisions are made concurrently, and the process merges.
+
+The process merges again. If a second condition is true, three tasks are performed in parallel: putting big, medium, and small bricks in separate containers. After putting big bricks in a container, either "Outcome A" or "Outcome B" is performed based on a condition. After putting medium bricks in a container, either "Outcome C" or "Outcome D" is performed based on a condition. After putting small bricks in a container, either "Outcome E" or "Outcome F" is performed based on a condition. The parallel tasks then synchronize.
+
+Three more tasks are performed in parallel: putting big, medium, and small bricks in separate containers again. After putting big bricks in a container, either "Outcome G" or "Outcome H" is performed based on a condition. After putting medium bricks in a container, either "Outcome I" or "Outcome J" is performed based on a condition. After putting small bricks in a container, either "Outcome K" or "Outcome L" is performed based on a condition. The parallel tasks then synchronize.
+
+If a third condition is true, subcomponents are built. Then, the subcomponents are tested. If a redesign is needed, the subcomponent is redesigned; otherwise, the subcomponents are assembled into a machine. Two decisions are made concurrently, and the process may escalate. The process merges. If more subcomponents need to be built, they are built. Two decisions are made concurrently, and the process may escalate. The process merges. Alternatively, Lego brick sets can be ordered, followed by sorting Lego bricks. Two decisions are made concurrently, and the process may escalate. The process merges. Alternatively, Lego brick sets can be ordered, followed by sorting Lego bricks. Two decisions are made concurrently, and the process may escalate. The process merges. The process merges again.
+
+If the third condition is false, a decision is made. Depending on whether "Condition M" is true or "Condition N" is true, either "Outcome M" or "Outcome N" is performed. After "Outcome M", the process escalates and returns to the previous decision. After "Outcome N", the process escalates and returns to the previous decision. The process merges.
+
+Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate. The process merges.
+
+The process merges again. Two decisions are made concurrently, and the process may escalate.

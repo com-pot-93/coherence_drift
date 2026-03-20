@@ -1,0 +1,89 @@
+flowchart LR
+0:startevent:((startevent))
+1:exclusivegateway:{x}
+2:task:(Secondary Checks)
+3:exclusivegateway:{x}
+4:task:(Main Activity)
+5:exclusivegateway:{x}
+6:task:(Initial Decision)
+7:exclusivegateway:{x}
+8:task:(Second Decision)
+9:exclusivegateway:{x}
+10:task:(Third Decision)
+11:exclusivegateway:{x}
+12:task:(Check Specific Condition)
+13:exclusivegateway:{x}
+14:task:(Handle Escalation)
+15:task:(Load Front Page)
+16:exclusivegateway:{x}
+17:task:(Front Page Decision)
+18:parallelgateway:{AND}
+19:task:(Topic Activity)
+20:task:(Payment Activity)
+21:task:(Experience Activity)
+22:task:(Hobbies Activity)
+23:parallelgateway:{AND}
+24:task:(Send Request)
+25:task:(Wait for Offer)
+26:exclusivegateway:{x}
+27:task:(Invalidate Other Offers)
+28:task:(Send Weekly Status Update)
+29:task:(Wait for Company Status)
+30:exclusivegateway:{x}
+31:task:(Finish Internship)
+32:exclusivegateway:{x}
+33:task:(Post Tweet)
+34:task:(Handle Post-Internship Escalation)
+35:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |Proceed|2:task:(Secondary Checks)
+1:exclusivegateway:{x} --> |Do not proceed|35:endevent:(((endevent)))
+2:task:(Secondary Checks) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Checks passed|4:task:(Main Activity)
+3:exclusivegateway:{x} --> |Checks failed|2:task:(Secondary Checks)
+4:task:(Main Activity) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Repeat main activity|4:task:(Main Activity)
+5:exclusivegateway:{x} --> |Continue|6:task:(Initial Decision)
+6:task:(Initial Decision) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Loop back|6:task:(Initial Decision)
+7:exclusivegateway:{x} --> |Continue|8:task:(Second Decision)
+8:task:(Second Decision) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Loop back|8:task:(Second Decision)
+9:exclusivegateway:{x} --> |Continue|10:task:(Third Decision)
+10:task:(Third Decision) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Loop back|10:task:(Third Decision)
+11:exclusivegateway:{x} --> |Continue|12:task:(Check Specific Condition)
+12:task:(Check Specific Condition) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Condition met|15:task:(Load Front Page)
+13:exclusivegateway:{x} --> |Condition not met|14:task:(Handle Escalation)
+14:task:(Handle Escalation) --> 15:task:(Load Front Page)
+15:task:(Load Front Page) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |Reload|15:task:(Load Front Page)
+16:exclusivegateway:{x} --> |Proceed|17:task:(Front Page Decision)
+17:task:(Front Page Decision) --> 18:parallelgateway:{AND}
+18:parallelgateway:{AND} --> 19:task:(Topic Activity)
+18:parallelgateway:{AND} --> 20:task:(Payment Activity)
+18:parallelgateway:{AND} --> 21:task:(Experience Activity)
+18:parallelgateway:{AND} --> 22:task:(Hobbies Activity)
+19:task:(Topic Activity) --> 23:parallelgateway:{AND}
+20:task:(Payment Activity) --> 23:parallelgateway:{AND}
+21:task:(Experience Activity) --> 23:parallelgateway:{AND}
+22:task:(Hobbies Activity) --> 23:parallelgateway:{AND}
+23:parallelgateway:{AND} --> 24:task:(Send Request)
+24:task:(Send Request) --> 25:task:(Wait for Offer)
+25:task:(Wait for Offer) --> 26:exclusivegateway:{x}
+26:exclusivegateway:{x} --> |Proceed|27:task:(Invalidate Other Offers)
+26:exclusivegateway:{x} --> |Loop back|25:task:(Wait for Offer)
+27:task:(Invalidate Other Offers) --> 28:task:(Send Weekly Status Update)
+28:task:(Send Weekly Status Update) --> 29:task:(Wait for Company Status)
+29:task:(Wait for Company Status) --> 30:exclusivegateway:{x}
+30:exclusivegateway:{x} --> |End|35:endevent:(((endevent)))
+30:exclusivegateway:{x} --> |Continue|31:task:(Finish Internship)
+31:task:(Finish Internship) --> 32:exclusivegateway:{x}
+32:exclusivegateway:{x} --> |Proceed|33:task:(Post Tweet)
+32:exclusivegateway:{x} --> |Escalation|34:task:(Handle Post-Internship Escalation)
+32:exclusivegateway:{x} --> |End|35:endevent:(((endevent)))
+32:exclusivegateway:{x} --> |Reload front page|15:task:(Load Front Page)
+33:task:(Post Tweet) --> 35:endevent:(((endevent)))
+34:task:(Handle Post-Internship Escalation) --> 35:endevent:(((endevent)))

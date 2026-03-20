@@ -1,0 +1,9 @@
+The process begins when a mortgage offer is sent. After sending the offer, the process waits for a reply from the customer.
+
+Once the customer’s reply is received, a decision is made. If the process follows the first path, the case details are updated. After updating the case details, the work is archived, and then a cancellation is performed. The process then moves to a point where it waits for the next step.
+
+Alternatively, the process may move the case to administration. At this stage, another decision is made. If a request for outstanding documents is needed, a request is generated for these documents. After generating the request, the case details are updated, the work is archived, and a cancellation is performed. The process then moves to the next step.
+
+If no request for outstanding documents is needed, the process skips directly to the next step.
+
+Finally, after either path is completed, the process ends.

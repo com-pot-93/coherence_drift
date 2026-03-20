@@ -1,0 +1,158 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Run Machine)
+2:task:(Check Connection)
+3:exclusivegateway:{x}
+4:task:(Check Connection Again)
+5:exclusivegateway:{x}
+6:task:(Check Connection Again 2)
+7:exclusivegateway:{x}
+8:task:(Collect Measurements)
+9:exclusivegateway:{x}
+10:task:(Escalate Issue)
+11:exclusivegateway:{x}
+12:task:(Calculate OEE)
+13:parallelgateway:{AND}
+14:task:(Stop Machine)
+15:task:(Send Email to Engineer)
+16:parallelgateway:{AND}
+17:task:(Check After Stop)
+18:task:(Check After Email)
+19:parallelgateway:{AND}
+20:exclusivegateway:{x}
+21:exclusivegateway:{x}
+22:task:(Collect Measurements Again)
+23:exclusivegateway:{x}
+24:task:(Collect Measurements Loop)
+25:exclusivegateway:{x}
+26:parallelgateway:{AND}
+27:task:(Stop Machine Again)
+28:task:(Send Another Email)
+29:parallelgateway:{AND}
+30:task:(Check After Stop Again)
+31:task:(Check After Email Again)
+32:parallelgateway:{AND}
+33:exclusivegateway:{x}
+34:exclusivegateway:{x}
+35:task:(Collect Measurements Third Time)
+36:exclusivegateway:{x}
+37:task:(Collect Measurements Loop 2)
+38:exclusivegateway:{x}
+39:parallelgateway:{AND}
+40:task:(Stop Machine Third Time)
+41:task:(Send Third Email)
+42:parallelgateway:{AND}
+43:task:(Check After Stop Third Time)
+44:task:(Check After Email Third Time)
+45:parallelgateway:{AND}
+46:exclusivegateway:{x}
+47:exclusivegateway:{x}
+48:exclusivegateway:{x}
+49:task:(Collect Measurements Fourth Time)
+50:exclusivegateway:{x}
+51:task:(Collect Measurements Loop 3)
+52:exclusivegateway:{x}
+53:task:(Final Activity)
+54:exclusivegateway:{x}
+55:exclusivegateway:{x}
+56:task:(Final Activity 2)
+57:exclusivegateway:{x}
+58:task:(Collect Measurements Fourth Time 2)
+59:exclusivegateway:{x}
+60:task:(Collect Measurements Loop 4)
+61:exclusivegateway:{x}
+62:task:(Final Activity 3)
+63:exclusivegateway:{x}
+64:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Run Machine)
+1:task:(Run Machine) --> 2:task:(Check Connection)
+2:task:(Check Connection) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Negative|4:task:(Check Connection Again)
+3:exclusivegateway:{x} --> |Positive|5:exclusivegateway:{x}
+4:task:(Check Connection Again) --> 3:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Negative|6:task:(Check Connection Again 2)
+5:exclusivegateway:{x} --> |Positive|7:exclusivegateway:{x}
+6:task:(Check Connection Again 2) --> 5:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Positive|8:task:(Collect Measurements)
+7:exclusivegateway:{x} --> |Negative|6:task:(Check Connection Again 2)
+8:task:(Collect Measurements) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Escalation required|10:task:(Escalate Issue)
+9:exclusivegateway:{x} --> |No escalation|11:exclusivegateway:{x}
+10:task:(Escalate Issue) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> 12:task:(Calculate OEE)
+12:task:(Calculate OEE) --> 13:parallelgateway:{AND}
+13:parallelgateway:{AND} --> 14:task:(Stop Machine)
+13:parallelgateway:{AND} --> 15:task:(Send Email to Engineer)
+14:task:(Stop Machine) --> 16:parallelgateway:{AND}
+15:task:(Send Email to Engineer) --> 16:parallelgateway:{AND}
+16:parallelgateway:{AND} --> 17:task:(Check After Stop)
+16:parallelgateway:{AND} --> 18:task:(Check After Email)
+17:task:(Check After Stop) --> 19:parallelgateway:{AND}
+18:task:(Check After Email) --> 19:parallelgateway:{AND}
+19:parallelgateway:{AND} --> 20:exclusivegateway:{x}
+20:exclusivegateway:{x} --> |Positive|21:exclusivegateway:{x}
+20:exclusivegateway:{x} --> |Negative|26:parallelgateway:{AND}
+21:exclusivegateway:{x} --> |True|22:task:(Collect Measurements Again)
+21:exclusivegateway:{x} --> |False|26:parallelgateway:{AND}
+22:task:(Collect Measurements Again) --> 23:exclusivegateway:{x}
+23:exclusivegateway:{x} --> |Positive|24:task:(Collect Measurements Loop)
+23:exclusivegateway:{x} --> |Not positive|21:exclusivegateway:{x}
+24:task:(Collect Measurements Loop) --> 25:exclusivegateway:{x}
+25:exclusivegateway:{x} --> |Positive|24:task:(Collect Measurements Loop)
+25:exclusivegateway:{x} --> |Not positive|21:exclusivegateway:{x}
+26:parallelgateway:{AND} --> 27:task:(Stop Machine Again)
+26:parallelgateway:{AND} --> 28:task:(Send Another Email)
+27:task:(Stop Machine Again) --> 29:parallelgateway:{AND}
+28:task:(Send Another Email) --> 29:parallelgateway:{AND}
+29:parallelgateway:{AND} --> 30:task:(Check After Stop Again)
+29:parallelgateway:{AND} --> 31:task:(Check After Email Again)
+30:task:(Check After Stop Again) --> 32:parallelgateway:{AND}
+31:task:(Check After Email Again) --> 32:parallelgateway:{AND}
+32:parallelgateway:{AND} --> 33:exclusivegateway:{x}
+33:exclusivegateway:{x} --> |Positive|34:exclusivegateway:{x}
+33:exclusivegateway:{x} --> |Negative|39:parallelgateway:{AND}
+34:exclusivegateway:{x} --> |True|35:task:(Collect Measurements Third Time)
+34:exclusivegateway:{x} --> |False|39:parallelgateway:{AND}
+35:task:(Collect Measurements Third Time) --> 36:exclusivegateway:{x}
+36:exclusivegateway:{x} --> |Positive|37:task:(Collect Measurements Loop 2)
+36:exclusivegateway:{x} --> |Not positive|34:exclusivegateway:{x}
+37:task:(Collect Measurements Loop 2) --> 38:exclusivegateway:{x}
+38:exclusivegateway:{x} --> |Positive|37:task:(Collect Measurements Loop 2)
+38:exclusivegateway:{x} --> |Not positive|34:exclusivegateway:{x}
+39:parallelgateway:{AND} --> 40:task:(Stop Machine Third Time)
+39:parallelgateway:{AND} --> 41:task:(Send Third Email)
+40:task:(Stop Machine Third Time) --> 42:parallelgateway:{AND}
+41:task:(Send Third Email) --> 42:parallelgateway:{AND}
+42:parallelgateway:{AND} --> 43:task:(Check After Stop Third Time)
+42:parallelgateway:{AND} --> 44:task:(Check After Email Third Time)
+43:task:(Check After Stop Third Time) --> 45:parallelgateway:{AND}
+44:task:(Check After Email Third Time) --> 45:parallelgateway:{AND}
+45:parallelgateway:{AND} --> 46:exclusivegateway:{x}
+46:exclusivegateway:{x} --> |Positive|47:exclusivegateway:{x}
+46:exclusivegateway:{x} --> |Negative|64:endevent:(((endevent)))
+47:exclusivegateway:{x} --> |Positive|48:exclusivegateway:{x}
+47:exclusivegateway:{x} --> |Negative|55:exclusivegateway:{x}
+48:exclusivegateway:{x} --> |True|49:task:(Collect Measurements Fourth Time)
+48:exclusivegateway:{x} --> |False|55:exclusivegateway:{x}
+49:task:(Collect Measurements Fourth Time) --> 50:exclusivegateway:{x}
+50:exclusivegateway:{x} --> |Positive|51:task:(Collect Measurements Loop 3)
+50:exclusivegateway:{x} --> |Not positive|53:task:(Final Activity)
+51:task:(Collect Measurements Loop 3) --> 52:exclusivegateway:{x}
+52:exclusivegateway:{x} --> |Positive|51:task:(Collect Measurements Loop 3)
+52:exclusivegateway:{x} --> |Not positive|53:task:(Final Activity)
+53:task:(Final Activity) --> 54:exclusivegateway:{x}
+54:exclusivegateway:{x} --> 47:exclusivegateway:{x}
+55:exclusivegateway:{x} --> |True|56:task:(Final Activity 2)
+55:exclusivegateway:{x} --> |False|63:exclusivegateway:{x}
+56:task:(Final Activity 2) --> 57:exclusivegateway:{x}
+57:exclusivegateway:{x} --> |True|58:task:(Collect Measurements Fourth Time 2)
+57:exclusivegateway:{x} --> |False|63:exclusivegateway:{x}
+58:task:(Collect Measurements Fourth Time 2) --> 59:exclusivegateway:{x}
+59:exclusivegateway:{x} --> |Positive|60:task:(Collect Measurements Loop 4)
+59:exclusivegateway:{x} --> |Not positive|62:task:(Final Activity 3)
+60:task:(Collect Measurements Loop 4) --> 61:exclusivegateway:{x}
+61:exclusivegateway:{x} --> |Positive|60:task:(Collect Measurements Loop 4)
+61:exclusivegateway:{x} --> |Not positive|62:task:(Final Activity 3)
+62:task:(Final Activity 3) --> 63:exclusivegateway:{x}
+63:exclusivegateway:{x} --> 64:endevent:(((endevent)))

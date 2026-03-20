@@ -1,0 +1,9 @@
+The process begins when a customer brings a defective computer. The customer service representative examines the computer to identify the defect. After checking the defect, the representative provides the customer with a calculation of the expected repair costs.
+
+At this point, there is a decision. If the customer decides not to proceed with the repair, they take the computer home, and the process moves toward completion.
+
+If the customer agrees to the repair, the process continues with another decision point that can loop back if necessary. Once the decision to proceed is confirmed, the representative begins the repair process by working on two aspects at the same time: checking the hardware and checking the software.
+
+The hardware is checked and then repaired. At the same time, the software is checked and then configured as needed. Once both the hardware and software tasks are completed, the representative tests the overall system functionality.
+
+After testing, there is another decision point that can loop back to the previous step if required. Once all checks and repairs are successfully completed, the process concludes.

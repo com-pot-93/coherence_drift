@@ -1,0 +1,54 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Submit Office Supply Request)
+    1:task:(Submit Office Supply Request) --> 2:parallelgateway:{AND}
+    2:parallelgateway:{AND} --> 3:parallelgateway:{AND}
+    2:parallelgateway:{AND} --> 3:parallelgateway:{AND}
+    3:parallelgateway:{AND} --> 4:task:(Register Request)
+    4:task:(Register Request) --> 5:parallelgateway:{AND}
+    5:parallelgateway:{AND} --> 6:parallelgateway:{AND}
+    5:parallelgateway:{AND} --> 6:parallelgateway:{AND}
+    6:parallelgateway:{AND} --> 7:parallelgateway:{AND}
+    7:parallelgateway:{AND} --> 8:exclusivegateway:{x}
+    7:parallelgateway:{AND} --> 8:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> |Condition A is met| 9:task:(Initiate Approval Process)
+    8:exclusivegateway:{x} --> |Condition A is not met| 10:task:(Escalate)
+    10:task:(Escalate) --> 2:parallelgateway:{AND}
+    9:task:(Initiate Approval Process) --> 11:parallelgateway:{AND}
+    11:parallelgateway:{AND} --> 12:exclusivegateway:{x}
+    11:parallelgateway:{AND} --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |Not Approved| 13:task:(Review Comments)
+    12:exclusivegateway:{x} --> |Approved| 14:task:(Request Quotations)
+    13:task:(Review Comments) --> 9:task:(Initiate Approval Process)
+    14:task:(Request Quotations) --> 15:parallelgateway:{AND}
+    15:parallelgateway:{AND} --> 16:task:(Wait for Vendor Selection)
+    15:parallelgateway:{AND} --> 22:task:(Wait for Vendor Selection)
+    16:task:(Wait for Vendor Selection) --> 17:task:(Generate Purchase Order)
+    17:task:(Generate Purchase Order) --> 18:task:(Wait for Product Delivery)
+    18:task:(Wait for Product Delivery) --> 19:task:(Receive Invoice)
+    19:task:(Receive Invoice) --> 20:task:(Send Notification to User)
+    20:task:(Send Notification to User) --> 21:parallelgateway:{AND}
+    22:task:(Wait for Vendor Selection) --> 23:parallelgateway:{AND}
+    23:parallelgateway:{AND} --> 24:parallelgateway:{AND}
+    23:parallelgateway:{AND} --> 24:parallelgateway:{AND}
+    24:parallelgateway:{AND} --> 25:parallelgateway:{AND}
+    25:parallelgateway:{AND} --> 26:exclusivegateway:{x}
+    25:parallelgateway:{AND} --> 26:exclusivegateway:{x}
+    26:exclusivegateway:{x} --> |Condition B is not met| 27:task:(Escalate)
+    26:exclusivegateway:{x} --> |Condition B is met| 14:task:(Request Quotations)
+    27:task:(Escalate) --> 28:parallelgateway:{AND}
+    28:parallelgateway:{AND} --> 21:parallelgateway:{AND}
+    28:parallelgateway:{AND} --> 21:parallelgateway:{AND}
+    21:parallelgateway:{AND} --> 29:parallelgateway:{AND}
+    29:parallelgateway:{AND} --> 30:parallelgateway:{AND}
+    29:parallelgateway:{AND} --> 30:parallelgateway:{AND}
+    30:parallelgateway:{AND} --> 31:parallelgateway:{AND}
+    31:parallelgateway:{AND} --> 32:parallelgateway:{AND}
+    31:parallelgateway:{AND} --> 32:parallelgateway:{AND}
+    32:parallelgateway:{AND} --> 33:exclusivegateway:{x}
+    33:exclusivegateway:{x} --> |Condition is false| 34:parallelgateway:{AND}
+    33:exclusivegateway:{x} --> |Condition is true| 35:endevent:(((endevent)))
+    34:parallelgateway:{AND} --> 36:task:(Escalate)
+    34:parallelgateway:{AND} --> 36:task:(Escalate)
+    36:task:(Escalate) --> 8:exclusivegateway:{x}
+```

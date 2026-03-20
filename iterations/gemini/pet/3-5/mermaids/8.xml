@@ -1,0 +1,16 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Collect Mail)
+1:task:(Collect Mail) --> 2:task:(Sort and Distribute Mail)
+2:task:(Sort and Distribute Mail) --> 3:task:(Open, Sort, and Register Mail)
+3:task:(Open, Sort, and Register Mail) --> 4:task:(Perform Quality Check)
+4:task:(Perform Quality Check) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} -->|Successful| 6:task:(Perform Another Check)
+5:exclusivegateway:{x} -->|Unsuccessful| 10:endevent:(((endevent)))
+6:task:(Perform Another Check) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} -->|Successful| 8:task:(Perform Yet Another Check)
+7:exclusivegateway:{x} -->|Unsuccessful| 10:endevent:(((endevent)))
+8:task:(Perform Yet Another Check) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} -->|Successful| 10:endevent:(((endevent)))
+9:exclusivegateway:{x} -->|Unsuccessful| 10:endevent:(((endevent)))
+```

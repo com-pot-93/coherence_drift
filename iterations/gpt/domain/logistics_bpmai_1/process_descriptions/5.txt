@@ -1,0 +1,29 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when a shipment request is received.
+2. The next step is to check if the requested product is available.
+3. If the product is not available, the process moves directly towards completion.
+4. If the product is available, a further check is performed.
+5. After this further check, the shipment address is verified.
+6. The type of shipment is then determined.
+7. If determining the shipment type fails, the process confirms that the shipment will be sent to a service station.
+8. The inbound shipment is then assembled.
+9. Once assembled, the inbound shipment is sent.
+10. After sending, the inbound shipment is checked.
+11. If this check is successful, the products are prepared for the service station.
+12. The process then evaluates whether more preparation is needed:
+    - If more preparation is needed, the products are prepared again for the service station, and this step may repeat until preparation is complete.
+    - If preparation is complete, the process continues.
+13. At this point, the process checks if regional shipment preparation is required:
+    - If so, regional shipment preparation is carried out, followed by a check of the regional shipment preparation.
+    - If more preparation is needed, the regional shipment preparation step is repeated until it is complete.
+    - Once complete, the products are again prepared for the service station.
+14. The process then checks the inbound shipment again:
+    - If this check fails, the inbound shipment is checked again, and this may repeat until the check is successful.
+    - If successful, the products are prepared for the service station once more.
+15. The process continues to evaluate if more preparation is needed at several points, repeating the preparation steps as necessary.
+16. If at any point a negative result is found during the further check after product availability, the process returns to the further check step and may escalate or loop as needed.
+17. Once all checks and preparations are complete, and no further preparation is needed, the process moves towards completion.
+18. The process ends.
+
+Throughout the process, there are several points where checks may fail or indicate that more preparation is needed. In these cases, the relevant preparation or checking steps are repeated until the process can move forward. The process ensures that all necessary checks, preparations, and confirmations are completed before concluding.

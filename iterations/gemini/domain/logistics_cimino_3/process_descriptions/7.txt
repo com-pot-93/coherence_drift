@@ -1,0 +1,15 @@
+The process starts. Then, two activities, "Package Goods" and "Select Kind of Shipment," are performed in parallel.
+
+After "Package Goods" is completed, a decision is made. If "Quotes Requested," the process continues to "Request Quotes from Carriers," then "Assign Carrier," and then another decision is made. If "Extra Insurance Needed," the process continues to "Take out Extra Insurance." Otherwise, it skips "Take out Extra Insurance." After this, the process rejoins. If "Extra Insurance Needed" is not selected initially, a decision is made again. If "Extra Insurance Needed," the process continues to "Take out Extra Insurance." Otherwise, it skips "Take out Extra Insurance." After this, the process rejoins.
+
+If, at the initial decision, "Quotes Not Requested," the process continues to "Fill in Post Label," then "Check Insurance," and then another decision is made. If "Extra Insurance Needed," the process continues to "Take out Extra Insurance." Otherwise, it skips "Take out Extra Insurance." After this, the process rejoins. If "Extra Insurance Needed" is not selected initially, a decision is made again. If "Extra Insurance Needed," the process continues to "Take out Extra Insurance." Otherwise, it skips "Take out Extra Insurance." After this, the process rejoins.
+
+The process then continues to "Prepare Paperwork," and then rejoins.
+
+After "Select Kind of Shipment" is completed, a decision is made. If "Quotes Requested," the process continues to "Request Quotes from Carriers," then "Assign Carrier," and then another decision is made. If "Extra Insurance Needed," the process continues to "Take out Extra Insurance." Otherwise, it skips "Take out Extra Insurance." After this, the process rejoins. If "Extra Insurance Needed" is not selected initially, a decision is made again. If "Extra Insurance Needed," the process continues to "Take out Extra Insurance." Otherwise, it skips "Take out Extra Insurance." After this, the process rejoins.
+
+If, at the initial decision, "Quotes Not Requested," the process continues to "Fill in Post Label," then "Check Insurance," and then another decision is made. If "Extra Insurance Needed," the process continues to "Take out Extra Insurance." Otherwise, it skips "Take out Extra Insurance." After this, the process rejoins. If "Extra Insurance Needed" is not selected initially, a decision is made again. If "Extra Insurance Needed," the process continues to "Take out Extra Insurance." Otherwise, it skips "Take out Extra Insurance." After this, the process rejoins.
+
+The process then continues to "Prepare Paperwork," and then rejoins.
+
+The two parallel paths rejoin. The process continues to "Add Paperwork," then "Move Package to Pickup Area," and then the process ends.

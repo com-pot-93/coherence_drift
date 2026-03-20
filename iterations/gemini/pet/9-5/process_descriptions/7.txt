@@ -1,0 +1,13 @@
+The process starts and then proceeds to a decision point. If Condition A is true, the process receives an expense report and then proceeds to another decision point. If Condition A is false, the process creates a new employee account and then proceeds to the same decision point.
+
+From this decision point, the process proceeds to another decision point. If Condition E is true, the process creates a new employee account and then proceeds to another decision point. If Condition E is false, the process skips the task and proceeds directly to the same decision point.
+
+From this decision point, the process proceeds to another decision point. If Condition G is true, the process automatically approves the report and then proceeds to another decision point. If Condition G is false, the process requires a supervisor to approve the report and then proceeds to the same decision point.
+
+From this decision point, the process proceeds to another decision point. If Condition I is true, the process sends a reimbursement and then proceeds to another decision point. If Condition I is false, the process skips the task and proceeds directly to the same decision point.
+
+From this decision point, the process proceeds to another decision point. If Condition L is true, the process sends an approval in progress email and then proceeds to another decision point. If Condition L is false, the process skips the task and proceeds directly to the same decision point.
+
+From this decision point, the process proceeds to another decision point. If Condition M is false, the process sends a rejection notice and then proceeds to another decision point. If Condition M is true, the process skips the task and proceeds directly to the same decision point.
+
+Finally, the process ends.

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Identify non-specific low back pain</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Apply superficial heat or other non-drug treatments</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="5">
+        <alternative condition="Medication needed" language="text/javascript">
+          <call id="a13" endpoint="" a:alt_id="7">
+            <parameters>
+              <label>Prescribe NSAID or SMR</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="No medication needed" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="">
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Apply exercise or other non-drug treatments</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="6">
+        <alternative condition="Medication needed" language="text/javascript">
+          <call id="a19" endpoint="" a:alt_id="8">
+            <parameters>
+              <label>Prescribe NSAID</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="No medication needed" language="text/javascript"/>
+      </choose>
+    </alternative>
+  </choose>
+  <loop mode="post_test" condition="Opioid needed"/>
+  <call id="a31" endpoint="" a:alt_id="12">
+    <parameters>
+      <label>Next stage</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

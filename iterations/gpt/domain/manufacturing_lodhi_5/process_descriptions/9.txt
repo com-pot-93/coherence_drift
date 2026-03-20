@@ -1,0 +1,23 @@
+The process begins when a production order is received. After receiving the order, the next step is to prepare the production order.
+
+Once the preparation is complete, a decision is made based on a certain condition. If the condition is not met, the process ends immediately. If the condition is met, the process continues with collecting raw materials.
+
+After collecting the raw materials, the materials are cut. Once the materials are cut, two activities take place at the same time: stitching and printing. Both stitching and printing are performed independently and in parallel.
+
+When both stitching and printing are finished, the process continues to another decision point. From here, the process moves to a subsequent decision without any additional tasks in between.
+
+At this next decision, if the outcome is positive, the process moves forward to another decision point. At this point, there are two possible paths: one path leads back in a loop to the previous decision, and the other path allows the process to proceed further.
+
+If the process proceeds, it moves through a series of decisions, each time checking whether to continue or to stop. If the decision is to continue, the process eventually reaches the step where production is completed.
+
+After completing production, another decision is made. If the process is to continue, it moves to a quality check. If not, the process stops.
+
+If the quality check is performed, the next step is to create a quality report. After the report is created, another decision is made. If the process is to continue, it moves to another decision point, which checks whether to proceed or to stop.
+
+If the process proceeds, another decision is made to determine if adjustments are needed. If adjustments are needed, settings are adjusted, and the process continues. If no adjustments are needed, the process moves on.
+
+After adjustments (if any), data is sent to the warehouse. At this point, another decision is made: if no further actions are required, the process moves to an escalation point, and then continues. If further actions are required, the process returns to the step where production is completed, and the cycle repeats.
+
+Throughout the process, at various decision points, there are options to stop the process, which leads directly to the end. There are also loops that allow the process to return to earlier steps, such as creating the quality report or completing production, depending on the outcomes of the decisions.
+
+The process ends when any of the stop options are chosen or when the final decision point is reached after all necessary actions have been completed.

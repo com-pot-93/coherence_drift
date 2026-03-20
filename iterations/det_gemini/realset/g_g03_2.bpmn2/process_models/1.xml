@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Open Battle.net</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="Branch 1" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Enter account information</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Click on the link in the received confirmation E-Mail</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Branch 2" language="text/javascript">
+      <call id="a11" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>Log int, and the process ends. Battle.net</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a13" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Load account information</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="7">
+        <alternative condition="">
+          <call id="a17" endpoint="" a:alt_id="9">
+            <parameters>
+              <label>Select payment</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="10">
+            <alternative condition="Branch 1" language="text/javascript">
+              <call id="a21" endpoint="" a:alt_id="11">
+                <parameters>
+                  <label>Enter credit card information</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Branch 2" language="text/javascript">
+              <call id="a25" endpoint="" a:alt_id="12">
+                <parameters>
+                  <label>Enter IBAN and BIC</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="Branch 2" language="text/javascript"/>
+      </choose>
+    </alternative>
+  </choose>
+  <call id="a29" endpoint="" a:alt_id="14">
+    <parameters>
+      <label>Log into the game</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a35" endpoint="" a:alt_id="15">
+    <parameters>
+      <label>Load ingame data and position</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="16">
+    <parallel_branch>
+      <call id="a39" endpoint="" a:alt_id="17">
+        <parameters>
+          <label>Select realm</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a41" endpoint="" a:alt_id="18">
+        <parameters>
+          <label>Select race</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a43" endpoint="" a:alt_id="19">
+        <parameters>
+          <label>Select class</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a51" endpoint="" a:alt_id="21">
+    <parameters>
+      <label>Name the character</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a53" endpoint="" a:alt_id="22">
+    <parameters>
+      <label>Receive confirmation and selfies</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

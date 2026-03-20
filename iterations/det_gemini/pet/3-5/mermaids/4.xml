@@ -1,0 +1,27 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Mail Processing Unit collects mail from the party)
+  1:task:(Mail Processing Unit collects mail from the party) --> 2:task:(Mail Clerk sorts the unopened mail)
+  2:task:(Mail Clerk sorts the unopened mail) --> 3:task:(Mail Clerk distributes the mail)
+  3:task:(Mail Clerk distributes the mail) --> 4:task:(Registry opens mail)
+  4:task:(Registry opens mail) --> 5:task:(Registry sorts mail)
+  5:task:(Registry sorts mail) --> 6:task:(Registry register mail in a Mail Register)
+  6:task:(Registry register mail in a Mail Register) --> 7:task:(Assistant Registry Manager (ARM) performs a quality check)
+  7:task:(Assistant Registry Manager (ARM) performs a quality check) --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |Yes| 9:task:(ARM compiles a list of requisition)
+  9:task:(ARM compiles a list of requisition) --> 10:task:(ARM sends a list of requisition back to the party)
+  8:exclusivegateway:{x} --> |No| 11:task:(ARM captures the matter details)
+  11:task:(ARM captures the matter details) --> 12:task:(ARM provides the matter details to the Cashier)
+  12:task:(ARM provides the matter details to the Cashier) --> 13:task:(Cashier takes the applicable fees)
+  13:task:(Cashier takes the applicable fees) --> 14:parallelgateway:{AND}
+  14:parallelgateway:{AND} --> 15:task:(ARM puts the receipt)
+  14:parallelgateway:{AND} --> 19:task:(Cashier captures the Party Details)
+  15:task:(ARM puts the receipt) --> 16:task:(ARM copied documents into an envelope)
+  16:task:(ARM copied documents into an envelope) --> 17:task:(ARM posts documents to the party)
+  17:task:(ARM posts documents to the party) --> 21:parallelgateway:{AND}
+  19:task:(Cashier captures the Party Details) --> 20:task:(Cashier prints the Physical Court File)
+  20:task:(Cashier prints the Physical Court File) --> 21:parallelgateway:{AND}
+  21:parallelgateway:{AND} --> 22:exclusivegateway:{x}
+  10:task:(ARM sends a list of requisition back to the party) --> 22:exclusivegateway:{x}
+  22:exclusivegateway:{x} --> 23:endevent:(((endevent)))
+```

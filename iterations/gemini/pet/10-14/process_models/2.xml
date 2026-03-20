@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <choose mode="exclusive" a:alt_id="1">
+    <alternative condition="Path 1" language="text/javascript">
+      <choose mode="exclusive" a:alt_id="2">
+        <alternative condition="Condition A" language="text/javascript">
+          <call id="a7" endpoint="" a:alt_id="3">
+            <parameters>
+              <label>Send metering point operations bill to GO</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Condition B" language="text/javascript">
+          <call id="a9" endpoint="" a:alt_id="4">
+            <parameters>
+              <label>Send measurement bill to GO</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Condition C" language="text/javascript">
+          <call id="a11" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Send bill for additional readings to GO</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Condition D" language="text/javascript">
+          <call id="a13" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Send bill for the equipment acquisition to GO</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a15" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>Examine the bill</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="8">
+        <alternative condition="GO rejects" language="text/javascript">
+          <call id="a25" endpoint="" a:alt_id="9">
+            <parameters>
+              <label>Reject the invoice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="GO confirms" language="text/javascript">
+          <call id="a27" endpoint="" a:alt_id="10">
+            <parameters>
+              <label>Confirm the invoice with payment advice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="Path 2" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="14">
+        <parameters>
+          <label>Send bill for equipment acquisition to MPON</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a33" endpoint="" a:alt_id="15">
+        <parameters>
+          <label>Examine the bill</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="16">
+        <alternative condition="MPON confirms" language="text/javascript">
+          <call id="a37" endpoint="" a:alt_id="17">
+            <parameters>
+              <label>Confirm the invoice with payment advice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="MPON rejects" language="text/javascript">
+          <call id="a39" endpoint="" a:alt_id="18">
+            <parameters>
+              <label>Reject the invoice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

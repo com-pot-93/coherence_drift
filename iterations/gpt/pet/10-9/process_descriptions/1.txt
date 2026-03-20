@@ -1,0 +1,5 @@
+The process begins. At the start, there is a decision point to determine who is initiating the change. If the change is initiated by an external party, the external party submits a change request. If the change is initiated by the MPO, the MPO starts the change process directly. Regardless of who initiates the change, the process continues to the next step.
+
+Next, the MPO reviews the change request. After the review, there is another decision point. If the MPO decides to reject the change, the MPO formally rejects the change request. If the MPO decides to confirm the change, the MPO confirms the change request. After either rejecting or confirming the change, the process continues.
+
+Following this, the MPO carries out the change. Once the change has been performed, there is a final decision point to determine the outcome. If the change was successful, a report is made to indicate successful implementation. If the change was not successful, a notification is sent to report the failure of the change. After reporting either the success or failure, the process ends.

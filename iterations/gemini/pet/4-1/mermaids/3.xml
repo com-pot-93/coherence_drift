@@ -1,0 +1,47 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Customer Notice)
+    1:task:(Customer Notice) --> 2:task:(Inquire Patient Data)
+    2:task:(Inquire Patient Data) --> 3:task:(Inform Nursing Officer)
+    3:task:(Inform Nursing Officer) --> 4:task:(Conduct Full Patient Inquiry)
+    4:task:(Conduct Full Patient Inquiry) --> 5:task:(Record Information)
+    5:task:(Record Information) --> 6:task:(Hand in Registration Form)
+    6:task:(Hand in Registration Form) --> 7:task:(Store Information)
+    7:task:(Store Information) --> 8:task:(Print Form Information)
+    8:task:(Print Form Information) --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} --> |Yes| 10:task:(Create Patient File)
+    9:exclusivegateway:{x} --> |No| 14:parallelgateway:{AND}
+    10:task:(Create Patient File) --> 11:task:(Store Registration Form)
+    11:task:(Store Registration Form) --> 12:task:(Produce Registration Cards)
+    12:task:(Produce Registration Cards) --> 13:task:(Add New Patient)
+    13:task:(Add New Patient) --> 14:parallelgateway:{AND}
+    14:parallelgateway:{AND} --> 15:task:(Hold Staff Meeting)
+    15:task:(Hold Staff Meeting) --> 16:task:(Assign New Patients)
+    16:task:(Assign New Patients) --> 17:task:(Record Assignments)
+    17:task:(Record Assignments) --> 18:task:(Determine Medical File)
+    18:task:(Determine Medical File) --> 19:task:(Add Information to Assignment List)
+    19:task:(Add Information to Assignment List) --> 20:task:(Store Assignments)
+    20:task:(Store Assignments) --> 21:task:(Pass on Registration Cards)
+    21:task:(Pass on Registration Cards) --> 22:exclusivegateway:{x}
+    22:exclusivegateway:{x} --> |Yes| 23:task:(Prepare and Send Letter)
+    22:exclusivegateway:{x} --> |No| 27:parallelgateway:{AND}
+    23:task:(Prepare and Send Letter) --> 24:task:(Receive Medical File Copy)
+    24:task:(Receive Medical File Copy) --> 25:task:(Inform Intaker)
+    25:task:(Inform Intaker) --> 26:task:(Add Copy to Patient File)
+    26:task:(Add Copy to Patient File) --> 27:parallelgateway:{AND}
+    27:parallelgateway:{AND} --> 28:task:(Plan Meeting)
+    28:task:(Plan Meeting) --> 29:task:(Examine Patient)
+    29:task:(Examine Patient) --> 30:task:(Register Observations)
+    30:task:(Register Observations) --> 31:task:(Copy Notes to File)
+    31:task:(Copy Notes to File) --> 32:task:(Add Checklist to File)
+    32:task:(Add Checklist to File) --> 33:exclusivegateway:{x}
+    33:exclusivegateway:{x} --> |Yes| 34:task:(Plan First Meeting)
+    33:exclusivegateway:{x} --> |No| 37:parallelgateway:{AND}
+    34:task:(Plan First Meeting) --> 35:task:(Type Tapes)
+    35:task:(Type Tapes) --> 36:task:(Add Information to Patient File)
+    36:task:(Add Information to Patient File) --> 37:parallelgateway:{AND}
+    37:parallelgateway:{AND} --> 38:task:(Add Patient to List)
+    38:task:(Add Patient to List) --> 39:task:(Provide List to Team Leader)
+    39:task:(Provide List to Team Leader) --> 40:task:(Formulate Treatment Plan)
+    40:task:(Formulate Treatment Plan) --> 41:endevent:(((endevent)))
+```

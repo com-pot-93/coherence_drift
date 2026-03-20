@@ -1,0 +1,64 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Person Arrives at Hospital)
+2:task:(Wait in Front Area)
+3:task:(Visit Nurse)
+4:task:(Nurse Checks Insurance)
+5:exclusivegateway:{x}
+6:task:(Nurse Checks Condition)
+7:exclusivegateway:{x}
+8:task:(Send Home)
+9:task:(Book Doctor Appointment)
+10:task:(Send for Re-examination)
+11:task:(Admit to Hospital)
+12:task:(Go to Pharmacy)
+13:task:(Order Medicine)
+14:task:(Pay for Medicine)
+15:task:(Receive Medicine)
+16:exclusivegateway:{x}
+17:endevent:(((endevent)))
+18:task:(Check Registration)
+19:exclusivegateway:{x}
+20:task:(Register Person)
+21:task:(Pay Registration Fee)
+22:task:(Doctor Examines Person)
+23:exclusivegateway:{x}
+
+0:startevent:((startevent)) --> 1:task:(Person Arrives at Hospital)
+1:task:(Person Arrives at Hospital) --> 2:task:(Wait in Front Area)
+2:task:(Wait in Front Area) --> 3:task:(Visit Nurse)
+3:task:(Visit Nurse) --> 4:task:(Nurse Checks Insurance)
+4:task:(Nurse Checks Insurance) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Insurance Valid|6:task:(Nurse Checks Condition)
+5:exclusivegateway:{x} --> |Insurance Invalid|18:task:(Check Registration)
+
+6:task:(Nurse Checks Condition) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Send Home|8:task:(Send Home)
+7:exclusivegateway:{x} --> |Book Doctor|9:task:(Book Doctor Appointment)
+7:exclusivegateway:{x} --> |Re-examination|10:task:(Send for Re-examination)
+7:exclusivegateway:{x} --> |Hospitalize|11:task:(Admit to Hospital)
+7:exclusivegateway:{x} --> |Needs Medicine|12:task:(Go to Pharmacy)
+
+8:task:(Send Home) --> 16:exclusivegateway:{x}
+9:task:(Book Doctor Appointment) --> 22:task:(Doctor Examines Person)
+10:task:(Send for Re-examination) --> 22:task:(Doctor Examines Person)
+11:task:(Admit to Hospital) --> 16:exclusivegateway:{x}
+12:task:(Go to Pharmacy) --> 13:task:(Order Medicine)
+13:task:(Order Medicine) --> 14:task:(Pay for Medicine)
+14:task:(Pay for Medicine) --> 15:task:(Receive Medicine)
+15:task:(Receive Medicine) --> 16:exclusivegateway:{x}
+
+18:task:(Check Registration) --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> |Not Registered|20:task:(Register Person)
+19:exclusivegateway:{x} --> |Already Registered|21:task:(Pay Registration Fee)
+20:task:(Register Person) --> 21:task:(Pay Registration Fee)
+21:task:(Pay Registration Fee) --> 9:task:(Book Doctor Appointment)
+
+22:task:(Doctor Examines Person) --> 23:exclusivegateway:{x}
+23:exclusivegateway:{x} --> |Hospitalize|11:task:(Admit to Hospital)
+23:exclusivegateway:{x} --> |Send to Pharmacy|12:task:(Go to Pharmacy)
+23:exclusivegateway:{x} --> |Send Home|8:task:(Send Home)
+23:exclusivegateway:{x} --> |Further Examination|10:task:(Send for Re-examination)
+
+16:exclusivegateway:{x} --> |Process Ends|17:endevent:(((endevent)))
+16:exclusivegateway:{x} --> |Book Doctor|9:task:(Book Doctor Appointment)

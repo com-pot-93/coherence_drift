@@ -1,0 +1,36 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Yes| 2:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |No| 22:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |Yes| 3:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |No| 22:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |Yes| 4:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |No| 22:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |true| 5:task:(Production Planning)
+    4:exclusivegateway:{x} --> |false| 22:exclusivegateway:{x}
+    5:task:(Production Planning) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> 8:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} --> |Yes| 10:task:(Assign Workers)
+    9:exclusivegateway:{x} --> |No| 22:exclusivegateway:{x}
+    10:task:(Assign Workers) --> 11:task:(Production Design)
+    11:task:(Production Design) --> 12:task:(Product Delivery)
+    12:task:(Product Delivery) --> 13:task:(Production Logout)
+    13:task:(Production Logout) --> 14:task:(Quality Control)
+    14:task:(Quality Control) --> 15:exclusivegateway:{x}
+    15:exclusivegateway:{x} --> |Yes| 5:task:(Production Planning)
+    15:exclusivegateway:{x} --> |No| 16:exclusivegateway:{x}
+    16:exclusivegateway:{x} --> 17:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> 18:exclusivegateway:{x}
+    18:exclusivegateway:{x} --> 19:parallelgateway:{AND}
+    19:parallelgateway:{AND} --> 20:task:(Register to Finished Stock)
+    19:parallelgateway:{AND} --> 21:task:(Register to Semi-Finished Stock)
+    20:task:(Register to Finished Stock) --> 23:task:(Stocking to Finished Goods)
+    21:task:(Register to Semi-Finished Stock) --> 24:task:(Loading to Semi-Finished Stock)
+    23:task:(Stocking to Finished Goods) --> 25:parallelgateway:{AND}
+    24:task:(Loading to Semi-Finished Stock) --> 25:parallelgateway:{AND}
+    25:parallelgateway:{AND} --> 26:endevent:(((endevent)))
+    22:exclusivegateway:{x} --> 17:exclusivegateway:{x}
+```

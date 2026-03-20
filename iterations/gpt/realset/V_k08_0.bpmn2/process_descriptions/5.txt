@@ -1,0 +1,42 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your BPMN model, written in clear and accessible language:
+
+---
+
+The process begins by prompting the user to log in. After the user is prompted, their credentials are checked.
+
+If the credentials are incorrect, the process ends immediately.
+
+If the credentials are correct, the system checks the user's permissions.
+
+If the user does not have the necessary permissions, the process ends.
+
+If the user has the required permissions, the system checks a specific condition.
+
+If this condition is met, the process moves forward. If the condition is not met, the process asks whether the user wants to add more products.
+
+If the user chooses to add more products, they are prompted to select a product. After selecting a product, the process asks again if the user wants to add more products. If so, the user can continue selecting products. Each time a product is selected, it is added to the cart and saved. After saving, the process checks again if the user wants to add more products or not.
+
+If the user decides not to add more products, the process presents an order confirmation. At this point, the user can choose to add more products, confirm the order, or proceed to finalize the order.
+
+- If the user chooses to add more products, they are prompted again to select a product, and the cycle repeats.
+- If the user confirms the order, the order confirmation is presented again, and the user can continue to add more products, confirm, or proceed to finalize.
+- If the user chooses to proceed to finalize the order, the process prepares both shipment and payment details at the same time.
+
+Once shipment and payment details are prepared, the process collects payment information and shipping details simultaneously.
+
+After collecting this information, the system checks if the order is correct.
+
+- If the order is not correct, the order confirmation is presented again, and the user can review or modify the order as needed.
+- If the order is correct, the system asks if further confirmation is needed.
+  - If further confirmation is needed, the order confirmation is presented again.
+  - If no further action is needed, the process continues.
+
+This cycle of adding products, confirming the order, and finalizing can repeat multiple times, allowing the user to add as many products as they wish, review the order, and make corrections as needed.
+
+At various points, if the user chooses not to add more products or if certain conditions are not met, the process may end.
+
+The process concludes when all necessary steps are completed, and the user has either finished their order or exited the process due to incorrect credentials or insufficient permissions.
+
+---
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step and decision point is included and clearly explained.

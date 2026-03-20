@@ -1,0 +1,33 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Receive production order)
+  2:task:(Prepare materrials)
+  3:task:(Assemble door)
+  4:exclusivegateway:{x}
+  5:task:(Send inquiry for quality check)
+  6:task:(Receive inquiry for quality check)
+  7:task:(Check quality)
+  8:task:(Send quality report)
+  9:task:(Receive quality report)
+  10:exclusivegateway:{x}
+  11:task:(Fix door)
+  12:task:(Release door)
+  13:exclusivegateway:{x}
+  14:endevent:(((endevent)))
+  0:startevent:((startevent)) --> 1:task:(Receive production order)
+  1:task:(Receive production order) --> 2:task:(Prepare materrials)
+  2:task:(Prepare materrials) --> 3:task:(Assemble door)
+  3:task:(Assemble door) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |true|5:task:(Send inquiry for quality check)
+  5:task:(Send inquiry for quality check) --> 6:task:(Receive inquiry for quality check)
+  6:task:(Receive inquiry for quality check) --> 7:task:(Check quality)
+  7:task:(Check quality) --> 8:task:(Send quality report)
+  8:task:(Send quality report) --> 9:task:(Receive quality report)
+  9:task:(Receive quality report) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |Not OK|11:task:(Fix door)
+  10:exclusivegateway:{x} --> |OK|12:task:(Release door)
+  11:task:(Fix door) --> 13:exclusivegateway:{x}
+  12:task:(Release door) --> 13:exclusivegateway:{x}
+  13:exclusivegateway:{x} --> 14:endevent:(((endevent)))
+  4:exclusivegateway:{x} --> |false|14:endevent:(((endevent)))
+  11:task:(Fix door) --> 4:exclusivegateway:{x}

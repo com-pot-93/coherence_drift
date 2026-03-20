@@ -1,0 +1,25 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(employee submits an office supply request)
+  1:task:(employee submits an office supply request) --> 2:task:(register the request)
+  2:task:(register the request) --> 3:task:(immediate supervisor receives request)
+  3:task:(immediate supervisor receives request) --> 4:task:(immediate supervisor approves request)
+  4:task:(immediate supervisor approves request) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Branch 1| 6:task:(immediate supervisor returns request to the employee)
+  5:exclusivegateway:{x} --> |Branch 2| 10:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Branch 3| 11:task:(request goes to the purchase department)
+  6:task:(immediate supervisor returns request to the employee) --> 7:task:(employee reviews the comments)
+  7:task:(employee reviews the comments) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> 21:task:(the system sends user notification)
+  11:task:(request goes to the purchase department) --> 12:task:(the purchase department makes quotations)
+  12:task:(the purchase department makes quotations) --> 13:task:(the purchase department selects vendor)
+  13:task:(the purchase department selects vendor) --> 14:exclusivegateway:{x}
+  14:exclusivegateway:{x} --> |Branch 1| 15:task:(the purchase department chooses a different vendor)
+  14:exclusivegateway:{x} --> |Branch 2| 19:task:(the system  generates a purchase order)
+  15:task:(the purchase department chooses a different vendor) --> 19:task:(the system  generates a purchase order)
+  19:task:(the system generates a purchase order) --> 20:task:(the system sends a purchase order)
+  20:task:(the system sends a purchase order) --> 16:task:(the system waits for the product delivery)
+  16:task:(the system waits for the product delivery) --> 17:task:(the system receives the invoice)
+  17:task:(the system receives the invoice) --> 10:exclusivegateway:{x}
+  21:task:(the system sends user notification) --> 22:endevent:(((endevent)))
+```

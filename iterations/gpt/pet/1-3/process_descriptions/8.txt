@@ -1,0 +1,5 @@
+The process begins when a call is received. The call is then answered, and the order is recorded. After recording the order, it is submitted to the kitchen. At the same time, the order details are given to the sommelier. Next, the order is assigned to a waiter.
+
+Once the order has been assigned, three activities happen at the same time: the kitchen prepares the order, the sommelier prepares their part of the order, and the waiter prepares the cart. After all three preparations are complete, the waiter delivers the cart to the guest. Once the cart has been delivered, the waiter returns to their station.
+
+At this point, there is a decision to be made. If it is time for billing, the guest’s account is debited. If it is not yet time for billing, the waiter waits until it is time. After either debiting the guest’s account or waiting until billing time, the process ends.

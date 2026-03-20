@@ -1,0 +1,13 @@
+The process begins when an employee submits a request. After the request is submitted, it is registered in the system.
+
+Next, a decision is made about whether to continue with the process. If the decision is not to continue, the process ends. If the decision is to continue, another check is performed, and the process moves forward.
+
+The request is then sent for supervisor review. The supervisor reviews the request, and another decision is made. If the supervisor does not approve the request, it is returned with comments. The employee then reviews these comments and decides whether to resubmit the request or withdraw it. If the employee chooses to resubmit, the request is sent again for supervisor review. If the employee withdraws the request, the process ends.
+
+If the supervisor approves the request, it is forwarded to the purchase department. At this point, another decision is made about whether to continue. If the decision is not to continue, the process ends. If the process continues, quotations are prepared.
+
+After preparing quotations, the process checks if a vendor has been selected. If no vendor is selected, quotations are prepared again. If a vendor is selected, the vendor is chosen, and a further check is made to confirm the vendor. If the vendor is not confirmed and a change is needed, quotations are prepared again. If the vendor is confirmed, a purchase order is generated and sent.
+
+The process then waits for the product to be delivered. Once the product is delivered, an invoice is received. At this stage, a check is made to see if all steps are complete. If not, quotations are prepared again. If all steps are complete, the user is notified of the status.
+
+After notifying the user, a series of checks are performed, and the process eventually ends. Throughout the process, if at any point a decision is made not to continue or if the request is withdrawn, the process ends. The process also allows for resubmission and repeated preparation of quotations if necessary, ensuring that the request is handled thoroughly before completion.

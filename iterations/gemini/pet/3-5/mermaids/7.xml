@@ -1,0 +1,57 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Collect Mail)
+    1:task:(Collect Mail) --> 2:task:(Sort and Distribute Mail)
+    2:task:(Sort and Distribute Mail) --> 3:task:(Open, Sort, and Register Mail)
+    3:task:(Open, Sort, and Register Mail) --> 4:task:(Perform Quality Check)
+    4:task:(Perform Quality Check) --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Yes| 6:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |No| 32:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |Yes| 7:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |No| 22:task:(Compile and Send Requisitions)
+    7:exclusivegateway:{x} --> |Yes| 8:task:(Capture Matter Details and Take Fees)
+    7:exclusivegateway:{x} --> |No| 18:exclusivegateway:{x}
+    8:task:(Capture Matter Details and Take Fees) --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} --> |Yes| 10:parallelgateway:{AND}
+    9:exclusivegateway:{x} --> |No| 14:parallelgateway:{AND}
+    10:parallelgateway:{AND} --> 11:task:(Put Receipt and Post Documents)
+    10:parallelgateway:{AND} --> 12:task:(Capture Party Details and Print File)
+    11:task:(Put Receipt and Post Documents) --> 13:exclusivegateway:{x}
+    12:task:(Capture Party Details and Print File) --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> 17:parallelgateway:{AND}
+    14:parallelgateway:{AND} --> 15:task:(Put Receipt and Post Documents)
+    14:parallelgateway:{AND} --> 16:task:(Capture Party Details and Print File)
+    15:task:(Put Receipt and Post Documents) --> 17:parallelgateway:{AND}
+    16:task:(Capture Party Details and Print File) --> 17:parallelgateway:{AND}
+    17:parallelgateway:{AND} --> 21:task:(Continue)
+    18:exclusivegateway:{x} --> |Yes| 8:task:(Capture Matter Details and Take Fees)
+    18:exclusivegateway:{x} --> |No| 14:parallelgateway:{AND}
+    22:task:(Compile and Send Requisitions) --> 23:exclusivegateway:{x}
+    23:exclusivegateway:{x} --> |Yes| 22:task:(Compile and Send Requisitions)
+    23:exclusivegateway:{x} --> |No| 24:exclusivegateway:{x}
+    24:exclusivegateway:{x} --> |Yes| 8:task:(Capture Matter Details and Take Fees)
+    24:exclusivegateway:{x} --> |No| 25:exclusivegateway:{x}
+    25:exclusivegateway:{x} --> |Yes| 26:exclusivegateway:{x}
+    25:exclusivegateway:{x} --> |No| 27:task:(Continue)
+    26:exclusivegateway:{x} --> |Yes| 22:task:(Compile and Send Requisitions)
+    26:exclusivegateway:{x} --> |No| 27:task:(Continue)
+    27:task:(Continue) --> 8:task:(Capture Matter Details and Take Fees)
+    32:exclusivegateway:{x} --> |Yes| 33:exclusivegateway:{x}
+    32:exclusivegateway:{x} --> |No| 39:task:(Compile and Send Requisitions)
+    33:exclusivegateway:{x} --> |Yes| 34:exclusivegateway:{x}
+    33:exclusivegateway:{x} --> |No| 27:task:(Continue)
+    34:exclusivegateway:{x} --> |Yes| 39:task:(Compile and Send Requisitions)
+    34:exclusivegateway:{x} --> |No| 35:task:(Continue)
+    35:task:(Continue) --> 8:task:(Capture Matter Details and Take Fees)
+    39:task:(Compile and Send Requisitions) --> 40:exclusivegateway:{x}
+    40:exclusivegateway:{x} --> |Yes| 39:task:(Compile and Send Requisitions)
+    40:exclusivegateway:{x} --> |No| 41:exclusivegateway:{x}
+    41:exclusivegateway:{x} --> |Yes| 8:task:(Capture Matter Details and Take Fees)
+    41:exclusivegateway:{x} --> |No| 42:exclusivegateway:{x}
+    42:exclusivegateway:{x} --> |Yes| 43:exclusivegateway:{x}
+    42:exclusivegateway:{x} --> |No| 44:task:(Continue)
+    43:exclusivegateway:{x} --> |Yes| 39:task:(Compile and Send Requisitions)
+    43:exclusivegateway:{x} --> |No| 44:task:(Continue)
+    44:task:(Continue) --> 8:task:(Capture Matter Details and Take Fees)
+    21:task:(Continue) --> 45:endevent:(((endevent)))
+```

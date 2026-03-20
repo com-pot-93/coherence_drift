@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Shipment Request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Check Product Availability</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Available" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Check Shipment Address</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="5">
+        <alternative condition="To Service Station Shipment" language="text/javascript">
+          <call id="a13" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Assemble Inbound Shipment</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a17" endpoint="" a:alt_id="7">
+            <parameters>
+              <label>Send Inbound Shipment</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a19" endpoint="" a:alt_id="8">
+            <parameters>
+              <label>Receive Inbound Shipment</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a21" endpoint="" a:alt_id="9">
+            <parameters>
+              <label>Check Inbound Shipment</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <loop mode="pre_test" condition="true">
+            <call id="a23" endpoint="" a:alt_id="10">
+              <parameters>
+                <label>Prepare Products for Service Station Shipment</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a31" endpoint="" a:alt_id="13">
+              <parameters>
+                <label>Next Step</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <loop mode="pre_test" condition="To Service Station Shipment" a:alt_id="15" language="text/javascript">
+              <call id="a23" endpoint="" a:alt_id="10">
+                <parameters>
+                  <label>Prepare Products for Service Station Shipment</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a31" endpoint="" a:alt_id="13">
+                <parameters>
+                  <label>Next Step</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </loop>
+          </loop>
+        </alternative>
+        <alternative condition="Prepare Regional Shipment" language="text/javascript">
+          <call id="a15" endpoint="" a:alt_id="16">
+            <parameters>
+              <label>Prepare Products for Regional Shipment</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="17">
+            <alternative condition="Continue" language="text/javascript">
+              <loop mode="pre_test" condition="To Service Station Shipment" a:alt_id="15" language="text/javascript">
+                <call id="a23" endpoint="" a:alt_id="10">
+                  <parameters>
+                    <label>Prepare Products for Service Station Shipment</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a31" endpoint="" a:alt_id="13">
+                  <parameters>
+                    <label>Next Step</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </loop>
+            </alternative>
+            <alternative condition="End" language="text/javascript"/>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="Not Available" language="text/javascript"/>
+  </choose>
+</description>

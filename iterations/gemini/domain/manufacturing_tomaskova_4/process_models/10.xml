@@ -1,0 +1,337 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <choose mode="exclusive" a:alt_id="1">
+    <alternative condition="Yes" language="text/javascript">
+      <choose mode="exclusive" a:alt_id="2">
+        <alternative condition="Yes" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="3">
+            <alternative condition="Yes" language="text/javascript">
+              <choose mode="exclusive" a:alt_id="4">
+                <alternative condition="Yes" language="text/javascript">
+                  <choose mode="exclusive" a:alt_id="5">
+                    <alternative condition="true" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="6">
+                        <alternative condition="true" language="text/javascript">
+                          <choose mode="exclusive" a:alt_id="7">
+                            <alternative condition="true" language="text/javascript">
+                              <choose mode="exclusive" a:alt_id="8">
+                                <alternative condition="true" language="text/javascript">
+                                  <choose mode="exclusive" a:alt_id="9">
+                                    <alternative condition="true" language="text/javascript">
+                                      <loop mode="pre_test" condition="true">
+                                        <call id="a35" endpoint="" a:alt_id="10">
+                                          <parameters>
+                                            <label>Production Planning</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                        <loop mode="pre_test" condition="true">
+                                          <choose mode="exclusive" a:alt_id="12">
+                                            <alternative condition="true" language="text/javascript">
+                                              <call id="a45" endpoint="" a:alt_id="13">
+                                                <parameters>
+                                                  <label>Assign Workers</label>
+                                                  <method/>
+                                                  <type>:task</type>
+                                                  <arguments/>
+                                                </parameters>
+                                              </call>
+                                              <parallel wait="-1" cancel="last" a:alt_id="14">
+                                                <parallel_branch>
+                                                  <call id="a51" endpoint="" a:alt_id="15">
+                                                    <parameters>
+                                                      <label>Production Design</label>
+                                                      <method/>
+                                                      <type>:task</type>
+                                                      <arguments/>
+                                                    </parameters>
+                                                  </call>
+                                                  <call id="a55" endpoint="" a:alt_id="16">
+                                                    <parameters>
+                                                      <label>Product Delivery</label>
+                                                      <method/>
+                                                      <type>:task</type>
+                                                      <arguments/>
+                                                    </parameters>
+                                                  </call>
+                                                  <call id="a57" endpoint="" a:alt_id="17">
+                                                    <parameters>
+                                                      <label>Production Logout</label>
+                                                      <method/>
+                                                      <type>:task</type>
+                                                      <arguments/>
+                                                    </parameters>
+                                                  </call>
+                                                  <call id="a59" endpoint="" a:alt_id="18">
+                                                    <parameters>
+                                                      <label>Quality Control</label>
+                                                      <method/>
+                                                      <type>:task</type>
+                                                      <arguments/>
+                                                    </parameters>
+                                                  </call>
+                                                  <choose mode="exclusive" a:alt_id="19">
+                                                    <alternative condition="Yes" language="text/javascript">
+                                                      <call id="a35" endpoint="" a:alt_id="10">
+                                                        <parameters>
+                                                          <label>Production Planning</label>
+                                                          <method/>
+                                                          <type>:task</type>
+                                                          <arguments/>
+                                                        </parameters>
+                                                      </call>
+                                                    </alternative>
+                                                    <alternative condition="">
+                                                      <choose mode="exclusive" a:alt_id="20">
+                                                        <alternative condition="true or false" language="text/javascript"/>
+                                                        <alternative condition="false" language="text/javascript"/>
+                                                      </choose>
+                                                      <escape a:alt_id="-1"/>
+                                                    </alternative>
+                                                  </choose>
+                                                </parallel_branch>
+                                                <parallel_branch>
+                                                  <choose mode="exclusive" a:alt_id="21">
+                                                    <alternative condition="true" language="text/javascript">
+                                                      <choose mode="exclusive" a:alt_id="22">
+                                                        <alternative condition="true or false" language="text/javascript"/>
+                                                        <alternative condition="false" language="text/javascript"/>
+                                                      </choose>
+                                                    </alternative>
+                                                    <alternative condition="false" language="text/javascript"/>
+                                                  </choose>
+                                                  <escape a:alt_id="-1"/>
+                                                </parallel_branch>
+                                              </parallel>
+                                            </alternative>
+                                            <alternative condition="false" language="text/javascript">
+                                              <escape a:alt_id="-1"/>
+                                            </alternative>
+                                          </choose>
+                                        </loop>
+                                      </loop>
+                                    </alternative>
+                                    <alternative condition="false" language="text/javascript"/>
+                                  </choose>
+                                </alternative>
+                                <alternative condition="false" language="text/javascript"/>
+                              </choose>
+                            </alternative>
+                            <alternative condition="false" language="text/javascript"/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="false" language="text/javascript"/>
+                      </choose>
+                    </alternative>
+                    <alternative condition="">
+                      <parallel wait="-1" cancel="last" a:alt_id="30">
+                        <parallel_branch>
+                          <call id="a81" endpoint="" a:alt_id="32">
+                            <parameters>
+                              <label>Register to Finished Stock</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a85" endpoint="" a:alt_id="33">
+                            <parameters>
+                              <label>Stocking to Finished Goods</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </parallel_branch>
+                        <parallel_branch>
+                          <call id="a83" endpoint="" a:alt_id="34">
+                            <parameters>
+                              <label>Register to Semi-Finished Stock</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a87" endpoint="" a:alt_id="35">
+                            <parameters>
+                              <label>Loading to Semi-Finished Stock</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </parallel_branch>
+                      </parallel>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="">
+                  <parallel wait="-1" cancel="last" a:alt_id="30">
+                    <parallel_branch>
+                      <call id="a81" endpoint="" a:alt_id="32">
+                        <parameters>
+                          <label>Register to Finished Stock</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a85" endpoint="" a:alt_id="33">
+                        <parameters>
+                          <label>Stocking to Finished Goods</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </parallel_branch>
+                    <parallel_branch>
+                      <call id="a83" endpoint="" a:alt_id="34">
+                        <parameters>
+                          <label>Register to Semi-Finished Stock</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a87" endpoint="" a:alt_id="35">
+                        <parameters>
+                          <label>Loading to Semi-Finished Stock</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </parallel_branch>
+                  </parallel>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="">
+              <parallel wait="-1" cancel="last" a:alt_id="30">
+                <parallel_branch>
+                  <call id="a81" endpoint="" a:alt_id="32">
+                    <parameters>
+                      <label>Register to Finished Stock</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a85" endpoint="" a:alt_id="33">
+                    <parameters>
+                      <label>Stocking to Finished Goods</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </parallel_branch>
+                <parallel_branch>
+                  <call id="a83" endpoint="" a:alt_id="34">
+                    <parameters>
+                      <label>Register to Semi-Finished Stock</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a87" endpoint="" a:alt_id="35">
+                    <parameters>
+                      <label>Loading to Semi-Finished Stock</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </parallel_branch>
+              </parallel>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="">
+          <parallel wait="-1" cancel="last" a:alt_id="30">
+            <parallel_branch>
+              <call id="a81" endpoint="" a:alt_id="32">
+                <parameters>
+                  <label>Register to Finished Stock</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a85" endpoint="" a:alt_id="33">
+                <parameters>
+                  <label>Stocking to Finished Goods</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </parallel_branch>
+            <parallel_branch>
+              <call id="a83" endpoint="" a:alt_id="34">
+                <parameters>
+                  <label>Register to Semi-Finished Stock</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a87" endpoint="" a:alt_id="35">
+                <parameters>
+                  <label>Loading to Semi-Finished Stock</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </parallel_branch>
+          </parallel>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="">
+      <parallel wait="-1" cancel="last" a:alt_id="30">
+        <parallel_branch>
+          <call id="a81" endpoint="" a:alt_id="32">
+            <parameters>
+              <label>Register to Finished Stock</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a85" endpoint="" a:alt_id="33">
+            <parameters>
+              <label>Stocking to Finished Goods</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a83" endpoint="" a:alt_id="34">
+            <parameters>
+              <label>Register to Semi-Finished Stock</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a87" endpoint="" a:alt_id="35">
+            <parameters>
+              <label>Loading to Semi-Finished Stock</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+      </parallel>
+    </alternative>
+  </choose>
+</description>

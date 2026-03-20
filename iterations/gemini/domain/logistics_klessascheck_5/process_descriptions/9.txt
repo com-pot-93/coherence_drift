@@ -1,0 +1,7 @@
+The process starts with the initiation of an event. Subsequently, the product is packaged, followed by its shipment. A decision is then made: if a receipt is needed, it is printed and posted; otherwise, this step is skipped. Next, the product is delivered to the station. Following this, two parallel paths are initiated.
+
+In the first path, a decision is made based on whether the product has been received. If it has, it is processed as received; otherwise, this step is skipped.
+
+In the second parallel path, a similar decision is made regarding the product's receipt. If the product has been received, it is processed accordingly; otherwise, this step is skipped.
+
+Both parallel paths then converge, and the process concludes with the occurrence of an end event.

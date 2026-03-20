@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>MPOO starts deregistration at GO</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>GO reviews and checks deregistration request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Request rejected" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>GO communicates rejection</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Request not rejected" language="text/javascript">
+      <call id="a9" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>GO provides preliminary confirmation</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a11" endpoint="" a:alt_id="6">
+    <parameters>
+      <label>GO prepares for possible readmission</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="7">
+    <alternative condition="Do not continue with readmission" language="text/javascript">
+      <call id="a17" endpoint="" a:alt_id="8">
+        <parameters>
+          <label>Record decision not to continue with readmission</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Continue with readmission" language="text/javascript">
+      <call id="a19" endpoint="" a:alt_id="9">
+        <parameters>
+          <label>MPOO confirms process should proceed</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a23" endpoint="" a:alt_id="10">
+        <parameters>
+          <label>Record confirmation to continue</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a27" endpoint="" a:alt_id="12">
+    <parameters>
+      <label>GO acquires or changes equipment</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a29" endpoint="" a:alt_id="13">
+    <parameters>
+      <label>GO assigns itself as new MPO</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a31" endpoint="" a:alt_id="14">
+    <parameters>
+      <label>GO informs MPOO previous assignment ended</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a33" endpoint="" a:alt_id="15">
+    <parameters>
+      <label>GO notifies MPOO about new assignment</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a35" endpoint="" a:alt_id="16">
+    <parameters>
+      <label>GO informs MSPO about new assignment</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a37" endpoint="" a:alt_id="17">
+    <parameters>
+      <label>GO informs SP about new assignment</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

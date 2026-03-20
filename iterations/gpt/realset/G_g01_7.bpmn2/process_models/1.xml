@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Send Invitations to Friends</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Ask Friends Which Games They Want to Play</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Receive List of Games</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="4">
+    <parameters>
+      <label>Choose Games</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="5">
+    <parallel_branch>
+      <loop mode="pre_test" condition="true">
+        <loop mode="pre_test" condition="Date not suitable" a:alt_id="7" language="text/javascript">
+          <call id="a17" endpoint="" a:alt_id="8">
+            <parameters>
+              <label>Change Date</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </loop>
+      </loop>
+    </parallel_branch>
+    <parallel_branch>
+      <loop mode="pre_test" condition="true">
+        <loop mode="pre_test" condition="Games need change" a:alt_id="11" language="text/javascript">
+          <call id="a29" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>Ask Guests Which Games They Want</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </loop>
+      </loop>
+    </parallel_branch>
+  </parallel>
+  <choose mode="exclusive" a:alt_id="15">
+    <alternative condition="Download needed" language="text/javascript">
+      <call id="a37" endpoint="" a:alt_id="16">
+        <parameters>
+          <label>Download Games</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No download needed" language="text/javascript"/>
+  </choose>
+  <call id="a39" endpoint="" a:alt_id="17">
+    <parameters>
+      <label>Ask Friends How Much Beer They Want</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a43" endpoint="" a:alt_id="18">
+    <parameters>
+      <label>Estimate Total Beer Required</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="19">
+    <alternative condition="Need to buy beer" language="text/javascript">
+      <call id="a47" endpoint="" a:alt_id="20">
+        <parameters>
+          <label>Go to Supermarket to Buy Beer</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No need to buy beer" language="text/javascript"/>
+  </choose>
+  <call id="a49" endpoint="" a:alt_id="21">
+    <parameters>
+      <label>Prepare for LAN Party</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

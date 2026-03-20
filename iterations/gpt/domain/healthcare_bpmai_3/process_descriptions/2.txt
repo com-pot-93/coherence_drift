@@ -1,0 +1,28 @@
+The process begins when a call is received. After the call is received, a decision is made about whether the patient is accepted or not.
+
+- If the patient is not accepted, the process moves directly towards completion.
+- If the patient is accepted, the patient is added to a list.
+
+After adding the patient to the list, another decision is made. If the outcome is positive, checks are performed on the patient.
+
+Once the checks are performed, a series of decisions follow, each evaluating the results of the checks:
+
+- If the checks are positive, the process continues to another decision point.
+    - If the outcome remains positive, another decision is made about whether to proceed to the hospital.
+        - If the decision is to proceed, the patient is called to the hospital.
+        - The patient is then hospitalized.
+        - After hospitalization, childbirth takes place.
+        - Following childbirth, there is a decision about the next step:
+            - If post-hospitalization care is needed, this care is provided.
+            - If special treatment is required, special treatment is provided.
+        - After either post-hospitalization care or special treatment, another decision is made:
+            - If further checks are needed, the process returns to performing checks.
+            - If the process is complete, a series of steps are followed to finalize the process, eventually leading to the end of the process.
+
+- If at any point the checks are negative or the decision is made not to proceed to the hospital, the case is escalated.
+    - After escalation, checks are performed again.
+    - The process then continues through the same series of decisions as before, potentially looping back to earlier steps if necessary.
+
+Throughout the process, if a decision leads to the process being complete or the patient not being accepted, the process moves towards its conclusion and ends.
+
+In summary, the process involves receiving a call, deciding on patient acceptance, adding the patient to a list if accepted, performing checks, making decisions based on the results, possibly escalating the case and repeating checks, and, if appropriate, proceeding through hospitalization, childbirth, and post-care steps, with the process ending when all necessary actions are complete.

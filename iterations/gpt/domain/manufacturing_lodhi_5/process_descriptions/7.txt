@@ -1,0 +1,19 @@
+The process begins when a production order is received. After receiving the production order, the next step is to prepare the production order.
+
+Once the production order is prepared, a decision is made based on a specific condition. If the condition is met, the process continues with collecting raw materials. After collecting the raw materials, the materials are cut. Once the materials are cut, two activities take place at the same time: stitching and printing. Both stitching and printing are performed independently and in parallel.
+
+After both stitching and printing are completed, the process continues to another decision point. If the outcome at this point is positive, the process moves to the next decision. If the outcome is negative, the process skips ahead toward the end of the process.
+
+If the process continues after a positive outcome, it reaches another decision point. From here, the process can either proceed or loop back, depending on the result. If the process proceeds, it moves to the next decision, which again determines whether to continue or not. If the decision is to continue, the process advances to another decision point.
+
+At this stage, if the process is to continue, the next step is to complete the production. Once production is completed, a quality check is performed. After the quality check, a quality report is created.
+
+Following the creation of the quality report, another decision is made. Depending on the outcome, the process may either continue or loop back to a previous decision point. If the process continues, it moves to another decision, which again determines whether to proceed or to take a different path.
+
+If the process is to continue, the next step is to determine the next step in the process. Based on this determination, there are two possible paths: if adjustments are needed, the settings are adjusted; if no further action is required, the process continues without adjustments. After adjusting settings, the process rejoins the path where no further action was needed.
+
+The next step is to send data to the warehouse. After sending the data, another decision is made to determine if further actions are required. If further actions are required, the process returns to the step of completing production and continues from there. If no further actions are required, the process moves through a series of decisions that eventually lead to an escalation point.
+
+From the escalation point, the process loops back to an earlier decision, which can lead to repeating some steps if necessary. Eventually, the process reaches a final decision point, after which the process ends.
+
+If, at the initial decision after preparing the production order, the condition is not met, the process skips all subsequent steps and ends immediately.

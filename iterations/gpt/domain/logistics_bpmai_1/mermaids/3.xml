@@ -1,0 +1,65 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Receive Shipment Request)
+  2:task:(Check Product Availability)
+  3:exclusivegateway:{x}
+  4:task:(Check Shipment Address)
+  5:task:(Determine Shipment Type)
+  6:exclusivegateway:{x}
+  7:subprocess:(Service Station Shipment Checks)
+  8:subprocess:(Regional Shipment Preparation)
+  9:exclusivegateway:{x}
+  10:endevent:(((endevent)))
+
+  %% Service Station Subprocess
+  11:task:(Confirm Service Station Shipment)
+  12:task:(Assemble Inbound Shipment)
+  13:task:(Send Inbound Shipment)
+  14:task:(Check Inbound Shipment)
+  15:exclusivegateway:{x}
+  16:task:(Prepare Products for Service Station)
+  17:exclusivegateway:{x}
+  18:exclusivegateway:{x}
+
+  %% Regional Shipment Subprocess
+  19:task:(Prepare Products for Regional Shipment)
+  20:exclusivegateway:{x}
+  21:task:(Prepare Products for Service Station)
+  22:exclusivegateway:{x}
+
+  %% Main flow
+  0:startevent:((startevent)) --> 1:task:(Receive Shipment Request)
+  1:task:(Receive Shipment Request) --> 2:task:(Check Product Availability)
+  2:task:(Check Product Availability) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Available|4:task:(Check Shipment Address)
+  3:exclusivegateway:{x} --> |Not available|10:endevent:(((endevent)))
+  4:task:(Check Shipment Address) --> 5:task:(Determine Shipment Type)
+  5:task:(Determine Shipment Type) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Service Station|7:subprocess:(Service Station Shipment Checks)
+  6:exclusivegateway:{x} --> |Regional|8:subprocess:(Regional Shipment Preparation)
+
+  %% Service Station path
+  7:subprocess:(Service Station Shipment Checks) --> 11:task:(Confirm Service Station Shipment)
+  11:task:(Confirm Service Station Shipment) --> 12:task:(Assemble Inbound Shipment)
+  12:task:(Assemble Inbound Shipment) --> 13:task:(Send Inbound Shipment)
+  13:task:(Send Inbound Shipment) --> 14:task:(Check Inbound Shipment)
+  14:task:(Check Inbound Shipment) --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |Check fails|14:task:(Check Inbound Shipment)
+  15:exclusivegateway:{x} --> |Check passes|16:task:(Prepare Products for Service Station)
+  16:task:(Prepare Products for Service Station) --> 17:exclusivegateway:{x}
+  17:exclusivegateway:{x} --> |More preparations needed|16:task:(Prepare Products for Service Station)
+  17:exclusivegateway:{x} --> |Preparations complete|18:exclusivegateway:{x}
+  18:exclusivegateway:{x} --> |Repeat address check|4:task:(Check Shipment Address)
+  18:exclusivegateway:{x} --> |Process complete|9:exclusivegateway:{x}
+
+  %% Regional path
+  8:subprocess:(Regional Shipment Preparation) --> 19:task:(Prepare Products for Regional Shipment)
+  19:task:(Prepare Products for Regional Shipment) --> 20:exclusivegateway:{x}
+  20:exclusivegateway:{x} --> |Continue to Service Station Prep|21:task:(Prepare Products for Service Station)
+  20:exclusivegateway:{x} --> |End process|9:exclusivegateway:{x}
+  21:task:(Prepare Products for Service Station) --> 22:exclusivegateway:{x}
+  22:exclusivegateway:{x} --> |More needed|21:task:(Prepare Products for Service Station)
+  22:exclusivegateway:{x} --> |All complete|4:task:(Check Shipment Address)
+
+  %% Merge and End
+  9:exclusivegateway:{x} --> 10:endevent:(((endevent)))

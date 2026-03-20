@@ -1,0 +1,554 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive File</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="File received" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Evaluate File Outcome</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="4">
+        <alternative condition="Outcome positive" language="text/javascript">
+          <call id="a11" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Perform Further Check</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="6">
+            <alternative condition="Check successful" language="text/javascript">
+              <loop mode="pre_test" condition="true">
+                <call id="a17" endpoint="" a:alt_id="7">
+                  <parameters>
+                    <label>Heat Bed and Extruder</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <loop mode="pre_test" condition="Heated">
+                  <choose mode="exclusive" a:alt_id="8">
+                    <alternative condition="Heated" language="text/javascript">
+                      <call id="a23" endpoint="" a:alt_id="9">
+                        <parameters>
+                          <label>Check If Ready to Proceed</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="10">
+                        <alternative condition="Ready" language="text/javascript">
+                          <call id="a29" endpoint="" a:alt_id="11">
+                            <parameters>
+                              <label>Send Status Update</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="12">
+                            <alternative condition="Proceed" language="text/javascript">
+                              <call id="a35" endpoint="" a:alt_id="13">
+                                <parameters>
+                                  <label>Print Object</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <choose mode="exclusive" a:alt_id="14">
+                                <alternative condition="Repeat heating" language="text/javascript">
+                                  <call id="a17" endpoint="" a:alt_id="7">
+                                    <parameters>
+                                      <label>Heat Bed and Extruder</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                </alternative>
+                                <alternative condition="Escalate" language="text/javascript">
+                                  <call id="a25" endpoint="" a:alt_id="15">
+                                    <parameters>
+                                      <label>Escalate Issue</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <choose mode="exclusive" a:alt_id="16">
+                                    <alternative condition="Attempt resolve" language="text/javascript">
+                                      <call id="a51" endpoint="" a:alt_id="17">
+                                        <parameters>
+                                          <label>Attempt to Resolve Issue</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <choose mode="exclusive" a:alt_id="18">
+                                        <alternative condition="Repeat heating" language="text/javascript">
+                                          <call id="a17" endpoint="" a:alt_id="7">
+                                            <parameters>
+                                              <label>Heat Bed and Extruder</label>
+                                              <method/>
+                                              <type>:task</type>
+                                              <arguments/>
+                                            </parameters>
+                                          </call>
+                                        </alternative>
+                                        <alternative condition="Print object" language="text/javascript">
+                                          <call id="a35" endpoint="" a:alt_id="13">
+                                            <parameters>
+                                              <label>Print Object</label>
+                                              <method/>
+                                              <type>:task</type>
+                                              <arguments/>
+                                            </parameters>
+                                          </call>
+                                          <escape a:alt_id="-1"/>
+                                        </alternative>
+                                        <alternative condition="Send update" language="text/javascript">
+                                          <call id="a29" endpoint="" a:alt_id="11">
+                                            <parameters>
+                                              <label>Send Status Update</label>
+                                              <method/>
+                                              <type>:task</type>
+                                              <arguments/>
+                                            </parameters>
+                                          </call>
+                                          <escape a:alt_id="-1"/>
+                                        </alternative>
+                                        <alternative condition="End" language="text/javascript">
+                                          <escape a:alt_id="-1"/>
+                                        </alternative>
+                                      </choose>
+                                    </alternative>
+                                    <alternative condition="Cannot resolve" language="text/javascript">
+                                      <escape a:alt_id="-1"/>
+                                    </alternative>
+                                  </choose>
+                                </alternative>
+                                <alternative condition="Print successful" language="text/javascript">
+                                  <escape a:alt_id="-1"/>
+                                </alternative>
+                              </choose>
+                            </alternative>
+                            <alternative condition="Repeat heating" language="text/javascript">
+                              <call id="a17" endpoint="" a:alt_id="7">
+                                <parameters>
+                                  <label>Heat Bed and Extruder</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="Escalate" language="text/javascript">
+                              <call id="a25" endpoint="" a:alt_id="15">
+                                <parameters>
+                                  <label>Escalate Issue</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <choose mode="exclusive" a:alt_id="16">
+                                <alternative condition="Attempt resolve" language="text/javascript">
+                                  <call id="a51" endpoint="" a:alt_id="17">
+                                    <parameters>
+                                      <label>Attempt to Resolve Issue</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <choose mode="exclusive" a:alt_id="18">
+                                    <alternative condition="Repeat heating" language="text/javascript">
+                                      <call id="a17" endpoint="" a:alt_id="7">
+                                        <parameters>
+                                          <label>Heat Bed and Extruder</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                    </alternative>
+                                    <alternative condition="Print object" language="text/javascript">
+                                      <call id="a35" endpoint="" a:alt_id="13">
+                                        <parameters>
+                                          <label>Print Object</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <choose mode="exclusive" a:alt_id="14">
+                                        <alternative condition="Repeat heating" language="text/javascript">
+                                          <call id="a17" endpoint="" a:alt_id="7">
+                                            <parameters>
+                                              <label>Heat Bed and Extruder</label>
+                                              <method/>
+                                              <type>:task</type>
+                                              <arguments/>
+                                            </parameters>
+                                          </call>
+                                        </alternative>
+                                        <alternative condition="Print successful" language="text/javascript">
+                                          <escape a:alt_id="-1"/>
+                                        </alternative>
+                                        <alternative condition="Escalate" language="text/javascript">
+                                          <call id="a25" endpoint="" a:alt_id="15">
+                                            <parameters>
+                                              <label>Escalate Issue</label>
+                                              <method/>
+                                              <type>:task</type>
+                                              <arguments/>
+                                            </parameters>
+                                          </call>
+                                          <escape a:alt_id="-1"/>
+                                        </alternative>
+                                      </choose>
+                                    </alternative>
+                                    <alternative condition="Send update" language="text/javascript">
+                                      <call id="a29" endpoint="" a:alt_id="11">
+                                        <parameters>
+                                          <label>Send Status Update</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <escape a:alt_id="-1"/>
+                                    </alternative>
+                                    <alternative condition="End" language="text/javascript">
+                                      <escape a:alt_id="-1"/>
+                                    </alternative>
+                                  </choose>
+                                </alternative>
+                                <alternative condition="Cannot resolve" language="text/javascript">
+                                  <escape a:alt_id="-1"/>
+                                </alternative>
+                              </choose>
+                            </alternative>
+                          </choose>
+                        </alternative>
+                        <alternative condition="Not ready" language="text/javascript">
+                          <call id="a25" endpoint="" a:alt_id="15">
+                            <parameters>
+                              <label>Escalate Issue</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="16">
+                            <alternative condition="Attempt resolve" language="text/javascript">
+                              <call id="a51" endpoint="" a:alt_id="17">
+                                <parameters>
+                                  <label>Attempt to Resolve Issue</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <choose mode="exclusive" a:alt_id="18">
+                                <alternative condition="Repeat heating" language="text/javascript">
+                                  <call id="a17" endpoint="" a:alt_id="7">
+                                    <parameters>
+                                      <label>Heat Bed and Extruder</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                </alternative>
+                                <alternative condition="Print object" language="text/javascript">
+                                  <call id="a35" endpoint="" a:alt_id="13">
+                                    <parameters>
+                                      <label>Print Object</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <choose mode="exclusive" a:alt_id="14">
+                                    <alternative condition="Repeat heating" language="text/javascript">
+                                      <call id="a17" endpoint="" a:alt_id="7">
+                                        <parameters>
+                                          <label>Heat Bed and Extruder</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                    </alternative>
+                                    <alternative condition="Print successful" language="text/javascript">
+                                      <escape a:alt_id="-1"/>
+                                    </alternative>
+                                    <alternative condition="Escalate" language="text/javascript">
+                                      <call id="a25" endpoint="" a:alt_id="15">
+                                        <parameters>
+                                          <label>Escalate Issue</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <escape a:alt_id="-1"/>
+                                    </alternative>
+                                  </choose>
+                                </alternative>
+                                <alternative condition="Send update" language="text/javascript">
+                                  <call id="a29" endpoint="" a:alt_id="11">
+                                    <parameters>
+                                      <label>Send Status Update</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <choose mode="exclusive" a:alt_id="12">
+                                    <alternative condition="Proceed" language="text/javascript">
+                                      <call id="a35" endpoint="" a:alt_id="13">
+                                        <parameters>
+                                          <label>Print Object</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <choose mode="exclusive" a:alt_id="14">
+                                        <alternative condition="Repeat heating" language="text/javascript">
+                                          <call id="a17" endpoint="" a:alt_id="7">
+                                            <parameters>
+                                              <label>Heat Bed and Extruder</label>
+                                              <method/>
+                                              <type>:task</type>
+                                              <arguments/>
+                                            </parameters>
+                                          </call>
+                                        </alternative>
+                                        <alternative condition="Print successful" language="text/javascript">
+                                          <escape a:alt_id="-1"/>
+                                        </alternative>
+                                        <alternative condition="Escalate" language="text/javascript">
+                                          <call id="a25" endpoint="" a:alt_id="15">
+                                            <parameters>
+                                              <label>Escalate Issue</label>
+                                              <method/>
+                                              <type>:task</type>
+                                              <arguments/>
+                                            </parameters>
+                                          </call>
+                                          <escape a:alt_id="-1"/>
+                                        </alternative>
+                                      </choose>
+                                    </alternative>
+                                    <alternative condition="Repeat heating" language="text/javascript">
+                                      <call id="a17" endpoint="" a:alt_id="7">
+                                        <parameters>
+                                          <label>Heat Bed and Extruder</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                    </alternative>
+                                    <alternative condition="Escalate" language="text/javascript">
+                                      <call id="a25" endpoint="" a:alt_id="15">
+                                        <parameters>
+                                          <label>Escalate Issue</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <escape a:alt_id="-1"/>
+                                    </alternative>
+                                  </choose>
+                                </alternative>
+                                <alternative condition="End" language="text/javascript">
+                                  <escape a:alt_id="-1"/>
+                                </alternative>
+                              </choose>
+                            </alternative>
+                            <alternative condition="Cannot resolve" language="text/javascript">
+                              <escape a:alt_id="-1"/>
+                            </alternative>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Heating failed" language="text/javascript">
+                      <call id="a25" endpoint="" a:alt_id="15">
+                        <parameters>
+                          <label>Escalate Issue</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="16">
+                        <alternative condition="Attempt resolve" language="text/javascript">
+                          <call id="a51" endpoint="" a:alt_id="17">
+                            <parameters>
+                              <label>Attempt to Resolve Issue</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="18">
+                            <alternative condition="Repeat heating" language="text/javascript">
+                              <call id="a17" endpoint="" a:alt_id="7">
+                                <parameters>
+                                  <label>Heat Bed and Extruder</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="Print object" language="text/javascript">
+                              <call id="a35" endpoint="" a:alt_id="13">
+                                <parameters>
+                                  <label>Print Object</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <choose mode="exclusive" a:alt_id="14">
+                                <alternative condition="Repeat heating" language="text/javascript">
+                                  <call id="a17" endpoint="" a:alt_id="7">
+                                    <parameters>
+                                      <label>Heat Bed and Extruder</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                </alternative>
+                                <alternative condition="Print successful" language="text/javascript">
+                                  <escape a:alt_id="-1"/>
+                                </alternative>
+                                <alternative condition="Escalate" language="text/javascript">
+                                  <call id="a25" endpoint="" a:alt_id="15">
+                                    <parameters>
+                                      <label>Escalate Issue</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <escape a:alt_id="-1"/>
+                                </alternative>
+                              </choose>
+                            </alternative>
+                            <alternative condition="Send update" language="text/javascript">
+                              <call id="a29" endpoint="" a:alt_id="11">
+                                <parameters>
+                                  <label>Send Status Update</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <choose mode="exclusive" a:alt_id="12">
+                                <alternative condition="Proceed" language="text/javascript">
+                                  <call id="a35" endpoint="" a:alt_id="13">
+                                    <parameters>
+                                      <label>Print Object</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <choose mode="exclusive" a:alt_id="14">
+                                    <alternative condition="Repeat heating" language="text/javascript">
+                                      <call id="a17" endpoint="" a:alt_id="7">
+                                        <parameters>
+                                          <label>Heat Bed and Extruder</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                    </alternative>
+                                    <alternative condition="Print successful" language="text/javascript">
+                                      <escape a:alt_id="-1"/>
+                                    </alternative>
+                                    <alternative condition="Escalate" language="text/javascript">
+                                      <call id="a25" endpoint="" a:alt_id="15">
+                                        <parameters>
+                                          <label>Escalate Issue</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <escape a:alt_id="-1"/>
+                                    </alternative>
+                                  </choose>
+                                </alternative>
+                                <alternative condition="Repeat heating" language="text/javascript">
+                                  <call id="a17" endpoint="" a:alt_id="7">
+                                    <parameters>
+                                      <label>Heat Bed and Extruder</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                </alternative>
+                                <alternative condition="Escalate" language="text/javascript">
+                                  <call id="a25" endpoint="" a:alt_id="15">
+                                    <parameters>
+                                      <label>Escalate Issue</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <escape a:alt_id="-1"/>
+                                </alternative>
+                              </choose>
+                            </alternative>
+                            <alternative condition="End" language="text/javascript">
+                              <escape a:alt_id="-1"/>
+                            </alternative>
+                          </choose>
+                        </alternative>
+                        <alternative condition="Cannot resolve" language="text/javascript">
+                          <escape a:alt_id="-1"/>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                  </choose>
+                </loop>
+              </loop>
+            </alternative>
+            <alternative condition="Check failed" language="text/javascript"/>
+          </choose>
+        </alternative>
+        <alternative condition="Outcome negative" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="File not received" language="text/javascript"/>
+  </choose>
+</description>

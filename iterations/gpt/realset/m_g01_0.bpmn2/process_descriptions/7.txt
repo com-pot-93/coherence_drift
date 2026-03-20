@@ -1,0 +1,9 @@
+The process begins. First, it is checked whether a file has been received. If the file has not been received, the process moves directly towards the end.
+
+If the file has been received, the next step is to receive the file. After receiving the file, the process checks whether the outcome is positive. If the outcome is not positive, the process moves towards the end.
+
+If the outcome is positive, a further check is performed. After this check, it is determined whether the check is successful or not. If the check fails, the process moves towards the end.
+
+If the check is successful, additional steps are carried out. Once these additional steps are completed, the process moves towards the end.
+
+The process ends.

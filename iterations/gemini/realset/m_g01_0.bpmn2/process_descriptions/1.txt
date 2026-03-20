@@ -1,0 +1,6 @@
+The process starts and then proceeds to a decision point.
+Depending on the condition at this point, the process either proceeds to another decision point or it ends.
+If the process proceeds to the second decision point, depending on the condition, it either executes a task named "Send Status" and then proceeds to a third decision point, or it ends.
+If the "Send Status" task is executed, then depending on the condition at the third decision point, the process either executes a task named "Print Object" and then proceeds to a fourth decision point, or it proceeds directly to the fourth decision point.
+From the fourth decision point, the process returns to the initial decision point.
+If the process proceeds to the second decision point, it ends.

@@ -1,0 +1,7 @@
+The process starts with the event "start event" and proceeds to "Diagnose non-specific low back pain." After the diagnosis, a decision is made.
+
+If the decision leads to "Apply superficial heat or other non-pharmacological treatments," another decision is made. Here, either "Prescribe NSAID or SMR" is chosen, or nothing happens. Both paths then merge.
+
+Alternatively, from the first decision, if "Apply exercise or other non-pharmacological treatments" is chosen, another decision is made. From here, either "Prescribe NSAID" is chosen, or nothing happens. If "Prescribe NSAID" is chosen, another decision is made, where either "Prescribe opioid" is chosen, or nothing happens. Both paths then merge. The paths where nothing happens also merge.
+
+Finally, all paths merge into a single flow that leads to the "end event," concluding the process.

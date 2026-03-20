@@ -1,0 +1,15 @@
+The process starts when a patient comes to the hospital and stays in the front. Then, they visit the nurse, who checks their insurance.
+
+After the insurance check, there's a decision point. If the patient is not registered, they need to check if the patient is registered in the hospital. If not, the patient is registered and pays a fee. After paying the fee, the patient is booked for a doctor's appointment.
+
+If the patient is already registered or after they have been registered and paid the fee, the process continues with booking the patient for a doctor.
+
+After booking, the patient is examined by the doctor. Following the examination, there are several possible paths depending on the patient's condition:
+
+1.  The patient may be hospitalized. After hospitalization, the patient is booked for a doctor.
+2.  The patient may be sent to the pharmacy, where they visit the pharmacy, order medicine, pay for it, and receive it. After receiving the medicine, the patient is booked for a doctor.
+3.  The patient may be sent home. After that, the patient is booked for a doctor.
+
+After any of the above steps (hospitalization, pharmacy visit, or being sent home), the patient is booked for a doctor. After booking, the patient is examined again.
+
+After the examination, the process ends.

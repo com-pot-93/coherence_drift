@@ -1,0 +1,11 @@
+The process starts when the assessment tool is initiated. Subsequently, the tool starts, and the incident type is entered. Depending on the incident type, the process follows one of four paths: for an accident, an almost accident, a severe safety/health risk, or defective protective equipment.
+
+After specifying the incident further, the process splits into three mutually exclusive branches.
+
+In the first branch, the process splits again into two mutually exclusive paths, where either the user's own data or the victim's data is entered. Then, the process splits into two mutually exclusive paths again. In the first path, two tasks are executed in parallel: contacting accident insurance and, depending on a condition, contacting the Labour Inspectorate. In the second path, the task is to contact superiors.
+
+In the second main branch, two tasks are executed in parallel: contacting accident insurance and contacting the principal.
+
+In the third main branch, depending on a condition, either nothing happens or a task is performed to contact private insurance.
+
+Finally, the process proposes tasks to the user, the proposed task is executed, and the process ends.

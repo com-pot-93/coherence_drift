@@ -1,0 +1,40 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. **The process begins** when invoices are received.
+2. The invoices are then **visually inspected by the secretariat**.
+3. After inspection, the invoices are **forwarded to the accounting department**.
+4. The accounting department **identifies the supplier and creates a record** for the invoice.
+5. Next, the invoice items are **checked for accuracy and completeness**.
+6. The relevant **cost center and responsible managers are noted**.
+7. A **docket is prepared and a copy of the invoice is placed in the internal mail system**.
+8. At this point, a decision is made whether to **continue with the process or not**:
+    - If the process should not continue, it **ends here**.
+    - If the process continues, the **invoice is sent to the cost center manager**.
+9. The process checks if the invoice should be **reviewed by the manager**:
+    - If not, the process ends.
+    - If yes, the **manager reviews the invoice**.
+10. After the manager’s review, the process checks for any **issues**:
+    - If issues are found, the invoice is **sent back to accounting for clarification**.
+    - Accounting then **clarifies the issue with the vendor**.
+    - A **copy of the clarified invoice is sent back to the manager**, who reviews it again.
+    - This cycle repeats until no issues are found.
+11. If the manager **approves the invoice**, the process checks if **approval is required**:
+    - If approval is required, the manager **writes an approval code**.
+    - If no approval is needed, the process continues.
+12. The process then checks if **more managers need to review the invoice**:
+    - If more reviews are needed, the invoice is **passed to the next manager**, who reviews it.
+    - This cycle repeats until all required managers have approved.
+    - If all managers have approved, the invoice goes to the **commercial manager for a commercial audit**.
+13. After the commercial audit, the process checks if a **board review is needed**:
+    - If a board review is needed, the invoice is **sent to the board for review**.
+    - After the board review, or if no board review is needed, the process continues.
+14. The **copy and docket are moved back to accounting**.
+15. Accounting then **checks for any complaints or issues**:
+    - If complaints or issues are found, they are **resolved**, and the process returns to checking for complaints or issues.
+    - If no complaints are found, **payment instructions are given and the invoice is closed**.
+16. After closing the invoice, the process checks if **another manager review is needed**:
+    - If another review is needed, the invoice is **sent back to the cost center manager for review**, and the review cycle repeats.
+    - If no further review is needed, the process continues to its conclusion.
+17. The process then follows a series of checks and steps to ensure all necessary actions are completed, eventually leading to the **end of the process**.
+
+Throughout the process, there are several points where the workflow may loop back to earlier steps, especially if issues or complaints are found, or if additional reviews are required. The process ensures that invoices are thoroughly checked, approved by all necessary parties, and any issues are resolved before payment is made and the invoice is closed. The process ends once all checks, reviews, and necessary actions have been completed.

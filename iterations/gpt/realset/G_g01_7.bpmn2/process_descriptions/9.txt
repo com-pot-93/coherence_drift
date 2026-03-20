@@ -1,0 +1,7 @@
+The process begins when the organizer starts by sending invitations to friends. After the invitations are sent, the organizer asks the friends to suggest games for the party. Once the game suggestions are requested, the organizer waits to receive these suggestions from the friends.
+
+After receiving the game suggestions, the organizer selects which games will be played at the party. At this point, the organizer checks whether any of the selected games need to be downloaded. If some games do require downloading, the organizer proceeds to download the necessary games. If no downloads are needed, this step is skipped.
+
+Once any required games have been downloaded (or if no downloads were needed), the organizer asks the friends if beer is needed for the party. Based on the responses, the organizer estimates the total amount of beer required. The organizer then checks if there is enough beer for the party. If more beer is needed, the organizer buys additional beer. If there is already enough beer, this step is skipped.
+
+After ensuring there is enough beer, the organizer makes the final preparations for the party. Once all preparations are complete, the process ends.

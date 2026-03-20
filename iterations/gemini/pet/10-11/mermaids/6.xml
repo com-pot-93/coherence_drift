@@ -1,0 +1,19 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Request Measurements)
+  1:task:(Request Measurements) --> 2:task:(Check Request)
+  2:task:(Check Request) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Deny| 4:task:(Deny Request)
+  3:exclusivegateway:{x} --> |Perform| 5:task:(Perform Measurement)
+  4:task:(Deny Request) --> 10:inclusivegateway:{O}
+  5:task:(Perform Measurement) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Failed| 7:task:(Inform GO)
+  6:exclusivegateway:{x} --> |Success| 8:task:(Transmit Measured Values)
+  7:task:(Inform GO) --> 10:inclusivegateway:{O}
+  8:task:(Transmit Measured Values) --> 9:task:(Process Values)
+  9:task:(Process Values) --> 11:task:(Send Changed Values)
+  11:task:(Send Changed Values) --> 10:inclusivegateway:{O}
+  10:inclusivegateway:{O} --> 12:inclusivegateway:{O}
+  12:inclusivegateway:{O} --> 13:task:(Transmit Readings to SP)
+  13:task:(Transmit Readings to SP) --> 14:endevent:(((endevent)))
+```

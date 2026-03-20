@@ -1,0 +1,29 @@
+Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when an order is received.
+2. The order is then evaluated. If the order is rejected, the process moves to handling the order rejection. After handling the rejection, the process ends.
+3. If the order is not rejected, the storehouse is informed about the order.
+4. Next, the engineering department is notified.
+5. After notifying the engineering department, two activities happen at the same time:
+    - The first activity involves processing the part list.
+    - The second activity involves a series of checks and verifications related to the parts needed for the order.
+6. For the part list processing:
+    - The part list is processed.
+    - At the same time, the part list is checked, and the quantities of the parts are verified.
+    - After verifying the quantities, it is determined whether all parts are available.
+        - If all parts are available, the parts are reserved.
+        - If some parts are missing, a back-order is created.
+    - This check for part availability and the creation of back-orders can happen in two parallel paths, both following the same logic: check part list, verify quantities, reserve parts if available, or create a back-order if not.
+    - Once all parallel checks and actions are completed, the process continues.
+7. For the other activity that happens at the same time as part list processing:
+    - The part list is checked, and the quantities of the parts are verified.
+    - It is determined whether all parts are available.
+        - If all parts are available, the parts are reserved.
+        - If some parts are missing, a back-order is created.
+    - This check for part availability and the creation of back-orders can also happen in two parallel paths, both following the same logic: check part list, verify quantities, reserve parts if available, or create a back-order if not.
+    - Once all parallel checks and actions are completed, the process continues.
+8. After all checks, verifications, reservations, and back-orders are completed, the bicycle is assembled.
+9. Once the bicycle is assembled, it is shipped.
+10. After shipping the bicycle or handling an order rejection, the process ends.
+
+This process ensures that every order is either properly fulfilled or rejected, with all necessary checks for parts availability and appropriate actions taken for missing parts before assembly and shipping.

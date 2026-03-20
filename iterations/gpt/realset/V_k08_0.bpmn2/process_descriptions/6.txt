@@ -1,0 +1,61 @@
+Certainly! Here is a detailed, step-by-step description of the process as depicted in your model:
+
+---
+
+The process begins by prompting the user to log in. After the user is prompted, their credentials are checked.
+
+If the credentials are incorrect, the process ends.
+
+If the credentials are correct, the system checks the user's permissions.
+
+If the permissions are insufficient, the process ends.
+
+If the permissions are sufficient, the system checks a specific condition.
+
+If this condition is met, the process ends.
+
+If the condition is not met, the process checks another condition.
+
+If this next condition is not met, the process ends.
+
+If this next condition is met, the user is asked if they want to add more products.
+
+At this point, the process enters a complex series of steps that allow the user to add products, confirm their order, and finalize the purchase. The following describes the main flow and the repeated patterns within it:
+
+1. **Adding Products and Confirming Order:**
+   - The user is asked if they want to add more products.
+   - If the user chooses to add more products, they are prompted to select a product.
+   - After selecting a product, the product is added to the cart and saved.
+   - The user is then asked again if they want to add more products, repeating the cycle as many times as needed.
+
+2. **Order Confirmation:**
+   - At any point, the user can choose to confirm their order instead of adding more products.
+   - When the user confirms the order, the system presents an order confirmation.
+
+3. **Finalizing the Order:**
+   - The user can choose to finalize the order after confirmation.
+   - When finalizing, the system prepares shipment details and payment details at the same time.
+   - Once both shipment and payment details are prepared, the system collects payment information and shipping details simultaneously.
+   - After collecting this information, the system checks if the order is correct.
+
+4. **Order Verification and Further Confirmation:**
+   - If the order is not correct, the system presents the order confirmation again, and the user can repeat the confirmation and finalization steps as needed.
+   - If the order is correct, the system asks if further confirmation is needed.
+   - If further confirmation is needed, the system presents the order confirmation again, and the user can repeat the confirmation and finalization steps.
+   - If no further confirmation is needed, the process continues.
+
+5. **Process Completion:**
+   - After all confirmations and checks are complete, the process ends.
+
+Throughout the process, at various points, if the user chooses not to add more products or if certain conditions are not met, the process ends.
+
+This structure allows the user to:
+- Log in and be authenticated.
+- Add as many products as they wish, one at a time.
+- Confirm and finalize their order.
+- Have multiple opportunities to review and correct their order before completion.
+- End the process at any point if conditions are not met or if the user chooses not to proceed.
+
+---
+
+This description follows the exact sequence and logic of the provided process model, ensuring that every step and decision point is included and described in the order they occur.

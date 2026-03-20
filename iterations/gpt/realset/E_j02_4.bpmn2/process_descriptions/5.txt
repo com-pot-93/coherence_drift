@@ -1,0 +1,25 @@
+The process begins. Two activities are carried out at the same time: one is to check if the baby is younger than two years, and the other is to identify the parent. Once both of these activities are completed, the process continues.
+
+Next, a decision is made. If certain conditions are met, a notification is sent to the employer. After this, the process waits for confirmation from the employer. Once confirmation is received, the parent takes maternity leave.
+
+After the parent takes maternity leave, another decision is made based on how the leave is split or extended. There are several possible paths:
+
+1. **If the leave is split and the split is less than two months:**  
+   The employer is notified about the split being less than two months. The process then waits for a notification from the employer regarding this split. After receiving the notification, the parent takes leave following the split of less than two months.
+
+2. **If the leave is split and the split is more than three months:**  
+   The employer is notified about the split being more than three months. The process waits for a notification from the employer about this split. After receiving the notification, the parent takes leave following the split of more than three months.
+
+3. **If the leave is extended and the extension is less than two months:**  
+   The employer is notified about the extension being less than two months. The process waits for a notification from the employer regarding this extension. After receiving the notification, the parent takes leave following the extension of less than two months.
+
+4. **If the leave is extended and the extension is more than three months:**  
+   The employer is notified about the extension being more than three months. The process waits for a notification from the employer about this extension. After receiving the notification, the parent takes leave following the extension of more than three months.
+
+5. **If both parents take leave together:**  
+   Both parents take leave at the same time.
+
+6. **If none of the above situations apply:**  
+   The process continues without any additional action.
+
+After any of these paths are completed, the process moves through a series of steps that bring all the possible outcomes together. Finally, the process ends.

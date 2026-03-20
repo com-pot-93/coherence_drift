@@ -1,0 +1,124 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Submit Request)
+2:task:(Register Request)
+3:exclusivegateway:{x}
+4:task:(Initial Continuation Check)
+5:exclusivegateway:{x}
+6:task:(Further Check)
+7:exclusivegateway:{x}
+8:task:(Evaluate Condition)
+9:exclusivegateway:{x}
+10:exclusivegateway:{x}
+11:task:(Another Check)
+12:exclusivegateway:{x}
+13:exclusivegateway:{x}
+14:exclusivegateway:{x}
+15:task:(Supervisor Review)
+16:exclusivegateway:{x}
+17:task:(Return with Comments)
+18:task:(Employee Reviews Comments)
+19:exclusivegateway:{x}
+20:task:(Resubmit Request)
+21:endevent:(((endevent)))
+22:task:(Forward to Purchasing)
+23:task:(Purchasing Continuation Check)
+24:exclusivegateway:{x}
+25:task:(Further Purchasing Check)
+26:exclusivegateway:{x}
+27:task:(Another Purchasing Check)
+28:exclusivegateway:{x}
+29:exclusivegateway:{x}
+30:exclusivegateway:{x}
+31:task:(Additional Purchase Check)
+32:exclusivegateway:{x}
+33:exclusivegateway:{x}
+34:exclusivegateway:{x}
+35:task:(Prepare Quotations)
+36:exclusivegateway:{x}
+37:task:(Confirm Vendor Selection)
+38:exclusivegateway:{x}
+39:task:(Generate and Send Purchase Order)
+40:task:(Wait for Product Delivery)
+41:task:(Receive Invoice)
+42:exclusivegateway:{x}
+43:task:(Notify User of Status)
+44:task:(Final Checks)
+45:task:(Final Evaluations)
+46:exclusivegateway:{x}
+47:exclusivegateway:{x}
+48:exclusivegateway:{x}
+49:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Submit Request)
+1:task:(Submit Request) --> 2:task:(Register Request)
+2:task:(Register Request) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Continue|4:task:(Initial Continuation Check)
+3:exclusivegateway:{x} --> |Do not continue|21:endevent:(((endevent)))
+4:task:(Initial Continuation Check) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Continue|6:task:(Further Check)
+5:exclusivegateway:{x} --> |Do not continue|21:endevent:(((endevent)))
+6:task:(Further Check) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Continue|8:task:(Evaluate Condition)
+7:exclusivegateway:{x} --> |Do not continue|21:endevent:(((endevent)))
+8:task:(Evaluate Condition) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Positive|10:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Negative|21:endevent:(((endevent)))
+10:exclusivegateway:{x} --> |Proceed|11:task:(Another Check)
+10:exclusivegateway:{x} --> |Do not proceed|21:endevent:(((endevent)))
+11:task:(Another Check) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Favorable|13:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Not favorable|21:endevent:(((endevent)))
+13:exclusivegateway:{x} --> |Positive|14:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Not positive|21:endevent:(((endevent)))
+14:exclusivegateway:{x} --> |Positive|15:task:(Supervisor Review)
+14:exclusivegateway:{x} --> |Not positive|21:endevent:(((endevent)))
+15:task:(Supervisor Review) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |Approved|22:task:(Forward to Purchasing)
+16:exclusivegateway:{x} --> |Not approved|17:task:(Return with Comments)
+17:task:(Return with Comments) --> 18:task:(Employee Reviews Comments)
+18:task:(Employee Reviews Comments) --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> |Resubmit|20:task:(Resubmit Request)
+19:exclusivegateway:{x} --> |Withdraw|21:endevent:(((endevent)))
+20:task:(Resubmit Request) --> 15:task:(Supervisor Review)
+22:task:(Forward to Purchasing) --> 23:task:(Purchasing Continuation Check)
+23:task:(Purchasing Continuation Check) --> 24:exclusivegateway:{x}
+24:exclusivegateway:{x} --> |Continue|25:task:(Further Purchasing Check)
+24:exclusivegateway:{x} --> |Do not continue|21:endevent:(((endevent)))
+25:task:(Further Purchasing Check) --> 26:exclusivegateway:{x}
+26:exclusivegateway:{x} --> |Continue|27:task:(Another Purchasing Check)
+26:exclusivegateway:{x} --> |Do not continue|21:endevent:(((endevent)))
+27:task:(Another Purchasing Check) --> 28:exclusivegateway:{x}
+28:exclusivegateway:{x} --> |Favorable|29:exclusivegateway:{x}
+28:exclusivegateway:{x} --> |Not favorable|21:endevent:(((endevent)))
+29:exclusivegateway:{x} --> |Positive|30:exclusivegateway:{x}
+29:exclusivegateway:{x} --> |Not positive|21:endevent:(((endevent)))
+30:exclusivegateway:{x} --> |Positive|31:task:(Additional Purchase Check)
+30:exclusivegateway:{x} --> |Not positive|21:endevent:(((endevent)))
+31:task:(Additional Purchase Check) --> 32:exclusivegateway:{x}
+32:exclusivegateway:{x} --> |Positive|33:exclusivegateway:{x}
+32:exclusivegateway:{x} --> |Not positive|21:endevent:(((endevent)))
+33:exclusivegateway:{x} --> |Positive|34:exclusivegateway:{x}
+33:exclusivegateway:{x} --> |Not positive|21:endevent:(((endevent)))
+34:exclusivegateway:{x} --> |Positive|35:task:(Prepare Quotations)
+34:exclusivegateway:{x} --> |Escalate and recheck|31:task:(Additional Purchase Check)
+35:task:(Prepare Quotations) --> 36:exclusivegateway:{x}
+36:exclusivegateway:{x} --> |Cannot continue|31:task:(Additional Purchase Check)
+36:exclusivegateway:{x} --> |Vendor selected|37:task:(Confirm Vendor Selection)
+37:task:(Confirm Vendor Selection) --> 38:exclusivegateway:{x}
+38:exclusivegateway:{x} --> |Changes needed|35:task:(Prepare Quotations)
+38:exclusivegateway:{x} --> |Vendor confirmed|39:task:(Generate and Send Purchase Order)
+39:task:(Generate and Send Purchase Order) --> 40:task:(Wait for Product Delivery)
+40:task:(Wait for Product Delivery) --> 41:task:(Receive Invoice)
+41:task:(Receive Invoice) --> 42:exclusivegateway:{x}
+42:exclusivegateway:{x} --> |Not complete|35:task:(Prepare Quotations)
+42:exclusivegateway:{x} --> |Complete|43:task:(Notify User of Status)
+43:task:(Notify User of Status) --> 44:task:(Final Checks)
+44:task:(Final Checks) --> 45:task:(Final Evaluations)
+45:task:(Final Evaluations) --> 46:exclusivegateway:{x}
+46:exclusivegateway:{x} --> |Positive|47:exclusivegateway:{x}
+46:exclusivegateway:{x} --> |Negative|49:endevent:(((endevent)))
+47:exclusivegateway:{x} --> |Positive|48:exclusivegateway:{x}
+47:exclusivegateway:{x} --> |Negative|49:endevent:(((endevent)))
+48:exclusivegateway:{x} --> |Positive|49:endevent:(((endevent)))
+48:exclusivegateway:{x} --> |Negative|49:endevent:(((endevent)))

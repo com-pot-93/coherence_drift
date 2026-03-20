@@ -1,0 +1,7 @@
+The process begins when a data subject request is received. After receiving this request, the next step is to send the request to a third party. Once the request has been sent, the process waits for a corresponding request from the third party.
+
+After the corresponding request is received, two activities are carried out at the same time. One activity involves retrieving elaborations, while the other involves retrieving the available data. Both of these activities are performed independently and simultaneously.
+
+Once both the elaborations and the available data have been retrieved, the process continues by communicating the data and the elaborations to the third party. After this information has been communicated to the third party, the same data and elaborations are then communicated to the data subject.
+
+The process concludes after the data and elaborations have been communicated to the data subject.

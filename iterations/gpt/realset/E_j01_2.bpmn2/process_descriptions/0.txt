@@ -1,0 +1,15 @@
+The process begins when a job application is received. Once the application is received, two activities take place at the same time: the job application is confirmed, and the job application is rated. Both of these actions are carried out independently and simultaneously.
+
+After both the confirmation and the rating of the job application are completed, the process continues. At this point, a decision is made about how to proceed. There are two possible paths:
+
+1. The process can move directly towards the end without any further action.
+2. Alternatively, the process can continue with negotiating an interview with the job applicant. If this path is chosen, after the interview is negotiated, the job seeker is rated.
+
+Following the rating of the job seeker, another decision is made:
+
+- The process can proceed to hiring the prospective customer, after which it continues.
+- Or, it can move forward without hiring.
+
+Regardless of which path is taken after rating the job seeker, the process eventually converges and continues towards the end.
+
+Finally, the process concludes.

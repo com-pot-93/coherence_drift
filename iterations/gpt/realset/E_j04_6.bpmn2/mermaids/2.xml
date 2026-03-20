@@ -1,0 +1,90 @@
+flowchart LR
+0:startevent:((startevent))
+1:exclusivegateway:{x}
+2:task:(Decision: Proceed?)
+3:exclusivegateway:{x}
+4:task:(Decision Point 2)
+5:exclusivegateway:{x}
+6:task:(Decision: Condition True?)
+7:exclusivegateway:{x}
+8:task:(Load Front Page)
+9:exclusivegateway:{x}
+10:parallelgateway:{AND}
+11:task:(Topic Activity)
+12:task:(Payment Activity)
+13:task:(Experience Activity)
+14:task:(Hobbies Activity)
+15:parallelgateway:{AND}
+16:parallelgateway:{AND}
+17:task:(Topic Activity)
+18:task:(Payment Activity)
+19:task:(Experience Activity)
+20:task:(Hobbies Activity)
+21:parallelgateway:{AND}
+22:task:(Send Request)
+23:task:(Wait for Offer)
+24:exclusivegateway:{x}
+25:task:(Escalation Needed?)
+26:exclusivegateway:{x}
+27:task:(Load Front Page)
+28:task:(Perform Escalation)
+29:task:(Invalidate Other Offers)
+30:task:(Send Weekly Status Update)
+31:task:(Receive Company Status Update)
+32:task:(Finish Internship)
+33:exclusivegateway:{x}
+34:task:(Final Decision)
+35:exclusivegateway:{x}
+36:task:(Post Tweet About Company)
+37:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |Proceed|2:task:(Decision: Proceed?)
+1:exclusivegateway:{x} --> |Do not proceed|37:endevent:(((endevent)))
+2:task:(Decision: Proceed?) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Proceed|4:task:(Decision Point 2)
+3:exclusivegateway:{x} --> |Do not proceed|37:endevent:(((endevent)))
+4:task:(Decision Point 2) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Condition true|6:task:(Decision: Condition True?)
+5:exclusivegateway:{x} --> |Condition false|24:exclusivegateway:{x}
+6:task:(Decision: Condition True?) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Yes|8:task:(Load Front Page)
+7:exclusivegateway:{x} --> |No|24:exclusivegateway:{x}
+8:task:(Load Front Page) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Path 1|10:parallelgateway:{AND}
+9:exclusivegateway:{x} --> |Path 2|16:parallelgateway:{AND}
+10:parallelgateway:{AND} --> 11:task:(Topic Activity)
+10:parallelgateway:{AND} --> 12:task:(Payment Activity)
+10:parallelgateway:{AND} --> 13:task:(Experience Activity)
+10:parallelgateway:{AND} --> 14:task:(Hobbies Activity)
+11:task:(Topic Activity) --> 15:parallelgateway:{AND}
+12:task:(Payment Activity) --> 15:parallelgateway:{AND}
+13:task:(Experience Activity) --> 15:parallelgateway:{AND}
+14:task:(Hobbies Activity) --> 15:parallelgateway:{AND}
+15:parallelgateway:{AND} --> 22:task:(Send Request)
+16:parallelgateway:{AND} --> 17:task:(Topic Activity)
+16:parallelgateway:{AND} --> 18:task:(Payment Activity)
+16:parallelgateway:{AND} --> 19:task:(Experience Activity)
+16:parallelgateway:{AND} --> 20:task:(Hobbies Activity)
+17:task:(Topic Activity) --> 21:parallelgateway:{AND}
+18:task:(Payment Activity) --> 21:parallelgateway:{AND}
+19:task:(Experience Activity) --> 21:parallelgateway:{AND}
+20:task:(Hobbies Activity) --> 21:parallelgateway:{AND}
+21:parallelgateway:{AND} --> 22:task:(Send Request)
+22:task:(Send Request) --> 23:task:(Wait for Offer)
+23:task:(Wait for Offer) --> 24:exclusivegateway:{x}
+24:exclusivegateway:{x} --> |Escalation needed|25:task:(Escalation Needed?)
+24:exclusivegateway:{x} --> |No escalation|29:task:(Invalidate Other Offers)
+25:task:(Escalation Needed?) --> 26:exclusivegateway:{x}
+26:exclusivegateway:{x} --> |Yes|27:task:(Load Front Page)
+26:exclusivegateway:{x} --> |No|29:task:(Invalidate Other Offers)
+27:task:(Load Front Page) --> 28:task:(Perform Escalation)
+28:task:(Perform Escalation) --> 2:task:(Decision: Proceed?)
+29:task:(Invalidate Other Offers) --> 30:task:(Send Weekly Status Update)
+30:task:(Send Weekly Status Update) --> 31:task:(Receive Company Status Update)
+31:task:(Receive Company Status Update) --> 32:task:(Finish Internship)
+32:task:(Finish Internship) --> 33:exclusivegateway:{x}
+33:exclusivegateway:{x} --> |End|37:endevent:(((endevent)))
+33:exclusivegateway:{x} --> |Post tweet|36:task:(Post Tweet About Company)
+36:task:(Post Tweet About Company) --> 37:endevent:(((endevent)))
+37:endevent:(((endevent))) --> 1:exclusivegateway:{x}

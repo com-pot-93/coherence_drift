@@ -1,0 +1,40 @@
+Certainly! Here is a detailed, step-by-step description of the process you provided:
+
+1. The process begins when a customer makes a notice at the secretarial office.
+2. After receiving the notice, a secretarial worker asks for the patient’s data.
+3. The secretarial worker then connects the doctor to the nursing officer.
+4. The nursing officer conducts a thorough inquiry into the patient’s condition.
+5. The nursing officer records the gathered information on a registration form.
+6. The nursing officer hands the completed registration form to the secretarial office.
+7. The secretarial office enters the information from the form into the information system.
+8. The secretarial office prints out the information from the form.
+9. At this point, there is a decision. If required, the secretarial office creates a patient file.
+10. The secretarial office stores both the registration form and the printed information in the patient file.
+11. The secretarial office produces two registration cards for the patient.
+12. The secretarial office adds the new patient to the list of new notices.
+13. The process continues to a staff meeting, where team members gather.
+14. The secretarial office assigns new patients to team members during the meeting.
+15. The secretarial office records these assignments on an assignment list.
+16. Team members then decide whether the patient’s medical file is needed.
+17. Team members add their information to the assignment list.
+18. The secretarial office stores the assignment information in the information system.
+19. The secretarial office distributes the produced registration cards.
+20. At this stage, there is another decision. If necessary, the secretarial office prepares a letter to the patient’s family doctor.
+21. The secretarial office sends the letter to the family doctor.
+22. The secretarial office receives a copy of the patient’s medical file.
+23. The secretarial office informs the person responsible for the intake.
+24. The secretarial office adds the received copy to the patient’s file.
+25. The process continues with the first intake worker planning a meeting with the patient.
+26. The first intake worker examines the patient.
+27. The first intake worker records any additional observations in notes.
+28. The first intake worker places a copy of these notes in the patient’s file.
+29. The first intake worker adds a standard checklist to the patient’s file.
+30. At this point, there is another decision. If needed, the second intake worker plans the first meeting with the patient.
+31. The secretarial office types out any recorded tapes from the meeting.
+32. The secretarial office adds this information to the patient’s file.
+33. The secretarial office puts the patient on the list of patients.
+34. The secretarial office provides the team leader with a list of these patients.
+35. Finally, the team members create a treatment plan for the patients.
+36. The process ends.
+
+This description follows the exact sequence and structure of the process as depicted in your model, ensuring that every step and decision is included and clearly explained.

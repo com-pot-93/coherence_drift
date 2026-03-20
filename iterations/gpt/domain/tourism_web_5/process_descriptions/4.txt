@@ -1,0 +1,13 @@
+The process begins when a booking request is received. After receiving the request, the booking request is processed.
+
+Next, a decision is made. If the process should continue, the availability is checked. If not, the process ends.
+
+If availability is checked, another decision follows. If the requested time is not available, an alternative time is proposed, and the requester is notified about this alternative. If the requested time is available, the requester is notified of the availability. After either notification, the process waits for a response from the requester.
+
+Once a response is received, another decision is made. If a bill needs to be sent, the bill is sent. After sending the bill, it is determined whether further billing is needed. If further billing is required, an additional bill is sent. After all necessary bills have been sent, or if no further billing is needed, the process continues. If no bill is needed, the process also continues.
+
+Next, the booking is confirmed. After confirmation, it is checked whether escalation is needed. If escalation is required, the escalation is handled. If not, the process continues.
+
+After handling escalation or if no escalation is needed, the process returns to the point where availability is checked, allowing the process to repeat as necessary.
+
+If, at the earlier decision point after processing the booking request, the process should not continue, the process ends.

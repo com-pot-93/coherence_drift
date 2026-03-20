@@ -1,0 +1,6 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Create list of necessary parts)
+  1:task:(Create list of necessary parts) --> 2:task:(Query Webshops fo)
+  2:task:(Query Webshops fo) --> 3:endevent:(((endevent)))
+```

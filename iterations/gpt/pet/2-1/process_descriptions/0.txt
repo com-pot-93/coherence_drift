@@ -1,0 +1,42 @@
+Certainly! Here is a detailed, step-by-step description of the process as depicted in your model:
+
+1. The process begins when a customer notices that the service quality has declined.
+2. The system then sends a list of problem parameters to customer service.
+3. A service employee enters a problem report into the system.
+4. The service employee compares the problem report with the customer’s service agreement.
+5. The service employee determines what countermeasures are necessary.
+6. At this point, a decision is made:
+   - If the decision is positive, the process continues to another decision point.
+7. At the next decision point, there are three possible actions:
+   - The electronic service determines how significant the customer is, and the process continues.
+   - The service employee links the case to an extra problem fix process, and the process continues.
+   - The process can also proceed directly to the next step.
+8. After any of these actions, the process returns to the previous decision point, and then moves forward.
+9. The service employee creates a detailed problem report.
+10. The service employee sends the problem report to Service Management.
+11. Service Management handles any violations of quality.
+12. Service Management investigates the problem.
+13. Another decision is made:
+    - Service Management can either perform an analysis and create a trouble report, or send the problem report to Resource Provisioning.
+14. If Service Management performs the analysis:
+    - Service Management creates a trouble report, and the process continues.
+15. If Service Management sends the problem report to Resource Provisioning:
+    - Resource Provisioning checks for potential issues.
+    - Another decision is made:
+      - Resource Provisioning can analyze the problem and create a trouble report.
+      - Or, Resource Provisioning can create a service execution notification.
+    - After either action, Resource Provisioning sends a status report to Service Management, and the process continues.
+16. After these steps, Service Management prepares the final status report.
+17. At this point, there are three possible actions:
+    - Service Management creates a request for automatic resource restoration, sends it to Resource Provisioning, and Resource Provisioning receives the request.
+      - Resource Provisioning tracks all possible errors, undertakes all necessary corrective actions, creates a troubleshooting report, and sends it to Service Management.
+      - Service Management sends the troubleshooting report to customer service, creates a problem resolution report, and sends it to customer service.
+      - Customer service receives the problem resolution report.
+    - Service Management sends the actual service performance to customer service, and customer service receives it.
+    - Service Management undertakes corrective actions, creates a problem resolution report, sends it to customer service, and customer service receives the report.
+18. After any of these actions, the process continues to the next stage, where two activities happen at the same time:
+    - Customer service creates a report for the customer.
+    - Customer service reports a service agreement violation rebate to billing and collections, and billing and collections adjusts the billing.
+19. After both activities are completed, customer service sends the report to the customer.
+20. The customer receives the report.
+21. The process ends.

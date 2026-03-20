@@ -1,0 +1,7 @@
+The process starts with the event "Diagnose non-specific low back pain." Subsequently, a decision is made. Depending on the outcome, either "Apply superficial heat or other non-pharmacological treatments" or "Apply exercise or other non-pharmacological treatments" is performed.
+
+If "Apply superficial heat or other non-pharmacological treatments" is performed, another decision is made. Depending on the outcome, either "Prescribe NSAID or SMR" is performed, or nothing happens. After "Prescribe NSAID or SMR" is performed, the process continues. If nothing happens, the process continues as well.
+
+Alternatively, if "Apply exercise or other non-pharmacological treatments" is performed, another decision is made. Depending on the outcome, either "Prescribe NSAID" is performed, or nothing happens. If "Prescribe NSAID" is performed, another decision is made. Depending on the outcome, either "Prescribe opioid" is performed, or nothing happens. After "Prescribe opioid" is performed, the process continues. If nothing happens, the process continues as well. If nothing happens after the decision, the process continues as well.
+
+Finally, the process ends.

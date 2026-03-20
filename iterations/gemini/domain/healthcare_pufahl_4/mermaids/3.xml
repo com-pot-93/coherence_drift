@@ -1,0 +1,18 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |Condition A| 2:parallelgateway:{AND}
+1:exclusivegateway:{x} --> |Condition B| 2:parallelgateway:{AND}
+2:parallelgateway:{AND} --> 3:task:(Physical Examination)
+2:parallelgateway:{AND} --> 4:subprocess:(Blood Sample Analysis)
+4:subprocess:(Blood Sample Analysis) --> 5:parallelgateway:{AND}
+3:task:(Physical Examination) --> 5:parallelgateway:{AND}
+5:parallelgateway:{AND} --> 6:task:(Make Diagnosis)
+6:task:(Make Diagnosis) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Diagnosis A| 8:task:(Surgical Intervention)
+7:exclusivegateway:{x} --> |Diagnosis B| 9:task:(Plan Surgery)
+8:task:(Surgical Intervention) --> 10:exclusivegateway:{x}
+9:task:(Plan Surgery) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> 11:task:(Discharge Patient)
+11:task:(Discharge Patient) --> 12:endevent:(((endevent)))
+```

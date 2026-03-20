@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Prompt User to Log In</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Check Credentials</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Credentials incorrect" language="text/javascript"/>
+    <alternative condition="Credentials correct" language="text/javascript">
+      <call id="a9" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Check Permissions</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="5">
+        <alternative condition="No permission" language="text/javascript"/>
+        <alternative condition="Has permission" language="text/javascript">
+          <call id="a15" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Check Specific Condition</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="7">
+            <alternative condition="Condition met" language="text/javascript"/>
+            <alternative condition="Condition not met" language="text/javascript">
+              <loop mode="pre_test" condition="Add more products" a:alt_id="13" language="text/javascript">
+                <call id="a23" endpoint="" a:alt_id="10">
+                  <parameters>
+                    <label>Prompt to Select Product</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a27" endpoint="" a:alt_id="11">
+                  <parameters>
+                    <label>Add Product to Cart</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a29" endpoint="" a:alt_id="12">
+                  <parameters>
+                    <label>Save Item</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </loop>
+            </alternative>
+          </choose>
+          <loop mode="pre_test" condition="true">
+            <call id="a19" endpoint="" a:alt_id="8">
+              <parameters>
+                <label>Present Order Confirmation</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <loop mode="pre_test" condition="Add more products">
+              <choose mode="exclusive" a:alt_id="9">
+                <alternative condition="Add more products" language="text/javascript">
+                  <call id="a23" endpoint="" a:alt_id="10">
+                    <parameters>
+                      <label>Prompt to Select Product</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a27" endpoint="" a:alt_id="11">
+                    <parameters>
+                      <label>Add Product to Cart</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a29" endpoint="" a:alt_id="12">
+                    <parameters>
+                      <label>Save Item</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="13">
+                    <alternative condition="Do not add" language="text/javascript">
+                      <call id="a19" endpoint="" a:alt_id="8">
+                        <parameters>
+                          <label>Present Order Confirmation</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Add more products" language="text/javascript">
+                      <call id="a23" endpoint="" a:alt_id="10">
+                        <parameters>
+                          <label>Prompt to Select Product</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                    <alternative condition="">
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="Confirm order" language="text/javascript">
+                  <call id="a19" endpoint="" a:alt_id="8">
+                    <parameters>
+                      <label>Present Order Confirmation</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Proceed to finalize" language="text/javascript">
+                  <parallel wait="-1" cancel="last" a:alt_id="14">
+                    <parallel_branch>
+                      <call id="a41" endpoint="" a:alt_id="15">
+                        <parameters>
+                          <label>Prepare Shipment Details</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </parallel_branch>
+                    <parallel_branch>
+                      <call id="a43" endpoint="" a:alt_id="16">
+                        <parameters>
+                          <label>Prepare Payment Details</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </parallel_branch>
+                  </parallel>
+                  <parallel wait="-1" cancel="last" a:alt_id="17">
+                    <parallel_branch>
+                      <call id="a49" endpoint="" a:alt_id="18">
+                        <parameters>
+                          <label>Collect Payment Information</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </parallel_branch>
+                    <parallel_branch>
+                      <call id="a51" endpoint="" a:alt_id="19">
+                        <parameters>
+                          <label>Collect Shipping Details</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </parallel_branch>
+                  </parallel>
+                  <call id="a57" endpoint="" a:alt_id="21">
+                    <parameters>
+                      <label>Check Order Correctness</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="22">
+                    <alternative condition="Order not correct" language="text/javascript">
+                      <call id="a19" endpoint="" a:alt_id="8">
+                        <parameters>
+                          <label>Present Order Confirmation</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Order correct" language="text/javascript">
+                      <call id="a63" endpoint="" a:alt_id="23">
+                        <parameters>
+                          <label>Ask if Further Confirmation Needed</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="24">
+                        <alternative condition="Further confirmation needed" language="text/javascript">
+                          <call id="a19" endpoint="" a:alt_id="8">
+                            <parameters>
+                              <label>Present Order Confirmation</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="No further action" language="text/javascript">
+                          <escape a:alt_id="-1"/>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                  </choose>
+                </alternative>
+              </choose>
+            </loop>
+          </loop>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

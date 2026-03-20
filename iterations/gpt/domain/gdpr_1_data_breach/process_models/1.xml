@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Retrieve Breached Data</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Identify Breached Subjects</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="3">
+    <parallel_branch>
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Limit Data Loss</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a11" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Notify National Authority</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a13" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>Evaluate Stolen Data</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="8">
+        <alternative condition="Notification required" language="text/javascript">
+          <call id="a17" endpoint="" a:alt_id="9">
+            <parameters>
+              <label>Send Notification</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Notification not required" language="text/javascript">
+          <call id="a19" endpoint="" a:alt_id="10">
+            <parameters>
+              <label>Evaluate Security Standards</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="11">
+            <alternative condition="Notification required" language="text/javascript">
+              <call id="a25" endpoint="" a:alt_id="12">
+                <parameters>
+                  <label>Send Notification</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Clarification needed" language="text/javascript">
+              <call id="a27" endpoint="" a:alt_id="13">
+                <parameters>
+                  <label>Request Clarification</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a31" endpoint="" a:alt_id="14">
+                <parameters>
+                  <label>Receive Notification Response</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="15">
+                <alternative condition="Notification should be sent" language="text/javascript">
+                  <call id="a35" endpoint="" a:alt_id="16">
+                    <parameters>
+                      <label>Send Notification</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="No notification" language="text/javascript"/>
+              </choose>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </parallel_branch>
+  </parallel>
+</description>

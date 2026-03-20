@@ -1,0 +1,607 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Person Arrives at Hospital</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Wait at Front Area</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Visit Nurse</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="4">
+    <parameters>
+      <label>Check Insurance</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="5">
+    <alternative condition="Insurance OK" language="text/javascript">
+      <call id="a11" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Check Person's State</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="7">
+        <alternative condition="Send Home" language="text/javascript">
+          <call id="a15" endpoint="" a:alt_id="8">
+            <parameters>
+              <label>Send Home</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="9">
+            <alternative condition="End" language="text/javascript"/>
+            <alternative condition="Book Doctor" language="text/javascript">
+              <loop mode="pre_test" condition="true">
+                <call id="a25" endpoint="" a:alt_id="13">
+                  <parameters>
+                    <label>Book for Doctor</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <loop mode="pre_test" condition="Re-examine">
+                  <choose mode="exclusive" a:alt_id="14">
+                    <alternative condition="Re-examine" language="text/javascript">
+                      <call id="a19" endpoint="" a:alt_id="10">
+                        <parameters>
+                          <label>Examine Person</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="11">
+                        <alternative condition="Hospitalize" language="text/javascript">
+                          <call id="a23" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Hospitalize Person</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a25" endpoint="" a:alt_id="13">
+                            <parameters>
+                              <label>Book for Doctor</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Pharmacy" language="text/javascript">
+                          <call id="a33" endpoint="" a:alt_id="15">
+                            <parameters>
+                              <label>Visit Pharmacy</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a35" endpoint="" a:alt_id="16">
+                            <parameters>
+                              <label>Order Medicine</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a37" endpoint="" a:alt_id="17">
+                            <parameters>
+                              <label>Pay for Medicine</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a39" endpoint="" a:alt_id="18">
+                            <parameters>
+                              <label>Receive Medicine</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="19">
+                            <alternative condition="Book Doctor" language="text/javascript">
+                              <call id="a25" endpoint="" a:alt_id="13">
+                                <parameters>
+                                  <label>Book for Doctor</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="End" language="text/javascript">
+                              <escape a:alt_id="-1"/>
+                            </alternative>
+                          </choose>
+                        </alternative>
+                        <alternative condition="Send Home" language="text/javascript">
+                          <call id="a47" endpoint="" a:alt_id="20">
+                            <parameters>
+                              <label>Send Home After Exam</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="21">
+                            <alternative condition="Book Doctor" language="text/javascript">
+                              <call id="a25" endpoint="" a:alt_id="13">
+                                <parameters>
+                                  <label>Book for Doctor</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="End" language="text/javascript">
+                              <escape a:alt_id="-1"/>
+                            </alternative>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Proceed" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="22">
+                        <alternative condition="Book Doctor" language="text/javascript">
+                          <call id="a25" endpoint="" a:alt_id="13">
+                            <parameters>
+                              <label>Book for Doctor</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="To End" language="text/javascript">
+                          <escape a:alt_id="-1"/>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                  </choose>
+                </loop>
+              </loop>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="Continue" language="text/javascript">
+          <loop mode="pre_test" condition="true">
+            <call id="a19" endpoint="" a:alt_id="10">
+              <parameters>
+                <label>Examine Person</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <loop mode="pre_test" condition="Hospitalize">
+              <choose mode="exclusive" a:alt_id="11">
+                <alternative condition="Hospitalize" language="text/javascript">
+                  <call id="a23" endpoint="" a:alt_id="12">
+                    <parameters>
+                      <label>Hospitalize Person</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a25" endpoint="" a:alt_id="13">
+                    <parameters>
+                      <label>Book for Doctor</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="14">
+                    <alternative condition="Re-examine" language="text/javascript">
+                      <call id="a19" endpoint="" a:alt_id="10">
+                        <parameters>
+                          <label>Examine Person</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Proceed" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="22">
+                        <alternative condition="To End" language="text/javascript"/>
+                        <alternative condition="Book Doctor" language="text/javascript">
+                          <call id="a25" endpoint="" a:alt_id="13">
+                            <parameters>
+                              <label>Book for Doctor</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                      </choose>
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="Pharmacy" language="text/javascript">
+                  <call id="a33" endpoint="" a:alt_id="15">
+                    <parameters>
+                      <label>Visit Pharmacy</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a35" endpoint="" a:alt_id="16">
+                    <parameters>
+                      <label>Order Medicine</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a37" endpoint="" a:alt_id="17">
+                    <parameters>
+                      <label>Pay for Medicine</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a39" endpoint="" a:alt_id="18">
+                    <parameters>
+                      <label>Receive Medicine</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="19">
+                    <alternative condition="Book Doctor" language="text/javascript">
+                      <call id="a25" endpoint="" a:alt_id="13">
+                        <parameters>
+                          <label>Book for Doctor</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="14">
+                        <alternative condition="Re-examine" language="text/javascript">
+                          <call id="a19" endpoint="" a:alt_id="10">
+                            <parameters>
+                              <label>Examine Person</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Proceed" language="text/javascript">
+                          <choose mode="exclusive" a:alt_id="22">
+                            <alternative condition="To End" language="text/javascript"/>
+                            <alternative condition="Book Doctor" language="text/javascript">
+                              <call id="a25" endpoint="" a:alt_id="13">
+                                <parameters>
+                                  <label>Book for Doctor</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                          </choose>
+                          <escape a:alt_id="-1"/>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="End" language="text/javascript">
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="Send Home" language="text/javascript">
+                  <call id="a47" endpoint="" a:alt_id="20">
+                    <parameters>
+                      <label>Send Home After Exam</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="21">
+                    <alternative condition="Book Doctor" language="text/javascript">
+                      <call id="a25" endpoint="" a:alt_id="13">
+                        <parameters>
+                          <label>Book for Doctor</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="14">
+                        <alternative condition="Re-examine" language="text/javascript">
+                          <call id="a19" endpoint="" a:alt_id="10">
+                            <parameters>
+                              <label>Examine Person</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Proceed" language="text/javascript">
+                          <choose mode="exclusive" a:alt_id="22">
+                            <alternative condition="To End" language="text/javascript"/>
+                            <alternative condition="Book Doctor" language="text/javascript">
+                              <call id="a25" endpoint="" a:alt_id="13">
+                                <parameters>
+                                  <label>Book for Doctor</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                          </choose>
+                          <escape a:alt_id="-1"/>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="End" language="text/javascript">
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+              </choose>
+            </loop>
+          </loop>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="Check Registration" language="text/javascript">
+      <call id="a63" endpoint="" a:alt_id="23">
+        <parameters>
+          <label>Check Registration</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="24">
+        <alternative condition="Not Registered" language="text/javascript">
+          <call id="a67" endpoint="" a:alt_id="25">
+            <parameters>
+              <label>Register Person</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Already Registered" language="text/javascript"/>
+      </choose>
+      <call id="a69" endpoint="" a:alt_id="26">
+        <parameters>
+          <label>Pay Fee</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a71" endpoint="" a:alt_id="27">
+        <parameters>
+          <label>Book for Doctor After Fee</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <loop mode="pre_test" condition="true">
+        <call id="a73" endpoint="" a:alt_id="28">
+          <parameters>
+            <label>Examine by Doctor</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="pre_test" condition="Hospitalize">
+          <choose mode="exclusive" a:alt_id="29">
+            <alternative condition="Hospitalize" language="text/javascript">
+              <call id="a77" endpoint="" a:alt_id="30">
+                <parameters>
+                  <label>Hospitalize After Exam</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a79" endpoint="" a:alt_id="31">
+                <parameters>
+                  <label>Book for Doctor Again</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="32">
+                <alternative condition="Re-examine" language="text/javascript">
+                  <call id="a73" endpoint="" a:alt_id="28">
+                    <parameters>
+                      <label>Examine by Doctor</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Proceed" language="text/javascript">
+                  <choose mode="exclusive" a:alt_id="39">
+                    <alternative condition="End" language="text/javascript"/>
+                    <alternative condition="Book Doctor" language="text/javascript">
+                      <call id="a79" endpoint="" a:alt_id="31">
+                        <parameters>
+                          <label>Book for Doctor Again</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                  </choose>
+                  <escape a:alt_id="-1"/>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="Pharmacy" language="text/javascript">
+              <call id="a87" endpoint="" a:alt_id="33">
+                <parameters>
+                  <label>Visit Pharmacy After Exam</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a89" endpoint="" a:alt_id="34">
+                <parameters>
+                  <label>Order Medicine After Exam</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a91" endpoint="" a:alt_id="35">
+                <parameters>
+                  <label>Pay for Medicine After Exam</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a93" endpoint="" a:alt_id="36">
+                <parameters>
+                  <label>Receive Medicine After Exam</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="37">
+                <alternative condition="Book Doctor" language="text/javascript">
+                  <call id="a79" endpoint="" a:alt_id="31">
+                    <parameters>
+                      <label>Book for Doctor Again</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="32">
+                    <alternative condition="Re-examine" language="text/javascript">
+                      <call id="a73" endpoint="" a:alt_id="28">
+                        <parameters>
+                          <label>Examine by Doctor</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Proceed" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="39">
+                        <alternative condition="End" language="text/javascript"/>
+                        <alternative condition="Book Doctor" language="text/javascript">
+                          <call id="a79" endpoint="" a:alt_id="31">
+                            <parameters>
+                              <label>Book for Doctor Again</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                      </choose>
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="End" language="text/javascript">
+                  <escape a:alt_id="-1"/>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="Send Home" language="text/javascript">
+              <call id="a101" endpoint="" a:alt_id="38">
+                <parameters>
+                  <label>Send Home After Doctor Exam</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="39">
+                <alternative condition="Book Doctor" language="text/javascript">
+                  <call id="a79" endpoint="" a:alt_id="31">
+                    <parameters>
+                      <label>Book for Doctor Again</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="32">
+                    <alternative condition="Re-examine" language="text/javascript">
+                      <call id="a73" endpoint="" a:alt_id="28">
+                        <parameters>
+                          <label>Examine by Doctor</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Proceed" language="text/javascript">
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="End" language="text/javascript">
+                  <escape a:alt_id="-1"/>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </loop>
+      </loop>
+    </alternative>
+  </choose>
+</description>

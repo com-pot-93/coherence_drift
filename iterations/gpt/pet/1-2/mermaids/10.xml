@@ -1,0 +1,42 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Defective Computer)
+2:task:(Examine Computer)
+3:task:(Calculate Repair Costs)
+4:task:(Discuss Costs with Customer)
+5:exclusivegateway:{x}
+6:task:(Return Computer to Customer)
+7:parallelgateway:{AND}
+8:task:(Repair Hardware)
+9:task:(Check and Configure Software)
+10:parallelgateway:{AND}
+11:exclusivegateway:{x}
+12:task:(Wait Until Computer is Ready)
+13:task:(Test System Functionality)
+14:exclusivegateway:{x}
+15:task:(Escalate Issue)
+16:exclusivegateway:{x}
+17:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Defective Computer)
+1:task:(Receive Defective Computer) --> 2:task:(Examine Computer)
+2:task:(Examine Computer) --> 3:task:(Calculate Repair Costs)
+3:task:(Calculate Repair Costs) --> 4:task:(Discuss Costs with Customer)
+4:task:(Discuss Costs with Customer) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Declined|6:task:(Return Computer to Customer)
+5:exclusivegateway:{x} --> |Approved|7:parallelgateway:{AND}
+6:task:(Return Computer to Customer) --> 17:endevent:(((endevent)))
+7:parallelgateway:{AND} --> 8:task:(Repair Hardware)
+7:parallelgateway:{AND} --> 9:task:(Check and Configure Software)
+8:task:(Repair Hardware) --> 10:parallelgateway:{AND}
+9:task:(Check and Configure Software) --> 10:parallelgateway:{AND}
+10:parallelgateway:{AND} --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Not Ready|12:task:(Wait Until Computer is Ready)
+11:exclusivegateway:{x} --> |Ready|13:task:(Test System Functionality)
+12:task:(Wait Until Computer is Ready) --> 11:exclusivegateway:{x}
+13:task:(Test System Functionality) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |Test Successful|17:endevent:(((endevent)))
+14:exclusivegateway:{x} --> |Test Failed|15:task:(Escalate Issue)
+15:task:(Escalate Issue) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |Repeat Test|13:task:(Test System Functionality)
+16:exclusivegateway:{x} --> |Do Not Repeat|17:endevent:(((endevent)))

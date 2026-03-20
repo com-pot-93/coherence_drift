@@ -1,0 +1,51 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Production Order)
+2:task:(Prepare Materials)
+3:task:(Assemble Door)
+4:exclusivegateway:{x}
+5:exclusivegateway:{x}
+6:exclusivegateway:{x}
+7:task:(Send Quality Check Inquiry)
+8:task:(Receive Inquiry Response)
+9:task:(Conduct Quality Check in Response)
+10:task:(Send Quality Report)
+11:task:(Receive and Review Report)
+12:exclusivegateway:{x}
+13:task:(Fix Door)
+14:task:(Release Door)
+15:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Production Order)
+1:task:(Receive Production Order) --> 2:task:(Prepare Materials)
+2:task:(Prepare Materials) --> 3:task:(Assemble Door)
+3:task:(Assemble Door) --> 4:exclusivegateway:{x}
+
+%% Quality check decision
+4:exclusivegateway:{x} --> |Skip Quality Check|5:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Perform Quality Check|6:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Skip Quality Check (direct path)|12:exclusivegateway:{x}
+
+%% Skip Quality Check branch
+5:exclusivegateway:{x} --> |No Inquiry|12:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Send Inquiry|7:task:(Send Quality Check Inquiry)
+7:task:(Send Quality Check Inquiry) --> 8:task:(Receive Inquiry Response)
+8:task:(Receive Inquiry Response) --> 9:task:(Conduct Quality Check in Response)
+9:task:(Conduct Quality Check in Response) --> 10:task:(Send Quality Report)
+10:task:(Send Quality Report) --> 11:task:(Receive and Review Report)
+11:task:(Receive and Review Report) --> 12:exclusivegateway:{x}
+
+%% Perform Quality Check branch
+6:exclusivegateway:{x} --> |No Inquiry|12:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Send Inquiry|7:task:(Send Quality Check Inquiry)
+7:task:(Send Quality Check Inquiry) --> 8:task:(Receive Inquiry Response)
+8:task:(Receive Inquiry Response) --> 9:task:(Conduct Quality Check in Response)
+9:task:(Conduct Quality Check in Response) --> 10:task:(Send Quality Report)
+10:task:(Send Quality Report) --> 11:task:(Receive and Review Report)
+11:task:(Receive and Review Report) --> 12:exclusivegateway:{x}
+
+%% Merge gateway for all paths
+12:exclusivegateway:{x} --> |Report Not Satisfactory|13:task:(Fix Door)
+12:exclusivegateway:{x} --> |Report Satisfactory|14:task:(Release Door)
+13:task:(Fix Door) --> 15:endevent:(((endevent)))
+14:task:(Release Door) --> 15:endevent:(((endevent)))

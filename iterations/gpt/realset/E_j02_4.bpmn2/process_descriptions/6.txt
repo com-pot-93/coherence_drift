@@ -1,0 +1,18 @@
+The process begins with a starting point. Immediately after, two activities are carried out at the same time: one is to check if the baby is younger than two years, and the other is to identify the parent. Both of these actions must be completed before the process continues.
+
+Once both checks are done, the process moves to a decision point where it is determined whether certain conditions are met. If the conditions are met, the process proceeds by sending a notification to the employer. After the notification is sent, the process waits for a confirmation from the employer. Once the confirmation is received, the parent takes maternity leave.
+
+After the parent takes maternity leave, another decision is made based on the specific situation. There are several possible paths:
+
+- If the situation involves a split of less than two months, the employer is notified about this, and the process waits for the employer’s notification regarding the split. Once the notification is received, the parent takes leave after the split of less than two months.
+- If the split is more than three months, the employer is notified accordingly, and the process waits for the employer’s notification about the split. After receiving the notification, the parent takes leave after the split of more than three months.
+- If the situation involves an extension of less than two months, the employer is notified, and the process waits for the employer’s notification about the extension. Once the notification is received, the parent takes leave after the extension of less than two months.
+- If the extension is more than three months, the employer is notified, and the process waits for the employer’s notification about the extension. After receiving the notification, the parent takes leave after the extension of more than three months.
+- If both parents take leave together, this is handled directly without further notifications or waiting.
+- If none of the above situations apply, the process continues with the next steps.
+
+For the cases where none of the above situations apply, the process continues and reaches another decision point. Regardless of the outcome at this point, the process moves forward and eventually joins back with the other paths.
+
+If, at the earlier decision point, the conditions are not met, the process also continues with the next steps, reaching a similar decision point as before. Again, regardless of the outcome, the process moves forward and eventually joins back with the other paths.
+
+Finally, all possible paths come together, and the process ends.

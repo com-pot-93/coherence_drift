@@ -1,0 +1,36 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Find out wanted resources)
+    1:task:(Find out wanted resources) --> 2:parallelgateway:{AND}
+    2:parallelgateway:{AND} --> 3:task:(Check repo for already available resources)
+    2:parallelgateway:{AND} --> 4:task:(Collect urgently needed resources)
+    3:task:(Check repo for already available resources) --> 5:parallelgateway:{AND}
+    4:task:(Collect urgently needed resources) --> 5:parallelgateway:{AND}
+    5:parallelgateway:{AND} --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |condition 1| 7:task:(Build tools)
+    6:exclusivegateway:{x} --> |condition 2| 5:parallelgateway:{AND}
+    7:task:(Build tools) --> 5:parallelgateway:{AND}
+    5:parallelgateway:{AND} --> 8:task:(Collect the remained resources)
+    8:task:(Collect the remained resources) --> 9:parallelgateway:{AND}
+    9:parallelgateway:{AND} --> 10:task:(Wait for random natural event for some time)
+    9:parallelgateway:{AND} --> 11:task:(Update list of resources)
+    10:task:(Wait for random natural event for some time) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |condition 1| 13:task:(Reset bot)
+    12:exclusivegateway:{x} --> |condition 2| 14:task:(Start farming)
+    13:task:(Reset bot) --> 15:task:(Continue farming)
+    14:task:(Start farming) --> 15:task:(Continue farming)
+    15:task:(Continue farming) --> 16:exclusivegateway:{x}
+    16:exclusivegateway:{x} --> |condition 1| 17:task:(Notify player)
+    16:exclusivegateway:{x} --> |condition 2| 18:exclusivegateway:{x}
+    17:task:(Notify player) --> 19:task:(Read message)
+    19:task:(Read message) --> 18:exclusivegateway:{x}
+    18:exclusivegateway:{x} --> |condition 1| 20:task:(Give bot a sleeping break)
+    18:exclusivegateway:{x} --> |condition 2| 21:exclusivegateway:{x}
+    20:task:(Give bot a sleeping break) --> 22:parallelgateway:{AND}
+    21:exclusivegateway:{x} --> |condition 1| 23:task:(Brag to friends)
+    21:exclusivegateway:{x} --> |condition 2| 24:task:(Help with materials)
+    23:task:(Brag to friends) --> 22:parallelgateway:{AND}
+    24:task:(Help with materials) --> 22:parallelgateway:{AND}
+    11:task:(Update list of resources) --> 22:parallelgateway:{AND}
+    22:parallelgateway:{AND} --> 25:endevent:(((endevent)))
+```

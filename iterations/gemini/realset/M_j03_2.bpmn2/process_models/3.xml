@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Create Parts List</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Query Webshops</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Choose Cheapest Shop</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="4">
+    <parameters>
+      <label>Place Order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="5">
+    <parallel_branch>
+      <call id="a11" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Receive Order</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a13" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>Send Invoice</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a15" endpoint="" a:alt_id="8">
+        <parameters>
+          <label>Deliver Order</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a17" endpoint="" a:alt_id="9">
+        <parameters>
+          <label>Update Inventory</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a27" endpoint="" a:alt_id="11">
+    <parameters>
+      <label>Receive Order Again</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a29" endpoint="" a:alt_id="12">
+    <parameters>
+      <label>Start Building Process</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="13">
+    <alternative condition="Condition Met" language="text/javascript"/>
+    <alternative condition="Condition Not Met" language="text/javascript">
+      <choose mode="exclusive" a:alt_id="15">
+        <alternative condition="Condition Series Met" language="text/javascript">
+          <call id="a37" endpoint="" a:alt_id="16">
+            <parameters>
+              <label>Order Faster Delivery</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Condition Series Not Met" language="text/javascript"/>
+      </choose>
+    </alternative>
+  </choose>
+  <choose mode="exclusive" a:alt_id="14">
+    <alternative condition="">
+      <loop mode="pre_test" condition="Condition Met">
+        <choose mode="exclusive" a:alt_id="18">
+          <alternative condition="">
+            <choose mode="exclusive" a:alt_id="19">
+              <alternative condition="Condition Series Met" language="text/javascript"/>
+              <alternative condition="Condition Series Not Met" language="text/javascript">
+                <choose mode="exclusive" a:alt_id="20">
+                  <alternative condition="Condition Series Met" language="text/javascript">
+                    <call id="a59" endpoint="" a:alt_id="21">
+                      <parameters>
+                        <label>Write Compliment Email</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                  </alternative>
+                  <alternative condition="Condition Series Not Met" language="text/javascript">
+                    <call id="a61" endpoint="" a:alt_id="22">
+                      <parameters>
+                        <label>Order Cheapest Part</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                  </alternative>
+                </choose>
+                <choose mode="inclusive" a:alt_id="23">
+                  <alternative condition=""/>
+                  <alternative condition="">
+                    <escape a:alt_id="-1"/>
+                  </alternative>
+                </choose>
+              </alternative>
+            </choose>
+          </alternative>
+          <alternative condition="">
+            <call id="a69" endpoint="" a:alt_id="24">
+              <parameters>
+                <label>Escalate</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="0">
+              <alternative condition=""/>
+              <alternative condition="">
+                <escape a:alt_id="-1"/>
+              </alternative>
+            </choose>
+          </alternative>
+        </choose>
+      </loop>
+    </alternative>
+    <alternative condition="">
+      <loop mode="pre_test" condition="true">
+        <call id="a69" endpoint="" a:alt_id="24">
+          <parameters>
+            <label>Escalate</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="pre_test" condition="true">
+          <choose mode="exclusive" a:alt_id="18">
+            <alternative condition="">
+              <call id="a69" endpoint="" a:alt_id="24">
+                <parameters>
+                  <label>Escalate</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="">
+              <choose mode="exclusive" a:alt_id="19">
+                <alternative condition="Condition Series Met" language="text/javascript"/>
+                <alternative condition="Condition Series Not Met" language="text/javascript">
+                  <choose mode="exclusive" a:alt_id="20">
+                    <alternative condition="Condition Series Met" language="text/javascript">
+                      <call id="a59" endpoint="" a:alt_id="21">
+                        <parameters>
+                          <label>Write Compliment Email</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Condition Series Not Met" language="text/javascript">
+                      <call id="a61" endpoint="" a:alt_id="22">
+                        <parameters>
+                          <label>Order Cheapest Part</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                  </choose>
+                  <choose mode="inclusive" a:alt_id="23">
+                    <alternative condition=""/>
+                    <alternative condition="">
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </loop>
+      </loop>
+    </alternative>
+  </choose>
+</description>

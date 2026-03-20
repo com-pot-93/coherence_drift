@@ -1,0 +1,7 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Determine recipient and bill type)
+2:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Determine recipient and bill type)
+1:task:(Determine recipient and bill type) --> 2:endevent:(((endevent)))

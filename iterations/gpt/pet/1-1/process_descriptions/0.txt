@@ -1,0 +1,16 @@
+The process begins when the sales department receives an order. At this point, a decision is made about whether to accept or reject the bike order.
+
+If the sales department decides to reject the order, they proceed to reject the bike order, and the process ends.
+
+If the sales department accepts the bike order, they first inform the storehouse about the order. Next, they inform the engineering department. After both departments have been notified, two activities happen at the same time:
+
+1. The engineering department prepares for assembling the bike.
+2. The storehouse starts processing the part list.
+
+The engineering department’s preparation continues until the next step in the process.
+
+Meanwhile, the storehouse processes the part list and then checks the quantity of parts available. Based on the results of this check, the storehouse either reserves the part if it is available, or back-orders the part if it is not available. After either reserving or back-ordering the part, the process continues.
+
+Once both the engineering department has finished preparing for assembly and the storehouse has completed its part-related tasks, the engineering department assembles the bicycle.
+
+After the bicycle is assembled, the sales department ships the bicycle to the customer. Finally, the process ends.

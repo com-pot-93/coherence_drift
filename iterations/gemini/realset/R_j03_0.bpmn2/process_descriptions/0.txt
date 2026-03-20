@@ -1,0 +1,1 @@
+The process starts when the customer sends the fridge symptoms and type to the fridge service center. Next, an appointment is scheduled. Then, the fridge is checked. Following this, it's confirmed whether the fridge is okay. Finally, the customer rates the facility, and the process ends.

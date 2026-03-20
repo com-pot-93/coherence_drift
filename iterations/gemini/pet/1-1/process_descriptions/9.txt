@@ -1,0 +1,5 @@
+The process starts. A decision is made. If the decision is "Reject", the process ends. Otherwise, the process proceeds to a parallel execution.
+In parallel, the process executes "Prepare for bike assembly" and "Process part list". After "Prepare for bike assembly" is completed, the process waits.
+After "Process part list" is completed, a decision is made. If the decision is "Parts available", the process executes "Reserve parts". Otherwise, if the decision is "Parts not available", the process executes "Back-order parts".
+After either "Reserve parts" or "Back-order parts" is completed, the process waits.
+Once both "Prepare for bike assembly" and either "Reserve parts" or "Back-order parts" are completed, the process executes "Assemble and ship bicycle". Finally, the process ends.

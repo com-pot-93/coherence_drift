@@ -1,0 +1,16 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Employee purchases a product)
+  1:task:(Employee purchases a product) --> 2:task:(Employee submits an expense report with a list of items)
+  2:task:(Employee submits an expense report with a list of items) --> 3:task:(Employee submits an expense report with a list of items)
+  3:task:(Employee submits an expense report with a list of items) --> 4:task:(Supervisor reviews the expense report)
+  4:task:(Supervisor reviews the expense report) --> 5:task:(Supervisor approves the report)
+  5:task:(Supervisor approves the report) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |branch 1| 7:task:(Treasurer accepts the expenses for processing)
+  6:exclusivegateway:{x} --> |branch 2| 8:task:(Treasurer accepts the expenses for processing)
+  6:exclusivegateway:{x} --> |branch 3| 9:task:(Treasurer accepts the expenses for processing)
+  7:task:(Treasurer accepts the expenses for processing) --> 10:exclusivegateway:{x}
+  8:task:(Treasurer accepts the expenses for processing) --> 10:exclusivegateway:{x}
+  9:task:(Treasurer accepts the expenses for processing) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> 11:endevent:(((endevent)))
+```

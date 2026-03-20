@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <parallel wait="-1" cancel="last" a:alt_id="1">
+    <parallel_branch>
+      <call id="a3" endpoint="" a:alt_id="2">
+        <parameters>
+          <label>Baby younger than 2 years</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Parent</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <choose mode="exclusive" a:alt_id="5">
+    <alternative condition="Self-employed, studying, housewife, or man" language="text/javascript"/>
+    <alternative condition="Employed" language="text/javascript">
+      <call id="a15" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Send notification to employer</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a17" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>Receive confirmation</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a19" endpoint="" a:alt_id="8">
+        <parameters>
+          <label>Take maternity leave</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <choose mode="exclusive" a:alt_id="9">
+    <alternative condition="">
+      <choose mode="exclusive" a:alt_id="10">
+        <alternative condition="Less than 2 months" language="text/javascript">
+          <call id="a29" endpoint="" a:alt_id="11">
+            <parameters>
+              <label>Send employer notification</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="More than 3 months" language="text/javascript">
+          <call id="a31" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>Send employer notification</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <choose mode="exclusive" a:alt_id="13">
+        <alternative condition="Decision Path 1" language="text/javascript">
+          <call id="a37" endpoint="" a:alt_id="14">
+            <parameters>
+              <label>Decision Path 1</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Decision Path 2" language="text/javascript">
+          <call id="a39" endpoint="" a:alt_id="15">
+            <parameters>
+              <label>Decision Path 2</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a41" endpoint="" a:alt_id="16">
+        <parameters>
+          <label>Receive employer notification</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a45" endpoint="" a:alt_id="17">
+        <parameters>
+          <label>Take maternity leave</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <choose mode="exclusive" a:alt_id="18">
+        <alternative condition="Less than 2 months" language="text/javascript">
+          <call id="a49" endpoint="" a:alt_id="19">
+            <parameters>
+              <label>Send employer notification</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="More than 3 months" language="text/javascript">
+          <call id="a51" endpoint="" a:alt_id="20">
+            <parameters>
+              <label>Send employer notification</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <choose mode="exclusive" a:alt_id="21">
+        <alternative condition="Decision Path 1" language="text/javascript">
+          <call id="a57" endpoint="" a:alt_id="22">
+            <parameters>
+              <label>Decision Path 1</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Decision Path 2" language="text/javascript">
+          <call id="a59" endpoint="" a:alt_id="23">
+            <parameters>
+              <label>Decision Path 2</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a61" endpoint="" a:alt_id="24">
+        <parameters>
+          <label>Receive employer notification</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a65" endpoint="" a:alt_id="25">
+        <parameters>
+          <label>Take maternity leave</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Both parents take maternity leave" language="text/javascript"/>
+  </choose>
+  <call id="a69" endpoint="" a:alt_id="27">
+    <parameters>
+      <label>Continue</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

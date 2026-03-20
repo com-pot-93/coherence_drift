@@ -1,0 +1,5 @@
+The process begins when a customer order is received. Once the order is in hand, the next step is to pick the required items from stock. After the items have been picked, they are packed into parcels. These parcels are then weighed to ensure accuracy.
+
+Following the weighing of the parcels, shipping labels are printed for each one. At this point, three activities are carried out at the same time: the parcels are moved to the loading dock, the number of parcels is checked, and the quality of the packing is inspected. All three of these actions happen in parallel and must be completed before the process continues.
+
+Once these parallel activities are finished, the process splits again into two sets of tasks that also happen at the same time. In one set, the parcels are loaded onto a truck, and delivery instructions are sent to the transporter. In the other set, the order status is updated, and the stock levels are adjusted to reflect the items that have been shipped. Both sets of activities must be completed before the process comes to an end.

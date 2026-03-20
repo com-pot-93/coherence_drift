@@ -1,0 +1,10 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Register Request)
+1:task:(Register Request) --> 2:task:(Send for Approval)
+2:task:(Send for Approval) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} -->|Not Approved| 4:task:(Return Application)
+3:exclusivegateway:{x} -->|Approved| 5:task:(Generate HR Notification)
+4:task:(Return Application) --> 6:endevent:(((endevent)))
+5:task:(Generate HR Notification) --> 6:endevent:(((endevent)))
+```

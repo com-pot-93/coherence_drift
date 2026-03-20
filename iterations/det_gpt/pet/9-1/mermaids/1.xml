@@ -1,0 +1,45 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(back up the database)
+2:task:(check the database)
+3:exclusivegateway:{x}
+4:task:(check the CRM system)
+5:exclusivegateway:{x}
+6:task:(register all defaulting accounts and customers)
+7:exclusivegateway:{x}
+8:task:(produce new table of defaulting accounts)
+9:task:(send table to account management)
+10:exclusivegateway:{x}
+11:task:(send an alert to the supervisor)
+12:task:(check the CRM system)
+13:exclusivegateway:{x}
+14:task:(reconcile with the existing account defaulters table)
+15:exclusivegateway:{x}
+16:task:(send message to the supervisor)
+17:task:(complete reconciliation)
+18:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(back up the database)
+1:task:(back up the database) --> 2:task:(check the database)
+2:task:(check the database) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Branch 1|4:task:(check the CRM system)
+3:exclusivegateway:{x} --> |Branch 2|10:exclusivegateway:{x}
+4:task:(check the CRM system) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Branch 1|6:task:(register all defaulting accounts and customers)
+5:exclusivegateway:{x} --> |Branch 2|7:exclusivegateway:{x}
+6:task:(register all defaulting accounts and customers) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Branch 1|8:task:(produce new table of defaulting accounts)
+7:exclusivegateway:{x} --> |Branch 2|9:task:(send table to account management)
+8:task:(produce new table of defaulting accounts) --> 9:task:(send table to account management)
+9:task:(send table to account management) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Branch 1|11:task:(send an alert to the supervisor)
+10:exclusivegateway:{x} --> |Branch 2|12:task:(check the CRM system)
+11:task:(send an alert to the supervisor) --> 12:task:(check the CRM system)
+12:task:(check the CRM system) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Branch 1|14:task:(reconcile with the existing account defaulters table)
+13:exclusivegateway:{x} --> |Branch 2|15:exclusivegateway:{x}
+14:task:(reconcile with the existing account defaulters table) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> |Branch 1|16:task:(send message to the supervisor)
+15:exclusivegateway:{x} --> |Branch 2|17:task:(complete reconciliation)
+16:task:(send message to the supervisor) --> 18:endevent:(((endevent)))
+17:task:(complete reconciliation) --> 18:endevent:(((endevent)))

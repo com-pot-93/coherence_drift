@@ -1,0 +1,7 @@
+The process begins when it is checked whether a file has been received. If the file has not been received, the process moves directly towards completion. If the file has been received, the next step is to assess the outcome related to the file.
+
+After assessing the outcome, if the result is not positive, the process continues towards completion. If the outcome is positive, a further check is performed.
+
+Following this further check, if the check fails, the process proceeds towards completion. If the check is successful, additional steps are carried out. Once these additional steps are completed, the process also moves towards completion.
+
+In summary, the process follows a series of checks and assessments, with the possibility of ending at several points if certain conditions are not met. Only if the file is received, the outcome is positive, and the further check is successful, are additional steps performed before the process concludes.

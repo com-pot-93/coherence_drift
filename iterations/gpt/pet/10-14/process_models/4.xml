@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Determine recipient and bill type</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="">
+      <choose mode="exclusive" a:alt_id="3">
+        <alternative condition="Metering point operations" language="text/javascript">
+          <call id="a9" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Send bill for metering point operations to grid operator</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Measurement" language="text/javascript">
+          <call id="a11" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Send bill for measurement to grid operator</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Additional readings" language="text/javascript">
+          <call id="a13" endpoint="" a:alt_id="7">
+            <parameters>
+              <label>Send bill for additional readings to grid operator</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Equipment acquisition" language="text/javascript">
+          <call id="a15" endpoint="" a:alt_id="8">
+            <parameters>
+              <label>Send bill for equipment acquisition to grid operator</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a17" endpoint="" a:alt_id="9">
+        <parameters>
+          <label>Grid operator receives bill</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a25" endpoint="" a:alt_id="10">
+        <parameters>
+          <label>Grid operator examines bill</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="11">
+        <alternative condition="Reject" language="text/javascript">
+          <call id="a29" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>Grid operator rejects invoice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Confirm" language="text/javascript">
+          <call id="a31" endpoint="" a:alt_id="13">
+            <parameters>
+              <label>Grid operator confirms invoice and provides payment advice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="">
+      <call id="a7" endpoint="" a:alt_id="15">
+        <parameters>
+          <label>Send bill for equipment acquisition to metering point operator network</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a37" endpoint="" a:alt_id="16">
+        <parameters>
+          <label>Metering point operator network receives bill</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a39" endpoint="" a:alt_id="17">
+        <parameters>
+          <label>Metering point operator network examines bill</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="18">
+        <alternative condition="Reject" language="text/javascript">
+          <call id="a43" endpoint="" a:alt_id="19">
+            <parameters>
+              <label>Metering point operator network rejects invoice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Confirm" language="text/javascript">
+          <call id="a45" endpoint="" a:alt_id="20">
+            <parameters>
+              <label>Metering point operator network confirms invoice and provides payment advice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

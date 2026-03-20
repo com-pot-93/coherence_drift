@@ -1,0 +1,30 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Find out wanted resources)
+  1:task:(Find out wanted resources) --> 2:parallelgateway:{AND}
+  2:parallelgateway:{AND} --> 3:task:(Check repo for already available resources)
+  2:parallelgateway:{AND} --> 4:task:(Collect urgently needed resources)
+  3:task:(Check repo for already available resources) --> 5:parallelgateway:{AND}
+  4:task:(Collect urgently needed resources) --> 5:parallelgateway:{AND}
+  5:parallelgateway:{AND} --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |condition 1| 7:task:(Build tools)
+  6:exclusivegateway:{x} --> |condition 2| 8:task:(Collect the remained resources)
+  7:task:(Build tools) --> 9:exclusivegateway:{x}
+  8:task:(Collect the remained resources) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> 10:parallelgateway:{AND}
+  10:parallelgateway:{AND} --> 11:task:(Wait for random natural event for some time)
+  10:parallelgateway:{AND} --> 12:task:(Update list of resources)
+  11:task:(Wait for random natural event for some time) --> 13:exclusivegateway:{x}
+  13:exclusivegateway:{x} --> |condition 1| 14:task:(Reset bot)
+  13:exclusivegateway:{x} --> |condition 2| 15:task:(Start farming)
+  14:task:(Reset bot) --> 16:task:(Continue farming)
+  15:task:(Start farming) --> 16:task:(Continue farming)
+  16:task:(Continue farming) --> 17:exclusivegateway:{x}
+  17:exclusivegateway:{x} --> |condition 1| 18:task:(Notify player)
+  18:task:(Notify player) --> 19:task:(Read message)
+  19:task:(Read message) --> 20:exclusivegateway:{x}
+  17:exclusivegateway:{x} --> |condition 2| 20:exclusivegateway:{x}
+  12:task:(Update list of resources) --> 21:parallelgateway:{AND}
+  20:exclusivegateway:{x} --> 21:parallelgateway:{AND}
+  21:parallelgateway:{AND} --> 22:endevent:(((endevent)))
+```

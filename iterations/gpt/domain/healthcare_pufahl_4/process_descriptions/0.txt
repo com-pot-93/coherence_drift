@@ -1,0 +1,15 @@
+The process begins when the patient’s conditions are assessed. After this initial assessment, two activities are carried out at the same time:
+
+- A physical examination is performed.
+- Blood samples are drawn from the patient, which are then sent to the laboratory for analysis. Once the laboratory completes the analysis, the results are received.
+
+Once both the physical examination and the laboratory analysis results are available, the process continues with making a diagnosis.
+
+After the diagnosis is made, a decision is required. Depending on the outcome, one of two actions is taken:
+
+- If appropriate, a surgical intervention is performed.
+- Alternatively, surgery is planned.
+
+Regardless of which of these two actions is taken, the process then proceeds to discharging the patient.
+
+Finally, the process ends after the patient is discharged.

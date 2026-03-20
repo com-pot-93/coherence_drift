@@ -1,0 +1,19 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Yes| 2:task:(Fault detector reports a failure to the MPO)
+    1:exclusivegateway:{x} --> |No| 3:task:(MPO has a suspicion of own fault)
+    2:task:(Fault detector reports a failure to the MPO) --> 4:task:(MPO examines the failure)
+    3:task:(MPO has a suspicion of own fault) --> 4:task:(MPO examines the failure)
+    4:task:(MPO examines the failure) --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Yes| 6:task:(MPO rejects the failure of the fault detector)
+    5:exclusivegateway:{x} --> |No| 7:task:(MPO confirms the failure of the fault detector)
+    6:task:(MPO rejects the failure of the fault detector) --> 8:task:(MPO informes the GO)
+    7:task:(MPO confirms the failure of the fault detector) --> 8:task:(MPO informes the GO)
+    8:task:(MPO informes the GO) --> 9:task:(MPO informes the MSP)
+    9:task:(MPO informes the MSP) --> 10:task:(MPO fixes the fault at the measuring device)
+    10:task:(MPO fixes the fault at the measuring device) --> 11:task:(MPO shares the results of the repairs)
+    11:task:(MPO shares the results of the repairs) --> 12:task:(MPO informs the GO about the resolution of the interference)
+    12:task:(MPO informs the GO about the resolution of the interference) --> 13:task:(MPO informs the MSP about the resolution of the interference)
+    13:task:(MPO informs the MSP about the resolution of the interference) --> 14:endevent:(((endevent)))
+```

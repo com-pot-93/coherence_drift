@@ -1,0 +1,27 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Patient Arrival)
+    1:task:(Patient Arrival) --> 2:task:(Nurse Visit)
+    2:task:(Nurse Visit) --> 3:task:(Check Insurance)
+    3:task:(Check Insurance) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |Not Registered| 5:task:(Check Registration)
+    4:exclusivegateway:{x} --> |Registered| 10:task:(Book Appointment)
+    5:task:(Check Registration) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |Not Registered| 7:task:(Register Patient)
+    6:exclusivegateway:{x} --> |Registered| 10:task:(Book Appointment)
+    7:task:(Register Patient) --> 8:task:(Pay Fee)
+    8:task:(Pay Fee) --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} --> 10:task:(Book Appointment)
+    10:task:(Book Appointment) --> 11:task:(Doctor Examination)
+    11:task:(Doctor Examination) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |Hospitalize| 13:task:(Hospitalization)
+    12:exclusivegateway:{x} --> |Pharmacy| 14:task:(Visit Pharmacy)
+    12:exclusivegateway:{x} --> |Send Home| 17:task:(Send Patient Home)
+    13:task:(Hospitalization) --> 18:task:(Book Appointment)
+    14:task:(Visit Pharmacy) --> 15:task:(Order and Pay)
+    15:task:(Order and Pay) --> 16:task:(Receive Medicine)
+    16:task:(Receive Medicine) --> 18:task:(Book Appointment)
+    17:task:(Send Patient Home) --> 18:task:(Book Appointment)
+    18:task:(Book Appointment) --> 19:task:(Doctor Examination)
+    19:task:(Doctor Examination) --> 20:endevent:(((endevent)))
+```

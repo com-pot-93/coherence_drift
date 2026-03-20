@@ -1,0 +1,24 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Retrieve breached data)
+  1:task:(Retrieve breached data) --> 2:task:(Retrieve breached subjects)
+  2:task:(Retrieve breached subjects) --> 3:parallelgateway:{AND}
+  3:parallelgateway:{AND} --> 4:task:(Data loss limitation)
+  3:parallelgateway:{AND} --> 5:task:(Notify national authority)
+  4:task:(Data loss limitation) --> 6:task:(Evaluate stolen data)
+  5:task:(Notify national authority) --> 6:task:(Evaluate stolen data)
+  6:task:(Evaluate stolen data) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Yes| 8:task:(Send notification)
+  7:exclusivegateway:{x} --> |No| 9:task:(Evaluate security standard)
+  8:task:(Send notification) --> 10:exclusivegateway:{x}
+  9:task:(Evaluate security standard) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |Yes| 11:task:(Send notification)
+  10:exclusivegateway:{x} --> |No| 12:task:(Request if breached data has to be communicated to the data subject)
+  11:task:(Send notification) --> 13:exclusivegateway:{x}
+  12:task:(Request if breached data has to be communicated to the data subject) --> 13:exclusivegateway:{x}
+  13:exclusivegateway:{x} --> |Yes| 14:task:(Send notification)
+  13:exclusivegateway:{x} --> |No| 15:task:(Receive notification for the request)
+  14:task:(Send notification) --> 16:parallelgateway:{AND}
+  15:task:(Receive notification for the request) --> 16:parallelgateway:{AND}
+  16:parallelgateway:{AND} --> 17:endevent:(((endevent)))
+```

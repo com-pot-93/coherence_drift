@@ -1,0 +1,5 @@
+The process starts. Then, based on a condition, the process either proceeds to a set of tasks or splits into two parallel paths.
+
+If the condition is true, the process executes the following sequence of tasks: "Production Planning", "Assign Workers", "Production Design", "Product Delivery", "Production Logout", and "Quality Control". After "Quality Control", the process returns to the conditional check, creating a loop.
+
+Alternatively, the process splits into two parallel paths. One path involves the task "Register to Finished Stock" followed by "Stock to Finished Goods". The other path includes "Register to Semi-Finished Stock" followed by "Load to Semi-Finished Stock". After both parallel paths are completed, they merge back together, and the process ends.

@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>send invitations for friends</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>to send questio, and the process ends. which games do you want to play?</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>recive list of games</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="4">
+    <parameters>
+      <label>Choose games</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="5">
+    <parallel_branch>
+      <loop mode="pre_test" condition="true">
+        <call id="a11" endpoint="" a:alt_id="6">
+          <parameters>
+            <label>appoint date  of LAN party  requiest to send</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="pre_test" condition="true" a:alt_id="7" language="text/javascript">
+          <call id="a15" endpoint="" a:alt_id="8">
+            <parameters>
+              <label>Date change</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a11" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>appoint date  of LAN party  requiest to send</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </loop>
+      </loop>
+    </parallel_branch>
+    <parallel_branch>
+      <loop mode="pre_test" condition="true">
+        <call id="a21" endpoint="" a:alt_id="10">
+          <parameters>
+            <label>guest games do you want ?</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="pre_test" condition="true" a:alt_id="11" language="text/javascript">
+          <call id="a25" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>change guest games</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a21" endpoint="" a:alt_id="10">
+            <parameters>
+              <label>guest games do you want ?</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </loop>
+      </loop>
+    </parallel_branch>
+  </parallel>
+  <choose mode="exclusive" a:alt_id="13">
+    <alternative condition="">
+      <call id="a33" endpoint="" a:alt_id="14">
+        <parameters>
+          <label>download them</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition=""/>
+  </choose>
+  <call id="a35" endpoint="" a:alt_id="15">
+    <parameters>
+      <label>send to Fragen how much Bier want to trink?</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a39" endpoint="" a:alt_id="16">
+    <parameters>
+      <label>to recieve estimation number of all bier require</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="17">
+    <alternative condition="">
+      <call id="a43" endpoint="" a:alt_id="18">
+        <parameters>
+          <label>go to supermarket</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a47" endpoint="" a:alt_id="19">
+        <parameters>
+          <label>buy bier missing</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition=""/>
+  </choose>
+  <call id="a45" endpoint="" a:alt_id="20">
+    <parameters>
+      <label>prepare to LAN party</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

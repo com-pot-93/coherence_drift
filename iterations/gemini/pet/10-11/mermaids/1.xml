@@ -1,0 +1,19 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(GO requests measurements from MSP)
+  1:task:(GO requests measurements from MSP) --> 2:task:(MSP checks the received request)
+  2:task:(MSP checks the received request) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Request denied| 4:task:(MSP denies the request)
+  3:exclusivegateway:{x} --> |Request accepted| 5:task:(MSP performs the measurement)
+  4:task:(MSP denies the request) --> 12:exclusivegateway:{x}
+  5:task:(MSP performs the measurement) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Failure| 7:task:(MSP informs GO about failure)
+  6:exclusivegateway:{x} --> |Success| 8:task:(MSP transmits measured values to GO)
+  7:task:(MSP informs GO about failure) --> 12:exclusivegateway:{x}
+  8:task:(MSP transmits measured values to GO) --> 9:task:(GO processes values)
+  9:task:(GO processes values) --> 10:task:(GO sends changed values to MSP)
+  10:task:(GO sends changed values to MSP) --> 11:task:(GO transmits readings to SP)
+  11:task:(GO transmits readings to SP) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> 13:exclusivegateway:{x}
+  13:exclusivegateway:{x} --> 14:endevent:(((endevent)))
+```

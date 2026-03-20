@@ -1,0 +1,17 @@
+The process begins when it is started. The first step is to search for a customer. After searching for the customer, an offer is made.
+
+At this point, a decision is made. If the process is to continue, an additional request is received. After receiving the additional request, more details are provided. Then, another decision is made. If the process is not to continue at the first decision, it moves directly to this second decision.
+
+At the second decision, if the process is to continue, a booking request is received. After receiving the booking request, a bill is sent. Then, a third decision is made. If the process is not to continue at the second decision, it moves directly to this third decision.
+
+At the third decision, if the process is to continue, payment is received. After receiving the payment, a fourth decision is made. If the process is not to continue at the third decision, it moves directly to this fourth decision.
+
+At the fourth decision, the process continues regardless of the outcome. The process then moves to a fifth decision.
+
+At the fifth decision, if the process is to continue, travel is booked. After booking the travel, a booking confirmation is sent. Then, a sixth decision is made. If the process is not to continue at the fifth decision, it moves directly to the sixth decision.
+
+At the sixth decision, if the process is to continue, the process moves forward. If the process is not to continue, the customer is contacted. After contacting the customer, the process moves forward.
+
+After the sixth decision, the process returns to the fifth decision. The fifth decision then leads back to the fourth decision, creating a loop between these two decisions.
+
+Finally, after the fourth decision, the process ends.

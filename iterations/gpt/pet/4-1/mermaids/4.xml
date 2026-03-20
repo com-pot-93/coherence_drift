@@ -1,0 +1,93 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Notice at Secretarial Office)
+2:task:(Request Patient Data)
+3:task:(Connect Doctor to Nursing Officer)
+4:task:(Nursing Officer Inquires About Patient Condition)
+5:task:(Record Information on Registration Form)
+6:task:(Return Registration Form to Secretarial Office)
+7:task:(Enter Information into Information System)
+8:task:(Print Information from Form)
+9:exclusivegateway:{x}
+10:task:(Create Patient File)
+11:task:(Store Registration Form and Printout in Patient File)
+12:exclusivegateway:{x}
+13:task:(Produce Two Registration Cards)
+14:task:(Add New Patient to List of New Notices)
+15:task:(Hold Staff Meeting)
+16:task:(Assign New Patients to Team Members)
+17:task:(Record Assignments on Assignment List)
+18:exclusivegateway:{x}
+19:task:(Decision Regarding Medical File)
+20:exclusivegateway:{x}
+21:task:(Add Information to Assignment List)
+22:task:(Store Assignment Information in Information System)
+23:task:(Distribute Registration Cards)
+24:exclusivegateway:{x}
+25:task:(Prepare and Send Letter to Family Doctor)
+26:exclusivegateway:{x}
+27:task:(Receive Copy of Patient’s Medical File)
+28:task:(Inform Responsible Intake Person)
+29:task:(Add Copy to Patient File)
+30:task:(Plan Meeting with Patient)
+31:task:(Examine Patient)
+32:task:(Record Additional Observations in Notes)
+33:task:(Add Notes Copy to Patient File)
+34:task:(Add Standard Checklist to Patient File)
+35:exclusivegateway:{x}
+36:task:(Second Intake Worker Plans First Meeting)
+37:exclusivegateway:{x}
+38:task:(Type Out Recorded Tapes)
+39:task:(Add Typed Notes to Patient File)
+40:task:(Put Patient on List of Patients)
+41:task:(Provide List to Team Leader)
+42:task:(Create Treatment Plan)
+43:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Notice at Secretarial Office)
+1:task:(Receive Notice at Secretarial Office) --> 2:task:(Request Patient Data)
+2:task:(Request Patient Data) --> 3:task:(Connect Doctor to Nursing Officer)
+3:task:(Connect Doctor to Nursing Officer) --> 4:task:(Nursing Officer Inquires About Patient Condition)
+4:task:(Nursing Officer Inquires About Patient Condition) --> 5:task:(Record Information on Registration Form)
+5:task:(Record Information on Registration Form) --> 6:task:(Return Registration Form to Secretarial Office)
+6:task:(Return Registration Form to Secretarial Office) --> 7:task:(Enter Information into Information System)
+7:task:(Enter Information into Information System) --> 8:task:(Print Information from Form)
+8:task:(Print Information from Form) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |File required|10:task:(Create Patient File)
+9:exclusivegateway:{x} --> |No file required|12:exclusivegateway:{x}
+10:task:(Create Patient File) --> 11:task:(Store Registration Form and Printout in Patient File)
+11:task:(Store Registration Form and Printout in Patient File) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> 13:task:(Produce Two Registration Cards)
+13:task:(Produce Two Registration Cards) --> 14:task:(Add New Patient to List of New Notices)
+14:task:(Add New Patient to List of New Notices) --> 15:task:(Hold Staff Meeting)
+15:task:(Hold Staff Meeting) --> 16:task:(Assign New Patients to Team Members)
+16:task:(Assign New Patients to Team Members) --> 17:task:(Record Assignments on Assignment List)
+17:task:(Record Assignments on Assignment List) --> 18:exclusivegateway:{x}
+18:exclusivegateway:{x} --> |Medical file needed|19:task:(Decision Regarding Medical File)
+18:exclusivegateway:{x} --> |No medical file needed|20:exclusivegateway:{x}
+19:task:(Decision Regarding Medical File) --> 20:exclusivegateway:{x}
+20:exclusivegateway:{x} --> 21:task:(Add Information to Assignment List)
+21:task:(Add Information to Assignment List) --> 22:task:(Store Assignment Information in Information System)
+22:task:(Store Assignment Information in Information System) --> 23:task:(Distribute Registration Cards)
+23:task:(Distribute Registration Cards) --> 24:exclusivegateway:{x}
+24:exclusivegateway:{x} --> |Letter needed|25:task:(Prepare and Send Letter to Family Doctor)
+24:exclusivegateway:{x} --> |No letter needed|26:exclusivegateway:{x}
+25:task:(Prepare and Send Letter to Family Doctor) --> 26:exclusivegateway:{x}
+26:exclusivegateway:{x} --> 27:task:(Receive Copy of Patient’s Medical File)
+27:task:(Receive Copy of Patient’s Medical File) --> 28:task:(Inform Responsible Intake Person)
+28:task:(Inform Responsible Intake Person) --> 29:task:(Add Copy to Patient File)
+29:task:(Add Copy to Patient File) --> 30:task:(Plan Meeting with Patient)
+30:task:(Plan Meeting with Patient) --> 31:task:(Examine Patient)
+31:task:(Examine Patient) --> 32:task:(Record Additional Observations in Notes)
+32:task:(Record Additional Observations in Notes) --> 33:task:(Add Notes Copy to Patient File)
+33:task:(Add Notes Copy to Patient File) --> 34:task:(Add Standard Checklist to Patient File)
+34:task:(Add Standard Checklist to Patient File) --> 35:exclusivegateway:{x}
+35:exclusivegateway:{x} --> |Second intake needed|36:task:(Second Intake Worker Plans First Meeting)
+35:exclusivegateway:{x} --> |No second intake needed|37:exclusivegateway:{x}
+36:task:(Second Intake Worker Plans First Meeting) --> 37:exclusivegateway:{x}
+37:exclusivegateway:{x} --> 38:task:(Type Out Recorded Tapes)
+38:task:(Type Out Recorded Tapes) --> 39:task:(Add Typed Notes to Patient File)
+39:task:(Add Typed Notes to Patient File) --> 40:task:(Put Patient on List of Patients)
+40:task:(Put Patient on List of Patients) --> 41:task:(Provide List to Team Leader)
+41:task:(Provide List to Team Leader) --> 42:task:(Create Treatment Plan)
+42:task:(Create Treatment Plan) --> 43:endevent:(((endevent)))

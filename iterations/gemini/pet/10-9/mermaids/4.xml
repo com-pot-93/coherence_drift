@@ -1,0 +1,15 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Receive Change Request)
+  1:task:(Receive Change Request) --> 2:task:(Review Change Request)
+  2:task:(Review Change Request) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Rejected| 4:task:(Rejection Task)
+  3:exclusivegateway:{x} --> |Confirmed| 5:task:(Confirmation Task)
+  4:task:(Rejection Task) --> 6:task:(Perform Change)
+  5:task:(Confirmation Task) --> 6:task:(Perform Change)
+  6:task:(Perform Change) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Implementation Reported| 8:task:(Report Implementation)
+  7:exclusivegateway:{x} --> |Failure Notification| 9:task:(Notify About Failure)
+  8:task:(Report Implementation) --> 10:endevent:(((endevent)))
+  9:task:(Notify About Failure) --> 10:endevent:(((endevent)))
+```

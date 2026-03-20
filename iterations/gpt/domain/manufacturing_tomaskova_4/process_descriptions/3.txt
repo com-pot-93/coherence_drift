@@ -1,0 +1,23 @@
+The process begins with a starting point. Immediately after, a decision is made. If the answer to this decision is "false," the process moves directly to the end and stops.
+
+If the answer is "true," the process continues to another decision point. From here, the process moves to a third decision. If a certain condition is not met at this stage, the process proceeds through a series of steps:
+
+1. Production planning is carried out.
+2. Workers are assigned to the production.
+3. A production design is created.
+4. The product is delivered.
+5. The production is logged out.
+6. A quality control check is performed.
+
+After the quality control check, the process returns to the earlier decision point for another evaluation.
+
+If the condition at the third decision is met, the process advances to a new decision point. Here, another evaluation takes place. If the result is "true," the process checks whether the product is finished or semi-finished.
+
+- If the product is finished, it is registered as a finished product and then moved to the finished goods stock. After this, the process continues to another decision point.
+- If the product is semi-finished, it is registered as a semi-finished product and then loaded into the semi-finished stock. The process then also continues to the same decision point.
+
+At this next decision point, another evaluation is made. If the product is finished, an escalation occurs, after which the process returns to the previous decision point for further evaluation.
+
+After this, the process loops back to the earlier decision point for another check. If the evaluation at this point leads to the end, the process stops.
+
+In summary, the process involves a series of decisions and actions related to production planning, worker assignment, product creation, delivery, quality control, and the registration and storage of finished or semi-finished products. The process includes several loops and checks, ensuring that products are properly handled based on their status and that the process only ends when all necessary conditions are met.

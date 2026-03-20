@@ -1,0 +1,13 @@
+The process begins when a customer order is received. After receiving the order, the order is processed and the necessary components are determined.
+
+At this point, it is checked whether any parts required for the order are missing. If parts are missing, the missing parts are purchased. Once the missing parts arrive, they are stocked. After this, or if no parts were missing in the first place, the order is moved to production.
+
+The items are then produced. Once production is complete, a quality check is performed. If the items do not pass the quality check, follow-up production is initiated, and a quality re-check is performed. This cycle of follow-up production and quality re-check continues until the items pass the quality check.
+
+When the items pass the quality check, they are filled into packaging. After this, it is checked if any follow-up production is needed. If so, follow-up production is initiated and a quality re-check is performed, repeating this step until no further follow-up is needed.
+
+Once the items are properly filled into packaging and no follow-up is required, the items are packed and labeled. Again, it is checked if follow-up production is needed. If so, follow-up production and a quality re-check are performed, repeating as necessary until the items are ready.
+
+After packing and labeling, the items are transported to the warehouse. At this stage, another check is made to see if follow-up production is needed. If it is, follow-up production and a quality re-check are performed, repeating as needed.
+
+When the items are ready in the warehouse and no further follow-up is required, the items are sent to the customer. The process ends after the items are sent to the customer.

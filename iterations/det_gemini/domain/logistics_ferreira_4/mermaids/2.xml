@@ -1,0 +1,36 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Get temperature values)
+  1:task:(Get temperature values) --> 2:exclusivegateway:{x}
+  2:exclusivegateway:{x} --> |condition A| 3:task:(Generate standard notification)
+  2:exclusivegateway:{x} --> |condition B| 4:parallelgateway:{AND}
+  4:parallelgateway:{AND} --> 5:task:(Get container status)
+  5:task:(Get container status) --> 6:task:(Estimate container status)
+  6:task:(Estimate container status) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |condition C| 16:parallelgateway:{AND}
+  7:exclusivegateway:{x} --> |condition D| 8:task:(Generate container change request)
+  8:task:(Generate container change request) --> 16:parallelgateway:{AND}
+  4:parallelgateway:{AND} --> 9:task:(Get client location)
+  9:task:(Get client location) --> 10:task:(Estimate distance)
+  10:task:(Estimate distance) --> 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |condition E| 16:parallelgateway:{AND}
+  11:exclusivegateway:{x} --> |condition F| 12:task:(Estimate delivery time)
+  12:task:(Estimate delivery time) --> 13:exclusivegateway:{x}
+  13:exclusivegateway:{x} --> |condition G| 16:parallelgateway:{AND}
+  13:exclusivegateway:{x} --> |condition H| 14:task:(Generate route change request)
+  14:task:(Generate route change request) --> 16:parallelgateway:{AND}
+  4:parallelgateway:{AND} --> 15:task:(Get goods status)
+  15:task:(Get goods status) --> 17:task:(Estimate goods status)
+  17:task:(Estimate goods status) --> 18:exclusivegateway:{x}
+  18:exclusivegateway:{x} --> |condition I| 19:task:(Evaluate damages)
+  19:task:(Evaluate damages) --> 20:exclusivegateway:{x}
+  20:exclusivegateway:{x} --> |condition K| 21:task:(Generate removal request)
+  20:exclusivegateway:{x} --> |condition L| 22:task:(Generate price change request)
+  21:task:(Generate removal request) --> 16:parallelgateway:{AND}
+  22:task:(Generate price change request) --> 16:parallelgateway:{AND}
+  18:exclusivegateway:{x} --> |condition J| 16:parallelgateway:{AND}
+  3:task:(Generate standard notification) --> 23:exclusivegateway:{x}
+  16:parallelgateway:{AND} --> 23:exclusivegateway:{x}
+  23:exclusivegateway:{x} --> 24:task:(Send generated messages)
+  24:task:(Send generated messages) --> 25:endevent:(((endevent)))
+```

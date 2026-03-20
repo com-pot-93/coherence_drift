@@ -1,0 +1,16 @@
+The process starts with initiating an assessment tool, followed by starting the tool and entering the incident type. Next, the process requires specifying the incident. Subsequently, a decision is made.
+
+- If the first path is chosen, user or victim data is entered, followed by another decision.
+  - If "Contact Superiors" is chosen, superiors are contacted, and the process continues to a merging point.
+  - Otherwise, the process splits into two parallel paths.
+    - The first path involves contacting accident insurance.
+    - The second path involves a decision.
+      - If a condition is met, the labor inspectorate is contacted.
+      - Otherwise, this step is skipped.
+    - Both parallel paths merge, and the process continues to the merging point mentioned earlier.
+- If the second path is chosen from the first decision, accident insurance and the principal are contacted.
+- If the third path is chosen from the first decision, another decision is made.
+  - If a condition is met, private insurance is contacted.
+  - Otherwise, this step is skipped.
+
+All paths merge into a single flow where tasks are proposed to the user, and then the proposed task is executed. The process ends after the task execution.

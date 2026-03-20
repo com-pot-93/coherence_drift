@@ -1,0 +1,42 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Prepare Draft Schedule)
+2:task:(Add Dates to Calendars)
+3:task:(Support Officer Reviews Dates)
+4:exclusivegateway:{x}
+5:task:(Suggest Modifications)
+6:task:(Coordination Unit Reviews Updated Dates)
+7:exclusivegateway:{x}
+8:task:(Check for Schedule Conflicts)
+9:exclusivegateway:{x}
+10:task:(Inform Coordination Unit of Conflicts)
+11:task:(Send Finalized Schedule to Committee)
+12:task:(Committee Reviews Schedule)
+13:task:(Check for Conflicts After Committee Review)
+14:exclusivegateway:{x}
+15:task:(Inform Coordination Unit of Committee Conflicts)
+16:endevent:(((endevent)))
+17:exclusivegateway:{x}
+18:exclusivegateway:{x}
+
+0:startevent:((startevent)) --> 1:task:(Prepare Draft Schedule)
+1:task:(Prepare Draft Schedule) --> 2:task:(Add Dates to Calendars)
+2:task:(Add Dates to Calendars) --> 3:task:(Support Officer Reviews Dates)
+3:task:(Support Officer Reviews Dates) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |No modifications needed|7:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Modifications needed|5:task:(Suggest Modifications)
+5:task:(Suggest Modifications) --> 6:task:(Coordination Unit Reviews Updated Dates)
+6:task:(Coordination Unit Reviews Updated Dates) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> 8:task:(Check for Schedule Conflicts)
+8:task:(Check for Schedule Conflicts) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |No conflicts|11:task:(Send Finalized Schedule to Committee)
+9:exclusivegateway:{x} --> |Conflicts found|10:task:(Inform Coordination Unit of Conflicts)
+11:task:(Send Finalized Schedule to Committee) --> 12:task:(Committee Reviews Schedule)
+12:task:(Committee Reviews Schedule) --> 13:task:(Check for Conflicts After Committee Review)
+13:task:(Check for Conflicts After Committee Review) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |No conflicts|17:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |Conflicts found|15:task:(Inform Coordination Unit of Committee Conflicts)
+15:task:(Inform Coordination Unit of Committee Conflicts) --> 17:exclusivegateway:{x}
+10:task:(Inform Coordination Unit of Conflicts) --> 18:exclusivegateway:{x}
+17:exclusivegateway:{x} --> 16:endevent:(((endevent)))
+18:exclusivegateway:{x} --> 16:endevent:(((endevent)))

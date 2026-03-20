@@ -1,0 +1,47 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Receive Customer Request)
+  2:task:(Check Request Details)
+  3:exclusivegateway:{x}
+  4:task:(End Process Activity)
+  5:exclusivegateway:{x}
+  6:exclusivegateway:{x}
+  7:task:(Manual Registration)
+  8:task:(Automatic Registration)
+  9:exclusivegateway:{x}
+  10:exclusivegateway:{x}
+  11:task:(Search Attraction Provider)
+  12:exclusivegateway:{x}
+  13:task:(Book Attraction)
+  14:exclusivegateway:{x}
+  15:task:(Receive Booking Rejection)
+  16:task:(Receive Booking Confirmation)
+  17:task:(Send Confirmation to Customer)
+  18:task:(Send Notification to Customer)
+  19:exclusivegateway:{x}
+  20:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Receive Customer Request)
+  1:task:(Receive Customer Request) --> 2:task:(Check Request Details)
+  2:task:(Check Request Details) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Do Not Continue|4:task:(End Process Activity)
+  3:exclusivegateway:{x} --> |Continue|5:exclusivegateway:{x}
+  4:task:(End Process Activity) --> 19:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Manual Registration|7:task:(Manual Registration)
+  5:exclusivegateway:{x} --> |Automatic Registration|8:task:(Automatic Registration)
+  7:task:(Manual Registration) --> 6:exclusivegateway:{x}
+  8:task:(Automatic Registration) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Do Not Search|18:task:(Send Notification to Customer)
+  9:exclusivegateway:{x} --> |Search|11:task:(Search Attraction Provider)
+  18:task:(Send Notification to Customer) --> 19:exclusivegateway:{x}
+  11:task:(Search Attraction Provider) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |Do Not Book|4:task:(End Process Activity)
+  10:exclusivegateway:{x} --> |Book|13:task:(Book Attraction)
+  13:task:(Book Attraction) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> |Rejected|15:task:(Receive Booking Rejection)
+  12:exclusivegateway:{x} --> |Confirmed|16:task:(Receive Booking Confirmation)
+  15:task:(Receive Booking Rejection) --> 19:exclusivegateway:{x}
+  16:task:(Receive Booking Confirmation) --> 17:task:(Send Confirmation to Customer)
+  17:task:(Send Confirmation to Customer) --> 19:exclusivegateway:{x}
+  19:exclusivegateway:{x} --> 20:endevent:(((endevent)))

@@ -1,0 +1,75 @@
+flowchart LR
+0:startevent:((startevent))
+1:parallelgateway:{AND}
+2:task:(Baby younger than 2 years)
+3:task:(Parent)
+4:parallelgateway:{AND}
+5:exclusivegateway:{x}
+6:task:(Self-employed/studying/housewife/man)
+7:task:(employed)
+8:exclusivegateway:{x}
+9:task:(Send employer notfication)
+10:task:(Recieve employer confimation)
+11:task:(Take maternity leave)
+12:exclusivegateway:{x}
+13:task:(Split maternity leave)
+14:exclusivegateway:{x}
+15:task:(maternity leave less than 2 months)
+16:task:(Send employer notification)
+17:task:(maternity leave more than 3 months)
+18:task:(Send employer notification)
+19:exclusivegateway:{x}
+20:task:(Recieve employer notification)
+21:task:(Take maternity leave)
+22:task:(Extend maternity leave)
+23:exclusivegateway:{x}
+24:task:(maternity leave less than 2 months)
+25:task:(Send employer notification)
+26:task:(maternity leave more than 3 months)
+27:task:(Send employer notification)
+28:exclusivegateway:{x}
+29:task:(Recieve employer notification)
+30:task:(Take maternity leave)
+31:task:(Both parents take maternity leave)
+32:exclusivegateway:{x}
+33:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:parallelgateway:{AND}
+1:parallelgateway:{AND} --> 2:task:(Baby younger than 2 years)
+1:parallelgateway:{AND} --> 3:task:(Parent)
+2:task:(Baby younger than 2 years) --> 4:parallelgateway:{AND}
+3:task:(Parent) --> 4:parallelgateway:{AND}
+4:parallelgateway:{AND} --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Self-employed/studying/housewife/man|6:task:(Self-employed/studying/housewife/man)
+5:exclusivegateway:{x} --> |employed|7:task:(employed)
+6:task:(Self-employed/studying/housewife/man) --> 8:exclusivegateway:{x}
+7:task:(employed) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> 9:task:(Send employer notfication)
+9:task:(Send employer notfication) --> 10:task:(Recieve employer confimation)
+10:task:(Recieve employer confimation) --> 11:task:(Take maternity leave)
+11:task:(Take maternity leave) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Split maternity leave|13:task:(Split maternity leave)
+12:exclusivegateway:{x} --> |Extend maternity leave|22:task:(Extend maternity leave)
+12:exclusivegateway:{x} --> |Both parents take maternity leave|31:task:(Both parents take maternity leave)
+13:task:(Split maternity leave) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |<2 months|15:task:(maternity leave less than 2 months)
+14:exclusivegateway:{x} --> |>3 months|17:task:(maternity leave more than 3 months)
+15:task:(maternity leave less than 2 months) --> 16:task:(Send employer notification)
+17:task:(maternity leave more than 3 months) --> 18:task:(Send employer notification)
+16:task:(Send employer notification) --> 19:exclusivegateway:{x}
+18:task:(Send employer notification) --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> 20:task:(Recieve employer notification)
+20:task:(Recieve employer notification) --> 21:task:(Take maternity leave)
+21:task:(Take maternity leave) --> 32:exclusivegateway:{x}
+22:task:(Extend maternity leave) --> 23:exclusivegateway:{x}
+23:exclusivegateway:{x} --> |<2 months|24:task:(maternity leave less than 2 months)
+23:exclusivegateway:{x} --> |>3 months|26:task:(maternity leave more than 3 months)
+24:task:(maternity leave less than 2 months) --> 25:task:(Send employer notification)
+26:task:(maternity leave more than 3 months) --> 27:task:(Send employer notification)
+25:task:(Send employer notification) --> 28:exclusivegateway:{x}
+27:task:(Send employer notification) --> 28:exclusivegateway:{x}
+28:exclusivegateway:{x} --> 29:task:(Recieve employer notification)
+29:task:(Recieve employer notification) --> 30:task:(Take maternity leave)
+30:task:(Take maternity leave) --> 32:exclusivegateway:{x}
+31:task:(Both parents take maternity leave) --> 32:exclusivegateway:{x}
+32:exclusivegateway:{x} --> 33:endevent:(((endevent)))

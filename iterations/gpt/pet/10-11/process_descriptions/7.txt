@@ -1,0 +1,15 @@
+The process begins when a request to start a measurement is initiated. This request is then received and reviewed. After the review, a decision is made:
+
+- If the request is denied, the person or group known as "GO" is informed about the denial. After this notification, the process moves towards completion.
+- If the request is approved, the measurement is performed. Once the measurement is attempted, another decision is made:
+    - If the measurement fails, "GO" is notified about the failure, and the process continues towards completion.
+    - If the measurement is successful, the measured values are sent to "GO".
+
+After "GO" receives the measured values, these values are processed. At this point, another decision is made:
+
+- If the values have changed as a result of processing, the updated values are sent to the "MSP".
+- If there is no change in the values, this step is skipped.
+
+Regardless of whether the values were updated or not, the readings are then forwarded to the "SP". After this, the process moves towards completion.
+
+The process ends after all necessary notifications and forwarding of readings have been completed.

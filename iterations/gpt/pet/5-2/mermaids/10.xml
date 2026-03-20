@@ -1,0 +1,20 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Employee submits vacation request)
+2:task:(Register request in system)
+3:task:(Supervisor reviews request)
+4:exclusivegateway:{x}
+5:task:(Return application to employee)
+6:task:(Notify HR and complete HR procedures)
+7:exclusivegateway:{x}
+8:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Employee submits vacation request)
+1:task:(Employee submits vacation request) --> 2:task:(Register request in system)
+2:task:(Register request in system) --> 3:task:(Supervisor reviews request)
+3:task:(Supervisor reviews request) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Not approved|5:task:(Return application to employee)
+4:exclusivegateway:{x} --> |Approved|6:task:(Notify HR and complete HR procedures)
+5:task:(Return application to employee) --> 7:exclusivegateway:{x}
+6:task:(Notify HR and complete HR procedures) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> 8:endevent:(((endevent)))

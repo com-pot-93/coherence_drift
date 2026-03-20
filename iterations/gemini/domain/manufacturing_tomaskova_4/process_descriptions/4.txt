@@ -1,0 +1,9 @@
+The process starts and immediately proceeds to a decision point. If the decision is "Yes", the process moves to another decision point. If this decision is also "Yes", the process continues to yet another decision point. Again, if the decision is "Yes", the process advances to another decision point. From here, if the decision is "true", a "Production Planning" task is performed.
+
+After "Production Planning", the process encounters a diverging exclusive gateway that immediately merges. Following this, there is another diverging exclusive gateway that immediately merges. Then, the process reaches a decision point. If the decision is "Yes", an "Assign Workers" task is executed, followed by "Production Design", "Product Delivery", "Production Logout", and "Quality Control" tasks in sequence.
+
+After "Quality Control", the process arrives at a decision point. If the decision is "Yes", the process loops back to the "Production Planning" task. After "Production Planning", the process continues to a merging exclusive gateway. If the decision is "No", the process moves to a diverging exclusive gateway that immediately merges, and then proceeds to the same merging exclusive gateway. From there, an escalation event occurs, and the process returns to the merging exclusive gateway.
+
+If any of the earlier decisions are "No", the process proceeds through a series of merging exclusive gateways until it reaches a parallel gateway.
+
+From the parallel gateway, two parallel paths are initiated. The first path involves a "Register to Finished Stock" task, followed by a "Stocking to Finished Goods" task. The second path involves a "Register to Semi-Finished Stock" task, followed by a "Loading to Semi-Finished Stock" task. Both paths converge at a parallel gateway, and the process ends.

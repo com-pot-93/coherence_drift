@@ -1,0 +1,26 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Initiate Deregistration)
+2:task:(Review and Verify Deregistration)
+3:exclusivegateway:{x}
+4:task:(Reject Deregistration)
+5:task:(Preliminary Confirmation)
+6:exclusivegateway:{x}
+7:task:(Assign GO as MSP)
+8:task:(Inform MSPO of Assignment)
+9:task:(Notify MPO of Assignment)
+10:task:(Inform SP of Assignment)
+11:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Initiate Deregistration)
+1:task:(Initiate Deregistration) --> 2:task:(Review and Verify Deregistration)
+2:task:(Review and Verify Deregistration) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Reject|4:task:(Reject Deregistration)
+3:exclusivegateway:{x} --> |Preliminary Confirmation|5:task:(Preliminary Confirmation)
+4:task:(Reject Deregistration) --> 6:exclusivegateway:{x}
+5:task:(Preliminary Confirmation) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> 7:task:(Assign GO as MSP)
+7:task:(Assign GO as MSP) --> 8:task:(Inform MSPO of Assignment)
+8:task:(Inform MSPO of Assignment) --> 9:task:(Notify MPO of Assignment)
+9:task:(Notify MPO of Assignment) --> 10:task:(Inform SP of Assignment)
+10:task:(Inform SP of Assignment) --> 11:endevent:(((endevent)))

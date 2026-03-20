@@ -1,0 +1,30 @@
+Here is a detailed, step-by-step description of the process as depicted in the provided model:
+
+1. The process begins with the initiation of the project.
+2. After the project is initiated, a basic design is developed.
+3. Once the basic design is ready, Lego brick sets are ordered.
+4. When the Lego brick sets arrive, they are received.
+5. The received bricks are then sorted by size.
+6. After sorting, three activities take place at the same time: big bricks are placed in a container, medium bricks are placed in a container, and small bricks are placed in a container.
+7. Once all bricks are placed in their respective containers, the process checks whether it is the right time to proceed.
+8. If it is not the right time, the process waits until it is ready, and then checks again.
+9. When it is the right time, the project proceeds.
+10. The next step is to build subcomponents.
+11. After building subcomponents, the process checks if more subcomponents are needed.
+12. If more subcomponents are needed, additional subcomponents are built, and the process returns to building subcomponents.
+13. If more bricks are needed, more Lego bricks are ordered, and the process returns to building subcomponents.
+14. If neither more subcomponents nor more bricks are needed, the process continues to the next step.
+15. The built subcomponents are then tested.
+16. If the subcomponents are ready to be assembled, they are assembled.
+17. If the assembly is complete, the process proceeds after assembly.
+18. After proceeding, the process continues after assembly.
+19. At this point, the process checks if escalation is needed or if all conditions are met.
+20. If escalation is needed, the process escalates and then continues.
+21. If all conditions are met, the process continues.
+22. If it is not the right time to proceed after assembly, the process waits until it is ready and then checks again.
+23. If more assembly is needed, the process returns to testing subcomponents.
+24. If the subcomponents are not ready to assemble and need redesign, they are redesigned and then tested again.
+25. The process continues through these checks and loops until all conditions are met and the process can move forward.
+26. Finally, the process reaches its end.
+
+This description follows the exact sequence and logic of the process as depicted in the model, ensuring that every step and decision is included and described in clear, plain language.

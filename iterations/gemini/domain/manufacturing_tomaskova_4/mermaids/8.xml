@@ -1,0 +1,40 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Yes| 2:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |No| 14:parallelgateway:{AND}
+    2:exclusivegateway:{x} --> |Yes| 3:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |No| 14:parallelgateway:{AND}
+    3:exclusivegateway:{x} --> |Yes| 4:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |No| 14:parallelgateway:{AND}
+    4:exclusivegateway:{x} --> |Yes| 5:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |No| 14:parallelgateway:{AND}
+    5:exclusivegateway:{x} --> |true| 6:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |false| 14:parallelgateway:{AND}
+    6:exclusivegateway:{x} --> |true| 7:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |false| 14:parallelgateway:{AND}
+    7:exclusivegateway:{x} --> 8:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> |true| 9:task:(Production Planning)
+    8:exclusivegateway:{x} --> |false| 6:exclusivegateway:{x}
+    9:task:(Production Planning) --> 10:exclusivegateway:{x}
+    10:exclusivegateway:{x} --> 11:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |No| 13:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |Yes| 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |Yes| 15:task:(Assign Workers)
+    12:exclusivegateway:{x} --> |No| 13:exclusivegateway:{x}
+    15:task:(Assign Workers) --> 16:task:(Production Design)
+    16:task:(Production Design) --> 17:task:(Product Delivery)
+    17:task:(Product Delivery) --> 18:task:(Production Logout)
+    18:task:(Production Logout) --> 19:task:(Quality Control)
+    19:task:(Quality Control) --> 20:exclusivegateway:{x}
+    20:exclusivegateway:{x} --> |No| 13:exclusivegateway:{x}
+    20:exclusivegateway:{x} --> |Yes| 9:task:(Production Planning)
+    13:exclusivegateway:{x} --> 14:parallelgateway:{AND}
+    14:parallelgateway:{AND} --> 21:task:(Register to Finished Stock)
+    14:parallelgateway:{AND} --> 22:task:(Register to Semi-Finished Stock)
+    21:task:(Register to Finished Stock) --> 23:task:(Stocking to Finished Goods)
+    22:task:(Register to Semi-Finished Stock) --> 24:task:(Loading to Semi-Finished Stock)
+    23:task:(Stocking to Finished Goods) --> 25:parallelgateway:{AND}
+    24:task:(Loading to Semi-Finished Stock) --> 25:parallelgateway:{AND}
+    25:parallelgateway:{AND} --> 26:endevent:(((endevent)))
+```

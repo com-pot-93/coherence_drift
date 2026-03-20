@@ -1,0 +1,26 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> 2:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> 14:task:(Send equipment acquisition bill to MPON)
+    2:exclusivegateway:{x} --> |Metering Point Operations Bill| 3:task:(Send Metering Point Operations Bill to GO)
+    2:exclusivegateway:{x} --> |Measurement Bill| 4:task:(Send Measurement Bill to GO)
+    2:exclusivegateway:{x} --> |Additional Readings Bill| 5:task:(Send bill for additional readings to GO)
+    2:exclusivegateway:{x} --> |Equipment Acquisition Bill| 6:task:(Send bill for the equipment acquisition to GO)
+    3:task:(Send Metering Point Operations Bill to GO) --> 7:task:(Examine the bill)
+    4:task:(Send Measurement Bill to GO) --> 7:task:(Examine the bill)
+    5:task:(Send bill for additional readings to GO) --> 7:task:(Examine the bill)
+    6:task:(Send bill for the equipment acquisition to GO) --> 7:task:(Examine the bill)
+    7:task:(Examine the bill) --> 8:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> |GO rejects the bill| 9:task:(Invoice is rejected)
+    8:exclusivegateway:{x} --> |GO confirms the bill| 10:task:(Invoice is confirmed with payment advice)
+    9:task:(Invoice is rejected) --> 11:inclusivegateway:{O}
+    10:task:(Invoice is confirmed with payment advice) --> 11:inclusivegateway:{O}
+    11:inclusivegateway:{O} --> 16:inclusivegateway:{O}
+    14:task:(Send equipment acquisition bill to MPON) --> 15:task:(Examine the bill)
+    15:task:(Examine the bill) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |MPON confirms the bill| 13:task:(Invoice is confirmed with payment advice)
+    12:exclusivegateway:{x} --> |MPON rejects the bill| 9:task:(Invoice is rejected)
+    13:task:(Invoice is confirmed with payment advice) --> 11:inclusivegateway:{O}
+    16:inclusivegateway:{O} --> 17:endevent:(((endevent)))
+```

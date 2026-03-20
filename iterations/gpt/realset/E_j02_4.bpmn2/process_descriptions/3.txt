@@ -1,0 +1,24 @@
+The process begins. Two activities are carried out at the same time: one is to check if the baby is younger than two years, and the other is to identify the parent. Once both of these activities are completed, the process continues.
+
+Next, a decision is made based on the parent's situation. If the parent is self-employed, studying, a housewife, or a man, the process moves directly to the end. Otherwise, the process continues with the following steps:
+
+A notification is sent to the employer. After that, the process waits for confirmation from the employer. Once confirmation is received, the parent takes maternity leave.
+
+After the parent takes maternity leave, another decision is made based on how the leave is split:
+
+- If the split is less than two months, the employer is notified about this. The process then waits for a notification from the employer regarding the split. Once the notification is received, the parent takes leave after the split of less than two months.
+- If the split is more than three months, the employer is notified about this. The process then waits for a notification from the employer regarding the split. Once the notification is received, the parent takes leave after the split of more than three months.
+- If the split does not fall into these categories, the process continues to another decision point.
+
+At this next decision point, the process considers whether there is an extension to the leave:
+
+- If the extension is less than two months, the employer is notified about this. The process then waits for a notification from the employer regarding the extension. Once the notification is received, the parent takes leave after the extension of less than two months.
+- If the extension is more than three months, the employer is notified about this. The process then waits for a notification from the employer regarding the extension. Once the notification is received, the parent takes leave after the extension of more than three months.
+- If the extension does not fall into these categories, the process continues to another decision point.
+
+At this final decision point, the process checks if both parents are taking leave together:
+
+- If both parents take leave together, they do so at this stage.
+- If the situation is different, the process continues without any specific action.
+
+After all these steps and decisions, the process comes to an end.

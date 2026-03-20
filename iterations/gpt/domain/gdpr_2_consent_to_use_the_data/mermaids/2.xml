@@ -1,0 +1,44 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:parallelgateway:{AND}
+  2:task:(Add info about profiling logic)
+  3:task:(Add info about right to rectify data)
+  4:task:(Add info about right to access data)
+  5:task:(Add info about right to erase data)
+  6:task:(Add info about data portability)
+  7:task:(Add info about withdrawing consent)
+  8:task:(Add info about lodging complaint)
+  9:task:(Retrieve legal basis for processing)
+  10:task:(Retrieve purposes for processing)
+  11:task:(Retrieve identity and contact details)
+  12:parallelgateway:{AND}
+  13:task:(Collect info about consent)
+  14:task:(Request consent)
+  15:task:(Continue after consent given)
+  16:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:parallelgateway:{AND}
+  1:parallelgateway:{AND} --> 2:task:(Add info about profiling logic)
+  1:parallelgateway:{AND} --> 3:task:(Add info about right to rectify data)
+  1:parallelgateway:{AND} --> 4:task:(Add info about right to access data)
+  1:parallelgateway:{AND} --> 5:task:(Add info about right to erase data)
+  1:parallelgateway:{AND} --> 6:task:(Add info about data portability)
+  1:parallelgateway:{AND} --> 7:task:(Add info about withdrawing consent)
+  1:parallelgateway:{AND} --> 8:task:(Add info about lodging complaint)
+  1:parallelgateway:{AND} --> 9:task:(Retrieve legal basis for processing)
+  1:parallelgateway:{AND} --> 10:task:(Retrieve purposes for processing)
+  1:parallelgateway:{AND} --> 11:task:(Retrieve identity and contact details)
+  2:task:(Add info about profiling logic) --> 12:parallelgateway:{AND}
+  3:task:(Add info about right to rectify data) --> 12:parallelgateway:{AND}
+  4:task:(Add info about right to access data) --> 12:parallelgateway:{AND}
+  5:task:(Add info about right to erase data) --> 12:parallelgateway:{AND}
+  6:task:(Add info about data portability) --> 12:parallelgateway:{AND}
+  7:task:(Add info about withdrawing consent) --> 12:parallelgateway:{AND}
+  8:task:(Add info about lodging complaint) --> 12:parallelgateway:{AND}
+  9:task:(Retrieve legal basis for processing) --> 12:parallelgateway:{AND}
+  10:task:(Retrieve purposes for processing) --> 12:parallelgateway:{AND}
+  11:task:(Retrieve identity and contact details) --> 12:parallelgateway:{AND}
+  12:parallelgateway:{AND} --> 13:task:(Collect info about consent)
+  13:task:(Collect info about consent) --> 14:task:(Request consent)
+  14:task:(Request consent) --> 15:task:(Continue after consent given)
+  15:task:(Continue after consent given) --> 16:endevent:(((endevent)))

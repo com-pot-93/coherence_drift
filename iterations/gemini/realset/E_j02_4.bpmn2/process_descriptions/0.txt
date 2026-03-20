@@ -1,0 +1,23 @@
+The process starts. Then, two activities, "Baby younger than 2 years" and "Parent," are performed in parallel. After both activities are completed, a decision is made.
+
+If the person is self-employed, studying, a housewife, or a man, the process proceeds to the next step. Otherwise, if the person is employed, they must send an employer notification, receive employer confirmation, and then take maternity leave. Following this, another decision is made.
+
+From here, there are three possible paths: to split maternity leave, to extend maternity leave, or for both parents to take maternity leave.
+
+If the decision is to split maternity leave, another decision is made based on whether the maternity leave is less than 2 months or more than 3 months.
+
+- If the maternity leave is less than 2 months, an employer notification is sent, and a decision is made with two possible paths that immediately merge back together.
+- If the maternity leave is more than 3 months, an employer notification is sent, and a decision is made with two possible paths that immediately merge back together.
+
+After either of these scenarios, the process continues to receive employer notification and then take maternity leave.
+
+If the decision is to extend maternity leave, another decision is made based on whether the maternity leave is less than 2 months or more than 3 months.
+
+- If the maternity leave is less than 2 months, an employer notification is sent, and a decision is made with two possible paths that immediately merge back together.
+- If the maternity leave is more than 3 months, an employer notification is sent, and a decision is made with two possible paths that immediately merge back together.
+
+After either of these scenarios, the process continues to receive employer notification and then take maternity leave.
+
+If the decision is for both parents to take maternity leave, the process proceeds directly to the next step.
+
+Finally, the process ends.

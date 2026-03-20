@@ -1,0 +1,39 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins by prompting the user to log in.
+2. After the user is prompted, their credentials are checked.
+3. If the credentials are incorrect, the process ends immediately.
+4. If the credentials are correct, the user’s permissions are checked.
+5. If the permissions are insufficient, the process ends immediately.
+6. If the permissions are sufficient, a check is performed for Condition A.
+7. If Condition A is met, the process ends immediately.
+8. If Condition A is not met, a check is performed for Condition B.
+9. If Condition B is not met, the process ends immediately.
+10. If Condition B is met, a check is performed for Condition C.
+11. If Condition C is not met, the process ends immediately.
+12. If Condition C is met, the process continues to the next step.
+13. The user is prompted to add more products.
+14. At this point, the user decides whether to add more products:
+    - If the user chooses to add more products, they select a product and add it to the cart. After adding the product, the user is prompted again to add more products, and this cycle can repeat as many times as needed.
+    - If the user chooses not to add more products, the process moves forward.
+15. The order confirmation is presented to the user.
+16. The user is then prompted to finalize the order.
+17. At this stage, the user decides whether to finalize the order:
+    - If the user chooses not to finalize, the process ends immediately.
+    - If the user chooses to finalize, the process continues.
+18. Shipment details are prepared.
+19. Several activities are performed at the same time:
+    - Payment information is collected.
+    - Shipping details are collected.
+    - Payment details are prepared.
+    - Shipment details are prepared again.
+20. Once all these activities are completed, the process checks if the order is correct.
+21. If the order is not correct, the process enters a loop:
+    - The user is taken through an order confirmation loop, where they can choose to repeat the confirmation or cancel.
+    - If the user chooses to repeat, the order confirmation is presented again.
+    - If the user chooses to cancel, the process ends.
+22. If the order is correct, the process checks if further confirmation is needed:
+    - If further confirmation is needed, the order confirmation is presented again.
+    - If no further confirmation is needed, the process ends.
+
+Throughout the process, at several decision points, if the required conditions are not met, the process ends immediately. The process allows for repeated addition of products and repeated confirmation steps, ensuring the user can review and modify their order as needed before finalizing.

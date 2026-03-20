@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>company determines contact details of potential customers</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="Buy details" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>company  buys details for cold calls</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Exhibitions" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>marketing staff participates in exhibitions</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Knows person" language="text/javascript">
+      <call id="a9" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>company knows person interested in the product</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a17" endpoint="" a:alt_id="9">
+    <parameters>
+      <label>call center staff calls the customer</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a23" endpoint="" a:alt_id="10">
+    <parameters>
+      <label>call center staff  determines the contact person</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a25" endpoint="" a:alt_id="11">
+    <parameters>
+      <label>call center staff determines the budget</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a27" endpoint="" a:alt_id="12">
+    <parameters>
+      <label>call center staff assesses customer interest</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="13">
+    <alternative condition="">
+      <choose mode="exclusive" a:alt_id="14">
+        <alternative condition="Sales rep presents" language="text/javascript">
+          <call id="a35" endpoint="" a:alt_id="16">
+            <parameters>
+              <label>sales representative makes  online presentation</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Pre-sales presents" language="text/javascript">
+          <call id="a37" endpoint="" a:alt_id="18">
+            <parameters>
+              <label>pre-sales employee makes  online presentation</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a47" endpoint="" a:alt_id="21">
+        <parameters>
+          <label>company waits for the customer</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="22">
+        <alternative condition="First branch" language="text/javascript"/>
+        <alternative condition="Second branch" language="text/javascript"/>
+      </choose>
+      <call id="a75" endpoint="" a:alt_id="24">
+        <parameters>
+          <label>sales representative calls the customer</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a81" endpoint="" a:alt_id="28">
+        <parameters>
+          <label>company creates a quotation</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a49" endpoint="" a:alt_id="31">
+        <parameters>
+          <label>head of development  acquires the customer</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="32">
+        <alternative condition="Sales rep presents" language="text/javascript">
+          <call id="a53" endpoint="" a:alt_id="33">
+            <parameters>
+              <label>sales representative makes  online presentation</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Pre-sales presents" language="text/javascript">
+          <call id="a55" endpoint="" a:alt_id="35">
+            <parameters>
+              <label>pre-sales employee makes  online presentation</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a65" endpoint="" a:alt_id="38">
+        <parameters>
+          <label>company waits for the customer</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="39">
+        <alternative condition="First branch" language="text/javascript"/>
+        <alternative condition="Second branch" language="text/javascript"/>
+      </choose>
+      <call id="a91" endpoint="" a:alt_id="41">
+        <parameters>
+          <label>sales representative calls the customer</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a97" endpoint="" a:alt_id="45">
+        <parameters>
+          <label>company creates a quotation</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

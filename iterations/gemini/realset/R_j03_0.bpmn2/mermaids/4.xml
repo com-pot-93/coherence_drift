@@ -1,0 +1,9 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Receive Fridge Information)
+  1:task:(Receive Fridge Information) --> 2:task:(Schedule Appointment)
+  2:task:(Schedule Appointment) --> 3:task:(Check Fridge)
+  3:task:(Check Fridge) --> 4:task:(Confirm Status)
+  4:task:(Confirm Status) --> 5:task:(Rate Facility)
+  5:task:(Rate Facility) --> 6:endevent:(((endevent)))
+```

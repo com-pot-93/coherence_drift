@@ -1,0 +1,18 @@
+The process begins when a production order is received. After receiving the order, materials are prepared. Once the materials are ready, the door is assembled.
+
+After assembling the door, a decision is made about whether to perform a quality check. There are three possible paths from here:
+
+1. **Skip Quality Check:**  
+   If the quality check is skipped, another decision is made about whether to send a quality check inquiry.  
+   - If no inquiry is sent, the process continues to the next step.  
+   - If an inquiry is sent, a quality check inquiry is sent out, and then an inquiry is received in response. After receiving the inquiry, a quality check is conducted in response, and a quality report is sent. The report is then received and reviewed. After reviewing the report, the process continues to the next step.
+
+2. **Perform Quality Check:**  
+   If a quality check is performed, another decision is made about whether to send a quality check inquiry.  
+   - If no inquiry is sent, the process continues to the next step.  
+   - If an inquiry is sent, a quality check inquiry is sent out, and then an inquiry is received in response. After receiving the inquiry, a quality check is conducted in response, and a quality report is sent. The report is then received and reviewed. After reviewing the report, the process continues to the next step.
+
+3. **Skip Quality Check (direct path):**  
+   There is also a direct path where the quality check is skipped and the process continues to the next step.
+
+After these steps, a decision is made based on the outcome of the previous steps. If the report is not satisfactory, the door is fixed, and the process continues. If the report is satisfactory, the door is released. In both cases, the process then ends.

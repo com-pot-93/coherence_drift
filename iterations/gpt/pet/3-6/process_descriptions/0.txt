@@ -1,0 +1,13 @@
+The process begins when a claim is received. After receiving the claim, the next step is to check the insurance status of the person who submitted the claim.
+
+Once the insurance status has been checked, a decision is made. If the process continues, the severity of the claim is evaluated. After evaluating the severity, the relevant forms are sent to the claimant.
+
+At this point, another decision is made. If the process should proceed, the claimant is expected to return the completed forms. When the forms are received, they are checked for completeness.
+
+If the forms are not complete, the claimant is informed that the forms need to be updated. After this, the process returns to the point where the forms are checked for completeness, allowing the claimant to resubmit the updated forms.
+
+If the forms are complete, the claim is registered in the Claims Management system. After registration, the process returns to the previous decision point, where it is determined whether to continue or end the process.
+
+If, at any decision point after checking the insurance status or after sending the forms, it is determined that the process should not continue, the claimant is informed that the claim has been rejected. After this notification, the process ends.
+
+The process concludes when all necessary steps have been completed, either after registering the claim or after informing the claimant of a rejection.

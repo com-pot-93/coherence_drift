@@ -1,0 +1,7 @@
+The process starts with the creation of a production plan and the initiation of a process order. Following this, material requirements planning is executed. The next step involves evaluating capacity. Subsequently, a proposal is scheduled and released, and the process order is then confirmed.
+
+After confirming the process order, there is a decision point. Depending on the outcome, either a transfer order is created, or goods are issued.
+
+If a transfer order is created, the process proceeds to a point where it merges with the path following the issuance of goods. Alternatively, if goods are issued, the next step is to confirm the goods issue, after which the process merges with the path following the creation of the transfer order.
+
+After the merge, the goods receipt is registered, and the order is settled. The process then ends.

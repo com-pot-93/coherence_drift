@@ -1,0 +1,19 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |Condition A| 2:subprocess:(Path 1)
+1:exclusivegateway:{x} --> |Condition B| 10:subprocess:(Path 2)
+2:subprocess:(Path 1) --> 3:task:(Send bill to MPON)
+3:task:(Send bill to MPON) --> 4:task:(Examine bill)
+4:task:(Examine bill) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Confirm| 6:task:(Confirm invoice with payment advice)
+5:exclusivegateway:{x} --> |Reject| 7:task:(Reject invoice)
+6:task:(Confirm invoice with payment advice) --> 8:exclusivegateway:{x}
+7:task:(Reject invoice) --> 8:exclusivegateway:{x}
+10:subprocess:(Path 2) --> 11:task:(Send bill to GO)
+11:task:(Send bill to GO) --> 12:task:(Examine bill)
+12:task:(Examine bill) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Reject| 7:task:(Reject invoice)
+13:exclusivegateway:{x} --> |Confirm| 6:task:(Confirm invoice with payment advice)
+8:exclusivegateway:{x} --> 9:endevent:(((endevent)))
+```

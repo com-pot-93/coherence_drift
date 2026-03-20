@@ -1,0 +1,17 @@
+The process begins with an initial step to search for a customer. Once the customer has been found, an offer is made to them.
+
+After making the offer, a decision is made about whether to continue. If the process is to continue, an additional request is received from the customer, and more details are provided in response. After providing more details, another decision is made about whether to continue.
+
+If at any point the decision is not to continue, the process moves directly to the next decision point, skipping the steps of receiving additional requests and providing more details.
+
+At the next decision point, if the process is to continue, a booking request is received. Following this, a bill is sent to the customer. After sending the bill, another decision is made about whether to continue.
+
+If the decision is not to continue at this stage, the process moves directly to the next decision point, skipping the steps of receiving the booking request and sending the bill.
+
+At the following decision point, if the process is to continue, payment is received from the customer. After receiving payment, another decision is made about whether to continue.
+
+If the decision is not to continue at this stage, the process moves directly to the next decision point, skipping the step of receiving payment.
+
+At the final decision point, there are two possible paths. If the decision is not to continue, the customer is contacted, and the process returns to the previous decision point, allowing for another attempt at making a decision. If the decision is to continue, travel is booked for the customer, and a booking confirmation is sent.
+
+The process ends after the booking confirmation has been sent.

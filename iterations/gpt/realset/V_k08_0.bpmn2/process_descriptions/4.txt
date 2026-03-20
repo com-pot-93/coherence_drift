@@ -1,0 +1,40 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model, using clear and accessible language:
+
+---
+
+The process begins when a user is prompted to log in. After the user enters their login information, the system checks the credentials.
+
+- If the credentials are incorrect, the process ends.
+- If the credentials are correct, the system checks whether the user has the necessary permissions.
+
+If the user does not have the required permissions, the process ends. If the user has the necessary permissions, the system checks a specific condition.
+
+- If the condition is met, the process moves toward presenting an order confirmation.
+- If the condition is not met, the system checks whether the user wants to add more products.
+
+If the user wants to add more products, the system prompts the user to select a product. The user selects a product, adds it to the cart, and the system saves the item. After saving, the system checks again whether the user wants to add more products.
+
+- If the user wants to add more products, the process repeats: the user is prompted to select another product, and the cycle continues.
+- If the user does not want to add more products, the system presents an order confirmation.
+
+When the order confirmation is presented, the user is given the option to confirm the order or add more products.
+
+- If the user chooses to add more products, the process returns to prompting the user to select a product, and the cycle of adding products repeats.
+- If the user chooses to confirm the order, the system asks the user to confirm the order again. This confirmation step may repeat several times, allowing the user to add more products at each step or finally confirm the order.
+
+Once the user confirms the order, the system prepares both the shipment details and the payment details at the same time. After both are ready, the user is prompted to provide payment information and shipping details, which are handled simultaneously.
+
+After the payment and shipping information is collected, the system checks whether the order is correct.
+
+- If the order is not correct, the system presents the order confirmation again, and the user can review or modify the order, possibly repeating the confirmation and correction steps multiple times.
+- If the order is correct, the system asks if further confirmation is needed.
+    - If further confirmation is needed, the order confirmation is presented again, and the user can review or modify the order.
+    - If no further action is needed, the process ends.
+
+Throughout the process, at various points after presenting the order confirmation, the user can choose to add more products, which returns them to the product selection and cart addition steps. This cycle can repeat as many times as needed.
+
+At any point where the process ends (such as after failed login, lack of permissions, or after the final confirmation and saving of the order), the process concludes.
+
+---
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step and decision point is included and described in the order they occur.

@@ -1,0 +1,23 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Loan Request)
+2:task:(Assess Risk)
+3:exclusivegateway:{x}
+4:task:(Send Approval Feedback)
+5:task:(Send Denial Feedback)
+6:task:(Request Further Review)
+7:task:(Send Review Feedback)
+8:exclusivegateway:{x}
+9:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Loan Request)
+1:task:(Receive Loan Request) --> 2:task:(Assess Risk)
+2:task:(Assess Risk) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Approved|4:task:(Send Approval Feedback)
+3:exclusivegateway:{x} --> |Denied|5:task:(Send Denial Feedback)
+3:exclusivegateway:{x} --> |Further review needed|6:task:(Request Further Review)
+4:task:(Send Approval Feedback) --> 8:exclusivegateway:{x}
+5:task:(Send Denial Feedback) --> 8:exclusivegateway:{x}
+6:task:(Request Further Review) --> 7:task:(Send Review Feedback)
+7:task:(Send Review Feedback) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> 9:endevent:(((endevent)))

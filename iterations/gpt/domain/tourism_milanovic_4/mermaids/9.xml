@@ -1,0 +1,28 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Trip Request)
+2:parallelgateway:{AND}
+3:task:(Send Price Request to Airlines)
+4:task:(Collect Airline Responses)
+5:task:(Select Airline)
+6:parallelgateway:{AND}
+7:task:(Send Price Request to Hotels)
+8:task:(Collect Hotel Responses)
+9:task:(Select Hotel)
+10:task:(Prepare Tour Plan)
+11:task:(Send Tour Plan to Customer)
+12:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Trip Request)
+1:task:(Receive Trip Request) --> 2:parallelgateway:{AND}
+2:parallelgateway:{AND} --> 3:task:(Send Price Request to Airlines)
+2:parallelgateway:{AND} --> 7:task:(Send Price Request to Hotels)
+3:task:(Send Price Request to Airlines) --> 4:task:(Collect Airline Responses)
+4:task:(Collect Airline Responses) --> 5:task:(Select Airline)
+5:task:(Select Airline) --> 6:parallelgateway:{AND}
+7:task:(Send Price Request to Hotels) --> 8:task:(Collect Hotel Responses)
+8:task:(Collect Hotel Responses) --> 9:task:(Select Hotel)
+9:task:(Select Hotel) --> 6:parallelgateway:{AND}
+6:parallelgateway:{AND} --> 10:task:(Prepare Tour Plan)
+10:task:(Prepare Tour Plan) --> 11:task:(Send Tour Plan to Customer)
+11:task:(Send Tour Plan to Customer) --> 12:endevent:(((endevent)))

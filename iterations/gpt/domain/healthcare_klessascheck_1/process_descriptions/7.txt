@@ -1,0 +1,21 @@
+The process begins when a case of non-specific low back pain is identified.
+
+After this, there is a decision point where it is determined which type of non-drug treatment to apply. There are two possible paths:
+
+1. **First Path:**  
+   - Superficial heat or another non-drug treatment is applied.
+   - After this treatment, there is another decision point to assess whether medication is needed.
+     - If medication is needed, a non-steroidal anti-inflammatory drug (NSAID) or a skeletal muscle relaxant (SMR) is prescribed.
+     - If medication is not needed, no medication is prescribed.
+   - Regardless of whether medication is prescribed or not, the process continues to the next main decision point.
+
+2. **Second Path:**  
+   - Exercise or another non-drug treatment is applied.
+   - After this treatment, there is a decision point to determine if medication is needed.
+     - If medication is needed, an NSAID is prescribed.
+     - If medication is not needed, no medication is prescribed.
+   - Regardless of whether medication is prescribed or not, the process continues to the next main decision point.
+
+After both paths converge at the main decision point, the process proceeds to the next stage.
+
+Finally, the process ends.

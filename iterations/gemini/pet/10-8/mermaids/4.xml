@@ -1,0 +1,12 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Initiate Deregistration)
+1:task:(Initiate Deregistration) --> 2:task:(Verify Deregistration)
+2:task:(Verify Deregistration) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} -->|Reject| 8:endevent:(((endevent)))
+3:exclusivegateway:{x} -->|Confirm| 4:task:(Assign Government Organization as MSP)
+4:task:(Assign Government Organization as MSP) --> 5:task:(Inform MSP Operator)
+5:task:(Inform MSP Operator) --> 6:task:(Inform MPO)
+6:task:(Inform MPO) --> 7:task:(Inform SP)
+7:task:(Inform SP) --> 8:endevent:(((endevent)))
+```

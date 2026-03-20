@@ -1,0 +1,44 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Employee submits request)
+2:task:(Register request in system)
+3:task:(Supervisor reviews request)
+4:exclusivegateway:{x}
+5:task:(Return request with comments)
+6:task:(Employee reviews comments)
+7:exclusivegateway:{x}
+8:task:(Forward to purchase department)
+9:task:(Prepare quotations)
+10:exclusivegateway:{x}
+11:task:(Select vendor)
+12:exclusivegateway:{x}
+13:task:(Generate and send purchase order)
+14:task:(Wait for product delivery)
+15:task:(Receive invoice)
+16:exclusivegateway:{x}
+17:task:(Notify user of status)
+18:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Employee submits request)
+1:task:(Employee submits request) --> 2:task:(Register request in system)
+2:task:(Register request in system) --> 3:task:(Supervisor reviews request)
+3:task:(Supervisor reviews request) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Approved|8:task:(Forward to purchase department)
+4:exclusivegateway:{x} --> |Not approved|5:task:(Return request with comments)
+5:task:(Return request with comments) --> 6:task:(Employee reviews comments)
+6:task:(Employee reviews comments) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Resubmit|3:task:(Supervisor reviews request)
+7:exclusivegateway:{x} --> |Withdraw|18:endevent:(((endevent)))
+8:task:(Forward to purchase department) --> 9:task:(Prepare quotations)
+9:task:(Prepare quotations) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Vendor selected|11:task:(Select vendor)
+10:exclusivegateway:{x} --> |Change vendor|9:task:(Prepare quotations)
+11:task:(Select vendor) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Vendor confirmed|13:task:(Generate and send purchase order)
+12:exclusivegateway:{x} --> |Change vendor|9:task:(Prepare quotations)
+13:task:(Generate and send purchase order) --> 14:task:(Wait for product delivery)
+14:task:(Wait for product delivery) --> 15:task:(Receive invoice)
+15:task:(Receive invoice) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |All steps complete|17:task:(Notify user of status)
+16:exclusivegateway:{x} --> |Incomplete|18:endevent:(((endevent)))
+17:task:(Notify user of status) --> 18:endevent:(((endevent)))

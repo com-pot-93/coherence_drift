@@ -1,0 +1,5 @@
+The process starts when an employee submits an office supply request. The request is then registered. Following registration, the request goes through an approval process. If the request is not approved, it is returned to the employee, who reviews the comments, resubmits the request, and waits for approval again. If the request is approved, a request for quotations is initiated.
+
+After quotations are requested, the process waits for a vendor to be selected. Once a vendor is selected, a purchase order is generated. The process then waits for the product delivery. Upon delivery, an invoice is received, and a notification is sent to the user.
+
+After sending the notification, the process determines whether to wait for vendor selection again, or to proceed further. The process then escalates and returns to the point where quotations are requested. If a vendor is not selected, the process chooses a different vendor and waits for vendor selection again. The process can loop back to waiting for vendor selection from multiple points. The process ends after the vendor selection.

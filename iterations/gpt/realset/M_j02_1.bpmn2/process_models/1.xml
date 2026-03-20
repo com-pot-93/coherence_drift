@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Customized Airplane Order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Process Order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="3">
+    <parallel_branch>
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Build Base Model</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a9" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>Transmit Customization Requirements</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <choose mode="exclusive" a:alt_id="7">
+    <alternative condition="true" language="text/javascript">
+      <call id="a17" endpoint="" a:alt_id="8">
+        <parameters>
+          <label>Wait 14 Days</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <loop mode="pre_test" condition="true" a:alt_id="9" language="text/javascript">
+        <call id="a23" endpoint="" a:alt_id="10">
+          <parameters>
+            <label>Send Reminder to Responsible Team</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a27" endpoint="" a:alt_id="11">
+          <parameters>
+            <label>Wait Another 14 Days</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a29" endpoint="" a:alt_id="12">
+          <parameters>
+            <label>Escalate and Loop Back</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </loop>
+    </alternative>
+    <alternative condition="false" language="text/javascript"/>
+  </choose>
+  <call id="a19" endpoint="" a:alt_id="13">
+    <parameters>
+      <label>Install Customized Parts</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a33" endpoint="" a:alt_id="14">
+    <parameters>
+      <label>Check Engines and Risk Factors</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a35" endpoint="" a:alt_id="15">
+    <parameters>
+      <label>Prepare for Test Flight</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a37" endpoint="" a:alt_id="16">
+    <parameters>
+      <label>Receive Test Flight Protocol</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a39" endpoint="" a:alt_id="17">
+    <parameters>
+      <label>Forward Protocol to Customer</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="18">
+    <alternative condition="Standard Shipping" language="text/javascript">
+      <call id="a43" endpoint="" a:alt_id="19">
+        <parameters>
+          <label>Ship via Standard Shipping</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Premium Shipping" language="text/javascript">
+      <call id="a45" endpoint="" a:alt_id="20">
+        <parameters>
+          <label>Ship via Premium Shipping</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a51" endpoint="" a:alt_id="22">
+    <parameters>
+      <label>Receive Email Confirmation</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

@@ -1,0 +1,23 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Receive Order)
+1:task:(Receive Order) --> 2:task:(Process Order)
+2:task:(Process Order) --> 3:task:(Determine Necessary Components)
+3:task:(Determine Necessary Components) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Parts Missing| 5:task:(Purchase Missing Parts)
+5:task:(Purchase Missing Parts) --> 6:task:(Add Parts to Stock)
+6:task:(Add Parts to Stock) --> 7:inclusivegateway:{O}
+4:exclusivegateway:{x} --> |All Parts Available| 7:inclusivegateway:{O}
+7:inclusivegateway:{O} --> 8:task:(Start Production)
+8:task:(Start Production) --> 9:task:(Perform Quality Checks)
+9:task:(Perform Quality Checks) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Follow-up Required| 11:task:(Carry Out Follow-up)
+11:task:(Carry Out Follow-up) --> 12:inclusivegateway:{O}
+10:exclusivegateway:{x} --> |No Follow-up Required| 12:inclusivegateway:{O}
+12:inclusivegateway:{O} --> 13:task:(Package Product)
+13:task:(Package Product) --> 14:task:(Fill into Packaging)
+14:task:(Fill into Packaging) --> 15:task:(Pack and Label)
+15:task:(Pack and Label) --> 16:task:(Transport to Warehouse)
+16:task:(Transport to Warehouse) --> 17:task:(Send to Customer)
+17:task:(Send to Customer) --> 18:endevent:(((endevent)))
+```

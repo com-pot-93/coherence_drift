@@ -1,0 +1,49 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:parallelgateway:{AND}
+1:parallelgateway:{AND} --> 2:task:(Package Goods)
+1:parallelgateway:{AND} --> 3:task:(Select Kind of Shipment)
+2:task:(Package Goods) --> 4:exclusivegateway:{x}
+3:task:(Select Kind of Shipment) --> 22:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Quotes Requested| 5:task:(Request Quotes from Carriers)
+4:exclusivegateway:{x} --> |Quotes Not Requested| 12:task:(Fill in Post Label)
+5:task:(Request Quotes from Carriers) --> 6:task:(Assign Carrier)
+6:task:(Assign Carrier) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Extra Insurance Needed| 8:task:(Take out Extra Insurance)
+7:exclusivegateway:{x} --> |No Extra Insurance Needed| 9:exclusivegateway:{x}
+8:task:(Take out Extra Insurance) --> 10:inclusivegateway:{O}
+9:exclusivegateway:{x} --> |Extra Insurance Needed| 8:task:(Take out Extra Insurance)
+9:exclusivegateway:{x} --> |No Extra Insurance Needed| 10:inclusivegateway:{O}
+10:inclusivegateway:{O} --> 11:task:(Prepare Paperwork)
+12:task:(Fill in Post Label) --> 13:task:(Check Insurance)
+13:task:(Check Insurance) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |Extra Insurance Needed| 15:task:(Take out Extra Insurance)
+14:exclusivegateway:{x} --> |No Extra Insurance Needed| 16:exclusivegateway:{x}
+15:task:(Take out Extra Insurance) --> 17:inclusivegateway:{O}
+16:exclusivegateway:{x} --> |Extra Insurance Needed| 15:task:(Take out Extra Insurance)
+16:exclusivegateway:{x} --> |No Extra Insurance Needed| 17:inclusivegateway:{O}
+17:inclusivegateway:{O} --> 11:task:(Prepare Paperwork)
+22:exclusivegateway:{x} --> |Quotes Requested| 23:task:(Request Quotes from Carriers)
+22:exclusivegateway:{x} --> |Quotes Not Requested| 30:task:(Fill in Post Label)
+23:task:(Request Quotes from Carriers) --> 24:task:(Assign Carrier)
+24:task:(Assign Carrier) --> 25:exclusivegateway:{x}
+25:exclusivegateway:{x} --> |Extra Insurance Needed| 26:task:(Take out Extra Insurance)
+25:exclusivegateway:{x} --> |No Extra Insurance Needed| 27:exclusivegateway:{x}
+26:task:(Take out Extra Insurance) --> 28:inclusivegateway:{O}
+27:exclusivegateway:{x} --> |Extra Insurance Needed| 26:task:(Take out Extra Insurance)
+27:exclusivegateway:{x} --> |No Extra Insurance Needed| 28:inclusivegateway:{O}
+28:inclusivegateway:{O} --> 29:task:(Prepare Paperwork)
+30:task:(Fill in Post Label) --> 31:task:(Check Insurance)
+31:task:(Check Insurance) --> 32:exclusivegateway:{x}
+32:exclusivegateway:{x} --> |Extra Insurance Needed| 33:task:(Take out Extra Insurance)
+32:exclusivegateway:{x} --> |No Extra Insurance Needed| 34:exclusivegateway:{x}
+33:task:(Take out Extra Insurance) --> 35:inclusivegateway:{O}
+34:exclusivegateway:{x} --> |Extra Insurance Needed| 33:task:(Take out Extra Insurance)
+34:exclusivegateway:{x} --> |No Extra Insurance Needed| 35:inclusivegateway:{O}
+35:inclusivegateway:{O} --> 29:task:(Prepare Paperwork)
+11:task:(Prepare Paperwork) --> 36:inclusivegateway:{AND}
+29:task:(Prepare Paperwork) --> 36:inclusivegateway:{AND}
+36:inclusivegateway:{AND} --> 37:task:(Add Paperwork)
+37:task:(Add Paperwork) --> 38:task:(Move Package to Pickup Area)
+38:task:(Move Package to Pickup Area) --> 39:endevent:(((endevent)))
+```

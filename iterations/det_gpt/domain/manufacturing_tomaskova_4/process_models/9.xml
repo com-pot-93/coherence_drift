@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="a3725">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="a3726">
+    <parameters>
+      <label>Assign workers</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="a3727">
+    <parameters>
+      <label>Production design</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="a3728">
+    <parameters>
+      <label>Product delivery</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a9" endpoint="" a:alt_id="a3729">
+    <parameters>
+      <label>Production logout</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a11" endpoint="" a:alt_id="a3730">
+    <parameters>
+      <label>Quality control</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a13" endpoint="" a:alt_id="a3731">
+    <parameters>
+      <label>Register to the finished stock</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a15" endpoint="" a:alt_id="a3732">
+    <parameters>
+      <label>Stock to the finished goods</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a17" endpoint="" a:alt_id="a3733">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a19" endpoint="" a:alt_id="a3734">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a21" endpoint="" a:alt_id="a3735">
+    <parameters>
+      <label>Register to the semi-finished stock</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a23" endpoint="" a:alt_id="a3736">
+    <parameters>
+      <label>Load to the semi-finished stock</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a25" endpoint="" a:alt_id="a3737">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a27" endpoint="" a:alt_id="a3738">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a29" endpoint="" a:alt_id="a3739">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a31" endpoint="" a:alt_id="a3740">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a33" endpoint="" a:alt_id="a3741">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a35" endpoint="" a:alt_id="a3742">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a37" endpoint="" a:alt_id="a3743">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a39" endpoint="" a:alt_id="a3744">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a41" endpoint="" a:alt_id="a3745">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a43" endpoint="" a:alt_id="a3746">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a45" endpoint="" a:alt_id="a3747">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a47" endpoint="" a:alt_id="a3748">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a49" endpoint="" a:alt_id="a3749">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a51" endpoint="" a:alt_id="a3750">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a53" endpoint="" a:alt_id="a3751">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a55" endpoint="" a:alt_id="a3752">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a57" endpoint="" a:alt_id="a3753">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a59" endpoint="" a:alt_id="a3754">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a61" endpoint="" a:alt_id="a3755">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a63" endpoint="" a:alt_id="a3756">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a65" endpoint="" a:alt_id="a3757">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a67" endpoint="" a:alt_id="a3758">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a69" endpoint="" a:alt_id="a3759">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a71" endpoint="" a:alt_id="a3760">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a73" endpoint="" a:alt_id="a3761">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a75" endpoint="" a:alt_id="a3762">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a77" endpoint="" a:alt_id="a3763">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a79" endpoint="" a:alt_id="a3764">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a81" endpoint="" a:alt_id="a3765">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a83" endpoint="" a:alt_id="a3766">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

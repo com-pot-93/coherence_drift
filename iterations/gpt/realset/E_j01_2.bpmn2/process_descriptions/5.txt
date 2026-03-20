@@ -1,0 +1,7 @@
+The process begins when an application is received. After receiving the application, two activities are carried out at the same time: the application is confirmed, and the application is rated. Both of these actions happen independently and simultaneously.
+
+Once both the confirmation and the rating of the application are completed, the process continues. At this point, there is a decision to make. If the process should end here, it does so immediately. Otherwise, the process moves forward to the next steps.
+
+If the process continues, an interview is negotiated. After the interview is negotiated, the job seeker is rated. Following this, another decision is made: if the decision is to hire the job seeker, the hiring takes place. If the decision is not to hire, the process skips the hiring step.
+
+Regardless of whether the job seeker is hired or not, the process then moves to a finalization step. After finalizing, the process comes to an end.

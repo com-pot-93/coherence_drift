@@ -1,0 +1,13 @@
+The process starts with a customer notice. Then, patient data is inquired, and the nursing officer is informed. A full patient inquiry is conducted, and the information is recorded. Next, the registration form is handed in, and the information is stored. The form information is then printed.
+
+A decision is made whether a file is needed. If yes, a patient file is created, the registration form is stored, registration cards are produced, and a new patient is added. If a file is not needed, the process skips directly to the next step.
+
+After adding a new patient or skipping the file creation, a staff meeting is held, and new patients are assigned. These assignments are recorded, and the medical file is determined. Information is added to the assignment list, and the assignments are stored. The registration cards are then passed on.
+
+Another decision is made whether a letter is needed. If yes, a letter is prepared and sent, a medical file copy is received, and the intaker is informed. The copy is then added to the patient file. If no letter is needed, the process skips directly to the next step.
+
+After adding the copy to the patient file or skipping the letter process, a meeting is planned, and the patient is examined. Observations are registered, and notes are copied to the file. A checklist is added to the file.
+
+A decision is made whether a second intaker is needed. If yes, the first meeting is planned, tapes are typed, and information is added to the patient file. If no second intaker is needed, the process skips directly to the next step.
+
+After adding information to the patient file or skipping the second intaker process, the patient is added to a list. This list is provided to the team leader, who formulates a treatment plan. The process ends.

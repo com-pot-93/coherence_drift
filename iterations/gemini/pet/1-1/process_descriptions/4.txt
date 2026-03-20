@@ -1,0 +1,4 @@
+The process starts. A decision is made. If the order is rejected, the process ends. Otherwise, the process proceeds to two parallel activities.
+In parallel, the process prepares for bike assembly and processes the part list. After the preparation for bike assembly is complete, the process waits for the part list processing to finish.
+When processing the part list, a decision is made based on parts availability. If the parts are available, they are reserved. If the parts are not available they are back-ordered. After either reserving or back-ordering the parts, the process waits for the preparation for bike assembly to complete.
+Once both parallel activities are complete, the bicycle is assembled and shipped. Finally, the process ends.

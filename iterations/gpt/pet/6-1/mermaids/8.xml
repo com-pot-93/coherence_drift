@@ -1,0 +1,56 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Invoices)
+2:task:(Visual Inspection by Secretariat)
+3:task:(Forward to Accounting)
+4:task:(Identify Supplier and Create Record)
+5:task:(Check Invoice Items)
+6:task:(Note Cost Center and Managers)
+7:task:(Prepare Docket and Copy Invoice)
+8:exclusivegateway:{x}
+9:task:(Send to Cost Center Manager)
+10:exclusivegateway:{x}
+11:task:(Manager Review)
+12:exclusivegateway:{x}
+13:task:(Audit by Commercial Manager)
+14:exclusivegateway:{x}
+15:task:(Board Review)
+16:exclusivegateway:{x}
+17:task:(Move Docket and Invoice Copy to Accounting)
+18:exclusivegateway:{x}
+19:task:(Resolve Complaints or Issues)
+20:task:(Prepare Payment Instructions and Close Invoice)
+21:task:(Final Check)
+22:exclusivegateway:{x}
+23:task:(Further Review by Cost Center Manager)
+24:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Invoices)
+1:task:(Receive Invoices) --> 2:task:(Visual Inspection by Secretariat)
+2:task:(Visual Inspection by Secretariat) --> 3:task:(Forward to Accounting)
+3:task:(Forward to Accounting) --> 4:task:(Identify Supplier and Create Record)
+4:task:(Identify Supplier and Create Record) --> 5:task:(Check Invoice Items)
+5:task:(Check Invoice Items) --> 6:task:(Note Cost Center and Managers)
+6:task:(Note Cost Center and Managers) --> 7:task:(Prepare Docket and Copy Invoice)
+7:task:(Prepare Docket and Copy Invoice) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Do not continue|24:endevent:(((endevent)))
+8:exclusivegateway:{x} --> |Continue|9:task:(Send to Cost Center Manager)
+9:task:(Send to Cost Center Manager) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Manager review needed|11:task:(Manager Review)
+10:exclusivegateway:{x} --> |No manager review|12:exclusivegateway:{x}
+11:task:(Manager Review) --> 10:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Proceed|13:task:(Audit by Commercial Manager)
+13:task:(Audit by Commercial Manager) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |Board review needed|15:task:(Board Review)
+14:exclusivegateway:{x} --> |No board review|16:exclusivegateway:{x}
+15:task:(Board Review) --> 14:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |Proceed|17:task:(Move Docket and Invoice Copy to Accounting)
+17:task:(Move Docket and Invoice Copy to Accounting) --> 18:exclusivegateway:{x}
+18:exclusivegateway:{x} --> |Complaints or issues|19:task:(Resolve Complaints or Issues)
+18:exclusivegateway:{x} --> |No complaints or issues|20:task:(Prepare Payment Instructions and Close Invoice)
+19:task:(Resolve Complaints or Issues) --> 18:exclusivegateway:{x}
+20:task:(Prepare Payment Instructions and Close Invoice) --> 21:task:(Final Check)
+21:task:(Final Check) --> 22:exclusivegateway:{x}
+22:exclusivegateway:{x} --> |Further review needed|23:task:(Further Review by Cost Center Manager)
+22:exclusivegateway:{x} --> |No further review|24:endevent:(((endevent)))
+23:task:(Further Review by Cost Center Manager) --> 22:exclusivegateway:{x}

@@ -1,0 +1,14 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Receive Loan Request)
+    1:task:(Receive Loan Request) --> 2:task:(Evaluate Risk)
+    2:task:(Evaluate Risk) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |Approved| 4:task:(Approve Loan)
+    3:exclusivegateway:{x} --> |Denied| 5:task:(Deny Loan)
+    3:exclusivegateway:{x} --> |Send to Approver Web Service| 6:task:(Process Loan via Web Service)
+    4:task:(Approve Loan) --> 7:exclusivegateway:{x}
+    5:task:(Deny Loan) --> 7:exclusivegateway:{x}
+    6:task:(Process Loan via Web Service) --> 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> 8:task:(Provide Feedback to Customer)
+    8:task:(Provide Feedback to Customer) --> 9:endevent:(((endevent)))
+```

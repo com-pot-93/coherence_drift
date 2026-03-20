@@ -1,0 +1,15 @@
+The process starts with the initiation of an assessment tool, followed by starting the tool. The user then enters the incident type and specifies the incident. Based on the incident specification, a decision is made.
+
+If Condition A is met, the process continues with contacting accident insurance and the principal. If Condition B is met, private insurance is contacted. If neither Condition A nor B is met, the process continues with entering user/victim data, after which another decision is made.
+
+If the decision requires contacting superiors, then superiors are contacted. Otherwise, the process splits into two parallel paths.
+
+In the first parallel path, accident insurance is contacted.
+
+In the second parallel path, a decision is made. If Condition C is met, the labor inspectorate is contacted. Otherwise, no contact is made.
+
+After the possible contact with the labor inspectorate, the two parallel paths merge back together.
+
+After the merge or after contacting superiors, the process continues to a decision point.
+
+After this decision point, the process continues with proposing tasks to the user, followed by executing the proposed task, and then the process ends.

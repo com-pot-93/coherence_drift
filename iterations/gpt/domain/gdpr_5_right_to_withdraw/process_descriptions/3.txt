@@ -1,0 +1,11 @@
+The process begins when a data subject request is received. After receiving the request, the next step is to check whether the data involved is relevant.
+
+If the data is found to be relevant, the process continues by stopping the use of the withdrawn data. Once the use of the data has been stopped, the withdrawal is communicated to the appropriate parties. After this communication, the process moves through a decision point and then proceeds to another decision point, after which it continues towards the end of the process.
+
+If the data is not relevant, the user is informed about the impact of this decision. Following this, the process waits for a notification. Once the notification is received, there is a decision to make: whether to stop business activities that use the withdrawn data or not.
+
+If the decision is to stop business activities, these activities are stopped, and then the process continues by stopping the use of the withdrawn data. After this, the withdrawal is communicated, and the process moves through another set of decision points before continuing towards the end.
+
+If the decision is not to stop business activities, the process moves directly towards the end.
+
+Finally, after all the necessary steps and decisions have been completed, the process ends.

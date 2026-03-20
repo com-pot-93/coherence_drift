@@ -1,0 +1,7 @@
+The process starts and immediately encounters a decision point. If Condition 1 is met, the process proceeds to another decision point. Otherwise, it skips ahead to a later decision point.
+
+If Condition 2 is met, a task named "Send Status" is performed, after which the process reaches another decision point. Otherwise, the process skips ahead to a later decision point.
+
+If Condition 3 is met, a task named "Print Object" is performed before the process merges back with the path where Condition 3 was not met. Otherwise, the process skips the "Print Object" task.
+
+The process then merges with the path where Condition 2 was not met, and then merges again with the path where Condition 1 was not met, before it ends.

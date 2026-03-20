@@ -1,0 +1,17 @@
+The process begins when customer data is received. This data is then entered into the customer relationship management system. Afterward, the entered data is compared with internal records. Next, the data is checked for completeness and plausibility.
+
+If the data is found to be incomplete or implausible, it is corrected, and the process of checking completeness and plausibility is repeated. Once the data is complete and plausible, the process continues to determine whether a new customer object needs to be created. If a new object is required, it is created; if not, the process moves forward.
+
+The next step is to prepare the contract documents. These documents are then checked by the CIS (Customer Information System). If issues are found during this check, the contract issues are analyzed and resolved, new contract documents are generated, and the CIS checks the documents again. This cycle repeats until the documents are correct.
+
+Once the contract documents are approved, the CIS sends a confirmation to the customer and also sends a request to the grid operator. The grid operator then checks for supplier concurrence.
+
+If the supplier concurrence check is successful, the grid operator transmits a response comment. If a conflict is detected, the grid operator informs the suppliers and demands a resolution. After the conflict is resolved, the grid operator transmits the response comment again.
+
+Following this, the grid operator communicates with the old supplier and then terminates the sales agreement. The process then checks whether a CIS contract should be created. If so, the CIS contract is created; if not, the process continues.
+
+The customer then checks the contract details. At this point, the customer may choose to withdraw, in which case the process moves towards escalation and loops back to the supplier concurrence check.
+
+If the customer does not withdraw, three activities happen at the same time: the grid operator transmits meter data, the grid operator computes and sends the final billing to the old supplier, and the old supplier creates and sends the final billing to the customer. Once all three activities are completed, customer service receives and imports the meter data.
+
+Finally, the process ends.

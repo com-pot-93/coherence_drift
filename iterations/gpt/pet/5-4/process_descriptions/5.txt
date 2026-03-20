@@ -1,0 +1,31 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+---
+
+The process begins when an employee purchases a product. After making the purchase, the employee submits an expense report.
+
+At this point, a decision is made about whether to continue with the process. If the decision is not to continue, the process ends here. If the decision is to continue, the report is sent to the supervisor.
+
+The supervisor then reviews the report. Another decision is made about whether to continue. If the decision is not to continue, the process ends. If the decision is to continue, the report goes for further evaluation.
+
+During further evaluation, a decision is made based on the outcome. If the outcome is negative, the process ends. If the outcome is positive, another condition is checked. If this condition is not met, the process ends. If the condition is met, another check is performed. If this check is not passed, the process ends. If the check is passed, the supervisor approves the report.
+
+After the supervisor’s approval, another check is performed. If this check is not passed, the process ends. If the check is passed, another check follows. If this check is not passed, the process ends. If the check is passed, a final check is performed. If this final check is not passed, the process ends. If the final check is passed, the process continues.
+
+If all checks are positive, the report is sent to the treasurer. The treasurer checks the receipts and matches the items with the receipts. If issues are found during this matching, the report is sent back to the employee for editing.
+
+The employee then edits the report. After editing, a decision is made about where to send the report next. If the report is to be sent to the supervisor for approval, it is sent to the supervisor, who then approves the report, and the process continues as before. If the report is to be sent to the treasurer for another receipt check, the treasurer checks the receipts again and matches the items with the receipts again.
+
+If issues are found again, the report is sent back to the employee for further editing, and this cycle can repeat. If no issues are found, the treasurer confirms the payment.
+
+After the treasurer confirms the payment, a decision is made about whether to return the report to the supervisor for approval or to proceed to final checks. If the report is returned to the supervisor, the supervisor reviews it, and further checks are performed. If all checks are satisfied, the process moves to a checkpoint. If escalation is needed at any point, the report is escalated to the supervisor for approval, and further checks are performed.
+
+If the process proceeds to final checks, a series of checks and possible escalations to the supervisor for approval may occur. At each checkpoint, if all checks are satisfied, the process continues. If escalation is needed, the report is escalated to the supervisor, and further checks are performed.
+
+If, at any point during the treasurer’s checks, the checks fail, the process follows a path for failed checks, which leads to escalation and further checks.
+
+This cycle of checks, escalations, and approvals continues until all necessary checks are satisfied or a decision is made to end the process. The process ends when all required approvals and checks are completed, or if a decision is made at any point not to continue.
+
+---
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step, decision, and possible loop is included and described in clear, plain language.

@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Ask customer: Burger only or Menu?</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="Burger only" language="text/javascript"/>
+    <alternative condition="">
+      <parallel wait="-1" cancel="last" a:alt_id="4">
+        <parallel_branch>
+          <call id="a9" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Prepare Drink</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a11" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Ask: Wedges or Fries?</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="7">
+            <alternative condition="Fries" language="text/javascript">
+              <call id="a17" endpoint="" a:alt_id="8">
+                <parameters>
+                  <label>Prepare Fries</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Wedges" language="text/javascript">
+              <call id="a19" endpoint="" a:alt_id="9">
+                <parameters>
+                  <label>Prepare Wedges</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </parallel_branch>
+      </parallel>
+    </alternative>
+  </choose>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Prepare Burger</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <call id="a29" endpoint="" a:alt_id="12">
+      <parameters>
+        <label>Check if update needed</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <loop mode="pre_test" condition="Yes">
+      <call id="a35" endpoint="" a:alt_id="14">
+        <parameters>
+          <label>Provide status update</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="15">
+        <alternative condition="More updates needed" language="text/javascript">
+          <call id="a29" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>Check if update needed</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="No more updates" language="text/javascript">
+          <call id="a33" endpoint="" a:alt_id="16">
+            <parameters>
+              <label>Place order on conveyor</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="17">
+            <alternative condition="More updates needed" language="text/javascript">
+              <call id="a45" endpoint="" a:alt_id="18">
+                <parameters>
+                  <label>Provide update after conveyor</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="No more updates" language="text/javascript">
+              <choose mode="exclusive" a:alt_id="19">
+                <alternative condition="Final update needed" language="text/javascript">
+                  <call id="a51" endpoint="" a:alt_id="20">
+                    <parameters>
+                      <label>Provide final update</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="21">
+                    <alternative condition="Escalation needed" language="text/javascript">
+                      <call id="a57" endpoint="" a:alt_id="22">
+                        <parameters>
+                          <label>Escalate situation</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="23">
+                        <alternative condition="More updates after conveyor" language="text/javascript">
+                          <call id="a45" endpoint="" a:alt_id="18">
+                            <parameters>
+                              <label>Provide update after conveyor</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="No more updates" language="text/javascript"/>
+                      </choose>
+                    </alternative>
+                    <alternative condition="No escalation" language="text/javascript"/>
+                  </choose>
+                </alternative>
+                <alternative condition="No final update" language="text/javascript"/>
+              </choose>
+            </alternative>
+          </choose>
+          <escape a:alt_id="-1"/>
+        </alternative>
+      </choose>
+    </loop>
+    <call id="a33" endpoint="" a:alt_id="16">
+      <parameters>
+        <label>Place order on conveyor</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <loop mode="pre_test" condition="More updates needed">
+      <choose mode="exclusive" a:alt_id="17">
+        <alternative condition="More updates needed" language="text/javascript">
+          <call id="a45" endpoint="" a:alt_id="18">
+            <parameters>
+              <label>Provide update after conveyor</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="No more updates" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="19">
+            <alternative condition="Final update needed" language="text/javascript">
+              <call id="a51" endpoint="" a:alt_id="20">
+                <parameters>
+                  <label>Provide final update</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="21">
+                <alternative condition="Escalation needed" language="text/javascript">
+                  <call id="a57" endpoint="" a:alt_id="22">
+                    <parameters>
+                      <label>Escalate situation</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="23">
+                    <alternative condition="More updates after conveyor" language="text/javascript">
+                      <call id="a45" endpoint="" a:alt_id="18">
+                        <parameters>
+                          <label>Provide update after conveyor</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="No more updates" language="text/javascript">
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="No escalation" language="text/javascript">
+                  <escape a:alt_id="-1"/>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="No final update" language="text/javascript">
+              <escape a:alt_id="-1"/>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </loop>
+  </loop>
+</description>

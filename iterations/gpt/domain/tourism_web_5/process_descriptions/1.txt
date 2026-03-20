@@ -1,0 +1,9 @@
+The process begins when a booking request is initiated. After this, the booking request is received and processed. Next, the availability for the requested booking is checked.
+
+At this point, a decision is made based on availability. If the requested time is not available, an alternative time is proposed, and the process returns to the point where availability is checked again. This cycle continues until a suitable time is found.
+
+Once availability is confirmed, a notification is sent to the person who made the request. The process then waits for and receives a response from the requester.
+
+After receiving the response, another decision is made. If the response is positive, a bill is sent to the requester, and the booking is confirmed. If no bill is needed, the process moves directly to confirming the booking.
+
+Finally, after the booking is confirmed, the process ends.

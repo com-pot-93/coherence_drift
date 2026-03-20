@@ -1,0 +1,33 @@
+Certainly! Here is a detailed, step-by-step description of the process as depicted in your model:
+
+1. The process begins when an employee purchases a product.
+2. After making the purchase, the employee submits an expense report.
+3. At this point, a decision is made about whether to continue with the process or not.
+   - If the decision is not to continue, the process ends here.
+   - If the decision is to continue, the expense report is sent to the supervisor for review.
+4. The supervisor reviews the report.
+5. Another decision is made regarding the supervisor’s review.
+   - If the process should not continue, the process ends.
+   - If the process should continue, the supervisor proceeds to approve the report.
+6. The supervisor approves the report.
+7. After approval, another decision is made about the next steps.
+   - If the process should not continue, the process ends.
+   - If the process should continue, the report is moved to the treasurer.
+8. The treasurer receives the report and checks the receipts attached to it.
+9. The treasurer then matches the items listed in the report with the receipts.
+10. At this stage, the treasurer decides whether there are any issues with the report:
+    - If issues are found, the treasurer sends the report back to the employee.
+        - The employee edits the report as needed.
+        - After editing, a decision is made:
+            - If the report should return to the supervisor, it is sent back for supervisor approval, and the process continues from the supervisor’s approval step.
+            - If the report should return to the treasurer, it is sent back for the treasurer to check the receipts again, and the process continues from the treasurer’s receipt check step.
+    - If no issues are found and the report is accepted, the treasurer confirms the payment.
+11. After confirming payment, a decision is made:
+    - If the report should return to the supervisor, it is sent back for supervisor approval, and the process continues from the supervisor’s approval step.
+    - If the process should end, the process moves to the final steps.
+12. In the final steps, a series of checks and decisions are made to ensure the process is properly concluded.
+    - If all checks are satisfied, the process ends.
+    - If not, the process may escalate and loop back to earlier steps, such as moving the report back to the supervisor or treasurer for further review.
+13. Once all necessary checks and approvals are completed, the process ends.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step and decision point is included and described in clear, everyday language.

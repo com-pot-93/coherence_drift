@@ -1,0 +1,9 @@
+The process starts. Then, it splits into two parallel activities: "Package Goods" and "Select Kind of Shipment." After packaging the goods, the process continues to a joining gateway. Selecting the kind of shipment leads to a decision point.
+
+If "Option 1" is chosen, the process continues with "Request Quotes from Carriers," followed by "Assign Carrier," and then "Prepare Paperwork." Alternatively, if "Option 1" is not chosen, the process proceeds with "Fill in Post Label," followed by "Check Insurance." This leads to another decision point.
+
+If insurance is required, the process continues with "Take Out Extra Insurance." Otherwise, this step is skipped. The process then merges back together.
+
+After preparing paperwork or completing the insurance check, the process merges back together before continuing to a joining gateway.
+
+Once both parallel activities are completed, the process continues with "Add Paperwork," followed by "Move Package to Pickup Area," and then the process ends.

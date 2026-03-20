@@ -1,0 +1,15 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Report Defect)
+1:task:(Report Defect) --> 2:task:(Calculate Repair Cost)
+2:task:(Calculate Repair Cost) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Repair Declined| 4:task:(Take Computer Home)
+4:task:(Take Computer Home) --> 10:endevent:(((endevent)))
+3:exclusivegateway:{x} --> |Repair Approved| 5:parallelgateway:{AND}
+5:parallelgateway:{AND} --> 6:task:(Repair Hardware)
+5:parallelgateway:{AND} --> 7:task:(Configure Software)
+6:task:(Repair Hardware) --> 8:parallelgateway:{AND}
+7:task:(Configure Software) --> 8:parallelgateway:{AND}
+8:parallelgateway:{AND} --> 9:task:(Test System Functionality)
+9:task:(Test System Functionality) --> 10:endevent:(((endevent)))
+```

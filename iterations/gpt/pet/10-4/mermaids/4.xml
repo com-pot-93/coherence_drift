@@ -1,0 +1,42 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(MPON informs MPOO about intention to change equipment)
+2:exclusivegateway:{x}
+3:task:(MPOO announces decision to remove own equipment)
+4:task:(MPOO informs MPON of decision not to remove own equipment)
+5:exclusivegateway:{x}
+6:exclusivegateway:{x}
+7:task:(MPON performs final reading)
+8:task:(MPOO performs final reading)
+9:exclusivegateway:{x}
+10:exclusivegateway:{x}
+11:task:(MPON removes old equipment)
+12:task:(MPOO removes old equipment)
+13:exclusivegateway:{x}
+14:task:(MPON installs new device)
+15:task:(MPON reads meter count from new meter)
+16:task:(MPON sends final readings and data to GO)
+17:task:(GO notifies MSP about required data)
+18:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(MPON informs MPOO about intention to change equipment)
+1:task:(MPON informs MPOO about intention to change equipment) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |MPOO removes own equipment|3:task:(MPOO announces decision to remove own equipment)
+2:exclusivegateway:{x} --> |MPOO does not remove own equipment|4:task:(MPOO informs MPON of decision not to remove own equipment)
+3:task:(MPOO announces decision to remove own equipment) --> 5:exclusivegateway:{x}
+4:task:(MPOO informs MPON of decision not to remove own equipment) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |MPON responsible|7:task:(MPON performs final reading)
+6:exclusivegateway:{x} --> |MPOO responsible|8:task:(MPOO performs final reading)
+7:task:(MPON performs final reading) --> 9:exclusivegateway:{x}
+8:task:(MPOO performs final reading) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |MPON responsible|11:task:(MPON removes old equipment)
+10:exclusivegateway:{x} --> |MPOO responsible|12:task:(MPOO removes old equipment)
+11:task:(MPON removes old equipment) --> 13:exclusivegateway:{x}
+12:task:(MPOO removes old equipment) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> 14:task:(MPON installs new device)
+14:task:(MPON installs new device) --> 15:task:(MPON reads meter count from new meter)
+15:task:(MPON reads meter count from new meter) --> 16:task:(MPON sends final readings and data to GO)
+16:task:(MPON sends final readings and data to GO) --> 17:task:(GO notifies MSP about required data)
+17:task:(GO notifies MSP about required data) --> 18:endevent:(((endevent)))

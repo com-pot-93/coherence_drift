@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Employee purchases product</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Submit expense report</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Do not continue" language="text/javascript"/>
+    <alternative condition="Continue" language="text/javascript">
+      <call id="a9" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Send report to supervisor</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a11" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>Supervisor reviews report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="6">
+        <alternative condition="Do not continue" language="text/javascript"/>
+        <alternative condition="Continue" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="7">
+            <alternative condition="Negative outcome" language="text/javascript"/>
+            <alternative condition="Positive outcome" language="text/javascript">
+              <choose mode="exclusive" a:alt_id="9">
+                <alternative condition="Condition not met" language="text/javascript"/>
+                <alternative condition="Condition met" language="text/javascript">
+                  <call id="a25" endpoint="" a:alt_id="8">
+                    <parameters>
+                      <label>Supervisor approves report</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <loop mode="pre_test" condition="true">
+                    <call id="a27" endpoint="" a:alt_id="10">
+                      <parameters>
+                        <label>Series of checks</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <loop mode="pre_test" condition="All checks passed">
+                      <call id="a33" endpoint="" a:alt_id="12">
+                        <parameters>
+                          <label>Send report to treasurer</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a35" endpoint="" a:alt_id="13">
+                        <parameters>
+                          <label>Treasurer checks receipts</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a37" endpoint="" a:alt_id="14">
+                        <parameters>
+                          <label>Treasurer matches items with receipts</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="15">
+                        <alternative condition="Issues found" language="text/javascript">
+                          <call id="a41" endpoint="" a:alt_id="16">
+                            <parameters>
+                              <label>Send back to employee for editing</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a45" endpoint="" a:alt_id="17">
+                            <parameters>
+                              <label>Employee edits report</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="18">
+                            <alternative condition="Send to supervisor" language="text/javascript">
+                              <call id="a49" endpoint="" a:alt_id="19">
+                                <parameters>
+                                  <label>Send to supervisor for approval</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a53" endpoint="" a:alt_id="22">
+                                <parameters>
+                                  <label>Supervisor approves report</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a27" endpoint="" a:alt_id="10">
+                                <parameters>
+                                  <label>Series of checks</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="Send to treasurer" language="text/javascript">
+                              <call id="a51" endpoint="" a:alt_id="20">
+                                <parameters>
+                                  <label>Send to treasurer for receipt check</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a57" endpoint="" a:alt_id="21">
+                                <parameters>
+                                  <label>Treasurer checks receipts again</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a37" endpoint="" a:alt_id="14">
+                                <parameters>
+                                  <label>Treasurer matches items with receipts</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <escape a:alt_id="-1"/>
+                            </alternative>
+                          </choose>
+                        </alternative>
+                        <alternative condition="No issues" language="text/javascript">
+                          <call id="a43" endpoint="" a:alt_id="23">
+                            <parameters>
+                              <label>Treasurer confirms payment</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="24">
+                            <alternative condition="Return to supervisor" language="text/javascript">
+                              <call id="a63" endpoint="" a:alt_id="25">
+                                <parameters>
+                                  <label>Send back to supervisor for approval</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a53" endpoint="" a:alt_id="22">
+                                <parameters>
+                                  <label>Supervisor approves report</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a27" endpoint="" a:alt_id="10">
+                                <parameters>
+                                  <label>Series of checks</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="Proceed to final checks" language="text/javascript">
+                              <call id="a65" endpoint="" a:alt_id="26">
+                                <parameters>
+                                  <label>Final checks</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <choose mode="exclusive" a:alt_id="27">
+                                <alternative condition="Escalation needed" language="text/javascript">
+                                  <call id="a71" endpoint="" a:alt_id="28">
+                                    <parameters>
+                                      <label>Escalate to supervisor for approval</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a53" endpoint="" a:alt_id="22">
+                                    <parameters>
+                                      <label>Supervisor approves report</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a27" endpoint="" a:alt_id="10">
+                                    <parameters>
+                                      <label>Series of checks</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                </alternative>
+                                <alternative condition="All checks satisfied" language="text/javascript">
+                                  <call id="a73" endpoint="" a:alt_id="29">
+                                    <parameters>
+                                      <label>Checkpoint</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a77" endpoint="" a:alt_id="30">
+                                    <parameters>
+                                      <label>Additional checks</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <escape a:alt_id="-1"/>
+                                </alternative>
+                              </choose>
+                            </alternative>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </loop>
+                  </loop>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

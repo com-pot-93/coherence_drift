@@ -1,0 +1,17 @@
+The process starts with connecting to a management system. Then, based on a condition, the process either proceeds to a parallel execution of several tasks or reroutes to read an order from the system.
+
+In the first branch, if the condition is met, three parallel paths are initiated. Each of these paths checks a condition. If the condition is met, a delivery delay penalty is applied, otherwise, a task is marked as "OK". Regardless of the outcome of the condition, the process merges back into a single flow after each parallel path. After all three parallel paths have completed, the process marks the arrived product as "OK" and registers the product in the management system.
+
+Following registration, the process splits again, executing two tasks in parallel: packing the product and requesting a courier. After each of these tasks is completed, the process merges back. Alternatively, instead of executing these tasks, the process can loop back to execute them again. Once both tasks are complete, the delivery is shipped.
+
+After shipping, the process checks a condition. If the condition is true, the process reads an order from the system. If the condition is false, the process proceeds to another gateway.
+
+In the second branch, if the initial condition is not met, the process reads an order from the system. The process then goes through a series of gateways that check various conditions. If any of these conditions are not met, the process loops back to read the order from the system again.
+
+If all conditions are met, the process proceeds to another set of gateways. Here, if a condition is met, the process splits into three parallel paths. Each of these paths checks a condition. If the condition is met, a delivery delay penalty is applied, otherwise, a task is marked as "OK". Regardless of the outcome of the condition, the process merges back into a single flow after each parallel path. Alternatively, instead of executing these tasks, the process can loop back to execute them again. After all three parallel paths have completed, the process marks the arrived product as "OK".
+
+Following this, the process splits again, executing two tasks in parallel: packing the product and requesting a courier. After each of these tasks is completed, the process merges back. Alternatively, instead of executing these tasks, the process can loop back to execute them again. Once both tasks are complete, the delivery is shipped.
+
+After shipping, the process checks a condition. If the condition is true, the process reads an order from the system. If the condition is false, the process escalates and loops back through a series of gateways, eventually returning to the initial gateway.
+
+The process ends when it reaches the end event.

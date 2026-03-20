@@ -1,0 +1,20 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Retrieve breached data)
+  2:task:(Retrieve breached subjects)
+  3:parallelgateway:{AND}
+  4:task:(Data loss limitation)
+  5:task:(Notify national authority)
+  6:parallelgateway:{AND}
+  7:subprocess:(Loop: Evaluate and Decide)
+  8:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Retrieve breached data)
+  1:task:(Retrieve breached data) --> 2:task:(Retrieve breached subjects)
+  2:task:(Retrieve breached subjects) --> 3:parallelgateway:{AND}
+  3:parallelgateway:{AND} --> 4:task:(Data loss limitation)
+  3:parallelgateway:{AND} --> 5:task:(Notify national authority)
+  4:task:(Data loss limitation) --> 6:parallelgateway:{AND}
+  5:task:(Notify national authority) --> 6:parallelgateway:{AND}
+  6:parallelgateway:{AND} --> 7:subprocess:(Loop: Evaluate and Decide)
+  7:subprocess:(Loop: Evaluate and Decide) --> 8:endevent:(((endevent)))

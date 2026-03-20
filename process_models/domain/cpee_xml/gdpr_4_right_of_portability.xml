@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a6" endpoint="" a:alt_id="sid-C66AFFC2-A6AA-4AFC-B390-9FF11D3E966C">
+    <parameters>
+      <label>Receive data subject request</label>
+      <method/>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="sid-27BD1DCC-3125-434A-B13C-BD64D19D5011">
+    <parameters>
+      <label>Send request to the third party</label>
+      <method/>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a8" endpoint="" a:alt_id="sid-D3582708-DA7F-4E00-A84D-772D83863861">
+    <parameters>
+      <label>Receive third party request</label>
+      <method/>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="sid-1FE17422-E502-4D46-B8C9-0BB2FFADCA39">
+    <parallel_branch>
+      <call id="a3" endpoint="" a:alt_id="sid-2A1683B9-FC42-4442-8070-11B70EBF24C2">
+        <parameters>
+          <label>Retrieve elaborations</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a4" endpoint="" a:alt_id="sid-0FF5BE7A-2731-4A82-87C9-B3759E130722">
+        <parameters>
+          <label>Retrieve available data of the data subject</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a2" endpoint="" a:alt_id="sid-BB84BABD-20ED-4C97-B755-BDA101C57A8D">
+    <parameters>
+      <label>Communicate data and elaborations to the third party</label>
+      <method/>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a9" endpoint="" a:alt_id="sid-458AA64B-566B-4FFC-B0A3-AD77B5122FEE">
+    <parameters>
+      <label>Communicate data and elaborations to the data subject</label>
+      <method/>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

@@ -1,0 +1,68 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Initiate Procedure)
+2:exclusivegateway:{x}
+3:task:(Select Course)
+4:exclusivegateway:{x}
+5:task:(Show Available Dates)
+6:task:(Select Date)
+7:exclusivegateway:{x}
+8:task:(Check Account Status)
+9:exclusivegateway:{x}
+10:task:(Prompt User to Log In)
+11:task:(Provide Payment Information)
+12:task:(Complete Registration)
+13:exclusivegateway:{x}
+14:parallelgateway:{AND}
+15:task:(Send Message to Friends)
+16:task:(Receive Ticket)
+17:parallelgateway:{AND}
+18:endevent:(((endevent)))
+19:task:(Check University Eligibility)
+20:exclusivegateway:{x}
+21:task:(Complete Registration for Course)
+22:exclusivegateway:{x}
+23:task:(Send Activation Request)
+24:task:(Wait for Activation Response)
+25:exclusivegateway:{x}
+26:task:(Complete Registration)
+27:exclusivegateway:{x}
+
+0:startevent:((startevent)) --> 1:task:(Initiate Procedure)
+1:task:(Initiate Procedure) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Proceed|3:task:(Select Course)
+2:exclusivegateway:{x} --> |Stop|18:endevent:(((endevent)))
+3:task:(Select Course) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Proceed|5:task:(Show Available Dates)
+4:exclusivegateway:{x} --> |Stop|18:endevent:(((endevent)))
+5:task:(Show Available Dates) --> 6:task:(Select Date)
+6:task:(Select Date) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Proceed|8:task:(Check Account Status)
+7:exclusivegateway:{x} --> |Stop|18:endevent:(((endevent)))
+8:task:(Check Account Status) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Log in required|10:task:(Prompt User to Log In)
+9:exclusivegateway:{x} --> |Check university eligibility|19:task:(Check University Eligibility)
+10:task:(Prompt User to Log In) --> 11:task:(Provide Payment Information)
+11:task:(Provide Payment Information) --> 12:task:(Complete Registration)
+12:task:(Complete Registration) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Proceed|14:parallelgateway:{AND}
+13:exclusivegateway:{x} --> |Stop|18:endevent:(((endevent)))
+14:parallelgateway:{AND} --> 15:task:(Send Message to Friends)
+14:parallelgateway:{AND} --> 16:task:(Receive Ticket)
+15:task:(Send Message to Friends) --> 17:parallelgateway:{AND}
+16:task:(Receive Ticket) --> 17:parallelgateway:{AND}
+17:parallelgateway:{AND} --> 18:endevent:(((endevent)))
+19:task:(Check University Eligibility) --> 20:exclusivegateway:{x}
+20:exclusivegateway:{x} --> |Eligible|21:task:(Complete Registration for Course)
+20:exclusivegateway:{x} --> |Not eligible|23:task:(Send Activation Request)
+21:task:(Complete Registration for Course) --> 22:exclusivegateway:{x}
+22:exclusivegateway:{x} --> |Proceed|14:parallelgateway:{AND}
+22:exclusivegateway:{x} --> |Stop|18:endevent:(((endevent)))
+20:exclusivegateway:{x} --> |Registration fails|18:endevent:(((endevent)))
+23:task:(Send Activation Request) --> 24:task:(Wait for Activation Response)
+24:task:(Wait for Activation Response) --> 25:exclusivegateway:{x}
+25:exclusivegateway:{x} --> |Activation fails|18:endevent:(((endevent)))
+25:exclusivegateway:{x} --> |Activation successful|26:task:(Complete Registration)
+26:task:(Complete Registration) --> 27:exclusivegateway:{x}
+27:exclusivegateway:{x} --> |Proceed|14:parallelgateway:{AND}
+27:exclusivegateway:{x} --> |Stop|18:endevent:(((endevent)))

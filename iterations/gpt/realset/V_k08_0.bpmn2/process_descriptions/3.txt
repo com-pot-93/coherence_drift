@@ -1,0 +1,34 @@
+Certainly! Here is a detailed, step-by-step description of the process as depicted in your model:
+
+1. The process begins.
+2. The user is prompted to enter their login information.
+3. The system checks the provided credentials.
+4. If the credentials are incorrect, the process moves directly to the end.
+5. If the credentials are correct, the system checks the user's permissions.
+6. If the user does not have the required permissions, the process moves directly to the end.
+7. If the user has the required permissions, the system checks a specific condition.
+8. If this condition is not met, the process moves to a further check.
+9. If the process requires adding more products, the user is prompted to select a product.
+10. The user selects a product.
+11. The selected product is added to the cart.
+12. The item is saved.
+13. The process checks if more products need to be added.
+14. If more products are to be added, the user is prompted again to select a product, and steps 10–13 repeat.
+15. If no more products are to be added, the process moves to order confirmation.
+16. The system presents an order confirmation.
+17. The process checks if the order should be confirmed or if more products should be added.
+18. If more products are to be added, the user is prompted to select a product, and the process of adding products repeats.
+19. If the order is to be confirmed, the user confirms the order.
+20. The process then prepares shipment details and payment details at the same time.
+21. Once both shipment and payment details are prepared, the process continues.
+22. The user is prompted to enter payment information.
+23. The process then simultaneously sends payment data to the bank and prompts the user to enter shipping details.
+24. Once both payment data is sent and shipping details are entered, the process checks the correctness of the order.
+25. If the order is not correct, the process returns to order confirmation, and the user can either confirm the order again or add more products, repeating the relevant steps as needed.
+26. If the order is correct, the process moves to confirm and save the order.
+27. After confirming and saving the order, the process returns to the order confirmation step, allowing for further confirmation or addition of products if necessary.
+28. This cycle of confirming, saving, and possibly adding more products can repeat multiple times, depending on the user's actions and the correctness of the order.
+29. If at any point the process determines that no further action is needed, or if a condition is not met, the process moves towards completion.
+30. Finally, the process ends.
+
+This description follows the exact sequence and logic of the process as depicted in your model, including all checks, repetitions, and parallel actions.

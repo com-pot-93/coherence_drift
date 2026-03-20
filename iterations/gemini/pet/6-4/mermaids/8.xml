@@ -1,0 +1,29 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Determine Contact Details)
+    1:task:(Determine Contact Details) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |Purchase| 3:task:(Call Customer)
+    2:exclusivegateway:{x} --> |Known Person| 4:task:(Identify Interested Person)
+    4:task:(Identify Interested Person) --> 3:task:(Call Customer)
+    3:task:(Call Customer) --> 5:task:(Determine Contact Person and Budget)
+    5:task:(Determine Contact Person and Budget) --> 6:task:(Assess Customer's Interest)
+    6:task:(Assess Customer's Interest) --> 7:parallelgateway:{AND}
+    7:parallelgateway:{AND} --> 8:exclusivegateway:{x}
+    7:parallelgateway:{AND} --> 15:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> |Sales Representative Presentation| 9:task:(Give Sales Representative Presentation)
+    8:exclusivegateway:{x} --> |Pre-Sales Presentation| 10:task:(Give Pre-Sales Presentation)
+    9:task:(Give Sales Representative Presentation) --> 11:task:(Wait for Customer)
+    10:task:(Give Pre-Sales Presentation) --> 11:task:(Wait for Customer)
+    11:task:(Wait for Customer) --> 14:parallelgateway:{AND}
+    15:exclusivegateway:{x} --> |Sales Representative Presentation| 16:task:(Give Sales Representative Presentation)
+    15:exclusivegateway:{x} --> |Pre-Sales Presentation| 17:task:(Give Pre-Sales Presentation)
+    16:task:(Give Sales Representative Presentation) --> 18:task:(Wait for Customer)
+    17:task:(Give Pre-Sales Presentation) --> 18:task:(Wait for Customer)
+    18:task:(Wait for Customer) --> 14:parallelgateway:{AND}
+    14:parallelgateway:{AND} --> 19:exclusivegateway:{x}
+    19:exclusivegateway:{x} --> |Sales Representative Call| 20:task:(Make a Sales Representative Call)
+    19:exclusivegateway:{x} --> |Another Sales Representative Call| 21:task:(Make Another Sales Representative Call)
+    20:task:(Make a Sales Representative Call) --> 22:task:(Create Quotation)
+    21:task:(Make Another Sales Representative Call) --> 22:task:(Create Quotation)
+    22:task:(Create Quotation) --> 23:endevent:(((endevent)))
+```

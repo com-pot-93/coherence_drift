@@ -1,0 +1,23 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(MPOO deregisters at the GO)
+  1:task:(MPOO deregisters at the GO) --> 2:task:(GO verifies the deregistration)
+  2:task:(GO verifies the deregistration) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |reject| 4:task:(GO rejects the deregistration of the MPOO)
+  3:exclusivegateway:{x} --> |confirm| 5:task:(GO preliminarily confirms the deregistration of the MPOO)
+  5:task:(GO preliminarily confirms the deregistration of the MPOO) --> 6:task:(GO prepares the readmission of the measuring point)
+  6:task:(GO prepares the readmission of the measuring point) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |no confirmation| 8:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |confirmation| 9:task:(MPOO confirmes the continuation to the MPOO)
+  9:task:(MPOO confirmes the continuation to the MPOO) --> 10:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> 11:task:(GO performs the equipment acquisition and / or equipment changes)
+  10:exclusivegateway:{x} --> 11:task:(GO performs the equipment acquisition and / or equipment changes)
+  11:task:(GO performs the equipment acquisition and / or equipment changes) --> 12:task:(GO assigns the GO as MPO)
+  12:task:(GO assigns the GO as MPO) --> 13:task:(GO informs the MPOO about the end of the assignment of the MPOO)
+  13:task:(GO informs the MPOO about the end of the assignment of the MPOO) --> 14:task:(GO informs the MPOO about the beginning of the assignment of the GO)
+  14:task:(GO informs the MPOO about the beginning of the assignment of the GO) --> 15:task:(GO informs the MSPO about the assignment of the GO)
+  15:task:(GO informs the MSPO about the assignment of the GO) --> 16:task:(GO informs the SP about the assignment of the GO)
+  16:task:(GO informs the SP about the assignment of the GO) --> 17:exclusivegateway:{x}
+  4:task:(GO rejects the deregistration of the MPOO) --> 17:exclusivegateway:{x}
+  17:exclusivegateway:{x} --> 18:endevent:(((endevent)))
+```

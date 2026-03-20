@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Retrieve Temperature Values</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="Generate Standard Notification" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Generate Notification</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <parallel wait="-1" cancel="last" a:alt_id="4">
+        <parallel_branch>
+          <call id="a11" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Retrieve Container Status</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a13" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Estimate Container Status</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="7">
+            <alternative condition="Generate Container Change Request" language="text/javascript">
+              <call id="a17" endpoint="" a:alt_id="8">
+                <parameters>
+                  <label>Generate Container Change Request</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Otherwise" language="text/javascript"/>
+          </choose>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a23" endpoint="" a:alt_id="11">
+            <parameters>
+              <label>Retrieve Client Location</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a25" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>Estimate Distance</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="13">
+            <alternative condition="Estimate Delivery Time" language="text/javascript">
+              <call id="a29" endpoint="" a:alt_id="14">
+                <parameters>
+                  <label>Estimate Delivery Time</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="15">
+                <alternative condition="Generate Route Change Request" language="text/javascript">
+                  <call id="a33" endpoint="" a:alt_id="16">
+                    <parameters>
+                      <label>Generate Route Change Request</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Otherwise" language="text/javascript"/>
+              </choose>
+            </alternative>
+            <alternative condition="Otherwise" language="text/javascript"/>
+          </choose>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a41" endpoint="" a:alt_id="19">
+            <parameters>
+              <label>Retrieve Goods Status</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a43" endpoint="" a:alt_id="20">
+            <parameters>
+              <label>Estimate Goods Status</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="21">
+            <alternative condition="Evaluate Damages" language="text/javascript">
+              <call id="a47" endpoint="" a:alt_id="22">
+                <parameters>
+                  <label>Evaluate Damages</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="23">
+                <alternative condition="Generate Removal Request" language="text/javascript">
+                  <call id="a51" endpoint="" a:alt_id="24">
+                    <parameters>
+                      <label>Generate Removal Request</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Otherwise" language="text/javascript">
+                  <call id="a55" endpoint="" a:alt_id="26">
+                    <parameters>
+                      <label>Generate Price Change Request</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="Otherwise" language="text/javascript"/>
+          </choose>
+        </parallel_branch>
+      </parallel>
+      <call id="a67" endpoint="" a:alt_id="28">
+        <parameters>
+          <label>Send Generated Messages</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

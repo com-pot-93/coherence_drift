@@ -1,0 +1,14 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Finalize Dates)
+  1:task:(Finalize Dates) --> 2:task:(Update Group Calendars)
+  2:task:(Update Group Calendars) --> 3:task:(Create Meeting Folders)
+  3:task:(Create Meeting Folders) --> 4:task:(Upload Documents)
+  4:task:(Upload Documents) --> 5:task:(Advise Committee Members)
+  5:task:(Advise Committee Members) --> 6:task:(Hold Meeting)
+  6:task:(Hold Meeting) --> 7:task:(Produce Minutes)
+  7:task:(Produce Minutes) --> 8:task:(Conduct QA Check)
+  8:task:(Conduct QA Check) --> 9:task:(Send QA Check)
+  9:task:(Send QA Check) --> 10:task:(Update Departmental Records)
+  10:task:(Update Departmental Records) --> 11:endevent:(((endevent)))
+```

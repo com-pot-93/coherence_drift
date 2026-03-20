@@ -1,0 +1,6 @@
+The process begins when a dismissal is sent by MSPN. After this, MSPO reviews the dismissal. Based on the outcome of this review, there are two possible paths:
+
+- If MSPO decides to reject the dismissal, MSPO proceeds to formally reject the dismissal of the MSPN.
+- If MSPO decides to confirm the dismissal, MSPO proceeds to formally confirm the dismissal of the MSPN.
+
+After either rejecting or confirming the dismissal, the process comes to an end.

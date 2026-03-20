@@ -1,0 +1,32 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when a customer order is received.
+2. The order is then processed, and the necessary components are determined.
+3. At this point, it is checked whether any parts required for the order are missing.
+   - If parts are missing, the missing parts are purchased. Once the missing parts arrive, they are stocked, and the process continues.
+   - If no parts are missing, the process moves directly to the next step.
+4. The order is then moved to production.
+5. The items are produced.
+6. After production, a quality check is performed.
+7. The result of the quality check is evaluated:
+   - If the items pass the quality check, the process continues.
+   - If the items fail the quality check, a follow-up production process is initiated.
+     - In the follow-up production, a quality re-check is performed.
+     - If the items pass the re-check, the process continues.
+     - If the items fail again, there is a choice to either retry the follow-up production or escalate the issue.
+     - If escalated, the issue is handled, and further checks and follow-up actions may occur, repeating the cycle of re-checks, retries, and escalations as needed until a resolution is reached.
+8. Once the items pass the quality check (either initially or after follow-up actions), the items are filled into packaging.
+9. The process then checks if any further follow-up is needed:
+   - If no follow-up is needed, the items are packed and labeled.
+   - If follow-up is needed, the follow-up production and quality re-check cycle is repeated as described above.
+10. After packing and labeling, the items are transported to the warehouse.
+11. At the warehouse, it is checked again if any follow-up is needed:
+    - If follow-up is needed, the follow-up production and quality re-check cycle is repeated.
+    - If no follow-up is needed, the items are sent to the customer.
+12. After sending the items to the customer, there is a final check to ensure everything is in order:
+    - If any issues are found, the follow-up production and quality re-check cycle is repeated.
+    - If no issues are found, the process ends.
+
+Throughout the process, at every major step after production, packaging, warehousing, and before delivery, there are checks for quality and completeness. If any problems are detected, the process allows for retries, follow-up actions, or escalation to resolve the issue. This ensures that only items that meet the required standards are ultimately delivered to the customer.
+
+The process concludes when the items have been successfully delivered to the customer and all checks have been passed, or when an escalation leads to a final resolution.

@@ -1,0 +1,73 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Get temperature values)
+2:exclusivegateway:{x}
+3:task:(Generate standard notification)
+4:exclusivegateway:{x}
+5:parallelgateway:{AND}
+6:task:(Get container status)
+7:task:(Estimate container status)
+8:exclusivegateway:{x}
+9:exclusivegateway:{x}
+10:task:(Generate container change request)
+11:parallelgateway:{AND}
+12:task:(Get client location)
+13:task:(Estimate distance)
+14:exclusivegateway:{x}
+15:exclusivegateway:{x}
+16:task:(Estimate delivery time)
+17:exclusivegateway:{x}
+18:exclusivegateway:{x}
+19:task:(Generate route change request)
+20:task:(Get goods status)
+21:task:(Estimate goods status)
+22:exclusivegateway:{x}
+23:exclusivegateway:{x}
+24:task:(Evaluate damages)
+25:exclusivegateway:{x}
+26:exclusivegateway:{x}
+27:task:(Generate removal request)
+28:task:(Generate price change request)
+29:parallelgateway:{AND}
+30:task:(Send generated messages)
+31:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Get temperature values)
+1:task:(Get temperature values) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Standard|3:task:(Generate standard notification)
+2:exclusivegateway:{x} --> |Not standard|5:parallelgateway:{AND}
+3:task:(Generate standard notification) --> 4:exclusivegateway:{x}
+5:parallelgateway:{AND} --> 6:task:(Get container status)
+5:parallelgateway:{AND} --> 12:task:(Get client location)
+5:parallelgateway:{AND} --> 20:task:(Get goods status)
+6:task:(Get container status) --> 7:task:(Estimate container status)
+7:task:(Estimate container status) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |No change|9:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Change needed|10:task:(Generate container change request)
+10:task:(Generate container change request) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> 11:parallelgateway:{AND}
+12:task:(Get client location) --> 13:task:(Estimate distance)
+13:task:(Estimate distance) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |Estimate time|16:task:(Estimate delivery time)
+14:exclusivegateway:{x} --> |No estimate|15:exclusivegateway:{x}
+16:task:(Estimate delivery time) --> 17:exclusivegateway:{x}
+17:exclusivegateway:{x} --> |No route change|15:exclusivegateway:{x}
+17:exclusivegateway:{x} --> |Route change|19:task:(Generate route change request)
+19:task:(Generate route change request) --> 18:exclusivegateway:{x}
+18:exclusivegateway:{x} --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> 11:parallelgateway:{AND}
+20:task:(Get goods status) --> 21:task:(Estimate goods status)
+21:task:(Estimate goods status) --> 22:exclusivegateway:{x}
+22:exclusivegateway:{x} --> |Damages|24:task:(Evaluate damages)
+22:exclusivegateway:{x} --> |No damages|23:exclusivegateway:{x}
+24:task:(Evaluate damages) --> 25:exclusivegateway:{x}
+25:exclusivegateway:{x} --> |Removal|27:task:(Generate removal request)
+25:exclusivegateway:{x} --> |Price change|28:task:(Generate price change request)
+27:task:(Generate removal request) --> 26:exclusivegateway:{x}
+28:task:(Generate price change request) --> 26:exclusivegateway:{x}
+26:exclusivegateway:{x} --> 23:exclusivegateway:{x}
+23:exclusivegateway:{x} --> 11:parallelgateway:{AND}
+11:parallelgateway:{AND} --> 29:parallelgateway:{AND}
+4:exclusivegateway:{x} --> 29:parallelgateway:{AND}
+29:parallelgateway:{AND} --> 30:task:(Send generated messages)
+30:task:(Send generated messages) --> 31:endevent:(((endevent)))

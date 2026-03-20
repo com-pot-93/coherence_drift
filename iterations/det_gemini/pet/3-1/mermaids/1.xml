@@ -1,0 +1,14 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Party sends a warrant possession request)
+1:task:(Party sends a warrant possession request) --> 2:task:(Client Service Back Office receives the request)
+2:task:(Client Service Back Office receives the request) --> 3:task:(Client Service Back Office retrieves the SCT file)
+3:task:(Client Service Back Office retrieves the SCT file) --> 4:task:(Client Service Back Office forwards the SCT Warrant Possession to Queensland Police)
+4:task:(Client Service Back Office forwards the SCT Warrant Possession to Queensland Police) --> 5:task:(Back Office stores the SCT physical file)
+5:task:(Back Office stores the SCT physical file) --> 6:task:(Back Office awaits a Police report)
+6:task:(Back Office awaits a Police report) --> 7:task:(Back Office receives the report)
+7:task:(Back Office receives the report) --> 8:task:(Back Office retrieves the respective SCT file)
+8:task:(Back Office retrieves the respective SCT file) --> 9:task:(Back Office attaches the new SCT document)
+9:task:(Back Office attaches the new SCT document) --> 10:task:(Back Office stores the expanded SCT physical file)
+10:task:(Back Office stores the expanded SCT physical file) --> 11:endevent:(((endevent)))
+```

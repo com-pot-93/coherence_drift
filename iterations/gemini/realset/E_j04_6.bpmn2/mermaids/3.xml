@@ -1,0 +1,21 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Yes| 2:task:(Load Front Page)
+    1:exclusivegateway:{x} --> |No| 30:endevent:(((endevent)))
+    2:task:(Load Front Page) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |Yes| 4:task:(Send Request)
+    3:exclusivegateway:{x} --> |No| 2:task:(Load Front Page)
+    4:task:(Send Request) --> 5:task:(Wait for Offer)
+    5:task:(Wait for Offer) --> 6:task:(Receive Offer)
+    6:task:(Receive Offer) --> 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> |Yes| 8:task:(Invalidate Offers)
+    7:exclusivegateway:{x} --> |No| 2:task:(Load Front Page)
+    8:task:(Invalidate Offers) --> 9:task:(Send Status Update)
+    9:task:(Send Status Update) --> 10:task:(Receive Status Update)
+    10:task:(Receive Status Update) --> 11:task:(Finish Internship)
+    11:task:(Finish Internship) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |Yes| 13:task:(Send Tweet)
+    12:exclusivegateway:{x} --> |No| 2:task:(Load Front Page)
+    13:task:(Send Tweet) --> 2:task:(Load Front Page)
+```

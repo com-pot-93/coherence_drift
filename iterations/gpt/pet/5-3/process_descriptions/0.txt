@@ -1,0 +1,9 @@
+The process begins when an employee submits a request for office supplies. Once the request is submitted, it is registered in the system. After registration, the immediate supervisor receives the request for review.
+
+The immediate supervisor then decides whether to approve the request. If the supervisor does not approve, the request is returned to the employee along with comments. The employee reviews these comments and, based on the feedback, the process returns to the supervisor’s decision point for further consideration.
+
+If the supervisor approves the request, it is forwarded to the purchase department. The purchase department then prepares quotations for the requested supplies and selects a vendor. At this stage, the purchase department may decide to choose a different vendor, in which case the selection process is repeated until a final vendor is chosen.
+
+Once a vendor is selected, the system generates a purchase order and sends it to the chosen vendor. The system then waits for the product to be delivered. After the product is delivered, the system receives the invoice.
+
+Following the receipt of the invoice, the process checks if all necessary steps have been completed. If so, the system sends a notification to the user, informing them about the status of their request. The process concludes after the user has been notified.

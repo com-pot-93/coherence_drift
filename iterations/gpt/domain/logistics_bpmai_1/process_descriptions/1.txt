@@ -1,0 +1,26 @@
+Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when a shipment request is received.
+2. After receiving the shipment request, the next step is to check if the requested product is available.
+3. If the product is not available, the process ends immediately.
+4. If the product is available, the shipment address is checked.
+5. Based on the shipment address, there are two possible paths:
+   - If the shipment is to a service station, the process continues as follows:
+     1. The inbound shipment is assembled.
+     2. The inbound shipment is sent.
+     3. The inbound shipment is received.
+     4. The inbound shipment is checked.
+     5. After checking the inbound shipment, the process enters a series of checks and preparations:
+        - If the check is successful, products are prepared for shipment to the service station.
+        - After preparing the products, the process moves to the next step.
+        - The process then enters a sequence of repeated checks and preparations, where it may loop back to preparing products for service station shipment multiple times, depending on the outcome of each check.
+        - This loop continues until all checks are satisfied, at which point the process returns to the earlier step of checking the inbound shipment.
+   - If the shipment is not to a service station, the process continues as follows:
+     1. Products are prepared for regional shipment.
+     2. After preparation, the process checks whether to continue or to end.
+        - If the process is to end, it does so at this point.
+        - If the process is to continue, it enters a sequence of checks similar to the service station path, where products may be prepared for service station shipment, and the process may loop through several checks and preparations until all conditions are met.
+        - Once all checks are satisfied, the process returns to the earlier step of checking the shipment address.
+6. After all necessary checks and preparations are completed, and depending on the outcomes of the various checks, the process eventually ends.
+
+This process involves several decision points where the path can branch or loop back to previous steps, especially around preparing products for shipment and verifying conditions. The process ensures that products are only shipped when all requirements are met, and it can handle both service station and regional shipments, with appropriate checks and preparations for each case. If at any point the product is not available, the process ends immediately.

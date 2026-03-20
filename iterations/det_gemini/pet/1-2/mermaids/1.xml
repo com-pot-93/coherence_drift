@@ -1,0 +1,20 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(customer brings a defective computer)
+    1:task:(customer brings a defective computer) --> 2:task:(CRS checks the defect)
+    2:task:(CRS checks the defect) --> 3:task:(CRS hands out a repair cost calculation)
+    3:task:(CRS hands out a repair cost calculation) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |yes| 5:task:(customer takes computer home)
+    4:exclusivegateway:{x} --> |no| 6:parallelgateway:{AND}
+    6:parallelgateway:{AND} --> 7:task:(CRS checks the hardware)
+    6:parallelgateway:{AND} --> 11:task:(CRS checks the software)
+    7:task:(CRS checks the hardware) --> 8:task:(CRS repairs the hardware)
+    8:task:(CRS repairs the hardware) --> 15:parallelgateway:{AND}
+    11:task:(CRS checks the software) --> 12:task:(CRS configures the software)
+    12:task:(CRS configures the software) --> 15:parallelgateway:{AND}
+    15:parallelgateway:{AND} --> 16:task:(CRS tests system functionality)
+    16:task:(CRS tests system functionality) --> |true| 4:exclusivegateway:{x}
+    5:task:(customer takes computer home) --> 17:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> 18:endevent:(((endevent)))
+    16:task:(CRS tests system functionality) --> |false| 17:exclusivegateway:{x}
+```

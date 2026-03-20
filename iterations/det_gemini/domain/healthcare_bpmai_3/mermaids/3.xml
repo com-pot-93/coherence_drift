@@ -1,0 +1,22 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Call to the hospital)
+  1:task:(Call to the hospital) --> 2:task:(Decision about patient acceptance)
+  2:task:(Decision about patient acceptance) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |true| 4:task:(Add to list of patients)
+  3:exclusivegateway:{x} --> |false| 10:exclusivegateway:{x}
+  4:task:(Add to list of patients) --> 5:task:(Patient control)
+  5:task:(Patient control) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |true| 7:task:(Patient control)
+  6:exclusivegateway:{x} --> |false| 7:task:(Patient control)
+  7:task:(Patient control) --> 9:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> 11:task:(Call patient to hospital)
+  11:task:(Call patient to hospital) --> 12:task:(Patient hospitalization)
+  12:task:(Patient hospitalization) --> 13:task:(Child birth)
+  13:task:(Child birth) --> 14:exclusivegateway:{x}
+  14:exclusivegateway:{x} --> |true| 15:task:(Patient post-hospitalization)
+  14:exclusivegateway:{x} --> |false| 16:task:(Special treatment)
+  15:task:(Patient post-hospitalization) --> 17:endevent:(((endevent)))
+  16:task:(Special treatment) --> 17:endevent:(((endevent)))
+```

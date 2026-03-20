@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <choose mode="exclusive" a:alt_id="1">
+    <alternative condition="Yes" language="text/javascript">
+      <call id="a3" endpoint="" a:alt_id="2">
+        <parameters>
+          <label>Enter Account Information</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Log into System</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a7" endpoint="" a:alt_id="4">
+    <parameters>
+      <label>Receive Confirmation Email</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a11" endpoint="" a:alt_id="5">
+    <parameters>
+      <label>Load Account Information</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="6">
+    <alternative condition="Yes" language="text/javascript">
+      <call id="a15" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>Select Payment Method</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="8">
+        <alternative condition="Credit Card" language="text/javascript">
+          <call id="a21" endpoint="" a:alt_id="9">
+            <parameters>
+              <label>Enter Credit Card Information</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="IBAN/BIC" language="text/javascript">
+          <call id="a23" endpoint="" a:alt_id="10">
+            <parameters>
+              <label>Enter IBAN/BIC Information</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="No" language="text/javascript"/>
+  </choose>
+  <call id="a17" endpoint="" a:alt_id="13">
+    <parameters>
+      <label>Log into Game</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="14">
+    <parallel_branch>
+      <call id="a31" endpoint="" a:alt_id="11">
+        <parameters>
+          <label>Select Realm</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a33" endpoint="" a:alt_id="12">
+        <parameters>
+          <label>Select Race</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a35" endpoint="" a:alt_id="15">
+        <parameters>
+          <label>Select Class</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a43" endpoint="" a:alt_id="17">
+    <parameters>
+      <label>Name Character</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a45" endpoint="" a:alt_id="18">
+    <parameters>
+      <label>Receive Confirmation and Selfies</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

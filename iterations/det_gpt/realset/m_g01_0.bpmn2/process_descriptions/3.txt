@@ -1,0 +1,1 @@
+First, a task with the id a4571 and the label "Receive File" occurs, and the process ends.

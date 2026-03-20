@@ -1,0 +1,94 @@
+flowchart LR
+0:startevent:((startevent))
+1:exclusivegateway:{x}
+2:exclusivegateway:{x}
+3:exclusivegateway:{x}
+4:task:(Decide Whether to Proceed Further)
+5:exclusivegateway:{x}
+6:task:(Decision Point 2)
+7:exclusivegateway:{x}
+8:task:(Determine Condition)
+9:exclusivegateway:{x}
+10:task:(Load Front Page)
+11:exclusivegateway:{x}
+12:parallelgateway:{AND}
+13:task:(Topic Activity)
+14:task:(Payment Activity)
+15:task:(Experience Activity)
+16:task:(Hobbies Activity)
+17:parallelgateway:{AND}
+18:parallelgateway:{AND}
+19:task:(Topic Activity)
+20:task:(Payment Activity)
+21:task:(Experience Activity)
+22:task:(Hobbies Activity)
+23:parallelgateway:{AND}
+24:task:(Send Request)
+25:task:(Wait for Offer)
+26:exclusivegateway:{x}
+27:exclusivegateway:{x}
+28:task:(Determine if Escalation Needed)
+29:exclusivegateway:{x}
+30:task:(Invalidate Other Offers)
+31:task:(Send Weekly Status Update)
+32:task:(Receive Company Status Update)
+33:task:(Finish Internship)
+34:exclusivegateway:{x}
+35:task:(Post Tweet About Company)
+36:exclusivegateway:{x}
+37:task:(Escalation)
+38:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Proceed|3:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Do not proceed|27:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Proceed|4:task:(Decide Whether to Proceed Further)
+3:exclusivegateway:{x} --> |Do not proceed|27:exclusivegateway:{x}
+4:task:(Decide Whether to Proceed Further) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Proceed|6:task:(Decision Point 2)
+5:exclusivegateway:{x} --> |Do not proceed|27:exclusivegateway:{x}
+6:task:(Decision Point 2) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Proceed|8:task:(Determine Condition)
+7:exclusivegateway:{x} --> |Do not proceed|27:exclusivegateway:{x}
+8:task:(Determine Condition) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Condition True|10:task:(Load Front Page)
+9:exclusivegateway:{x} --> |Condition False|28:exclusivegateway:{x}
+10:task:(Load Front Page) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Path 1|12:parallelgateway:{AND}
+11:exclusivegateway:{x} --> |Path 2|18:parallelgateway:{AND}
+12:parallelgateway:{AND} --> 13:task:(Topic Activity)
+12:parallelgateway:{AND} --> 14:task:(Payment Activity)
+12:parallelgateway:{AND} --> 15:task:(Experience Activity)
+12:parallelgateway:{AND} --> 16:task:(Hobbies Activity)
+13:task:(Topic Activity) --> 17:parallelgateway:{AND}
+14:task:(Payment Activity) --> 17:parallelgateway:{AND}
+15:task:(Experience Activity) --> 17:parallelgateway:{AND}
+16:task:(Hobbies Activity) --> 17:parallelgateway:{AND}
+17:parallelgateway:{AND} --> 24:task:(Send Request)
+18:parallelgateway:{AND} --> 19:task:(Topic Activity)
+18:parallelgateway:{AND} --> 20:task:(Payment Activity)
+18:parallelgateway:{AND} --> 21:task:(Experience Activity)
+18:parallelgateway:{AND} --> 22:task:(Hobbies Activity)
+19:task:(Topic Activity) --> 23:parallelgateway:{AND}
+20:task:(Payment Activity) --> 23:parallelgateway:{AND}
+21:task:(Experience Activity) --> 23:parallelgateway:{AND}
+22:task:(Hobbies Activity) --> 23:parallelgateway:{AND}
+23:parallelgateway:{AND} --> 24:task:(Send Request)
+24:task:(Send Request) --> 25:task:(Wait for Offer)
+25:task:(Wait for Offer) --> 26:exclusivegateway:{x}
+26:exclusivegateway:{x} --> 34:exclusivegateway:{x}
+28:exclusivegateway:{x} --> |Escalation Needed|29:exclusivegateway:{x}
+28:exclusivegateway:{x} --> |No Escalation|30:task:(Invalidate Other Offers)
+29:exclusivegateway:{x} --> |Yes|10:task:(Load Front Page)
+29:exclusivegateway:{x} --> |No|30:task:(Invalidate Other Offers)
+30:task:(Invalidate Other Offers) --> 31:task:(Send Weekly Status Update)
+31:task:(Send Weekly Status Update) --> 32:task:(Receive Company Status Update)
+32:task:(Receive Company Status Update) --> 33:task:(Finish Internship)
+33:task:(Finish Internship) --> 34:exclusivegateway:{x}
+34:exclusivegateway:{x} --> |End|38:endevent:(((endevent)))
+34:exclusivegateway:{x} --> |Post Tweet|35:task:(Post Tweet About Company)
+35:task:(Post Tweet About Company) --> 36:exclusivegateway:{x}
+36:exclusivegateway:{x} --> |End|38:endevent:(((endevent)))
+36:exclusivegateway:{x} --> |Continue|34:exclusivegateway:{x}
+27:exclusivegateway:{x} --> 38:endevent:(((endevent)))

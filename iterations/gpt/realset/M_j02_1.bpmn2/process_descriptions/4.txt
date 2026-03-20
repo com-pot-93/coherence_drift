@@ -1,0 +1,53 @@
+Certainly! Here is a detailed, step-by-step description of the process as depicted in your BPMN model:
+
+---
+
+The process begins when a customized airplane order is received. Once the order is received, it is processed to ensure all necessary information and requirements are understood.
+
+After processing the order, two activities are carried out at the same time:
+
+1. The base model of the airplane is built.
+2. The customization requirements are transmitted to the relevant parties.
+
+Once both the base model is built and the customization requirements are transmitted, the process continues with a check of the first condition.
+
+- If the first condition is met, the process proceeds directly.
+- If the first condition is not met, a second condition is checked.
+    - If the second condition is not met, the process proceeds.
+    - If the second condition is met, a third condition is checked.
+        - If the third condition is not met, the process proceeds.
+        - If the third condition is met, there is a waiting period of 14 days, after which the outcome is evaluated.
+
+After evaluating the outcome:
+- If the desired outcome is achieved, the process continues.
+- If the outcome is not achieved, a reminder is sent.
+    - After sending the reminder, the issue may be escalated, followed by another 14-day waiting period and another evaluation of the outcome.
+    - This cycle of sending reminders, escalating issues, waiting, and evaluating outcomes may repeat as necessary.
+
+Once the process is ready to proceed, customized parts are installed on the airplane.
+
+After installing the customized parts, the process checks if reminders are needed:
+- If reminders are not needed, there is a 14-day waiting period, followed by an evaluation of the outcome.
+    - If the outcome is not achieved, a reminder is sent, and the process may repeat the escalation, waiting, and evaluation cycle as before.
+    - If the outcome is achieved, the engines and risk factors are checked, followed by a check to see if reminders are needed after the engine check.
+        - If reminders are needed, a reminder is sent, the issue may be escalated, and the cycle of waiting and evaluation repeats.
+        - If reminders are not needed, the process moves on to prepare for a test flight.
+- If reminders are needed after installing customized parts, a reminder is sent, and the escalation, waiting, and evaluation cycle repeats as necessary.
+
+Once the process is ready, preparations for the test flight are made. The test flight protocol is received and then forwarded to the customer.
+
+At this point, the shipping method is determined:
+- If standard shipping is chosen, the protocol is shipped via standard shipping.
+- If premium shipping is chosen, the protocol is shipped via premium shipping.
+
+After shipping, an email confirmation is received. The process then checks for any further required actions or reminders, and cycles through additional checks and reminders as necessary.
+
+Throughout the process, at various points, if outcomes are not achieved or reminders are required, the process includes sending reminders, escalating issues, waiting periods, and repeated evaluations. These cycles ensure that all necessary steps are completed and that any issues are addressed promptly.
+
+The process continues through these cycles of checks, reminders, escalations, waiting, and evaluations until all conditions are satisfied and the process can be completed.
+
+Finally, once all steps are completed and all conditions are met, the process ends.
+
+---
+
+This description follows the exact sequence and logic of the provided BPMN model, including all checks, reminders, escalations, waiting periods, and decision points, ensuring that the process can be fully reconstructed from this text.

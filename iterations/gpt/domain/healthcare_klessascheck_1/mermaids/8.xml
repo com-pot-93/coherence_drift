@@ -1,0 +1,36 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Identify non-specific low back pain)
+2:exclusivegateway:{x}
+3:task:(Apply superficial heat or other non-drug treatment)
+4:task:(Apply exercise or other non-drug treatment)
+5:exclusivegateway:{x}
+6:exclusivegateway:{x}
+7:task:(Prescribe NSAID or SMR)
+8:task:(No medication prescribed)
+9:exclusivegateway:{x}
+10:task:(Prescribe NSAID)
+11:task:(No medication prescribed)
+12:exclusivegateway:{x}
+13:task:(Proceed to next stage)
+14:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Identify non-specific low back pain)
+1:task:(Identify non-specific low back pain) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Superficial heat path|3:task:(Apply superficial heat or other non-drug treatment)
+2:exclusivegateway:{x} --> |Exercise path|4:task:(Apply exercise or other non-drug treatment)
+
+3:task:(Apply superficial heat or other non-drug treatment) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Medication needed|7:task:(Prescribe NSAID or SMR)
+5:exclusivegateway:{x} --> |No medication needed|8:task:(No medication prescribed)
+7:task:(Prescribe NSAID or SMR) --> 12:exclusivegateway:{x}
+8:task:(No medication prescribed) --> 12:exclusivegateway:{x}
+
+4:task:(Apply exercise or other non-drug treatment) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Medication needed|10:task:(Prescribe NSAID)
+6:exclusivegateway:{x} --> |No medication needed|11:task:(No medication prescribed)
+10:task:(Prescribe NSAID) --> 12:exclusivegateway:{x}
+11:task:(No medication prescribed) --> 12:exclusivegateway:{x}
+
+12:exclusivegateway:{x} --> 13:task:(Proceed to next stage)
+13:task:(Proceed to next stage) --> 14:endevent:(((endevent)))

@@ -1,0 +1,22 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(sales department receives an order)
+    1:task:(sales department receives an order) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |Accept| 3:task:(sales department accepts the bike order)
+    2:exclusivegateway:{x} --> |Reject| 14:task:(sales department rejects the bike order)
+    3:task:(sales department accepts the bike order) --> 4:task:(sales department informs the storehouse)
+    4:task:(sales department informs the storehouse) --> 5:task:(sales department informs the engineering department)
+    5:task:(sales department informs the engineering department) --> 6:parallelgateway:{AND}
+    6:parallelgateway:{AND} --> 7:task:(storehouse processes the part list)
+    6:parallelgateway:{AND} --> 8:task:(engineering department prepares for the bike assembling)
+    7:task:(storehouse processes the part list) --> 9:parallelgateway:{AND}
+    8:task:(engineering department prepares for the bike assembling) --> 9:parallelgateway:{AND}
+    9:parallelgateway:{AND} --> 10:parallelgateway:{AND}
+    10:parallelgateway:{AND} --> 11:task:(engineering department assembles the bicycle)
+    10:parallelgateway:{AND} --> 12:task:(sales department ships the bicycle)
+    11:task:(engineering department assembles the bicycle) --> 13:parallelgateway:{AND}
+    12:task:(sales department ships the bicycle) --> 13:parallelgateway:{AND}
+    13:parallelgateway:{AND} --> 15:exclusivegateway:{x}
+    14:task:(sales department rejects the bike order) --> 15:exclusivegateway:{x}
+    15:exclusivegateway:{x} --> 16:endevent:(((endevent)))
+```

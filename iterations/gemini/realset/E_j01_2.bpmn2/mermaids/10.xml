@@ -1,0 +1,15 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:parallelgateway:{AND}
+1:parallelgateway:{AND} --> 2:task:(Confirm Job Application)
+1:parallelgateway:{AND} --> 3:task:(Rate Job Application)
+2:task:(Confirm Job Application) --> 4:parallelgateway:{AND}
+3:task:(Rate Job Application) --> 4:parallelgateway:{AND}
+4:parallelgateway:{AND} --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Yes| 8:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |No| 6:task:(Negotiate Interview)
+6:task:(Negotiate Interview) --> 7:task:(Rate Job Seeker)
+7:task:(Rate Job Seeker) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> 9:task:(Hire Prospective Customer)
+9:task:(Hire Prospective Customer) --> 10:endevent:(((endevent)))
+```

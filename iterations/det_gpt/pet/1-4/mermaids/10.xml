@@ -1,0 +1,32 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Company decides to go public)
+2:task:(Company selects the underwriters)
+3:task:(Underwriters prepare a registration statement for the approval of SEC)
+4:task:(Underwriters  check the issue's compliance)
+5:parallelgateway:{AND}
+6:task:(Underwriters begin to firm up the issue price)
+7:task:(Underwriters arrange a road show)
+8:task:(Underwriters awaite approval of registration statement)
+9:parallelgateway:{AND}
+10:task:(Underwriters receive clearance from the SEC)
+11:task:(Underwriters fix the issue price)
+12:task:(Underwriters enter into a firm commitment to buy the stock)
+13:task:(Underwriters offer stock to the public)
+14:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Company decides to go public)
+1:task:(Company decides to go public) --> 2:task:(Company selects the underwriters)
+2:task:(Company selects the underwriters) --> 3:task:(Underwriters prepare a registration statement for the approval of SEC)
+3:task:(Underwriters prepare a registration statement for the approval of SEC) --> 4:task:(Underwriters  check the issue's compliance)
+4:task:(Underwriters  check the issue's compliance) --> 5:parallelgateway:{AND}
+5:parallelgateway:{AND} --> 6:task:(Underwriters begin to firm up the issue price)
+6:task:(Underwriters begin to firm up the issue price) --> 7:task:(Underwriters arrange a road show)
+5:parallelgateway:{AND} --> 8:task:(Underwriters awaite approval of registration statement)
+7:task:(Underwriters arrange a road show) --> 9:parallelgateway:{AND}
+8:task:(Underwriters awaite approval of registration statement) --> 9:parallelgateway:{AND}
+9:parallelgateway:{AND} --> 10:task:(Underwriters receive clearance from the SEC)
+10:task:(Underwriters receive clearance from the SEC) --> 11:task:(Underwriters fix the issue price)
+11:task:(Underwriters fix the issue price) --> 12:task:(Underwriters enter into a firm commitment to buy the stock)
+12:task:(Underwriters enter into a firm commitment to buy the stock) --> 13:task:(Underwriters offer stock to the public)
+13:task:(Underwriters offer stock to the public) --> 14:endevent:(((endevent)))

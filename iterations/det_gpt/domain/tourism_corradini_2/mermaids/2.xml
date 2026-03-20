@@ -1,0 +1,41 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Search for a customer)
+2:task:(Make customer an offer)
+3:exclusivegateway:{x}
+4:task:(Receive additional request)
+5:task:(Provide details)
+6:exclusivegateway:{x}
+7:task:(Receive booking request)
+8:task:(Send the bill)
+9:exclusivegateway:{x}
+10:task:(Receive payment)
+11:exclusivegateway:{x}
+12:task:(Contact customer)
+13:task:(Book travel)
+14:task:(Send booking confirmation)
+15:exclusivegateway:{x}
+16:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Search for a customer)
+1:task:(Search for a customer) --> 2:task:(Make customer an offer)
+2:task:(Make customer an offer) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Additional request|4:task:(Receive additional request)
+3:exclusivegateway:{x} --> |No additional request|15:exclusivegateway:{x}
+4:task:(Receive additional request) --> 5:task:(Provide details)
+5:task:(Provide details) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Booking request|7:task:(Receive booking request)
+6:exclusivegateway:{x} --> |No booking request|15:exclusivegateway:{x}
+7:task:(Receive booking request) --> 8:task:(Send the bill)
+8:task:(Send the bill) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |true|10:task:(Receive payment)
+10:task:(Receive payment) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |continue|11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Contact customer|12:task:(Contact customer)
+11:exclusivegateway:{x} --> |Book travel|13:task:(Book travel)
+12:task:(Contact customer) --> 15:exclusivegateway:{x}
+13:task:(Book travel) --> 14:task:(Send booking confirmation)
+14:task:(Send booking confirmation) --> 15:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |No booking request|15:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |No additional request|15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> 16:endevent:(((endevent)))

@@ -1,0 +1,11 @@
+The process begins when a defective computer is received. The computer is first examined to assess its condition. After the examination, the repair costs are calculated. Once the costs are determined, the customer is consulted about whether to proceed with the repair.
+
+If the customer declines the repair, the computer is returned to the customer, and the process moves towards completion.
+
+If the customer approves the repair, the process continues with the repair activities. At this stage, two tasks are carried out at the same time: the hardware is checked and repaired, and the software is checked and configured. Both tasks must be completed before moving forward.
+
+After both hardware and software tasks are finished, the process checks if the computer is ready. If it is not ready, the process waits until the computer is ready and then checks again. This loop continues until the computer is ready.
+
+Once the computer is ready, the system functionality is tested. If the test is successful, the process continues. If the test fails, the issue is escalated, and the system functionality is tested again. This cycle repeats until the test is successful.
+
+After a successful test, the process proceeds through several decision points and eventually reaches the end, marking the completion of the process.

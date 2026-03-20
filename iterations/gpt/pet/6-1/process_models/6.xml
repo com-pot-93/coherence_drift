@@ -1,0 +1,373 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Invoices</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Visual Inspection by Secretariat</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Forward to Accounting</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="4">
+    <parameters>
+      <label>Identify Supplier and Create Record</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a9" endpoint="" a:alt_id="5">
+    <parameters>
+      <label>Check Invoice Items for Accuracy</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a11" endpoint="" a:alt_id="6">
+    <parameters>
+      <label>Note Cost Center and Managers</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a13" endpoint="" a:alt_id="7">
+    <parameters>
+      <label>Prepare Docket and Place Copy in Internal Mail</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="8">
+    <alternative condition="Continue" language="text/javascript">
+      <call id="a17" endpoint="" a:alt_id="9">
+        <parameters>
+          <label>Send to Cost Center Manager</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="10">
+        <alternative condition="Review Needed" language="text/javascript">
+          <loop mode="pre_test" condition="true">
+            <call id="a23" endpoint="" a:alt_id="11">
+              <parameters>
+                <label>Manager Reviews Invoice</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <loop mode="pre_test" condition="No Issues">
+              <choose mode="exclusive" a:alt_id="12">
+                <alternative condition="No Issues" language="text/javascript">
+                  <choose mode="exclusive" a:alt_id="16">
+                    <alternative condition="Approval Required" language="text/javascript">
+                      <call id="a39" endpoint="" a:alt_id="17">
+                        <parameters>
+                          <label>Manager Writes Approval Code</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="No Approval Needed" language="text/javascript"/>
+                  </choose>
+                  <choose mode="exclusive" a:alt_id="18">
+                    <alternative condition="More Managers" language="text/javascript">
+                      <call id="a45" endpoint="" a:alt_id="19">
+                        <parameters>
+                          <label>Pass to Next Manager</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a23" endpoint="" a:alt_id="11">
+                        <parameters>
+                          <label>Manager Reviews Invoice</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="All Approved" language="text/javascript">
+                      <call id="a25" endpoint="" a:alt_id="20">
+                        <parameters>
+                          <label>Commercial Manager Audits Invoice</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="Issues Found" language="text/javascript">
+                  <call id="a29" endpoint="" a:alt_id="13">
+                    <parameters>
+                      <label>Send Back to Accounting for Clarification</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a33" endpoint="" a:alt_id="14">
+                    <parameters>
+                      <label>Clarify with Vendor</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a35" endpoint="" a:alt_id="15">
+                    <parameters>
+                      <label>Manager Reviews Invoice</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+            </loop>
+          </loop>
+        </alternative>
+        <alternative condition="No Review Needed" language="text/javascript"/>
+      </choose>
+      <loop mode="pre_test" condition="true">
+        <call id="a25" endpoint="" a:alt_id="20">
+          <parameters>
+            <label>Commercial Manager Audits Invoice</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="21">
+          <alternative condition="Board Review Needed" language="text/javascript">
+            <call id="a53" endpoint="" a:alt_id="22">
+              <parameters>
+                <label>Board Reviews Invoice</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="No Board Review" language="text/javascript"/>
+        </choose>
+        <call id="a55" endpoint="" a:alt_id="23">
+          <parameters>
+            <label>Move Copy and Docket to Accounting</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="24">
+          <alternative condition="Complaints or Issues" language="text/javascript">
+            <call id="a61" endpoint="" a:alt_id="25">
+              <parameters>
+                <label>Resolve Complaints or Issues</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="No Complaints" language="text/javascript"/>
+        </choose>
+        <call id="a63" endpoint="" a:alt_id="26">
+          <parameters>
+            <label>Give Payment Instructions and Close Invoice</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a67" endpoint="" a:alt_id="27">
+          <parameters>
+            <label>Final Check and Remaining Steps</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="pre_test" condition="Another Review Needed">
+          <call id="a71" endpoint="" a:alt_id="29">
+            <parameters>
+              <label>Send Back to Cost Center Manager for Review</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a23" endpoint="" a:alt_id="11">
+            <parameters>
+              <label>Manager Reviews Invoice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="0">
+            <alternative condition="">
+              <choose mode="exclusive" a:alt_id="12">
+                <alternative condition="No Issues" language="text/javascript">
+                  <choose mode="exclusive" a:alt_id="16">
+                    <alternative condition="Approval Required" language="text/javascript">
+                      <call id="a39" endpoint="" a:alt_id="17">
+                        <parameters>
+                          <label>Manager Writes Approval Code</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="No Approval Needed" language="text/javascript"/>
+                  </choose>
+                  <choose mode="exclusive" a:alt_id="18">
+                    <alternative condition="">
+                      <call id="a25" endpoint="" a:alt_id="20">
+                        <parameters>
+                          <label>Commercial Manager Audits Invoice</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="21">
+                        <alternative condition="Board Review Needed" language="text/javascript">
+                          <call id="a53" endpoint="" a:alt_id="22">
+                            <parameters>
+                              <label>Board Reviews Invoice</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="No Board Review" language="text/javascript"/>
+                      </choose>
+                      <call id="a55" endpoint="" a:alt_id="23">
+                        <parameters>
+                          <label>Move Copy and Docket to Accounting</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="24">
+                        <alternative condition="Complaints or Issues" language="text/javascript">
+                          <call id="a61" endpoint="" a:alt_id="25">
+                            <parameters>
+                              <label>Resolve Complaints or Issues</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="No Complaints" language="text/javascript"/>
+                      </choose>
+                      <call id="a63" endpoint="" a:alt_id="26">
+                        <parameters>
+                          <label>Give Payment Instructions and Close Invoice</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a67" endpoint="" a:alt_id="27">
+                        <parameters>
+                          <label>Final Check and Remaining Steps</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="More Managers" language="text/javascript">
+                      <call id="a45" endpoint="" a:alt_id="19">
+                        <parameters>
+                          <label>Pass to Next Manager</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a23" endpoint="" a:alt_id="11">
+                        <parameters>
+                          <label>Manager Reviews Invoice</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="Issues Found" language="text/javascript">
+                  <call id="a29" endpoint="" a:alt_id="13">
+                    <parameters>
+                      <label>Send Back to Accounting for Clarification</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a33" endpoint="" a:alt_id="14">
+                    <parameters>
+                      <label>Clarify with Vendor</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a35" endpoint="" a:alt_id="15">
+                    <parameters>
+                      <label>Manager Reviews Invoice</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <escape a:alt_id="-1"/>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="">
+              <escape a:alt_id="-1"/>
+            </alternative>
+          </choose>
+        </loop>
+      </loop>
+    </alternative>
+    <alternative condition="Do Not Continue" language="text/javascript"/>
+  </choose>
+</description>

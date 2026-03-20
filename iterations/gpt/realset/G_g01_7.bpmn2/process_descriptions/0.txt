@@ -1,0 +1,37 @@
+Certainly! Here is a detailed, step-by-step description of the process you provided:
+
+1. The process begins with the start of the event.
+2. The first action is to send invitations to friends.
+3. After sending invitations, a question is sent to the friends, asking which games they would like to play.
+4. The process then waits to receive a list of games from the friends.
+5. Once the list is received, the games are chosen.
+6. At this point, the process splits into two parallel paths, both of which must be completed before moving forward.
+
+**First Path:**
+7. The first path involves handling the appointment of the date for the LAN party.
+8. A decision is made regarding the date. If the date is not suitable, there is an option to change the date.
+9. If a date change is needed, the process loops back to appointing a new date for the LAN party and repeats the decision step.
+10. Once a suitable date is found, this path is complete.
+
+**Second Path:**
+11. The second path involves confirming the games that guests want to play.
+12. A question is asked about which games the guests want.
+13. A decision is made based on the guests' responses. If the games need to be changed, the process loops back to asking the guests again.
+14. This loop continues until the games are confirmed.
+
+15. After both the date and the games are confirmed, the two paths come together and the process continues.
+
+16. Next, there is a decision about whether to download the games. If necessary, the games are downloaded before moving on.
+
+17. The process then asks the friends how much beer they want to drink.
+18. The responses are collected to estimate the total amount of beer required.
+
+19. A decision is made about whether to go to the supermarket. If needed, the process continues with a trip to the supermarket to buy any missing beer.
+
+20. After purchasing the beer, the process continues.
+
+21. Finally, preparations for the LAN party are made.
+
+22. The process ends.
+
+This description follows the exact sequence and logic of the process model you provided, ensuring that all steps, decisions, and loops are included and clearly explained.

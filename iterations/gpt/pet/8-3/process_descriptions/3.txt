@@ -1,0 +1,13 @@
+The process begins with a starting point. Immediately after, a decision is made that leads to another decision point. If the outcome of this second decision is positive, the process continues with identifying the need for personnel. Once the need is identified, the next step is to determine the specific personnel requirements. After determining these requirements, the vacancy is reported to the personnel department.
+
+Following the report, another decision is made, which leads to a series of further decisions. If at any point the decision is made not to proceed, the process loops back to identifying the need for personnel, creating a cycle that can repeat as necessary.
+
+If the decision is to proceed, the next step is to receive the job description. After receiving the job description, another decision is made. If the decision is not to proceed, the process returns to reporting the vacancy to the personnel department, and the cycle continues.
+
+If the process continues, the job description is examined. A decision is then made about whether to proceed. If the decision is not to proceed, the process returns to receiving the job description.
+
+If the process does proceed, the next step is to check if the job description is satisfactory. If the job description is satisfactory, the vacancy is advertised. This leads to a series of decisions and checks, which ultimately loop back to the previous decision points, allowing for repeated cycles as needed.
+
+If the job description is not satisfactory, corrections are requested, and the process returns to receiving the job description, repeating the cycle until a satisfactory description is achieved.
+
+Throughout the process, there are several points where decisions can lead to repeating previous steps, ensuring that the process can adapt to different outcomes and continue until the desired result is achieved. Eventually, if all conditions are met and the process is complete, it reaches an endpoint.

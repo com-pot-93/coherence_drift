@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="Reject" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Reject Bike Order</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a7" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>Inform Storehouse</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a11" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Inform Engineering Department</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <parallel wait="-1" cancel="last" a:alt_id="7">
+        <parallel_branch>
+          <call id="a15" endpoint="" a:alt_id="8">
+            <parameters>
+              <label>Prepare for Assembling Bike</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a17" endpoint="" a:alt_id="9">
+            <parameters>
+              <label>Process Part List</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <parallel wait="-1" cancel="last" a:alt_id="10">
+            <parallel_branch>
+              <call id="a23" endpoint="" a:alt_id="11">
+                <parameters>
+                  <label>Check Part List</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a27" endpoint="" a:alt_id="12">
+                <parameters>
+                  <label>Check Quantity of Parts</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="13">
+                <alternative condition="Parts available" language="text/javascript">
+                  <call id="a31" endpoint="" a:alt_id="14">
+                    <parameters>
+                      <label>Reserve Parts</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Parts not available" language="text/javascript">
+                  <call id="a33" endpoint="" a:alt_id="15">
+                    <parameters>
+                      <label>Create Back-Order</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+            </parallel_branch>
+            <parallel_branch/>
+          </parallel>
+        </parallel_branch>
+      </parallel>
+      <call id="a41" endpoint="" a:alt_id="18">
+        <parameters>
+          <label>Assemble Bicycle</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a43" endpoint="" a:alt_id="19">
+        <parameters>
+          <label>Ship to Customer</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

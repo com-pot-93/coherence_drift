@@ -1,0 +1,13 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Receive data subject request)
+  1:task:(Receive data subject request) --> 2:task:(Retrieve data)
+  2:task:(Retrieve data) --> 3:task:(Check if received data is still relevant)
+  3:task:(Check if received data is still relevant) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |yes| 5:task:(Explain why data is still relevant)
+  5:task:(Explain why data is still relevant) --> 7:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |no| 6:task:(Eliminate data)
+  6:task:(Eliminate data) --> 8:task:(Send notification about elimination)
+  8:task:(Send notification about elimination) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> 9:endevent:(((endevent)))
+```

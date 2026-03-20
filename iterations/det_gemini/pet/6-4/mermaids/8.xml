@@ -1,0 +1,35 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(company determines contact details of potential customers)
+    1:task:(company determines contact details of potential customers) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |branch 1| 3:task:(company buys details for cold calls)
+    2:exclusivegateway:{x} --> |branch 2| 4:task:(marketing staff participates in exhibitions)
+    2:exclusivegateway:{x} --> |branch 3| 5:task:(company knows person interested in the product)
+    3:task:(company buys details for cold calls) --> 6:exclusivegateway:{x}
+    4:task:(marketing staff participates in exhibitions) --> 6:exclusivegateway:{x}
+    5:task:(company knows person interested in the product) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> 7:task:(call center staff calls the customer)
+    7:task:(call center staff calls the customer) --> 8:task:(call center staff determines the contact person)
+    8:task:(call center staff determines the contact person) --> 9:task:(call center staff determines the budget)
+    9:task:(call center staff determines the budget) --> 10:task:(call center staff assesses customer interest)
+    10:task:(call center staff assesses customer interest) --> 11:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |condition 1| 12:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |condition 2| 17:task:(head of development acquires the customer)
+    12:exclusivegateway:{x} --> |branch 1| 13:task:(sales representative makes online presentation)
+    12:exclusivegateway:{x} --> |branch 2| 14:task:(pre-sales employee makes online presentation)
+    13:task:(sales representative makes online presentation) --> 15:exclusivegateway:{x}
+    14:task:(pre-sales employee makes online presentation) --> 15:exclusivegateway:{x}
+    15:exclusivegateway:{x} --> 16:task:(company waits for the customer)
+    16:task:(company waits for the customer) --> 21:exclusivegateway:{x}
+    21:exclusivegateway:{x} --> |branch 1| 19:task:(sales representative calls the customer)
+    21:exclusivegateway:{x} --> |branch 2| 20:task:(sales representative calls the customer)
+    19:task:(sales representative calls the customer) --> 22:exclusivegateway:{x}
+    20:task:(sales representative calls the customer) --> 22:exclusivegateway:{x}
+    17:task:(head of development acquires the customer) --> 18:exclusivegateway:{x}
+    18:exclusivegateway:{x} --> |branch 1| 23:task:(sales representative makes online presentation)
+    18:exclusivegateway:{x} --> |branch 2| 24:task:(pre-sales employee makes online presentation)
+    23:task:(sales representative makes online presentation) --> 22:exclusivegateway:{x}
+    24:task:(pre-sales employee makes online presentation) --> 22:exclusivegateway:{x}
+    22:exclusivegateway:{x} --> 25:task:(company creates a quotation)
+    25:task:(company creates a quotation) --> 26:endevent:(((endevent)))
+```

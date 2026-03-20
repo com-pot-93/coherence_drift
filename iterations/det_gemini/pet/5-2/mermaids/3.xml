@@ -1,0 +1,14 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(employee submits a vacation request)
+  1:task:(employee submits a vacation request) --> 2:task:(register the requirement)
+  2:task:(register the requirement) --> 3:task:(immediate supervisor receives the request)
+  3:task:(immediate supervisor receives the request) --> 4:task:(immediate supervisor approves request)
+  4:task:(immediate supervisor approves request) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |no| 6:task:(system returns application to employee)
+  6:task:(system returns application to employee) --> 9:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |yes| 7:task:(generate notification for HR representative)
+  7:task:(generate notification for HR representative) --> 8:task:(HR representative completes the procedure)
+  8:task:(HR representative completes the procedure) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> 10:endevent:(((endevent)))
+```

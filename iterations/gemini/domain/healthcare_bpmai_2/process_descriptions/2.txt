@@ -1,0 +1,6 @@
+The process starts when a patient arrives. Subsequently, a nurse visit is conducted, followed by checking the patient's insurance.
+After the insurance check, a decision is made based on whether the patient is registered. If the patient is registered, the process proceeds directly to booking an appointment. If not, the registration is checked.
+Following the registration check, another decision is made. If the patient is registered, the process proceeds to booking an appointment. If the patient is not registered, they are registered, and then they pay a fee, after which the process continues to booking an appointment.
+After booking an appointment, the patient undergoes a doctor's examination. Following the examination, a decision is made among three options: hospitalization, visiting the pharmacy, or sending the patient home.
+If hospitalization is chosen, the patient is hospitalized, and the process continues. If visiting the pharmacy is chosen, the patient orders and pays for medicine, then receives the medicine, and the process continues. If sending the patient home is chosen, the patient is sent home, and the process continues.
+After any of the three previous options, another appointment is booked, followed by another doctor's examination, which concludes the process.

@@ -1,0 +1,5 @@
+The process starts when a vacancy is reported to Human Resources (HR). HR then creates a job description. Following this, there is a decision point. If necessary, HR asks the relevant department for clarification; otherwise, this step is skipped. The process then merges back together. Another decision point follows. HR submits the job description for consideration and waits for approval.
+
+Subsequently, there is another decision point. If the department requests a correction, HR corrects the description, and the process merges again. Otherwise, the correction step is skipped. The process merges back.
+
+If the job description is approved, HR posts the job, and the process ends.

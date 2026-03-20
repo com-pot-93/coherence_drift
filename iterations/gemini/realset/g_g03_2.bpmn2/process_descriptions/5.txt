@@ -1,0 +1,5 @@
+The process starts. A decision is made. If the answer is "Yes", account information is entered, a confirmation email is received, and a link in the email is clicked, proceeding to the next decision. If the answer is "No", the process skips directly to the same decision.
+
+Based on the outcome of the decision, the process continues by logging into Battle.net and loading account information. Another decision is made. If the answer is "Yes", a payment method is selected, leading to another decision. If "Credit Card" is chosen, credit card information is entered. If "IBAN/BIC" is chosen, IBAN/BIC information is entered. After entering either the credit card or IBAN/BIC information, the process merges back. If the answer to the previous decision is "No", the process skips the payment method selection and the subsequent steps.
+
+The process continues by logging into the game. Then, the process splits into parallel paths. In parallel, the realm, race, and class are selected. After all three selections are made, the parallel paths merge. The character is named, a confirmation and selfies are received, and the process ends.

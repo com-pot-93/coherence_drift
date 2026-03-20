@@ -1,0 +1,9 @@
+The process starts with the initiation of an assessment tool. Subsequently, the tool is started, and the incident type is entered. The incident is then specified. Following this, a decision is made: one path involves entering user or victim data, while the other two paths are taken based on certain conditions.
+
+If user or victim data is entered, another decision is made. One branch involves contacting superiors, which then merges back with the other branch. The second branch initiates two parallel activities: contacting accident insurance and, based on a condition, contacting the labor inspectorate. These activities then converge. After the convergence, the process merges with the branch that contacted superiors.
+
+If the second path is taken from the first decision, accident insurance and the principal are contacted.
+
+If the third path is taken from the first decision, based on a condition, private insurance is contacted.
+
+All three paths then merge. Following the merge, tasks are proposed to the user, and then the proposed task is executed, concluding the process.

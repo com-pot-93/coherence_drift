@@ -1,0 +1,7 @@
+The process starts with a call to the hospital, followed by a decision about whether to accept the patient. Depending on the decision, the process either adds the patient to a list or proceeds directly to a merge gateway.
+
+If the patient is added to the list, the process merges with the other branch at a merge gateway. From there, the process continues with patient control, after which a decision is made. If the decision is true, the process loops back to patient control. Otherwise, the patient is called to the hospital and then hospitalized, leading to childbirth.
+
+After childbirth, a decision is made whether the patient needs special treatment or post-hospitalization care. Depending on the decision, the process either provides special treatment or post-hospitalization care. After either of these activities, the process merges at a merge gateway.
+
+Finally, the process merges with the other branch at a merge gateway and ends.

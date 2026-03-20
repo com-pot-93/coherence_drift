@@ -1,0 +1,11 @@
+The process starts with connecting to the management system. Then, a decision is made, and if the condition is true, the process reads an order from the system. Another decision point follows, leading to two possible paths.
+
+In the first path, the process either contacts the wholesaler or browses the warehouse. If the wholesaler is contacted, the product is reordered. After reordering, the process determines whether to apply a delivery delay penalty from the wholesaler or to give the OK for the arrived product. Depending on the outcome, the process either applies the penalty or gives the OK. This sequence of decisions and actions is repeated with slight variations, potentially leading to multiple penalties or OKs.
+
+Alternatively, if the warehouse is browsed, the product is withdrawn. Similar to the first path, the process then decides whether to apply a delivery delay penalty or give the OK for the arrived product, with the same potential for repetition.
+
+The second path mirrors the first, with the process either contacting the wholesaler or browsing the warehouse, followed by reordering or withdrawing the product. Again, the process decides whether to apply a delivery delay penalty or give the OK for the arrived product, potentially repeating these actions.
+
+After these decision paths converge, the product is registered in the management system. The process then splits into two parallel activities: packing the product and requesting a courier. Once both are completed, the delivery is shipped.
+
+Following the shipment, another decision is made. If the condition is true, the process returns to reading an order from the system. Otherwise, an escalation event occurs, and the process returns to the initial decision point. Finally, the process ends.

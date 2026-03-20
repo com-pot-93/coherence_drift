@@ -1,0 +1,23 @@
+The process starts. Then, based on whether Condition A is true or not, the process follows one of two paths.
+
+If Condition A is true, the process receives an expense report. Following this, depending on whether Condition E is true or not, the process either creates a new employee account or proceeds directly to a later stage. If Condition E is true, a new employee account is created, and the process waits at a synchronization point before proceeding.
+
+If Condition A is not true, the process skips receiving the expense report and directly creates a new employee account. After creating the account, the process waits at a synchronization point before proceeding.
+
+After the synchronization, the process merges back to a single flow.
+
+Next, based on whether Condition G is true or not, the process follows one of two paths.
+
+If Condition G is true, the process automatically approves the report. If Condition G is not true, the supervisor approves the report, and the process waits at a synchronization point before proceeding.
+
+After the synchronization, the process merges back to a single flow.
+
+Then, depending on whether Condition I is true or not, the process either sends a reimbursement or proceeds directly to a later stage. If Condition I is true, a reimbursement is sent.
+
+Next, based on whether Condition K is true or not, the process either proceeds directly to a later stage or continues to another decision point.
+
+If Condition K is not true, the process checks whether Condition L is true or not. If Condition L is true, an approval in progress email is sent. Otherwise, the process proceeds to another decision point.
+
+Then, depending on whether Condition M is true or not, the process either sends a rejection notice or proceeds directly to a later stage. If Condition M is not true, a rejection notice is sent.
+
+Finally, the process ends.

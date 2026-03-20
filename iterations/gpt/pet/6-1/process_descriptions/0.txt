@@ -1,0 +1,45 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when ACME AG receives invoices.
+2. The secretariat performs a visual inspection of the received invoices.
+3. After the inspection, the secretariat forwards the invoice to an accounting employee.
+4. The accounting employee identifies the suppliers who are charging for the invoice.
+5. The accounting employee creates a new invoice record.
+6. The accounting employee checks the items listed on the invoice.
+7. The accounting employee notes the relevant cost center and the cost center managers on a docket.
+8. The docket and a copy of the invoice are placed in the internal mail.
+9. The accounting employee sends the docket and the invoice copy to the cost center manager.
+
+10. The cost center manager receives the copy of the invoice.
+11. The cost center manager reviews the content of the invoice for accuracy.
+
+12. If the review is successful, the cost center manager writes their code on the docket (AP) and returns the copy of the invoice.
+13. The process then checks if there is another cost center manager who needs to review the invoice:
+    - If yes, the copy of the invoice is passed to the next cost center manager, and the review process repeats.
+    - If no, the process continues.
+
+14. If the cost center manager finds an issue or rejects the approval, the invoice is sent back to the accounting employee.
+15. The accounting employee then proceeds to clarify the issue with the vendor.
+16. After clarification, the accounting employee may need to consult with the cost center managers again. This consultation can repeat as necessary until the issue is resolved.
+17. Once resolved, the accounting employee sends the copy of the invoice to the cost center managers again.
+
+18. After the cost center managers have approved, the accounting employee forwards the copy of the invoice to the commercial manager.
+19. The commercial manager performs a commercial audit of the invoice.
+20. The commercial manager issues approval for payment.
+
+21. The process then checks if the board needs to review the invoice:
+    - If yes, the board checks the invoice. This review can repeat as necessary.
+    - If no, the process continues.
+
+22. After all necessary approvals, the commercial manager moves the invoice copy and the docket back to the accounting employee.
+
+23. If there are any complaints or issues at this stage, the accounting employee resolves them. This resolution process can repeat as necessary.
+
+24. Once all issues are resolved, the accounting employee gives payment instructions.
+25. The accounting employee then closes the invoice.
+
+26. The process checks if there are any further steps or if the process should repeat for another cost center manager. If not, the process ends.
+
+27. The process concludes.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step and decision point is included and described in clear, everyday language.

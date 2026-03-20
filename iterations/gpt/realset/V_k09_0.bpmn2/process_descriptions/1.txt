@@ -1,0 +1,89 @@
+Certainly! Here is a detailed, step-by-step description of the process as depicted in your model:
+
+---
+
+The process begins with the initiation of the procedure.
+
+1. **Connecting to the Management System:**  
+   The first step is to establish a connection to the management system.
+
+2. **Decision: Continue or Not:**  
+   After connecting, a decision is made whether to continue with the process.  
+   - If the decision is **not to continue**, the process ends here.  
+   - If the decision is **to continue**, the process moves forward.
+
+3. **Continue Process:**  
+   The process continues as planned.
+
+4. **Decision: Outcome Evaluation:**  
+   Another decision is made to evaluate the outcome.  
+   - If the outcome is **negative**, the process ends.  
+   - If the outcome is **positive**, the process proceeds.
+
+5. **Further Decision:**  
+   The process moves to another decision point.
+
+6. **Read Order from System:**  
+   The order is read from the management system.
+
+7. **Next Decision:**  
+   The process evaluates the next step.
+
+8. **Another Decision:**  
+   The process moves to another evaluation.
+
+9. **Register Product in Management System:**  
+   The product is registered in the management system.
+
+10. **Parallel Activities:**  
+    Two activities are performed at the same time:  
+    - The product is packed.  
+    - A courier is requested.
+
+11. **After Both Activities:**  
+    Once both packing and courier request are completed, the process continues.
+
+12. **Ship Delivery:**  
+    The delivery is shipped.
+
+13. **Decision: Finish or Repeat:**  
+    A decision is made whether to finish the process or repeat a part of it.  
+    - If the decision is **to finish**, the process moves towards completion.  
+    - If the decision is **to repeat**, the process escalates and loops back to reading the order from the system.
+
+14. **Escalation and Loop:**  
+    If repeating, an escalation occurs and the process returns to reading the order from the system, then continues as before.
+
+15. **Branching for Product Sourcing:**  
+    At a certain point, the process splits into two main paths for sourcing the product:
+
+    **First Path:**  
+    - The wholesaler is contacted.  
+    - The product is reordered from the wholesaler.  
+    - A series of decisions are made, possibly involving:  
+      - Applying a delivery delay penalty.  
+      - Approving the arrived product.  
+    - These steps may repeat, with penalties and approvals as needed, until the process can move forward.
+
+    - Alternatively, the warehouse is browsed.  
+    - The product is withdrawn from the warehouse.  
+    - Again, a series of decisions are made, possibly involving:  
+      - Applying a delivery delay penalty.  
+      - Approving the arrived product.  
+    - These steps may also repeat as needed.
+
+    **Second Path:**  
+    - The wholesaler is contacted.  
+    - The product is reordered from the wholesaler.  
+    - Similar to the first path, a series of decisions are made, possibly involving penalties and approvals.  
+    - Alternatively, the warehouse is browsed and the product is withdrawn, with similar decisions and possible repetitions.
+
+16. **Escalation After Sourcing:**  
+    After completing the sourcing steps (either through the wholesaler or warehouse, with all necessary penalties and approvals), the process may escalate and loop back to earlier steps if required.
+
+17. **Process Completion:**  
+    Eventually, after all necessary steps, decisions, and possible repetitions, the process reaches its end.
+
+---
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step, decision, and possible loop is included and described in clear, plain language.

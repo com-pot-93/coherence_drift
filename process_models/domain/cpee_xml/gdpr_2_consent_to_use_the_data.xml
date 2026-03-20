@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <parallel wait="-1" cancel="last" a:alt_id="sid-1C0EC338-56FF-4F27-9494-BC470B1BC93B">
+    <parallel_branch>
+      <call id="a2" endpoint="" a:alt_id="sid-43ED704C-CF34-4386-9316-B4FAA1FE53B9">
+        <parameters>
+          <label>Add "profiling about logic involved, significance and envisaged consequences of processing"</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a4" endpoint="" a:alt_id="sid-F1836E1F-395C-4E96-9438-2468F33B4D59">
+        <parameters>
+          <label>Check if it is possible to determine the period for which personal data will be stored</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-47FA1EFC-B8EC-43E5-80A2-99583848F352">
+        <alternative condition="">
+          <call id="a7" endpoint="" a:alt_id="sid-5318927B-58B5-4DDF-A39C-CBC1A7B971B3">
+            <parameters>
+              <label>Retrieve the period</label>
+              <method/>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <otherwise>
+          <call id="a6" endpoint="" a:alt_id="sid-6F9DF069-5305-47E0-9D69-85CF38A52F0A">
+            <parameters>
+              <label>Retrieve the criteria used to determine the period</label>
+              <method/>
+              <arguments/>
+            </parameters>
+          </call>
+        </otherwise>
+      </choose>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a9" endpoint="" a:alt_id="sid-2CFD3957-D6FB-4CA6-95B4-86EEC4B4B4B8">
+        <parameters>
+          <label>Add "existence of the right to rectify of personal data"</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a10" endpoint="" a:alt_id="sid-7D31B869-9AC4-480E-82E8-09D588E1715C">
+        <parameters>
+          <label>Add "existence of the right to access personal data"</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a11" endpoint="" a:alt_id="sid-2AD781BC-EDA4-4092-AB65-CC7990C7647B">
+        <parameters>
+          <label>Add "existence of the right to erase personal data"</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a12" endpoint="" a:alt_id="sid-A4A3E247-9FD8-4E29-80E6-C3F837303614">
+        <parameters>
+          <label>Add "existence of the right to data portability"</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a13" endpoint="" a:alt_id="sid-2147FDF3-2F2C-4874-B263-CFE22F8D7F6F">
+        <parameters>
+          <label>Add "existence of the right to withdraw"</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a14" endpoint="" a:alt_id="sid-8C6443CA-D075-4BD1-BD49-A821B09172AA">
+        <parameters>
+          <label>Add "existence of the right to lodge a complaint to a supervisory authority"</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a15" endpoint="" a:alt_id="sid-5550E7E0-4FB0-4BDF-9BFB-08BCEBC02E2D">
+        <parameters>
+          <label>Check if data has been obtained from Data Subject</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-24CD1639-A9AC-4956-B05C-9522A62E8E45">
+        <alternative condition=""/>
+        <otherwise>
+          <call id="a17" endpoint="" a:alt_id="sid-84724963-837C-4BDB-80FC-61877E2077AA">
+            <parameters>
+              <label>Retrieve the source from which personal data are originated</label>
+              <method/>
+              <arguments/>
+            </parameters>
+          </call>
+        </otherwise>
+      </choose>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a19" endpoint="" a:alt_id="sid-7D5FEDCD-083B-42B3-90D5-42D9E1BC518F">
+        <parameters>
+          <label>Check if personal data can be transferred internationally</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-A155B4EA-3D79-46C2-AD40-E9C07F2F00BE">
+        <alternative condition=""/>
+        <otherwise>
+          <call id="a21" endpoint="" a:alt_id="sid-9D709ECC-ECFC-4117-9C8D-093398A8B69C">
+            <parameters>
+              <label>Add "personal data will be transferred internationally"</label>
+              <method/>
+              <arguments/>
+            </parameters>
+          </call>
+        </otherwise>
+      </choose>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a23" endpoint="" a:alt_id="sid-F4438EC3-80AE-4972-AA25-7F4A82092B32">
+        <parameters>
+          <label>Check if recipients are present</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-94BDBC68-796B-4158-BDA6-2EB223A0FBD2">
+        <alternative condition=""/>
+        <otherwise>
+          <call id="a25" endpoint="" a:alt_id="sid-F49D54FD-A6B9-4719-87E4-CC1E972729B7">
+            <parameters>
+              <label>Retrieve recipients</label>
+              <method/>
+              <arguments/>
+            </parameters>
+          </call>
+        </otherwise>
+      </choose>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a27" endpoint="" a:alt_id="sid-1C0F89DD-F7D8-403C-B629-EBBCC78D6CE0">
+        <parameters>
+          <label>Check if legitimate interests are presents</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-B80CDCB8-79EA-45F1-BBE3-32DCC77D4372">
+        <alternative condition=""/>
+        <otherwise>
+          <call id="a29" endpoint="" a:alt_id="sid-BBC6CD92-D2B3-492A-9A3E-D7F2124AE9F9">
+            <parameters>
+              <label>Retrieve legitimate interests</label>
+              <method/>
+              <arguments/>
+            </parameters>
+          </call>
+        </otherwise>
+      </choose>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a31" endpoint="" a:alt_id="sid-3DED209C-9599-4735-AD13-15EAFC610C28">
+        <parameters>
+          <label>Retrieve processing legal basis</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a32" endpoint="" a:alt_id="sid-DE86B81E-D959-47C5-A6F6-C6C4308FBDC1">
+        <parameters>
+          <label>Retrieve processing purposses</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <parallel wait="-1" cancel="last" a:alt_id="sid-AB0B4F0A-B4F9-4379-9225-B4F27DFD6BC6">
+        <parallel_branch>
+          <call id="a33" endpoint="" a:alt_id="sid-17C48064-C83F-44C6-998A-8DB69B109E8D">
+            <parameters>
+              <label>Retrieve identity and contact details</label>
+              <method/>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a35" endpoint="" a:alt_id="sid-A3704BED-290D-4876-A8B9-84C28A16EF9B">
+            <parameters>
+              <label>Ask DPO details</label>
+              <method/>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a38" endpoint="" a:alt_id="sid-F87118B3-9E4A-4ADF-B79F-69AE37E01144">
+            <parameters>
+              <label>Receive details From DPO</label>
+              <method/>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+      </parallel>
+    </parallel_branch>
+  </parallel>
+  <call id="a39" endpoint="" a:alt_id="sid-919BF9D6-5786-48B5-8A35-EA43D7A84B2F">
+    <parameters>
+      <label>Collect consent information</label>
+      <method/>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a37" endpoint="" a:alt_id="sid-C643FE0C-2557-46F6-A0A3-8BF3A3AFF47C">
+    <parameters>
+      <label>Ask consent</label>
+      <method/>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-A426C073-4F50-4F7E-8DF9-97FEE79E8869">
+    <alternative condition="">
+      <call id="a40" endpoint="" a:alt_id="sid-912B5BE6-2388-4381-9E78-9C6AB79EE798">
+        <parameters>
+          <label>Receive consent</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <otherwise>
+      <call id="a41" endpoint="" a:alt_id="sid-A384C2AB-4E70-4A3E-9CF3-178029B26727">
+        <parameters>
+          <label>Receive negation</label>
+          <method/>
+          <arguments/>
+        </parameters>
+      </call>
+    </otherwise>
+  </choose>
+</description>

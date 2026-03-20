@@ -1,0 +1,23 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+---
+
+The process begins when invoices are received. First, the secretariat performs a visual inspection of the invoices. After this inspection, the invoice is forwarded to an accounting employee.
+
+The accounting employee identifies the suppliers and creates a record for the invoice. Next, the items listed on the invoice are checked. The cost center and the relevant managers are noted. After this, a docket and a copy of the invoice are placed in the internal mail.
+
+At this point, a decision is made about whether to continue with the process. If the decision is not to continue, the process ends here. If the process continues, it moves forward to the next step.
+
+The invoice is then sent to the cost center manager. The manager reviews the invoice. If the manager finds issues with the invoice, it is sent back to accounting for clarification. The accounting employee clarifies the issue with the vendor and then sends a copy of the invoice back to the cost center manager for another review. This review and clarification loop can repeat as needed.
+
+If the manager approves the invoice, an approval code is written on the invoice, and the invoice is returned. At this stage, it is determined whether more managers need to review the invoice. If more managers are required, the invoice is passed to the next cost center manager, who reviews it. This cycle of review, approval, and passing to additional managers continues until all necessary managers have reviewed and approved the invoice.
+
+Once all required managers have approved the invoice, it is forwarded to the commercial manager for a commercial audit. After the commercial audit, it is determined whether a board review is needed. If a board review is required, the invoice is sent for board review. After the board review (or if no board review is needed), the invoice copy and docket are moved to accounting.
+
+In accounting, a check is performed to see if there are any complaints or issues. If complaints or issues are found, they are resolved, and the process returns to the check for complaints or issues. This loop continues until no further complaints or issues are found.
+
+If there are no complaints or issues, payment instructions are given, and the invoice is closed. At this point, it is checked whether another manager needs to review the invoice. If another manager’s review is needed, the invoice is sent back to the cost center manager, and the review process repeats as before. If no further reviews are needed, the process is considered complete and comes to an end.
+
+---
+
+This description follows the exact sequence and logic of the process as depicted in your model, including all decision points, loops, and possible outcomes.

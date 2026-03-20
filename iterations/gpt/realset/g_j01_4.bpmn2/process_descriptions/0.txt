@@ -1,0 +1,37 @@
+Here is a detailed, step-by-step description of the process you provided:
+
+1. The process begins.
+2. The first step is to find out which resources are needed.
+3. After identifying the needed resources, two activities are carried out at the same time:
+   - One activity is to check the repository to see if any of the required resources are already available.
+   - The other activity is to collect any resources that are urgently needed.
+4. Once both of these activities are completed, the process continues.
+5. Next, a decision is made:
+   - If necessary, tools are built. After building tools, the process moves forward.
+   - If building tools is not needed, the process skips this step and moves forward.
+6. The process then proceeds to collect any remaining resources that have not yet been gathered.
+7. At this point, two things happen at the same time:
+   - The process continues with a decision point.
+   - The list of resources is updated.
+8. The decision point checks a certain condition:
+   - If the condition is true, the process waits for a random natural event for some time.
+     - After waiting, another decision is made:
+       - If needed, the bot is reset, and then continues farming.
+       - If not, the bot starts farming directly.
+     - After either continuing or starting farming, the process moves forward.
+   - If the condition is not true, the process moves forward without waiting.
+9. The process then checks another condition:
+   - If needed, the player is notified, and the player reads the message.
+   - If not, the process continues without notification.
+10. The process then checks yet another condition:
+    - If needed, the bot is given a sleeping break.
+    - If not, the process continues to the next step.
+11. The process then checks one more condition:
+    - If desired, the process can branch into two possible activities:
+      - Brag to friends.
+      - Help with materials.
+    - After either or both of these activities, the process continues.
+12. The process then loops back to the earlier decision point about waiting for a random natural event, repeating the steps as necessary.
+13. Once all parallel activities are completed, the process ends.
+
+This description follows the exact sequence and logic of the process model you provided, ensuring that every step and decision is included and described in clear, plain language.

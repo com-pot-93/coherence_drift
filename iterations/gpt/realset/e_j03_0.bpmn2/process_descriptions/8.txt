@@ -1,0 +1,7 @@
+The process begins when the assessment tool is initiated. After this, the type of incident must be specified. At this point, there are four possible types of incidents to choose from: Accident, Almost Accident, Severe Safety or Health Risk, or Defective Equipment.
+
+Depending on the selected incident type, the process continues with a confirmation step specific to that choice. If "Accident" is chosen, the accident is confirmed. If "Almost Accident" is selected, the almost accident is confirmed. If "Severe Safety or Health Risk" is chosen, the severe safety or health risk is confirmed. If "Defective Equipment" is selected, the defective equipment is confirmed. Regardless of which type is chosen and confirmed, the process then continues in the same way.
+
+Next, details about the incident are provided. After providing these details, there is a decision point with two possible paths. The process can either proceed directly to reviewing a list of tasks, or it can require contacting private insurance first. If the process proceeds directly, the list of tasks is reviewed. If contacting private insurance is necessary, this is done before moving on.
+
+After either reviewing the list of tasks or contacting private insurance, the process continues to the execution of the proposed tasks. Once these tasks have been executed, the process comes to an end.

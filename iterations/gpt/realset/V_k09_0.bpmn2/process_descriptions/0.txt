@@ -1,0 +1,57 @@
+Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins by connecting to the management system.
+
+2. After connecting, a decision is made. If the process continues, another decision point is reached.
+
+3. If the outcome is positive, the next step is to read an order from the system.
+
+4. After reading the order, another decision is made, leading to two possible paths:
+
+   - **First Path:**
+     - The process proceeds to another decision point, which again leads to two options:
+       - **Option 1:** Contact the wholesaler, then reorder the product from the wholesaler. After reordering, a decision is made:
+         - One branch leads to another decision, which can result in either:
+           - Applying a delivery delay penalty from the wholesaler, followed by a decision that loops back to the previous decision point.
+           - Giving the approval for the arrived product, followed by a decision that also loops back to the previous decision point.
+         - The other branch leads to a similar structure, where after reordering, another decision is made:
+           - One branch applies a delivery delay penalty from the wholesaler, followed by a decision that loops back.
+           - The other branch gives the approval for the arrived product, followed by a decision that also loops back.
+       - **Option 2:** Browse the warehouse, then withdraw the product from the warehouse. After withdrawal, a decision is made:
+         - One branch leads to another decision, which can result in either:
+           - Applying a delivery delay penalty from the wholesaler, followed by a decision that loops back.
+           - Giving the approval for the arrived product, followed by a decision that also loops back.
+         - The other branch leads to a similar structure, where after withdrawal, another decision is made:
+           - One branch applies a delivery delay penalty from the wholesaler, followed by a decision that loops back.
+           - The other branch gives the approval for the arrived product, followed by a decision that also loops back.
+
+   - **Second Path:**
+     - The process proceeds to another decision point, which again leads to two options:
+       - **Option 1:** Contact the wholesaler, then reorder the product from the wholesaler. After reordering, a decision is made:
+         - One branch leads to another decision, which can result in either:
+           - Applying a delivery delay penalty from the wholesaler, followed by a decision that loops back.
+           - Giving the approval for the arrived product, followed by a decision that also loops back.
+         - The other branch leads to a similar structure, where after reordering, another decision is made:
+           - One branch applies a delivery delay penalty from the wholesaler, followed by a decision that loops back.
+           - The other branch gives the approval for the arrived product, followed by a decision that also loops back.
+       - **Option 2:** Browse the warehouse, then withdraw the product from the warehouse. After withdrawal, a decision is made:
+         - One branch leads to another decision, which can result in either:
+           - Applying a delivery delay penalty from the wholesaler, followed by a decision that loops back.
+           - Giving the approval for the arrived product, followed by a decision that also loops back.
+         - The other branch leads to a similar structure, where after withdrawal, another decision is made:
+           - One branch applies a delivery delay penalty from the wholesaler, followed by a decision that loops back.
+           - The other branch gives the approval for the arrived product, followed by a decision that also loops back.
+
+5. After completing the steps above, the product is registered in the management system.
+
+6. Next, two activities are performed at the same time: the product is packed, and a courier is requested.
+
+7. Once both packing and courier request are completed, the delivery is shipped.
+
+8. After shipping, a decision is made:
+   - If the process needs to repeat, the order is read from the system again, and an escalation occurs, which leads back to the previous decision point.
+   - Otherwise, the process proceeds to the final decision point.
+
+9. The process ends.
+
+This description follows the exact sequence and structure of the process as depicted in your model, ensuring that all steps, decisions, and possible loops are included and described in the correct order.

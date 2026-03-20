@@ -1,0 +1,480 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(customer brings a defective computer)
+2:task:(CRS checks the defect)
+3:task:(CRS hands out a repair cost calculation)
+4:exclusivegateway:{x}
+5:task:(customer takes computer home)
+6:exclusivegateway:{x}
+7:parallelgateway:{AND}
+8:task:(CRS checks  the hardware)
+9:task:(CRS repairs the hardware)
+10:exclusivegateway:{x}
+11:task:(CRS checks the software)
+12:task:(CRS configures the software)
+13:exclusivegateway:{x}
+14:parallelgateway:{AND}
+15:parallelgateway:{AND}
+16:task:(CRS tests  system functionality)
+17:parallelgateway:{AND}
+18:parallelgateway:{AND}
+19:task:(CRS tests  system functionality)
+20:parallelgateway:{AND}
+21:parallelgateway:{AND}
+22:task:(CRS tests  system functionality)
+23:parallelgateway:{AND}
+24:parallelgateway:{AND}
+25:task:(CRS tests  system functionality)
+26:parallelgateway:{AND}
+27:parallelgateway:{AND}
+28:task:(CRS tests  system functionality)
+29:parallelgateway:{AND}
+30:parallelgateway:{AND}
+31:task:(CRS tests  system functionality)
+32:parallelgateway:{AND}
+33:parallelgateway:{AND}
+34:task:(CRS tests  system functionality)
+35:parallelgateway:{AND}
+36:parallelgateway:{AND}
+37:task:(CRS tests  system functionality)
+38:parallelgateway:{AND}
+39:parallelgateway:{AND}
+40:task:(CRS tests  system functionality)
+41:parallelgateway:{AND}
+42:parallelgateway:{AND}
+43:task:(CRS tests  system functionality)
+44:parallelgateway:{AND}
+45:parallelgateway:{AND}
+46:task:(CRS tests  system functionality)
+47:parallelgateway:{AND}
+48:parallelgateway:{AND}
+49:task:(CRS tests  system functionality)
+50:parallelgateway:{AND}
+51:parallelgateway:{AND}
+52:task:(CRS tests  system functionality)
+53:parallelgateway:{AND}
+54:parallelgateway:{AND}
+55:task:(CRS tests  system functionality)
+56:parallelgateway:{AND}
+57:parallelgateway:{AND}
+58:task:(CRS tests  system functionality)
+59:parallelgateway:{AND}
+60:parallelgateway:{AND}
+61:task:(CRS tests  system functionality)
+62:parallelgateway:{AND}
+63:parallelgateway:{AND}
+64:task:(CRS tests  system functionality)
+65:parallelgateway:{AND}
+66:parallelgateway:{AND}
+67:task:(CRS tests  system functionality)
+68:parallelgateway:{AND}
+69:parallelgateway:{AND}
+70:task:(CRS tests  system functionality)
+71:parallelgateway:{AND}
+72:parallelgateway:{AND}
+73:task:(CRS tests  system functionality)
+74:parallelgateway:{AND}
+75:parallelgateway:{AND}
+76:task:(CRS tests  system functionality)
+77:parallelgateway:{AND}
+78:parallelgateway:{AND}
+79:task:(CRS tests  system functionality)
+80:parallelgateway:{AND}
+81:parallelgateway:{AND}
+82:task:(CRS tests  system functionality)
+83:parallelgateway:{AND}
+84:parallelgateway:{AND}
+85:task:(CRS tests  system functionality)
+86:parallelgateway:{AND}
+87:parallelgateway:{AND}
+88:task:(CRS tests  system functionality)
+89:parallelgateway:{AND}
+90:parallelgateway:{AND}
+91:task:(CRS tests  system functionality)
+92:parallelgateway:{AND}
+93:parallelgateway:{AND}
+94:task:(CRS tests  system functionality)
+95:parallelgateway:{AND}
+96:parallelgateway:{AND}
+97:task:(CRS tests  system functionality)
+98:parallelgateway:{AND}
+99:parallelgateway:{AND}
+100:task:(CRS tests  system functionality)
+101:parallelgateway:{AND}
+102:parallelgateway:{AND}
+103:task:(CRS tests  system functionality)
+104:parallelgateway:{AND}
+105:parallelgateway:{AND}
+106:task:(CRS tests  system functionality)
+107:parallelgateway:{AND}
+108:parallelgateway:{AND}
+109:task:(CRS tests  system functionality)
+110:parallelgateway:{AND}
+111:parallelgateway:{AND}
+112:task:(CRS tests  system functionality)
+113:parallelgateway:{AND}
+114:parallelgateway:{AND}
+115:task:(CRS tests  system functionality)
+116:parallelgateway:{AND}
+117:parallelgateway:{AND}
+118:task:(CRS tests  system functionality)
+119:parallelgateway:{AND}
+120:parallelgateway:{AND}
+121:task:(CRS tests  system functionality)
+122:parallelgateway:{AND}
+123:parallelgateway:{AND}
+124:task:(CRS tests  system functionality)
+125:parallelgateway:{AND}
+126:parallelgateway:{AND}
+127:task:(CRS tests  system functionality)
+128:parallelgateway:{AND}
+129:parallelgateway:{AND}
+130:task:(CRS tests  system functionality)
+131:parallelgateway:{AND}
+132:parallelgateway:{AND}
+133:task:(CRS tests  system functionality)
+134:parallelgateway:{AND}
+135:parallelgateway:{AND}
+136:task:(CRS tests  system functionality)
+137:parallelgateway:{AND}
+138:parallelgateway:{AND}
+139:task:(CRS tests  system functionality)
+140:parallelgateway:{AND}
+141:parallelgateway:{AND}
+142:task:(CRS tests  system functionality)
+143:parallelgateway:{AND}
+144:parallelgateway:{AND}
+145:task:(CRS tests  system functionality)
+146:parallelgateway:{AND}
+147:parallelgateway:{AND}
+148:task:(CRS tests  system functionality)
+149:parallelgateway:{AND}
+150:parallelgateway:{AND}
+151:task:(CRS tests  system functionality)
+152:parallelgateway:{AND}
+153:parallelgateway:{AND}
+154:task:(CRS tests  system functionality)
+155:parallelgateway:{AND}
+156:parallelgateway:{AND}
+157:task:(CRS tests  system functionality)
+158:parallelgateway:{AND}
+159:parallelgateway:{AND}
+160:task:(CRS tests  system functionality)
+161:parallelgateway:{AND}
+162:parallelgateway:{AND}
+163:task:(CRS tests  system functionality)
+164:parallelgateway:{AND}
+165:parallelgateway:{AND}
+166:task:(CRS tests  system functionality)
+167:parallelgateway:{AND}
+168:parallelgateway:{AND}
+169:task:(CRS tests  system functionality)
+170:parallelgateway:{AND}
+171:parallelgateway:{AND}
+172:task:(CRS tests  system functionality)
+173:parallelgateway:{AND}
+174:parallelgateway:{AND}
+175:task:(CRS tests  system functionality)
+176:parallelgateway:{AND}
+177:parallelgateway:{AND}
+178:task:(CRS tests  system functionality)
+179:parallelgateway:{AND}
+180:parallelgateway:{AND}
+181:task:(CRS tests  system functionality)
+182:parallelgateway:{AND}
+183:parallelgateway:{AND}
+184:task:(CRS tests  system functionality)
+185:parallelgateway:{AND}
+186:parallelgateway:{AND}
+187:task:(CRS tests  system functionality)
+188:parallelgateway:{AND}
+189:parallelgateway:{AND}
+190:task:(CRS tests  system functionality)
+191:parallelgateway:{AND}
+192:parallelgateway:{AND}
+193:task:(CRS tests  system functionality)
+194:parallelgateway:{AND}
+195:parallelgateway:{AND}
+196:task:(CRS tests  system functionality)
+197:parallelgateway:{AND}
+198:parallelgateway:{AND}
+199:task:(CRS tests  system functionality)
+200:parallelgateway:{AND}
+201:parallelgateway:{AND}
+202:task:(CRS tests  system functionality)
+203:parallelgateway:{AND}
+204:parallelgateway:{AND}
+205:task:(CRS tests  system functionality)
+206:parallelgateway:{AND}
+207:parallelgateway:{AND}
+208:task:(CRS tests  system functionality)
+209:parallelgateway:{AND}
+210:parallelgateway:{AND}
+211:task:(CRS tests  system functionality)
+212:parallelgateway:{AND}
+213:parallelgateway:{AND}
+214:task:(CRS tests  system functionality)
+215:parallelgateway:{AND}
+216:parallelgateway:{AND}
+217:task:(CRS tests  system functionality)
+218:parallelgateway:{AND}
+219:parallelgateway:{AND}
+220:task:(CRS tests  system functionality)
+221:parallelgateway:{AND}
+222:parallelgateway:{AND}
+223:task:(CRS tests  system functionality)
+224:parallelgateway:{AND}
+225:parallelgateway:{AND}
+226:task:(CRS tests  system functionality)
+227:parallelgateway:{AND}
+228:parallelgateway:{AND}
+229:task:(CRS tests  system functionality)
+230:parallelgateway:{AND}
+231:parallelgateway:{AND}
+232:task:(CRS tests  system functionality)
+233:parallelgateway:{AND}
+234:parallelgateway:{AND}
+235:task:(CRS tests  system functionality)
+236:parallelgateway:{AND}
+237:parallelgateway:{AND}
+238:task:(CRS tests  system functionality)
+239:parallelgateway:{AND}
+240:parallelgateway:{AND}
+241:task:(CRS tests  system functionality)
+242:parallelgateway:{AND}
+243:parallelgateway:{AND}
+244:task:(CRS tests  system functionality)
+245:parallelgateway:{AND}
+246:parallelgateway:{AND}
+247:task:(CRS tests  system functionality)
+248:parallelgateway:{AND}
+249:parallelgateway:{AND}
+250:task:(CRS tests  system functionality)
+251:parallelgateway:{AND}
+252:parallelgateway:{AND}
+253:task:(CRS tests  system functionality)
+254:parallelgateway:{AND}
+255:parallelgateway:{AND}
+256:task:(CRS tests  system functionality)
+257:parallelgateway:{AND}
+258:parallelgateway:{AND}
+259:task:(CRS tests  system functionality)
+260:parallelgateway:{AND}
+261:parallelgateway:{AND}
+262:task:(CRS tests  system functionality)
+263:parallelgateway:{AND}
+264:parallelgateway:{AND}
+265:task:(CRS tests  system functionality)
+266:parallelgateway:{AND}
+267:parallelgateway:{AND}
+268:task:(CRS tests  system functionality)
+269:parallelgateway:{AND}
+270:parallelgateway:{AND}
+271:task:(CRS tests  system functionality)
+272:parallelgateway:{AND}
+273:parallelgateway:{AND}
+274:task:(CRS tests  system functionality)
+275:parallelgateway:{AND}
+276:parallelgateway:{AND}
+277:task:(CRS tests  system functionality)
+278:parallelgateway:{AND}
+279:parallelgateway:{AND}
+280:task:(CRS tests  system functionality)
+281:parallelgateway:{AND}
+282:parallelgateway:{AND}
+283:task:(CRS tests  system functionality)
+284:parallelgateway:{AND}
+285:parallelgateway:{AND}
+286:task:(CRS tests  system functionality)
+287:parallelgateway:{AND}
+288:parallelgateway:{AND}
+289:task:(CRS tests  system functionality)
+290:parallelgateway:{AND}
+291:parallelgateway:{AND}
+292:task:(CRS tests  system functionality)
+293:parallelgateway:{AND}
+294:parallelgateway:{AND}
+295:task:(CRS tests  system functionality)
+296:parallelgateway:{AND}
+297:parallelgateway:{AND}
+298:task:(CRS tests  system functionality)
+299:parallelgateway:{AND}
+300:parallelgateway:{AND}
+301:task:(CRS tests  system functionality)
+302:parallelgateway:{AND}
+303:parallelgateway:{AND}
+304:task:(CRS tests  system functionality)
+305:parallelgateway:{AND}
+306:parallelgateway:{AND}
+307:task:(CRS tests  system functionality)
+308:parallelgateway:{AND}
+309:parallelgateway:{AND}
+310:task:(CRS tests  system functionality)
+311:parallelgateway:{AND}
+312:parallelgateway:{AND}
+313:task:(CRS tests  system functionality)
+314:parallelgateway:{AND}
+315:parallelgateway:{AND}
+316:task:(CRS tests  system functionality)
+317:parallelgateway:{AND}
+318:parallelgateway:{AND}
+319:task:(CRS tests  system functionality)
+320:parallelgateway:{AND}
+321:parallelgateway:{AND}
+322:task:(CRS tests  system functionality)
+323:parallelgateway:{AND}
+324:parallelgateway:{AND}
+325:task:(CRS tests  system functionality)
+326:parallelgateway:{AND}
+327:parallelgateway:{AND}
+328:task:(CRS tests  system functionality)
+329:parallelgateway:{AND}
+330:parallelgateway:{AND}
+331:task:(CRS tests  system functionality)
+332:parallelgateway:{AND}
+333:parallelgateway:{AND}
+334:task:(CRS tests  system functionality)
+335:parallelgateway:{AND}
+336:parallelgateway:{AND}
+337:task:(CRS tests  system functionality)
+338:parallelgateway:{AND}
+339:parallelgateway:{AND}
+340:task:(CRS tests  system functionality)
+341:parallelgateway:{AND}
+342:parallelgateway:{AND}
+343:task:(CRS tests  system functionality)
+344:parallelgateway:{AND}
+345:parallelgateway:{AND}
+346:task:(CRS tests  system functionality)
+347:parallelgateway:{AND}
+348:parallelgateway:{AND}
+349:task:(CRS tests  system functionality)
+350:parallelgateway:{AND}
+351:parallelgateway:{AND}
+352:task:(CRS tests  system functionality)
+353:parallelgateway:{AND}
+354:parallelgateway:{AND}
+355:task:(CRS tests  system functionality)
+356:parallelgateway:{AND}
+357:parallelgateway:{AND}
+358:task:(CRS tests  system functionality)
+359:parallelgateway:{AND}
+360:parallelgateway:{AND}
+361:task:(CRS tests  system functionality)
+362:parallelgateway:{AND}
+363:parallelgateway:{AND}
+364:task:(CRS tests  system functionality)
+365:parallelgateway:{AND}
+366:parallelgateway:{AND}
+367:task:(CRS tests  system functionality)
+368:parallelgateway:{AND}
+369:parallelgateway:{AND}
+370:task:(CRS tests  system functionality)
+371:parallelgateway:{AND}
+372:parallelgateway:{AND}
+373:task:(CRS tests  system functionality)
+374:parallelgateway:{AND}
+375:parallelgateway:{AND}
+376:task:(CRS tests  system functionality)
+377:parallelgateway:{AND}
+378:parallelgateway:{AND}
+379:task:(CRS tests  system functionality)
+380:parallelgateway:{AND}
+381:parallelgateway:{AND}
+382:task:(CRS tests  system functionality)
+383:parallelgateway:{AND}
+384:parallelgateway:{AND}
+385:task:(CRS tests  system functionality)
+386:parallelgateway:{AND}
+387:parallelgateway:{AND}
+388:task:(CRS tests  system functionality)
+389:parallelgateway:{AND}
+390:parallelgateway:{AND}
+391:task:(CRS tests  system functionality)
+392:parallelgateway:{AND}
+393:parallelgateway:{AND}
+394:task:(CRS tests  system functionality)
+395:parallelgateway:{AND}
+396:parallelgateway:{AND}
+397:task:(CRS tests  system functionality)
+398:parallelgateway:{AND}
+399:parallelgateway:{AND}
+400:task:(CRS tests  system functionality)
+401:parallelgateway:{AND}
+402:parallelgateway:{AND}
+403:task:(CRS tests  system functionality)
+404:parallelgateway:{AND}
+405:parallelgateway:{AND}
+406:task:(CRS tests  system functionality)
+407:parallelgateway:{AND}
+408:parallelgateway:{AND}
+409:task:(CRS tests  system functionality)
+410:parallelgateway:{AND}
+411:parallelgateway:{AND}
+412:task:(CRS tests  system functionality)
+413:parallelgateway:{AND}
+414:parallelgateway:{AND}
+415:task:(CRS tests  system functionality)
+416:parallelgateway:{AND}
+417:parallelgateway:{AND}
+418:task:(CRS tests  system functionality)
+419:parallelgateway:{AND}
+420:parallelgateway:{AND}
+421:task:(CRS tests  system functionality)
+422:parallelgateway:{AND}
+423:parallelgateway:{AND}
+424:task:(CRS tests  system functionality)
+425:parallelgateway:{AND}
+426:parallelgateway:{AND}
+427:task:(CRS tests  system functionality)
+428:parallelgateway:{AND}
+429:parallelgateway:{AND}
+430:task:(CRS tests  system functionality)
+431:parallelgateway:{AND}
+432:parallelgateway:{AND}
+433:task:(CRS tests  system functionality)
+434:parallelgateway:{AND}
+435:parallelgateway:{AND}
+436:task:(CRS tests  system functionality)
+437:parallelgateway:{AND}
+438:parallelgateway:{AND}
+439:task:(CRS tests  system functionality)
+440:parallelgateway:{AND}
+441:parallelgateway:{AND}
+442:task:(CRS tests  system functionality)
+443:parallelgateway:{AND}
+444:parallelgateway:{AND}
+445:task:(CRS tests  system functionality)
+446:parallelgateway:{AND}
+447:parallelgateway:{AND}
+448:task:(CRS tests  system functionality)
+449:parallelgateway:{AND}
+450:parallelgateway:{AND}
+451:task:(CRS tests  system functionality)
+452:parallelgateway:{AND}
+453:parallelgateway:{AND}
+454:task:(CRS tests  system functionality)
+455:parallelgateway:{AND}
+456:parallelgateway:{AND}
+457:task:(CRS tests  system functionality)
+458:parallelgateway:{AND}
+459:parallelgateway:{AND}
+460:task:(CRS tests  system functionality)
+461:parallelgateway:{AND}
+462:parallelgateway:{AND}
+463:task:(CRS tests  system functionality)
+464:parallelgateway:{AND}
+465:parallelgateway:{AND}
+466:task:(CRS tests  system functionality)
+467:parallelgateway:{AND}
+468:parallelgateway:{AND}
+469:task:(CRS tests  system functionality)
+470:parallelgateway:{AND}
+471:parallelgateway:{AND}
+472:task:(CRS tests  system functionality)
+473:parallelgateway:{AND}
+474:parallelgateway:{AND}
+475:task:(CRS tests  system functionality)
+476:parallelgateway:{AND}
+477:parallelgateway:{AND}
+478:

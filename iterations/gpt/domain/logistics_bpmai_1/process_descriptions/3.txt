@@ -1,0 +1,28 @@
+Here is a detailed, step-by-step description of the process as depicted in your model:
+
+1. The process begins when a shipment request is received.
+2. The next step is to check if the requested product is available.
+3. If the product is not available, the process ends immediately.
+4. If the product is available, the process continues to a further decision point.
+5. At this point, a check is performed (the nature of this check is not specified in the diagram). If the result is positive, the shipment address is checked.
+6. After checking the shipment address, the type of shipment is determined.
+7. Based on the determined shipment type, the process follows one of several possible paths (the diagram shows multiple branches, but the specific criteria for each are not labeled).
+8. If the shipment is to a service station, the process confirms the service station shipment.
+9. After confirmation, the inbound shipment is assembled.
+10. The inbound shipment is then sent.
+11. Once sent, the inbound shipment is checked.
+12. If this check passes, preparations are made for the products to be sent to the service station.
+13. After preparations, another check is performed to determine if preparations are complete.
+    - If more preparations are needed, the process repeats the preparation step.
+    - If preparations are complete, there is an option to repeat the address check or to complete the process.
+14. If the address check is repeated, the shipment address is checked again, and the process continues through a series of checks that eventually lead to the completion of the process.
+15. If the check on the inbound shipment fails, the process repeats the inbound shipment check and continues through a series of checks that eventually lead to the completion of the process.
+16. If the shipment type is regional, preparations are made for a regional shipment.
+17. After preparing for the regional shipment, the process may continue to prepare products for the service station.
+18. This preparation step may be repeated as needed until all preparations are complete.
+19. Once all preparations are complete, the shipment address is checked again.
+20. The process then continues through a series of checks that eventually lead to the completion of the process.
+21. At certain points, if the process cannot proceed as intended, an escalation occurs, and the process loops back to an earlier decision point.
+22. The process ends when all necessary checks and preparations are complete, or if the product is not available at the beginning.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step and decision point is included and described in the order they occur.

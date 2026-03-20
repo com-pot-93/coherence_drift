@@ -1,0 +1,14 @@
+The process begins when the MPOO initiates a deregistration at the GO. After receiving this request, the GO checks and verifies the deregistration. At this point, there are two possible outcomes:
+
+1. If the GO decides to reject the deregistration, the GO communicates this rejection. The process then moves directly towards its conclusion.
+
+2. If the GO gives a preliminary confirmation for the deregistration, the GO then prepares for the readmission of the measuring point. After this preparation, there is another decision point:
+
+   - If the process does not continue with the readmission, it proceeds towards the next steps.
+   - Alternatively, the MPOO may confirm the continuation to itself, after which the process also moves forward.
+
+After either of these paths, the GO carries out the acquisition of equipment and/or makes any necessary changes to the equipment. Following this, the GO assigns itself as the new MPO.
+
+Next, the GO informs the MPOO that the MPOO’s assignment has ended. Immediately after, the GO notifies the MPOO about the start of its own assignment as the new MPO. The GO then informs the MSPO about this new assignment, and subsequently, the GO also informs the SP about the assignment.
+
+Finally, the process concludes.

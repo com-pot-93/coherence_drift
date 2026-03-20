@@ -1,0 +1,37 @@
+The process starts. Then, it splits into multiple parallel paths.
+
+In the first path, the process adds profiling information about the logic involved, the significance, and the envisaged consequences of processing.
+
+In the second path, the process checks if it is possible to determine the period for which personal data will be stored. Based on the outcome, the process either retrieves the period or retrieves the criteria used to determine the period.
+
+In the third path, the process adds information about the existence of the right to rectify personal data.
+
+In the fourth path, the process adds information about the existence of the right to access personal data.
+
+In the fifth path, the process adds information about the existence of the right to erase personal data.
+
+In the sixth path, the process adds information about the existence of the right to data portability.
+
+In the seventh path, the process adds information about the existence of the right to withdraw.
+
+In the eighth path, the process adds information about the existence of the right to lodge a complaint to a supervisory authority.
+
+In the ninth path, the process checks if the data has been obtained from the data subject. Depending on the outcome, the process either proceeds directly or retrieves the source from which the personal data originated.
+
+In the tenth path, the process checks if personal data can be transferred internationally. Depending on the outcome, the process either proceeds directly or adds information indicating that personal data will be transferred internationally.
+
+In the eleventh path, the process checks if recipients are present. Depending on the outcome, the process either proceeds directly or retrieves the recipients.
+
+In the twelfth path, the process checks if legitimate interests are present. Depending on the outcome, the process either proceeds directly or retrieves the legitimate interests.
+
+In the thirteenth path, the process retrieves the processing legal basis.
+
+In the fourteenth path, the process retrieves the processing purposes.
+
+In the fifteenth path, the process splits into two parallel paths. The first path retrieves the identity and contact details. The second path asks for DPO details, then receives the details from the DPO.
+
+All parallel paths merge back together.
+
+The process then collects consent information and asks for consent. Based on the response, the process either receives consent or receives a negation.
+
+The process ends.

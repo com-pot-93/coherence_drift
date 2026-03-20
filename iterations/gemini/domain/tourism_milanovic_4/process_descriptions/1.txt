@@ -1,0 +1,1 @@
+The process starts. Then, in parallel, a price request is sent to airlines, and after receiving the responses, an airline is selected; at the same time, a price request is sent to hotels, and after collecting the responses, a hotel is selected. After both an airline and a hotel have been selected, a tour plan is prepared and sent to the customer. The process ends.

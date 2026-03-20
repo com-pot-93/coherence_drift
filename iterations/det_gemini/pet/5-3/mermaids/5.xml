@@ -1,0 +1,26 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(employee submits an office supply request)
+    1:task:(employee submits an office supply request) --> 2:task:(register the request)
+    2:task:(register the request) --> 3:task:(immediate supervisor receives request)
+    3:task:(immediate supervisor receives request) --> 4:task:(immediate supervisor approves request)
+    4:task:(immediate supervisor approves request) --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Branch 1| 6:task:(immediate supervisor returns request to the employee)
+    6:task:(immediate supervisor returns request to the employee) --> 7:task:(employee reviews the comments)
+    5:exclusivegateway:{x} --> |Branch 2| 16:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Branch 3| 8:task:(request goes to the purchase department)
+    8:task:(request goes to the purchase department) --> 9:task:(the purchase department makes quotations)
+    9:task:(the purchase department makes quotations) --> 10:task:(the purchase department selects vendor)
+    10:task:(the purchase department selects vendor) --> 11:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |Branch 1| 12:task:(the purchase department chooses a different vendor)
+    12:task:(the purchase department chooses a different vendor) --> 13:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |Branch 2| 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> 14:task:(the system generates a purchase order)
+    14:task:(the system generates a purchase order) --> 15:task:(the system sends a purchase order)
+    15:task:(the system sends a purchase order) --> 17:task:(the system waits for the product delivery)
+    17:task:(the system waits for the product delivery) --> 18:task:(the system receives the invoice)
+    7:task:(employee reviews the comments) --> 16:exclusivegateway:{x}
+    18:task:(the system receives the invoice) --> 16:exclusivegateway:{x}
+    16:exclusivegateway:{x} --> 19:task:(the system sends user notification)
+    19:task:(the system sends user notification) --> 20:endevent:(((endevent)))
+```

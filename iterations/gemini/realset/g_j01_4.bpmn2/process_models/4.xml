@@ -1,0 +1,554 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Determine Required Resources</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="2">
+    <parallel_branch>
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Check Repository</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Collect Urgently Needed Resources</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <choose mode="exclusive" a:alt_id="6">
+    <alternative condition="Resources Sufficient" language="text/javascript"/>
+    <alternative condition="Resources Insufficient" language="text/javascript">
+      <call id="a17" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>Build Tools</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a21" endpoint="" a:alt_id="9">
+    <parameters>
+      <label>Collect Remaining Resources</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="10">
+    <parallel_branch>
+      <call id="a25" endpoint="" a:alt_id="11">
+        <parameters>
+          <label>Evaluate Condition</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a29" endpoint="" a:alt_id="13">
+        <parameters>
+          <label>Wait for Event</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="14">
+        <alternative condition="Reset Bot" language="text/javascript">
+          <call id="a35" endpoint="" a:alt_id="15">
+            <parameters>
+              <label>Reset Bot</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Do Not Reset Bot" language="text/javascript">
+          <call id="a37" endpoint="" a:alt_id="16">
+            <parameters>
+              <label>Do Not Reset Bot</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <loop mode="pre_test" condition="true">
+        <call id="a39" endpoint="" a:alt_id="17">
+          <parameters>
+            <label>Start Farming</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="18">
+          <alternative condition="Notify Player" language="text/javascript">
+            <call id="a45" endpoint="" a:alt_id="19">
+              <parameters>
+                <label>Notify Player</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="Do Not Notify Player" language="text/javascript">
+            <call id="a47" endpoint="" a:alt_id="20">
+              <parameters>
+                <label>Do Not Notify Player</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+        <loop mode="pre_test" condition="true">
+          <choose mode="exclusive" a:alt_id="21">
+            <alternative condition="">
+              <call id="a53" endpoint="" a:alt_id="23">
+                <parameters>
+                  <label>Give Sleeping Break</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="0">
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="27">
+                    <alternative condition="Condition Met" language="text/javascript">
+                      <call id="a71" endpoint="" a:alt_id="28">
+                        <parameters>
+                          <label>Wait for Event</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="29">
+                        <alternative condition="Reset Bot" language="text/javascript">
+                          <call id="a77" endpoint="" a:alt_id="30">
+                            <parameters>
+                              <label>Reset Bot</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Do Not Reset Bot" language="text/javascript">
+                          <call id="a79" endpoint="" a:alt_id="31">
+                            <parameters>
+                              <label>Do Not Reset Bot</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                      </choose>
+                      <call id="a39" endpoint="" a:alt_id="17">
+                        <parameters>
+                          <label>Start Farming</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="18">
+                        <alternative condition="Notify Player" language="text/javascript">
+                          <call id="a45" endpoint="" a:alt_id="19">
+                            <parameters>
+                              <label>Notify Player</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Do Not Notify Player" language="text/javascript">
+                          <call id="a47" endpoint="" a:alt_id="20">
+                            <parameters>
+                              <label>Do Not Notify Player</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Condition Not Met" language="text/javascript">
+                      <call id="a73" endpoint="" a:alt_id="32">
+                        <parameters>
+                          <label>Escalate</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="">
+                  <escape a:alt_id="-1"/>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="">
+              <call id="a55" endpoint="" a:alt_id="24">
+                <parameters>
+                  <label>Brag to Friends</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="0">
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="27">
+                    <alternative condition="Condition Met" language="text/javascript">
+                      <call id="a71" endpoint="" a:alt_id="28">
+                        <parameters>
+                          <label>Wait for Event</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="29">
+                        <alternative condition="Reset Bot" language="text/javascript">
+                          <call id="a77" endpoint="" a:alt_id="30">
+                            <parameters>
+                              <label>Reset Bot</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Do Not Reset Bot" language="text/javascript">
+                          <call id="a79" endpoint="" a:alt_id="31">
+                            <parameters>
+                              <label>Do Not Reset Bot</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                      </choose>
+                      <call id="a39" endpoint="" a:alt_id="17">
+                        <parameters>
+                          <label>Start Farming</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="18">
+                        <alternative condition="Notify Player" language="text/javascript">
+                          <call id="a45" endpoint="" a:alt_id="19">
+                            <parameters>
+                              <label>Notify Player</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Do Not Notify Player" language="text/javascript">
+                          <call id="a47" endpoint="" a:alt_id="20">
+                            <parameters>
+                              <label>Do Not Notify Player</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Condition Not Met" language="text/javascript">
+                      <call id="a73" endpoint="" a:alt_id="32">
+                        <parameters>
+                          <label>Escalate</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="">
+                  <escape a:alt_id="-1"/>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="">
+              <call id="a57" endpoint="" a:alt_id="25">
+                <parameters>
+                  <label>Help with Materials</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="0">
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="27">
+                    <alternative condition="Condition Met" language="text/javascript">
+                      <call id="a71" endpoint="" a:alt_id="28">
+                        <parameters>
+                          <label>Wait for Event</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="29">
+                        <alternative condition="Reset Bot" language="text/javascript">
+                          <call id="a77" endpoint="" a:alt_id="30">
+                            <parameters>
+                              <label>Reset Bot</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Do Not Reset Bot" language="text/javascript">
+                          <call id="a79" endpoint="" a:alt_id="31">
+                            <parameters>
+                              <label>Do Not Reset Bot</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                      </choose>
+                      <call id="a39" endpoint="" a:alt_id="17">
+                        <parameters>
+                          <label>Start Farming</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="18">
+                        <alternative condition="Notify Player" language="text/javascript">
+                          <call id="a45" endpoint="" a:alt_id="19">
+                            <parameters>
+                              <label>Notify Player</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Do Not Notify Player" language="text/javascript">
+                          <call id="a47" endpoint="" a:alt_id="20">
+                            <parameters>
+                              <label>Do Not Notify Player</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Condition Not Met" language="text/javascript">
+                      <call id="a73" endpoint="" a:alt_id="32">
+                        <parameters>
+                          <label>Escalate</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="">
+                  <escape a:alt_id="-1"/>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </loop>
+      </loop>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a27" endpoint="" a:alt_id="12">
+        <parameters>
+          <label>Update Resource List</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <loop mode="pre_test" condition="true">
+    <loop mode="pre_test" condition="Condition True">
+      <choose mode="exclusive" a:alt_id="27">
+        <alternative condition="Condition Met" language="text/javascript">
+          <call id="a71" endpoint="" a:alt_id="28">
+            <parameters>
+              <label>Wait for Event</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="29">
+            <alternative condition="Reset Bot" language="text/javascript">
+              <call id="a77" endpoint="" a:alt_id="30">
+                <parameters>
+                  <label>Reset Bot</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Do Not Reset Bot" language="text/javascript">
+              <call id="a79" endpoint="" a:alt_id="31">
+                <parameters>
+                  <label>Do Not Reset Bot</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+          <call id="a39" endpoint="" a:alt_id="17">
+            <parameters>
+              <label>Start Farming</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="0">
+            <alternative condition="">
+              <choose mode="exclusive" a:alt_id="18">
+                <alternative condition="Notify Player" language="text/javascript">
+                  <call id="a45" endpoint="" a:alt_id="19">
+                    <parameters>
+                      <label>Notify Player</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Do Not Notify Player" language="text/javascript">
+                  <call id="a47" endpoint="" a:alt_id="20">
+                    <parameters>
+                      <label>Do Not Notify Player</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+              <choose mode="exclusive" a:alt_id="21">
+                <alternative condition="">
+                  <call id="a53" endpoint="" a:alt_id="23">
+                    <parameters>
+                      <label>Give Sleeping Break</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="0">
+                    <alternative condition=""/>
+                    <alternative condition="">
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="">
+                  <call id="a55" endpoint="" a:alt_id="24">
+                    <parameters>
+                      <label>Brag to Friends</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="0">
+                    <alternative condition=""/>
+                    <alternative condition="">
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="">
+                  <call id="a57" endpoint="" a:alt_id="25">
+                    <parameters>
+                      <label>Help with Materials</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="0">
+                    <alternative condition=""/>
+                    <alternative condition="">
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="">
+              <escape a:alt_id="-1"/>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="Condition Not Met" language="text/javascript">
+          <call id="a73" endpoint="" a:alt_id="32">
+            <parameters>
+              <label>Escalate</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <escape a:alt_id="-1"/>
+        </alternative>
+      </choose>
+    </loop>
+  </loop>
+</description>

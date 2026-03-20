@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Perform Initial Action</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="Car not registered" language="text/javascript"/>
+    <alternative condition="Car registered" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Notify Car Owner</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="4">
+        <alternative condition="Not brought to mechanic" language="text/javascript">
+          <call id="a11" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Take Alternative Action</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a15" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Issue Fine to Car Owner</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <call id="a13" endpoint="" a:alt_id="8">
+            <parameters>
+              <label>Receive Car Problem Information</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a19" endpoint="" a:alt_id="9">
+            <parameters>
+              <label>Make Payment Offer</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="10">
+            <alternative condition="Payment transferred" language="text/javascript">
+              <call id="a23" endpoint="" a:alt_id="11">
+                <parameters>
+                  <label>Send Payment to Mechanic</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Payment not transferred" language="text/javascript"/>
+          </choose>
+          <call id="a25" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>Receive Repair Confirmation</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a29" endpoint="" a:alt_id="13">
+            <parameters>
+              <label>Receive Time for Next Service</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+  <call id="a33" endpoint="" a:alt_id="15">
+    <parameters>
+      <label>Next Step</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

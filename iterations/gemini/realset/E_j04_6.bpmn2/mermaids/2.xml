@@ -1,0 +1,62 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Yes| 2:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |No| 41:endevent:(((endevent)))
+    2:exclusivegateway:{x} --> |Yes| 3:task:(Load Front Page)
+    2:exclusivegateway:{x} --> |No| 21:exclusivegateway:{x}
+    3:task:(Load Front Page) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Yes| 6:task:(Send Request)
+    5:exclusivegateway:{x} --> |No| 11:task:(Load Front Page)
+    6:task:(Send Request) --> 7:task:(Wait for Offer)
+    7:task:(Wait for Offer) --> 8:task:(Receive Offer)
+    8:task:(Receive Offer) --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} --> |Yes| 10:task:(Invalidate Offers)
+    9:exclusivegateway:{x} --> |No| 11:task:(Load Front Page)
+    10:task:(Invalidate Offers) --> 37:task:(Send Status Update)
+    37:task:(Send Status Update) --> 38:task:(Receive Status Update)
+    38:task:(Receive Status Update) --> 39:task:(Finish Internship)
+    39:task:(Finish Internship) --> 40:exclusivegateway:{x}
+    40:exclusivegateway:{x} --> |Yes| 42:task:(Tweet to Friends)
+    40:exclusivegateway:{x} --> |No| 43:exclusivegateway:{x}
+    42:task:(Tweet to Friends) --> 43:exclusivegateway:{x}
+    43:exclusivegateway:{x} --> 44:exclusivegateway:{x}
+    44:exclusivegateway:{x} --> |Yes| 45:exclusivegateway:{x}
+    44:exclusivegateway:{x} --> |No| 48:exclusivegateway:{x}
+    45:exclusivegateway:{x} --> |No| 48:exclusivegateway:{x}
+    45:exclusivegateway:{x} --> |Yes| 46:task:(Load Front Page)
+    46:task:(Load Front Page) --> 47:exclusivegateway:{x}
+    47:exclusivegateway:{x} --> 48:exclusivegateway:{x}
+    48:exclusivegateway:{x} --> 1:exclusivegateway:{x}
+    11:task:(Load Front Page) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> 47:exclusivegateway:{x}
+    21:exclusivegateway:{x} --> |Yes| 22:parallelgateway:{AND}
+    21:exclusivegateway:{x} --> |No| 12:exclusivegateway:{x}
+    22:parallelgateway:{AND} --> 23:task:(Work on Topic)
+    22:parallelgateway:{AND} --> 27:task:(Handle Payment)
+    22:parallelgateway:{AND} --> 31:task:(Gain Experience)
+    22:parallelgateway:{AND} --> 35:task:(Pursue Hobbies)
+    23:task:(Work on Topic) --> 24:exclusivegateway:{x}
+    24:exclusivegateway:{x} --> 25:exclusivegateway:{x}
+    25:exclusivegateway:{x} --> |Yes| 26:exclusivegateway:{x}
+    25:exclusivegateway:{x} --> |No| 23:task:(Work on Topic)
+    26:exclusivegateway:{x} --> 49:exclusivegateway:{x}
+    27:task:(Handle Payment) --> 28:exclusivegateway:{x}
+    28:exclusivegateway:{x} --> 29:exclusivegateway:{x}
+    29:exclusivegateway:{x} --> |Yes| 30:exclusivegateway:{x}
+    29:exclusivegateway:{x} --> |No| 27:task:(Handle Payment)
+    30:exclusivegateway:{x} --> 49:exclusivegateway:{x}
+    31:task:(Gain Experience) --> 32:exclusivegateway:{x}
+    32:exclusivegateway:{x} --> 33:exclusivegateway:{x}
+    33:exclusivegateway:{x} --> |Yes| 34:exclusivegateway:{x}
+    33:exclusivegateway:{x} --> |No| 31:task:(Gain Experience)
+    34:exclusivegateway:{x} --> 49:exclusivegateway:{x}
+    35:task:(Pursue Hobbies) --> 36:exclusivegateway:{x}
+    36:exclusivegateway:{x} --> 50:exclusivegateway:{x}
+    50:exclusivegateway:{x} --> |Yes| 51:exclusivegateway:{x}
+    50:exclusivegateway:{x} --> |No| 35:task:(Pursue Hobbies)
+    51:exclusivegateway:{x} --> 49:exclusivegateway:{x}
+    49:exclusivegateway:{x} --> 52:parallelgateway:{AND}
+    52:parallelgateway:{AND} --> 1:exclusivegateway:{x}
+```

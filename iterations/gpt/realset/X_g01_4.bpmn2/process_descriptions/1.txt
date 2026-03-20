@@ -1,0 +1,13 @@
+The process begins with a starting point. The first decision is whether to proceed or not. If the decision is not to proceed, the process ends immediately.
+
+If the decision is to continue, the next step is to select a course. After selecting a course, there is another decision point: whether to continue or not. If the choice is not to continue, the process ends.
+
+If the process continues, the available dates for the selected course are shown. The next step is to select a date. After selecting a date, there is a decision about whether the person has an account.
+
+If the person does not have an account, the process moves directly to logging into an account. After logging in, the person provides payment information, then completes the registration. Once registration is complete, two actions happen at the same time: the person tweets their friends, and they receive a ticket. After both actions are finished, the process ends.
+
+If the person does have an account, there is another decision: whether the person is registered at an eligible university. If they are registered at an eligible university, they register for the course. After registering, there is a check for the outcome, and the process continues as before: if successful, it moves to the next step; if not, the process ends.
+
+If the person is not registered at an eligible university, an activation request is sent. The process then waits for a response. After receiving a response, the process checks the outcome and continues as before.
+
+Throughout the process, at each major decision point, there is always an option to end the process if the required conditions are not met or if the person chooses not to continue. The process concludes at a defined endpoint.

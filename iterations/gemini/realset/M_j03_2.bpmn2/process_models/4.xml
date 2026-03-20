@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Create Parts List</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Query Webshops</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Choose Cheapest Shop</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="4">
+    <parameters>
+      <label>Place Order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="5">
+    <parallel_branch>
+      <call id="a11" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Receive Order</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a13" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>Send Invoice</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a15" endpoint="" a:alt_id="8">
+        <parameters>
+          <label>Deliver Order</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a17" endpoint="" a:alt_id="9">
+        <parameters>
+          <label>Update Inventory</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a27" endpoint="" a:alt_id="11">
+    <parameters>
+      <label>Receive Order Again</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a29" endpoint="" a:alt_id="12">
+    <parameters>
+      <label>Start Building Process</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="13">
+    <alternative condition="Condition Met" language="text/javascript"/>
+    <alternative condition="">
+      <choose mode="exclusive" a:alt_id="15">
+        <alternative condition="Condition A Met" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="16">
+            <alternative condition="Condition B Met" language="text/javascript"/>
+            <alternative condition="Condition B Not Met" language="text/javascript"/>
+          </choose>
+        </alternative>
+        <alternative condition="Condition A Not Met" language="text/javascript"/>
+      </choose>
+      <call id="a49" endpoint="" a:alt_id="20">
+        <parameters>
+          <label>Order Faster Delivery</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <choose mode="exclusive" a:alt_id="21">
+    <alternative condition="Condition C Met" language="text/javascript">
+      <choose mode="exclusive" a:alt_id="22">
+        <alternative condition="Condition D Met" language="text/javascript">
+          <call id="a59" endpoint="" a:alt_id="24">
+            <parameters>
+              <label>Write Compliment Email</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Condition D Not Met" language="text/javascript">
+          <call id="a61" endpoint="" a:alt_id="25">
+            <parameters>
+              <label>Order Cheapest Part</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="Condition C Not Met" language="text/javascript">
+      <choose mode="exclusive" a:alt_id="23">
+        <alternative condition="Condition E Met" language="text/javascript">
+          <call id="a61" endpoint="" a:alt_id="25">
+            <parameters>
+              <label>Order Cheapest Part</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Condition E Not Met" language="text/javascript">
+          <call id="a65" endpoint="" a:alt_id="26">
+            <parameters>
+              <label>Escalate Process</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

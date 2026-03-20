@@ -1,0 +1,17 @@
+The process begins when a shipment request is received. After receiving the request, the next step is to check if the requested product is available.
+
+If the product is not available, the process moves directly towards completion.
+
+If the product is available, a further check is performed. This further check can lead to two outcomes:  
+- If the result is negative, the further check is repeated.  
+- If the result is positive, the process continues to verify the shipment address.
+
+Once the shipment address is verified, the shipment type is determined. If the type cannot be determined, the shipment is confirmed to be sent to a service station. If the type is determined successfully, the process continues.
+
+After this, the inbound shipment is assembled and then sent. Once the shipment is sent, a check on the inbound shipment is performed. If this check fails, it is repeated until it passes.
+
+When the inbound shipment check is successful, the products are prepared for the service station. If more preparation is needed, this step is repeated until no further preparation is required.
+
+At this point, it is checked whether regional preparation is needed. If so, regional shipment preparation is carried out, followed by a check of the regional shipment preparation. Once this is complete, or if no regional preparation is needed, the process continues.
+
+Finally, the process reaches its end after all necessary checks and preparations have been completed.

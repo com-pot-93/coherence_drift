@@ -1,0 +1,40 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Yes| 2:task:(Load Front Page)
+    1:exclusivegateway:{x} --> |No| 3:exclusivegateway:{x}
+    2:task:(Load Front Page) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |Yes| 4:parallelgateway:{AND}
+    3:exclusivegateway:{x} --> |No| 9:task:(Send Request)
+    4:parallelgateway:{AND} --> 5:task:(Work on Topic)
+    4:parallelgateway:{AND} --> 6:task:(Payment)
+    4:parallelgateway:{AND} --> 7:task:(Experience)
+    4:parallelgateway:{AND} --> 8:task:(Hobbies)
+    5:task:(Work on Topic) --> 10:exclusivegateway:{x}
+    6:task:(Payment) --> 11:exclusivegateway:{x}
+    7:task:(Experience) --> 12:exclusivegateway:{x}
+    8:task:(Hobbies) --> 13:exclusivegateway:{x}
+    10:exclusivegateway:{x} --> |Yes| 14:parallelgateway:{AND}
+    10:exclusivegateway:{x} --> |No| 5:task:(Work on Topic)
+    11:exclusivegateway:{x} --> |Yes| 14:parallelgateway:{AND}
+    11:exclusivegateway:{x} --> |No| 6:task:(Payment)
+    12:exclusivegateway:{x} --> |Yes| 14:parallelgateway:{AND}
+    12:exclusivegateway:{x} --> |No| 7:task:(Experience)
+    13:exclusivegateway:{x} --> |Yes| 14:parallelgateway:{AND}
+    13:exclusivegateway:{x} --> |No| 8:task:(Hobbies)
+    14:parallelgateway:{AND} --> 9:task:(Send Request)
+    9:task:(Send Request) --> 15:task:(Wait for Offer)
+    15:task:(Wait for Offer) --> 16:task:(Receive Offer)
+    16:task:(Receive Offer) --> 17:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> |Yes| 18:task:(Invalidate Offers)
+    17:exclusivegateway:{x} --> |No| 2:task:(Load Front Page)
+    18:task:(Invalidate Offers) --> 19:task:(Send Status Update)
+    19:task:(Send Status Update) --> 20:task:(Receive Status Update)
+    20:task:(Receive Status Update) --> 21:task:(Finish Internship)
+    21:task:(Finish Internship) --> 22:exclusivegateway:{x}
+    22:exclusivegateway:{x} --> |Yes| 23:task:(Tweet to Friends)
+    22:exclusivegateway:{x} --> |No| 24:exclusivegateway:{x}
+    23:task:(Tweet to Friends) --> 24:exclusivegateway:{x}
+    24:exclusivegateway:{x} --> |Yes| 0:startevent:((startevent))
+    24:exclusivegateway:{x} --> |No| 25:endevent:(((endevent)))
+```

@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Create Database Backup</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Check Database</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Continue" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Check CRM System</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="5">
+        <alternative condition="Continue" language="text/javascript">
+          <call id="a13" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Register Defaulting Accounts and Customers</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="7">
+            <alternative condition="Continue" language="text/javascript">
+              <call id="a19" endpoint="" a:alt_id="8">
+                <parameters>
+                  <label>Produce Table of Defaulting Accounts</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a23" endpoint="" a:alt_id="9">
+                <parameters>
+                  <label>Send Table to Account Management</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="10">
+                <alternative condition="Send alert" language="text/javascript">
+                  <call id="a27" endpoint="" a:alt_id="11">
+                    <parameters>
+                      <label>Send Alert to Supervisor</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="No alert" language="text/javascript"/>
+              </choose>
+            </alternative>
+            <alternative condition="Skip" language="text/javascript"/>
+          </choose>
+        </alternative>
+        <alternative condition="Skip" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="Skip" language="text/javascript"/>
+  </choose>
+  <call id="a39" endpoint="" a:alt_id="12">
+    <parameters>
+      <label>Check CRM System Again</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="13">
+    <alternative condition="Reconciliation needed" language="text/javascript">
+      <call id="a43" endpoint="" a:alt_id="14">
+        <parameters>
+          <label>Perform Reconciliation</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="15">
+        <alternative condition="Send message" language="text/javascript">
+          <call id="a49" endpoint="" a:alt_id="16">
+            <parameters>
+              <label>Send Message to Supervisor</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Complete reconciliation" language="text/javascript">
+          <call id="a51" endpoint="" a:alt_id="17">
+            <parameters>
+              <label>Complete Reconciliation</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Continue" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="No reconciliation" language="text/javascript"/>
+  </choose>
+  <call id="a63" endpoint="" a:alt_id="18">
+    <parameters>
+      <label>Final Step</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

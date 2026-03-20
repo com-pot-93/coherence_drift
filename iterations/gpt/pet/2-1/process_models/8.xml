@@ -1,0 +1,349 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Customer notices service quality decline</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Customer sends problem details to customer service</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Customer service receives and enters problem report</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="4">
+    <parameters>
+      <label>Compare problem with service agreement</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a9" endpoint="" a:alt_id="5">
+    <parameters>
+      <label>Determine necessary countermeasures</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="6">
+    <alternative condition="No countermeasures needed" language="text/javascript">
+      <call id="a13" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>No countermeasures needed</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Further assessment required" language="text/javascript">
+      <call id="a15" endpoint="" a:alt_id="8">
+        <parameters>
+          <label>Evaluate customer significance</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Link to extra process" language="text/javascript">
+      <call id="a17" endpoint="" a:alt_id="9">
+        <parameters>
+          <label>Link to extra problem-fixing process</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a25" endpoint="" a:alt_id="11">
+    <parameters>
+      <label>Create detailed problem report</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a27" endpoint="" a:alt_id="12">
+    <parameters>
+      <label>Send report to Service Management</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a29" endpoint="" a:alt_id="13">
+    <parameters>
+      <label>Service Management handles quality violation</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a31" endpoint="" a:alt_id="14">
+    <parameters>
+      <label>Investigate problem</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="15">
+    <alternative condition="Analysis performed" language="text/javascript">
+      <call id="a35" endpoint="" a:alt_id="16">
+        <parameters>
+          <label>Conduct analysis and create trouble report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No analysis needed" language="text/javascript"/>
+  </choose>
+  <call id="a41" endpoint="" a:alt_id="18">
+    <parameters>
+      <label>Send report to Resource Provisioning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a43" endpoint="" a:alt_id="19">
+    <parameters>
+      <label>Resource Provisioning receives report</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a45" endpoint="" a:alt_id="20">
+    <parameters>
+      <label>Resource Provisioning checks for issues</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="21">
+    <alternative condition="Issues found" language="text/javascript">
+      <call id="a49" endpoint="" a:alt_id="22">
+        <parameters>
+          <label>Analyze problem and create trouble report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Notification needed" language="text/javascript">
+      <call id="a51" endpoint="" a:alt_id="23">
+        <parameters>
+          <label>Create notification about service execution</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No further action" language="text/javascript"/>
+  </choose>
+  <call id="a59" endpoint="" a:alt_id="25">
+    <parameters>
+      <label>Send status report to Service Management</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a61" endpoint="" a:alt_id="26">
+    <parameters>
+      <label>Service Management prepares final status report</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="27">
+    <alternative condition="Automatic restoration requested" language="text/javascript">
+      <call id="a65" endpoint="" a:alt_id="28">
+        <parameters>
+          <label>Request automatic restoration</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a71" endpoint="" a:alt_id="29">
+        <parameters>
+          <label>Resource Provisioning tracks errors and corrective actions</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a73" endpoint="" a:alt_id="30">
+        <parameters>
+          <label>Create troubleshooting report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a75" endpoint="" a:alt_id="31">
+        <parameters>
+          <label>Send troubleshooting report to Service Management</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a77" endpoint="" a:alt_id="32">
+        <parameters>
+          <label>Forward report to customer service</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a79" endpoint="" a:alt_id="33">
+        <parameters>
+          <label>Customer service creates problem resolution report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a81" endpoint="" a:alt_id="34">
+        <parameters>
+          <label>Send resolution report to customer service</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a83" endpoint="" a:alt_id="35">
+        <parameters>
+          <label>Customer service receives resolution report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Send actual service performance" language="text/javascript">
+      <call id="a67" endpoint="" a:alt_id="36">
+        <parameters>
+          <label>Send actual service performance to customer service</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a87" endpoint="" a:alt_id="37">
+        <parameters>
+          <label>Customer service receives performance report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Perform corrective actions" language="text/javascript">
+      <call id="a69" endpoint="" a:alt_id="38">
+        <parameters>
+          <label>Perform corrective actions</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a91" endpoint="" a:alt_id="39">
+        <parameters>
+          <label>Create problem resolution report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a93" endpoint="" a:alt_id="40">
+        <parameters>
+          <label>Send resolution report to customer service</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a95" endpoint="" a:alt_id="41">
+        <parameters>
+          <label>Customer service receives resolution report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <parallel wait="-1" cancel="last" a:alt_id="42">
+    <parallel_branch>
+      <call id="a99" endpoint="" a:alt_id="43">
+        <parameters>
+          <label>Create report for customer</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a101" endpoint="" a:alt_id="44">
+        <parameters>
+          <label>Report violation rebate to billing</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a103" endpoint="" a:alt_id="45">
+        <parameters>
+          <label>Billing adjusts billing</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a109" endpoint="" a:alt_id="47">
+    <parameters>
+      <label>Send report to customer</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a111" endpoint="" a:alt_id="48">
+    <parameters>
+      <label>Customer receives report</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

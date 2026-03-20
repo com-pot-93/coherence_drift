@@ -1,0 +1,31 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when invoices are received.
+2. The secretariat performs a visual inspection of the invoices.
+3. After the inspection, the invoices are forwarded to the accounting department.
+4. The accounting department identifies the supplier and creates a corresponding record.
+5. The items listed on the invoice are checked.
+6. The cost center and relevant managers are noted.
+7. A docket is prepared, and a copy of the invoice is made.
+8. At this point, a decision is made whether to continue the process or not:
+   - If the process should not continue, the process ends.
+   - If the process should continue, the next step is taken.
+9. The process then checks if the invoices need to be sent to the cost center manager:
+   - If so, the invoices are sent to the cost center manager.
+10. Another decision is made to determine if a manager’s review is needed:
+    - If a review is needed, the process checks again if a manager’s review is required, repeating this step as necessary.
+    - If no review is needed, the process moves forward.
+11. After any required manager reviews, the invoices are audited by the commercial manager.
+12. The process then checks if a board review is needed:
+    - If a board review is required, the invoices are sent for board review, and after the review, the process checks again if another board review is needed, repeating as necessary.
+    - If no board review is needed, the process continues.
+13. Once all necessary reviews are completed, the docket and invoice copy are moved to accounting.
+14. The process then checks for any complaints or issues:
+    - If there are complaints or issues, these are resolved, and the process checks again for complaints or issues, repeating as necessary.
+    - If there are no complaints or issues, payment instructions are prepared, and the invoice is closed.
+15. A final check is performed.
+16. After the final check, the process determines if further review is needed:
+    - If further review is needed, the invoices are sent again to the cost center manager, and the process checks again if further review is needed, repeating as necessary.
+    - If no further review is needed, the process ends.
+
+This process ensures that invoices are thoroughly checked, reviewed by the appropriate managers and board members if necessary, and that any complaints or issues are resolved before payment instructions are issued and the invoice is closed. The process includes several points where steps may be repeated if additional reviews or issue resolutions are required, ensuring thoroughness and compliance.

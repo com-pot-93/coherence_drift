@@ -1,0 +1,23 @@
+The process starts when a customer sends data to the customer service department. The customer service receives this data and enters it into the CRM system. Then, the customer service compares the entered data with internal customer data and checks the data for completeness and plausibility.
+
+If the data is not correct, the customer service corrects it. Otherwise, the process continues to the next step.
+
+Next, a decision is made whether to create a new customer object. If yes, the customer service creates a new customer object. If not, the process skips this step.
+
+After this, the customer service prepares the contract documents for the power supplier switch. The CIS then checks these contract documents.
+
+If there are issues, the customer service analyzes and resolves them, and then generates the contract documents. Otherwise, the process skips these steps.
+
+The CIS sends out a confirmation document to the customer and sends out a grid operator request. The grid operator checks the request for supplier concurrence and transmits a response comment.
+
+If there is a conflict, the grid operator informs all suppliers and demands the resolution of the conflict. Otherwise, the process skips these steps.
+
+The grid operator communicates with the old supplier and terminates the sales agreement.
+
+Next, a decision is made whether the customer service creates a CIS contract. If yes, the customer service creates a CIS contract. If not, the process skips this step.
+
+The customer checks the contract details. The customer either confirms the switch contract or withdraws from it.
+
+In parallel, the grid operator transmits the power meter data, computes the final billing, and sends the billing to the old supplier. Also in parallel, the old supplier creates the final billing and sends it to the customer.
+
+The customer services receive the meter data and import it into their systems. The process ends.

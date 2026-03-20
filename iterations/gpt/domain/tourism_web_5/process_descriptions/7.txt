@@ -1,0 +1,41 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model, using clear and plain language:
+
+---
+
+The process begins when a booking request is received. Once the request is received, it is processed to determine whether the process should continue or not.
+
+- If the process should not continue, the process moves directly towards ending.
+- If the process should continue, the next step is to continue with the process.
+
+After continuing, the process checks the outcome:
+
+- If the outcome is negative, the process moves towards ending.
+- If the outcome is positive, the process checks the outcome in more detail, and then checks the availability for the requested time.
+
+When checking availability:
+
+- If the requested time is not available, an alternative time is proposed, and the requester is notified of this alternative.
+- If the time is available, the requester is notified of the availability.
+
+After notifying the requester (whether about an alternative or the original time), the process waits for the requester’s response and then receives the response.
+
+Once the response is received, the process checks if the booking is confirmed:
+
+- If the booking is confirmed, the process marks the booking as confirmed and then checks if escalation is needed.
+  - If escalation is not needed, the process ends.
+  - If escalation is needed, the process handles the escalation, checks availability again, and then repeats the escalation check and availability check as needed, until the process can end.
+- If the booking is not confirmed, the process marks the booking as not confirmed and checks whether a bill needs to be sent.
+  - If no bill is needed, the process ends.
+  - If a bill is needed, the process sends a bill and checks if further billing is needed.
+    - If no further billing is needed, the process ends.
+    - If further billing is needed, the process sends an additional bill and repeats the check for further billing, up to a certain number of times, until no further billing is needed or the process ends.
+
+If, at any point after proposing an alternative time or notifying about availability, the requester’s response leads to a loop (for example, if the requester wants to try another time), the process returns to the step of waiting for the requester’s response and continues as before.
+
+Throughout the process, there are multiple points where escalation may be required. When escalation is needed, the process handles the escalation, checks availability again, and then returns to the appropriate step based on the outcome of the availability check and escalation handling.
+
+The process continues through these steps, handling all possible outcomes, until it reaches the end.
+
+---
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step, decision, and possible outcome is included and described in the order they occur.

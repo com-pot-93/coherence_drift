@@ -1,0 +1,62 @@
+flowchart LR
+0:startevent:((startevent))
+1:parallelgateway:{AND}
+2:task:(Check if baby is younger than two years)
+3:task:(Identify parent)
+4:parallelgateway:{AND}
+5:exclusivegateway:{x}
+6:task:(Send notification to employer)
+7:task:(Wait for employer confirmation)
+8:task:(Parent takes maternity leave)
+9:exclusivegateway:{x}
+10:task:(Notify employer: split < 2 months)
+11:task:(Wait for employer notification: split < 2 months)
+12:task:(Parent takes leave after split < 2 months)
+13:task:(Notify employer: split > 3 months)
+14:task:(Wait for employer notification: split > 3 months)
+15:task:(Parent takes leave after split > 3 months)
+16:task:(Notify employer: extension < 2 months)
+17:task:(Wait for employer notification: extension < 2 months)
+18:task:(Parent takes leave after extension < 2 months)
+19:task:(Notify employer: extension > 3 months)
+20:task:(Wait for employer notification: extension > 3 months)
+21:task:(Parent takes leave after extension > 3 months)
+22:task:(Both parents take leave together)
+23:exclusivegateway:{x}
+24:task:(Continue process)
+25:parallelgateway:{AND}
+26:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:parallelgateway:{AND}
+1:parallelgateway:{AND} --> 2:task:(Check if baby is younger than two years)
+1:parallelgateway:{AND} --> 3:task:(Identify parent)
+2:task:(Check if baby is younger than two years) --> 4:parallelgateway:{AND}
+3:task:(Identify parent) --> 4:parallelgateway:{AND}
+4:parallelgateway:{AND} --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Conditions met|6:task:(Send notification to employer)
+5:exclusivegateway:{x} --> |Conditions not met|23:exclusivegateway:{x}
+6:task:(Send notification to employer) --> 7:task:(Wait for employer confirmation)
+7:task:(Wait for employer confirmation) --> 8:task:(Parent takes maternity leave)
+8:task:(Parent takes maternity leave) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Split < 2 months|10:task:(Notify employer: split < 2 months)
+9:exclusivegateway:{x} --> |Split > 3 months|13:task:(Notify employer: split > 3 months)
+9:exclusivegateway:{x} --> |Extension < 2 months|16:task:(Notify employer: extension < 2 months)
+9:exclusivegateway:{x} --> |Extension > 3 months|19:task:(Notify employer: extension > 3 months)
+9:exclusivegateway:{x} --> |Both parents take leave together|22:task:(Both parents take leave together)
+9:exclusivegateway:{x} --> |None of the above|23:exclusivegateway:{x}
+10:task:(Notify employer: split < 2 months) --> 11:task:(Wait for employer notification: split < 2 months)
+11:task:(Wait for employer notification: split < 2 months) --> 12:task:(Parent takes leave after split < 2 months)
+12:task:(Parent takes leave after split < 2 months) --> 25:parallelgateway:{AND}
+13:task:(Notify employer: split > 3 months) --> 14:task:(Wait for employer notification: split > 3 months)
+14:task:(Wait for employer notification: split > 3 months) --> 15:task:(Parent takes leave after split > 3 months)
+15:task:(Parent takes leave after split > 3 months) --> 25:parallelgateway:{AND}
+16:task:(Notify employer: extension < 2 months) --> 17:task:(Wait for employer notification: extension < 2 months)
+17:task:(Wait for employer notification: extension < 2 months) --> 18:task:(Parent takes leave after extension < 2 months)
+18:task:(Parent takes leave after extension < 2 months) --> 25:parallelgateway:{AND}
+19:task:(Notify employer: extension > 3 months) --> 20:task:(Wait for employer notification: extension > 3 months)
+20:task:(Wait for employer notification: extension > 3 months) --> 21:task:(Parent takes leave after extension > 3 months)
+21:task:(Parent takes leave after extension > 3 months) --> 25:parallelgateway:{AND}
+22:task:(Both parents take leave together) --> 25:parallelgateway:{AND}
+23:exclusivegateway:{x} --> |Continue|24:task:(Continue process)
+24:task:(Continue process) --> 25:parallelgateway:{AND}
+25:parallelgateway:{AND} --> 26:endevent:(((endevent)))

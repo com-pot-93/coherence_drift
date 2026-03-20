@@ -1,0 +1,7 @@
+The process starts with initiating an MPOO (Mobile Point of Operation) Deregistration. After the deregistration is initiated, the next step is to verify the deregistration. Depending on the outcome of the verification, the process either proceeds along the 'Reject' path or continues to the next task.
+
+If the verification is rejected, the process proceeds to an end event. If the verification is not rejected, a preliminary confirmation is performed, followed by preparation for readmission.
+
+After preparing for readmission, there is a decision point. If the decision is 'Directly,' the process proceeds to another decision point. If the decision is to 'Confirm Continuation,' the process continues to confirm the continuation to MPOO, and then proceeds to the mentioned decision point.
+
+Following this decision point, the process continues to perform equipment acquisition or changes, and then proceeds to the mentioned decision point, which then leads to the end event.

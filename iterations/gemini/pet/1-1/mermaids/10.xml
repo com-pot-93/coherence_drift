@@ -1,0 +1,16 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |Reject| 11:endevent:(((endevent)))
+1:exclusivegateway:{x} --> |Otherwise| 2:parallelgateway:{AND}
+2:parallelgateway:{AND} --> 3:task:(Prepare for bike assembly)
+2:parallelgateway:{AND} --> 4:task:(Process part list)
+3:task:(Prepare for bike assembly) --> 8:parallelgateway:{AND}
+4:task:(Process part list) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Parts available| 6:task:(Reserve parts)
+5:exclusivegateway:{x} --> |Parts not available| 7:task:(Back-order parts)
+6:task:(Reserve parts) --> 8:parallelgateway:{AND}
+7:task:(Back-order parts) --> 8:parallelgateway:{AND}
+8:parallelgateway:{AND} --> 9:task:(Assemble and ship bicycle)
+9:task:(Assemble and ship bicycle) --> 10:endevent:(((endevent)))
+```

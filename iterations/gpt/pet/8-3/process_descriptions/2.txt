@@ -1,0 +1,9 @@
+The process begins when a need for personnel is identified. After recognizing this need, the next step is to determine the specific requirements for the personnel needed. Once these requirements are established, the vacancy is reported to the personnel department.
+
+At this point, a decision is made about how to proceed. If the process is to continue, the next step is to receive a job description. Upon receiving the job description, another decision is made.
+
+If the process continues, the job description is examined. After examining the job description, a check is performed to determine if it is satisfactory. If the job description is satisfactory, the vacancy is advertised. Once the vacancy has been advertised, the process continues to its conclusion.
+
+If, during the examination, the job description is found to be unsatisfactory, corrections are requested. After requesting corrections, the process returns to the step where the job description is received, and the cycle repeats until a satisfactory job description is obtained.
+
+At various decision points, if the process is not to proceed, it loops back to earlier steps as appropriate. Ultimately, once all necessary steps have been completed and the vacancy has been advertised, the process ends.

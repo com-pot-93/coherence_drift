@@ -1,0 +1,55 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive customer request)
+2:task:(Check customer request)
+3:exclusivegateway:{x}
+4:exclusivegateway:{x}
+5:exclusivegateway:{x}
+6:task:(Manual registration)
+7:task:(Automatic registration)
+8:exclusivegateway:{x}
+9:subprocess:(Attraction booking loop)
+10:task:(Send notification to the customer)
+11:exclusivegateway:{x}
+12:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive customer request)
+1:task:(Receive customer request) --> 2:task:(Check customer request)
+2:task:(Check customer request) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Request valid|4:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Request invalid|10:task:(Send notification to the customer)
+4:exclusivegateway:{x} --> |Manual|6:task:(Manual registration)
+4:exclusivegateway:{x} --> |Automatic|7:task:(Automatic registration)
+6:task:(Manual registration) --> 8:exclusivegateway:{x}
+7:task:(Automatic registration) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> 9:subprocess:(Attraction booking loop)
+9:subprocess:(Attraction booking loop) --> 11:exclusivegateway:{x}
+10:task:(Send notification to the customer) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> 12:endevent:(((endevent)))
+
+%% Subprocess for Attraction booking loop
+subgraph Attraction booking loop
+  direction LR
+  a1:exclusivegateway:{x}
+  a2:task:(Search for attraction provider)
+  a3:exclusivegateway:{x}
+  a4:task:(Book attraction)
+  a5:exclusivegateway:{x}
+  a6:task:(Receive rejection)
+  a7:task:(Receive booking confirmation)
+  a8:task:(Send confirmation to the customer)
+  a9:exclusivegateway:{x}
+
+  a1:exclusivegateway:{x} --> |true|a2:task:(Search for attraction provider)
+  a2:task:(Search for attraction provider) --> a3:exclusivegateway:{x}
+  a3:exclusivegateway:{x} --> |Provider found|a4:task:(Book attraction)
+  a3:exclusivegateway:{x} --> |Provider not found|a9:exclusivegateway:{x}
+  a4:task:(Book attraction) --> a5:exclusivegateway:{x}
+  a5:exclusivegateway:{x} --> |Rejected|a6:task:(Receive rejection)
+  a5:exclusivegateway:{x} --> |Confirmed|a7:task:(Receive booking confirmation)
+  a6:task:(Receive rejection) --> a8:task:(Send confirmation to the customer)
+  a7:task:(Receive booking confirmation) --> a8:task:(Send confirmation to the customer)
+  a8:task:(Send confirmation to the customer) --> a9:exclusivegateway:{x}
+  a9:exclusivegateway:{x} --> |Loop again|a1:exclusivegateway:{x}
+  a9:exclusivegateway:{x} --> |Exit loop|a9:exclusivegateway:{x}
+end

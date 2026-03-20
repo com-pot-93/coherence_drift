@@ -1,0 +1,11 @@
+The process starts with the "Purchase Product" task. After purchasing the product, an expense report is submitted. The process then proceeds based on whether the report requires supervisor review.
+
+If supervisor review is required ("Yes"), the "Supervisor Review" task is performed, followed by the "Approve Report" task. If supervisor review is not required ("No"), the process skips directly to the next stage.
+
+The process then merges, and proceeds through a series of gateways. The process splits into two parallel paths.
+
+One path immediately rejoins. The other path checks receipts. Based on the receipt check, the process can either be sent back for editing, escalated, or the payment can be confirmed.
+
+If the process is sent back for editing or escalated, or the payment is confirmed, the paths converge.
+
+The process then merges, and escalates. Finally, the process rejoins and ends.

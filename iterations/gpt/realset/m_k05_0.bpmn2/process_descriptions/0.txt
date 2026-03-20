@@ -1,0 +1,17 @@
+The process begins with the collection of requirements. Once the requirements are gathered, a decision is made. If the decision leads to continuing the process, the requirements are sent forward. After sending the requirements, a draft is received, and then the feasibility of the requirements is checked.
+
+Following the feasibility check, there are two possible paths:
+
+1. If the requirements need further refinement, they are refined, and the process loops back to the feasibility check.
+2. If the requirements are feasible, another decision is made. If a report for a building permit is needed, the report is prepared. Whether or not the report is prepared, the process continues to the next step.
+
+After this, an order list is created, and then an order is placed. Once the order is placed, the effort required for the next steps is calculated.
+
+At this point, two activities can happen at the same time:
+
+- The order is received.
+- A decision is made about how to proceed with the building work. Either friends are called to help, or a building company is hired. Only one of these two options is chosen.
+
+Once the chosen option (either calling friends or hiring a company) is completed, the process waits until both the order is received and the chosen help is ready. Then, the house is built.
+
+After building the house, the process returns to the earlier decision point about feasibility, allowing for possible repetition of the process. If, at any decision point, the process is not continued, the process ends.

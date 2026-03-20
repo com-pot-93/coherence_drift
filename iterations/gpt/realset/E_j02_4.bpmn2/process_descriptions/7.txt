@@ -1,0 +1,18 @@
+The process begins. Immediately, two activities are carried out at the same time: one is to check if the baby is younger than two years, and the other is to identify the parent. Once both of these activities are completed, the process continues.
+
+Next, a decision is made based on certain conditions. If the conditions are met, a notification is sent to the employer. After sending the notification, the process waits for confirmation from the employer. Once confirmation is received, the parent takes maternity leave.
+
+After the parent takes maternity leave, another decision is made regarding the type of leave or extension. There are several possible paths:
+
+- If the leave is split and the split is less than two months, the employer is notified about this. The process then waits for a notification from the employer regarding the split. Once the notification is received, the parent takes leave after the split of less than two months.
+- If the leave is split and the split is more than three months, the employer is notified about this. The process then waits for a notification from the employer regarding the split. Once the notification is received, the parent takes leave after the split of more than three months.
+- If there is an extension and it is less than two months, the employer is notified about the extension. The process then waits for a notification from the employer regarding the extension. Once the notification is received, the parent takes leave after the extension of less than two months.
+- If there is an extension and it is more than three months, the employer is notified about the extension. The process then waits for a notification from the employer regarding the extension. Once the notification is received, the parent takes leave after the extension of more than three months.
+- If both parents take leave together, this is carried out directly.
+- If none of these situations apply, the process proceeds regardless of the outcome. At this point, another decision is made, but in both possible cases, the process continues to the next stage.
+
+After any of these paths are completed, the process moves forward to the next decision point.
+
+If, at the earlier decision, the conditions were not met, the process continues with the next steps. After this, the process proceeds regardless of the outcome. Another decision is made, but in both possible cases, the process continues to the next stage.
+
+Finally, the process ends.

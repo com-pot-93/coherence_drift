@@ -1,0 +1,7 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Establish Connection to Management System)
+2:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Establish Connection to Management System)
+1:task:(Establish Connection to Management System) --> 2:endevent:(((endevent)))

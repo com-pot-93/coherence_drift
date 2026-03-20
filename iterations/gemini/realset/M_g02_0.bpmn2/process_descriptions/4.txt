@@ -1,0 +1,35 @@
+The process starts with the 'Develop basic design' task. After that, a decision is made. If the decision is true, the process continues with 'Order Lego brick sets', followed by 'Sort Lego bricks'. Then, another decision is made, after which the process splits into three parallel paths.
+
+The first parallel path involves 'Put big bricks in container', followed by a decision. Depending on whether condition A or condition B is met, either 'Outcome A' or 'Outcome B' is performed.
+
+The second parallel path involves 'Put medium bricks in container', followed by a decision. Depending on whether condition C or condition D is met, either 'Outcome C' or 'Outcome D' is performed.
+
+The third parallel path involves 'Put small bricks in container', followed by a decision. Depending on whether condition E or condition F is met, either 'Outcome E' or 'Outcome F' is performed.
+
+After all three parallel paths are completed, the process merges back into a single flow.
+
+From there, the process splits again into three parallel paths.
+
+The first parallel path involves 'Put big bricks in container', followed by a decision. Depending on whether condition G or condition H is met, either 'Outcome G' or 'Outcome H' is performed.
+
+The second parallel path involves 'Put medium bricks in container', followed by a decision. Depending on whether condition I or condition J is met, either 'Outcome I' or 'Outcome J' is performed.
+
+The third parallel path involves 'Put small bricks in container', followed by a decision. Depending on whether condition K or condition L is met, either 'Outcome K' or 'Outcome L' is performed.
+
+After all three parallel paths are completed, the process merges back into a single flow.
+
+Next, a decision is made. If the decision is true, the process continues with 'Build subcomponents', followed by another decision. From here, the process can take one of four paths: 'Order Lego brick sets', 'Test subcomponents', 'Build more subcomponents'.
+
+If 'Test subcomponents' is selected, a decision is made. If 'Redesign needed', the 'Redesign subcomponent' task is performed. If 'Assembly possible', the 'Assemble subcomponents into machine' task is performed.
+
+After 'Redesign subcomponent' or 'Assemble subcomponents into machine' is completed, the process merges.
+
+After 'Order Lego brick sets', 'Test subcomponents', or 'Build more subcomponents' is completed, the process merges.
+
+Then, a decision is made. Depending on whether condition M or condition N is met, either 'Outcome M' or 'Outcome N' is performed, followed by 'Escalate and return to decision'.
+
+If the initial decision is false, the process skips directly to a merge point.
+
+After 'Escalate and return to decision' is completed, the process merges.
+
+Finally, the process loops back to the initial decision. If the decision is false, the process ends. If the decision is true, the process ends.

@@ -1,0 +1,10 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Enter Machine Type and Serial Number)
+  1:task:(Enter Machine Type and Serial Number) --> 2:task:(Answer Questions)
+  2:task:(Answer Questions) --> 3:task:(Press Next Button)
+  3:task:(Press Next Button) --> 4:task:(Check Entered Values)
+  4:task:(Check Entered Values) --> 5:task:(Confirm Values)
+  5:task:(Confirm Values) --> 6:task:(Finish Inspection)
+  6:task:(Finish Inspection) --> 7:endevent:(((endevent)))
+```

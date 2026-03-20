@@ -1,0 +1,59 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Booking Request)
+2:task:(Process Request)
+3:exclusivegateway:{x}
+4:task:(Continue Process)
+5:endevent:(((endevent)))
+6:exclusivegateway:{x}
+7:task:(Check Outcome in Detail)
+8:task:(Check Availability)
+9:exclusivegateway:{x}
+10:task:(Propose Alternative Time and Notify Requester)
+11:task:(Notify Requester of Availability)
+12:task:(Wait for Requester Response)
+13:exclusivegateway:{x}
+14:task:(Mark Booking as Confirmed)
+15:task:(Check if Escalation Needed)
+16:exclusivegateway:{x}
+17:task:(Handle Escalation)
+18:task:(Check Availability After Escalation)
+19:exclusivegateway:{x}
+20:task:(Mark Booking as Not Confirmed)
+21:exclusivegateway:{x}
+22:task:(Send Bill)
+23:exclusivegateway:{x}
+24:task:(Send Additional Bill)
+
+0:startevent:((startevent)) --> 1:task:(Receive Booking Request)
+1:task:(Receive Booking Request) --> 2:task:(Process Request)
+2:task:(Process Request) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Do not continue|5:endevent:(((endevent)))
+3:exclusivegateway:{x} --> |Continue|4:task:(Continue Process)
+4:task:(Continue Process) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Negative outcome|5:endevent:(((endevent)))
+6:exclusivegateway:{x} --> |Positive outcome|7:task:(Check Outcome in Detail)
+7:task:(Check Outcome in Detail) --> 8:task:(Check Availability)
+8:task:(Check Availability) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Not available|10:task:(Propose Alternative Time and Notify Requester)
+9:exclusivegateway:{x} --> |Available|11:task:(Notify Requester of Availability)
+10:task:(Propose Alternative Time and Notify Requester) --> 12:task:(Wait for Requester Response)
+11:task:(Notify Requester of Availability) --> 12:task:(Wait for Requester Response)
+12:task:(Wait for Requester Response) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Booking confirmed|14:task:(Mark Booking as Confirmed)
+13:exclusivegateway:{x} --> |Booking not confirmed|20:task:(Mark Booking as Not Confirmed)
+14:task:(Mark Booking as Confirmed) --> 15:task:(Check if Escalation Needed)
+15:task:(Check if Escalation Needed) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |No escalation|5:endevent:(((endevent)))
+16:exclusivegateway:{x} --> |Escalation needed|17:task:(Handle Escalation)
+17:task:(Handle Escalation) --> 18:task:(Check Availability After Escalation)
+18:task:(Check Availability After Escalation) --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> |Escalation resolved|5:endevent:(((endevent)))
+19:exclusivegateway:{x} --> |Escalation still needed|17:task:(Handle Escalation)
+20:task:(Mark Booking as Not Confirmed) --> 21:exclusivegateway:{x}
+21:exclusivegateway:{x} --> |No bill needed|5:endevent:(((endevent)))
+21:exclusivegateway:{x} --> |Bill needed|22:task:(Send Bill)
+22:task:(Send Bill) --> 23:exclusivegateway:{x}
+23:exclusivegateway:{x} --> |No further billing|5:endevent:(((endevent)))
+23:exclusivegateway:{x} --> |Further billing needed|24:task:(Send Additional Bill)
+24:task:(Send Additional Bill) --> 23:exclusivegateway:{x}

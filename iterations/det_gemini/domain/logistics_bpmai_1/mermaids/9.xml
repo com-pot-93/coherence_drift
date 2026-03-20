@@ -1,0 +1,18 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Receive shipment request)
+  1:task:(Receive shipment request) --> 2:task:(Check product availability)
+  2:task:(Check product availability) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Branch 1| 4:task:(Check shipment address)
+  3:exclusivegateway:{x} --> |Branch 2| 12:task:(Prepare products for shipment to particular service station)
+  4:task:(Check shipment address) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Branch 1| 6:task:(Assemble inbound shipment)
+  5:exclusivegateway:{x} --> |Branch 2| 8:task:(Prepare products for regional shipment)
+  6:task:(Assemble inbound shipment) --> 7:task:(Send inbound shipment)
+  7:task:(Send inbound shipment) --> 9:exclusivegateway:{x}
+  8:task:(Prepare products for regional shipment) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> 10:task:(Receive inboun, and the process ends)
+  12:task:(Prepare products for shipment to particular service station) --> 13:exclusivegateway:{x}
+  10:task:(Receive inboun, and the process ends) --> 11:endevent:(((endevent)))
+  13:exclusivegateway:{x} --> 11:endevent:(((endevent)))
+```

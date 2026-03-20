@@ -1,0 +1,30 @@
+Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when an employee submits a request.
+2. The request is then registered in the system.
+3. After registration, the process reaches a decision point.
+4. If the process continues, the request is sent for supervisor review.
+5. The supervisor reviews the request, leading to another decision point.
+6. If the supervisor does not approve the request, the request is returned with comments.
+7. The employee reviews the supervisor’s comments.
+8. The employee then decides whether to resubmit the request or withdraw it:
+   - If the employee chooses to resubmit, the request goes back to the supervisor for another review.
+   - If the employee chooses to withdraw, the process moves to a closing step.
+9. After either resubmission or withdrawal, the process returns to the earlier decision point after supervisor review.
+10. If the supervisor approves the request, it is forwarded to the purchase department.
+11. The purchase department then reaches another decision point.
+12. If the process continues, quotations are prepared.
+13. After preparing quotations, another decision is made.
+14. If a vendor is selected, the process moves forward to another decision point.
+15. At this point, there are two options:
+    - If the vendor is confirmed, the vendor is selected.
+    - If a change of vendor is needed, the process returns to preparing quotations.
+16. Once the vendor is selected, a purchase order is generated and sent.
+17. The process then waits for product delivery.
+18. After the product is delivered, an invoice is received.
+19. The process checks if all steps are complete:
+    - If all steps are complete, the user is notified of the status.
+    - If not all steps are complete, the process moves to a series of checks and loops, which may return the process to earlier steps such as preparing quotations or selecting a vendor.
+20. After notification or completion of necessary steps, the process eventually reaches its end.
+
+Throughout the process, there are several points where decisions are made, and depending on the outcome, the process may loop back to earlier steps, such as preparing quotations, selecting a vendor, or reviewing the request. The process ensures that requests are reviewed, quotations are prepared, vendors are selected, and the employee is kept informed until the process is fully completed.

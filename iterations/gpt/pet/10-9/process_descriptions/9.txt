@@ -1,0 +1,20 @@
+The process begins with a starting point. From there, it can proceed in one of two ways:
+
+- If the process is initiated by an external party, the external party submits a change request.
+- If the process is initiated by the MPO, the MPO begins the change process.
+
+Regardless of how it starts, the next step is for the MPO to review the change request.
+
+After the review, there are two possible outcomes:
+
+- If the request is rejected, the MPO rejects the request.
+- If the request is confirmed, the MPO confirms the request.
+
+In either case, the process continues to the next stage, where the MPO carries out the change.
+
+Once the change is carried out, there are again two possible results:
+
+- If the change is successful, the MPO reports the success.
+- If the change fails, the MPO notifies about the failure.
+
+After reporting either success or failure, the process comes to an end.

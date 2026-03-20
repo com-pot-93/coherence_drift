@@ -1,0 +1,7 @@
+The process begins with a start event. Then, the "Retrieve Breached Data" task is performed, followed by the "Retrieve Breached Subjects" task. After this, the process splits into two parallel paths.
+
+In the first path, the "Data Loss Limitation" task is executed, followed by the "Evaluate Stolen Data" task. Subsequently, a decision is made. If "Condition A" is met, the "Send Notification" task is performed. Otherwise, the "Evaluate Security Standard" task is performed. After either of these tasks, another decision is made, leading to another decision point. If "Condition B" is met, the "Request Data Subject Communication" task is performed. Otherwise, this task is skipped. After this decision, the "Send Notification" task is performed.
+
+In the second parallel path, the "Notify National Authority" task is performed.
+
+Finally, after both parallel paths are completed, the "Send Notification" task is performed, and the process ends with an end event.

@@ -1,0 +1,1 @@
+The process starts when the MPON requests a device takeover bid from the MPOO. Then, the MPOO sends a tender for the equipment takeover to the MPON. Following this, the MPON places an order with the MPOO. Finally, the MPOO confirms the order from the MPON and sends the master data, which concludes the process.

@@ -1,0 +1,27 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(HFD detects a number of personnel requirements)
+2:task:(HFD reports the vacancy to Personnel Department)
+3:task:(HFD gets the job description for review from Personnel Department)
+4:exclusivegateway:{x}
+5:task:(HFD asks for corrections)
+6:exclusivegateway:{x}
+7:task:(HFD gets the job description for review from Personnel Department)
+8:exclusivegateway:{x}
+9:task:(HFD approves the job description)
+10:task:(HFD advertizes the vacancy)
+11:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(HFD detects a number of personnel requirements)
+1:task:(HFD detects a number of personnel requirements) --> 2:task:(HFD reports the vacancy to Personnel Department)
+2:task:(HFD reports the vacancy to Personnel Department) --> 3:task:(HFD gets the job description for review from Personnel Department)
+3:task:(HFD gets the job description for review from Personnel Department) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Corrections needed|5:task:(HFD asks for corrections)
+4:exclusivegateway:{x} --> |No corrections|8:exclusivegateway:{x}
+5:task:(HFD asks for corrections) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Loop|7:task:(HFD gets the job description for review from Personnel Department)
+6:exclusivegateway:{x} --> |Exit|8:exclusivegateway:{x}
+7:task:(HFD gets the job description for review from Personnel Department) --> 4:exclusivegateway:{x}
+8:exclusivegateway:{x} --> 9:task:(HFD approves the job description)
+9:task:(HFD approves the job description) --> 10:task:(HFD advertizes the vacancy)
+10:task:(HFD advertizes the vacancy) --> 11:endevent:(((endevent)))

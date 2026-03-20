@@ -1,0 +1,15 @@
+The process begins when a production order is received. After receiving the order, the next step is to prepare the production order. Once preparation is complete, a decision is made based on a specific condition.
+
+If the condition is met, the process continues with collecting raw materials. After the raw materials are collected, the materials are cut. Once the materials are cut, two activities take place at the same time: stitching and printing. Both stitching and printing are performed independently and simultaneously. When both are finished, the process continues.
+
+At this point, another decision is made. If the outcome is positive, the process moves forward to another decision point. Here, there are two possible paths: one path loops back to the previous decision, while the other proceeds to the next decision. In the next decision, if the process is to continue, it moves forward; otherwise, it stops. If it continues, another decision is made, and if the process is to continue again, the production is completed. If not, the process stops.
+
+After completing production, another decision is made. If the process continues, a quality check is performed. Once the quality check is done, a quality report is created. After the report is created, another decision is made. If the process continues, it moves to the next decision; otherwise, it loops back to the previous step.
+
+In the next decision, if the process proceeds, the next step is to determine what should happen next. At this point, another decision is made: if adjustments are needed, the settings are adjusted, and the process continues; if no action is required, the process continues without adjustments.
+
+After this, data is sent to the warehouse. Another decision is made: if no further actions are needed, the process moves to an escalation point, after which the process continues; if further actions are required, the process returns to the step where production is completed, and the process continues from there.
+
+Throughout the process, if at any decision point the condition is not met or the process is not to continue, the process moves to the end and stops.
+
+The process is structured with several decision points that determine whether to proceed, loop back to a previous step, or end the process. There are also points where activities are performed at the same time, such as stitching and printing, before the process continues. The process includes steps for quality checking, reporting, and handling adjustments or escalations as needed before finally ending.

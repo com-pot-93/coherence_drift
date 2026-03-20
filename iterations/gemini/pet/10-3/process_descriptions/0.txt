@@ -1,0 +1,10 @@
+The process starts when the MPOO deregisters at the GO.
+After that, the GO verifies the deregistration.
+Based on the verification results, the process follows one of two paths.
+In the first path, the GO rejects the deregistration of the MPOO.
+In the second path, the GO preliminarily confirms the deregistration of the MPOO, then prepares the readmission of the measuring point.
+After preparing the readmission, the process splits again.
+In one path, the process continues directly to a merging point.
+In the other path, the MPOO confirms the continuation to the MPOO, and then the process continues to the same merging point.
+After the merging point, the GO performs the equipment acquisition and/or equipment changes, assigns the GO as MPO, informs the MPOO about the end of the assignment of the MPOO, informs the MPOO about the beginning of the assignment of the GO, informs the MSPO about the assignment of the GO, and informs the SP about the assignment of the GO.
+Finally, both paths merge, and the process ends.

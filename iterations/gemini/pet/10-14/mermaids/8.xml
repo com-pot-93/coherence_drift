@@ -1,0 +1,21 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+  1:exclusivegateway:{x} --> |To MPON| 2:task:(Send bill to MPON)
+  1:exclusivegateway:{x} --> |To GO| 10:task:(Send bill to GO)
+  2:task:(Send bill to MPON) --> 3:task:(Examine bill by MPON)
+  3:task:(Examine bill by MPON) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |Confirmed| 5:task:(Confirm invoice with payment advice)
+  4:exclusivegateway:{x} --> |Rejected| 7:task:(Reject invoice)
+  5:task:(Confirm invoice with payment advice) --> 6:parallelgateway:{AND}
+  7:task:(Reject invoice) --> 6:parallelgateway:{AND}
+  6:parallelgateway:{AND} --> 8:exclusivegateway:{x}
+  10:task:(Send bill to GO) --> 11:task:(Examine bill by GO)
+  11:task:(Examine bill by GO) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> |Rejected| 13:task:(Reject invoice)
+  12:exclusivegateway:{x} --> |Confirmed| 14:task:(Confirm invoice with payment advice)
+  13:task:(Reject invoice) --> 15:parallelgateway:{AND}
+  14:task:(Confirm invoice with payment advice) --> 15:parallelgateway:{AND}
+  15:parallelgateway:{AND} --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> 9:endevent:(((endevent)))
+```

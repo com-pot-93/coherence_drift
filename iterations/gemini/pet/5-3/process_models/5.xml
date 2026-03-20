@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Submit Office Supply Request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Register Request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="Not Approved" a:alt_id="3" language="text/javascript">
+    <call id="a7" endpoint="" a:alt_id="4">
+      <parameters>
+        <label>Return to Employee</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a11" endpoint="" a:alt_id="5">
+      <parameters>
+        <label>Review Comments and Resubmit</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a13" endpoint="" a:alt_id="6">
+      <parameters>
+        <label>Wait for Approval</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+  </loop>
+  <call id="a9" endpoint="" a:alt_id="7">
+    <parameters>
+      <label>Receive Request for Approval</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a17" endpoint="" a:alt_id="8">
+    <parameters>
+      <label>Request Quotations</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <call id="a19" endpoint="" a:alt_id="9">
+      <parameters>
+        <label>Wait for Vendor Selection</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <loop mode="pre_test" condition="Vendor Not Selected">
+      <choose mode="exclusive" a:alt_id="10">
+        <alternative condition="Vendor Not Selected" language="text/javascript">
+          <call id="a23" endpoint="" a:alt_id="11">
+            <parameters>
+              <label>Choose Different Vendor</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a19" endpoint="" a:alt_id="9">
+            <parameters>
+              <label>Wait for Vendor Selection</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Vendor Selected" language="text/javascript">
+          <call id="a25" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>Generate Purchase Order</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a29" endpoint="" a:alt_id="13">
+            <parameters>
+              <label>Wait for Product Delivery</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a31" endpoint="" a:alt_id="14">
+            <parameters>
+              <label>Receive Invoice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a33" endpoint="" a:alt_id="15">
+            <parameters>
+              <label>Send Notification to User</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="16">
+            <alternative condition="">
+              <call id="a19" endpoint="" a:alt_id="9">
+                <parameters>
+                  <label>Wait for Vendor Selection</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="">
+              <escape a:alt_id="-1"/>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </loop>
+  </loop>
+</description>

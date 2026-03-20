@@ -1,0 +1,35 @@
+The process starts. Then, it splits into multiple parallel paths.
+
+In the first path, the "Add Profiling Information" task is performed. After that, this path waits for the completion of all other parallel paths before continuing.
+
+In the second path, a decision is made. If the answer is "Yes", the "Retrieve Period" task is performed. If the answer is "No", the "Retrieve Criteria" task is performed. After either of these tasks, this path waits for the completion of all other parallel paths before continuing.
+
+In the third path, the "Add Right to Rectify Info" task is performed, after which this path waits for the completion of all other parallel paths before continuing.
+
+In the fourth path, the "Add Right to Access Info" task is performed, after which this path waits for the completion of all other parallel paths before continuing.
+
+In the fifth path, the "Add Right to Erase Info" task is performed, after which this path waits for the completion of all other parallel paths before continuing.
+
+In the sixth path, the "Add Right to Data Portability Info" task is performed, after which this path waits for the completion of all other parallel paths before continuing.
+
+In the seventh path, the "Add Right to Withdraw Info" task is performed, after which this path waits for the completion of all other parallel paths before continuing.
+
+In the eighth path, the "Add Right to Lodge a Complaint Info" task is performed, after which this path waits for the completion of all other parallel paths before continuing.
+
+In the ninth path, a decision is made. If the answer is "Yes", the path continues directly. If the answer is "No", the "Retrieve Source" task is performed. After either of these options, this path waits for the completion of all other parallel paths before continuing.
+
+In the tenth path, a decision is made. If the answer is "Yes", the path continues directly. If the answer is "No", the "Add Info About International Transfer" task is performed. After either of these options, this path waits for the completion of all other parallel paths before continuing.
+
+In the eleventh path, the "Retrieve Processing Legal Basis" task is performed, after which this path waits for the completion of all other parallel paths before continuing.
+
+In the twelfth path, the "Retrieve Processing Purposes" task is performed, after which this path waits for the completion of all other parallel paths before continuing.
+
+Once all the parallel paths have completed, the process splits into two parallel paths again.
+
+In the first of these new paths, the "Retrieve Identity and Contact Details" task is performed. After that, this path waits for the completion of the other parallel path before continuing.
+
+In the second of these new paths, the "Ask for DPO Details" task is performed, followed by the "Receive DPO Details" task. After that, this path waits for the completion of the other parallel path before continuing.
+
+Once both of these parallel paths have completed, the "Collect Consent Information" task is performed, followed by the "Ask for Consent" task. Then, a decision is made based on whether consent was received or denied. If consent was received, the "Receive Consent" task is performed. If consent was denied, the "Receive Negation" task is performed.
+
+Finally, the process ends.

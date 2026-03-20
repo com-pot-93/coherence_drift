@@ -1,0 +1,11 @@
+The process starts with the initiation event.
+First, a report on meter operation is created.
+Next, the application is examined.
+Then, a decision is made: if the application is rejected, it is rejected; otherwise, if the application is confirmed, it is confirmed.
+After either rejection or confirmation, MPOO and MSPO are informed.
+Following this, equipment acquisition or changes are performed.
+Another decision is made: if the acquisition/changes are successful, GO is informed about the completion, and then MPON is assigned and confirmed; otherwise, if the acquisition/changes fail, GO is informed about the failure.
+If informing GO about the failure occurs, another decision is made: either MPON is informed about the failure, or the failure of the assignment is confirmed.
+After either informing MPON or confirming the failure, the process merges back.
+After assigning and confirming MPON, or after the process merges back following a failure, MPOO, MSPO, and SP are informed.
+Finally, the process ends.

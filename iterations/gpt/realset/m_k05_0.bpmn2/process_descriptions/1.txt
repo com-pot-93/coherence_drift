@@ -1,0 +1,24 @@
+The process begins with the collection of requirements. Once the requirements have been gathered, a decision is made on whether to continue with the process or not. If the decision is not to continue, the process ends immediately.
+
+If the decision is to continue, the requirements are sent forward. After this, a draft is received. Another decision point follows, which leads to a further evaluation.
+
+If the evaluation continues, the feasibility of the requirements is checked. This involves a series of decisions and possible loops:
+
+- If the requirements need refinement, they are sent for refinement and then checked for feasibility again.
+- If the requirements are feasible, another decision is made to determine if a building permit report is needed.
+    - If a report is needed, it is prepared before proceeding.
+    - If no report is needed, the process continues directly.
+
+After these steps, an order list is created, and an order is placed. The effort required for the next steps is then calculated.
+
+At this point, two activities happen in parallel:
+- The order is received.
+- A decision is made on how to proceed with the building work: either by calling friends to help or by hiring a building company. Only one of these options is chosen, and after the chosen action is completed, the process continues.
+
+Once both the order is received and the help (either friends or a company) is arranged, the house is built.
+
+After building the house, another decision is made:
+- If the process needs to be repeated, the feasibility check is performed again, and the process loops back through the relevant steps.
+- If the process should not continue, a series of decisions and escalations occur, which eventually lead back to an earlier evaluation step or to the end of the process.
+
+Throughout the process, there are several points where decisions may lead to repeating previous steps, refining requirements, or ending the process. The process is designed to ensure that requirements are feasible and all necessary preparations are made before building the house, with options to escalate or repeat steps as needed. The process ends when a decision is made not to continue at one of the key decision points.

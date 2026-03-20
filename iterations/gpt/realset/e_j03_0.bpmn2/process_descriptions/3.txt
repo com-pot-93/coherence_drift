@@ -1,0 +1,13 @@
+The process begins with the initiation of an assessment tool. After starting the tool, the user is prompted to specify the type of incident. At this point, there are four possible types to choose from: Accident, Almost Accident, Severe Safety/Health Risk, or Defective Protective Equipment.
+
+Depending on the selected incident type, the user is asked to confirm their choice. If "Accident" is chosen, the user confirms the accident. If "Almost Accident" is selected, the user confirms the almost accident. If "Severe Safety/Health Risk" is chosen, the user confirms the severe safety or health risk. If "Defective Protective Equipment" is selected, the user confirms the defective protective equipment. Regardless of the choice, the process continues in the same way after confirmation.
+
+Next, the user is asked to specify the details of the incident. After providing these details, the process splits into two parallel paths that are handled independently but simultaneously.
+
+The first path involves a decision. The user can either proceed directly or choose to perform additional notifications. If the user proceeds directly, the process continues to the next stage. If additional notifications are needed, the process splits further into three parallel actions: contacting superiors, contacting accident insurance, and deciding whether to contact the labour inspectorate. For the labour inspectorate, the user can either choose to contact them or skip this step. Once all chosen notifications are completed, the process continues.
+
+The second parallel path also involves a decision. The user can either proceed directly or choose to perform further notifications. If proceeding directly, the process moves forward. If further notifications are needed, the process splits into two parallel actions: contacting accident insurance and contacting the principal. Once both actions are completed, the process continues.
+
+After both parallel paths are completed, the process reaches another decision point. Here, the user can either continue directly or choose to contact private insurance. If the user chooses to contact private insurance, this action is performed before moving on. In either case, the process then proceeds to the next steps.
+
+The user is then asked to review a list of tasks. After reviewing, the user executes the proposed tasks. Once all tasks are executed, the process ends.

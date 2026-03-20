@@ -1,0 +1,21 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Retrieve Breached Data)
+  1:task:(Retrieve Breached Data) --> 2:task:(Retrieve Breached Subjects)
+  2:task:(Retrieve Breached Subjects) --> 3:parallelgateway:{AND}
+  3:parallelgateway:{AND} --> 4:task:(Data Loss Limitation)
+  3:parallelgateway:{AND} --> 14:task:(Notify National Authority)
+  4:task:(Data Loss Limitation) --> 5:task:(Evaluate Stolen Data)
+  5:task:(Evaluate Stolen Data) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Condition A| 7:task:(Send Notification)
+  6:exclusivegateway:{x} --> |Otherwise| 8:task:(Evaluate Security Standard)
+  8:task:(Evaluate Security Standard) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Condition B| 7:task:(Send Notification)
+  9:exclusivegateway:{x} --> |Otherwise| 10:task:(Request Data Subject Communication)
+  10:task:(Request Data Subject Communication) --> 11:task:(Receive Notification for Request)
+  11:task:(Receive Notification for Request) --> 12:parallelgateway:{AND}
+  7:task:(Send Notification) --> 12:parallelgateway:{AND}
+  14:task:(Notify National Authority) --> 12:parallelgateway:{AND}
+  12:parallelgateway:{AND} --> 13:task:(Send Notification)
+  13:task:(Send Notification) --> 15:endevent:(((endevent)))
+```

@@ -1,0 +1,32 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:parallelgateway:{AND}
+1:parallelgateway:{AND} --> 2:task:(Baby younger than 2 years)
+1:parallelgateway:{AND} --> 3:task:(Parent)
+2:task:(Baby younger than 2 years) --> 4:parallelgateway:{AND}
+3:task:(Parent) --> 4:parallelgateway:{AND}
+4:parallelgateway:{AND} --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |condition1| 6:task:(Self-employed/studying/housewife/man)
+5:exclusivegateway:{x} --> |condition2| 7:task:(employed)
+6:task:(Self-employed/studying/housewife/man) --> 8:parallelgateway:{AND}
+7:task:(employed) --> 8:parallelgateway:{AND}
+8:parallelgateway:{AND} --> 9:task:(Send employer notfication)
+9:task:(Send employer notfication) --> 10:task:(Recieve employer confimation)
+10:task:(Recieve employer confimation) --> 11:task:(Take maternity leave)
+11:task:(Take maternity leave) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |condition1| 13:task:(Split maternity leave)
+12:exclusivegateway:{x} --> |condition2| 17:task:(Extend maternity leave)
+12:exclusivegateway:{x} --> |condition3| 21:task:(Both parents take maternity leave)
+13:task:(Split maternity leave) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |condition1| 15:task:(maternity leave less than 2 months)
+14:exclusivegateway:{x} --> |condition2| 16:task:(maternity leave more than 3 months)
+15:task:(maternity leave less than 2 months) --> 19:parallelgateway:{AND}
+16:task:(maternity leave more than 3 months) --> 19:parallelgateway:{AND}
+17:task:(Extend maternity leave) --> 18:exclusivegateway:{x}
+18:exclusivegateway:{x} --> |condition1| 19:parallelgateway:{AND}
+18:exclusivegateway:{x} --> |condition2| 20:task:(maternity leave more than 3 months)
+19:parallelgateway:{AND} --> 22:parallelgateway:{AND}
+20:task:(maternity leave more than 3 months) --> 22:parallelgateway:{AND}
+21:task:(Both parents take maternity leave) --> 22:parallelgateway:{AND}
+22:parallelgateway:{AND} --> 23:endevent:(((endevent)))
+```

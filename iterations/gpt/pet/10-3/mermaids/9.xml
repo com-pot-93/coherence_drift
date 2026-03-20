@@ -1,0 +1,66 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(MPOO initiates deregistration request with GO)
+2:task:(GO reviews deregistration request)
+3:exclusivegateway:{x}
+4:task:(GO communicates rejection)
+5:exclusivegateway:{x}
+6:task:(Record decision not to continue with readmission)
+7:task:(MPOO confirms intention to proceed with readmission)
+8:task:(Record readmission confirmation)
+9:task:(GO acquires/changes equipment)
+10:task:(GO assigns itself as new MPO)
+11:task:(GO informs MPOO previous assignment ended)
+12:task:(GO notifies MPOO about new assignment)
+13:task:(GO informs MSPO about new assignment)
+14:task:(GO informs SP about new assignment)
+15:exclusivegateway:{x}
+16:task:(GO provides preliminary confirmation)
+17:exclusivegateway:{x}
+18:task:(Record decision not to continue with readmission (confirmation path))
+19:task:(MPOO confirms intention to proceed with readmission (confirmation path))
+20:task:(Record readmission confirmation (confirmation path))
+21:task:(GO acquires/changes equipment (confirmation path))
+22:task:(GO assigns itself as new MPO (confirmation path))
+23:task:(GO informs MPOO previous assignment ended (confirmation path))
+24:task:(GO notifies MPOO about new assignment (confirmation path))
+25:task:(GO informs MSPO about new assignment (confirmation path))
+26:task:(GO informs SP about new assignment (confirmation path))
+27:parallelgateway:{AND}
+28:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(MPOO initiates deregistration request with GO)
+1:task:(MPOO initiates deregistration request with GO) --> 2:task:(GO reviews deregistration request)
+2:task:(GO reviews deregistration request) --> 3:exclusivegateway:{x}
+
+%% Rejection branch
+3:exclusivegateway:{x} --> |Rejected|4:task:(GO communicates rejection)
+4:task:(GO communicates rejection) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Do not continue with readmission|6:task:(Record decision not to continue with readmission)
+6:task:(Record decision not to continue with readmission) --> 27:parallelgateway:{AND}
+5:exclusivegateway:{x} --> |Continue with readmission|7:task:(MPOO confirms intention to proceed with readmission)
+7:task:(MPOO confirms intention to proceed with readmission) --> 8:task:(Record readmission confirmation)
+8:task:(Record readmission confirmation) --> 9:task:(GO acquires/changes equipment)
+9:task:(GO acquires/changes equipment) --> 10:task:(GO assigns itself as new MPO)
+10:task:(GO assigns itself as new MPO) --> 11:task:(GO informs MPOO previous assignment ended)
+11:task:(GO informs MPOO previous assignment ended) --> 12:task:(GO notifies MPOO about new assignment)
+12:task:(GO notifies MPOO about new assignment) --> 13:task:(GO informs MSPO about new assignment)
+13:task:(GO informs MSPO about new assignment) --> 14:task:(GO informs SP about new assignment)
+14:task:(GO informs SP about new assignment) --> 27:parallelgateway:{AND}
+
+%% Not rejected branch
+3:exclusivegateway:{x} --> |Not rejected|16:task:(GO provides preliminary confirmation)
+16:task:(GO provides preliminary confirmation) --> 17:exclusivegateway:{x}
+17:exclusivegateway:{x} --> |Do not continue with readmission|18:task:(Record decision not to continue with readmission (confirmation path))
+18:task:(Record decision not to continue with readmission (confirmation path)) --> 27:parallelgateway:{AND}
+17:exclusivegateway:{x} --> |Continue with readmission|19:task:(MPOO confirms intention to proceed with readmission (confirmation path))
+19:task:(MPOO confirms intention to proceed with readmission (confirmation path)) --> 20:task:(Record readmission confirmation (confirmation path))
+20:task:(Record readmission confirmation (confirmation path)) --> 21:task:(GO acquires/changes equipment (confirmation path))
+21:task:(GO acquires/changes equipment (confirmation path)) --> 22:task:(GO assigns itself as new MPO (confirmation path))
+22:task:(GO assigns itself as new MPO (confirmation path)) --> 23:task:(GO informs MPOO previous assignment ended (confirmation path))
+23:task:(GO informs MPOO previous assignment ended (confirmation path)) --> 24:task:(GO notifies MPOO about new assignment (confirmation path))
+24:task:(GO notifies MPOO about new assignment (confirmation path)) --> 25:task:(GO informs MSPO about new assignment (confirmation path))
+25:task:(GO informs MSPO about new assignment (confirmation path)) --> 26:task:(GO informs SP about new assignment (confirmation path))
+26:task:(GO informs SP about new assignment (confirmation path)) --> 27:parallelgateway:{AND}
+
+27:parallelgateway:{AND} --> 28:endevent:(((endevent)))

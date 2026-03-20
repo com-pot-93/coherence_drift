@@ -1,0 +1,29 @@
+The process begins when the assessment tool is initiated. After this, the type of incident must be specified. At this point, there are four possible types of incidents to choose from: Accident, Almost Accident, Severe Safety/Health Risk, or Defective Protective Equipment.
+
+Depending on the selected incident type, the process continues with a confirmation step specific to that type. If "Accident" is chosen, the accident is confirmed. If "Almost Accident" is chosen, the almost accident is confirmed. If "Severe Safety/Health Risk" is chosen, the severe safety or health risk is confirmed. If "Defective Protective Equipment" is chosen, the defective equipment is confirmed. Regardless of which type is selected and confirmed, the process then moves forward to the next step.
+
+Next, details about the incident are provided.
+
+After providing incident details, the process splits into two parallel paths that are handled at the same time.
+
+**First parallel path:**
+- The process checks whether to proceed directly or if notifications are needed.
+- If proceeding directly, the process continues along this path.
+- If notifications are needed, there are two possible actions: contacting superiors or contacting accident insurance (for this path). Either or both of these actions may be taken.
+- Additionally, there is a check to determine whether the labour inspectorate should be contacted. If so, the labour inspectorate is contacted; if not, this step is skipped.
+- After these actions, the path comes together and continues.
+
+**Second parallel path:**
+- The process checks again whether to proceed directly or if notifications are needed.
+- If proceeding directly, the process continues along this path.
+- If notifications are needed, there are two possible actions: contacting accident insurance (for this path) or contacting the principal. Either or both of these actions may be taken.
+- After these actions, the path comes together and continues.
+
+Once both parallel paths are completed, the process continues with a final check:
+- The process determines whether to proceed directly or to contact private insurance.
+- If proceeding directly, the list of tasks is reviewed.
+- If contacting private insurance, this action is performed.
+
+After either reviewing the list of tasks or contacting private insurance, the proposed tasks are executed.
+
+The process ends after the proposed tasks have been executed.

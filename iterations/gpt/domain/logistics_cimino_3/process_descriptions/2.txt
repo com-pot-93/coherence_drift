@@ -1,0 +1,25 @@
+The process begins when a shipment request is received. Once the request is received, two activities start at the same time:
+
+1. The goods are packaged.
+2. Preparations for the necessary paperwork begin.
+
+While the goods are being packaged, the paperwork preparation proceeds in parallel. The paperwork preparation itself is divided into two possible paths, which are also handled at the same time:
+
+- One path checks whether a carrier will be used for the shipment.
+- The other path checks whether the shipment will be sent by post.
+
+If the shipment is to be sent by a carrier, the following steps are performed in order:
+- Carrier quotes are requested.
+- A carrier is assigned.
+- The necessary paperwork for the carrier is prepared.
+
+If the shipment is to be sent by post, the following steps are performed:
+- The post label is filled out.
+- It is checked whether extra insurance is needed.
+  - If extra insurance is needed, arrangements for extra insurance are made.
+  - If no extra insurance is needed, this step is skipped.
+- After the insurance decision, the postal paperwork is prepared.
+
+Once the paperwork for either the carrier or the post is ready, both paperwork preparation paths come together. At this point, the process waits until both the packaging of the goods and the paperwork preparation are finished.
+
+After both the packaging and the paperwork are complete, the paperwork is added to the package. Then, the package is moved to the pickup area. The process ends after the package has been moved to the pickup area.

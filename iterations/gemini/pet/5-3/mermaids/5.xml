@@ -1,0 +1,23 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Submit Office Supply Request)
+  1:task:(Submit Office Supply Request) --> 2:task:(Register Request)
+  2:task:(Register Request) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Not Approved| 4:task:(Return to Employee)
+  3:exclusivegateway:{x} --> |Approved| 7:task:(Receive Request for Approval)
+  4:task:(Return to Employee) --> 5:task:(Review Comments and Resubmit)
+  5:task:(Review Comments and Resubmit) --> 6:task:(Wait for Approval)
+  6:task:(Wait for Approval) --> 3:exclusivegateway:{x}
+  7:task:(Receive Request for Approval) --> 8:task:(Request Quotations)
+  8:task:(Request Quotations) --> 9:task:(Wait for Vendor Selection)
+  9:task:(Wait for Vendor Selection) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |Vendor Not Selected| 11:task:(Choose Different Vendor)
+  10:exclusivegateway:{x} --> |Vendor Selected| 12:task:(Generate Purchase Order)
+  11:task:(Choose Different Vendor) --> 9:task:(Wait for Vendor Selection)
+  12:task:(Generate Purchase Order) --> 13:task:(Wait for Product Delivery)
+  13:task:(Wait for Product Delivery) --> 14:task:(Receive Invoice)
+  14:task:(Receive Invoice) --> 15:task:(Send Notification to User)
+  15:task:(Send Notification to User) --> 16:exclusivegateway:{x}
+  16:exclusivegateway:{x} --> 9:task:(Wait for Vendor Selection)
+  16:exclusivegateway:{x} --> 17:endevent:(((endevent)))
+```

@@ -1,0 +1,7 @@
+The process starts when personnel requirements are detected. Then, a vacancy is reported. Depending on whether a job description is available, the process either receives the job description or proceeds without it.
+
+If the job description is received, a decision is made. If the condition is true, the process continues; otherwise, it skips ahead. Subsequently, another decision is made, and if the condition is true, the job description is reviewed. After the review, another decision is made. If corrections are needed, they are requested and made, and the job description is reviewed again. If no corrections are needed, the vacancy is advertised. The process then rejoins the flow where the second decision was made. The process also rejoins the flow if the job description was not available.
+
+If no job description was initially available, a decision is made. If the condition is true, the vacancy is advertised. Following the advertisement, another decision is made. If the condition is true, the job description is reviewed. After the review, a decision is made. If corrections are needed, they are requested and made, and the job description is reviewed again. If no corrections are needed, the process escalates and rejoins the flow where the previous decision was made. The process then rejoins the flow where the first decision was made.
+
+Finally, the process ends.

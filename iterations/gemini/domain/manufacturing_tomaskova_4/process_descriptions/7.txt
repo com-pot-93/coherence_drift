@@ -1,0 +1,25 @@
+The process starts and immediately encounters a decision point. If the condition is "Yes", it proceeds to another decision point; otherwise, it jumps to a parallel gateway.
+
+If the second decision point is "Yes", the process advances to a third decision point; otherwise, it jumps to the parallel gateway.
+
+If the third decision point is "Yes", the process advances to a fourth decision point; otherwise, it jumps to the parallel gateway.
+
+If the fourth decision point is "Yes", the process advances to a fifth decision point; otherwise, it jumps to the parallel gateway.
+
+If the fifth decision point is "true", the process advances to a sixth decision point; otherwise, it jumps to the parallel gateway.
+
+If the sixth decision point is "true", the process advances to a seventh decision point; otherwise, it jumps to the parallel gateway.
+
+The seventh decision point leads to another decision point. If the condition is "true", the process continues to the "Production Planning" task; otherwise, it loops back to the sixth decision point.
+
+After "Production Planning", the process reaches another decision point, which then leads to another decision point.
+
+If the second decision point is "No", the process jumps to a later decision point; otherwise, if it is "Yes", it proceeds to another decision point.
+
+If the third decision point is "Yes", the process performs "Assign Workers", "Production Design", "Product Delivery", "Production Logout", and "Quality Control" tasks in sequence. After "Quality Control", the process encounters another decision point. If the answer is "No", the process jumps to a later decision point. If the answer is "Yes", the process returns to the "Production Planning" task, which then triggers an escalation event before jumping to the same later decision point.
+
+If the third decision point is "No", the process jumps to a later decision point.
+
+If the first decision point is "No", the process jumps to the parallel gateway.
+
+The parallel gateway initiates two parallel paths: one performs "Register to Finished Stock" followed by "Stocking to Finished Goods", and the other performs "Register to Semi-Finished Stock" followed by "Loading to Semi-Finished Stock". Both paths converge at a parallel gateway, and the process ends.

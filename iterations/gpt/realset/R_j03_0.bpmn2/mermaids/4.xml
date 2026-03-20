@@ -1,0 +1,17 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive fridge symptoms and type)
+2:task:(Schedule service appointment)
+3:task:(Technician inspects fridge)
+4:task:(Confirm fridge is working properly)
+5:task:(Request facility rating)
+6:task:(User provides facility rating)
+7:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive fridge symptoms and type)
+1:task:(Receive fridge symptoms and type) --> 2:task:(Schedule service appointment)
+2:task:(Schedule service appointment) --> 3:task:(Technician inspects fridge)
+3:task:(Technician inspects fridge) --> 4:task:(Confirm fridge is working properly)
+4:task:(Confirm fridge is working properly) --> 5:task:(Request facility rating)
+5:task:(Request facility rating) --> 6:task:(User provides facility rating)
+6:task:(User provides facility rating) --> 7:endevent:(((endevent)))

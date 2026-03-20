@@ -1,0 +1,7 @@
+The process begins when a claim is received. First, the claim is reviewed to check the accompanying documents. After the documents are checked, the claim is registered in the system. Once the claim is registered, it is picked up for processing.
+
+Next, the insurance details related to the claim are checked. After verifying the insurance details, the validity of the claim is assessed.
+
+At this point, a decision is made based on the assessment. If the claim is approved, repairs are authorized, and then payment is scheduled. If the claim is not approved, the claim is rejected.
+
+Regardless of whether the claim is approved or rejected, a decision letter is sent to inform the claimant of the outcome. The process ends after the decision letter is sent.

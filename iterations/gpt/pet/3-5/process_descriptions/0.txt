@@ -1,0 +1,16 @@
+The process begins when the Mail Processing Unit collects mail from the party. After collecting the mail, the Mail Clerk sorts the unopened mail. Once sorted, the Mail Clerk distributes the mail to the appropriate recipients.
+
+Next, the Registry opens the mail and then sorts it. After sorting, the Registry registers the mail in a Mail Register. Following this, the Assistant Registry Manager (ARM) performs a quality check on the registered mail.
+
+At this point, there is a decision to be made based on the outcome of the quality check:
+
+- If the mail requires additional information or requisition, the ARM compiles a list of requisition items. The ARM then sends this list back to the party. After sending the requisition list, the process moves towards completion.
+
+- If the mail is complete and does not require requisition, the ARM captures the matter details. The ARM then provides these matter details to the Cashier. The Cashier takes the applicable fees from the party.
+
+After the fees are taken, two sets of activities happen at the same time:
+
+1. The ARM puts the receipt in place, copies the relevant documents into an envelope, and posts these documents to the party.
+2. At the same time, the Cashier captures the party details and prints the Physical Court File.
+
+Once both sets of activities are finished, the process continues towards completion. The process ends after all these steps are completed.

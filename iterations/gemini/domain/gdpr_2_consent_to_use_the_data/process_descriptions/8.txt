@@ -1,0 +1,13 @@
+The process starts. Then, it proceeds to execute several tasks in parallel: adding profiling information, adding the right to rectify information, adding the right to access information, adding the right to erase information, adding the right to data portability information, adding the right to withdraw information, adding the right to lodge a complaint information, retrieving the processing legal basis, and retrieving the processing purposes. In parallel with these tasks, the process also evaluates three exclusive gateways.
+
+First, it checks a condition. If the condition is met ("Yes"), the process proceeds directly. If not ("No"), it retrieves the source.
+
+Second, it checks another condition. If the condition is met ("Yes"), the process proceeds directly. If not ("No"), it adds information about international transfer.
+
+Third, it checks yet another condition. If the condition is met ("Yes"), the process retrieves the period. If not ("No"), it retrieves the criteria.
+
+After all parallel tasks and conditional checks are completed, the process continues by executing two tasks in parallel: retrieving identity and contact details, and asking for DPO details, which is followed by receiving DPO details.
+
+Once both parallel branches are complete, the process collects consent information, asks for consent, and then routes based on an exclusive gateway. If consent is received, the process receives the consent. If consent is denied, the process receives the negation.
+
+Finally, after receiving either consent or negation, the process ends.

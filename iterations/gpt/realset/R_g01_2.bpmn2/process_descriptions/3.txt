@@ -1,0 +1,31 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your BPMN model, written in clear and accessible language:
+
+---
+
+The process begins when a person starts by entering the name of the manufacturer. After this, the person enters the model information.
+
+At this point, a decision is made: the person can either stop the process or continue. If the process is stopped, it moves directly towards the end. If the process continues, another decision is made, where the person can choose between a negative or positive path.
+
+If the negative path is chosen, another decision is made. If the answer is false, the process splits into two parallel activities: one is to determine the list of parts needed, and the other is to identify the necessary tools. Both activities must be completed before moving forward.
+
+Once both lists are ready, the person checks the inventory. Here, another decision is made: the process can either stop (and move towards the end) or continue.
+
+If the process continues, the next decision is whether help is needed. If no help is needed, the person proceeds to obtain the needed items. If help is needed, another decision is made: the person can choose to contact a friend or not. If a friend is contacted, this is done before moving on; if not, the process continues directly. In both cases, the person then obtains the needed items.
+
+After obtaining the items, the person generates repair instructions. At this point, another decision is made: the process can either continue or repeat the instructions. If it continues, the next step is to follow the instructions.
+
+After following the instructions, another decision is made. The person can choose to repeat the instructions or not. If repeating, the process loops back to following the instructions again. If not, the process moves to escalating the issue.
+
+When escalating the issue, a series of decisions are made to determine if the issue can be resolved or if it needs to be sent to an expert. If it is not possible to resolve, the issue is sent to an expert. If it is possible, the process continues.
+
+After this, the person is asked to leave a review. Following the review, there are options to upload a video or skip this step. If a video is uploaded, it is saved to a database. This step can be repeated or skipped as needed.
+
+If, at any point, the process requires entering information about a broken part, the person does so. After entering a broken part, the person can indicate if they are done or if there are more broken parts to enter. If more parts need to be entered, the process loops back to entering another broken part. If done, the process escalates the issue and follows a similar decision path as before, determining if the issue can be resolved or needs to be sent to an expert.
+
+Throughout the process, there are multiple points where the person can choose to repeat steps, escalate issues, or end the process. The process continues through these cycles of decisions, actions, and reviews until all necessary steps are completed or the process is stopped.
+
+Finally, after all decisions and actions have been taken, the process reaches its end.
+
+---
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step, decision, and possible loop is included and described in a way that can be reconstructed into the original process model.

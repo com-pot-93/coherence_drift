@@ -1,0 +1,11 @@
+The process begins when MPON informs MPOO about their intention to change equipment. After this notification, MPOO must decide whether or not to remove their own equipment.
+
+If MPOO chooses to remove their own equipment, they announce this decision. If MPOO decides not to remove their own equipment, they inform MPON of this choice. Regardless of which path is taken, the process continues to the next step.
+
+Next, a decision is made about who is responsible for performing the final reading. If MPON is responsible, they carry out the final reading. If MPOO is responsible, then MPOO performs the final reading. After the final reading is completed by the designated party, the process moves forward.
+
+Following this, another decision is made regarding who will remove the old equipment. If MPON is responsible, they remove the old equipment. If MPOO is responsible, then MPOO removes the old equipment. Once the old equipment has been removed by the appropriate party, the process continues.
+
+After the old equipment is removed, MPON installs the new device. Once the new device is installed, MPON reads the meter count from the new meter. MPON then sends the final readings and related data to GO.
+
+GO, upon receiving the data, notifies MSP about the required data. The process concludes at this point.

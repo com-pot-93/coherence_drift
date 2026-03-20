@@ -1,0 +1,69 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:exclusivegateway:{x}
+  2:task:(Select course)
+  3:task:(Show dates)
+  4:task:(Select one date)
+  5:task:(Check if account  at sports institute available)
+  6:exclusivegateway:{x}
+  7:task:(Check if registered at an eligible university)
+  8:exclusivegateway:{x}
+  9:task:(Register with account)
+  10:exclusivegateway:{x}
+  11:task:(Send request for activation)
+  12:task:(Wait for response)
+  13:exclusivegateway:{x}
+  14:exclusivegateway:{x}
+  15:task:(Send request for activation)
+  16:task:(Wait for response)
+  17:exclusivegateway:{x}
+  18:exclusivegateway:{x}
+  19:task:(Log into account)
+  20:task:(Provide payment information)
+  21:task:(Complete registration for course)
+  22:parallelgateway:{AND}
+  23:task:(Tweet friends)
+  24:task:(Receive ticket)
+  25:parallelgateway:{AND}
+  26:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+  1:exclusivegateway:{x} --> |true|2:task:(Select course)
+  2:task:(Select course) --> 3:task:(Show dates)
+  3:task:(Show dates) --> 4:task:(Select one date)
+  4:task:(Select one date) --> 5:task:(Check if account  at sports institute available)
+  5:task:(Check if account  at sports institute available) --> 6:exclusivegateway:{x}
+  %% D1 split
+  6:exclusivegateway:{x} --> |Account available|7:task:(Check if registered at an eligible university)
+  6:exclusivegateway:{x} --> |Account not available|15:task:(Send request for activation)
+  %% D1 branch 1
+  7:task:(Check if registered at an eligible university) --> 8:exclusivegateway:{x}
+  %% D2 split
+  8:exclusivegateway:{x} --> |Yes|9:task:(Register with account)
+  8:exclusivegateway:{x} --> |No|11:task:(Send request for activation)
+  %% D2 branch 1
+  9:task:(Register with account) --> 10:exclusivegateway:{x}
+  %% D2 branch 2
+  11:task:(Send request for activation) --> 12:task:(Wait for response)
+  12:task:(Wait for response) --> 13:exclusivegateway:{x}
+  %% D3 split/merge (no further tasks described, so direct merge)
+  10:exclusivegateway:{x} --> 14:exclusivegateway:{x}
+  13:exclusivegateway:{x} --> 14:exclusivegateway:{x}
+  %% D2 merge
+  14:exclusivegateway:{x} --> 18:exclusivegateway:{x}
+  %% D1 branch 2
+  15:task:(Send request for activation) --> 16:task:(Wait for response)
+  16:task:(Wait for response) --> 17:exclusivegateway:{x}
+  %% D4 split/merge (no further tasks described, so direct merge)
+  17:exclusivegateway:{x} --> 18:exclusivegateway:{x}
+  %% D1 merge
+  18:exclusivegateway:{x} --> 19:task:(Log into account)
+  19:task:(Log into account) --> 20:task:(Provide payment information)
+  20:task:(Provide payment information) --> 21:task:(Complete registration for course)
+  21:task:(Complete registration for course) --> 22:parallelgateway:{AND}
+  22:parallelgateway:{AND} --> 23:task:(Tweet friends)
+  22:parallelgateway:{AND} --> 24:task:(Receive ticket)
+  23:task:(Tweet friends) --> 25:parallelgateway:{AND}
+  24:task:(Receive ticket) --> 25:parallelgateway:{AND}
+  25:parallelgateway:{AND} --> 26:endevent:(((endevent)))
+  1:exclusivegateway:{x} --> |false|26:endevent:(((endevent)))

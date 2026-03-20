@@ -1,0 +1,1 @@
+First, a task with the id a1280 and the label "INQ transmits the transaction data request" occurs. Then a task with the id a1281 and the label "IP checks the request of the INQ" occurs. Then a task with the id a1282 and the label "IP answers the question of the INQ" occurs, and the process ends.

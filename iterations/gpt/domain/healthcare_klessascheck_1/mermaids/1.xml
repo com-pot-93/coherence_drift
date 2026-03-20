@@ -1,0 +1,49 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Diagnose Non-specific Low Back Pain)
+  2:exclusivegateway:{x}
+  3:task:(Apply Superficial Heat or Other Non-drug Treatments)
+  4:task:(Apply Exercise or Other Non-drug Treatments)
+  5:exclusivegateway:{x}
+  6:exclusivegateway:{x}
+  7:task:(Prescribe NSAID or SMR)
+  8:exclusivegateway:{x}
+  9:exclusivegateway:{x}
+  10:task:(Prescribe NSAID)
+  11:exclusivegateway:{x}
+  12:task:(Prescribe Opioid)
+  13:exclusivegateway:{x}
+  14:exclusivegateway:{x}
+  15:task:(Proceed to Next Stage)
+  16:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Diagnose Non-specific Low Back Pain)
+  1:task:(Diagnose Non-specific Low Back Pain) --> 2:exclusivegateway:{x}
+  2:exclusivegateway:{x} --> |Superficial heat/other|3:task:(Apply Superficial Heat or Other Non-drug Treatments)
+  2:exclusivegateway:{x} --> |Exercise/other|4:task:(Apply Exercise or Other Non-drug Treatments)
+
+  %% Superficial heat path
+  3:task:(Apply Superficial Heat or Other Non-drug Treatments) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Medication needed|7:task:(Prescribe NSAID or SMR)
+  5:exclusivegateway:{x} --> |No medication|14:exclusivegateway:{x}
+
+  7:task:(Prescribe NSAID or SMR) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Continue|14:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Other|14:exclusivegateway:{x}
+
+  %% Exercise path
+  4:task:(Apply Exercise or Other Non-drug Treatments) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |NSAID needed|10:task:(Prescribe NSAID)
+  9:exclusivegateway:{x} --> |No medication|14:exclusivegateway:{x}
+
+  10:task:(Prescribe NSAID) --> 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |Opioid needed|12:task:(Prescribe Opioid)
+  11:exclusivegateway:{x} --> |No opioid|14:exclusivegateway:{x}
+
+  12:task:(Prescribe Opioid) --> 13:exclusivegateway:{x}
+  13:exclusivegateway:{x} --> |Continue|14:exclusivegateway:{x}
+  13:exclusivegateway:{x} --> |Other|14:exclusivegateway:{x}
+
+  %% Merge all branches
+  14:exclusivegateway:{x} --> 15:task:(Proceed to Next Stage)
+  15:task:(Proceed to Next Stage) --> 16:endevent:(((endevent)))

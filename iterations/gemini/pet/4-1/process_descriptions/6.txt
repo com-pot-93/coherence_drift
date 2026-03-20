@@ -1,0 +1,13 @@
+The process starts with notifying a customer, followed by inquiring about patient data. Next, the nursing officer is informed, leading to a full patient inquiry. The information is then recorded, and a registration form is handed in. This form's information is stored, and an information form is printed.
+
+A decision is made: if the answer is "Yes," a patient file is created, the registration form is stored, registration cards are produced, and a new patient is added. If the answer is "No," the process skips directly to the next step.
+
+Following either path, a staff meeting is held, and new patients are assigned. These assignments are recorded, and the medical file is determined. Information is added to the assignment list, and the assignments are stored. Registration cards are then passed on.
+
+Another decision is made: if the answer is "Yes," a letter is prepared and sent, a copy of the medical file is received, the intaker is informed, and a copy is added to the patient file. If the answer is "No," the process skips directly to the next step.
+
+Regardless of the path taken, a meeting is planned, the patient is examined, and observations are registered. Notes are copied to the file, and a checklist is added to the file.
+
+A further decision is made: if the answer is "Yes," the first meeting is planned, tapes are typed, and information is added to the patient file. If the answer is "No," the process skips directly to the next step.
+
+Following either path, the patient is added to a list, and this list is provided to the team leader. Finally, a treatment plan is formulated, and the process ends.

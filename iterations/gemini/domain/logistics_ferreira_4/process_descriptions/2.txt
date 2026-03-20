@@ -1,0 +1,9 @@
+The process starts with retrieving temperature values. Based on the temperature values, the process either generates a standard notification or proceeds to gather more information in parallel.
+
+In parallel, the process retrieves the container status and estimates it. Based on the estimation, it either generates a container change request or proceeds without it.
+
+Also in parallel, the process retrieves the client location and estimates the distance. Based on the distance, it either estimates the delivery time and generates a route change request based on the estimation, or proceeds without estimating the delivery time.
+
+In parallel, the process retrieves the goods status and estimates it. Based on the estimation, it either evaluates damages and then either generates a removal request or generates a price change request, or proceeds without evaluating damages.
+
+After gathering all the information in parallel, the process sends the generated messages. Finally, the process either ends after sending the generated messages or after generating a standard notification.

@@ -1,0 +1,19 @@
+The process begins when the assessment tool is initiated. After starting, the next step is to specify the type of incident that has occurred.
+
+At this point, a decision is made regarding the incident type. There are four possible options:
+
+1. If the incident is classified as an "Accident," the process continues with confirming that an accident has occurred.
+2. If the incident is classified as an "Almost Accident," the process continues with confirming that an almost accident has occurred.
+3. If the incident is classified as a "Severe Safety or Health Risk," the process continues with confirming that a severe safety or health risk has occurred.
+4. If the incident is classified as "Defective Equipment," the process continues with confirming that defective equipment has been identified.
+
+Regardless of which type is selected and confirmed, the process then moves forward to providing details about the incident.
+
+After the incident details are provided, another decision is made about how to proceed:
+
+- If the choice is to "Proceed Directly," the next step is to review a list of tasks.
+- If the choice is to "Contact Private Insurance First," the next step is to contact private insurance.
+
+After either reviewing the list of tasks or contacting private insurance, the process continues to executing the proposed tasks.
+
+Once the proposed tasks have been executed, the process comes to an end.

@@ -1,0 +1,15 @@
+The process begins with the start of the procedure. The first step is to back up the database. Once the backup is complete, the database is checked.
+
+After checking the database, a decision is made. If the process continues along the main path, the next step is to check the CRM system. Following this, another decision is made. If the process continues, all defaulting accounts and customers are registered. After this registration, another decision point is reached.
+
+If the process continues, a new table of defaulting accounts is produced. This table is then sent to account management. After sending the table, another decision is made, which leads to the next stage of the process.
+
+At each of the previous decision points, if the process does not continue along the main path, it moves directly to the next stage, bypassing the steps described above.
+
+Once the process reaches the next stage, another decision is made. If necessary, an alert is sent to the supervisor. After sending the alert, the process continues to the next step. If the alert is not sent, the process moves directly to the next step.
+
+The next step is to check the CRM system again. After this check, a decision is made. If required, the process reconciles with the existing account defaulters table. After reconciliation, the process continues. If reconciliation is not needed, the process moves directly to the next stage.
+
+At the next stage, another decision is made. If necessary, a message is sent to the supervisor. After sending the message, the process continues. Alternatively, the process may proceed to complete the reconciliation. After completing reconciliation, the process continues.
+
+Finally, the process ends.

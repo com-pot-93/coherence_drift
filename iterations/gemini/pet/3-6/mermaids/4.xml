@@ -1,0 +1,18 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Insurance Active: No| 2:task:(Inform Claimant of Claim Rejection)
+    1:exclusivegateway:{x} --> |Insurance Active: Yes| 3:task:(Evaluate Claim Severity and Send Forms)
+    2:task:(Inform Claimant of Claim Rejection) --> 4:exclusivegateway:{x}
+    3:task:(Evaluate Claim Severity and Send Forms) --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Condition A| 6:task:(Proceed to Next Step)
+    5:exclusivegateway:{x} --> |Condition B| 7:task:(Check Completeness of Forms)
+    6:task:(Proceed to Next Step) --> 4:exclusivegateway:{x}
+    7:task:(Check Completeness of Forms) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> 8:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} --> |Forms Complete: Yes| 10:task:(Register Claim)
+    9:exclusivegateway:{x} --> |Forms Complete: No| 11:task:(Inform Claimant to Update Forms)
+    10:task:(Register Claim) --> 12:endevent:(((endevent)))
+    11:task:(Inform Claimant to Update Forms) --> 12:endevent:(((endevent)))
+```

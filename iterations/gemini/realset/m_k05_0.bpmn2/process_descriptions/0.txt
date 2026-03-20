@@ -1,0 +1,7 @@
+The process starts. First, the requirements are collected. Then, based on a condition, the process either proceeds to send the requirements or it jumps to another step. If the requirements are sent, the process continues with receiving a draft and checking its feasibility. After checking feasibility, the process splits based on a condition.
+
+If the condition is met, the requirements are refined, and the process rejoins the other branch later. If the condition is not met, the process splits again based on another condition. Depending on the condition, the process either proceeds to report for a building permit or skips this step. After reporting for a building permit or skipping it, the process continues to create an order list, place the order, and calculate the effort.
+
+After calculating the effort, the process splits into two parallel paths. The first path involves getting the order. The second path splits based on a condition. Depending on the condition, the process either calls friends or hires a building company. After either calling friends or hiring a building company, the two parallel paths merge.
+
+After the merge, the house is built, and the process rejoins the earlier branch where requirements were refined. Finally, the process returns to the point where it either sends the requirements or jumps to another step, and then it ends.

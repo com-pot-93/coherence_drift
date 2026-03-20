@@ -1,0 +1,16 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Ask for Burger or Menu)
+2:exclusivegateway:{x}
+3:task:(Process Burger Order)
+4:task:(Process Menu Order)
+5:exclusivegateway:{x}
+6:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Ask for Burger or Menu)
+1:task:(Ask for Burger or Menu) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Burger|3:task:(Process Burger Order)
+2:exclusivegateway:{x} --> |Menu|4:task:(Process Menu Order)
+3:task:(Process Burger Order) --> 5:exclusivegateway:{x}
+4:task:(Process Menu Order) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> 6:endevent:(((endevent)))

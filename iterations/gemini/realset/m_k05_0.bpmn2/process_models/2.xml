@@ -1,0 +1,2463 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Collect Requirements</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="post_test" condition="No">
+    <choose mode="exclusive" a:alt_id="2">
+      <alternative condition="No" language="text/javascript"/>
+      <alternative condition="Yes" language="text/javascript">
+        <loop mode="pre_test" condition="true">
+          <call id="a5" endpoint="" a:alt_id="3">
+            <parameters>
+              <label>Send Requirements</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a9" endpoint="" a:alt_id="4">
+            <parameters>
+              <label>Receive Draft</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a11" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Check Feasibility</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="6">
+            <alternative condition="Yes" language="text/javascript">
+              <loop mode="pre_test" condition="true">
+                <call id="a15" endpoint="" a:alt_id="7">
+                  <parameters>
+                    <label>Refine Requirements</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a5" endpoint="" a:alt_id="3">
+                  <parameters>
+                    <label>Send Requirements</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a9" endpoint="" a:alt_id="4">
+                  <parameters>
+                    <label>Receive Draft</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a11" endpoint="" a:alt_id="5">
+                  <parameters>
+                    <label>Check Feasibility</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <loop mode="post_test" condition="Yes">
+                  <call id="a15" endpoint="" a:alt_id="7">
+                    <parameters>
+                      <label>Refine Requirements</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a5" endpoint="" a:alt_id="3">
+                    <parameters>
+                      <label>Send Requirements</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a9" endpoint="" a:alt_id="4">
+                    <parameters>
+                      <label>Receive Draft</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a11" endpoint="" a:alt_id="5">
+                    <parameters>
+                      <label>Check Feasibility</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </loop>
+              </loop>
+            </alternative>
+            <alternative condition="">
+              <choose mode="exclusive" a:alt_id="8">
+                <alternative condition="">
+                  <call id="a19" endpoint="" a:alt_id="9">
+                    <parameters>
+                      <label>Create Report</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a21" endpoint="" a:alt_id="10">
+                    <parameters>
+                      <label>Create Order List</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a25" endpoint="" a:alt_id="11">
+                    <parameters>
+                      <label>Place Order</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a27" endpoint="" a:alt_id="12">
+                    <parameters>
+                      <label>Calculate Effort</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <parallel wait="-1" cancel="last" a:alt_id="13">
+                    <parallel_branch>
+                      <call id="a31" endpoint="" a:alt_id="14">
+                        <parameters>
+                          <label>Get Order</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <loop mode="pre_test" condition="true">
+                        <call id="a15" endpoint="" a:alt_id="7">
+                          <parameters>
+                            <label>Refine Requirements</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a5" endpoint="" a:alt_id="3">
+                          <parameters>
+                            <label>Send Requirements</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a9" endpoint="" a:alt_id="4">
+                          <parameters>
+                            <label>Receive Draft</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a11" endpoint="" a:alt_id="5">
+                          <parameters>
+                            <label>Check Feasibility</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a19" endpoint="" a:alt_id="9">
+                          <parameters>
+                            <label>Create Report</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a21" endpoint="" a:alt_id="10">
+                          <parameters>
+                            <label>Create Order List</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a25" endpoint="" a:alt_id="11">
+                          <parameters>
+                            <label>Place Order</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a27" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Calculate Effort</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a31" endpoint="" a:alt_id="14">
+                          <parameters>
+                            <label>Get Order</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <loop mode="pre_test" condition="true">
+                          <call id="a15" endpoint="" a:alt_id="7">
+                            <parameters>
+                              <label>Refine Requirements</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a5" endpoint="" a:alt_id="3">
+                            <parameters>
+                              <label>Send Requirements</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a9" endpoint="" a:alt_id="4">
+                            <parameters>
+                              <label>Receive Draft</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a11" endpoint="" a:alt_id="5">
+                            <parameters>
+                              <label>Check Feasibility</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a19" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>Create Report</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a21" endpoint="" a:alt_id="10">
+                            <parameters>
+                              <label>Create Order List</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a25" endpoint="" a:alt_id="11">
+                            <parameters>
+                              <label>Place Order</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a27" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Calculate Effort</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <loop mode="pre_test" condition="true">
+                            <call id="a31" endpoint="" a:alt_id="14">
+                              <parameters>
+                                <label>Get Order</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a15" endpoint="" a:alt_id="7">
+                              <parameters>
+                                <label>Refine Requirements</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a5" endpoint="" a:alt_id="3">
+                              <parameters>
+                                <label>Send Requirements</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a9" endpoint="" a:alt_id="4">
+                              <parameters>
+                                <label>Receive Draft</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a11" endpoint="" a:alt_id="5">
+                              <parameters>
+                                <label>Check Feasibility</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a19" endpoint="" a:alt_id="9">
+                              <parameters>
+                                <label>Create Report</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a21" endpoint="" a:alt_id="10">
+                              <parameters>
+                                <label>Create Order List</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a25" endpoint="" a:alt_id="11">
+                              <parameters>
+                                <label>Place Order</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a27" endpoint="" a:alt_id="12">
+                              <parameters>
+                                <label>Calculate Effort</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <loop mode="pre_test" condition="true">
+                              <call id="a31" endpoint="" a:alt_id="14">
+                                <parameters>
+                                  <label>Get Order</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a15" endpoint="" a:alt_id="7">
+                                <parameters>
+                                  <label>Refine Requirements</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a5" endpoint="" a:alt_id="3">
+                                <parameters>
+                                  <label>Send Requirements</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a9" endpoint="" a:alt_id="4">
+                                <parameters>
+                                  <label>Receive Draft</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a11" endpoint="" a:alt_id="5">
+                                <parameters>
+                                  <label>Check Feasibility</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a19" endpoint="" a:alt_id="9">
+                                <parameters>
+                                  <label>Create Report</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a21" endpoint="" a:alt_id="10">
+                                <parameters>
+                                  <label>Create Order List</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a25" endpoint="" a:alt_id="11">
+                                <parameters>
+                                  <label>Place Order</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <loop mode="pre_test" condition="true">
+                                <call id="a27" endpoint="" a:alt_id="12">
+                                  <parameters>
+                                    <label>Calculate Effort</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a31" endpoint="" a:alt_id="14">
+                                  <parameters>
+                                    <label>Get Order</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a15" endpoint="" a:alt_id="7">
+                                  <parameters>
+                                    <label>Refine Requirements</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a5" endpoint="" a:alt_id="3">
+                                  <parameters>
+                                    <label>Send Requirements</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a9" endpoint="" a:alt_id="4">
+                                  <parameters>
+                                    <label>Receive Draft</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a11" endpoint="" a:alt_id="5">
+                                  <parameters>
+                                    <label>Check Feasibility</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a19" endpoint="" a:alt_id="9">
+                                  <parameters>
+                                    <label>Create Report</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a21" endpoint="" a:alt_id="10">
+                                  <parameters>
+                                    <label>Create Order List</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <loop mode="pre_test" condition="true">
+                                  <call id="a25" endpoint="" a:alt_id="11">
+                                    <parameters>
+                                      <label>Place Order</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a27" endpoint="" a:alt_id="12">
+                                    <parameters>
+                                      <label>Calculate Effort</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a31" endpoint="" a:alt_id="14">
+                                    <parameters>
+                                      <label>Get Order</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a15" endpoint="" a:alt_id="7">
+                                    <parameters>
+                                      <label>Refine Requirements</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a5" endpoint="" a:alt_id="3">
+                                    <parameters>
+                                      <label>Send Requirements</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a9" endpoint="" a:alt_id="4">
+                                    <parameters>
+                                      <label>Receive Draft</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a11" endpoint="" a:alt_id="5">
+                                    <parameters>
+                                      <label>Check Feasibility</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a19" endpoint="" a:alt_id="9">
+                                    <parameters>
+                                      <label>Create Report</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <loop mode="pre_test" condition="true">
+                                    <call id="a21" endpoint="" a:alt_id="10">
+                                      <parameters>
+                                        <label>Create Order List</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <call id="a25" endpoint="" a:alt_id="11">
+                                      <parameters>
+                                        <label>Place Order</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <call id="a27" endpoint="" a:alt_id="12">
+                                      <parameters>
+                                        <label>Calculate Effort</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <call id="a31" endpoint="" a:alt_id="14">
+                                      <parameters>
+                                        <label>Get Order</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <call id="a15" endpoint="" a:alt_id="7">
+                                      <parameters>
+                                        <label>Refine Requirements</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <call id="a5" endpoint="" a:alt_id="3">
+                                      <parameters>
+                                        <label>Send Requirements</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <call id="a9" endpoint="" a:alt_id="4">
+                                      <parameters>
+                                        <label>Receive Draft</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <call id="a11" endpoint="" a:alt_id="5">
+                                      <parameters>
+                                        <label>Check Feasibility</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <loop mode="pre_test" condition="true">
+                                      <call id="a19" endpoint="" a:alt_id="9">
+                                        <parameters>
+                                          <label>Create Report</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <call id="a21" endpoint="" a:alt_id="10">
+                                        <parameters>
+                                          <label>Create Order List</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <call id="a25" endpoint="" a:alt_id="11">
+                                        <parameters>
+                                          <label>Place Order</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <call id="a27" endpoint="" a:alt_id="12">
+                                        <parameters>
+                                          <label>Calculate Effort</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <call id="a31" endpoint="" a:alt_id="14">
+                                        <parameters>
+                                          <label>Get Order</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <call id="a15" endpoint="" a:alt_id="7">
+                                        <parameters>
+                                          <label>Refine Requirements</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <call id="a5" endpoint="" a:alt_id="3">
+                                        <parameters>
+                                          <label>Send Requirements</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <call id="a9" endpoint="" a:alt_id="4">
+                                        <parameters>
+                                          <label>Receive Draft</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <call id="a11" endpoint="" a:alt_id="5">
+                                        <parameters>
+                                          <label>Check Feasibility</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <loop mode="post_test" condition="Yes">
+                                        <call id="a19" endpoint="" a:alt_id="9">
+                                          <parameters>
+                                            <label>Create Report</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                        <call id="a21" endpoint="" a:alt_id="10">
+                                          <parameters>
+                                            <label>Create Order List</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                        <call id="a25" endpoint="" a:alt_id="11">
+                                          <parameters>
+                                            <label>Place Order</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                        <call id="a27" endpoint="" a:alt_id="12">
+                                          <parameters>
+                                            <label>Calculate Effort</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                        <call id="a31" endpoint="" a:alt_id="14">
+                                          <parameters>
+                                            <label>Get Order</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                        <call id="a15" endpoint="" a:alt_id="7">
+                                          <parameters>
+                                            <label>Refine Requirements</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                        <call id="a5" endpoint="" a:alt_id="3">
+                                          <parameters>
+                                            <label>Send Requirements</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                        <call id="a9" endpoint="" a:alt_id="4">
+                                          <parameters>
+                                            <label>Receive Draft</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                        <call id="a11" endpoint="" a:alt_id="5">
+                                          <parameters>
+                                            <label>Check Feasibility</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                      </loop>
+                                    </loop>
+                                  </loop>
+                                </loop>
+                              </loop>
+                            </loop>
+                          </loop>
+                        </loop>
+                      </loop>
+                    </parallel_branch>
+                    <parallel_branch>
+                      <choose mode="exclusive" a:alt_id="15">
+                        <alternative condition="Yes" language="text/javascript">
+                          <call id="a35" endpoint="" a:alt_id="16">
+                            <parameters>
+                              <label>Call Friends</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <loop mode="pre_test" condition="true">
+                            <call id="a15" endpoint="" a:alt_id="7">
+                              <parameters>
+                                <label>Refine Requirements</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a5" endpoint="" a:alt_id="3">
+                              <parameters>
+                                <label>Send Requirements</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a9" endpoint="" a:alt_id="4">
+                              <parameters>
+                                <label>Receive Draft</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a11" endpoint="" a:alt_id="5">
+                              <parameters>
+                                <label>Check Feasibility</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a19" endpoint="" a:alt_id="9">
+                              <parameters>
+                                <label>Create Report</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a21" endpoint="" a:alt_id="10">
+                              <parameters>
+                                <label>Create Order List</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a25" endpoint="" a:alt_id="11">
+                              <parameters>
+                                <label>Place Order</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a27" endpoint="" a:alt_id="12">
+                              <parameters>
+                                <label>Calculate Effort</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a35" endpoint="" a:alt_id="16">
+                              <parameters>
+                                <label>Call Friends</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <loop mode="pre_test" condition="true">
+                              <call id="a15" endpoint="" a:alt_id="7">
+                                <parameters>
+                                  <label>Refine Requirements</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a5" endpoint="" a:alt_id="3">
+                                <parameters>
+                                  <label>Send Requirements</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a9" endpoint="" a:alt_id="4">
+                                <parameters>
+                                  <label>Receive Draft</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a11" endpoint="" a:alt_id="5">
+                                <parameters>
+                                  <label>Check Feasibility</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a19" endpoint="" a:alt_id="9">
+                                <parameters>
+                                  <label>Create Report</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a21" endpoint="" a:alt_id="10">
+                                <parameters>
+                                  <label>Create Order List</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a25" endpoint="" a:alt_id="11">
+                                <parameters>
+                                  <label>Place Order</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a27" endpoint="" a:alt_id="12">
+                                <parameters>
+                                  <label>Calculate Effort</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <loop mode="pre_test" condition="true">
+                                <call id="a35" endpoint="" a:alt_id="16">
+                                  <parameters>
+                                    <label>Call Friends</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a15" endpoint="" a:alt_id="7">
+                                  <parameters>
+                                    <label>Refine Requirements</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a5" endpoint="" a:alt_id="3">
+                                  <parameters>
+                                    <label>Send Requirements</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a9" endpoint="" a:alt_id="4">
+                                  <parameters>
+                                    <label>Receive Draft</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a11" endpoint="" a:alt_id="5">
+                                  <parameters>
+                                    <label>Check Feasibility</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a19" endpoint="" a:alt_id="9">
+                                  <parameters>
+                                    <label>Create Report</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a21" endpoint="" a:alt_id="10">
+                                  <parameters>
+                                    <label>Create Order List</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a25" endpoint="" a:alt_id="11">
+                                  <parameters>
+                                    <label>Place Order</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a27" endpoint="" a:alt_id="12">
+                                  <parameters>
+                                    <label>Calculate Effort</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <loop mode="post_test" condition="Yes">
+                                  <call id="a35" endpoint="" a:alt_id="16">
+                                    <parameters>
+                                      <label>Call Friends</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a15" endpoint="" a:alt_id="7">
+                                    <parameters>
+                                      <label>Refine Requirements</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a5" endpoint="" a:alt_id="3">
+                                    <parameters>
+                                      <label>Send Requirements</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a9" endpoint="" a:alt_id="4">
+                                    <parameters>
+                                      <label>Receive Draft</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a11" endpoint="" a:alt_id="5">
+                                    <parameters>
+                                      <label>Check Feasibility</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a19" endpoint="" a:alt_id="9">
+                                    <parameters>
+                                      <label>Create Report</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a21" endpoint="" a:alt_id="10">
+                                    <parameters>
+                                      <label>Create Order List</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a25" endpoint="" a:alt_id="11">
+                                    <parameters>
+                                      <label>Place Order</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a27" endpoint="" a:alt_id="12">
+                                    <parameters>
+                                      <label>Calculate Effort</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                </loop>
+                              </loop>
+                            </loop>
+                          </loop>
+                        </alternative>
+                        <alternative condition="No" language="text/javascript">
+                          <call id="a37" endpoint="" a:alt_id="17">
+                            <parameters>
+                              <label>Hire Company</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <loop mode="pre_test" condition="true">
+                            <call id="a15" endpoint="" a:alt_id="7">
+                              <parameters>
+                                <label>Refine Requirements</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a5" endpoint="" a:alt_id="3">
+                              <parameters>
+                                <label>Send Requirements</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a9" endpoint="" a:alt_id="4">
+                              <parameters>
+                                <label>Receive Draft</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a11" endpoint="" a:alt_id="5">
+                              <parameters>
+                                <label>Check Feasibility</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a19" endpoint="" a:alt_id="9">
+                              <parameters>
+                                <label>Create Report</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a21" endpoint="" a:alt_id="10">
+                              <parameters>
+                                <label>Create Order List</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a25" endpoint="" a:alt_id="11">
+                              <parameters>
+                                <label>Place Order</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a27" endpoint="" a:alt_id="12">
+                              <parameters>
+                                <label>Calculate Effort</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a37" endpoint="" a:alt_id="17">
+                              <parameters>
+                                <label>Hire Company</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <loop mode="pre_test" condition="true">
+                              <call id="a15" endpoint="" a:alt_id="7">
+                                <parameters>
+                                  <label>Refine Requirements</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a5" endpoint="" a:alt_id="3">
+                                <parameters>
+                                  <label>Send Requirements</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a9" endpoint="" a:alt_id="4">
+                                <parameters>
+                                  <label>Receive Draft</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a11" endpoint="" a:alt_id="5">
+                                <parameters>
+                                  <label>Check Feasibility</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a19" endpoint="" a:alt_id="9">
+                                <parameters>
+                                  <label>Create Report</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a21" endpoint="" a:alt_id="10">
+                                <parameters>
+                                  <label>Create Order List</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a25" endpoint="" a:alt_id="11">
+                                <parameters>
+                                  <label>Place Order</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a27" endpoint="" a:alt_id="12">
+                                <parameters>
+                                  <label>Calculate Effort</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <loop mode="pre_test" condition="true">
+                                <call id="a37" endpoint="" a:alt_id="17">
+                                  <parameters>
+                                    <label>Hire Company</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a15" endpoint="" a:alt_id="7">
+                                  <parameters>
+                                    <label>Refine Requirements</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a5" endpoint="" a:alt_id="3">
+                                  <parameters>
+                                    <label>Send Requirements</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a9" endpoint="" a:alt_id="4">
+                                  <parameters>
+                                    <label>Receive Draft</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a11" endpoint="" a:alt_id="5">
+                                  <parameters>
+                                    <label>Check Feasibility</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a19" endpoint="" a:alt_id="9">
+                                  <parameters>
+                                    <label>Create Report</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a21" endpoint="" a:alt_id="10">
+                                  <parameters>
+                                    <label>Create Order List</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a25" endpoint="" a:alt_id="11">
+                                  <parameters>
+                                    <label>Place Order</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a27" endpoint="" a:alt_id="12">
+                                  <parameters>
+                                    <label>Calculate Effort</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <loop mode="post_test" condition="No">
+                                  <call id="a37" endpoint="" a:alt_id="17">
+                                    <parameters>
+                                      <label>Hire Company</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a15" endpoint="" a:alt_id="7">
+                                    <parameters>
+                                      <label>Refine Requirements</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a5" endpoint="" a:alt_id="3">
+                                    <parameters>
+                                      <label>Send Requirements</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a9" endpoint="" a:alt_id="4">
+                                    <parameters>
+                                      <label>Receive Draft</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a11" endpoint="" a:alt_id="5">
+                                    <parameters>
+                                      <label>Check Feasibility</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a19" endpoint="" a:alt_id="9">
+                                    <parameters>
+                                      <label>Create Report</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a21" endpoint="" a:alt_id="10">
+                                    <parameters>
+                                      <label>Create Order List</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a25" endpoint="" a:alt_id="11">
+                                    <parameters>
+                                      <label>Place Order</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a27" endpoint="" a:alt_id="12">
+                                    <parameters>
+                                      <label>Calculate Effort</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                </loop>
+                              </loop>
+                            </loop>
+                          </loop>
+                        </alternative>
+                      </choose>
+                    </parallel_branch>
+                  </parallel>
+                </alternative>
+                <alternative condition="">
+                  <call id="a21" endpoint="" a:alt_id="10">
+                    <parameters>
+                      <label>Create Order List</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a25" endpoint="" a:alt_id="11">
+                    <parameters>
+                      <label>Place Order</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a27" endpoint="" a:alt_id="12">
+                    <parameters>
+                      <label>Calculate Effort</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <parallel wait="-1" cancel="last" a:alt_id="13">
+                    <parallel_branch>
+                      <call id="a31" endpoint="" a:alt_id="14">
+                        <parameters>
+                          <label>Get Order</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <loop mode="pre_test" condition="true">
+                        <call id="a15" endpoint="" a:alt_id="7">
+                          <parameters>
+                            <label>Refine Requirements</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a5" endpoint="" a:alt_id="3">
+                          <parameters>
+                            <label>Send Requirements</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a9" endpoint="" a:alt_id="4">
+                          <parameters>
+                            <label>Receive Draft</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a11" endpoint="" a:alt_id="5">
+                          <parameters>
+                            <label>Check Feasibility</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a21" endpoint="" a:alt_id="10">
+                          <parameters>
+                            <label>Create Order List</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a25" endpoint="" a:alt_id="11">
+                          <parameters>
+                            <label>Place Order</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a27" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Calculate Effort</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a31" endpoint="" a:alt_id="14">
+                          <parameters>
+                            <label>Get Order</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <loop mode="pre_test" condition="true">
+                          <call id="a15" endpoint="" a:alt_id="7">
+                            <parameters>
+                              <label>Refine Requirements</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a5" endpoint="" a:alt_id="3">
+                            <parameters>
+                              <label>Send Requirements</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a9" endpoint="" a:alt_id="4">
+                            <parameters>
+                              <label>Receive Draft</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a11" endpoint="" a:alt_id="5">
+                            <parameters>
+                              <label>Check Feasibility</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a21" endpoint="" a:alt_id="10">
+                            <parameters>
+                              <label>Create Order List</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a25" endpoint="" a:alt_id="11">
+                            <parameters>
+                              <label>Place Order</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a27" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Calculate Effort</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <loop mode="pre_test" condition="true">
+                            <call id="a31" endpoint="" a:alt_id="14">
+                              <parameters>
+                                <label>Get Order</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a15" endpoint="" a:alt_id="7">
+                              <parameters>
+                                <label>Refine Requirements</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a5" endpoint="" a:alt_id="3">
+                              <parameters>
+                                <label>Send Requirements</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a9" endpoint="" a:alt_id="4">
+                              <parameters>
+                                <label>Receive Draft</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a11" endpoint="" a:alt_id="5">
+                              <parameters>
+                                <label>Check Feasibility</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a21" endpoint="" a:alt_id="10">
+                              <parameters>
+                                <label>Create Order List</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a25" endpoint="" a:alt_id="11">
+                              <parameters>
+                                <label>Place Order</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a27" endpoint="" a:alt_id="12">
+                              <parameters>
+                                <label>Calculate Effort</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <loop mode="pre_test" condition="true">
+                              <call id="a31" endpoint="" a:alt_id="14">
+                                <parameters>
+                                  <label>Get Order</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a15" endpoint="" a:alt_id="7">
+                                <parameters>
+                                  <label>Refine Requirements</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a5" endpoint="" a:alt_id="3">
+                                <parameters>
+                                  <label>Send Requirements</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a9" endpoint="" a:alt_id="4">
+                                <parameters>
+                                  <label>Receive Draft</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a11" endpoint="" a:alt_id="5">
+                                <parameters>
+                                  <label>Check Feasibility</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a21" endpoint="" a:alt_id="10">
+                                <parameters>
+                                  <label>Create Order List</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a25" endpoint="" a:alt_id="11">
+                                <parameters>
+                                  <label>Place Order</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <loop mode="pre_test" condition="true">
+                                <call id="a27" endpoint="" a:alt_id="12">
+                                  <parameters>
+                                    <label>Calculate Effort</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a31" endpoint="" a:alt_id="14">
+                                  <parameters>
+                                    <label>Get Order</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a15" endpoint="" a:alt_id="7">
+                                  <parameters>
+                                    <label>Refine Requirements</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a5" endpoint="" a:alt_id="3">
+                                  <parameters>
+                                    <label>Send Requirements</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a9" endpoint="" a:alt_id="4">
+                                  <parameters>
+                                    <label>Receive Draft</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a11" endpoint="" a:alt_id="5">
+                                  <parameters>
+                                    <label>Check Feasibility</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a21" endpoint="" a:alt_id="10">
+                                  <parameters>
+                                    <label>Create Order List</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <loop mode="pre_test" condition="true">
+                                  <call id="a25" endpoint="" a:alt_id="11">
+                                    <parameters>
+                                      <label>Place Order</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a27" endpoint="" a:alt_id="12">
+                                    <parameters>
+                                      <label>Calculate Effort</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a31" endpoint="" a:alt_id="14">
+                                    <parameters>
+                                      <label>Get Order</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a15" endpoint="" a:alt_id="7">
+                                    <parameters>
+                                      <label>Refine Requirements</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a5" endpoint="" a:alt_id="3">
+                                    <parameters>
+                                      <label>Send Requirements</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a9" endpoint="" a:alt_id="4">
+                                    <parameters>
+                                      <label>Receive Draft</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a11" endpoint="" a:alt_id="5">
+                                    <parameters>
+                                      <label>Check Feasibility</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <loop mode="pre_test" condition="true">
+                                    <call id="a21" endpoint="" a:alt_id="10">
+                                      <parameters>
+                                        <label>Create Order List</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <call id="a25" endpoint="" a:alt_id="11">
+                                      <parameters>
+                                        <label>Place Order</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <call id="a27" endpoint="" a:alt_id="12">
+                                      <parameters>
+                                        <label>Calculate Effort</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <call id="a31" endpoint="" a:alt_id="14">
+                                      <parameters>
+                                        <label>Get Order</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <call id="a15" endpoint="" a:alt_id="7">
+                                      <parameters>
+                                        <label>Refine Requirements</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <call id="a5" endpoint="" a:alt_id="3">
+                                      <parameters>
+                                        <label>Send Requirements</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <call id="a9" endpoint="" a:alt_id="4">
+                                      <parameters>
+                                        <label>Receive Draft</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <call id="a11" endpoint="" a:alt_id="5">
+                                      <parameters>
+                                        <label>Check Feasibility</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <loop mode="post_test" condition="No">
+                                      <call id="a21" endpoint="" a:alt_id="10">
+                                        <parameters>
+                                          <label>Create Order List</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <call id="a25" endpoint="" a:alt_id="11">
+                                        <parameters>
+                                          <label>Place Order</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <call id="a27" endpoint="" a:alt_id="12">
+                                        <parameters>
+                                          <label>Calculate Effort</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <call id="a31" endpoint="" a:alt_id="14">
+                                        <parameters>
+                                          <label>Get Order</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <call id="a15" endpoint="" a:alt_id="7">
+                                        <parameters>
+                                          <label>Refine Requirements</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <call id="a5" endpoint="" a:alt_id="3">
+                                        <parameters>
+                                          <label>Send Requirements</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <call id="a9" endpoint="" a:alt_id="4">
+                                        <parameters>
+                                          <label>Receive Draft</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <call id="a11" endpoint="" a:alt_id="5">
+                                        <parameters>
+                                          <label>Check Feasibility</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                    </loop>
+                                  </loop>
+                                </loop>
+                              </loop>
+                            </loop>
+                          </loop>
+                        </loop>
+                      </loop>
+                    </parallel_branch>
+                    <parallel_branch>
+                      <choose mode="exclusive" a:alt_id="15">
+                        <alternative condition="Yes" language="text/javascript">
+                          <call id="a35" endpoint="" a:alt_id="16">
+                            <parameters>
+                              <label>Call Friends</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <loop mode="pre_test" condition="true">
+                            <call id="a15" endpoint="" a:alt_id="7">
+                              <parameters>
+                                <label>Refine Requirements</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a5" endpoint="" a:alt_id="3">
+                              <parameters>
+                                <label>Send Requirements</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a9" endpoint="" a:alt_id="4">
+                              <parameters>
+                                <label>Receive Draft</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a11" endpoint="" a:alt_id="5">
+                              <parameters>
+                                <label>Check Feasibility</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a21" endpoint="" a:alt_id="10">
+                              <parameters>
+                                <label>Create Order List</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a25" endpoint="" a:alt_id="11">
+                              <parameters>
+                                <label>Place Order</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a27" endpoint="" a:alt_id="12">
+                              <parameters>
+                                <label>Calculate Effort</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a35" endpoint="" a:alt_id="16">
+                              <parameters>
+                                <label>Call Friends</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <loop mode="pre_test" condition="true">
+                              <call id="a15" endpoint="" a:alt_id="7">
+                                <parameters>
+                                  <label>Refine Requirements</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a5" endpoint="" a:alt_id="3">
+                                <parameters>
+                                  <label>Send Requirements</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a9" endpoint="" a:alt_id="4">
+                                <parameters>
+                                  <label>Receive Draft</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a11" endpoint="" a:alt_id="5">
+                                <parameters>
+                                  <label>Check Feasibility</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a21" endpoint="" a:alt_id="10">
+                                <parameters>
+                                  <label>Create Order List</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a25" endpoint="" a:alt_id="11">
+                                <parameters>
+                                  <label>Place Order</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a27" endpoint="" a:alt_id="12">
+                                <parameters>
+                                  <label>Calculate Effort</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <loop mode="pre_test" condition="true">
+                                <call id="a35" endpoint="" a:alt_id="16">
+                                  <parameters>
+                                    <label>Call Friends</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a15" endpoint="" a:alt_id="7">
+                                  <parameters>
+                                    <label>Refine Requirements</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a5" endpoint="" a:alt_id="3">
+                                  <parameters>
+                                    <label>Send Requirements</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a9" endpoint="" a:alt_id="4">
+                                  <parameters>
+                                    <label>Receive Draft</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a11" endpoint="" a:alt_id="5">
+                                  <parameters>
+                                    <label>Check Feasibility</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a21" endpoint="" a:alt_id="10">
+                                  <parameters>
+                                    <label>Create Order List</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a25" endpoint="" a:alt_id="11">
+                                  <parameters>
+                                    <label>Place Order</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a27" endpoint="" a:alt_id="12">
+                                  <parameters>
+                                    <label>Calculate Effort</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <loop mode="post_test" condition="Yes">
+                                  <call id="a35" endpoint="" a:alt_id="16">
+                                    <parameters>
+                                      <label>Call Friends</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a15" endpoint="" a:alt_id="7">
+                                    <parameters>
+                                      <label>Refine Requirements</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a5" endpoint="" a:alt_id="3">
+                                    <parameters>
+                                      <label>Send Requirements</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a9" endpoint="" a:alt_id="4">
+                                    <parameters>
+                                      <label>Receive Draft</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a11" endpoint="" a:alt_id="5">
+                                    <parameters>
+                                      <label>Check Feasibility</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a21" endpoint="" a:alt_id="10">
+                                    <parameters>
+                                      <label>Create Order List</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a25" endpoint="" a:alt_id="11">
+                                    <parameters>
+                                      <label>Place Order</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a27" endpoint="" a:alt_id="12">
+                                    <parameters>
+                                      <label>Calculate Effort</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                </loop>
+                              </loop>
+                            </loop>
+                          </loop>
+                        </alternative>
+                        <alternative condition="No" language="text/javascript">
+                          <call id="a37" endpoint="" a:alt_id="17">
+                            <parameters>
+                              <label>Hire Company</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <loop mode="pre_test" condition="true">
+                            <call id="a15" endpoint="" a:alt_id="7">
+                              <parameters>
+                                <label>Refine Requirements</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a5" endpoint="" a:alt_id="3">
+                              <parameters>
+                                <label>Send Requirements</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a9" endpoint="" a:alt_id="4">
+                              <parameters>
+                                <label>Receive Draft</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a11" endpoint="" a:alt_id="5">
+                              <parameters>
+                                <label>Check Feasibility</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a21" endpoint="" a:alt_id="10">
+                              <parameters>
+                                <label>Create Order List</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a25" endpoint="" a:alt_id="11">
+                              <parameters>
+                                <label>Place Order</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a27" endpoint="" a:alt_id="12">
+                              <parameters>
+                                <label>Calculate Effort</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a37" endpoint="" a:alt_id="17">
+                              <parameters>
+                                <label>Hire Company</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <loop mode="pre_test" condition="true">
+                              <call id="a15" endpoint="" a:alt_id="7">
+                                <parameters>
+                                  <label>Refine Requirements</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a5" endpoint="" a:alt_id="3">
+                                <parameters>
+                                  <label>Send Requirements</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a9" endpoint="" a:alt_id="4">
+                                <parameters>
+                                  <label>Receive Draft</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a11" endpoint="" a:alt_id="5">
+                                <parameters>
+                                  <label>Check Feasibility</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a21" endpoint="" a:alt_id="10">
+                                <parameters>
+                                  <label>Create Order List</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a25" endpoint="" a:alt_id="11">
+                                <parameters>
+                                  <label>Place Order</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a27" endpoint="" a:alt_id="12">
+                                <parameters>
+                                  <label>Calculate Effort</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <loop mode="pre_test" condition="true">
+                                <call id="a37" endpoint="" a:alt_id="17">
+                                  <parameters>
+                                    <label>Hire Company</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a15" endpoint="" a:alt_id="7">
+                                  <parameters>
+                                    <label>Refine Requirements</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a5" endpoint="" a:alt_id="3">
+                                  <parameters>
+                                    <label>Send Requirements</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a9" endpoint="" a:alt_id="4">
+                                  <parameters>
+                                    <label>Receive Draft</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a11" endpoint="" a:alt_id="5">
+                                  <parameters>
+                                    <label>Check Feasibility</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a21" endpoint="" a:alt_id="10">
+                                  <parameters>
+                                    <label>Create Order List</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a25" endpoint="" a:alt_id="11">
+                                  <parameters>
+                                    <label>Place Order</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <call id="a27" endpoint="" a:alt_id="12">
+                                  <parameters>
+                                    <label>Calculate Effort</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <loop mode="post_test" condition="No">
+                                  <call id="a37" endpoint="" a:alt_id="17">
+                                    <parameters>
+                                      <label>Hire Company</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a15" endpoint="" a:alt_id="7">
+                                    <parameters>
+                                      <label>Refine Requirements</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a5" endpoint="" a:alt_id="3">
+                                    <parameters>
+                                      <label>Send Requirements</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a9" endpoint="" a:alt_id="4">
+                                    <parameters>
+                                      <label>Receive Draft</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a11" endpoint="" a:alt_id="5">
+                                    <parameters>
+                                      <label>Check Feasibility</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a21" endpoint="" a:alt_id="10">
+                                    <parameters>
+                                      <label>Create Order List</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a25" endpoint="" a:alt_id="11">
+                                    <parameters>
+                                      <label>Place Order</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a27" endpoint="" a:alt_id="12">
+                                    <parameters>
+                                      <label>Calculate Effort</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                </loop>
+                              </loop>
+                            </loop>
+                          </loop>
+                        </alternative>
+                      </choose>
+                    </parallel_branch>
+                  </parallel>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </loop>
+      </alternative>
+      <alternative condition=""/>
+    </choose>
+  </loop>
+</description>

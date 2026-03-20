@@ -1,0 +1,41 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Connect to Management System)
+  1:task:(Connect to Management System) --> 2:exclusivegateway:{x}
+  2:exclusivegateway:{x} --> |Condition Met| 10:parallelgateway:{AND}
+  2:exclusivegateway:{x} --> |Condition Not Met| 3:task:(Read Order from System)
+  3:task:(Read Order from System) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |Condition Met| 5:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |Condition Not Met| 2:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Condition Met| 6:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Condition Not Met| 2:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Condition Met| 10:parallelgateway:{AND}
+  6:exclusivegateway:{x} --> |Condition Not Met| 2:exclusivegateway:{x}
+  10:parallelgateway:{AND} --> 11:exclusivegateway:{x}
+  10:parallelgateway:{AND} --> 14:exclusivegateway:{x}
+  10:parallelgateway:{AND} --> 17:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |Condition Met| 12:task:(Apply Delivery Delay Penalty)
+  11:exclusivegateway:{x} --> |Condition Not Met| 13:task:(OK)
+  12:task:(Apply Delivery Delay Penalty) --> 19:parallelgateway:{AND}
+  13:task:(OK) --> 19:parallelgateway:{AND}
+  14:exclusivegateway:{x} --> |Condition Met| 15:task:(Apply Delivery Delay Penalty)
+  14:exclusivegateway:{x} --> |Condition Not Met| 16:task:(OK)
+  15:task:(Apply Delivery Delay Penalty) --> 19:parallelgateway:{AND}
+  16:task:(OK) --> 19:parallelgateway:{AND}
+  17:exclusivegateway:{x} --> |Condition Met| 18:task:(Apply Delivery Delay Penalty)
+  17:exclusivegateway:{x} --> |Condition Not Met| 20:task:(OK)
+  18:task:(Apply Delivery Delay Penalty) --> 19:parallelgateway:{AND}
+  20:task:(OK) --> 19:parallelgateway:{AND}
+  19:parallelgateway:{AND} --> 21:task:(OK for Arrived Product)
+  21:task:(OK for Arrived Product) --> 22:task:(Register Product in Management System)
+  22:task:(Register Product in Management System) --> 23:parallelgateway:{AND}
+  23:parallelgateway:{AND} --> 24:task:(Pack Product)
+  23:parallelgateway:{AND} --> 25:task:(Request Courier)
+  24:task:(Pack Product) --> 26:parallelgateway:{AND}
+  25:task:(Request Courier) --> 26:parallelgateway:{AND}
+  26:parallelgateway:{AND} --> 27:task:(Ship Delivery)
+  27:task:(Ship Delivery) --> 28:exclusivegateway:{x}
+  28:exclusivegateway:{x} --> |Condition False| 29:endevent:(((endevent)))
+  28:exclusivegateway:{x} --> |Condition True| 3:task:(Read Order from System)
+  3:task:(Read Order from System) --> 29:endevent:(((endevent)))
+```

@@ -1,0 +1,348 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Submit Request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Register Request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Continue" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Initial Continuation Check</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="5">
+        <alternative condition="Continue" language="text/javascript">
+          <call id="a13" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Further Check</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="7">
+            <alternative condition="Continue" language="text/javascript">
+              <call id="a19" endpoint="" a:alt_id="8">
+                <parameters>
+                  <label>Evaluate Condition</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="9">
+                <alternative condition="Positive" language="text/javascript">
+                  <choose mode="exclusive" a:alt_id="10">
+                    <alternative condition="Proceed" language="text/javascript">
+                      <call id="a29" endpoint="" a:alt_id="11">
+                        <parameters>
+                          <label>Another Check</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="12">
+                        <alternative condition="Favorable" language="text/javascript">
+                          <choose mode="exclusive" a:alt_id="13">
+                            <alternative condition="Positive" language="text/javascript">
+                              <choose mode="exclusive" a:alt_id="14">
+                                <alternative condition="Positive" language="text/javascript">
+                                  <loop mode="pre_test" condition="true">
+                                    <call id="a43" endpoint="" a:alt_id="15">
+                                      <parameters>
+                                        <label>Supervisor Review</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <loop mode="pre_test" condition="Not approved">
+                                      <call id="a51" endpoint="" a:alt_id="17">
+                                        <parameters>
+                                          <label>Return with Comments</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <call id="a53" endpoint="" a:alt_id="18">
+                                        <parameters>
+                                          <label>Employee Reviews Comments</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <choose mode="exclusive" a:alt_id="19">
+                                        <alternative condition="Resubmit" language="text/javascript">
+                                          <call id="a57" endpoint="" a:alt_id="20">
+                                            <parameters>
+                                              <label>Resubmit Request</label>
+                                              <method/>
+                                              <type>:task</type>
+                                              <arguments/>
+                                            </parameters>
+                                          </call>
+                                          <call id="a43" endpoint="" a:alt_id="15">
+                                            <parameters>
+                                              <label>Supervisor Review</label>
+                                              <method/>
+                                              <type>:task</type>
+                                              <arguments/>
+                                            </parameters>
+                                          </call>
+                                        </alternative>
+                                        <alternative condition="Withdraw" language="text/javascript">
+                                          <escape a:alt_id="-1"/>
+                                        </alternative>
+                                      </choose>
+                                    </loop>
+                                    <call id="a49" endpoint="" a:alt_id="22">
+                                      <parameters>
+                                        <label>Forward to Purchasing</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <call id="a63" endpoint="" a:alt_id="23">
+                                      <parameters>
+                                        <label>Purchasing Continuation Check</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <choose mode="exclusive" a:alt_id="24">
+                                      <alternative condition="Continue" language="text/javascript">
+                                        <call id="a67" endpoint="" a:alt_id="25">
+                                          <parameters>
+                                            <label>Further Purchasing Check</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                        <choose mode="exclusive" a:alt_id="26">
+                                          <alternative condition="Continue" language="text/javascript">
+                                            <call id="a73" endpoint="" a:alt_id="27">
+                                              <parameters>
+                                                <label>Another Purchasing Check</label>
+                                                <method/>
+                                                <type>:task</type>
+                                                <arguments/>
+                                              </parameters>
+                                            </call>
+                                            <choose mode="exclusive" a:alt_id="28">
+                                              <alternative condition="Favorable" language="text/javascript">
+                                                <choose mode="exclusive" a:alt_id="29">
+                                                  <alternative condition="Positive" language="text/javascript">
+                                                    <choose mode="exclusive" a:alt_id="30">
+                                                      <alternative condition="Positive" language="text/javascript">
+                                                        <loop mode="pre_test" condition="true">
+                                                          <call id="a87" endpoint="" a:alt_id="31">
+                                                            <parameters>
+                                                            <label>Additional Purchase Check</label>
+                                                            <method/>
+                                                            <type>:task</type>
+                                                            <arguments/>
+                                                            </parameters>
+                                                          </call>
+                                                          <loop mode="pre_test" condition="Positive">
+                                                            <choose mode="exclusive" a:alt_id="33">
+                                                            <alternative condition="Positive" language="text/javascript">
+                                                            <choose mode="exclusive" a:alt_id="34">
+                                                            <alternative condition="Positive" language="text/javascript">
+                                                            <call id="a101" endpoint="" a:alt_id="35">
+                                                            <parameters>
+                                                            <label>Prepare Quotations</label>
+                                                            <method/>
+                                                            <type>:task</type>
+                                                            <arguments/>
+                                                            </parameters>
+                                                            </call>
+                                                            <choose mode="exclusive" a:alt_id="36">
+                                                            <alternative condition="Cannot continue" language="text/javascript">
+                                                            <call id="a87" endpoint="" a:alt_id="31">
+                                                            <parameters>
+                                                            <label>Additional Purchase Check</label>
+                                                            <method/>
+                                                            <type>:task</type>
+                                                            <arguments/>
+                                                            </parameters>
+                                                            </call>
+                                                            </alternative>
+                                                            <alternative condition="Vendor selected" language="text/javascript">
+                                                            <call id="a109" endpoint="" a:alt_id="37">
+                                                            <parameters>
+                                                            <label>Confirm Vendor Selection</label>
+                                                            <method/>
+                                                            <type>:task</type>
+                                                            <arguments/>
+                                                            </parameters>
+                                                            </call>
+                                                            <choose mode="exclusive" a:alt_id="38">
+                                                            <alternative condition="Changes needed" language="text/javascript">
+                                                            <call id="a101" endpoint="" a:alt_id="35">
+                                                            <parameters>
+                                                            <label>Prepare Quotations</label>
+                                                            <method/>
+                                                            <type>:task</type>
+                                                            <arguments/>
+                                                            </parameters>
+                                                            </call>
+                                                            </alternative>
+                                                            <alternative condition="Vendor confirmed" language="text/javascript">
+                                                            <call id="a115" endpoint="" a:alt_id="39">
+                                                            <parameters>
+                                                            <label>Generate and Send Purchase Order</label>
+                                                            <method/>
+                                                            <type>:task</type>
+                                                            <arguments/>
+                                                            </parameters>
+                                                            </call>
+                                                            <call id="a117" endpoint="" a:alt_id="40">
+                                                            <parameters>
+                                                            <label>Wait for Product Delivery</label>
+                                                            <method/>
+                                                            <type>:task</type>
+                                                            <arguments/>
+                                                            </parameters>
+                                                            </call>
+                                                            <call id="a119" endpoint="" a:alt_id="41">
+                                                            <parameters>
+                                                            <label>Receive Invoice</label>
+                                                            <method/>
+                                                            <type>:task</type>
+                                                            <arguments/>
+                                                            </parameters>
+                                                            </call>
+                                                            <choose mode="exclusive" a:alt_id="42">
+                                                            <alternative condition="Not complete" language="text/javascript">
+                                                            <call id="a101" endpoint="" a:alt_id="35">
+                                                            <parameters>
+                                                            <label>Prepare Quotations</label>
+                                                            <method/>
+                                                            <type>:task</type>
+                                                            <arguments/>
+                                                            </parameters>
+                                                            </call>
+                                                            </alternative>
+                                                            <alternative condition="">
+                                                            <call id="a125" endpoint="" a:alt_id="43">
+                                                            <parameters>
+                                                            <label>Notify User of Status</label>
+                                                            <method/>
+                                                            <type>:task</type>
+                                                            <arguments/>
+                                                            </parameters>
+                                                            </call>
+                                                            <call id="a127" endpoint="" a:alt_id="44">
+                                                            <parameters>
+                                                            <label>Final Checks</label>
+                                                            <method/>
+                                                            <type>:task</type>
+                                                            <arguments/>
+                                                            </parameters>
+                                                            </call>
+                                                            <call id="a129" endpoint="" a:alt_id="45">
+                                                            <parameters>
+                                                            <label>Final Evaluations</label>
+                                                            <method/>
+                                                            <type>:task</type>
+                                                            <arguments/>
+                                                            </parameters>
+                                                            </call>
+                                                            <choose mode="exclusive" a:alt_id="46">
+                                                            <alternative condition="Positive" language="text/javascript">
+                                                            <choose mode="exclusive" a:alt_id="47">
+                                                            <alternative condition="Positive or Negative" language="text/javascript"/>
+                                                            <alternative condition="Negative" language="text/javascript"/>
+                                                            </choose>
+                                                            </alternative>
+                                                            <alternative condition="Negative" language="text/javascript"/>
+                                                            </choose>
+                                                            </alternative>
+                                                            </choose>
+                                                            </alternative>
+                                                            </choose>
+                                                            <escape a:alt_id="-1"/>
+                                                            </alternative>
+                                                            </choose>
+                                                            </alternative>
+                                                            <alternative condition="Escalate and recheck" language="text/javascript">
+                                                            <call id="a87" endpoint="" a:alt_id="31">
+                                                            <parameters>
+                                                            <label>Additional Purchase Check</label>
+                                                            <method/>
+                                                            <type>:task</type>
+                                                            <arguments/>
+                                                            </parameters>
+                                                            </call>
+                                                            </alternative>
+                                                            </choose>
+                                                            </alternative>
+                                                            <alternative condition="Not positive" language="text/javascript">
+                                                            <escape a:alt_id="-1"/>
+                                                            </alternative>
+                                                            </choose>
+                                                          </loop>
+                                                        </loop>
+                                                      </alternative>
+                                                      <alternative condition="Not positive" language="text/javascript"/>
+                                                    </choose>
+                                                  </alternative>
+                                                  <alternative condition="Not positive" language="text/javascript"/>
+                                                </choose>
+                                              </alternative>
+                                              <alternative condition="Not favorable" language="text/javascript"/>
+                                            </choose>
+                                          </alternative>
+                                          <alternative condition="Do not continue" language="text/javascript"/>
+                                        </choose>
+                                      </alternative>
+                                      <alternative condition="Do not continue" language="text/javascript"/>
+                                    </choose>
+                                  </loop>
+                                </alternative>
+                                <alternative condition="Not positive" language="text/javascript"/>
+                              </choose>
+                            </alternative>
+                            <alternative condition="Not positive" language="text/javascript"/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="Not favorable" language="text/javascript"/>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Do not proceed" language="text/javascript"/>
+                  </choose>
+                </alternative>
+                <alternative condition="Negative" language="text/javascript"/>
+              </choose>
+            </alternative>
+            <alternative condition="Do not continue" language="text/javascript"/>
+          </choose>
+        </alternative>
+        <alternative condition="Do not continue" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="Do not continue" language="text/javascript"/>
+  </choose>
+</description>

@@ -1,0 +1,49 @@
+Certainly! Here is a detailed, step-by-step description of the process as depicted in your model:
+
+1. The process begins when a customer makes a notice at the secretarial office.
+2. After receiving the notice, the next step is to ask for the patient’s data.
+3. Once the patient’s data is collected, the process continues by connecting the doctor to the nursing officer.
+4. The nursing officer then inquires about the patient’s condition.
+5. The information gathered is recorded on a registration form.
+6. The completed registration form is handed back to the secretarial office.
+7. The secretarial office enters the information from the form into the information system.
+8. After entering the data, the information from the form is printed out.
+9. At this point, a decision is made about whether a file is required for the patient:
+    - If a file is required, a patient file is created.
+    - The registration form and the printout are then stored in the patient file.
+    - The process continues to the next step.
+    - If a file is not required, the process skips directly to the next step.
+10. Two registration cards are produced.
+11. The new patient is added to the list of new notices.
+12. A staff meeting is held where the team gathers.
+13. During the meeting, new patients are assigned to team members.
+14. The assignments are recorded on an assignment list.
+15. Another decision is made about whether a medical file is needed:
+    - If a medical file is needed, a decision is made regarding the medical file.
+    - The process continues to the next step.
+    - If a medical file is not needed, the process skips directly to the next step.
+16. Information is added to the assignment list.
+17. The assignment information is stored in the information system.
+18. The registration cards are distributed.
+19. Next, a decision is made about whether a letter to the family doctor is needed:
+    - If a letter is needed, a letter to the family doctor is prepared and then sent.
+    - The process continues to the next step.
+    - If no letter is needed, the process skips directly to the next step.
+20. A copy of the patient’s medical file is received.
+21. The person responsible for intake is informed.
+22. The received copy is added to the patient file.
+23. The first intake worker plans a meeting with the patient.
+24. The first intake worker examines the patient.
+25. Any additional observations from the examination are recorded in notes.
+26. A copy of these notes is placed in the patient file.
+27. A standard checklist is added to the patient file.
+28. Another decision is made about whether a second intake is needed:
+    - If a second intake is needed, the second intake worker plans the first meeting.
+    - The process continues to the next step.
+    - If no second intake is needed, the process skips directly to the next step.
+29. The recorded tapes from the meeting are typed out.
+30. The information from the typed notes is added to the patient file.
+31. The patient is put on the list of patients.
+32. The team leader is provided with the list of patients.
+33. The team members create a treatment plan for the patient.
+34. The process ends.

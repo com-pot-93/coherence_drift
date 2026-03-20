@@ -1,0 +1,62 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(ask customer if he wants only a burger or a menu)
+2:exclusivegateway:{x}
+3:parallelgateway:{AND}
+4:task:(prepare drink)
+5:task:(a2669)
+6:task:(ask whether customer wants wedges or fries)
+7:exclusivegateway:{x}
+8:task:(prepare fries)
+9:task:(a2674)
+10:task:(prepare wedges)
+11:task:(a2676)
+12:exclusivegateway:{x}
+13:parallelgateway:{AND}
+14:task:(prepares burger)
+15:task:(a2680)
+16:task:(a2682 gives enthusiastic status updates)
+17:task:(a2683)
+18:exclusivegateway:{x}
+19:task:(a2682 gives enthusiastic status updates)
+20:task:(a2682 gives enthusiastic status updates)
+21:exclusivegateway:{x}
+22:parallelgateway:{AND}
+23:task:(puts order on conveyer belt)
+24:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(ask customer if he wants only a burger or a menu)
+1:task:(ask customer if he wants only a burger or a menu) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |menu|3:parallelgateway:{AND}
+2:exclusivegateway:{x} --> |only burger|13:parallelgateway:{AND}
+%% PG1 Branch 1
+3:parallelgateway:{AND} --> 4:task:(prepare drink)
+4:task:(prepare drink) --> 5:task:(a2669)
+5:task:(a2669) --> 12:exclusivegateway:{x}
+%% PG1 Branch 2
+3:parallelgateway:{AND} --> 6:task:(ask whether customer wants wedges or fries)
+6:task:(ask whether customer wants wedges or fries) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |fries|8:task:(prepare fries)
+8:task:(prepare fries) --> 9:task:(a2674)
+9:task:(a2674) --> 12:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |wedges|10:task:(prepare wedges)
+10:task:(prepare wedges) --> 11:task:(a2676)
+11:task:(a2676) --> 12:exclusivegateway:{x}
+%% D2 Merge
+12:exclusivegateway:{x} --> 22:parallelgateway:{AND}
+%% PG1 Merge
+3:parallelgateway:{AND} --> 22:parallelgateway:{AND}
+%% D1 Second Branch (only burger)
+13:parallelgateway:{AND} --> 14:task:(prepares burger)
+14:task:(prepares burger) --> 15:task:(a2680)
+15:task:(a2680) --> 22:parallelgateway:{AND}
+13:parallelgateway:{AND} --> 16:task:(a2682 gives enthusiastic status updates)
+16:task:(a2682 gives enthusiastic status updates) --> 17:task:(a2683)
+17:task:(a2683) --> 18:exclusivegateway:{x}
+18:exclusivegateway:{x} --> |true|19:task:(a2682 gives enthusiastic status updates)
+19:task:(a2682 gives enthusiastic status updates) --> 20:task:(a2682 gives enthusiastic status updates)
+20:task:(a2682 gives enthusiastic status updates) --> 18:exclusivegateway:{x}
+18:exclusivegateway:{x} --> |false|22:parallelgateway:{AND}
+%% PG2 Merge
+22:parallelgateway:{AND} --> 23:task:(puts order on conveyer belt)
+23:task:(puts order on conveyer belt) --> 24:endevent:(((endevent)))

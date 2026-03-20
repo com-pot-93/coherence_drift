@@ -1,0 +1,47 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(a2449)
+2:task:(check if car is still registered)
+3:task:(notify car owner)
+4:task:(check if car has been brought to mechanic)
+5:exclusivegateway:{x}
+6:task:(a2457)
+7:task:(fine car owner)
+8:exclusivegateway:{x}
+9:task:(receive car problems)
+10:task:(offer payment to car owner)
+11:exclusivegateway:{x}
+12:task:(transfer payment to mechanic)
+13:exclusivegateway:{x}
+14:task:(receive confirmation of successful repair)
+15:task:(receive time for next service)
+16:exclusivegateway:{x}
+17:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(a2449)
+1:task:(a2449) --> 2:task:(check if car is still registered)
+2:task:(check if car is still registered) --> 3:task:(notify car owner)
+3:task:(notify car owner) --> 4:task:(check if car has been brought to mechanic)
+4:task:(check if car has been brought to mechanic) --> 5:exclusivegateway:{x}
+
+5:exclusivegateway:{x} --> |No|6:task:(a2457)
+6:task:(a2457) --> 7:task:(fine car owner)
+7:task:(fine car owner) --> 8:exclusivegateway:{x}
+
+5:exclusivegateway:{x} --> |Yes|9:task:(receive car problems)
+9:task:(receive car problems) --> 10:task:(offer payment to car owner)
+10:task:(offer payment to car owner) --> 11:exclusivegateway:{x}
+
+11:exclusivegateway:{x} --> |Accept|12:task:(transfer payment to mechanic)
+12:task:(transfer payment to mechanic) --> 13:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Reject|13:exclusivegateway:{x}
+
+8:exclusivegateway:{x} --> 14:task:(receive confirmation of successful repair)
+13:exclusivegateway:{x} --> 14:task:(receive confirmation of successful repair)
+
+14:task:(receive confirmation of successful repair) --> 15:task:(receive time for next service)
+15:task:(receive time for next service) --> 16:exclusivegateway:{x}
+
+16:exclusivegateway:{x} --> 17:endevent:(((endevent)))
+8:exclusivegateway:{x} --> 16:exclusivegateway:{x}
+13:exclusivegateway:{x} --> 16:exclusivegateway:{x}

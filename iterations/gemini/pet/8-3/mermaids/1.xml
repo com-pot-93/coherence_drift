@@ -1,0 +1,15 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Detect Personnel Requirements)
+  1:task:(Detect Personnel Requirements) --> 2:task:(Report Vacancy to Personnel Department)
+  2:task:(Report Vacancy to Personnel Department) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |True| 4:task:(Receive Job Description for Review)
+  3:exclusivegateway:{x} --> |False| 10:endevent:(((endevent)))
+  4:task:(Receive Job Description for Review) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Ask for Corrections| 6:task:(Ask for Corrections)
+  5:exclusivegateway:{x} --> |Approve Job Description| 7:task:(Approve Job Description)
+  6:task:(Ask for Corrections) --> 8:exclusivegateway:{O}
+  7:task:(Approve Job Description) --> 8:exclusivegateway:{O}
+  8:exclusivegateway:{O} --> 9:task:(Advertise Vacancy)
+  9:task:(Advertise Vacancy) --> 3:exclusivegateway:{x}
+```

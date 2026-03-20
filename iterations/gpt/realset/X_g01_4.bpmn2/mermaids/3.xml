@@ -1,0 +1,135 @@
+flowchart LR
+0:startevent:((startevent))
+1:exclusivegateway:{x}
+2:task:(Select Course)
+3:exclusivegateway:{x}
+4:task:(Show Available Dates)
+5:task:(Select Date)
+6:exclusivegateway:{x}
+7:exclusivegateway:{x}
+8:exclusivegateway:{x}
+9:task:(Log Into Account)
+10:task:(Provide Payment Information)
+11:task:(Complete Registration)
+12:exclusivegateway:{x}
+13:parallelgateway:{AND}
+14:task:(Tweet Friends)
+15:exclusivegateway:{x}
+16:task:(Receive Ticket)
+17:exclusivegateway:{x}
+18:parallelgateway:{AND}
+19:parallelgateway:{AND}
+20:task:(Tweet Friends)
+21:exclusivegateway:{x}
+22:task:(Receive Ticket)
+23:exclusivegateway:{x}
+24:parallelgateway:{AND}
+25:parallelgateway:{AND}
+26:task:(Tweet Friends)
+27:exclusivegateway:{x}
+28:task:(Receive Ticket)
+29:exclusivegateway:{x}
+30:parallelgateway:{AND}
+31:task:(Check Account Status)
+32:exclusivegateway:{x}
+33:task:(Check University Eligibility)
+34:exclusivegateway:{x}
+35:task:(Register for Course)
+36:exclusivegateway:{x}
+37:task:(Send Activation Request)
+38:task:(Wait for Response)
+39:exclusivegateway:{x}
+40:task:(Complete Registration)
+41:exclusivegateway:{x}
+42:parallelgateway:{AND}
+43:task:(Tweet Friends)
+44:exclusivegateway:{x}
+45:task:(Receive Ticket)
+46:exclusivegateway:{x}
+47:parallelgateway:{AND}
+48:parallelgateway:{AND}
+49:task:(Tweet Friends)
+50:exclusivegateway:{x}
+51:task:(Receive Ticket)
+52:exclusivegateway:{x}
+53:parallelgateway:{AND}
+54:parallelgateway:{AND}
+55:task:(Tweet Friends)
+56:exclusivegateway:{x}
+57:task:(Receive Ticket)
+58:exclusivegateway:{x}
+59:parallelgateway:{AND}
+60:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |Proceed|2:task:(Select Course)
+1:exclusivegateway:{x} --> |Do not proceed|60:endevent:(((endevent)))
+2:task:(Select Course) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Continue|4:task:(Show Available Dates)
+3:exclusivegateway:{x} --> |Do not continue|60:endevent:(((endevent)))
+4:task:(Show Available Dates) --> 5:task:(Select Date)
+5:task:(Select Date) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Continue|7:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Do not continue|60:endevent:(((endevent)))
+7:exclusivegateway:{x} --> |No account|9:task:(Log Into Account)
+7:exclusivegateway:{x} --> |Has account|31:task:(Check Account Status)
+9:task:(Log Into Account) --> 10:task:(Provide Payment Information)
+10:task:(Provide Payment Information) --> 11:task:(Complete Registration)
+11:task:(Complete Registration) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Continue|13:parallelgateway:{AND}
+12:exclusivegateway:{x} --> |Do not continue|60:endevent:(((endevent)))
+13:parallelgateway:{AND} --> 14:task:(Tweet Friends)
+13:parallelgateway:{AND} --> 16:task:(Receive Ticket)
+14:task:(Tweet Friends) --> 15:exclusivegateway:{x}
+16:task:(Receive Ticket) --> 17:exclusivegateway:{x}
+15:exclusivegateway:{x} --> 18:parallelgateway:{AND}
+17:exclusivegateway:{x} --> 18:parallelgateway:{AND}
+18:parallelgateway:{AND} --> 19:parallelgateway:{AND}
+19:parallelgateway:{AND} --> 20:task:(Tweet Friends)
+19:parallelgateway:{AND} --> 22:task:(Receive Ticket)
+20:task:(Tweet Friends) --> 21:exclusivegateway:{x}
+22:task:(Receive Ticket) --> 23:exclusivegateway:{x}
+21:exclusivegateway:{x} --> 24:parallelgateway:{AND}
+23:exclusivegateway:{x} --> 24:parallelgateway:{AND}
+24:parallelgateway:{AND} --> 25:parallelgateway:{AND}
+25:parallelgateway:{AND} --> 26:task:(Tweet Friends)
+25:parallelgateway:{AND} --> 28:task:(Receive Ticket)
+26:task:(Tweet Friends) --> 27:exclusivegateway:{x}
+28:task:(Receive Ticket) --> 29:exclusivegateway:{x}
+27:exclusivegateway:{x} --> 30:parallelgateway:{AND}
+29:exclusivegateway:{x} --> 30:parallelgateway:{AND}
+30:parallelgateway:{AND} --> 60:endevent:(((endevent)))
+31:task:(Check Account Status) --> 32:exclusivegateway:{x}
+32:exclusivegateway:{x} --> |Eligible university|35:task:(Register for Course)
+32:exclusivegateway:{x} --> |Not eligible|37:task:(Send Activation Request)
+35:task:(Register for Course) --> 36:exclusivegateway:{x}
+36:exclusivegateway:{x} --> |Success|40:task:(Complete Registration)
+36:exclusivegateway:{x} --> |Fail|60:endevent:(((endevent)))
+37:task:(Send Activation Request) --> 38:task:(Wait for Response)
+38:task:(Wait for Response) --> 39:exclusivegateway:{x}
+39:exclusivegateway:{x} --> |Activation success|40:task:(Complete Registration)
+39:exclusivegateway:{x} --> |Activation fail|60:endevent:(((endevent)))
+40:task:(Complete Registration) --> 41:exclusivegateway:{x}
+41:exclusivegateway:{x} --> |Continue|42:parallelgateway:{AND}
+41:exclusivegateway:{x} --> |Do not continue|60:endevent:(((endevent)))
+42:parallelgateway:{AND} --> 43:task:(Tweet Friends)
+42:parallelgateway:{AND} --> 45:task:(Receive Ticket)
+43:task:(Tweet Friends) --> 44:exclusivegateway:{x}
+45:task:(Receive Ticket) --> 46:exclusivegateway:{x}
+44:exclusivegateway:{x} --> 47:parallelgateway:{AND}
+46:exclusivegateway:{x} --> 47:parallelgateway:{AND}
+47:parallelgateway:{AND} --> 48:parallelgateway:{AND}
+48:parallelgateway:{AND} --> 49:task:(Tweet Friends)
+48:parallelgateway:{AND} --> 51:task:(Receive Ticket)
+49:task:(Tweet Friends) --> 50:exclusivegateway:{x}
+51:task:(Receive Ticket) --> 52:exclusivegateway:{x}
+50:exclusivegateway:{x} --> 53:parallelgateway:{AND}
+52:exclusivegateway:{x} --> 53:parallelgateway:{AND}
+53:parallelgateway:{AND} --> 54:parallelgateway:{AND}
+54:parallelgateway:{AND} --> 55:task:(Tweet Friends)
+54:parallelgateway:{AND} --> 57:task:(Receive Ticket)
+55:task:(Tweet Friends) --> 56:exclusivegateway:{x}
+57:task:(Receive Ticket) --> 58:exclusivegateway:{x}
+56:exclusivegateway:{x} --> 59:parallelgateway:{AND}
+58:exclusivegateway:{x} --> 59:parallelgateway:{AND}
+59:parallelgateway:{AND} --> 60:endevent:(((endevent)))

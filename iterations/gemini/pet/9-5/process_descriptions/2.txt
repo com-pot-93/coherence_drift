@@ -1,0 +1,23 @@
+The process starts. Depending on whether Condition A is met, the process either receives an expense report or creates a new employee account.
+
+If Condition A is met and the process receives an expense report, it then checks if Condition E is met. If it is, the process creates a new employee account. If Condition E is not met, the process proceeds to a decision based on Condition G.
+
+After creating a new employee account, the process again evaluates Condition G. If Condition G is met, the report is automatically approved. Otherwise, a supervisor approves the report. After the supervisor approves the report, the process merges back, and then returns to the evaluation of Condition G.
+
+If Condition G is met, the report is automatically approved. Otherwise, a supervisor approves the report.
+
+After the report is automatically approved or the supervisor approves it, the process merges back.
+
+If Condition A is not met and the process creates a new employee account, it then evaluates Condition G. If Condition G is met, the report is automatically approved. Otherwise, a supervisor approves the report. After the report is automatically approved or the supervisor approves it, the process merges back, and then returns to the evaluation of Condition G.
+
+If Condition G is met, the report is automatically approved. Otherwise, a supervisor approves the report.
+
+After the report is automatically approved or the supervisor approves it, the process merges back.
+
+After the two initial paths merge, the process checks if Condition I is met. If it is, reimbursement is sent to a bank account. Otherwise, the process skips this step.
+
+If reimbursement is sent to a bank account, the process checks if Condition K is met. If it is not, the process checks if Condition L is met. If Condition L is met, an approval in progress email is sent. Otherwise, the process checks if Condition M is met. If Condition M is not met, a rejection notice is sent.
+
+If reimbursement is not sent to a bank account, the process checks if Condition K is met. If it is not, the process checks if Condition L is met. If Condition L is met, an approval in progress email is sent. Otherwise, the process checks if Condition M is met. If Condition M is not met, a rejection notice is sent.
+
+The process ends.

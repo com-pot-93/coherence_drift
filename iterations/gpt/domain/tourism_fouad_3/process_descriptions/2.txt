@@ -1,0 +1,15 @@
+The process begins when a travel request is received. After receiving the request, a tour plan is prepared. Once the tour plan is ready, it is sent out.
+
+Next, a decision is made. If the process should continue, the next step is to wait for a response. After waiting for a response, another decision is made. If the process should proceed, the tour is booked.
+
+Following the booking, another decision is made. If the process should not continue, it returns to waiting for a response. If the process should continue, the customer is charged.
+
+After charging the customer, there is another decision point with three possible actions:
+
+- If the customer should be contacted, the customer is contacted, and then the process continues.
+- If a bill should be sent, the bill is sent, followed by sending a booking confirmation, and then the process continues.
+- If no further action is needed, the process continues immediately.
+
+After any of these actions, the process returns to the previous decision point after booking the tour. If the process should not continue at that point, it returns to waiting for a response.
+
+If, after waiting for a response, an escalation occurs, the process returns to the previous decision point to determine whether to proceed or not. If the process should not continue at the initial decision point after sending the tour plan, the process ends.

@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Develop basic design</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <call id="a3" endpoint="" a:alt_id="2">
+      <parameters>
+        <label>Order Lego brick sets</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a5" endpoint="" a:alt_id="3">
+      <parameters>
+        <label>Sort Lego bricks</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <parallel wait="-1" cancel="last" a:alt_id="4">
+      <parallel_branch>
+        <call id="a9" endpoint="" a:alt_id="5">
+          <parameters>
+            <label>Put big bricks in a container</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </parallel_branch>
+      <parallel_branch>
+        <call id="a11" endpoint="" a:alt_id="6">
+          <parameters>
+            <label>Put medium bricks in a container</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </parallel_branch>
+      <parallel_branch>
+        <call id="a13" endpoint="" a:alt_id="7">
+          <parameters>
+            <label>Put small bricks in a container</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </parallel_branch>
+    </parallel>
+    <loop mode="pre_test" condition="True">
+      <call id="a23" endpoint="" a:alt_id="10">
+        <parameters>
+          <label>Build subcomponents</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="11">
+        <alternative condition="">
+          <call id="a3" endpoint="" a:alt_id="2">
+            <parameters>
+              <label>Order Lego brick sets</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a5" endpoint="" a:alt_id="3">
+            <parameters>
+              <label>Sort Lego bricks</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <parallel wait="-1" cancel="last" a:alt_id="4">
+            <parallel_branch>
+              <call id="a9" endpoint="" a:alt_id="5">
+                <parameters>
+                  <label>Put big bricks in a container</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </parallel_branch>
+            <parallel_branch>
+              <call id="a11" endpoint="" a:alt_id="6">
+                <parameters>
+                  <label>Put medium bricks in a container</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </parallel_branch>
+            <parallel_branch>
+              <call id="a13" endpoint="" a:alt_id="7">
+                <parameters>
+                  <label>Put small bricks in a container</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </parallel_branch>
+          </parallel>
+        </alternative>
+        <alternative condition="">
+          <call id="a43" endpoint="" a:alt_id="16">
+            <parameters>
+              <label>Test subcomponents</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="12">
+            <alternative condition="Redesign" language="text/javascript">
+              <call id="a33" endpoint="" a:alt_id="13">
+                <parameters>
+                  <label>Redesign subcomponent</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Assemble" language="text/javascript">
+              <call id="a35" endpoint="" a:alt_id="14">
+                <parameters>
+                  <label>Assemble subcomponents into the machine</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="Build more" language="text/javascript">
+          <call id="a23" endpoint="" a:alt_id="10">
+            <parameters>
+              <label>Build subcomponents</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <escape a:alt_id="-1"/>
+        </alternative>
+      </choose>
+    </loop>
+  </loop>
+</description>

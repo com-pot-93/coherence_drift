@@ -1,0 +1,92 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Enter login data)
+  2:task:(Check if credentials are correct)
+  3:exclusivegateway:{x}
+  4:exclusivegateway:{x}
+  5:task:(Select product)
+  6:exclusivegateway:{x}
+  7:task:(Add it to shopping cart)
+  8:task:(Save item)
+  9:exclusivegateway:{x}
+  10:task:(Add it to shopping cart)
+  11:task:(Save item)
+  12:exclusivegateway:{x}
+  13:task:(Select product)
+  14:exclusivegateway:{x}
+  15:task:(Add it to shopping cart)
+  16:task:(Save item)
+  17:exclusivegateway:{x}
+  18:task:(Add it to shopping cart)
+  19:task:(Save item)
+  20:task:(Check if every selected item is in the shopping cart)
+  21:task:(Confirm order)
+  22:parallelgateway:{AND}
+  23:task:(Prepare shipment details)
+  24:task:(Prepare payment details)
+  25:parallelgateway:{AND}
+  26:task:(Enter payment data)
+  27:parallelgateway:{AND}
+  28:task:(Send payment data to bank institut)
+  29:task:(Enter shipping details)
+  30:parallelgateway:{AND}
+  31:exclusivegateway:{x}
+  32:task:(Confirm and save order)
+  33:endevent:(((endevent)))
+  %% Main flow
+  0:startevent:((startevent)) --> 1:task:(Enter login data)
+  1:task:(Enter login data) --> 2:task:(Check if credentials are correct)
+  2:task:(Check if credentials are correct) --> 3:exclusivegateway:{x}
+  %% D1
+  3:exclusivegateway:{x} --> |true|4:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |false|20:task:(Check if every selected item is in the shopping cart)
+  %% D2
+  4:exclusivegateway:{x} --> |true|5:task:(Select product)
+  4:exclusivegateway:{x} --> |branch2|12:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |false|13:task:(Select product)
+  %% D3 (after 5)
+  5:task:(Select product) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |true|7:task:(Add it to shopping cart)
+  6:exclusivegateway:{x} --> |branch1|9:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |false|20:task:(Check if every selected item is in the shopping cart)
+  7:task:(Add it to shopping cart) --> 8:task:(Save item)
+  8:task:(Save item) --> 20:task:(Check if every selected item is in the shopping cart)
+  %% D4 (after branch1 of D3)
+  9:exclusivegateway:{x} --> |true|10:task:(Add it to shopping cart)
+  9:exclusivegateway:{x} --> |false|20:task:(Check if every selected item is in the shopping cart)
+  10:task:(Add it to shopping cart) --> 11:task:(Save item)
+  11:task:(Save item) --> 20:task:(Check if every selected item is in the shopping cart)
+  %% D2 branch2
+  12:exclusivegateway:{x} --> |true|20:task:(Check if every selected item is in the shopping cart)
+  12:exclusivegateway:{x} --> |false|20:task:(Check if every selected item is in the shopping cart)
+  %% D2 false branch (third branch)
+  13:task:(Select product) --> 14:exclusivegateway:{x}
+  %% D5 (after 13)
+  14:exclusivegateway:{x} --> |branch1|15:task:(Add it to shopping cart)
+  14:exclusivegateway:{x} --> |branch2|17:exclusivegateway:{x}
+  14:exclusivegateway:{x} --> |branch3|20:task:(Check if every selected item is in the shopping cart)
+  15:task:(Add it to shopping cart) --> 16:task:(Save item)
+  16:task:(Save item) --> 20:task:(Check if every selected item is in the shopping cart)
+  %% D6 (after branch2 of D5)
+  17:exclusivegateway:{x} --> |true|18:task:(Add it to shopping cart)
+  17:exclusivegateway:{x} --> |false|20:task:(Check if every selected item is in the shopping cart)
+  18:task:(Add it to shopping cart) --> 19:task:(Save item)
+  19:task:(Save item) --> 20:task:(Check if every selected item is in the shopping cart)
+  %% After all D1/D2/D3/D4/D5/D6 branches
+  20:task:(Check if every selected item is in the shopping cart) --> 21:task:(Confirm order)
+  21:task:(Confirm order) --> 22:parallelgateway:{AND}
+  22:parallelgateway:{AND} --> 23:task:(Prepare shipment details)
+  22:parallelgateway:{AND} --> 24:task:(Prepare payment details)
+  23:task:(Prepare shipment details) --> 25:parallelgateway:{AND}
+  24:task:(Prepare payment details) --> 25:parallelgateway:{AND}
+  25:parallelgateway:{AND} --> 26:task:(Enter payment data)
+  26:task:(Enter payment data) --> 27:parallelgateway:{AND}
+  27:parallelgateway:{AND} --> 28:task:(Send payment data to bank institut)
+  27:parallelgateway:{AND} --> 29:task:(Enter shipping details)
+  28:task:(Send payment data to bank institut) --> 30:parallelgateway:{AND}
+  29:task:(Enter shipping details) --> 30:parallelgateway:{AND}
+  30:parallelgateway:{AND} --> 31:exclusivegateway:{x}
+  %% D7
+  31:exclusivegateway:{x} --> |success|32:task:(Confirm and save order)
+  31:exclusivegateway:{x} --> |failure|33:endevent:(((endevent)))
+  32:task:(Confirm and save order) --> 33:endevent:(((endevent)))

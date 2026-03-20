@@ -1,0 +1,34 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Identify Potential Customers)
+2:exclusivegateway:{x}
+3:task:(Purchase Contact Details for Cold Calls)
+4:task:(Collect Contact Information at Exhibition)
+5:task:(Use Existing Interested Contact)
+6:exclusivegateway:{x}
+7:task:(Call Customer)
+8:task:(Determine Appropriate Contact Person)
+9:task:(Find Out Customer's Budget)
+10:exclusivegateway:{x}
+11:task:(Proceed with Sales/Pre-sales Activities)
+12:task:(Head of Development Acquires Customer)
+13:exclusivegateway:{x}
+14:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Identify Potential Customers)
+1:task:(Identify Potential Customers) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Purchase|3:task:(Purchase Contact Details for Cold Calls)
+2:exclusivegateway:{x} --> |Exhibition|4:task:(Collect Contact Information at Exhibition)
+2:exclusivegateway:{x} --> |Existing Contact|5:task:(Use Existing Interested Contact)
+3:task:(Purchase Contact Details for Cold Calls) --> 6:exclusivegateway:{x}
+4:task:(Collect Contact Information at Exhibition) --> 6:exclusivegateway:{x}
+5:task:(Use Existing Interested Contact) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> 7:task:(Call Customer)
+7:task:(Call Customer) --> 8:task:(Determine Appropriate Contact Person)
+8:task:(Determine Appropriate Contact Person) --> 9:task:(Find Out Customer's Budget)
+9:task:(Find Out Customer's Budget) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Proceed with Sales|11:task:(Proceed with Sales/Pre-sales Activities)
+10:exclusivegateway:{x} --> |Head of Development Acquires|12:task:(Head of Development Acquires Customer)
+11:task:(Proceed with Sales/Pre-sales Activities) --> 13:exclusivegateway:{x}
+12:task:(Head of Development Acquires Customer) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> 14:endevent:(((endevent)))

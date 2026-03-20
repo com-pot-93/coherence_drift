@@ -1,0 +1,9 @@
+The process begins when GO initiates a measurement request. This request is then received and reviewed by MSP.
+
+After reviewing the request, MSP decides whether to approve or deny it. If MSP denies the request, MSP informs GO of the denial. Once GO is informed, the process moves towards completion.
+
+If MSP approves the request, MSP proceeds to perform the measurement. After attempting the measurement, MSP checks whether the measurement was successful or not. If the measurement fails, MSP notifies GO about the failure, and the process moves towards completion.
+
+If the measurement is successful, MSP sends the measured values to GO. GO then processes these measured values and checks if any values have changed. If the values have changed, GO sends the updated values back to MSP. If there is no change in the values, this step is skipped.
+
+In both cases—whether the values were updated or not—GO forwards the readings to SP. After this, the process moves towards completion. The process ends at this point.

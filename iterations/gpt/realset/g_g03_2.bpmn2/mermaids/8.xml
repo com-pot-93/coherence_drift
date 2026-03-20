@@ -1,0 +1,54 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Open Battle.net Application)
+2:exclusivegateway:{x}
+3:task:(Enter Account Details)
+4:task:(Click Email Confirmation Link)
+5:exclusivegateway:{x}
+6:task:(Log into Battle.net)
+7:task:(Wait for Account Info to Load)
+8:exclusivegateway:{x}
+9:task:(Choose Payment Method)
+10:exclusivegateway:{x}
+11:task:(Enter Credit Card Info)
+12:task:(Enter IBAN and BIC)
+13:exclusivegateway:{x}
+14:task:(Log into Game)
+15:task:(Wait for Game Data to Load)
+16:parallelgateway:{AND}
+17:task:(Choose Realm)
+18:task:(Select Race)
+19:task:(Select Class)
+20:parallelgateway:{AND}
+21:task:(Name Character)
+22:task:(Receive Confirmation and Selfies)
+23:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Open Battle.net Application)
+1:task:(Open Battle.net Application) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Account info required|3:task:(Enter Account Details)
+2:exclusivegateway:{x} --> |No account info needed|5:exclusivegateway:{x}
+3:task:(Enter Account Details) --> 4:task:(Click Email Confirmation Link)
+4:task:(Click Email Confirmation Link) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> 6:task:(Log into Battle.net)
+6:task:(Log into Battle.net) --> 7:task:(Wait for Account Info to Load)
+7:task:(Wait for Account Info to Load) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Payment method needed|9:task:(Choose Payment Method)
+8:exclusivegateway:{x} --> |No payment method needed|13:exclusivegateway:{x}
+9:task:(Choose Payment Method) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Credit Card|11:task:(Enter Credit Card Info)
+10:exclusivegateway:{x} --> |IBAN/BIC|12:task:(Enter IBAN and BIC)
+11:task:(Enter Credit Card Info) --> 13:exclusivegateway:{x}
+12:task:(Enter IBAN and BIC) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> 14:task:(Log into Game)
+14:task:(Log into Game) --> 15:task:(Wait for Game Data to Load)
+15:task:(Wait for Game Data to Load) --> 16:parallelgateway:{AND}
+16:parallelgateway:{AND} --> 17:task:(Choose Realm)
+16:parallelgateway:{AND} --> 18:task:(Select Race)
+16:parallelgateway:{AND} --> 19:task:(Select Class)
+17:task:(Choose Realm) --> 20:parallelgateway:{AND}
+18:task:(Select Race) --> 20:parallelgateway:{AND}
+19:task:(Select Class) --> 20:parallelgateway:{AND}
+20:parallelgateway:{AND} --> 21:task:(Name Character)
+21:task:(Name Character) --> 22:task:(Receive Confirmation and Selfies)
+22:task:(Receive Confirmation and Selfies) --> 23:endevent:(((endevent)))

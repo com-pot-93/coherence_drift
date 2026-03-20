@@ -1,0 +1,26 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Customized airplane order received)
+  1:task:(Customized airplane order received) --> 2:task:(The order is being processed)
+  2:task:(The order is being processed) --> 3:parallelgateway:{AND}
+  3:parallelgateway:{AND} --> 4:task:(Build the airplane base model)
+  3:parallelgateway:{AND} --> 5:task:(Transmit requirements for the customization to the responsible teams)
+  4:task:(Build the airplane base model) --> 6:parallelgateway:{AND}
+  5:task:(Transmit requirements for the customization to the responsible teams) --> 6:parallelgateway:{AND}
+  6:parallelgateway:{AND} --> 7:task:(14 Days)
+  7:task:(14 Days) --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} -->|true| 9:task:(Send a reminder to the responsible team)
+  9:task:(Send a reminder to the responsible team) --> 7:task:(14 Days)
+  8:exclusivegateway:{x} -->|false| 10:task:(Install the individual bits and pieces in the airplane)
+  10:task:(Install the individual bits and pieces in the airplane) --> 11:task:(Control the engines and risk factors)
+  11:task:(Control the engines and risk factors) --> 12:task:(Prepare the plane to a test flight)
+  12:task:(Prepare the plane to a test flight) --> 13:task:(Receive a test flight protocol)
+  13:task:(Receive a test flight protocol) --> 14:task:(Automatic forwarding to the customer)
+  14:task:(Automatic forwarding to the customer) --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} -->|standard| 16:task:(standard shipping to the customer)
+  15:exclusivegateway:{x} -->|premium| 17:task:(premium shipping to the customer)
+  16:task:(standard shipping to the customer) --> 18:parallelgateway:{AND}
+  17:task:(premium shipping to the customer) --> 18:parallelgateway:{AND}
+  18:parallelgateway:{AND} --> 19:task:(Receive a confirmation via E-Mail)
+  19:task:(Receive a confirmation via E-Mail) --> 20:endevent:(((endevent)))
+```

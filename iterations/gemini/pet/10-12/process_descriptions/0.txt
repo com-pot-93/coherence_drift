@@ -1,0 +1,8 @@
+The process starts when an event occurs.
+First, the EC informs the INQ about a data change.
+Next, the INQ notifies the IP about this change.
+Then, the IP checks whether the data can be changed.
+Following this, a decision is made.
+If the IP confirms the changes from the INQ, then the IP confirms the changes.
+Alternatively, if the IP rejects the changes from the INQ, then the IP rejects the changes.
+Finally, the process ends.

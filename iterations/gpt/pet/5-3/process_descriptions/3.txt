@@ -1,0 +1,37 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when a request is submitted.
+2. After the request is submitted, it is registered.
+3. The process then checks whether to continue. If the decision is not to continue, the process ends here.
+4. If the process continues, an initial continuation check is performed.
+5. Another decision is made on whether to continue. If not, the process ends.
+6. If the process continues, another check is performed.
+7. The process then evaluates a condition. If the result is positive, the request is sent for supervisor review.
+8. The supervisor reviews the request.
+9. After the review, a decision is made. If the request is not approved, it is returned with comments.
+10. The employee reviews the comments.
+11. The employee then decides whether to resubmit the request or withdraw it:
+    - If the employee chooses to resubmit, the request is sent again for supervisor review, and the process repeats from the supervisor review step.
+    - If the employee chooses to withdraw, the process ends.
+12. If the supervisor approves the request, it is forwarded to the purchase department.
+13. The purchase department checks whether to continue. If not, the process ends.
+14. If the process continues, a purchase continuation check is performed.
+15. Another decision is made on whether to continue. If not, the process ends.
+16. If the process continues, another check is performed.
+17. If the result is positive, quotations are prepared.
+18. After preparing quotations, a decision is made. If the process cannot continue, it is escalated and loops back to the previous check.
+19. If a vendor is selected, the process continues to vendor selection.
+20. The vendor is chosen.
+21. A decision is made to confirm the vendor or make changes:
+    - If changes are needed, the process returns to preparing quotations.
+    - If the vendor is confirmed, a purchase order is generated and sent.
+22. The process waits for product delivery.
+23. Once the product is delivered, the invoice is received.
+24. A check is performed to see if all steps are complete:
+    - If not, the process returns to preparing quotations.
+    - If all steps are complete, the user is notified of the status.
+25. Final checks are performed.
+26. The process goes through a series of final evaluations.
+27. Once all evaluations are complete, the process ends.
+
+Throughout the process, at several points, if a decision is made not to continue, the process ends immediately. If issues arise during vendor selection or quotation preparation, the process may escalate and loop back to earlier steps for re-evaluation or correction. The process ensures that requests are reviewed, approved, and processed through the appropriate channels, with opportunities for resubmission or withdrawal if necessary. The process concludes after all checks and notifications are completed.

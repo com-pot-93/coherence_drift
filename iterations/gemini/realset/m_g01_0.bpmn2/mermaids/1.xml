@@ -1,0 +1,14 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+  1:exclusivegateway:{x} --> |true| 2:subprocess:(Heat Bed and Extruder)
+  1:exclusivegateway:{x} --> |false| 14:endevent:(((endevent)))
+  2:subprocess:(Heat Bed and Extruder) --> 3:task:(Send Status)
+  3:task:(Send Status) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |true| 5:task:(Print Object)
+  4:exclusivegateway:{x} --> |false| 6:subprocess:(Heat Bed and Extruder)
+  5:task:(Print Object) --> 7:inclusivegateway:{O}
+  6:subprocess:(Heat Bed and Extruder) --> 7:inclusivegateway:{O}
+  7:inclusivegateway:{O} --> 8:inclusivegateway:{O}
+  8:inclusivegateway:{O} --> 1:exclusivegateway:{x}
+```

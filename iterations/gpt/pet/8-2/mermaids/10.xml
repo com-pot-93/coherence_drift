@@ -1,0 +1,11 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Identify Vacancy)
+2:task:(Report Vacancy to HR)
+3:task:(Create Job Description)
+4:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Identify Vacancy)
+1:task:(Identify Vacancy) --> 2:task:(Report Vacancy to HR)
+2:task:(Report Vacancy to HR) --> 3:task:(Create Job Description)
+3:task:(Create Job Description) --> 4:endevent:(((endevent)))

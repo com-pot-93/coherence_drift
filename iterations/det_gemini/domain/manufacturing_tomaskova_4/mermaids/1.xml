@@ -1,0 +1,18 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Production planning)
+  1:task:(Production planning) --> 2:task:(Assign workers)
+  2:task:(Assign workers) --> 3:task:(Production design)
+  3:task:(Production design) --> 4:task:(Product delivery)
+  4:task:(Product delivery) --> 5:task:(Production logout)
+  5:task:(Production logout) --> 6:task:(Quality control)
+  6:task:(Quality control) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |true| 1:task:(Production planning)
+  7:exclusivegateway:{x} --> |false| 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |Branch 1| 9:task:(Register to the finished stock)
+  9:task:(Register to the finished stock) --> 10:task:(Stock to the finished goods)
+  10:task:(Stock to the finished goods) --> 12:endevent:(((endevent)))
+  8:exclusivegateway:{x} --> |Branch 2| 11:task:(Register to the semi-finished stock)
+  11:task:(Register to the semi-finished stock) --> 13:task:(Load to the semi-finished stock)
+  13:task:(Load to the semi-finished stock) --> 12:endevent:(((endevent)))
+```

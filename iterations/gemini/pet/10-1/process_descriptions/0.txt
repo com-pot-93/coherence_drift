@@ -1,0 +1,1 @@
+The process starts when MPON sends a dismissal. Then, MPOO reviews the dismissal. Based on the review, MPOO either opposes the dismissal or confirms it. Finally, the process ends.

@@ -1,0 +1,29 @@
+The process begins when a request is submitted. After the request is submitted, it is registered in the system.
+
+Next, a decision is made on whether to continue with the process. If the decision is not to continue, the process ends immediately. If the decision is to continue, an initial continuation check is performed.
+
+After this check, another decision is made. If the process should not continue, it ends. If it should continue, a further check is carried out.
+
+Following this further check, another decision point is reached. If the process should not continue, it ends. If it should continue, the condition is evaluated.
+
+Once the condition is evaluated, a decision is made based on the result. If the result is negative, the process ends. If the result is positive, another decision is made. If this decision is not to proceed, the process ends. If the decision is to proceed, the request is sent for supervisor review.
+
+The supervisor then reviews the request. After the review, a decision is made. If the request is not approved, it is returned with comments. The employee then reviews these comments and decides whether to resubmit the request or withdraw it. If the employee chooses to withdraw, the process ends. If the employee chooses to resubmit, the request is sent again for supervisor review, and the process continues from the supervisor review step.
+
+If the supervisor approves the request, it is forwarded to the purchase department. The purchase department then checks whether to continue with the process. If the decision is not to continue, the process ends. If the decision is to continue, another check is performed.
+
+After this check, a decision is made. If the process should not continue, the process ends. If it should continue, a further purchase check is performed.
+
+Following this further purchase check, another decision is made. If the process should not continue, the process ends. If it should continue, the process moves to the preparation of quotations.
+
+Once quotations are prepared, a decision is made. If the process cannot continue, the issue is escalated and rechecked, returning to the further purchase check step. If a vendor has been selected, the process moves to vendor selection.
+
+After vendor selection, a vendor is chosen. A decision is then made: if the vendor is confirmed, a purchase order is generated and sent. If changes need to be made, the process returns to the preparation of quotations.
+
+Once the purchase order is sent, the process waits for product delivery. After the product is delivered, the invoice is received.
+
+At this point, a decision is made to check if all steps are complete. If not all steps are complete, the process returns to the preparation of quotations. If all steps are complete, the user is notified of the status.
+
+After notifying the user, final checks are performed, followed by final evaluations. A decision is then made. If the process should not continue, it ends. If it should continue, the process ends as well.
+
+Throughout the process, at various decision points, if the decision is not to continue, the process ends immediately. If issues arise during the preparation of quotations or other checks, the process may escalate and loop back to earlier steps for rechecking or further action. This ensures that the process is thorough and that all necessary checks and approvals are completed before finalizing the request.

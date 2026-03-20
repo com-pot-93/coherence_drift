@@ -1,0 +1,11 @@
+The process begins when an order is received. After receiving the order, a decision is made: if the order is to be rejected, the process moves to handling the order rejection. Once the rejection is handled, the process proceeds to the end.
+
+If the order is not rejected, the storehouse is informed. After that, the engineering department is notified. Next, two activities are prepared to happen at the same time: assembly preparations begin, and the part list is processed.
+
+For the assembly preparations, a decision point is reached, but regardless of the outcome, the process continues to the next step, where it waits for other activities to finish.
+
+For the part list, after processing it, two activities are started at the same time: the part list is checked, and assembly preparations begin again. After checking the part list, the part quantities are verified. Then, a decision is made: if all parts are available, the parts are reserved; if some parts are missing, a back-order is created. After either reserving parts or creating a back-order, the process waits for the other activities to finish.
+
+The assembly preparations that started in parallel also reach a decision point, but regardless of the outcome, the process continues and waits for the other activities to finish.
+
+Once all parallel activities are completed, the process moves on to assembling the bicycle. After the bicycle is assembled, it is shipped. Finally, the process ends.

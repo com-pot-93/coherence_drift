@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Customized Airplane Order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Process Order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="3">
+    <parallel_branch>
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Build Base Model</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a9" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>Transmit Customization Requirements</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a15" endpoint="" a:alt_id="8">
+    <parameters>
+      <label>Check First Condition</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="7">
+    <alternative condition="Condition met" language="text/javascript"/>
+    <alternative condition="Condition not met" language="text/javascript">
+      <call id="a21" endpoint="" a:alt_id="10">
+        <parameters>
+          <label>Check Second Condition</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="9">
+        <alternative condition="Second condition false" language="text/javascript"/>
+        <alternative condition="Second condition true" language="text/javascript">
+          <call id="a27" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>Check Third Condition</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="11">
+            <alternative condition="Third condition false" language="text/javascript"/>
+            <alternative condition="Third condition true" language="text/javascript">
+              <call id="a33" endpoint="" a:alt_id="14">
+                <parameters>
+                  <label>Wait 14 Days</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a35" endpoint="" a:alt_id="15">
+                <parameters>
+                  <label>Evaluate Outcome</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="16">
+                <alternative condition="Outcome achieved" language="text/javascript"/>
+                <alternative condition="Outcome achieved" language="text/javascript">
+                  <loop mode="pre_test" condition="true">
+                    <call id="a41" endpoint="" a:alt_id="17">
+                      <parameters>
+                        <label>Send Reminder to Team</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <call id="a43" endpoint="" a:alt_id="18">
+                      <parameters>
+                        <label>Escalate Issue</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <call id="a45" endpoint="" a:alt_id="19">
+                      <parameters>
+                        <label>Wait 14 Days</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <call id="a47" endpoint="" a:alt_id="20">
+                      <parameters>
+                        <label>Evaluate Outcome</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <loop mode="pre_test" condition="Outcome not achieved" a:alt_id="21" language="text/javascript">
+                      <call id="a41" endpoint="" a:alt_id="17">
+                        <parameters>
+                          <label>Send Reminder to Team</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a43" endpoint="" a:alt_id="18">
+                        <parameters>
+                          <label>Escalate Issue</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a45" endpoint="" a:alt_id="19">
+                        <parameters>
+                          <label>Wait 14 Days</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a47" endpoint="" a:alt_id="20">
+                        <parameters>
+                          <label>Evaluate Outcome</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </loop>
+                    <call id="a39" endpoint="" a:alt_id="22">
+                      <parameters>
+                        <label>Install Customized Parts</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                  </loop>
+                </alternative>
+              </choose>
+              <call id="a39" endpoint="" a:alt_id="22">
+                <parameters>
+                  <label>Install Customized Parts</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="23">
+                <alternative condition="Outcome achieved" language="text/javascript"/>
+                <alternative condition="Outcome achieved" language="text/javascript">
+                  <call id="a59" endpoint="" a:alt_id="24">
+                    <parameters>
+                      <label>Wait 14 Days</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <loop mode="pre_test" condition="true">
+                    <call id="a61" endpoint="" a:alt_id="25">
+                      <parameters>
+                        <label>Send Reminder to Team</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <call id="a63" endpoint="" a:alt_id="26">
+                      <parameters>
+                        <label>Escalate Issue</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <call id="a65" endpoint="" a:alt_id="27">
+                      <parameters>
+                        <label>Wait 14 Days</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <call id="a67" endpoint="" a:alt_id="28">
+                      <parameters>
+                        <label>Evaluate Outcome</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <loop mode="pre_test" condition="Outcome not achieved" a:alt_id="29" language="text/javascript">
+                      <call id="a61" endpoint="" a:alt_id="25">
+                        <parameters>
+                          <label>Send Reminder to Team</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a63" endpoint="" a:alt_id="26">
+                        <parameters>
+                          <label>Escalate Issue</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a65" endpoint="" a:alt_id="27">
+                        <parameters>
+                          <label>Wait 14 Days</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a67" endpoint="" a:alt_id="28">
+                        <parameters>
+                          <label>Evaluate Outcome</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </loop>
+                    <call id="a19" endpoint="" a:alt_id="30">
+                      <parameters>
+                        <label>Check Engines and Risk Factors</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                  </loop>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+  <call id="a19" endpoint="" a:alt_id="30">
+    <parameters>
+      <label>Check Engines and Risk Factors</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a75" endpoint="" a:alt_id="31">
+    <parameters>
+      <label>Prepare for Test Flight</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a77" endpoint="" a:alt_id="32">
+    <parameters>
+      <label>Receive Test Flight Protocol</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a79" endpoint="" a:alt_id="33">
+    <parameters>
+      <label>Forward Protocol to Customer</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="34">
+    <alternative condition="Standard shipping" language="text/javascript">
+      <call id="a83" endpoint="" a:alt_id="35">
+        <parameters>
+          <label>Ship via Standard Shipping</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Premium shipping" language="text/javascript">
+      <call id="a85" endpoint="" a:alt_id="36">
+        <parameters>
+          <label>Ship via Premium Shipping</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a87" endpoint="" a:alt_id="37">
+    <parameters>
+      <label>Receive Email Confirmation</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

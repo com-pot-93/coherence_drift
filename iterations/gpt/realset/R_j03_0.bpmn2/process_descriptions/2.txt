@@ -1,0 +1,5 @@
+The process begins when someone initiates the procedure. First, the person sends information about the symptoms they are experiencing with their fridge, along with the type of fridge they have. After this information is sent, a service appointment is scheduled.
+
+Once the appointment is set, the fridge is checked during the scheduled visit. After the check is completed, it is confirmed whether the fridge is working properly. Following this confirmation, the person is asked to provide a rating for the facility.
+
+Finally, the person gives their rating, and the process comes to an end.

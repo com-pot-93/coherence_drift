@@ -1,0 +1,30 @@
+flowchart LR
+0:startevent:((startevent))
+1:exclusivegateway:{x}
+2:task:(External Party Submits Change Request)
+3:task:(MPO Begins Change Process)
+4:task:(MPO Reviews Change Request)
+5:exclusivegateway:{x}
+6:task:(Formally Reject Request)
+7:task:(Confirm Request)
+8:task:(MPO Carries Out Change)
+9:exclusivegateway:{x}
+10:task:(Report Successful Implementation)
+11:task:(Notify Failure)
+12:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |External Party|2:task:(External Party Submits Change Request)
+1:exclusivegateway:{x} --> |MPO|3:task:(MPO Begins Change Process)
+2:task:(External Party Submits Change Request) --> 4:task:(MPO Reviews Change Request)
+3:task:(MPO Begins Change Process) --> 4:task:(MPO Reviews Change Request)
+4:task:(MPO Reviews Change Request) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Reject|6:task:(Formally Reject Request)
+5:exclusivegateway:{x} --> |Confirm|7:task:(Confirm Request)
+6:task:(Formally Reject Request) --> 8:task:(MPO Carries Out Change)
+7:task:(Confirm Request) --> 8:task:(MPO Carries Out Change)
+8:task:(MPO Carries Out Change) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Success|10:task:(Report Successful Implementation)
+9:exclusivegateway:{x} --> |Failure|11:task:(Notify Failure)
+10:task:(Report Successful Implementation) --> 12:endevent:(((endevent)))
+11:task:(Notify Failure) --> 12:endevent:(((endevent)))

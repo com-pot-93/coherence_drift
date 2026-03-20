@@ -1,0 +1,1 @@
+The process starts when the EC informs the INQ. Next, the INQ notifies the IP. Then, the IP checks the data. Depending on the outcome, the process follows one of two exclusive paths. If the changes are confirmed, the IP confirms the changes. Alternatively, if the changes are rejected, the IP rejects the changes. Finally, the process ends.

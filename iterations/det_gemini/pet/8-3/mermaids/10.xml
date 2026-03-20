@@ -1,0 +1,13 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(HFD detects a number of personnel requirements)
+1:task:(HFD detects a number of personnel requirements) --> 2:task:(HFD reports the vacancy to Personnel Department)
+2:task:(HFD reports the vacancy to Personnel Department) --> 3:task:(HFD gets the job description for review from Personnel Department)
+3:task:(HFD gets the job description for review from Personnel Department) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |yes| 5:task:(HFD asks for corrections)
+5:task:(HFD asks for corrections) --> 7:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |no| 6:task:(HFD approves the job description)
+6:task:(HFD approves the job description) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> 8:task:(HFD advertizes the vacancy)
+8:task:(HFD advertizes the vacancy) --> 9:endevent:(((endevent)))
+```

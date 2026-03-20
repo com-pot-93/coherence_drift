@@ -1,0 +1,21 @@
+The process begins with an initial step where a search is conducted to find a customer. Once the customer is found, an offer is made to them.
+
+After making the offer, a decision is made about whether to continue the process. If the decision is to continue, an additional request is received from the customer. More details are then provided in response to this request. After providing more details, another decision is made about whether to continue.
+
+If, at either of these decision points, the choice is not to continue, the process moves directly to the next major decision point.
+
+At the next stage, a decision is made about whether to proceed further. If the decision is to continue, a booking request is received from the customer. Following this, a bill is sent to the customer. After sending the bill, another decision is made about whether to continue.
+
+If, at this point, the decision is not to continue, the process moves to the next major decision point.
+
+At the following stage, a decision is made about whether to proceed. If the decision is to continue, payment is received from the customer. After receiving the payment, another decision is made about whether to continue.
+
+If, at this point, the decision is not to continue, the process moves to the next major decision point.
+
+At the next stage, the process continues in a loop where a decision is made. If the condition is met, another decision is made about whether to continue. If the decision is not to continue, the customer is contacted, and then the process returns to the previous decision point.
+
+If the decision is to continue, travel is booked for the customer, and a booking confirmation is sent. After sending the confirmation, the process returns to the previous decision point.
+
+If the condition at the earlier stage is not met, the process ends.
+
+This process involves several points where decisions are made about whether to continue or not, and depending on these decisions, the process may either proceed to the next step, loop back to a previous point, or come to an end.

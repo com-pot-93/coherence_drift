@@ -1,0 +1,29 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(send invitations for friends)
+    1:task:(send invitations for friends) --> 2:task:(to send questio, and the process ends. which games do you want to play?)
+    2:task:(to send questio, and the process ends. which games do you want to play?) --> 3:task:(recive list of games)
+    3:task:(recive list of games) --> 4:task:(Choose games)
+    4:task:(Choose games) --> 5:parallelgateway:{AND}
+    5:parallelgateway:{AND} --> 6:task:(appoint date  of LAN party  requiest to send)
+    6:task:(appoint date  of LAN party  requiest to send) --> 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> |true| 8:task:(Date change)
+    8:task:(Date change) --> 6:task:(appoint date  of LAN party  requiest to send)
+    7:exclusivegateway:{x} --> 9:parallelgateway:{AND}
+    5:parallelgateway:{AND} --> 10:task:(guest games do you want ?)
+    10:task:(guest games do you want ?) --> 11:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |true| 12:task:(change guest games)
+    12:task:(change guest games) --> 10:task:(guest games do you want ?)
+    11:exclusivegateway:{x} --> 9:parallelgateway:{AND}
+    9:parallelgateway:{AND} --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> 14:task:(download them)
+    14:task:(download them) --> 15:task:(send to Fragen how much Bier want to trink?)
+    13:exclusivegateway:{x} --> 15:task:(send to Fragen how much Bier want to trink?)
+    15:task:(send to Fragen how much Bier want to trink?) --> 16:task:(to recieve estimation number of all bier require)
+    16:task:(to recieve estimation number of all bier require) --> 17:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> 18:task:(go to supermarket)
+    18:task:(go to supermarket) --> 19:task:(buy bier missing)
+    19:task:(buy bier missing) --> 20:task:(prepare to LAN party)
+    17:exclusivegateway:{x} --> 20:task:(prepare to LAN party)
+    20:task:(prepare to LAN party) --> 21:endevent:(((endevent)))
+```

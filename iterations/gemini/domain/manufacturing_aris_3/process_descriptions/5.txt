@@ -1,0 +1,7 @@
+The process starts with preparing materials, followed by assembling a door. After the door is assembled, a decision is made: if the door needs fixing, a quality check inquiry is sent and then received. The quality is then checked, and a quality report is sent and received.
+
+After receiving the quality report, a decision is made multiple times, leading to another decision point. If the door needs fixing, the process escalates and loops back to the point where a quality check inquiry is sent. If no fixing is needed, another decision is made.
+
+If the door needs fixing, it is fixed, and then a series of decisions are made multiple times, leading to another decision point. If the door needs fixing, the process loops back to the point where it is fixed. If no fixing is needed, another series of decisions are made multiple times, leading to another decision point. If the door needs fixing, it is fixed, and then a series of decisions are made multiple times, leading to another decision point. If the door needs fixing, the process loops back to the point where it is fixed. If no fixing is needed, the door is released, and another decision is made.
+
+If the door needs fixing, a quality check inquiry is sent, and the process loops back to the point where a quality check inquiry is sent. If no fixing is needed, a series of decisions are made multiple times, leading to another decision point. The process then ends.

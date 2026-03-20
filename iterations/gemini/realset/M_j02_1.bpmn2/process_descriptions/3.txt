@@ -1,0 +1,11 @@
+The process starts when a customized airplane order is received. The order is then processed. Following this, two activities occur simultaneously: building the airplane base model and transmitting customization requirements. Once both are completed, the process proceeds to a decision point.
+
+If a certain condition is true, the process waits for 14 days. If the condition is false, this waiting step is skipped. After this potential waiting period, another decision point is reached.
+
+If a condition is met, a reminder is sent, and the process waits for another 14 days. If the condition is not met, both the reminder and the waiting period are skipped.
+
+Next, the bits and pieces are installed, followed by controlling the engines and risk factors, and preparing for a test flight. After that, the test flight protocol is received and forwarded to the customer.
+
+The process then splits based on the shipping option chosen. If standard shipping is selected, the airplane is shipped via standard delivery. If premium shipping is selected, the airplane is shipped via premium delivery.
+
+Finally, after the airplane is shipped, a confirmation email is received, and the process ends.

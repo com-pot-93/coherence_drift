@@ -1,0 +1,82 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(start  assesment tool)
+2:task:(tool starts)
+3:task:(enter incident type)
+4:exclusivegateway:{x}
+5:task:(Accident)
+6:task:(almost accident)
+7:task:(severe safety risk / helth risk)
+8:task:(defective protective equipment)
+9:exclusivegateway:{x}
+10:task:(further specify incident)
+11:exclusivegateway:{x}
+12:exclusivegateway:{x}
+13:task:(enter own data)
+14:task:(enter victim's data)
+15:exclusivegateway:{x}
+16:exclusivegateway:{x}
+17:parallelgateway:{AND}
+18:task:(add task; contact accident insurance)
+19:exclusivegateway:{x}
+20:task:(add task: contact  Labour Inspectorate)
+21:exclusivegateway:{x}
+22:parallelgateway:{AND}
+23:task:(add task: contact superiors)
+24:exclusivegateway:{x}
+25:task:(propose tasks to user)
+26:task:(execute proposed task)
+27:task:(add task:)
+28:exclusivegateway:{x}
+29:parallelgateway:{AND}
+30:task:(add task, and the process ends.)
+31:task:(add task:)
+32:parallelgateway:{AND}
+33:exclusivegateway:{x}
+34:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(start  assesment tool)
+1:task:(start  assesment tool) --> 2:task:(tool starts)
+2:task:(tool starts) --> 3:task:(enter incident type)
+3:task:(enter incident type) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Accident|5:task:(Accident)
+4:exclusivegateway:{x} --> |Almost accident|6:task:(almost accident)
+4:exclusivegateway:{x} --> |Severe safety risk / helth risk|7:task:(severe safety risk / helth risk)
+4:exclusivegateway:{x} --> |Defective protective equipment|8:task:(defective protective equipment)
+5:task:(Accident) --> 9:exclusivegateway:{x}
+6:task:(almost accident) --> 9:exclusivegateway:{x}
+7:task:(severe safety risk / helth risk) --> 9:exclusivegateway:{x}
+8:task:(defective protective equipment) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> 10:task:(further specify incident)
+10:task:(further specify incident) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Branch 1|12:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Branch 2|29:parallelgateway:{AND}
+12:exclusivegateway:{x} --> |Own data|13:task:(enter own data)
+12:exclusivegateway:{x} --> |Victim's data|14:task:(enter victim's data)
+13:task:(enter own data) --> 15:exclusivegateway:{x}
+14:task:(enter victim's data) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> |true|16:exclusivegateway:{x}
+15:exclusivegateway:{x} --> |exit loop|33:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |Branch 1|17:parallelgateway:{AND}
+16:exclusivegateway:{x} --> |Branch 2|23:task:(add task: contact superiors)
+17:parallelgateway:{AND} --> 18:task:(add task; contact accident insurance)
+17:parallelgateway:{AND} --> 19:exclusivegateway:{x}
+18:task:(add task; contact accident insurance) --> 22:parallelgateway:{AND}
+19:exclusivegateway:{x} --> |Contact Labour Inspectorate|20:task:(add task: contact  Labour Inspectorate)
+19:exclusivegateway:{x} --> |No action|21:exclusivegateway:{x}
+20:task:(add task: contact  Labour Inspectorate) --> 21:exclusivegateway:{x}
+21:exclusivegateway:{x} --> 22:parallelgateway:{AND}
+22:parallelgateway:{AND} --> 15:exclusivegateway:{x}
+23:task:(add task: contact superiors) --> 24:exclusivegateway:{x}
+24:exclusivegateway:{x} --> |No private insurance|25:task:(propose tasks to user)
+24:exclusivegateway:{x} --> |Contact private insurance|27:task:(add task:)
+25:task:(propose tasks to user) --> 26:task:(execute proposed task)
+26:task:(execute proposed task) --> 28:exclusivegateway:{x}
+27:task:(add task:) --> 28:exclusivegateway:{x}
+28:exclusivegateway:{x} --> 15:exclusivegateway:{x}
+29:parallelgateway:{AND} --> 30:task:(add task, and the process ends.)
+29:parallelgateway:{AND} --> 31:task:(add task:)
+30:task:(add task, and the process ends.) --> 32:parallelgateway:{AND}
+31:task:(add task:) --> 32:parallelgateway:{AND}
+32:parallelgateway:{AND} --> 33:exclusivegateway:{x}
+33:exclusivegateway:{x} --> 34:endevent:(((endevent)))

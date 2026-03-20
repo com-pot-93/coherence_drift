@@ -1,0 +1,9 @@
+The process begins when an order is received from the sales team. After receiving the order, the next step is to determine which parts are needed, how many of each part are required, and the delivery dates for these parts. Once this information is established, it is entered into the production planning system.
+
+Following this, a parts list is generated. This list is then transferred to the ERP system. The process continues with a check to see if any parts are missing.
+
+At this point, there is a decision:  
+- If parts are missing, the missing parts are procured.  
+- If no parts are missing, the process moves forward without procuring additional parts.
+
+After ensuring that all necessary parts are available, a system notification is received. The indicated steps in the notification are then performed. Once these steps are completed, the order quality is checked. The process concludes after the order quality check.

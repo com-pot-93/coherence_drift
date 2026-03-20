@@ -1,0 +1,45 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Receive Claim)
+  2:task:(Check Insurance Status)
+  3:exclusivegateway:{x}
+  4:task:(Evaluate Claim Severity)
+  5:exclusivegateway:{x}
+  6:task:(Send Forms to Claimant)
+  7:exclusivegateway:{x}
+  8:task:(Receive Completed Forms)
+  9:task:(Check Forms for Completeness)
+  10:exclusivegateway:{x}
+  11:task:(Register Claim)
+  12:exclusivegateway:{x}
+  13:task:(Inform Claimant of Rejection)
+  14:task:(Request Updated Forms)
+  15:task:(Escalate for Review)
+  16:endevent:(((endevent)))
+  17:exclusivegateway:{x}
+
+  0:startevent:((startevent)) --> 1:task:(Receive Claim)
+  1:task:(Receive Claim) --> 2:task:(Check Insurance Status)
+  2:task:(Check Insurance Status) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Continue|4:task:(Evaluate Claim Severity)
+  3:exclusivegateway:{x} --> |Do not continue|17:exclusivegateway:{x}
+  4:task:(Evaluate Claim Severity) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Proceed|6:task:(Send Forms to Claimant)
+  5:exclusivegateway:{x} --> |Reject|13:task:(Inform Claimant of Rejection)
+  6:task:(Send Forms to Claimant) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Proceed|8:task:(Receive Completed Forms)
+  7:exclusivegateway:{x} --> |Reject|13:task:(Inform Claimant of Rejection)
+  8:task:(Receive Completed Forms) --> 9:task:(Check Forms for Completeness)
+  9:task:(Check Forms for Completeness) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |Complete|11:task:(Register Claim)
+  10:exclusivegateway:{x} --> |Incomplete|14:task:(Request Updated Forms)
+  10:exclusivegateway:{x} --> |Escalate|15:task:(Escalate for Review)
+  11:task:(Register Claim) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> |End|16:endevent:(((endevent)))
+  12:exclusivegateway:{x} --> |Resend Forms|6:task:(Send Forms to Claimant)
+  12:exclusivegateway:{x} --> |Escalate|15:task:(Escalate for Review)
+  14:task:(Request Updated Forms) --> 9:task:(Check Forms for Completeness)
+  13:task:(Inform Claimant of Rejection) --> 17:exclusivegateway:{x}
+  15:task:(Escalate for Review) --> 16:endevent:(((endevent)))
+  17:exclusivegateway:{x} --> |Escalate|15:task:(Escalate for Review)
+  17:exclusivegateway:{x} --> |End|16:endevent:(((endevent)))

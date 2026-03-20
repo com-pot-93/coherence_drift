@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <loop mode="pre_test" condition="true">
+    <call id="a0" endpoint="" a:alt_id="8">
+      <parameters>
+        <label>Call Customer</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <choose mode="exclusive" a:alt_id="9">
+      <alternative condition="Note required" language="text/javascript">
+        <call id="a3" endpoint="" a:alt_id="10">
+          <parameters>
+            <label>Send Note to Manager</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a7" endpoint="" a:alt_id="11">
+          <parameters>
+            <label>Manager Processes Lead</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="post_test" condition="true">
+          <call id="a0" endpoint="" a:alt_id="8">
+            <parameters>
+              <label>Call Customer</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a3" endpoint="" a:alt_id="10">
+            <parameters>
+              <label>Send Note to Manager</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a7" endpoint="" a:alt_id="11">
+            <parameters>
+              <label>Manager Processes Lead</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </loop>
+      </alternative>
+      <alternative condition="No note" language="text/javascript">
+        <loop mode="post_test" condition="true">
+          <call id="a0" endpoint="" a:alt_id="8">
+            <parameters>
+              <label>Call Customer</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </loop>
+      </alternative>
+    </choose>
+  </loop>
+</description>

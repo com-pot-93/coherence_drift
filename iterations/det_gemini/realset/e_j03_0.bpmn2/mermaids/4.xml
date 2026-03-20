@@ -1,0 +1,41 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(start assesment tool)
+    1:task:(start assesment tool) --> 2:task:(tool starts)
+    2:task:(tool starts) --> 3:task:(enter incident type)
+    3:task:(enter incident type) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |Accident| 5:task:(Accident)
+    4:exclusivegateway:{x} --> |almost accident| 6:task:(almost accident)
+    4:exclusivegateway:{x} --> |severe safety risk / helth risk| 7:task:(severe safety risk / helth risk)
+    4:exclusivegateway:{x} --> |defective protective equipment| 8:task:(defective protective equipment)
+    5:task:(Accident) --> 9:exclusivegateway:{x}
+    6:task:(almost accident) --> 9:exclusivegateway:{x}
+    7:task:(severe safety risk / helth risk) --> 9:exclusivegateway:{x}
+    8:task:(defective protective equipment) --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} --> 10:task:(further specify incident)
+    10:task:(further specify incident) --> 11:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |condition3| 12:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> 22:parallelgateway:{AND}
+    12:exclusivegateway:{x} --> |condition3| 13:task:(enter own data)
+    12:exclusivegateway:{x} --> |condition4| 14:task:(enter victim's data)
+    13:task:(enter own data) --> 15:exclusivegateway:{x}
+    14:task:(enter victim's data) --> 15:exclusivegateway:{x}
+    15:exclusivegateway:{x} --> 16:exclusivegateway:{x}
+    16:exclusivegateway:{x} --> 17:parallelgateway:{AND}
+    17:parallelgateway:{AND} --> 18:task:(add task; contact accident insurance)
+    17:parallelgateway:{AND} --> 19:task:(add task: contact  Labour Inspectorate)
+    18:task:(add task; contact accident insurance) --> 20:parallelgateway:{AND}
+    19:task:(add task: contact  Labour Inspectorate) --> 20:parallelgateway:{AND}
+    20:parallelgateway:{AND} --> 21:task:(add task: contact superiors)
+    21:task:(add task: contact superiors) --> 28:exclusivegateway:{x}
+    22:parallelgateway:{AND} --> 23:task:(add task, and the process ends.)
+    22:parallelgateway:{AND} --> 24:task:(add task:)
+    23:task:(add task, and the process ends.) --> 25:parallelgateway:{AND}
+    24:task:(add task:) --> 25:parallelgateway:{AND}
+    25:parallelgateway:{AND} --> 26:task:(propose tasks to user)
+    26:task:(propose tasks to user) --> 27:task:(execute proposed task)
+    27:task:(execute proposed task) --> 29:endevent:(((endevent)))
+    28:exclusivegateway:{x} --> |condition7| 30:task:(add task:)
+    28:exclusivegateway:{x} --> |condition8| 26:task:(propose tasks to user)
+    30:task:(add task:) --> 26:task:(propose tasks to user)
+```

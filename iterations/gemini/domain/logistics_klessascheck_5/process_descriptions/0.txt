@@ -1,0 +1,4 @@
+The process starts. First, the product is packaged, and then it is shipped. Subsequently, a decision is made. If the product is to be delivered to the door, it is delivered, and another decision is made. Depending on the outcome, either a pick-up receipt is printed, then posted, and the product is rerouted to the closest station, or the process proceeds directly to the next decision point.
+If the product is to be delivered to the station, it is delivered, and the process continues to another decision point.
+From there, depending on the outcome, the process either proceeds directly to the next decision point or the product is received back.
+Finally, the process ends.

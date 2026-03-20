@@ -1,0 +1,38 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Production Order)
+2:task:(Prepare Materials)
+3:task:(Assemble Door)
+4:exclusivegateway:{x}
+5:task:(Perform Quality Check)
+6:exclusivegateway:{x}
+7:task:(Send Quality Check Inquiry)
+8:task:(Receive Inquiry)
+9:task:(Conduct Quality Check)
+10:task:(Send Quality Report)
+11:task:(Receive and Review Report)
+12:exclusivegateway:{x}
+13:task:(Fix Door)
+14:task:(Release Door)
+15:exclusivegateway:{x}
+16:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Production Order)
+1:task:(Receive Production Order) --> 2:task:(Prepare Materials)
+2:task:(Prepare Materials) --> 3:task:(Assemble Door)
+3:task:(Assemble Door) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Skip Quality Check|15:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Proceed with Quality Check|5:task:(Perform Quality Check)
+5:task:(Perform Quality Check) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Do not send inquiry|15:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Send inquiry|7:task:(Send Quality Check Inquiry)
+7:task:(Send Quality Check Inquiry) --> 8:task:(Receive Inquiry)
+8:task:(Receive Inquiry) --> 9:task:(Conduct Quality Check)
+9:task:(Conduct Quality Check) --> 10:task:(Send Quality Report)
+10:task:(Send Quality Report) --> 11:task:(Receive and Review Report)
+11:task:(Receive and Review Report) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Report not satisfactory|13:task:(Fix Door)
+12:exclusivegateway:{x} --> |Report satisfactory|14:task:(Release Door)
+13:task:(Fix Door) --> 15:exclusivegateway:{x}
+14:task:(Release Door) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> 16:endevent:(((endevent)))

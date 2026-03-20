@@ -1,0 +1,23 @@
+The process begins with a starting point. Immediately after the start, a decision is made. Following this, another decision is taken.
+
+If the outcome of this second decision is positive (true), the process continues to a third decision point. At this third decision, there are two possible paths:
+
+- If a certain condition is met, the process moves to a fourth decision point.
+- If the condition is not met, the process proceeds through a series of steps:
+  1. Production planning is carried out.
+  2. Workers are assigned.
+  3. A production design is created.
+  4. The product is delivered.
+  5. Production logout is performed.
+  6. Quality control is conducted.
+  
+  After quality control, the process returns to the fourth decision point.
+
+At the fourth decision point, the process loops back to the first decision point, creating a cycle.
+
+Returning to the second decision, if the outcome is not positive, the process moves to a fifth decision point. At this point, there are two possible outcomes:
+
+- If the product is finished, it is registered in the finished stock, then moved to the finished goods stock, and the process continues to the next step.
+- If the product is semi-finished, it is registered in the semi-finished stock, then loaded into the semi-finished stock, and the process continues to the next step.
+
+After either registering and moving the finished product or registering and loading the semi-finished product, the process reaches its end point.

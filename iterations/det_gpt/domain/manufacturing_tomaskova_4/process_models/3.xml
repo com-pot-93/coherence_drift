@@ -1,0 +1,1434 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Assign workers</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Production design</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="4">
+    <parameters>
+      <label>Product delivery</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a9" endpoint="" a:alt_id="5">
+    <parameters>
+      <label>Production logout</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a11" endpoint="" a:alt_id="6">
+    <parameters>
+      <label>Quality control</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="Branch 1">
+    <choose mode="exclusive" a:alt_id="7">
+      <alternative condition="Branch 1" language="text/javascript">
+        <choose mode="exclusive" a:alt_id="8">
+          <alternative condition="Branch 1" language="text/javascript">
+            <choose mode="exclusive" a:alt_id="9">
+              <alternative condition="Branch 1" language="text/javascript">
+                <call id="a29" endpoint="" a:alt_id="10">
+                  <parameters>
+                    <label>Register to the finished stock</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a33" endpoint="" a:alt_id="11">
+                  <parameters>
+                    <label>Stock to the finished goods</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <choose mode="exclusive" a:alt_id="12">
+                  <alternative condition="Branch 1" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="13">
+                      <alternative condition="true" language="text/javascript">
+                        <choose mode="exclusive" a:alt_id="15">
+                          <alternative condition="true" language="text/javascript">
+                            <call id="a41" endpoint="" a:alt_id="18">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </alternative>
+                          <alternative condition="Branch 1" language="text/javascript">
+                            <call id="a47" endpoint="" a:alt_id="16">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <escape a:alt_id="-1"/>
+                          </alternative>
+                        </choose>
+                      </alternative>
+                      <alternative condition="Branch 1" language="text/javascript">
+                        <call id="a43" endpoint="" a:alt_id="14">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <escape a:alt_id="-1"/>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Branch 2" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="17">
+                      <alternative condition="true" language="text/javascript">
+                        <call id="a41" endpoint="" a:alt_id="18">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                      </alternative>
+                      <alternative condition="Branch 1" language="text/javascript">
+                        <call id="a47" endpoint="" a:alt_id="16">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <escape a:alt_id="-1"/>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Branch 3" language="text/javascript">
+                    <call id="a41" endpoint="" a:alt_id="18">
+                      <parameters>
+                        <label>Production planning</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                  </alternative>
+                </choose>
+              </alternative>
+              <alternative condition="Branch 2" language="text/javascript">
+                <call id="a31" endpoint="" a:alt_id="19">
+                  <parameters>
+                    <label>Register to the semi-finished stock</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a57" endpoint="" a:alt_id="20">
+                  <parameters>
+                    <label>Load to the semi-finished stock</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <choose mode="exclusive" a:alt_id="21">
+                  <alternative condition="Branch 1" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="22">
+                      <alternative condition="true" language="text/javascript">
+                        <choose mode="exclusive" a:alt_id="24">
+                          <alternative condition="true" language="text/javascript">
+                            <call id="a65" endpoint="" a:alt_id="27">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </alternative>
+                          <alternative condition="Branch 1" language="text/javascript">
+                            <call id="a71" endpoint="" a:alt_id="25">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <escape a:alt_id="-1"/>
+                          </alternative>
+                        </choose>
+                      </alternative>
+                      <alternative condition="Branch 1" language="text/javascript">
+                        <call id="a67" endpoint="" a:alt_id="23">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <escape a:alt_id="-1"/>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Branch 2" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="26">
+                      <alternative condition="true" language="text/javascript">
+                        <call id="a65" endpoint="" a:alt_id="27">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                      </alternative>
+                      <alternative condition="Branch 1" language="text/javascript">
+                        <call id="a71" endpoint="" a:alt_id="25">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <escape a:alt_id="-1"/>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Branch 3" language="text/javascript">
+                    <call id="a65" endpoint="" a:alt_id="27">
+                      <parameters>
+                        <label>Production planning</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                  </alternative>
+                </choose>
+              </alternative>
+            </choose>
+          </alternative>
+          <alternative condition="Branch 2" language="text/javascript">
+            <call id="a27" endpoint="" a:alt_id="28">
+              <parameters>
+                <label>Production planning</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="29">
+              <alternative condition="Branch 1" language="text/javascript">
+                <choose mode="exclusive" a:alt_id="30">
+                  <alternative condition="Branch 1" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="31">
+                      <alternative condition="Branch 1" language="text/javascript">
+                        <choose mode="exclusive" a:alt_id="32">
+                          <alternative condition="Branch 1" language="text/javascript">
+                            <call id="a93" endpoint="" a:alt_id="33">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a111" endpoint="" a:alt_id="34">
+                              <parameters>
+                                <label>Stock to the finished goods</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <choose mode="exclusive" a:alt_id="35">
+                              <alternative condition="Branch 1" language="text/javascript">
+                                <choose mode="exclusive" a:alt_id="36">
+                                  <alternative condition="true" language="text/javascript">
+                                    <choose mode="exclusive" a:alt_id="38">
+                                      <alternative condition="true" language="text/javascript">
+                                        <call id="a119" endpoint="" a:alt_id="41">
+                                          <parameters>
+                                            <label>Production planning</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                      </alternative>
+                                      <alternative condition="Branch 1" language="text/javascript">
+                                        <call id="a125" endpoint="" a:alt_id="39">
+                                          <parameters>
+                                            <label>Production planning</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                        <escape a:alt_id="-1"/>
+                                      </alternative>
+                                    </choose>
+                                  </alternative>
+                                  <alternative condition="Branch 1" language="text/javascript">
+                                    <call id="a121" endpoint="" a:alt_id="37">
+                                      <parameters>
+                                        <label>Production planning</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <escape a:alt_id="-1"/>
+                                  </alternative>
+                                </choose>
+                              </alternative>
+                              <alternative condition="Branch 2" language="text/javascript">
+                                <choose mode="exclusive" a:alt_id="40">
+                                  <alternative condition="true" language="text/javascript">
+                                    <call id="a119" endpoint="" a:alt_id="41">
+                                      <parameters>
+                                        <label>Production planning</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                  </alternative>
+                                  <alternative condition="Branch 1" language="text/javascript">
+                                    <call id="a125" endpoint="" a:alt_id="39">
+                                      <parameters>
+                                        <label>Production planning</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <escape a:alt_id="-1"/>
+                                  </alternative>
+                                </choose>
+                              </alternative>
+                              <alternative condition="Branch 3" language="text/javascript">
+                                <call id="a119" endpoint="" a:alt_id="41">
+                                  <parameters>
+                                    <label>Production planning</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                              </alternative>
+                            </choose>
+                          </alternative>
+                          <alternative condition="true" language="text/javascript">
+                            <call id="a87" endpoint="" a:alt_id="51">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </alternative>
+                          <alternative condition="Branch 2" language="text/javascript">
+                            <call id="a109" endpoint="" a:alt_id="42">
+                              <parameters>
+                                <label>Register to the semi-finished stock</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a135" endpoint="" a:alt_id="43">
+                              <parameters>
+                                <label>Load to the semi-finished stock</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <choose mode="exclusive" a:alt_id="44">
+                              <alternative condition="Branch 1" language="text/javascript">
+                                <choose mode="exclusive" a:alt_id="45">
+                                  <alternative condition="true" language="text/javascript">
+                                    <choose mode="exclusive" a:alt_id="47">
+                                      <alternative condition="true" language="text/javascript">
+                                        <call id="a87" endpoint="" a:alt_id="51">
+                                          <parameters>
+                                            <label>Production planning</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                      </alternative>
+                                      <alternative condition="true" language="text/javascript">
+                                        <call id="a143" endpoint="" a:alt_id="50">
+                                          <parameters>
+                                            <label>Production planning</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                      </alternative>
+                                      <alternative condition="Branch 1" language="text/javascript">
+                                        <call id="a97" endpoint="" a:alt_id="48">
+                                          <parameters>
+                                            <label>Production planning</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                        <escape a:alt_id="-1"/>
+                                      </alternative>
+                                    </choose>
+                                  </alternative>
+                                  <alternative condition="Branch 1" language="text/javascript">
+                                    <call id="a145" endpoint="" a:alt_id="46">
+                                      <parameters>
+                                        <label>Production planning</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <escape a:alt_id="-1"/>
+                                  </alternative>
+                                </choose>
+                              </alternative>
+                              <alternative condition="Branch 2" language="text/javascript">
+                                <choose mode="exclusive" a:alt_id="49">
+                                  <alternative condition="true" language="text/javascript">
+                                    <call id="a143" endpoint="" a:alt_id="50">
+                                      <parameters>
+                                        <label>Production planning</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                  </alternative>
+                                  <alternative condition="Branch 1" language="text/javascript">
+                                    <call id="a97" endpoint="" a:alt_id="48">
+                                      <parameters>
+                                        <label>Production planning</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <escape a:alt_id="-1"/>
+                                  </alternative>
+                                </choose>
+                              </alternative>
+                              <alternative condition="Branch 3" language="text/javascript">
+                                <call id="a143" endpoint="" a:alt_id="50">
+                                  <parameters>
+                                    <label>Production planning</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                              </alternative>
+                            </choose>
+                          </alternative>
+                        </choose>
+                      </alternative>
+                      <alternative condition="Branch 2" language="text/javascript">
+                        <call id="a105" endpoint="" a:alt_id="53">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="54">
+                          <alternative condition="Branch 1" language="text/javascript">
+                            <choose mode="exclusive" a:alt_id="55">
+                              <alternative condition="true" language="text/javascript">
+                                <choose mode="exclusive" a:alt_id="57">
+                                  <alternative condition="true" language="text/javascript">
+                                    <call id="a165" endpoint="" a:alt_id="77">
+                                      <parameters>
+                                        <label>Production planning</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                  </alternative>
+                                  <alternative condition="Branch 1" language="text/javascript">
+                                    <call id="a171" endpoint="" a:alt_id="58">
+                                      <parameters>
+                                        <label>Production planning</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <escape a:alt_id="-1"/>
+                                  </alternative>
+                                </choose>
+                              </alternative>
+                              <alternative condition="Branch 1" language="text/javascript">
+                                <call id="a167" endpoint="" a:alt_id="56">
+                                  <parameters>
+                                    <label>Production planning</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <escape a:alt_id="-1"/>
+                              </alternative>
+                            </choose>
+                          </alternative>
+                          <alternative condition="Branch 2" language="text/javascript">
+                            <choose mode="exclusive" a:alt_id="73">
+                              <alternative condition="true" language="text/javascript">
+                                <call id="a165" endpoint="" a:alt_id="77">
+                                  <parameters>
+                                    <label>Production planning</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                              </alternative>
+                              <alternative condition="Branch 1" language="text/javascript">
+                                <call id="a175" endpoint="" a:alt_id="74">
+                                  <parameters>
+                                    <label>Production planning</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <escape a:alt_id="-1"/>
+                              </alternative>
+                            </choose>
+                          </alternative>
+                          <alternative condition="Branch 3" language="text/javascript">
+                            <call id="a165" endpoint="" a:alt_id="77">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </alternative>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="true" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="32">
+                      <alternative condition="Branch 1" language="text/javascript">
+                        <call id="a93" endpoint="" a:alt_id="33">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a111" endpoint="" a:alt_id="34">
+                          <parameters>
+                            <label>Stock to the finished goods</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="35">
+                          <alternative condition="Branch 1" language="text/javascript">
+                            <choose mode="exclusive" a:alt_id="36">
+                              <alternative condition="true" language="text/javascript">
+                                <choose mode="exclusive" a:alt_id="38">
+                                  <alternative condition="true" language="text/javascript">
+                                    <call id="a119" endpoint="" a:alt_id="41">
+                                      <parameters>
+                                        <label>Production planning</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                  </alternative>
+                                  <alternative condition="Branch 1" language="text/javascript">
+                                    <call id="a125" endpoint="" a:alt_id="39">
+                                      <parameters>
+                                        <label>Production planning</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <escape a:alt_id="-1"/>
+                                  </alternative>
+                                </choose>
+                              </alternative>
+                              <alternative condition="Branch 1" language="text/javascript">
+                                <call id="a121" endpoint="" a:alt_id="37">
+                                  <parameters>
+                                    <label>Production planning</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <escape a:alt_id="-1"/>
+                              </alternative>
+                            </choose>
+                          </alternative>
+                          <alternative condition="Branch 2" language="text/javascript">
+                            <choose mode="exclusive" a:alt_id="40">
+                              <alternative condition="true" language="text/javascript">
+                                <call id="a119" endpoint="" a:alt_id="41">
+                                  <parameters>
+                                    <label>Production planning</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                              </alternative>
+                              <alternative condition="Branch 1" language="text/javascript">
+                                <call id="a125" endpoint="" a:alt_id="39">
+                                  <parameters>
+                                    <label>Production planning</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <escape a:alt_id="-1"/>
+                              </alternative>
+                            </choose>
+                          </alternative>
+                          <alternative condition="Branch 3" language="text/javascript">
+                            <call id="a119" endpoint="" a:alt_id="41">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </alternative>
+                        </choose>
+                      </alternative>
+                      <alternative condition="true" language="text/javascript">
+                        <call id="a87" endpoint="" a:alt_id="51">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                      </alternative>
+                      <alternative condition="Branch 2" language="text/javascript">
+                        <call id="a109" endpoint="" a:alt_id="42">
+                          <parameters>
+                            <label>Register to the semi-finished stock</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a135" endpoint="" a:alt_id="43">
+                          <parameters>
+                            <label>Load to the semi-finished stock</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="44">
+                          <alternative condition="Branch 1" language="text/javascript">
+                            <choose mode="exclusive" a:alt_id="45">
+                              <alternative condition="true" language="text/javascript">
+                                <choose mode="exclusive" a:alt_id="47">
+                                  <alternative condition="true" language="text/javascript">
+                                    <call id="a87" endpoint="" a:alt_id="51">
+                                      <parameters>
+                                        <label>Production planning</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                  </alternative>
+                                  <alternative condition="true" language="text/javascript">
+                                    <call id="a143" endpoint="" a:alt_id="50">
+                                      <parameters>
+                                        <label>Production planning</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                  </alternative>
+                                  <alternative condition="Branch 1" language="text/javascript">
+                                    <call id="a97" endpoint="" a:alt_id="48">
+                                      <parameters>
+                                        <label>Production planning</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <escape a:alt_id="-1"/>
+                                  </alternative>
+                                </choose>
+                              </alternative>
+                              <alternative condition="Branch 1" language="text/javascript">
+                                <call id="a145" endpoint="" a:alt_id="46">
+                                  <parameters>
+                                    <label>Production planning</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <escape a:alt_id="-1"/>
+                              </alternative>
+                            </choose>
+                          </alternative>
+                          <alternative condition="Branch 2" language="text/javascript">
+                            <choose mode="exclusive" a:alt_id="49">
+                              <alternative condition="true" language="text/javascript">
+                                <call id="a143" endpoint="" a:alt_id="50">
+                                  <parameters>
+                                    <label>Production planning</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                              </alternative>
+                              <alternative condition="Branch 1" language="text/javascript">
+                                <call id="a97" endpoint="" a:alt_id="48">
+                                  <parameters>
+                                    <label>Production planning</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <escape a:alt_id="-1"/>
+                              </alternative>
+                            </choose>
+                          </alternative>
+                          <alternative condition="Branch 3" language="text/javascript">
+                            <call id="a143" endpoint="" a:alt_id="50">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </alternative>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                </choose>
+              </alternative>
+              <alternative condition="Branch 2" language="text/javascript">
+                <choose mode="exclusive" a:alt_id="47">
+                  <alternative condition="true" language="text/javascript">
+                    <call id="a87" endpoint="" a:alt_id="51">
+                      <parameters>
+                        <label>Production planning</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                  </alternative>
+                  <alternative condition="true" language="text/javascript">
+                    <call id="a143" endpoint="" a:alt_id="50">
+                      <parameters>
+                        <label>Production planning</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                  </alternative>
+                  <alternative condition="Branch 1" language="text/javascript">
+                    <call id="a97" endpoint="" a:alt_id="48">
+                      <parameters>
+                        <label>Production planning</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <escape a:alt_id="-1"/>
+                  </alternative>
+                </choose>
+              </alternative>
+              <alternative condition="Branch 3" language="text/javascript">
+                <call id="a87" endpoint="" a:alt_id="51">
+                  <parameters>
+                    <label>Production planning</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+            </choose>
+          </alternative>
+        </choose>
+      </alternative>
+      <alternative condition="Branch 2" language="text/javascript">
+        <choose mode="exclusive" a:alt_id="31">
+          <alternative condition="Branch 1" language="text/javascript">
+            <choose mode="exclusive" a:alt_id="32">
+              <alternative condition="Branch 1" language="text/javascript">
+                <call id="a93" endpoint="" a:alt_id="33">
+                  <parameters>
+                    <label>Production planning</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a111" endpoint="" a:alt_id="34">
+                  <parameters>
+                    <label>Stock to the finished goods</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <choose mode="exclusive" a:alt_id="35">
+                  <alternative condition="Branch 1" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="36">
+                      <alternative condition="true" language="text/javascript">
+                        <choose mode="exclusive" a:alt_id="38">
+                          <alternative condition="true" language="text/javascript">
+                            <call id="a119" endpoint="" a:alt_id="41">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </alternative>
+                          <alternative condition="Branch 1" language="text/javascript">
+                            <call id="a125" endpoint="" a:alt_id="39">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <escape a:alt_id="-1"/>
+                          </alternative>
+                        </choose>
+                      </alternative>
+                      <alternative condition="Branch 1" language="text/javascript">
+                        <call id="a121" endpoint="" a:alt_id="37">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <escape a:alt_id="-1"/>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Branch 2" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="40">
+                      <alternative condition="true" language="text/javascript">
+                        <call id="a119" endpoint="" a:alt_id="41">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                      </alternative>
+                      <alternative condition="Branch 1" language="text/javascript">
+                        <call id="a125" endpoint="" a:alt_id="39">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <escape a:alt_id="-1"/>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Branch 3" language="text/javascript">
+                    <call id="a119" endpoint="" a:alt_id="41">
+                      <parameters>
+                        <label>Production planning</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                  </alternative>
+                </choose>
+              </alternative>
+              <alternative condition="true" language="text/javascript">
+                <call id="a87" endpoint="" a:alt_id="51">
+                  <parameters>
+                    <label>Production planning</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="Branch 2" language="text/javascript">
+                <call id="a109" endpoint="" a:alt_id="42">
+                  <parameters>
+                    <label>Register to the semi-finished stock</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a135" endpoint="" a:alt_id="43">
+                  <parameters>
+                    <label>Load to the semi-finished stock</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <choose mode="exclusive" a:alt_id="44">
+                  <alternative condition="Branch 1" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="45">
+                      <alternative condition="true" language="text/javascript">
+                        <choose mode="exclusive" a:alt_id="47">
+                          <alternative condition="true" language="text/javascript">
+                            <call id="a87" endpoint="" a:alt_id="51">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </alternative>
+                          <alternative condition="true" language="text/javascript">
+                            <call id="a143" endpoint="" a:alt_id="50">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </alternative>
+                          <alternative condition="Branch 1" language="text/javascript">
+                            <call id="a97" endpoint="" a:alt_id="48">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <escape a:alt_id="-1"/>
+                          </alternative>
+                        </choose>
+                      </alternative>
+                      <alternative condition="Branch 1" language="text/javascript">
+                        <call id="a145" endpoint="" a:alt_id="46">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <escape a:alt_id="-1"/>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Branch 2" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="49">
+                      <alternative condition="true" language="text/javascript">
+                        <call id="a143" endpoint="" a:alt_id="50">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                      </alternative>
+                      <alternative condition="Branch 1" language="text/javascript">
+                        <call id="a97" endpoint="" a:alt_id="48">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <escape a:alt_id="-1"/>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Branch 3" language="text/javascript">
+                    <call id="a143" endpoint="" a:alt_id="50">
+                      <parameters>
+                        <label>Production planning</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                  </alternative>
+                </choose>
+              </alternative>
+            </choose>
+          </alternative>
+          <alternative condition="Branch 2" language="text/javascript">
+            <call id="a105" endpoint="" a:alt_id="53">
+              <parameters>
+                <label>Production planning</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="54">
+              <alternative condition="Branch 1" language="text/javascript">
+                <choose mode="exclusive" a:alt_id="55">
+                  <alternative condition="true" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="57">
+                      <alternative condition="true" language="text/javascript">
+                        <call id="a165" endpoint="" a:alt_id="77">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                      </alternative>
+                      <alternative condition="Branch 1" language="text/javascript">
+                        <call id="a171" endpoint="" a:alt_id="58">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <escape a:alt_id="-1"/>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Branch 1" language="text/javascript">
+                    <call id="a167" endpoint="" a:alt_id="56">
+                      <parameters>
+                        <label>Production planning</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <escape a:alt_id="-1"/>
+                  </alternative>
+                </choose>
+              </alternative>
+              <alternative condition="Branch 2" language="text/javascript">
+                <choose mode="exclusive" a:alt_id="73">
+                  <alternative condition="true" language="text/javascript">
+                    <call id="a165" endpoint="" a:alt_id="77">
+                      <parameters>
+                        <label>Production planning</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                  </alternative>
+                  <alternative condition="Branch 1" language="text/javascript">
+                    <call id="a175" endpoint="" a:alt_id="74">
+                      <parameters>
+                        <label>Production planning</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <escape a:alt_id="-1"/>
+                  </alternative>
+                </choose>
+              </alternative>
+              <alternative condition="Branch 3" language="text/javascript">
+                <call id="a165" endpoint="" a:alt_id="77">
+                  <parameters>
+                    <label>Production planning</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+            </choose>
+          </alternative>
+        </choose>
+      </alternative>
+      <alternative condition="Branch 3" language="text/javascript">
+        <choose mode="exclusive" a:alt_id="54">
+          <alternative condition="Branch 1" language="text/javascript">
+            <choose mode="exclusive" a:alt_id="55">
+              <alternative condition="true" language="text/javascript">
+                <choose mode="exclusive" a:alt_id="57">
+                  <alternative condition="true" language="text/javascript">
+                    <call id="a165" endpoint="" a:alt_id="77">
+                      <parameters>
+                        <label>Production planning</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                  </alternative>
+                  <alternative condition="Branch 1" language="text/javascript">
+                    <call id="a171" endpoint="" a:alt_id="58">
+                      <parameters>
+                        <label>Production planning</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <escape a:alt_id="-1"/>
+                  </alternative>
+                </choose>
+              </alternative>
+              <alternative condition="Branch 1" language="text/javascript">
+                <call id="a167" endpoint="" a:alt_id="56">
+                  <parameters>
+                    <label>Production planning</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <escape a:alt_id="-1"/>
+              </alternative>
+            </choose>
+          </alternative>
+          <alternative condition="Branch 2" language="text/javascript">
+            <choose mode="exclusive" a:alt_id="73">
+              <alternative condition="true" language="text/javascript">
+                <call id="a165" endpoint="" a:alt_id="77">
+                  <parameters>
+                    <label>Production planning</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="Branch 1" language="text/javascript">
+                <call id="a175" endpoint="" a:alt_id="74">
+                  <parameters>
+                    <label>Production planning</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <escape a:alt_id="-1"/>
+              </alternative>
+            </choose>
+          </alternative>
+          <alternative condition="Branch 3" language="text/javascript">
+            <call id="a165" endpoint="" a:alt_id="77">
+              <parameters>
+                <label>Production planning</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+      </alternative>
+      <alternative condition="Branch 4" language="text/javascript">
+        <choose mode="exclusive" a:alt_id="81">
+          <alternative condition="Branch 1" language="text/javascript">
+            <choose mode="exclusive" a:alt_id="82">
+              <alternative condition="Branch 1" language="text/javascript">
+                <call id="a185" endpoint="" a:alt_id="83">
+                  <parameters>
+                    <label>Register to the finished stock</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a189" endpoint="" a:alt_id="84">
+                  <parameters>
+                    <label>Stock to the finished goods</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <choose mode="exclusive" a:alt_id="85">
+                  <alternative condition="Branch 1" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="86">
+                      <alternative condition="true" language="text/javascript">
+                        <choose mode="exclusive" a:alt_id="88">
+                          <alternative condition="true" language="text/javascript">
+                            <call id="a197" endpoint="" a:alt_id="91">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </alternative>
+                          <alternative condition="Branch 1" language="text/javascript">
+                            <call id="a203" endpoint="" a:alt_id="89">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <escape a:alt_id="-1"/>
+                          </alternative>
+                        </choose>
+                      </alternative>
+                      <alternative condition="Branch 1" language="text/javascript">
+                        <call id="a199" endpoint="" a:alt_id="87">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <escape a:alt_id="-1"/>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Branch 2" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="90">
+                      <alternative condition="true" language="text/javascript">
+                        <call id="a197" endpoint="" a:alt_id="91">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                      </alternative>
+                      <alternative condition="Branch 1" language="text/javascript">
+                        <call id="a203" endpoint="" a:alt_id="89">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <escape a:alt_id="-1"/>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Branch 3" language="text/javascript">
+                    <call id="a197" endpoint="" a:alt_id="91">
+                      <parameters>
+                        <label>Production planning</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                  </alternative>
+                </choose>
+              </alternative>
+              <alternative condition="Branch 2" language="text/javascript">
+                <call id="a187" endpoint="" a:alt_id="92">
+                  <parameters>
+                    <label>Register to the semi-finished stock</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a213" endpoint="" a:alt_id="93">
+                  <parameters>
+                    <label>Load to the semi-finished stock</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <choose mode="exclusive" a:alt_id="94">
+                  <alternative condition="Branch 1" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="95">
+                      <alternative condition="true" language="text/javascript">
+                        <choose mode="exclusive" a:alt_id="97">
+                          <alternative condition="true" language="text/javascript">
+                            <call id="a221" endpoint="" a:alt_id="100">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </alternative>
+                          <alternative condition="Branch 1" language="text/javascript">
+                            <call id="a227" endpoint="" a:alt_id="98">
+                              <parameters>
+                                <label>Production planning</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <escape a:alt_id="-1"/>
+                          </alternative>
+                        </choose>
+                      </alternative>
+                      <alternative condition="Branch 1" language="text/javascript">
+                        <call id="a223" endpoint="" a:alt_id="96">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <escape a:alt_id="-1"/>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Branch 2" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="99">
+                      <alternative condition="true" language="text/javascript">
+                        <call id="a221" endpoint="" a:alt_id="100">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                      </alternative>
+                      <alternative condition="Branch 1" language="text/javascript">
+                        <call id="a227" endpoint="" a:alt_id="98">
+                          <parameters>
+                            <label>Production planning</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <escape a:alt_id="-1"/>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Branch 3" language="text/javascript">
+                    <call id="a221" endpoint="" a:alt_id="100">
+                      <parameters>
+                        <label>Production planning</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                  </alternative>
+                </choose>
+              </alternative>
+            </choose>
+          </alternative>
+          <alternative condition="Branch 2" language="text/javascript">
+            <call id="a183" endpoint="" a:alt_id="103">
+              <parameters>
+                <label>Production planning</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <escape a:alt_id="-1"/>
+          </alternative>
+        </choose>
+      </alternative>
+    </choose>
+  </loop>
+  <call id="a23" endpoint="" a:alt_id="104">
+    <parameters>
+      <label>Production planning</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

@@ -1,0 +1,53 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Select course)
+2:exclusivegateway:{x}
+3:task:(Show dates)
+4:task:(Select one date)
+5:task:(Check if account  at sports institute available)
+6:exclusivegateway:{x}
+7:task:(Check if registered at an eligible university)
+8:exclusivegateway:{x}
+9:task:(Register with account)
+10:exclusivegateway:{x}
+11:task:(Send request for activation)
+12:task:(Wait for response)
+13:exclusivegateway:{x}
+14:exclusivegateway:{x}
+15:task:(Log into account)
+16:task:(Provide payment information)
+17:task:(Complete registration for course)
+18:parallelgateway:{AND}
+19:task:(Tweet friends)
+20:parallelgateway:{AND}
+21:task:(Receive ticket)
+22:parallelgateway:{AND}
+23:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |true|1:task:(Select course)
+1:task:(Select course) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |false|3:task:(Show dates)
+3:task:(Show dates) --> 4:task:(Select one date)
+4:task:(Select one date) --> 5:task:(Check if account  at sports institute available)
+5:task:(Check if account  at sports institute available) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Yes|7:task:(Check if registered at an eligible university)
+6:exclusivegateway:{x} --> |No|11:task:(Send request for activation)
+7:task:(Check if registered at an eligible university) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Yes|9:task:(Register with account)
+8:exclusivegateway:{x} --> |No|11:task:(Send request for activation)
+9:task:(Register with account) --> 10:exclusivegateway:{x}
+11:task:(Send request for activation) --> 12:task:(Wait for response)
+12:task:(Wait for response) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> 15:task:(Log into account)
+15:task:(Log into account) --> 16:task:(Provide payment information)
+16:task:(Provide payment information) --> 17:task:(Complete registration for course)
+17:task:(Complete registration for course) --> 18:parallelgateway:{AND}
+18:parallelgateway:{AND} --> 19:task:(Tweet friends)
+18:parallelgateway:{AND} --> 21:task:(Receive ticket)
+19:task:(Tweet friends) --> 20:parallelgateway:{AND}
+21:task:(Receive ticket) --> 20:parallelgateway:{AND}
+20:parallelgateway:{AND} --> 22:parallelgateway:{AND}
+22:parallelgateway:{AND} --> 23:endevent:(((endevent)))

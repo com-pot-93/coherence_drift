@@ -1,0 +1,59 @@
+flowchart LR
+0:startevent:((startevent))
+1:exclusivegateway:{x}
+2:exclusivegateway:{x}
+3:exclusivegateway:{x}
+4:exclusivegateway:{x}
+5:exclusivegateway:{x}
+6:task:(Production Planning)
+7:task:(Assign Workers)
+8:task:(Create Production Design)
+9:task:(Deliver Product)
+10:task:(Log Out Production)
+11:task:(Quality Control Check)
+12:task:(Escalate Issue)
+13:exclusivegateway:{x}
+14:task:(Register Finished Product)
+15:task:(Move to Finished Goods Stock)
+16:exclusivegateway:{x}
+17:task:(Escalate Issue)
+18:task:(Return to Previous Stage)
+19:task:(Register Semi-Finished Product)
+20:task:(Load into Semi-Finished Stock)
+21:exclusivegateway:{x}
+22:task:(Escalate Issue)
+23:task:(Return to Previous Stage)
+24:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |true|3:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |false|1:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |First Path|4:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Second Path|5:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Condition not met|6:task:(Production Planning)
+4:exclusivegateway:{x} --> |Issue escalated|12:task:(Escalate Issue)
+4:exclusivegateway:{x} --> |Otherwise|5:exclusivegateway:{x}
+6:task:(Production Planning) --> 7:task:(Assign Workers)
+7:task:(Assign Workers) --> 8:task:(Create Production Design)
+8:task:(Create Production Design) --> 9:task:(Deliver Product)
+9:task:(Deliver Product) --> 10:task:(Log Out Production)
+10:task:(Log Out Production) --> 11:task:(Quality Control Check)
+11:task:(Quality Control Check) --> 13:exclusivegateway:{x}
+12:task:(Escalate Issue) --> 13:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Product finished|14:task:(Register Finished Product)
+5:exclusivegateway:{x} --> |Product semi-finished|19:task:(Register Semi-Finished Product)
+14:task:(Register Finished Product) --> 15:task:(Move to Finished Goods Stock)
+15:task:(Move to Finished Goods Stock) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |Still finished|17:task:(Escalate Issue)
+16:exclusivegateway:{x} --> |Not finished|18:task:(Return to Previous Stage)
+17:task:(Escalate Issue) --> 13:exclusivegateway:{x}
+18:task:(Return to Previous Stage) --> 13:exclusivegateway:{x}
+19:task:(Register Semi-Finished Product) --> 20:task:(Load into Semi-Finished Stock)
+20:task:(Load into Semi-Finished Stock) --> 21:exclusivegateway:{x}
+21:exclusivegateway:{x} --> |Now finished|22:task:(Escalate Issue)
+21:exclusivegateway:{x} --> |Not finished|23:task:(Return to Previous Stage)
+22:task:(Escalate Issue) --> 13:exclusivegateway:{x}
+23:task:(Return to Previous Stage) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> 2:exclusivegateway:{x}
+13:exclusivegateway:{x} --> 24:endevent:(((endevent)))

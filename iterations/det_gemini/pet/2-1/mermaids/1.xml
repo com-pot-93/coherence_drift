@@ -1,0 +1,59 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(customer perceives service degradation)
+  1:task:(customer perceives service degradation) --> 2:task:(system sends problem parameters list to customer service)
+  2:task:(system sends problem parameters list to customer service) --> 3:task:(service employee enters a problem report into system)
+  3:task:(service employee enters a problem report into system) --> 4:task:(service employee compares problem report to the customer SLA)
+  4:task:(service employee compares problem report to the customer SLA) --> 5:task:(service employee determines necessary counter measures)
+  5:task:(service employee determines necessary counter measures) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |branch 1| 7:task:(electronic service determines the customer significance)
+  6:exclusivegateway:{x} --> |branch 2| 8:task:(service employee  links to an extra problem fix process)
+  6:exclusivegateway:{x} --> |default| 9:exclusivegateway:{x}
+  7:task:(electronic service determines the customer significance) --> 9:exclusivegateway:{x}
+  8:task:(service employee  links to an extra problem fix process) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |true| 10:task:(service employee  creates a detailed problem report)
+  10:task:(service employee  creates a detailed problem report) --> 11:task:(service employee   sends problem report to Service Management)
+  11:task:(service employee   sends problem report to Service Management) --> 12:task:(service management deals with violations of quality)
+  12:task:(service management deals with violations of quality) --> 13:task:(service management investigates the problem)
+  13:task:(service management investigates the problem) --> 14:exclusivegateway:{x}
+  14:exclusivegateway:{x} --> |branch 1| 15:task:(service management  performs the analysis)
+  14:exclusivegateway:{x} --> |branch 2| 18:task:(service management   sends  problem report to Resource Provisioning)
+  15:task:(service management  performs the analysis) --> 16:task:(service management  creates a trouble report)
+  16:task:(service management  creates a trouble report) --> 21:exclusivegateway:{x}
+  18:task:(service management   sends  problem report to Resource Provisioning) --> 19:task:(resource provisioning checks for potential issues)
+  19:task:(resource provisioning checks for potential issues) --> 20:exclusivegateway:{x}
+  20:exclusivegateway:{x} --> |branch 1| 22:task:(resource provisioning analyses the problem)
+  20:exclusivegateway:{x} --> |branch 2| 25:task:(resource provisioning creates a service execution notification)
+  22:task:(resource provisioning analyses the problem) --> 23:task:(resource provisioning creates a trouble report)
+  23:task:(resource provisioning creates a trouble report) --> 26:exclusivegateway:{x}
+  25:task:(resource provisioning creates a service execution notification) --> 26:exclusivegateway:{x}
+  26:exclusivegateway:{x} --> 27:task:(resource provisioning  sends a status report  to service management)
+  27:task:(resource provisioning  sends a status report  to service management) --> 21:exclusivegateway:{x}
+  21:exclusivegateway:{x} --> 28:task:(service management  prepares the final status report)
+  28:task:(service management  prepares the final status report) --> 29:exclusivegateway:{x}
+  29:exclusivegateway:{x} --> |branch 1| 30:task:(service managementcreates a request for automatic resource restoration)
+  29:exclusivegateway:{x} --> |branch 2| 37:task:(service management  sends  actual service performance  to the customer service)
+  29:exclusivegateway:{x} --> |branch 3| 39:task:(service management  undertakes corrective actions)
+  30:task:(service managementcreates a request for automatic resource restoration) --> 31:task:(service management   sends request to resource provisioning)
+  31:task:(service management   sends request to resource provisioning) --> 32:task:(resource provisioning receives the restoration request)
+  32:task:(resource provisioning receives the restoration request) --> 33:task:(recource provisioning tracks all possible errors)
+  33:task:(recource provisioning tracks all possible errors) --> 34:task:(resource provisioning undertakes all necessary corrective actions)
+  34:task:(resource provisioning undertakes all necessary corrective actions) --> 35:task:(resource provisioning creates a trouble-shooting report)
+  35:task:(resource provisioning creates a trouble-shooting report) --> 36:task:(resource provisioning  sends report to service management)
+  36:task:(resource provisioning  sends report to service management) --> 42:task:(service management sends trouble-shooting report to customer service)
+  37:task:(service management  sends  actual service performance  to the customer service) --> 38:task:(customer service  receives the actual service performance)
+  39:task:(service management  undertakes corrective actions) --> 40:task:(service management creates the problem resolution report)
+  40:task:(service management creates the problem resolution report) --> 41:task:(service management  sends the problem resolution report to customer service)
+  41:task:(service management  sends the problem resolution report to customer service) --> 43:task:(customer service receives the problem resolution report)
+  42:task:(service management sends trouble-shooting report to customer service) --> 40:task:(service management creates the problem resolution report)
+  43:task:(customer service receives the problem resolution report) --> 44:parallelgateway:{AND}
+  38:task:(customer service  receives the actual service performance) --> 44:parallelgateway:{AND}
+  44:parallelgateway:{AND} --> 45:task:(customer service  creates a report for customer)
+  44:parallelgateway:{AND} --> 46:task:(customer service  reports an SLA violation rebate to billing & collections)
+  46:task:(customer service  reports an SLA violation rebate to billing & collections) --> 47:task:(billing & collections adjusts the billing)
+  47:task:(billing & collections adjusts the billing) --> 48:parallelgateway:{AND}
+  45:task:(customer service  creates a report for customer) --> 48:parallelgateway:{AND}
+  48:parallelgateway:{AND} --> 49:task:(customer service sends report for the customer)
+  49:task:(customer service sends report for the customer) --> 50:task:(customer receives the report)
+  50:task:(customer receives the report) --> 51:endevent:(((endevent)))
+```

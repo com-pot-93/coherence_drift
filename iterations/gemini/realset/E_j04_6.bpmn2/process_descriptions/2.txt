@@ -1,0 +1,29 @@
+The process starts and then proceeds to a decision point.
+
+If the decision is "Yes", the process loads a front page, then makes another decision. If this decision is "Yes", a request is sent, the process waits for an offer, and then receives the offer. Following this, another decision is made.
+
+If the decision is "Yes", the offers are invalidated, a status update is sent and received, and the internship is finished. Then, another decision is made. If this decision is "Yes", a tweet is sent to friends. Regardless of whether the tweet is sent or not, the process proceeds to another decision point.
+
+At the decision point, another decision is made. If the decision is "No", the process proceeds to another decision point. If the decision is "Yes", the front page is loaded. Regardless of whether the front page is loaded or not, the process proceeds to another decision point.
+
+If the decision is "No", the process proceeds to another decision point.
+
+If the decision is "No", the process proceeds to another decision point.
+
+If the decision is "No", the process loads a front page, and then proceeds to another decision point. Regardless of the outcome of the decision, the process proceeds to another decision point.
+
+If the decision is "No", the process loads a front page, and then proceeds to another decision point. Regardless of the outcome of the decision, the process proceeds to another decision point.
+
+If the decision is "No", the process proceeds to a parallel execution.
+
+In parallel, the process performs the following tasks: working on a topic, handling payment, gaining experience, and pursuing hobbies.
+
+For each of these tasks, the process makes a decision. If the decision is "Yes", the process proceeds. If the decision is "No", the process repeats the task. If an escalation occurs during any of these tasks, the process proceeds.
+
+After all parallel tasks are completed, the process proceeds.
+
+If the decision is "No", the process proceeds.
+
+The process then returns to the first decision point.
+
+If the initial decision is "No", the process ends.

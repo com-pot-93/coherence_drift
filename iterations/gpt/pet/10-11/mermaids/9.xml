@@ -1,0 +1,30 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive and Review Request)
+2:exclusivegateway:{x}
+3:task:(Notify GO of Denial)
+4:task:(Perform Measurement)
+5:exclusivegateway:{x}
+6:task:(Notify GO of Measurement Failure)
+7:task:(Send Measured Values to GO)
+8:task:(Process Values)
+9:exclusivegateway:{x}
+10:task:(Send Updated Values to MSP)
+11:task:(Forward Readings to SP)
+12:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive and Review Request)
+1:task:(Receive and Review Request) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Request Denied|3:task:(Notify GO of Denial)
+2:exclusivegateway:{x} --> |Request Not Denied|4:task:(Perform Measurement)
+3:task:(Notify GO of Denial) --> 11:task:(Forward Readings to SP)
+4:task:(Perform Measurement) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Measurement Failed|6:task:(Notify GO of Measurement Failure)
+5:exclusivegateway:{x} --> |Measurement Successful|7:task:(Send Measured Values to GO)
+6:task:(Notify GO of Measurement Failure) --> 11:task:(Forward Readings to SP)
+7:task:(Send Measured Values to GO) --> 8:task:(Process Values)
+8:task:(Process Values) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Values Changed|10:task:(Send Updated Values to MSP)
+9:exclusivegateway:{x} --> |No Change|11:task:(Forward Readings to SP)
+10:task:(Send Updated Values to MSP) --> 11:task:(Forward Readings to SP)
+11:task:(Forward Readings to SP) --> 12:endevent:(((endevent)))

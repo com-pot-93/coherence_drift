@@ -1,0 +1,26 @@
+The process begins. First, a decision is made to determine the recipient and type of bill to be sent. There are two possible paths from this point.
+
+**First path:**  
+A further decision is made to select the specific type of service for which the bill will be sent. There are four possible services:
+
+1. If the service is metering point operations, a bill for metering point operations is sent to the grid operator.
+2. If the service is measurement, a bill for measurement is sent to the grid operator.
+3. If the service is additional readings, a bill for additional readings is sent to the grid operator.
+4. If the service is equipment acquisition, a bill for equipment acquisition is sent to the grid operator.
+
+After the appropriate bill is sent to the grid operator, the grid operator receives the bill and then examines it. The grid operator then decides whether to reject or confirm the invoice:
+
+- If the invoice is rejected, the grid operator rejects the invoice.
+- If the invoice is confirmed, the grid operator confirms the invoice and provides payment advice.
+
+After either rejecting or confirming the invoice, the process continues to the next step.
+
+**Second path:**  
+A bill for equipment acquisition is sent to the metering point operator network. The metering point operator network receives and examines the bill. Then, a decision is made:
+
+- If the invoice is rejected, the metering point operator network rejects the invoice.
+- If the invoice is confirmed, the metering point operator network confirms the invoice and provides payment advice.
+
+After either rejecting or confirming the invoice, the process continues to the next step.
+
+Finally, after either of the two paths is completed, the process ends.

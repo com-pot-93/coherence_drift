@@ -1,0 +1,11 @@
+The process starts with reporting a vacancy to HR. Then, a decision is made; if it's true, a job description is created. Subsequently, a series of checks are performed to determine if clarification is needed.
+
+The process enters a loop where, depending on whether clarification is needed, the department is asked for clarification. This loop can repeat multiple times through several exclusive gateways. Each time, a decision is made whether to ask for clarification again or to proceed if no further clarification is needed.
+
+Once all necessary clarifications are obtained, the process continues to another decision point. If a condition is met, the job description is submitted. Following submission, another series of checks are performed to determine if corrections are needed.
+
+If corrections are needed, the job description is corrected, and the process loops back to the "Create Job Description" task. If no correction is needed, a decision is made based on whether a condition is met. If the condition is met, the job description is submitted again. If the condition is not met, the job is posted.
+
+After posting the job, there are several exclusive gateways that lead back to the "Post Job" task, creating a loop. This loop can be exited through a series of exclusive gateways.
+
+Finally, there is an escalation event that leads back to the initial decision point after reporting the vacancy to HR, creating a loop in the process. The process ends when all conditions are met and the end event is reached.

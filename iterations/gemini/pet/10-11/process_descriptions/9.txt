@@ -1,0 +1,9 @@
+The process starts when a request is received. Based on the request, there are two possible paths.
+
+If the request is accepted, a measurement is performed. After the measurement, the process branches again depending on whether the measurement was successful or not.
+
+If the measurement failed, a notification is sent. If the measurement was successful, the measured values are transmitted, then the values are processed, and finally, the changed values are sent. After either sending a notification (in case of failure) or sending the changed values (in case of success), the process merges back into a single flow.
+
+If the initial request was denied, the process skips the measurement step and merges with the flow from the successful/failed measurement.
+
+Finally, after the merge, the readings are transmitted, and the process ends.

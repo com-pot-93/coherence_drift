@@ -1,0 +1,53 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins.
+2. A decision is made whether to proceed or not.  
+   - If the decision is not to proceed, the process ends.
+   - If the decision is to proceed, the process continues to the next step.
+3. The process moves forward.
+4. Another decision point is reached.
+5. The process continues to another decision point.
+6. At this new decision point, a choice is made:
+   - If the decision is to proceed, the process moves to the next decision point.
+   - If the decision is not to proceed, the process ends.
+7. At the next decision point, a choice is made:
+   - If the decision is to proceed, a further evaluation is carried out.
+   - If the decision is not to proceed, an issue is escalated (see step 12).
+8. After the further evaluation, another decision is made:
+   - If the decision is not to proceed, the issue is escalated.
+   - If the decision is to proceed, the process continues.
+9. If the issue is escalated, another decision is made:
+   - The process continues to another decision point.
+10. The process continues to another decision point.
+11. The process continues to another decision point.
+12. The process continues to another decision point.
+13. If the process proceeds after the further evaluation, another decision is made:
+    - If the outcome is positive, the need for personnel is identified.
+    - If the outcome is something else, the process continues to another decision point.
+14. Once the need for personnel is identified, another decision is made:
+    - The process continues to determine personnel requirements.
+15. The personnel requirements are determined.
+16. Another decision is made:
+    - If the decision is to proceed, the vacancy is reported to the personnel department.
+    - If the decision is not to proceed, the process returns to identifying the need for personnel.
+17. The vacancy is reported to the personnel department.
+18. Another decision is made:
+    - If the decision is to proceed, the job description is received.
+    - If the decision is not to proceed, the process returns to identifying the need for personnel.
+19. The job description is received.
+20. Another decision is made:
+    - The job description is examined.
+21. After examining the job description, another decision is made:
+    - If the decision is to proceed, the satisfaction with the job description is checked.
+    - If the decision is not to proceed, the process returns to receiving the job description.
+22. The satisfaction with the job description is checked.
+23. Another decision is made:
+    - If the job description is satisfactory, the vacancy is advertised.
+    - If the job description is not satisfactory, corrections are requested.
+24. If corrections are requested, the process returns to receiving the job description.
+25. If the vacancy is advertised, another decision is made:
+    - If the decision is to proceed, the process continues.
+    - If the decision is not to proceed, the vacancy is advertised again and the process continues.
+26. The process continues through several decision points, eventually leading to the end of the process.
+
+Throughout the process, at various decision points, if the decision is not to proceed, the process either ends or loops back to a previous step, such as identifying the need for personnel, receiving the job description, or advertising the vacancy again. The process is structured to ensure that each step is evaluated before moving forward, with opportunities to escalate issues or request corrections as needed. The process ends when a final decision is made not to proceed at one of the key decision points.

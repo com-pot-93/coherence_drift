@@ -1,0 +1,62 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:exclusivegateway:{x}
+  %% D1 split
+  %% D1 branch 1
+  2:exclusivegateway:{x}
+  %% D2 split
+  3:task:(MPOO sends the metering point operations bill to the GO)
+  4:task:(MSPO sends the measurement bill to the GO)
+  5:task:(MSPO sends the bill for additional readings to the GO)
+  6:task:(the MPOO sends the bill for the equipment acquisition to the GO)
+  7:exclusivegateway:{x}
+  %% D2 merge
+  8:task:(the GO examines the bill)
+  9:exclusivegateway:{x}
+  %% D3 split
+  10:task:(the GO rejects the invoice)
+  11:task:(the GO confirms the invoice with payment advice)
+  12:exclusivegateway:{x}
+  %% D3 merge
+  %% D1 branch 2
+  13:task:(MPOO sends the bill for the equipment acquisition to the MPON)
+  14:task:(the MPON examines the bill)
+  15:exclusivegateway:{x}
+  %% D4 split
+  16:task:(the MPON confirms the invoice with payment advice)
+  17:task:(the MPON rejects the invoice)
+  18:exclusivegateway:{x}
+  %% D4 merge
+  19:exclusivegateway:{x}
+  %% D1 merge
+  20:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+  %% D1 branch 1
+  1:exclusivegateway:{x} --> |D1: branch 1|2:exclusivegateway:{x}
+  2:exclusivegateway:{x} --> |D2: branch 1|3:task:(MPOO sends the metering point operations bill to the GO)
+  2:exclusivegateway:{x} --> |D2: branch 2|4:task:(MSPO sends the measurement bill to the GO)
+  2:exclusivegateway:{x} --> |D2: branch 3|5:task:(MSPO sends the bill for additional readings to the GO)
+  2:exclusivegateway:{x} --> |D2: branch 4|6:task:(the MPOO sends the bill for the equipment acquisition to the GO)
+  3:task:(MPOO sends the metering point operations bill to the GO) --> 7:exclusivegateway:{x}
+  4:task:(MSPO sends the measurement bill to the GO) --> 7:exclusivegateway:{x}
+  5:task:(MSPO sends the bill for additional readings to the GO) --> 7:exclusivegateway:{x}
+  6:task:(the MPOO sends the bill for the equipment acquisition to the GO) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> 8:task:(the GO examines the bill)
+  8:task:(the GO examines the bill) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |D3: branch 1|10:task:(the GO rejects the invoice)
+  9:exclusivegateway:{x} --> |D3: branch 2|11:task:(the GO confirms the invoice with payment advice)
+  10:task:(the GO rejects the invoice) --> 12:exclusivegateway:{x}
+  11:task:(the GO confirms the invoice with payment advice) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> 19:exclusivegateway:{x}
+  %% D1 branch 2
+  1:exclusivegateway:{x} --> |D1: branch 2|13:task:(MPOO sends the bill for the equipment acquisition to the MPON)
+  13:task:(MPOO sends the bill for the equipment acquisition to the MPON) --> 14:task:(the MPON examines the bill)
+  14:task:(the MPON examines the bill) --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |D4: branch 1|16:task:(the MPON confirms the invoice with payment advice)
+  15:exclusivegateway:{x} --> |D4: branch 2|17:task:(the MPON rejects the invoice)
+  16:task:(the MPON confirms the invoice with payment advice) --> 18:exclusivegateway:{x}
+  17:task:(the MPON rejects the invoice) --> 18:exclusivegateway:{x}
+  18:exclusivegateway:{x} --> 19:exclusivegateway:{x}
+  %% D1 merge to end
+  19:exclusivegateway:{x} --> 20:endevent:(((endevent)))

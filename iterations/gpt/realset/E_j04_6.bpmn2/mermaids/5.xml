@@ -1,0 +1,70 @@
+flowchart LR
+0:startevent:((startevent))
+1:exclusivegateway:{x}
+2:exclusivegateway:{x}
+3:exclusivegateway:{x}
+4:exclusivegateway:{x}
+5:exclusivegateway:{x}
+6:task:(Load Front Page)
+7:parallelgateway:{AND}
+8:task:(Topic Activity)
+9:task:(Payment Activity)
+10:task:(Experience Activity)
+11:task:(Hobbies Activity)
+12:parallelgateway:{AND}
+13:task:(Send Request)
+14:task:(Wait for Offer)
+15:exclusivegateway:{x}
+16:task:(Invalidate Other Offers)
+17:task:(Send Weekly Status Update)
+18:task:(Receive Company Status Update)
+19:task:(Finish Internship)
+20:exclusivegateway:{x}
+21:exclusivegateway:{x}
+22:task:(Post Tweet About Company)
+23:exclusivegateway:{x}
+24:endevent:(((endevent)))
+25:task:(Escalation Needed)
+26:exclusivegateway:{x}
+27:exclusivegateway:{x}
+
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |Proceed|2:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |Do not proceed|24:endevent:(((endevent)))
+2:exclusivegateway:{x} --> |Proceed|3:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Do not proceed|24:endevent:(((endevent)))
+3:exclusivegateway:{x} --> |Proceed|4:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Do not proceed|24:endevent:(((endevent)))
+4:exclusivegateway:{x} --> |Proceed|5:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Do not proceed|24:endevent:(((endevent)))
+5:exclusivegateway:{x} --> |Condition met|6:task:(Load Front Page)
+5:exclusivegateway:{x} --> |Condition not met|25:task:(Escalation Needed)
+6:task:(Load Front Page) --> 7:parallelgateway:{AND}
+25:task:(Escalation Needed) --> 6:task:(Load Front Page)
+7:parallelgateway:{AND} --> 8:task:(Topic Activity)
+7:parallelgateway:{AND} --> 9:task:(Payment Activity)
+7:parallelgateway:{AND} --> 10:task:(Experience Activity)
+7:parallelgateway:{AND} --> 11:task:(Hobbies Activity)
+8:task:(Topic Activity) --> 12:parallelgateway:{AND}
+9:task:(Payment Activity) --> 12:parallelgateway:{AND}
+10:task:(Experience Activity) --> 12:parallelgateway:{AND}
+11:task:(Hobbies Activity) --> 12:parallelgateway:{AND}
+12:parallelgateway:{AND} --> 13:task:(Send Request)
+13:task:(Send Request) --> 14:task:(Wait for Offer)
+14:task:(Wait for Offer) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> |Proceed|16:task:(Invalidate Other Offers)
+15:exclusivegateway:{x} --> |Do not proceed|24:endevent:(((endevent)))
+16:task:(Invalidate Other Offers) --> 17:task:(Send Weekly Status Update)
+17:task:(Send Weekly Status Update) --> 18:task:(Receive Company Status Update)
+18:task:(Receive Company Status Update) --> 19:task:(Finish Internship)
+19:task:(Finish Internship) --> 20:exclusivegateway:{x}
+20:exclusivegateway:{x} --> |Repeat cycle|21:exclusivegateway:{x}
+20:exclusivegateway:{x} --> |Do not repeat|24:endevent:(((endevent)))
+21:exclusivegateway:{x} --> |Post tweet|22:task:(Post Tweet About Company)
+21:exclusivegateway:{x} --> |Do not post|23:exclusivegateway:{x}
+22:task:(Post Tweet About Company) --> 23:exclusivegateway:{x}
+23:exclusivegateway:{x} --> |Repeat|21:exclusivegateway:{x}
+23:exclusivegateway:{x} --> |Escalate|26:exclusivegateway:{x}
+23:exclusivegateway:{x} --> |End|24:endevent:(((endevent)))
+26:exclusivegateway:{x} --> |Return to internship finish|19:task:(Finish Internship)
+26:exclusivegateway:{x} --> |End|24:endevent:(((endevent)))

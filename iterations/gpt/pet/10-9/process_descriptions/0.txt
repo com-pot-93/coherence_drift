@@ -1,0 +1,7 @@
+The process begins. At the start, there are two possible ways for a change to be initiated. Either the Service Provider, Project Unit, or Government Organization requests changes from the MPO, or the MPO itself decides to make a change. Regardless of which path is taken, the process continues in the same way.
+
+Next, the MPO reviews the change request. After this review, there are two possible outcomes. The MPO may reject the change, or the MPO may confirm the change. If the change is rejected, the process continues. If the change is confirmed, the process also continues along the same path.
+
+After either rejecting or confirming the change, the MPO performs the change. Once the change has been performed, there are again two possible outcomes. The MPO either reports the successful implementation to the Service Provider, Project Unit, or Government Organization, or the MPO notifies these parties about the failure of the change.
+
+After either reporting the implementation or notifying about the failure, the process ends.

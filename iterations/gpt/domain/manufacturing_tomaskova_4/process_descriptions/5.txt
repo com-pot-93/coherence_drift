@@ -1,0 +1,44 @@
+The process begins with a starting point. Immediately after, a decision is made to determine how the process should proceed.
+
+From this decision, the process moves to another decision point. If the outcome is positive ("true"), the process continues to a third decision. This third decision leads to two possible paths:
+
+1. **First Path:**  
+   The process moves to a fourth decision. This decision has three possible outcomes:
+   
+   - **If a certain condition is not met:**  
+     The process proceeds to production planning. After planning, workers are assigned, followed by the creation of a production design. The product is then delivered, and the production is logged out. A quality control check is performed, after which the process continues to the next stage.
+   
+   - **If an issue needs to be escalated:**  
+     The process moves directly to escalating the issue, and then continues to the next stage.
+   
+   - **Otherwise:**  
+     The process continues to a fifth decision.
+
+2. **Second Path:**  
+   The process moves directly to the fifth decision.
+
+At the fifth decision, there are two possible outcomes:
+
+- **If the product is finished:**  
+  The finished product is registered, then moved to the finished goods stock. Another decision is made:
+  
+  - **If the product is still considered finished:**  
+    The issue is escalated, and the process continues through a series of steps before returning to the previous stage.
+  
+  - **If the product is not finished:**  
+    The process returns to the previous stage.
+
+- **If the product is semi-finished:**  
+  The semi-finished product is registered, then loaded into the semi-finished stock. Another decision is made:
+  
+  - **If the product is now finished:**  
+    The issue is escalated, and the process continues through a series of steps before returning to the previous stage.
+  
+  - **If the product is not finished:**  
+    The process returns to the previous stage.
+
+After these steps, the process continues back through the earlier decisions, eventually reaching the second decision point.
+
+If, at the third decision, the outcome is negative ("false"), the process loops back to the first decision point.
+
+Finally, after all these steps and decisions, the process reaches its end point.

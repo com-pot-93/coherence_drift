@@ -1,0 +1,7 @@
+The process begins with the creation of a production plan and a process order. Once this is completed, the next step is to carry out material requirements planning, which ensures that all necessary materials are available for production. After this, the available capacity is evaluated to determine if the resources are sufficient to meet the production needs.
+
+Following the capacity evaluation, a proposal is scheduled and released, setting the timeline and authorizing the production activities. The process order is then confirmed, officially approving the planned production.
+
+Next, a transfer order is created or a goods issue is recorded, which involves either moving materials to the production area or documenting the withdrawal of materials from inventory. After this, the goods issue is confirmed to verify that the materials have been properly issued for production.
+
+Once the goods issue is confirmed, the next step is to record the receipt of the finished goods, acknowledging that the production output has been completed and received. Finally, the process concludes with the settlement of the order, which involves finalizing all related costs and closing the production order. The process ends after this settlement is completed.

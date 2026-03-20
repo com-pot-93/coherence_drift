@@ -1,0 +1,38 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Employee purchases a product)
+  1:task:(Employee purchases a product) --> 2:task:(Employee submits an expense report with a list of items)
+  2:task:(Employee submits an expense report with a list of items) --> 3:task:(Employee submits an expense report with a list of items)
+  3:task:(Employee submits an expense report with a list of items) --> 4:task:(Supervisor reviews the expense report)
+  4:task:(Supervisor reviews the expense report) --> 5:task:(Supervisor approves the report)
+  5:task:(Supervisor approves the report) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> 23:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> 23:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> 23:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> 23:exclusivegateway:{x}
+  23:exclusivegateway:{x} --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Yes| 8:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |No| 22:endevent:(((endevent)))
+  8:exclusivegateway:{x} --> |Yes| 9:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |No| 21:endevent:(((endevent)))
+  9:exclusivegateway:{x} --> |Yes| 10:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |No| 20:endevent:(((endevent)))
+  10:exclusivegateway:{x} --> |Yes| 11:task:(Supervisor moves report to the treasurer)
+  10:exclusivegateway:{x} --> |No| 19:task:(Employee edits the report)
+  11:task:(Supervisor moves report to the treasurer) --> 12:task:(Treasurer checks receipts)
+  12:task:(Treasurer checks receipts) --> 13:exclusivegateway:{x}
+  13:exclusivegateway:{x} --> |Yes| 14:task:(Treasurer matches the items on the list)
+  13:exclusivegateway:{x} --> |No| 18:task:(Treasurer accepts the expenses for processing)
+  14:task:(Treasurer matches the items on the list) --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |Yes| 16:task:(Treasurer sends report back to the employee)
+  15:exclusivegateway:{x} --> |No| 17:task:(Treasurer accepts the expenses for processing)
+  16:task:(Treasurer sends report back to the employee) --> 4:task:(Supervisor reviews the expense report)
+  17:task:(Treasurer accepts the expenses for processing) --> 24:exclusivegateway:{x}
+  18:task:(Treasurer accepts the expenses for processing) --> 24:exclusivegateway:{x}
+  19:task:(Employee edits the report) --> 4:task:(Supervisor reviews the expense report)
+  20:endevent:(((endevent)))
+  21:endevent:(((endevent)))
+  22:endevent:(((endevent)))
+  24:exclusivegateway:{x} --> 25:endevent:(((endevent)))
+  25:endevent:(((endevent)))
+```

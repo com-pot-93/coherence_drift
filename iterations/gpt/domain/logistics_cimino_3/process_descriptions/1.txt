@@ -1,0 +1,11 @@
+The process begins when a shipment request is received. Once the request is received, two activities are prepared in parallel.
+
+The first activity is to package the goods. After the goods are packaged, this part of the process waits for the other activities to finish before moving forward.
+
+At the same time, the process branches into another set of parallel activities. One branch leads to a decision about how to handle the shipment. Here, it is determined whether to use a carrier or the postal service.
+
+If a carrier is chosen, the process continues by requesting quotes from carriers. Once the quotes are received, a carrier is assigned. After assigning the carrier, the necessary paperwork is prepared. This paperwork is then set aside until the other activities are complete.
+
+If the postal service is chosen, the process continues by filling out a post label. After the label is filled out, there is a check to see if extra insurance is needed. If extra insurance is required, it is arranged before moving on. If no extra insurance is needed, the process continues directly. In both cases, the next step is to prepare the necessary paperwork. This paperwork is then set aside until the other activities are complete.
+
+Once all parallel activities are finished—including packaging the goods and preparing the paperwork—the paperwork is added to the package. The package is then moved to the pickup area, marking the end of the process.

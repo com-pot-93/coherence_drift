@@ -1,0 +1,27 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Branch 1| 2:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Branch 2| 22:task:(MPOO sends the bill for the equipment acquisition to the MPON)
+    2:exclusivegateway:{x} --> |Branch 1| 3:task:(MPOO sends the metering point operations bill to the GO)
+    2:exclusivegateway:{x} --> |Branch 2| 4:task:(MSPO sends the measurement bill to the GO)
+    2:exclusivegateway:{x} --> |Branch 3| 5:task:(MSPO sends the bill for additional readings to the GO)
+    2:exclusivegateway:{x} --> |Branch 4| 6:task:(the MPOO sends the bill for the equipment acquisition to the GO)
+    3:task:(MPOO sends the metering point operations bill to the GO) --> 7:exclusivegateway:{x}
+    4:task:(MSPO sends the measurement bill to the GO) --> 7:exclusivegateway:{x}
+    5:task:(MSPO sends the bill for additional readings to the GO) --> 7:exclusivegateway:{x}
+    6:task:(the MPOO sends the bill for the equipment acquisition to the GO) --> 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> 8:task:(the GO examines the bill)
+    8:task:(the GO examines the bill) --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} --> |Branch 1| 10:task:(the GO rejects the invoice)
+    9:exclusivegateway:{x} --> |Branch 2| 11:task:(the GO confirms the invoice with payment advice)
+    10:task:(the GO rejects the invoice) --> 12:exclusivegateway:{x}
+    11:task:(the GO confirms the invoice with payment advice) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> 27:endevent:(((endevent)))
+    22:task:(MPOO sends the bill for the equipment acquisition to the MPON) --> 23:task:(the MPON examines the bill)
+    23:task:(the MPON examines the bill) --> 24:exclusivegateway:{x}
+    24:exclusivegateway:{x} --> |Branch 1| 25:task:(the MPON confirms the invoice with payment advice)
+    24:exclusivegateway:{x} --> |Branch 2| 26:exclusivegateway:{x}
+    25:task:(the MPON confirms the invoice with payment advice) --> 26:exclusivegateway:{x}
+    26:exclusivegateway:{x} --> 27:endevent:(((endevent)))
+```

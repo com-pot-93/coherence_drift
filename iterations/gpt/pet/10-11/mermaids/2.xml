@@ -1,0 +1,35 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(GO initiates measurement request)
+2:task:(MSP reviews request)
+3:exclusivegateway:{x}
+4:task:(MSP denies request)
+5:task:(MSP informs GO of denial)
+6:endevent:(((endevent)))
+7:task:(MSP performs measurement)
+8:exclusivegateway:{x}
+9:task:(MSP notifies GO of failure)
+10:task:(MSP sends measured values to GO)
+11:task:(GO processes measured values)
+12:exclusivegateway:{x}
+13:task:(GO sends changed values to MSP)
+14:task:(GO forwards readings to SP)
+15:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(GO initiates measurement request)
+1:task:(GO initiates measurement request) --> 2:task:(MSP reviews request)
+2:task:(MSP reviews request) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Deny|4:task:(MSP denies request)
+3:exclusivegateway:{x} --> |Proceed|7:task:(MSP performs measurement)
+4:task:(MSP denies request) --> 5:task:(MSP informs GO of denial)
+5:task:(MSP informs GO of denial) --> 6:endevent:(((endevent)))
+7:task:(MSP performs measurement) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Failure|9:task:(MSP notifies GO of failure)
+8:exclusivegateway:{x} --> |Success|10:task:(MSP sends measured values to GO)
+9:task:(MSP notifies GO of failure) --> 15:endevent:(((endevent)))
+10:task:(MSP sends measured values to GO) --> 11:task:(GO processes measured values)
+11:task:(GO processes measured values) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Values changed|13:task:(GO sends changed values to MSP)
+12:exclusivegateway:{x} --> |No changes|14:task:(GO forwards readings to SP)
+13:task:(GO sends changed values to MSP) --> 14:task:(GO forwards readings to SP)
+14:task:(GO forwards readings to SP) --> 15:endevent:(((endevent)))

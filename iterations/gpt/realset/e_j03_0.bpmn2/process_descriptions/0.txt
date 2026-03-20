@@ -1,0 +1,38 @@
+Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins.
+2. The first step is to start the assessment tool.
+3. Once the tool is started, it becomes ready for use.
+4. The next step is to enter the type of incident that has occurred.
+5. At this point, a decision is made regarding the type of incident. There are four possible types:
+   - If the incident is an accident, this is selected.
+   - If the incident is an almost accident, this is selected.
+   - If the incident involves a severe safety or health risk, this is selected.
+   - If the incident involves defective protective equipment, this is selected.
+6. Regardless of which incident type is chosen, the process continues to the next step.
+7. The next step is to further specify the incident.
+8. At this stage, another decision is made, leading to two possible paths:
+   - In the first path, a further decision is made:
+     - Either the person entering the information provides their own data,
+     - Or the person provides the victim’s data.
+     - After either data entry, the process continues.
+     - Next, another decision is made:
+       - In one path, a set of tasks is added in parallel:
+         - One task is to contact accident insurance.
+         - At the same time, another decision is made:
+           - Either a task is added to contact the Labour Inspectorate,
+           - Or no such task is added.
+         - After these tasks, the process continues.
+       - In the other path, a task is added to contact superiors.
+     - After these tasks, the process continues.
+   - In the second path, a set of tasks is added in parallel:
+     - One task is to contact accident insurance.
+     - At the same time, another task is to contact the principal.
+     - After these tasks, the process continues.
+9. The process then moves to another decision point:
+   - Either the process continues directly,
+   - Or a task is added to contact private insurance.
+   - After this, the process continues.
+10. The next step is to propose the collected tasks to the user.
+11. The user then executes the proposed tasks.
+12. The process ends.

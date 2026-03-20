@@ -1,0 +1,33 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Request booking)
+2:task:(Get booking request)
+3:task:(Check availability)
+4:exclusivegateway:{x}
+5:task:(Propose alternative time)
+6:exclusivegateway:{x}
+7:task:(Send notification)
+8:task:(Get response)
+9:exclusivegateway:{x}
+10:exclusivegateway:{x}
+11:task:(Send the bill)
+12:task:(Confirm booking)
+13:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Request booking)
+1:task:(Request booking) --> 2:task:(Get booking request)
+2:task:(Get booking request) --> 3:task:(Check availability)
+3:task:(Check availability) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Alternative needed|5:task:(Propose alternative time)
+4:exclusivegateway:{x} --> |Available|6:exclusivegateway:{x}
+5:task:(Propose alternative time) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> 7:task:(Send notification)
+7:task:(Send notification) --> 8:task:(Get response)
+8:task:(Get response) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |No|10:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Yes|11:task:(Send the bill)
+11:task:(Send the bill) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> 12:task:(Confirm booking)
+12:task:(Confirm booking) --> 13:endevent:(((endevent)))
+
+

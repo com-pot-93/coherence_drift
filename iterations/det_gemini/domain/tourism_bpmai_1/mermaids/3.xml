@@ -1,0 +1,49 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Receive customer request)
+  1:task:(Receive customer request) --> 2:task:(Check customer request)
+  2:task:(Check customer request) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |true| 4:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |no| 34:task:(Send notification to the customer)
+  4:exclusivegateway:{x} --> |yes| 5:task:(Manual registration)
+  4:exclusivegateway:{x} --> |no| 6:task:(Automatic registration)
+  5:task:(Manual registration) --> 7:exclusivegateway:{x}
+  6:task:(Automatic registration) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> 8:task:(Search for attraction provider)
+  8:task:(Search for attraction provider) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |branch1| 10:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |branch2| 23:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |branch1| 11:task:(Book attraction)
+  10:exclusivegateway:{x} --> |branch2| 22:exclusivegateway:{x}
+  11:task:(Book attraction) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> |branch1| 13:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> |branch2| 16:exclusivegateway:{x}
+  13:exclusivegateway:{x} --> |branch1| 14:task:(Receive rejection)
+  13:exclusivegateway:{x} --> |branch2| 15:task:(Receive booking confirmation)
+  14:task:(Receive rejection) --> 17:exclusivegateway:{x}
+  15:task:(Receive booking confirmation) --> 17:exclusivegateway:{x}
+  16:exclusivegateway:{x} --> |branch1| 14:task:(Receive rejection)
+  16:exclusivegateway:{x} --> |branch2| 15:task:(Receive booking confirmation)
+  17:exclusivegateway:{x} --> 18:task:(Send confirmation to the customer)
+  18:task:(Send confirmation to the customer) --> 19:exclusivegateway:{x}
+  19:exclusivegateway:{x} --> 20:exclusivegateway:{x}
+  22:exclusivegateway:{x} --> 11:task:(Book attraction)
+  23:exclusivegateway:{x} --> |branch1| 24:task:(Book attraction)
+  23:exclusivegateway:{x} --> |branch2| 33:exclusivegateway:{x}
+  24:task:(Book attraction) --> 25:exclusivegateway:{x}
+  25:exclusivegateway:{x} --> |branch1| 26:exclusivegateway:{x}
+  25:exclusivegateway:{x} --> |branch2| 29:exclusivegateway:{x}
+  26:exclusivegateway:{x} --> |branch1| 27:task:(Receive rejection)
+  26:exclusivegateway:{x} --> |branch2| 28:task:(Receive booking confirmation)
+  27:task:(Receive rejection) --> 30:exclusivegateway:{x}
+  28:task:(Receive booking confirmation) --> 30:exclusivegateway:{x}
+  29:exclusivegateway:{x} --> |branch1| 27:task:(Receive rejection)
+  29:exclusivegateway:{x} --> |branch2| 28:task:(Receive booking confirmation)
+  30:exclusivegateway:{x} --> 31:task:(Send confirmation to the customer)
+  31:task:(Send confirmation to the customer) --> 32:exclusivegateway:{x}
+  32:exclusivegateway:{x} --> 20:exclusivegateway:{x}
+  33:exclusivegateway:{x} --> 24:task:(Book attraction)
+  34:task:(Send notification to the customer) --> 35:endevent:(((endevent)))
+  20:exclusivegateway:{x} --> |true| 8:task:(Search for attraction provider)
+  20:exclusivegateway:{x} --> |false| 35:endevent:(((endevent)))
+```

@@ -1,0 +1,11 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Submit Vacation Request)
+  1:task:(Submit Vacation Request) --> 2:task:(Register Request)
+  2:task:(Register Request) --> 3:task:(Approve Request)
+  3:task:(Approve Request) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |Not Approved| 5:task:(Return Application)
+  4:exclusivegateway:{x} --> |Approved| 6:task:(Generate HR Notification)
+  5:task:(Return Application) --> 7:endevent:(((endevent)))
+  6:task:(Generate HR Notification) --> 7:endevent:(((endevent)))
+```

@@ -1,0 +1,7 @@
+The process begins when either a fault detector reports a failure to the MPO, or the MPO itself suspects that it may have a fault. Regardless of which of these two situations occurs, the next step is that the MPO examines the failure.
+
+After examining the failure, the MPO must decide whether to reject or confirm the failure reported by the fault detector. If the MPO rejects the failure, the process moves directly to the end.
+
+If the MPO confirms the failure reported by the fault detector, the MPO first informs the GO about the situation. Then, the MPO also informs the MSP. After these notifications, the MPO proceeds to fix the fault at the measuring device.
+
+Once the repair is completed, the MPO shares the results of the repairs. Following this, the MPO informs the GO about the resolution of the interference, and then informs the MSP about the resolution as well. After these notifications, the process comes to an end.

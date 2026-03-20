@@ -1,0 +1,19 @@
+The process begins with a starting point. Immediately, two activities are set to happen at the same time:
+
+- The fault detector reports a failure.
+- The MPO (Maintenance Process Owner) suspects a fault.
+
+Once both of these actions are completed, the process continues. The MPO then examines the reported failure.
+
+After examining the failure, the MPO must decide whether to reject or confirm the failure:
+
+- If the MPO rejects the failure, the process moves directly towards its conclusion.
+- If the MPO confirms the failure, the MPO takes several steps in sequence:
+  1. The MPO informs the GO (presumably a relevant organizational unit) about the failure.
+  2. The MPO informs the MSP (possibly a service provider) about the failure.
+  3. The MPO fixes the fault.
+  4. The MPO shares the results of the repair.
+  5. The MPO informs the GO that the issue has been resolved.
+  6. The MPO informs the MSP that the issue has been resolved.
+
+After these steps, the process proceeds to its conclusion, just as it does if the failure was rejected. The process then ends.

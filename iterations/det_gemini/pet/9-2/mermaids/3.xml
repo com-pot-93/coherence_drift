@@ -1,0 +1,21 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(CSR sends a Mortgage offer)
+    1:task:(CSR sends a Mortgage offer) --> 2:task:(CSR waits for a customer reply)
+    2:task:(CSR waits for a customer reply) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |Branch 1| 4:task:(CSR updates the case details)
+    3:exclusivegateway:{x} --> |Branch 2| 10:task:(CSR moves case to administration)
+    4:task:(CSR updates the case details) --> 5:task:(CSR archives the work)
+    5:task:(CSR archives the work) --> 6:task:(CSR performs cancellation)
+    6:task:(CSR performs cancellation) --> 21:endevent:(((endevent)))
+    10:task:(CSR moves case to administration) --> 11:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |Branch 1| 12:task:(CSR generates request for outstanding documents)
+    11:exclusivegateway:{x} --> |Branch 2| 20:exclusivegateway:{x}
+    12:task:(CSR generates request for outstanding documents) --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> |Branch 1| 14:task:(CSR updates the case details)
+    13:exclusivegateway:{x} --> |Branch 2| 20:exclusivegateway:{x}
+    14:task:(CSR updates the case details) --> 15:task:(CSR archives the work)
+    15:task:(CSR archives the work) --> 16:task:(CSR performs cancellation)
+    16:task:(CSR performs cancellation) --> 20:exclusivegateway:{x}
+    20:exclusivegateway:{x} --> 21:endevent:(((endevent)))
+```

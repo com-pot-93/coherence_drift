@@ -1,0 +1,14 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Receive data subject request)
+  1:task:(Receive data subject request) --> 2:task:(Send request to the third party)
+  2:task:(Send request to the third party) --> 3:task:(Receive third party request)
+  3:task:(Receive third party request) --> 4:parallelgateway:{AND}
+  4:parallelgateway:{AND} --> 5:task:(Retrieve elaborations)
+  4:parallelgateway:{AND} --> 6:task:(Retrieve available data of the data subject)
+  5:task:(Retrieve elaborations) --> 7:parallelgateway:{AND}
+  6:task:(Retrieve available data of the data subject) --> 7:parallelgateway:{AND}
+  7:parallelgateway:{AND} --> 8:task:(Communicate data and elaborations to the third party)
+  8:task:(Communicate data and elaborations to the third party) --> 9:task:(Communicate data and elaborations to the data subject)
+  9:task:(Communicate data and elaborations to the data subject) --> 10:endevent:(((endevent)))
+```

@@ -1,0 +1,5 @@
+The process starts. Then, a decision is made. If the answer is "Yes", account information is entered, a confirmation email is received, and a link in the email is clicked. Otherwise, if the answer is "No", the system is logged into. After either of these paths, account information is loaded.
+
+Next, another decision is made. If the answer is "Yes", a payment method is selected. Then, depending on the payment method, either credit card information or IBAN/BIC information is entered. After entering either of these, the process continues. If the answer to the previous decision is "No", the process skips directly to the next step.
+
+After this, the game is logged into. Then, in parallel, a realm, a race, and a class are selected. Once all three selections are made, the character is named, a confirmation and selfies are received, and the process ends.

@@ -1,0 +1,11 @@
+The process starts when a request is received. The request is then checked. Depending on the outcome of the check, the process either proceeds to perform a measurement or the request is denied.
+
+If the request is denied, the process continues to transmit readings.
+
+If the request is approved, a measurement is performed. Based on the measurement result, the process either sends a notification if the measurement failed or transmits the measured values if the measurement was successful.
+
+If the measurement failed, a notification is sent, and the process continues to transmit readings.
+
+If the measurement was successful, the measured values are transmitted, then the values are processed, and the changed values are sent. After sending the changed values, the process continues to transmit readings.
+
+Finally, after transmitting the readings, the process ends.

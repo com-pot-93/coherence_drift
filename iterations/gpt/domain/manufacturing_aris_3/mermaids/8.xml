@@ -1,0 +1,68 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Production Order)
+2:task:(Prepare Materials)
+3:task:(Assemble Door)
+4:exclusivegateway:{x}
+5:exclusivegateway:{x}
+6:exclusivegateway:{x}
+7:task:(Send Quality Check Inquiry)
+8:task:(Receive Inquiry Response)
+9:task:(Conduct Quality Check in Response)
+10:task:(Send Quality Report)
+11:task:(Receive and Review Report)
+12:exclusivegateway:{x}
+13:task:(Fix Door)
+14:task:(Release Door)
+15:endevent:(((endevent)))
+16:task:(Perform Quality Check)
+17:task:(Send Quality Report)
+18:task:(Receive and Review Report)
+
+0:startevent:((startevent)) --> 1:task:(Receive Production Order)
+1:task:(Receive Production Order) --> 2:task:(Prepare Materials)
+2:task:(Prepare Materials) --> 3:task:(Assemble Door)
+3:task:(Assemble Door) --> 4:exclusivegateway:{x}
+
+%% Path 1: Skip Quality Check (direct)
+4:exclusivegateway:{x} --> |Skip Quality Check (direct)|5:exclusivegateway:{x}
+
+%% Path 2: Skip Quality Check (with inquiry)
+4:exclusivegateway:{x} --> |Skip Quality Check (with inquiry)|6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |No Inquiry|5:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Send Inquiry|7:task:(Send Quality Check Inquiry)
+7:task:(Send Quality Check Inquiry) --> 8:task:(Receive Inquiry Response)
+8:task:(Receive Inquiry Response) --> 9:task:(Conduct Quality Check in Response)
+9:task:(Conduct Quality Check in Response) --> 10:task:(Send Quality Report)
+10:task:(Send Quality Report) --> 11:task:(Receive and Review Report)
+11:task:(Receive and Review Report) --> 12:exclusivegateway:{x}
+
+%% Path 3: Perform Quality Check
+4:exclusivegateway:{x} --> |Perform Quality Check|16:task:(Perform Quality Check)
+16:task:(Perform Quality Check) --> 5:exclusivegateway:{x}
+
+%% Path 1 & 2 (no inquiry) merge: Decision on report
+5:exclusivegateway:{x} --> |Report Satisfactory?|14:task:(Release Door)
+5:exclusivegateway:{x} --> |Report Not Satisfactory|13:task:(Fix Door)
+
+%% Path 2 (with inquiry) and Path 3 (with inquiry): After review, decision
+12:exclusivegateway:{x} --> |Report Satisfactory?|14:task:(Release Door)
+12:exclusivegateway:{x} --> |Report Not Satisfactory|13:task:(Fix Door)
+
+%% Path 3: Perform Quality Check with inquiry
+16:task:(Perform Quality Check) --> 6:exclusivegateway:{x}
+%% Path 3: Perform Quality Check without inquiry
+%% Already handled by direct edge to 5:exclusivegateway:{x}
+
+%% Path 3: Perform Quality Check with inquiry
+6:exclusivegateway:{x} --> |Send Inquiry|7:task:(Send Quality Check Inquiry)
+6:exclusivegateway:{x} --> |No Inquiry|5:exclusivegateway:{x}
+
+%% Path 3: After Perform Quality Check with inquiry
+9:task:(Conduct Quality Check in Response) --> 17:task:(Send Quality Report)
+17:task:(Send Quality Report) --> 18:task:(Receive and Review Report)
+18:task:(Receive and Review Report) --> 12:exclusivegateway:{x}
+
+%% Endings
+13:task:(Fix Door) --> 15:endevent:(((endevent)))
+14:task:(Release Door) --> 15:endevent:(((endevent)))

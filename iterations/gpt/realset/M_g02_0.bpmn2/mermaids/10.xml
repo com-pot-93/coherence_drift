@@ -1,0 +1,69 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Initiate Project)
+2:task:(Develop Basic Design)
+3:task:(Order Lego Brick Sets)
+4:task:(Sort Bricks by Size)
+5:parallelgateway:{AND}
+6:task:(Place Big Bricks in Container)
+7:task:(Place Medium Bricks in Container)
+8:task:(Place Small Bricks in Container)
+9:parallelgateway:{AND}
+10:exclusivegateway:{x}
+11:task:(Wait Until Right Time)
+12:exclusivegateway:{x}
+13:task:(Proceed with Project)
+14:task:(Build Subcomponents)
+15:exclusivegateway:{x}
+16:task:(Build Additional Subcomponents)
+17:task:(Order More Lego Bricks)
+18:task:(Test Subcomponents)
+19:exclusivegateway:{x}
+20:task:(Assemble Subcomponents)
+21:task:(Redesign Subcomponents)
+22:task:(Wait Until Right Time)
+23:task:(Proceed with Project)
+24:exclusivegateway:{x}
+25:task:(Proceed After Assembly)
+26:exclusivegateway:{x}
+27:task:(Escalate Issue)
+28:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Initiate Project)
+1:task:(Initiate Project) --> 2:task:(Develop Basic Design)
+2:task:(Develop Basic Design) --> 3:task:(Order Lego Brick Sets)
+3:task:(Order Lego Brick Sets) --> 4:task:(Sort Bricks by Size)
+4:task:(Sort Bricks by Size) --> 5:parallelgateway:{AND}
+5:parallelgateway:{AND} --> 6:task:(Place Big Bricks in Container)
+5:parallelgateway:{AND} --> 7:task:(Place Medium Bricks in Container)
+5:parallelgateway:{AND} --> 8:task:(Place Small Bricks in Container)
+6:task:(Place Big Bricks in Container) --> 9:parallelgateway:{AND}
+7:task:(Place Medium Bricks in Container) --> 9:parallelgateway:{AND}
+8:task:(Place Small Bricks in Container) --> 9:parallelgateway:{AND}
+9:parallelgateway:{AND} --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Right time|12:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Not right time|11:task:(Wait Until Right Time)
+11:task:(Wait Until Right Time) --> 10:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Proceed|13:task:(Proceed with Project)
+13:task:(Proceed with Project) --> 14:task:(Build Subcomponents)
+14:task:(Build Subcomponents) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> |More subcomponents needed|16:task:(Build Additional Subcomponents)
+15:exclusivegateway:{x} --> |More bricks needed|17:task:(Order More Lego Bricks)
+15:exclusivegateway:{x} --> |No more needed|18:task:(Test Subcomponents)
+16:task:(Build Additional Subcomponents) --> 14:task:(Build Subcomponents)
+17:task:(Order More Lego Bricks) --> 14:task:(Build Subcomponents)
+18:task:(Test Subcomponents) --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> |Ready to assemble|20:task:(Assemble Subcomponents)
+19:exclusivegateway:{x} --> |Redesign needed|21:task:(Redesign Subcomponents)
+19:exclusivegateway:{x} --> |More assembly needed|18:task:(Test Subcomponents)
+19:exclusivegateway:{x} --> |Not right time|22:task:(Wait Until Right Time)
+21:task:(Redesign Subcomponents) --> 18:task:(Test Subcomponents)
+22:task:(Wait Until Right Time) --> 23:task:(Proceed with Project)
+23:task:(Proceed with Project) --> 18:task:(Test Subcomponents)
+20:task:(Assemble Subcomponents) --> 24:exclusivegateway:{x}
+24:exclusivegateway:{x} --> |More assembly needed|18:task:(Test Subcomponents)
+24:exclusivegateway:{x} --> |Proceed|25:task:(Proceed After Assembly)
+25:task:(Proceed After Assembly) --> 26:exclusivegateway:{x}
+26:exclusivegateway:{x} --> |All conditions met|28:endevent:(((endevent)))
+26:exclusivegateway:{x} --> |Escalation needed|27:task:(Escalate Issue)
+27:task:(Escalate Issue) --> 26:exclusivegateway:{x}

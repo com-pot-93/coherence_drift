@@ -1,0 +1,8 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+  1:exclusivegateway:{x} --> |Yes| 2:task:(Add patient to list)
+  1:exclusivegateway:{x} --> |No| 3:exclusivegateway:{x}
+  2:task:(Add patient to list) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> 4:endevent:(((endevent)))
+```

@@ -1,0 +1,17 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(MPON notifies MPOO about equipment change)
+    1:task:(MPON notifies MPOO about equipment change) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |MPOO announces self-dismounting| 3:task:(MPOO notifies MPON of self-dismounting)
+    2:exclusivegateway:{x} --> |MPOO notifies MPON it will not self-dismount| 4:task:(MPOO notifies MPON it will not self-dismount)
+    3:task:(MPOO notifies MPON of self-dismounting) --> 5:exclusivegateway:{x}
+    4:task:(MPOO notifies MPON it will not self-dismount) --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> 6:task:(MPON or MPOO performs final reading)
+    6:task:(MPON or MPOO performs final reading) --> 7:task:(Dismount old equipment)
+    7:task:(Dismount old equipment) --> 8:task:(MPON mounts new device)
+    8:task:(MPON mounts new device) --> 9:task:(Read meter count)
+    9:task:(Read meter count) --> 10:task:(MPON sends final reading values to GO)
+    10:task:(MPON sends final reading values to GO) --> 11:task:(Inform GO of required data)
+    11:task:(Inform GO of required data) --> 12:task:(GO notifies MSP about required data)
+    12:task:(GO notifies MSP about required data) --> 13:endevent:(((endevent)))
+```

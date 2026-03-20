@@ -1,0 +1,26 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when a customer order is received.
+2. The received customer order is then processed to understand the customer's demand.
+3. Next, the required components needed to fulfill the order are determined.
+4. At this point, it is checked whether any parts are missing:
+   - If there are missing parts, the missing parts are purchased.
+   - Once the missing parts are purchased, they are stocked.
+   - After stocking the purchased parts, the process continues.
+   - If there are no missing parts, the process continues directly.
+5. Production is then performed to create the product.
+6. After production, a quality check is carried out.
+7. The result of the quality check is evaluated:
+   - If the product passes the quality check, the process continues.
+   - If the product fails the quality check, a follow-up production is performed to address the issues.
+   - After the follow-up production, a quality re-check is conducted.
+   - If the product fails the quality re-check, the follow-up production and quality re-check steps are repeated until the product passes.
+8. Once the product passes the quality check or re-check, it is filled into packaging.
+9. After filling into packaging, the process checks if further follow-up production is needed:
+   - If further follow-up production is required, the process returns to the follow-up production and quality re-check steps.
+   - If not, the process continues.
+10. The packaged product is then packed and labeled.
+11. After packing and labeling, the product is transported to the warehouse.
+12. Finally, the product is sent to the customer, and the process ends.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that all steps, checks, and possible repetitions are included.

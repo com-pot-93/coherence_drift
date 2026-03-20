@@ -1,0 +1,16 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Receive trip request)
+1:task:(Receive trip request) --> 2:parallelgateway:{AND}
+2:parallelgateway:{AND} --> 3:task:(Send price request to the airlines)
+2:parallelgateway:{AND} --> 6:task:(Send price request to the hotels)
+3:task:(Send price request to the airlines) --> 4:task:(Collect responses from the airlines)
+4:task:(Collect responses from the airlines) --> 5:task:(Select airline)
+5:task:(Select airline) --> 9:parallelgateway:{AND}
+6:task:(Send price request to the hotels) --> 7:task:(Collect responses from the hotels)
+7:task:(Collect responses from the hotels) --> 8:task:(Select hotel)
+8:task:(Select hotel) --> 9:parallelgateway:{AND}
+9:parallelgateway:{AND} --> 10:task:(Prepare the tour plan)
+10:task:(Prepare the tour plan) --> 11:task:(Send the tour plan to the customer)
+11:task:(Send the tour plan to the customer) --> 12:endevent:(((endevent)))
+```

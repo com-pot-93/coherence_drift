@@ -1,0 +1,76 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Enter Manufacturer Name)
+2:task:(Enter Model Information)
+3:exclusivegateway:{x}
+4:endevent:(((endevent)))
+5:exclusivegateway:{x}
+6:exclusivegateway:{x}
+7:parallelgateway:{AND}
+8:task:(Determine List of Parts Needed)
+9:task:(Identify Necessary Tools)
+10:parallelgateway:{AND}
+11:task:(Check Inventory)
+12:exclusivegateway:{x}
+13:exclusivegateway:{x}
+14:task:(Obtain Needed Items)
+15:exclusivegateway:{x}
+16:task:(Contact Friend)
+17:task:(Generate Repair Instructions)
+18:exclusivegateway:{x}
+19:task:(Follow Instructions)
+20:exclusivegateway:{x}
+21:task:(Escalate Issue)
+22:exclusivegateway:{x}
+23:task:(Send to Expert)
+24:task:(Leave Review)
+25:exclusivegateway:{x}
+26:task:(Upload Video)
+27:task:(Save Video to Database)
+28:exclusivegateway:{x}
+29:task:(Enter Broken Part)
+30:exclusivegateway:{x}
+
+0:startevent:((startevent)) --> 1:task:(Enter Manufacturer Name)
+1:task:(Enter Manufacturer Name) --> 2:task:(Enter Model Information)
+2:task:(Enter Model Information) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Stop|4:endevent:(((endevent)))
+3:exclusivegateway:{x} --> |Continue|5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Negative Path|6:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Positive Path|17:task:(Generate Repair Instructions)
+6:exclusivegateway:{x} --> |False|7:parallelgateway:{AND}
+6:exclusivegateway:{x} --> |True|11:task:(Check Inventory)
+7:parallelgateway:{AND} --> 8:task:(Determine List of Parts Needed)
+7:parallelgateway:{AND} --> 9:task:(Identify Necessary Tools)
+8:task:(Determine List of Parts Needed) --> 10:parallelgateway:{AND}
+9:task:(Identify Necessary Tools) --> 10:parallelgateway:{AND}
+10:parallelgateway:{AND} --> 11:task:(Check Inventory)
+11:task:(Check Inventory) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Stop|4:endevent:(((endevent)))
+12:exclusivegateway:{x} --> |Continue|13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |No Help Needed|14:task:(Obtain Needed Items)
+13:exclusivegateway:{x} --> |Help Needed|15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> |Contact Friend|16:task:(Contact Friend)
+15:exclusivegateway:{x} --> |Do Not Contact|14:task:(Obtain Needed Items)
+16:task:(Contact Friend) --> 14:task:(Obtain Needed Items)
+14:task:(Obtain Needed Items) --> 17:task:(Generate Repair Instructions)
+17:task:(Generate Repair Instructions) --> 18:exclusivegateway:{x}
+18:exclusivegateway:{x} --> |Repeat Instructions|17:task:(Generate Repair Instructions)
+18:exclusivegateway:{x} --> |Continue|19:task:(Follow Instructions)
+19:task:(Follow Instructions) --> 20:exclusivegateway:{x}
+20:exclusivegateway:{x} --> |Repeat|19:task:(Follow Instructions)
+20:exclusivegateway:{x} --> |No Repeat|21:task:(Escalate Issue)
+21:task:(Escalate Issue) --> 22:exclusivegateway:{x}
+22:exclusivegateway:{x} --> |Cannot Resolve|23:task:(Send to Expert)
+22:exclusivegateway:{x} --> |Can Resolve|24:task:(Leave Review)
+23:task:(Send to Expert) --> 24:task:(Leave Review)
+24:task:(Leave Review) --> 25:exclusivegateway:{x}
+25:exclusivegateway:{x} --> |Upload Video|26:task:(Upload Video)
+25:exclusivegateway:{x} --> |Skip|28:exclusivegateway:{x}
+26:task:(Upload Video) --> 27:task:(Save Video to Database)
+27:task:(Save Video to Database) --> 28:exclusivegateway:{x}
+28:exclusivegateway:{x} --> |Repeat Upload|26:task:(Upload Video)
+28:exclusivegateway:{x} --> |Done|29:task:(Enter Broken Part)
+29:task:(Enter Broken Part) --> 30:exclusivegateway:{x}
+30:exclusivegateway:{x} --> |More Parts|29:task:(Enter Broken Part)
+30:exclusivegateway:{x} --> |Done|21:task:(Escalate Issue)

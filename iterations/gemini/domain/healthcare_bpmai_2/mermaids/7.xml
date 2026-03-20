@@ -1,0 +1,22 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Visit Patient)
+  1:task:(Visit Patient) --> 2:task:(Check Insurance)
+  2:task:(Check Insurance) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Patient Registered| 8:task:(Book Appointment)
+  3:exclusivegateway:{x} --> |Patient Not Registered| 4:task:(Check Registration Status)
+  4:task:(Check Registration Status) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Not Registered| 6:task:(Register Patient and Pay Fee)
+  5:exclusivegateway:{x} --> |Already Registered| 7:exclusivegateway:{x}
+  6:task:(Register Patient and Pay Fee) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> 8:task:(Book Appointment)
+  8:task:(Book Appointment) --> 9:task:(Doctor's Examination)
+  9:task:(Doctor's Examination) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |Hospitalize| 14:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |Send to Pharmacy| 11:task:(Order and Pay for Medicine)
+  11:task:(Order and Pay for Medicine) --> 12:task:(Receive Medicine)
+  12:task:(Receive Medicine) --> 14:exclusivegateway:{x}
+  14:exclusivegateway:{x} --> 15:task:(Book Appointment)
+  15:task:(Book Appointment) --> 16:task:(Doctor's Examination)
+  16:task:(Doctor's Examination) --> 17:endevent:(((endevent)))
+```

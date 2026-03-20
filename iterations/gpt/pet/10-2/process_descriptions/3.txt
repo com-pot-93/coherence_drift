@@ -1,0 +1,15 @@
+The process begins when the Meter Point Operator Notified (MPON) reports the operation of a meter to the Grid Operator (GO). After receiving this report, the Grid Operator examines the application.
+
+At this point, the Grid Operator must decide whether to confirm or reject the application. If the application is rejected, the Grid Operator formally rejects it and then proceeds to the next step. If the application is confirmed, the Grid Operator confirms the application and also moves to the next step.
+
+Regardless of whether the application was confirmed or rejected, the Grid Operator then informs the Meter Point Operator Other (MPOO) about the registration confirmation. After this, the Grid Operator also informs the Meter Service Provider Operator (MSPO) about the registration confirmation.
+
+Following these notifications, both the Meter Point Operator Notified and the Meter Point Operator Other acquire or change the necessary equipment.
+
+After the equipment has been acquired or changed, there are two possible outcomes. If there is a failure, the Meter Point Operator Notified informs the Grid Operator about the failure. The Grid Operator then decides how to respond: either by informing the Meter Point Operator Notified about the failure, or by confirming the failure of the assignment. After either response, the process continues to the next step.
+
+If the equipment acquisition or change is successful, the Meter Point Operator Notified informs the Grid Operator of the successful completion, and the process also continues to the next step.
+
+Once the process reaches this point, the Grid Operator assigns the Meter Point Operator Notified and confirms the assignment.
+
+After confirming the assignment, the Grid Operator simultaneously informs three parties about the status of the assignment: the Meter Point Operator Other, the Meter Service Provider Operator, and the Service Provider (SP). Once all three parties have been informed, the process comes to an end.

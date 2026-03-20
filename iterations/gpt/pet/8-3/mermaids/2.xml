@@ -1,0 +1,28 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Identify Need for Personnel)
+2:task:(Determine Personnel Requirements)
+3:task:(Report Vacancy to Personnel Department)
+4:exclusivegateway:{x}
+5:task:(Receive Job Description)
+6:task:(Examine Job Description)
+7:exclusivegateway:{x}
+8:task:(Request Corrections)
+9:task:(Advertise Vacancy)
+10:exclusivegateway:{x}
+11:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Identify Need for Personnel)
+1:task:(Identify Need for Personnel) --> 2:task:(Determine Personnel Requirements)
+2:task:(Determine Personnel Requirements) --> 3:task:(Report Vacancy to Personnel Department)
+3:task:(Report Vacancy to Personnel Department) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Proceed|5:task:(Receive Job Description)
+4:exclusivegateway:{x} --> |Do not proceed|10:exclusivegateway:{x}
+5:task:(Receive Job Description) --> 6:task:(Examine Job Description)
+6:task:(Examine Job Description) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Not satisfactory|8:task:(Request Corrections)
+7:exclusivegateway:{x} --> |Satisfactory|9:task:(Advertise Vacancy)
+8:task:(Request Corrections) --> 5:task:(Receive Job Description)
+9:task:(Advertise Vacancy) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |More vacancies|4:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |No further action|11:endevent:(((endevent)))

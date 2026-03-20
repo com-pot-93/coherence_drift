@@ -1,0 +1,5 @@
+The process starts when a new order is received from the sales department. Then, a master determines the necessary parts, quantities, and delivery date. This information is entered into a Production Planning System (PPS), which then creates a list of procured parts. The data is transferred from the PPS to an Enterprise Resource Planning (ERP) system.
+
+Next, there is a decision point. If parts are missing, they are procured. Otherwise, this step is skipped.
+
+After procuring missing parts or skipping the procurement, a notice is received from the system. An employee then takes care of the implementation, and the order is checked for its quality. The process ends after the quality check.

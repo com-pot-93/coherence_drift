@@ -1,0 +1,11 @@
+The process begins with the creation of a list of required parts. Once the list is prepared, an online search is conducted to find shops that offer these parts. After gathering information, the shop with the lowest prices is selected. The next step is to place an order with the chosen shop.
+
+At this point, a decision is made: either to continue with the process or to stop. If the process is stopped, it ends immediately.
+
+If the process continues, the order is sent to the online shop. After this, three activities take place at the same time: an invoice is sent, the ordered items are delivered, and the inventory records are updated. All three of these actions must be completed before moving forward.
+
+Once these parallel activities are finished, the order is sent to the manufacturer. The building process then begins.
+
+Following this, another decision point is reached. If the process is not yet complete, a set of options is repeatedly considered. These options include ordering the cheapest part, ordering a part with faster delivery, writing a compliment email, or finishing the project. Each time one of these actions is chosen and completed, the process returns to the decision point to check if further actions are needed.
+
+When the process is finally complete, the project is marked as finished, and the process comes to an end.

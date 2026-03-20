@@ -1,0 +1,70 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Prompt User to Log In)
+2:task:(Check Credentials)
+3:exclusivegateway:{x}
+4:endevent:(((endevent)))
+5:task:(Check Permissions)
+6:exclusivegateway:{x}
+7:task:(Check Specific Condition)
+8:exclusivegateway:{x}
+9:task:(Check Next Condition)
+10:exclusivegateway:{x}
+11:exclusivegateway:{x}
+12:task:(Prompt to Add More Products)
+13:exclusivegateway:{x}
+14:task:(Select Product)
+15:task:(Add Product to Cart and Save)
+16:task:(Present Order Confirmation)
+17:exclusivegateway:{x}
+18:task:(Prepare Shipment Details)
+19:task:(Prepare Payment Details)
+20:parallelgateway:{AND}
+21:task:(Collect Payment Information)
+22:task:(Collect Shipping Details)
+23:parallelgateway:{AND}
+24:task:(Check if Order is Correct)
+25:exclusivegateway:{x}
+26:task:(Ask if Further Confirmation Needed)
+27:exclusivegateway:{x}
+
+0:startevent:((startevent)) --> 1:task:(Prompt User to Log In)
+1:task:(Prompt User to Log In) --> 2:task:(Check Credentials)
+2:task:(Check Credentials) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Incorrect|4:endevent:(((endevent)))
+3:exclusivegateway:{x} --> |Correct|5:task:(Check Permissions)
+5:task:(Check Permissions) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Insufficient|4:endevent:(((endevent)))
+6:exclusivegateway:{x} --> |Sufficient|7:task:(Check Specific Condition)
+7:task:(Check Specific Condition) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Condition Met|4:endevent:(((endevent)))
+8:exclusivegateway:{x} --> |Condition Not Met|9:task:(Check Next Condition)
+9:task:(Check Next Condition) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Not Met|4:endevent:(((endevent)))
+10:exclusivegateway:{x} --> |Met|11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> 12:task:(Prompt to Add More Products)
+12:task:(Prompt to Add More Products) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Add More|14:task:(Select Product)
+13:exclusivegateway:{x} --> |Confirm Order|16:task:(Present Order Confirmation)
+14:task:(Select Product) --> 15:task:(Add Product to Cart and Save)
+15:task:(Add Product to Cart and Save) --> 12:task:(Prompt to Add More Products)
+16:task:(Present Order Confirmation) --> 17:exclusivegateway:{x}
+17:exclusivegateway:{x} --> |Finalize Order|18:task:(Prepare Shipment Details)
+17:exclusivegateway:{x} --> |Cancel|4:endevent:(((endevent)))
+18:task:(Prepare Shipment Details) --> 20:parallelgateway:{AND}
+19:task:(Prepare Payment Details) --> 20:parallelgateway:{AND}
+20:parallelgateway:{AND} --> 18:task:(Prepare Shipment Details)
+20:parallelgateway:{AND} --> 19:task:(Prepare Payment Details)
+20:parallelgateway:{AND} --> 21:task:(Collect Payment Information)
+20:parallelgateway:{AND} --> 22:task:(Collect Shipping Details)
+21:task:(Collect Payment Information) --> 23:parallelgateway:{AND}
+22:task:(Collect Shipping Details) --> 23:parallelgateway:{AND}
+23:parallelgateway:{AND} --> 21:task:(Collect Payment Information)
+23:parallelgateway:{AND} --> 22:task:(Collect Shipping Details)
+23:parallelgateway:{AND} --> 24:task:(Check if Order is Correct)
+24:task:(Check if Order is Correct) --> 25:exclusivegateway:{x}
+25:exclusivegateway:{x} --> |Not Correct|16:task:(Present Order Confirmation)
+25:exclusivegateway:{x} --> |Correct|26:task:(Ask if Further Confirmation Needed)
+26:task:(Ask if Further Confirmation Needed) --> 27:exclusivegateway:{x}
+27:exclusivegateway:{x} --> |Needed|16:task:(Present Order Confirmation)
+27:exclusivegateway:{x} --> |Not Needed|4:endevent:(((endevent)))

@@ -1,0 +1,18 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Receive Shipment Request)
+1:task:(Receive Shipment Request) --> 2:task:(Check Product Availability)
+2:task:(Check Product Availability) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Product Not Available| 12:task:(Prepare Service Station Shipment)
+3:exclusivegateway:{x} --> |Product Available| 4:task:(Check Shipment Address)
+4:task:(Check Shipment Address) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Inbound Location| 6:task:(Assemble and Send Inbound Shipment)
+5:exclusivegateway:{x} --> |Regional Location| 11:task:(Prepare Products for Regional Shipment)
+6:task:(Assemble and Send Inbound Shipment) --> 7:task:(Receive and Check Inbound Shipment)
+7:task:(Receive and Check Inbound Shipment) --> 8:task:(Prepare Products for Service Station Shipment)
+8:task:(Prepare Products for Service Station Shipment) --> 10:exclusivegateway:{x}
+11:task:(Prepare Products for Regional Shipment) --> 10:exclusivegateway:{x}
+12:task:(Prepare Service Station Shipment) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> 13:task:(Prepare Service Station Shipment)
+13:task:(Prepare Service Station Shipment) --> 14:endevent:(((endevent)))
+```

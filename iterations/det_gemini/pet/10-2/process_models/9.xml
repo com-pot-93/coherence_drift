@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>The MPON reports the meter operation to the GO</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>The GO examines the application</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="reject" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>The GO rejects the application</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="confirm" language="text/javascript">
+      <call id="a9" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>The GO confirmes the application</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a15" endpoint="" a:alt_id="7">
+    <parameters>
+      <label>The GO informs the MPOO about the registration confirmation</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a17" endpoint="" a:alt_id="8">
+    <parameters>
+      <label>The GO informs the MSPO about the registration confirmation</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a19" endpoint="" a:alt_id="9">
+    <parameters>
+      <label>The MPON and the MPOO perform the equipment acquisition and / or equipment changes</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="10">
+    <alternative condition="">
+      <call id="a23" endpoint="" a:alt_id="11">
+        <parameters>
+          <label>The MPON informs the GO about the failure</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="12">
+        <alternative condition="inform" language="text/javascript">
+          <call id="a29" endpoint="" a:alt_id="13">
+            <parameters>
+              <label>The GO informs the MPON about the failure</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="confirm" language="text/javascript">
+          <call id="a31" endpoint="" a:alt_id="14">
+            <parameters>
+              <label>The GO confirms the failure of the assignment</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="success" language="text/javascript">
+      <call id="a25" endpoint="" a:alt_id="16">
+        <parameters>
+          <label>The MPON informs the GO about the successful completion</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a39" endpoint="" a:alt_id="17">
+        <parameters>
+          <label>The GO assigns the MPON</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a41" endpoint="" a:alt_id="18">
+        <parameters>
+          <label>The GO confirms the assignment</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a37" endpoint="" a:alt_id="19">
+    <parameters>
+      <label>The GO informs the MPOO about the assignment status of the MPON</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a45" endpoint="" a:alt_id="20">
+    <parameters>
+      <label>The GO informs the MSPO about the assignment status of the MPON</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a47" endpoint="" a:alt_id="21">
+    <parameters>
+      <label>The GO informs the SP about the assignment status of the MPON</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

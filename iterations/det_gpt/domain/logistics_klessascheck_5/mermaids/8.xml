@@ -1,0 +1,41 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Package product)
+  2:task:(Ship product)
+  3:exclusivegateway:{x}
+  4:task:(Deliver to door)
+  5:exclusivegateway:{x}
+  6:task:(Print pick-up receipt)
+  7:task:(Post pick-up receipt)
+  8:task:(Reroute to the closest station)
+  9:exclusivegateway:{x}
+  10:task:(Deliver to station)
+  11:exclusivegateway:{x}
+  12:exclusivegateway:{x}
+  13:task:(Receive the product back)
+  14:exclusivegateway:{x}
+  15:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Package product)
+  1:task:(Package product) --> 2:task:(Ship product)
+  2:task:(Ship product) --> 3:exclusivegateway:{x}
+  %% D1 split
+  3:exclusivegateway:{x} --> |Home delivery|4:task:(Deliver to door)
+  3:exclusivegateway:{x} --> |To station|10:task:(Deliver to station)
+  %% D2 split (after Deliver to door)
+  4:task:(Deliver to door) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Receipt needed|6:task:(Print pick-up receipt)
+  5:exclusivegateway:{x} --> |No receipt|9:exclusivegateway:{x}
+  6:task:(Print pick-up receipt) --> 7:task:(Post pick-up receipt)
+  7:task:(Post pick-up receipt) --> 8:task:(Reroute to the closest station)
+  8:task:(Reroute to the closest station) --> 9:exclusivegateway:{x}
+  %% D2 merge
+  9:exclusivegateway:{x} --> 12:exclusivegateway:{x}
+  %% D1 merge
+  10:task:(Deliver to station) --> 12:exclusivegateway:{x}
+  %% D3 split
+  12:exclusivegateway:{x} --> |No return|14:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> |Return|13:task:(Receive the product back)
+  13:task:(Receive the product back) --> 14:exclusivegateway:{x}
+  %% D3 merge
+  14:exclusivegateway:{x} --> 15:endevent:(((endevent)))

@@ -1,0 +1,37 @@
+Certainly! Here is a detailed, step-by-step description of the process as depicted in your model:
+
+1. The process begins.
+2. The first step is to run the machine.
+3. After running the machine, the connection is checked.
+4. Next, a decision is made. If the outcome is positive, the process continues to another decision point. If the outcome is negative, the process loops back to the previous decision point.
+5. At the next decision point, if the result is positive, information is collected or measurements are taken. If the result is negative, the process loops back to the previous decision point.
+6. After collecting information or taking measurements, another decision is made.
+7. If escalation is required at this point, the issue is escalated.
+8. Once the issue is escalated, the overall equipment effectiveness (OEE) is calculated.
+9. After calculating OEE, another decision is made.
+10. The process then continues to another decision point.
+11. At this stage, two activities happen at the same time: the machine is stopped, and an email is sent to the engineer.
+12. After stopping the machine, a check is performed, and the process continues.
+13. After sending the email to the engineer, a check is performed, and the process continues.
+14. Once both the machine has been stopped and the email has been sent, the process continues to the next decision point.
+15. If the result at this decision point is positive, information is collected or measurements are taken again, and the process loops back to the previous decision point.
+16. If the result is not positive, the process continues to the next step.
+17. The process then continues to another decision point.
+18. At this stage, two activities happen at the same time: the machine is stopped, and an email is sent to the engineer.
+19. After stopping the machine, a check is performed, and the process continues.
+20. After sending the email to the engineer, a check is performed, and the process continues.
+21. Once both the machine has been stopped and the email has been sent, the process continues to the next decision point.
+22. If the result at this decision point is positive, information is collected or measurements are taken again, and the process loops back to the previous decision point.
+23. If the result is not positive, the process continues to the next step.
+24. The process then continues to another decision point.
+25. At this stage, two activities happen at the same time: the machine is stopped, and an email is sent to the engineer.
+26. After stopping the machine, a check is performed, and the process continues.
+27. After sending the email to the engineer, a check is performed, and the process continues.
+28. Once both the machine has been stopped and the email has been sent, the process continues to the next decision point.
+29. If the result at this decision point is positive, information is collected or measurements are taken again, and the process loops back to the previous decision point.
+30. If the result is not positive, the process continues to the next step.
+31. If at any point after collecting information or taking measurements, escalation is required, the process loops back to the previous decision point.
+32. If at any point after collecting information or taking measurements, escalation is not required, the process continues to the next step.
+33. The process ends.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that all steps, decisions, and parallel activities are included and described in the correct order.

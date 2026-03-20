@@ -1,0 +1,27 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(ask customer if he wants only a burger or a menu)
+    1:task:(ask customer if he wants only a burger or a menu) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |Burger| 3:parallelgateway:{AND}
+    3:parallelgateway:{AND} --> 4:task:(prepares burger)
+    3:parallelgateway:{AND} --> 5:task:(gives enthusiastic status updates)
+    4:task:(prepares burger) --> 6:parallelgateway:{AND}
+    5:task:(gives enthusiastic status updates) --> 6:parallelgateway:{AND}
+    6:parallelgateway:{AND} --> 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> |true| 8:task:(gives enthusiastic status updates)
+    7:exclusivegateway:{x} --> |false| 9:task:(gives enthusiastic status updates)
+    8:task:(gives enthusiastic status updates) --> 10:exclusivegateway:{x}
+    9:task:(gives enthusiastic status updates) --> 10:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |Menu| 11:parallelgateway:{AND}
+    11:parallelgateway:{AND} --> 12:task:(prepare drink)
+    11:parallelgateway:{AND} --> 13:task:(ask whether customer wants wedges or fries)
+    12:task:(prepare drink) --> 14:parallelgateway:{AND}
+    13:task:(ask whether customer wants wedges or fries) --> 14:parallelgateway:{AND}
+    14:parallelgateway:{AND} --> 15:exclusivegateway:{x}
+    15:exclusivegateway:{x} --> |Fries| 16:task:(prepare fries)
+    15:exclusivegateway:{x} --> |Wedges| 17:task:(prepare wedges)
+    16:task:(prepare fries) --> 10:exclusivegateway:{x}
+    17:task:(prepare wedges) --> 10:exclusivegateway:{x}
+    10:exclusivegateway:{x} --> 18:task:(puts order on conveyer belt)
+    18:task:(puts order on conveyer belt) --> 19:endevent:(((endevent)))
+```

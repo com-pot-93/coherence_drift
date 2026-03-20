@@ -1,0 +1,12 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Receive File)
+  1:task:(Receive File) --> 2:task:(Heat up bed and extruder)
+  2:task:(Heat up bed and extruder) --> 3:task:(Send status)
+  3:task:(Send status) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |true| 5:task:(Heat up bed and extruder)
+  4:exclusivegateway:{x} --> |false| 6:task:(Print object)
+  5:task:(Heat up bed and extruder) --> 7:exclusivegateway:{x}
+  6:task:(Print object) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> 8:endevent:(((endevent)))
+```

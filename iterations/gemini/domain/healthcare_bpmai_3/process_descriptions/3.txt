@@ -1,0 +1,5 @@
+The process starts when a call is received. Based on whether the call is accepted or rejected, the process continues. If accepted, the patient is added to a list; otherwise, this step is skipped. Next, a condition is checked, and if it's true, patient control is initiated.
+
+During patient control, the process branches into three possible paths. The first path involves checking another condition. If the condition is "Yes", an escalation event occurs, looping back to patient control. If the condition is "No", the process proceeds. The second path leads to hospitalization and childbirth. Depending on whether special treatment or post-hospitalization care is needed, the process continues. The third path allows the process to either continue or loop back to the escalation event, which then returns to patient control.
+
+After all paths converge, the process returns to the initial condition check. Finally, the process ends.

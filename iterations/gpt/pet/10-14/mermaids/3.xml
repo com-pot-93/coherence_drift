@@ -1,0 +1,48 @@
+flowchart LR
+0:startevent:((startevent))
+1:exclusivegateway:{x}
+2:exclusivegateway:{x}
+3:exclusivegateway:{x}
+4:task:(Send bill for metering point operations to grid operator)
+5:task:(Send bill for measurement to grid operator)
+6:task:(Send bill for additional readings to grid operator)
+7:task:(Send bill for equipment acquisition to grid operator)
+8:task:(Grid operator receives bill)
+9:task:(Grid operator examines bill)
+10:exclusivegateway:{x}
+11:task:(Grid operator rejects invoice)
+12:task:(Grid operator confirms invoice and provides payment advice)
+13:exclusivegateway:{x}
+14:task:(Send bill for equipment acquisition to metering point operator network)
+15:task:(Metering point operator network examines bill)
+16:exclusivegateway:{x}
+17:task:(Metering point operator network rejects invoice)
+18:task:(Metering point operator network confirms invoice and provides payment advice)
+19:exclusivegateway:{x}
+20:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |To grid operator|2:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |To metering point operator network|14:task:(Send bill for equipment acquisition to metering point operator network)
+2:exclusivegateway:{x} --> |Metering point operations|4:task:(Send bill for metering point operations to grid operator)
+2:exclusivegateway:{x} --> |Measurement|5:task:(Send bill for measurement to grid operator)
+2:exclusivegateway:{x} --> |Additional readings|6:task:(Send bill for additional readings to grid operator)
+2:exclusivegateway:{x} --> |Equipment acquisition|7:task:(Send bill for equipment acquisition to grid operator)
+4:task:(Send bill for metering point operations to grid operator) --> 8:task:(Grid operator receives bill)
+5:task:(Send bill for measurement to grid operator) --> 8:task:(Grid operator receives bill)
+6:task:(Send bill for additional readings to grid operator) --> 8:task:(Grid operator receives bill)
+7:task:(Send bill for equipment acquisition to grid operator) --> 8:task:(Grid operator receives bill)
+8:task:(Grid operator receives bill) --> 9:task:(Grid operator examines bill)
+9:task:(Grid operator examines bill) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Rejected|11:task:(Grid operator rejects invoice)
+10:exclusivegateway:{x} --> |Confirmed|12:task:(Grid operator confirms invoice and provides payment advice)
+11:task:(Grid operator rejects invoice) --> 13:exclusivegateway:{x}
+12:task:(Grid operator confirms invoice and provides payment advice) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> 19:exclusivegateway:{x}
+14:task:(Send bill for equipment acquisition to metering point operator network) --> 15:task:(Metering point operator network examines bill)
+15:task:(Metering point operator network examines bill) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |Rejected|17:task:(Metering point operator network rejects invoice)
+16:exclusivegateway:{x} --> |Confirmed|18:task:(Metering point operator network confirms invoice and provides payment advice)
+17:task:(Metering point operator network rejects invoice) --> 19:exclusivegateway:{x}
+18:task:(Metering point operator network confirms invoice and provides payment advice) --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> 20:endevent:(((endevent)))

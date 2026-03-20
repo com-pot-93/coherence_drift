@@ -1,0 +1,41 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Defective Computer)
+2:task:(Examine Computer)
+3:task:(Calculate Repair Costs)
+4:task:(Consult Customer)
+5:exclusivegateway:{x}
+6:task:(Customer Takes Computer Home)
+7:parallelgateway:{AND}
+8:task:(Check Hardware)
+9:task:(Check Software)
+10:task:(Repair Hardware)
+11:task:(Configure Software)
+12:parallelgateway:{AND}
+13:exclusivegateway:{x}
+14:task:(Test System Functionality)
+15:exclusivegateway:{x}
+16:task:(Escalate Issue)
+17:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Defective Computer)
+1:task:(Receive Defective Computer) --> 2:task:(Examine Computer)
+2:task:(Examine Computer) --> 3:task:(Calculate Repair Costs)
+3:task:(Calculate Repair Costs) --> 4:task:(Consult Customer)
+4:task:(Consult Customer) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Declines Repair|6:task:(Customer Takes Computer Home)
+5:exclusivegateway:{x} --> |Approves Repair|7:parallelgateway:{AND}
+6:task:(Customer Takes Computer Home) --> 17:endevent:(((endevent)))
+7:parallelgateway:{AND} --> 8:task:(Check Hardware)
+7:parallelgateway:{AND} --> 9:task:(Check Software)
+8:task:(Check Hardware) --> 10:task:(Repair Hardware)
+9:task:(Check Software) --> 11:task:(Configure Software)
+10:task:(Repair Hardware) --> 12:parallelgateway:{AND}
+11:task:(Configure Software) --> 12:parallelgateway:{AND}
+12:parallelgateway:{AND} --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Not Ready for Testing|17:endevent:(((endevent)))
+13:exclusivegateway:{x} --> |Ready for Testing|14:task:(Test System Functionality)
+14:task:(Test System Functionality) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> |Test Successful|17:endevent:(((endevent)))
+15:exclusivegateway:{x} --> |Test Failed|16:task:(Escalate Issue)
+16:task:(Escalate Issue) --> 14:task:(Test System Functionality)

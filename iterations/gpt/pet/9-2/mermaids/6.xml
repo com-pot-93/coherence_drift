@@ -1,0 +1,35 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Send Mortgage Offer)
+  2:task:(Wait for Customer Reply)
+  3:exclusivegateway:{x}
+  4:task:(Update Case Details)
+  5:task:(Archive Work)
+  6:task:(Perform Cancellation)
+  7:exclusivegateway:{x}
+  8:task:(Perform Administrative Tasks)
+  9:exclusivegateway:{x}
+  10:task:(Request Outstanding Documents)
+  11:task:(Update Case Details)
+  12:task:(Archive Work)
+  13:task:(Perform Cancellation)
+  14:exclusivegateway:{x}
+  15:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Send Mortgage Offer)
+  1:task:(Send Mortgage Offer) --> 2:task:(Wait for Customer Reply)
+  2:task:(Wait for Customer Reply) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Case needs update|4:task:(Update Case Details)
+  3:exclusivegateway:{x} --> |No update needed|8:task:(Perform Administrative Tasks)
+  4:task:(Update Case Details) --> 5:task:(Archive Work)
+  5:task:(Archive Work) --> 6:task:(Perform Cancellation)
+  6:task:(Perform Cancellation) --> 7:exclusivegateway:{x}
+  8:task:(Perform Administrative Tasks) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Request needed|10:task:(Request Outstanding Documents)
+  9:exclusivegateway:{x} --> |No request needed|14:exclusivegateway:{x}
+  10:task:(Request Outstanding Documents) --> 11:task:(Update Case Details)
+  11:task:(Update Case Details) --> 12:task:(Archive Work)
+  12:task:(Archive Work) --> 13:task:(Perform Cancellation)
+  13:task:(Perform Cancellation) --> 14:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> 14:exclusivegateway:{x}
+  14:exclusivegateway:{x} --> 15:endevent:(((endevent)))

@@ -1,0 +1,15 @@
+The process begins when invoices are received. First, the secretariat performs a visual inspection of the invoices. After this inspection, the invoices are forwarded to the accounting department.
+
+Next, the accounting department identifies the supplier and creates a corresponding record. Following this, the items listed on the invoice are checked. The cost center and the relevant managers are then noted. Afterward, a docket is prepared and a copy of the invoice is made.
+
+At this point, a decision is made about whether to continue with the process. If the decision is not to continue, the process moves directly towards completion. If the decision is to continue, the invoices are sent to the cost center manager.
+
+Another decision is made to determine if a review by the manager is needed. If a manager review is required, the cost center manager reviews the documents, after which the process returns to the previous decision point for further evaluation. If no manager review is needed, the process proceeds to an audit by the commercial manager.
+
+After the audit, a decision is made to determine if a review by the board is necessary. If a board review is needed, the documents are sent to the board for review, after which the process returns to the previous decision point for further evaluation. If no board review is needed, the docket and the invoice copy are moved to the accounting department.
+
+At this stage, another decision is made to check for any complaints or issues. If there are complaints or issues, they are resolved, and the process returns to the previous decision point for further evaluation. If there are no complaints or issues, payment instructions are prepared and the invoice is closed.
+
+A final check is then performed. After this check, a decision is made to determine if further review by the cost center manager is needed. If further review is required, the documents are sent to the cost center manager for additional review, after which the process returns to the previous decision point for further evaluation. If no further review is needed, the process moves towards completion.
+
+Finally, the process ends.

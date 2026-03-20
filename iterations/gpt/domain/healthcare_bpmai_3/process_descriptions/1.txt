@@ -1,0 +1,13 @@
+The process begins when a call is received. After the call is received, a decision is made about whether the patient is accepted or not.
+
+If the patient is not accepted, the process ends immediately.
+
+If the patient is accepted, the patient is added to a list. After this, the process moves to a point where a series of decisions or checks are performed in sequence.
+
+At a certain stage in these checks, another decision is made. If the outcome is positive, the process continues with calling the patient to the hospital. The patient is then hospitalized, and childbirth takes place.
+
+After childbirth, there is a choice between two types of care: post-hospitalization care or special treatment. Depending on the situation, either post-hospitalization care is provided or special treatment is given. After either type of care, the process moves to a point where it can loop back to the earlier series of checks.
+
+At one of the decision points before calling the patient to the hospital, there is also a possibility that the process does not proceed with calling the patient. In this case, an escalation occurs, and the process loops back to the earlier checks.
+
+This cycle of checks and possible escalation can repeat as needed. Eventually, if the patient is not accepted at the initial decision, or after all necessary steps and checks are completed, the process ends.

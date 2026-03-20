@@ -1,0 +1,24 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Only burger| 11:parallelgateway:{AND}
+    1:exclusivegateway:{x} --> |Complete menu| 2:parallelgateway:{AND}
+    2:parallelgateway:{AND} --> 3:task:(Prepare drink)
+    2:parallelgateway:{AND} --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |Wedges| 5:task:(Prepare wedges)
+    4:exclusivegateway:{x} --> |Fries| 6:task:(Prepare fries)
+    5:task:(Prepare wedges) --> 7:inclusivegateway:{O}
+    6:task:(Prepare fries) --> 7:inclusivegateway:{O}
+    7:inclusivegateway:{O} --> 8:parallelgateway:{AND}
+    3:task:(Prepare drink) --> 8:parallelgateway:{AND}
+    8:parallelgateway:{AND} --> 11:parallelgateway:{AND}
+    11:parallelgateway:{AND} --> 9:task:(Prepare burger)
+    11:parallelgateway:{AND} --> 10:exclusivegateway:{x}
+    10:exclusivegateway:{x} --> |Condition met| 12:task:(Give enthusiastic status updates)
+    12:task:(Give enthusiastic status updates) --> 13:task:(Escalate)
+    13:task:(Escalate) --> 10:exclusivegateway:{x}
+    10:exclusivegateway:{x} --> |Condition not met| 14:inclusivegateway:{O}
+    9:task:(Prepare burger) --> 14:inclusivegateway:{O}
+    14:inclusivegateway:{O} --> 15:task:(Put order on conveyor belt)
+    15:task:(Put order on conveyor belt) --> 16:endevent:(((endevent)))
+```

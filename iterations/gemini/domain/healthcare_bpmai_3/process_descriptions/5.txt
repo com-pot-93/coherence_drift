@@ -1,0 +1,1 @@
+The process starts. A decision is made. If the decision is yes, a patient is added to the list. Otherwise, if the decision is no, the process proceeds directly to the next step. The process ends.

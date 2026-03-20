@@ -1,0 +1,13 @@
+The process starts with a 'Report Meter Operation'. After reporting, the 'Examine Application' task is performed. The process then splits into two exclusive paths based on whether the application is 'Rejected' or 'Confirmed'.
+
+If the application is 'Rejected', the 'Reject Application' task is performed. Otherwise, if the application is 'Confirmed', the 'Confirm Application' task is performed.
+
+After either rejecting or confirming the application, the process merges and proceeds to the 'Inform MPOO and MSPO' task. Following this, the 'Perform Equipment Acquisition/Changes' task is executed.
+
+The process then splits again into two exclusive paths based on whether the equipment acquisition/changes were a 'Success' or resulted in a failure.
+
+In case of a failure, the 'Inform GO about Failure' task is performed. Subsequently, the process splits into two exclusive paths based on whether to 'Inform MPON' or 'Confirm Failure'. If the decision is to 'Inform MPON', the 'Inform MPON about Failure' task is performed. Alternatively, if the decision is to 'Confirm Failure', the 'Confirm Failure of Assignment' task is performed. After either informing MPON or confirming the failure, the process merges.
+
+In case of success, the 'Inform GO about Completion' task is performed, followed by the 'Assign MPON and Confirm' task.
+
+After either a successful completion or handling a failure, the process merges and proceeds to the 'Inform MPOO, MSPO, and SP' task, which leads to the end of the process.

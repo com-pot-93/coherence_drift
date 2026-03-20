@@ -1,0 +1,35 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Condition A| 2:task:(Receive Expense Report)
+    1:exclusivegateway:{x} --> |Not Condition A| 4:task:(Create New Employee Account)
+    2:task:(Receive Expense Report) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |Condition E| 4:task:(Create New Employee Account)
+    3:exclusivegateway:{x} --> |Not Condition E| 5:parallelgateway:{AND}
+    4:task:(Create New Employee Account) --> 5:parallelgateway:{AND}
+    5:parallelgateway:{AND} --> 6:parallelgateway:{AND}
+    5:parallelgateway:{AND} --> 6:parallelgateway:{AND}
+    6:parallelgateway:{AND} --> 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> |Condition G| 8:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> |Not Condition G| 10:task:(Supervisor Approves Report)
+    8:exclusivegateway:{x} --> |Condition G| 9:task:(Automatically Approve Report)
+    8:exclusivegateway:{x} --> |Not Condition G| 10:task:(Supervisor Approves Report)
+    9:task:(Automatically Approve Report) --> 11:inclusivegateway:{O}
+    10:task:(Supervisor Approves Report) --> 11:inclusivegateway:{O}
+    11:inclusivegateway:{O} --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |Condition I| 13:task:(Send Reimbursement)
+    12:exclusivegateway:{x} --> |Not Condition I| 14:inclusivegateway:{O}
+    13:task:(Send Reimbursement) --> 14:inclusivegateway:{O}
+    14:inclusivegateway:{O} --> 15:exclusivegateway:{x}
+    15:exclusivegateway:{x} --> |Condition K| 19:inclusivegateway:{O}
+    15:exclusivegateway:{x} --> |Not Condition K| 16:exclusivegateway:{x}
+    16:exclusivegateway:{x} --> |Condition L| 17:task:(Send Approval In Progress Email)
+    16:exclusivegateway:{x} --> |Not Condition L| 18:exclusivegateway:{x}
+    17:task:(Send Approval In Progress Email) --> 19:inclusivegateway:{O}
+    18:exclusivegateway:{x} --> |Not Condition M| 20:task:(Send Rejection Notice)
+    18:exclusivegateway:{x} --> |Condition M| 19:inclusivegateway:{O}
+    20:task:(Send Rejection Notice) --> 19:inclusivegateway:{O}
+    19:inclusivegateway:{O} --> 21:inclusivegateway:{O}
+    21:inclusivegateway:{O} --> 22:inclusivegateway:{O}
+    22:inclusivegateway:{O} --> 23:endevent:(((endevent)))
+```

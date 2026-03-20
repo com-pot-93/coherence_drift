@@ -1,0 +1,1 @@
+The process starts. First, the room is prepared. Next, surgery is performed. After the surgery, two activities occur in parallel: the patient is discharged and the room is sanitized. Once both activities are completed, a report is filled out. Then, a decision is made. If the answer is yes, the bill is paid. If the answer is no, no payment is made. Finally, the process ends.

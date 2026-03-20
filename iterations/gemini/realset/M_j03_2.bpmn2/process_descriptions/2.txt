@@ -1,0 +1,7 @@
+The process starts with creating a parts list, followed by querying webshops to find the required parts. The cheapest shop is then chosen, and an order is placed. After placing the order, four activities occur in parallel: receiving the order, sending the invoice, delivering the order, and updating the inventory. Once all four activities are completed, the order is received again, and the building process starts.
+
+Next, a decision is made. If a condition is met, the process proceeds to the next decision point. If the condition is not met, another decision is made. If a condition series is met, the process escalates and then proceeds to the next decision point. If the condition series is not met, a faster delivery is ordered.
+
+Another decision is made. If a condition is met, the process proceeds to another decision point. If a condition series is met, or a condition is met, or a condition is not met, the process moves to another decision point. From there, if a condition series is met, the process loops back to the previous decision point. Otherwise, the process moves forward to another decision point.
+
+At this decision point, if a condition series is met, a compliment email is written. If the condition series is not met, the cheapest part is ordered. After either writing the email or ordering the part, the process merges back to the previous decision points and then escalates. Finally, the process merges back to the previous decision point and ends.

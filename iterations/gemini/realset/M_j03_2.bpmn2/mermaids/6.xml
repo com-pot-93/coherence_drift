@@ -1,0 +1,34 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Create Parts List)
+  1:task:(Create Parts List) --> 2:task:(Query Webshops)
+  2:task:(Query Webshops) --> 3:task:(Choose Cheapest Shop)
+  3:task:(Choose Cheapest Shop) --> 4:task:(Place Order)
+  4:task:(Place Order) --> 5:parallelgateway:{AND}
+  5:parallelgateway:{AND} --> 6:task:(Receive Order)
+  5:parallelgateway:{AND} --> 7:task:(Send Invoice)
+  5:parallelgateway:{AND} --> 8:task:(Deliver Order)
+  5:parallelgateway:{AND} --> 9:task:(Update Inventory)
+  6:task:(Receive Order) --> 10:parallelgateway:{AND}
+  7:task:(Send Invoice) --> 10:parallelgateway:{AND}
+  8:task:(Deliver Order) --> 10:parallelgateway:{AND}
+  9:task:(Update Inventory) --> 10:parallelgateway:{AND}
+  10:parallelgateway:{AND} --> 11:task:(Receive Order Again)
+  11:task:(Receive Order Again) --> 12:task:(Start Building Process)
+  12:task:(Start Building Process) --> 13:exclusivegateway:{x}
+  13:exclusivegateway:{x} --> |Condition Met| 16:exclusivegateway:{x}
+  13:exclusivegateway:{x} --> |Condition Not Met| 14:task:(Order Faster Delivery)
+  14:task:(Order Faster Delivery) --> 16:exclusivegateway:{x}
+  16:exclusivegateway:{x} --> |Condition C Met| 17:exclusivegateway:{x}
+  16:exclusivegateway:{x} --> |Condition C Not Met| 23:exclusivegateway:{x}
+  17:exclusivegateway:{x} --> |Condition D Met| 18:task:(Write Compliment Email)
+  17:exclusivegateway:{x} --> |Condition D Not Met| 19:task:(Order Cheapest Part)
+  18:task:(Write Compliment Email) --> 20:inclusivegateway:{O}
+  19:task:(Order Cheapest Part) --> 20:inclusivegateway:{O}
+  20:inclusivegateway:{O} --> 29:endevent:(((endevent)))
+  23:exclusivegateway:{x} --> |Condition E Met| 24:task:(Order Cheapest Part)
+  23:exclusivegateway:{x} --> |Condition E Not Met| 25:task:(Escalate Process)
+  24:task:(Order Cheapest Part) --> 26:inclusivegateway:{O}
+  25:task:(Escalate Process) --> 26:inclusivegateway:{O}
+  26:inclusivegateway:{O} --> 29:endevent:(((endevent)))
+```

@@ -1,0 +1,13 @@
+The process starts, and then proceeds to a decision point.
+
+If the decision leads to the path "Send equipment acquisition bill to MPON", the process continues with sending an equipment acquisition bill to MPON. After that, the bill is examined. Based on the examination result, there is another decision:
+
+- If "MPON confirms the bill", an invoice is confirmed with payment advice, leading to a merge point.
+- If "MPON rejects the bill", the invoice is rejected, leading to a split point that immediately merges back. The process then proceeds to a merge point.
+
+Alternatively, if the initial decision leads to another path, the process continues by choosing between sending a "Metering Point Operations Bill", a "Measurement Bill", a "Additional Readings Bill", or a "Equipment Acquisition Bill" to GO. After sending any of these bills, the process merges. The bill is then examined. Based on the examination result, there is a decision:
+
+- If "GO rejects the bill", the invoice is rejected, leading to a split point that immediately merges back. The process then proceeds to a merge point.
+- If "GO confirms the bill", an invoice is confirmed with payment advice, leading to a merge point.
+
+Finally, after either of the two main paths converges at the merge point, the process ends.

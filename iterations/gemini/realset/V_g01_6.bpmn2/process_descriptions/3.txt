@@ -1,0 +1,13 @@
+The process starts. Then, a decision is made. If the "Only burger" option is selected, the process proceeds to another decision point. Otherwise, the process splits into two parallel paths.
+
+In the first parallel path, the "Prepare drink" task is performed.
+
+In the second parallel path, a decision is made. If "Wedges" are selected, the "Prepare wedges" task is performed. If "Fries" are selected, the "Prepare fries" task is performed. After preparing either wedges or fries, the process merges back to a single flow.
+
+The two parallel paths then merge. Following this, the process proceeds to another decision point. After the decision, the process splits into two parallel paths again.
+
+In the first parallel path, the "Prepare burger" task is performed.
+
+In the second parallel path, a decision is made. If the condition is true, another decision is made. If "Enthusiastic updates" are chosen, the "Give enthusiastic status updates" task is performed, followed by the "Escalate" task. Otherwise, this path rejoins the other path. The process then loops back to the previous decision point.
+
+The two parallel paths merge. The "Put order on conveyor belt" task is performed, and the process ends.

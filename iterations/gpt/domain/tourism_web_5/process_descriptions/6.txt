@@ -1,0 +1,34 @@
+Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when a booking request is received.
+2. The booking request is then processed.
+3. At this point, a decision is made whether to continue with the process or not:
+   - If the decision is not to continue, the process moves towards its end.
+   - If the decision is to continue, another decision is made to determine the outcome:
+     - If the outcome is negative, the process moves towards its end.
+     - If the outcome is positive, the process continues.
+4. Next, availability is checked.
+5. After checking availability, there are three possible paths:
+   - If the first path is taken, another decision is made:
+     - If the requested time is not available, an alternative time is proposed, and the requester is notified of this alternative. After this, another decision is made, and the process loops back to the previous decision point.
+     - If the requested time is available, the requester is notified of the availability. After this, another decision is made, and the process loops back to the previous decision point.
+   - If the second path is taken, a similar sequence occurs:
+     - If the requested time is not available, an alternative time is proposed, and the requester is notified. Another decision is made, and the process loops back.
+     - If the requested time is available, the requester is notified. Another decision is made, and the process loops back.
+   - If the third path is taken, the same pattern repeats:
+     - If the requested time is not available, an alternative time is proposed, and the requester is notified. Another decision is made, and the process loops back.
+     - If the requested time is available, the requester is notified. Another decision is made, and the process loops back.
+6. Once the availability checks and notifications are complete, the process waits for a response from the requester.
+7. After receiving the response, another decision is made:
+   - If the booking is confirmed, the process continues to another decision:
+     - If the process should end, it does so.
+     - If escalation is needed, escalation is handled, availability is checked again, and the process moves towards its end.
+     - Alternatively, availability may be checked again, and the process moves towards its end.
+   - If the booking is not confirmed, another decision is made:
+     - If no bill is needed, the process moves towards its end.
+     - If a bill needs to be sent, the bill is sent, and another decision is made:
+       - If no further billing is needed, the process moves towards its end.
+       - If more billing is needed, an additional bill is sent, and the process moves towards its end.
+8. After all these steps, the process eventually reaches its end.
+
+This process ensures that booking requests are handled systematically, with checks for availability, communication with the requester, and appropriate billing or escalation as needed, before concluding.

@@ -1,0 +1,9 @@
+The process starts. First, the database is backed up, and then it is checked. If the database check is successful, the process proceeds to check the CRM system. If the database check fails, it is determined whether to send an alert to the supervisor. If the decision is yes, an alert is sent to the supervisor. Otherwise, no alert is sent. After this, the process proceeds to check the CRM system.
+
+After checking the CRM system, the process determines whether to register defaulting accounts and customers. If the decision is yes, defaulting accounts and customers are registered, and it is determined whether to produce and send a table to account management. If the decision is no, the process skips the registration of defaulting accounts and customers, and it is determined whether to produce and send a table to account management.
+
+If the decision is yes, a table is produced and sent to account management. Otherwise, no table is sent.
+
+Next, it is determined whether to perform reconciliation. If the decision is yes, reconciliation is performed. Otherwise, reconciliation is not performed.
+
+Finally, it is determined whether to send a message to the supervisor. If the decision is yes, a message is sent to the supervisor. Otherwise, reconciliation is completed. The process then ends.

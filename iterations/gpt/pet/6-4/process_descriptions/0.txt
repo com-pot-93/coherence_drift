@@ -1,0 +1,42 @@
+The process begins when the company identifies the contact details of potential customers. After this, the company chooses one of three ways to proceed:
+
+1. The company may purchase contact details specifically for making cold calls.
+2. Marketing staff may participate in exhibitions to gather contact information.
+3. The company may already know a person who is interested in the product.
+
+Regardless of which of these three paths is chosen, the process continues in the same way. The call center staff then calls the customer. During this call, the staff first determines who the appropriate contact person is, then finds out the customer’s budget, and finally assesses the customer’s level of interest in the product.
+
+At this point, the process can follow one of two main directions:
+
+**First Direction:**
+- The process continues with a decision that leads to another choice: either a sales representative or a pre-sales employee will make an online presentation to the customer.
+- If the sales representative makes the presentation, the process checks for a certain condition (not specified in the diagram), and regardless of the outcome, the process continues.
+- If the pre-sales employee makes the presentation, a similar check is performed, and again, the process continues.
+- After the presentation, the company waits for the customer’s response.
+- The process then involves another decision, which can lead to two possible paths:
+    - In one path, the sales representative calls the customer, and after another check, the process continues.
+    - In the other path, the process skips the call and continues.
+- Both paths merge, and the process checks again, leading to two further possibilities:
+    - In one, the sales representative calls the customer again, followed by another check.
+    - In the other, the process skips the call and continues.
+- Both paths merge, and the company then creates a quotation for the customer.
+- After the quotation is created, there is a final check, and regardless of the outcome, the process continues to the next stage.
+
+**Second Direction:**
+- Alternatively, after assessing customer interest, the process may lead to the head of development acquiring the customer.
+- After this, there is a choice: either the sales representative or the pre-sales employee makes an online presentation to the customer.
+- If the sales representative makes the presentation, a check is performed, and the process continues.
+- If the pre-sales employee makes the presentation, a similar check is performed, and the process continues.
+- After the presentation, the company waits for the customer’s response.
+- The process then involves another decision, which can lead to two possible paths:
+    - In one path, the sales representative calls the customer, and after another check, the process continues.
+    - In the other path, the process skips the call and continues.
+- Both paths merge, and the process checks again, leading to two further possibilities:
+    - In one, the sales representative calls the customer again, followed by another check.
+    - In the other, the process skips the call and continues.
+- Both paths merge, and the company then creates a quotation for the customer.
+- After the quotation is created, there is a final check, and regardless of the outcome, the process continues to the next stage.
+
+After all these steps, the process comes to an end.
+
+In summary, the process involves identifying potential customers, choosing a method to obtain their contact details, making initial contact, assessing interest, possibly making an online presentation, waiting for the customer’s response, making follow-up calls as needed, and finally creating a quotation before the process concludes. The process includes several decision points that determine the exact sequence of actions, but all paths eventually lead to the creation of a quotation and the end of the process.

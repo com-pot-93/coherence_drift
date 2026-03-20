@@ -1,0 +1,44 @@
+Certainly! Here is a detailed, step-by-step description of the process as depicted in your model:
+
+---
+
+The process begins with the collection of requirements. Once the requirements are gathered, a decision is made on whether to continue or not. If the decision is not to continue, the process ends immediately.
+
+If the decision is to continue, the requirements are sent forward. After sending the requirements, a draft is received. At this point, another decision is made on whether to continue. If not, the process ends.
+
+If the process continues, another condition is checked. If the specific condition is not met, the process moves to a different path, but if the condition is met, the draft is evaluated.
+
+After evaluating the draft, the process enters a complex series of checks and decisions, which can be summarized as follows:
+
+- There are several points where issues can be escalated. When an issue is escalated, it is handled by escalating the issue and then re-evaluating the draft. After re-evaluation, the process may either continue, escalate further, or return to previous steps depending on the outcome of subsequent decisions.
+- If the process continues after escalation or re-evaluation, it proceeds to check the feasibility of the draft or requirements.
+- The feasibility check is a recurring step throughout the process. If the requirements or draft are not feasible, the process may either escalate, end, or require refinement of the requirements.
+- If refinement is needed, the requirements are refined and feasibility is checked again.
+
+When the requirements or draft are found to be feasible, another decision is made to determine if a report is needed:
+
+- If a report is needed, a building permit report is prepared.
+- If no report is needed, or after the report is prepared, an order list is created.
+
+Once the order list is created, an order is placed, and the effort required is calculated.
+
+After calculating the effort, the process splits into two parallel activities:
+
+1. The first activity is to receive the order. After receiving the order, the process checks if any further action is needed. If so, it continues; otherwise, it waits for the other parallel activity to complete.
+2. The second activity involves deciding how to proceed with the building work. There are two options:
+   - Call friends for help, after which a check is made to determine if further action is needed.
+   - Hire a building company, after which a similar check is made.
+
+Both parallel activities must be completed before the process can move forward.
+
+After both activities are finished, the process proceeds to the construction phase, where the house is built.
+
+Once the house is built, the process checks if it should repeat the feasibility check or not. If repetition is required, the process loops back to check feasibility again. If not, the process may either end or move to further checks, refinements, or escalations, depending on the outcomes of subsequent decisions.
+
+Throughout the process, at many points, if a decision is made not to continue, the process ends. If issues arise, they can be escalated and re-evaluated, potentially leading to further refinement, feasibility checks, or ending the process.
+
+This cycle of checking feasibility, preparing reports if needed, creating order lists, placing orders, calculating effort, receiving orders, deciding on the method of building, and building the house continues until all conditions are satisfied or a decision is made to end the process.
+
+---
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step, decision, and possible path is included and described in clear, plain language.

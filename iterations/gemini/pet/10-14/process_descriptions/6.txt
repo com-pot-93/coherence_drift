@@ -1,0 +1,7 @@
+The process starts. Then, based on a condition, the process either sends a bill to MPON or sends a bill to GO.
+
+If the bill is sent to MPON, the bill is examined by MPON. If the bill is confirmed, an invoice with payment advice is confirmed. If the bill is rejected, the invoice is rejected. After confirming or rejecting the invoice, the process continues.
+
+Alternatively, if the bill is sent to GO, the bill is examined by GO. If the bill is rejected, the invoice is rejected. If the bill is confirmed, an invoice with payment advice is confirmed. After confirming or rejecting the invoice, the process continues.
+
+Finally, the process ends.

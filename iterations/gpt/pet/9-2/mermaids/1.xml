@@ -1,0 +1,51 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Send Mortgage Offer)
+2:task:(Wait for Customer Reply)
+3:exclusivegateway:{x}
+4:task:(Update Case Details)
+5:task:(Archive Work)
+6:task:(Perform Cancellation)
+7:exclusivegateway:{x}
+8:exclusivegateway:{x}
+9:task:(Move Case to Administration)
+10:exclusivegateway:{x}
+11:task:(Generate Request for Outstanding Documents)
+12:exclusivegateway:{x}
+13:task:(Update Case Details)
+14:task:(Archive Work)
+15:task:(Perform Cancellation)
+16:exclusivegateway:{x}
+17:exclusivegateway:{x}
+18:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Send Mortgage Offer)
+1:task:(Send Mortgage Offer) --> 2:task:(Wait for Customer Reply)
+2:task:(Wait for Customer Reply) --> 3:exclusivegateway:{x}
+
+%% Path 1: Update, Archive, Cancel
+3:exclusivegateway:{x} --> |Path A|4:task:(Update Case Details)
+4:task:(Update Case Details) --> 5:task:(Archive Work)
+5:task:(Archive Work) --> 6:task:(Perform Cancellation)
+6:task:(Perform Cancellation) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> 8:exclusivegateway:{x}
+
+%% Path 2: Move to Admin
+3:exclusivegateway:{x} --> |Path B|9:task:(Move Case to Administration)
+9:task:(Move Case to Administration) --> 10:exclusivegateway:{x}
+
+%% Path 2a: Generate Request, then Update, Archive, Cancel
+10:exclusivegateway:{x} --> |Request Needed|11:task:(Generate Request for Outstanding Documents)
+11:task:(Generate Request for Outstanding Documents) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Continue|13:task:(Update Case Details)
+13:task:(Update Case Details) --> 14:task:(Archive Work)
+14:task:(Archive Work) --> 15:task:(Perform Cancellation)
+15:task:(Perform Cancellation) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> 17:exclusivegateway:{x}
+
+%% Path 2b: No Request Needed
+10:exclusivegateway:{x} --> |No Request Needed|17:exclusivegateway:{x}
+
+%% Merge points
+8:exclusivegateway:{x} --> 18:endevent:(((endevent)))
+17:exclusivegateway:{x} --> 8:exclusivegateway:{x}

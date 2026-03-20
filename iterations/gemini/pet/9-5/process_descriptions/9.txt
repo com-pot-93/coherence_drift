@@ -1,0 +1,13 @@
+The process starts. Then, based on whether Condition A is true or false, the process follows one of two paths. If Condition A is true, the process receives an expense report. Otherwise, if Condition A is false, the process creates a new employee account. After either of these tasks, the process continues to the next step.
+
+Next, based on whether Condition E is true or false, the process follows one of two paths. If Condition E is true, the process creates a new employee account. Otherwise, if Condition E is false, the process skips this task and proceeds directly to the next step.
+
+Then, based on whether Condition G is true or false, the process follows one of two paths. If Condition G is true, the process automatically approves the report. Otherwise, if Condition G is false, the process requires supervisor approval. After either of these tasks, the process continues to the next step.
+
+Next, based on whether Condition I is true or false, the process follows one of two paths. If Condition I is true, the process sends a reimbursement. Otherwise, if Condition I is false, the process skips this task and proceeds directly to the next step.
+
+Then, based on whether Condition L is true or false, the process follows one of two paths. If Condition L is true, the process sends an approval in progress email. Otherwise, if Condition L is false, the process skips this task and proceeds directly to the next step.
+
+Next, based on whether Condition M is false or true, the process follows one of two paths. If Condition M is false, the process sends a rejection notice. Otherwise, if Condition M is true, the process skips this task and proceeds directly to the next step.
+
+The process ends.

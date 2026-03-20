@@ -1,0 +1,37 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Receive customer order)
+  2:task:(Processing customer demand)
+  3:task:(Determine demanded components according to planning)
+  4:exclusivegateway:{x}
+  5:task:(Purchase missing parts and put on stock)
+  6:exclusivegateway:{x}
+  7:task:(Perform production)
+  8:task:(Perform quality checks)
+  9:exclusivegateway:{x}
+  10:exclusivegateway:{x}
+  11:task:(Perform follow-up production)
+  12:task:(Fill product into a packaging)
+  13:task:(Pack and label product)
+  14:task:(Transport product to the warehouse)
+  15:task:(Send product to customer)
+  16:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Receive customer order)
+  1:task:(Receive customer order) --> 2:task:(Processing customer demand)
+  2:task:(Processing customer demand) --> 3:task:(Determine demanded components according to planning)
+  3:task:(Determine demanded components according to planning) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |Parts missing|5:task:(Purchase missing parts and put on stock)
+  4:exclusivegateway:{x} --> |All parts available|6:exclusivegateway:{x}
+  5:task:(Purchase missing parts and put on stock) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> 7:task:(Perform production)
+  7:task:(Perform production) --> 8:task:(Perform quality checks)
+  8:task:(Perform quality checks) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Quality ok|10:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Quality not ok|11:task:(Perform follow-up production)
+  11:task:(Perform follow-up production) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> 12:task:(Fill product into a packaging)
+  12:task:(Fill product into a packaging) --> 13:task:(Pack and label product)
+  13:task:(Pack and label product) --> 14:task:(Transport product to the warehouse)
+  14:task:(Transport product to the warehouse) --> 15:task:(Send product to customer)
+  15:task:(Send product to customer) --> 16:endevent:(((endevent)))

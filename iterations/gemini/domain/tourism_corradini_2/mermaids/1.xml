@@ -1,0 +1,24 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Search for Customer)
+    1:task:(Search for Customer) --> 2:task:(Make an Offer)
+    2:task:(Make an Offer) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |Offer Accepted| 11:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |Offer Rejected| 4:task:(Customer Makes Request)
+    4:task:(Customer Makes Request) --> 5:task:(Provide Details)
+    5:task:(Provide Details) --> 11:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |Path A| 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |Path B| 10:task:(Customer Makes Booking Request)
+    6:exclusivegateway:{x} --> |Path C| 12:exclusivegateway:{x}
+    10:task:(Customer Makes Booking Request) --> 7:task:(Send Bill)
+    7:task:(Send Bill) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |Path D| 8:task:(Customer Makes Payment)
+    12:exclusivegateway:{x} --> |Path E| 6:exclusivegateway:{x}
+    8:task:(Customer Makes Payment) --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> |Payment Successful| 9:task:(Book Travel and Send Confirmation)
+    13:exclusivegateway:{x} --> |Payment Failed| 14:task:(Contact Customer)
+    9:task:(Book Travel and Send Confirmation) --> 15:exclusivegateway:{x}
+    14:task:(Contact Customer) --> 15:exclusivegateway:{x}
+    15:exclusivegateway:{x} --> 12:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |Path F| 16:endevent:(((endevent)))
+```

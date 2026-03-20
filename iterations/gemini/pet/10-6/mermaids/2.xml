@@ -1,0 +1,8 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Send Dismissal)
+1:task:(Send Dismissal) --> 2:task:(Review Dismissal)
+2:task:(Review Dismissal) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} -->|Rejected| 4:endevent:(((endevent)))
+3:exclusivegateway:{x} -->|Confirmed| 4:endevent:(((endevent)))
+```

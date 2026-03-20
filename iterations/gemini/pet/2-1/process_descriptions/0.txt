@@ -1,0 +1,15 @@
+The process starts when a customer perceives service degradation. The system then sends a list of problem parameters to customer service. A service employee enters a problem report into the system and compares it to the customer's SLA. Based on this comparison, the service employee determines the necessary countermeasures.
+
+The process then splits into three alternative paths. In the first path, the process loops back to the point where the service employee determines the necessary countermeasures. In the second path, the electronic service determines the customer significance. In the third path, the service employee links to an extra problem fix process. These three paths merge back together.
+
+Next, the service employee creates a detailed problem report and sends it to Service Management, which deals with violations of quality and investigates the problem.
+
+The process splits again. In one path, Service Management performs an analysis and creates a trouble report. In the other path, Service Management sends a problem report to Resource Provisioning. Resource Provisioning checks for potential issues, and the process splits again. In one path, Resource Provisioning analyses the problem and creates a trouble report. In the other path, Resource Provisioning creates a service execution notification. These two paths merge, and Resource Provisioning sends a status report to Service Management.
+
+The two paths of the previous split merge, and Service Management prepares the final status report. The process splits into three alternative paths. In the first path, Service Management creates a request for automatic resource restoration and sends it to Resource Provisioning. Resource Provisioning receives the restoration request, tracks all possible errors, undertakes all necessary corrective actions, and creates a trouble-shooting report. Resource Provisioning then sends the report to Service Management, which sends the trouble-shooting report to Customer Service. Customer Service receives the problem resolution report. In the second path, Service Management sends actual service performance data to Customer Service, which receives it. In the third path, Service Management undertakes corrective actions. These three paths merge.
+
+Service Management creates the problem resolution report and sends it to Customer Service. Customer Service receives the problem resolution report. The three paths merge.
+
+The process then splits into two parallel paths. Customer Service creates a report for the customer. Simultaneously, Customer Service reports an SLA violation rebate to Billing & Collections, which adjusts the billing. The two parallel paths merge.
+
+Finally, Customer Service sends the report to the customer, who receives it, and the process ends.

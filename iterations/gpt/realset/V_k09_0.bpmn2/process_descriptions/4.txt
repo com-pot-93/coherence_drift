@@ -1,0 +1,54 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins.
+2. The first action is to connect to the management system.
+3. A decision is made whether to continue.  
+   - If the decision is not to continue, the process ends.
+   - If the decision is to continue, the process moves forward.
+4. The process continues with the next step.
+5. Another decision is made.
+   - If a certain condition is true, the process repeats the previous step and decision.
+   - Otherwise, the process proceeds to the next step.
+6. The next step is performed.
+7. The process loops back to the previous decision point, forming a cycle until the condition is met.
+8. Once the cycle is complete, the process advances to another decision point.
+9. If the condition at this point is met, the process reads an order from the system.
+10. After reading the order, another decision is made.
+11. If the condition is met, the process moves to the next decision point.
+12. At this decision point, if a specific condition is met, the process registers the product in the management system.
+13. After registering the product, two activities are carried out at the same time:
+    - The product is packed.
+    - A courier is requested.
+14. Once both packing and courier request are completed, the product is shipped.
+15. After shipping, a decision is made:
+    - If the process needs to be repeated, an escalation occurs and the process returns to reading the order from the system.
+    - If the process should finish, another decision is made.
+16. At this new decision point, if a certain condition is not met, the process moves to another decision and then continues.
+    - If the condition is met, another decision is made to determine the next action.
+17. If the next action is to contact the wholesaler:
+    - The wholesaler is contacted.
+    - The product is reordered from the wholesaler.
+    - Another decision is made.
+    - If a penalty for delay is needed, it is applied.
+    - The arrival of the product is approved.
+    - A decision is made whether to repeat the process with the wholesaler:
+        - If repetition is needed, an escalation occurs and the process returns to reordering the product from the wholesaler.
+        - If not, the process continues.
+18. If the next action is to browse the warehouse:
+    - The warehouse is browsed.
+    - The product is withdrawn from the warehouse.
+    - Another decision is made.
+    - If a penalty for delay is needed, it is applied.
+    - The arrival of the product is approved.
+    - A decision is made whether to repeat the process with the warehouse:
+        - If repetition is needed, an escalation occurs and the process returns to withdrawing the product from the warehouse.
+        - If not, the process continues.
+19. After either the wholesaler or warehouse path, the process continues.
+20. Another decision is made, and the process continues as needed.
+21. The process eventually returns to the earlier decision point after shipping, and then to the decision after reading the order.
+22. If, at the decision after registering the product, the condition is not met, another decision is made.
+    - The process continues or escalates as needed, eventually returning to the earlier decision point.
+23. The process repeats cycles as necessary, based on the outcomes of the various decisions.
+24. When all conditions are met and no further actions are required, the process ends.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step, decision, and possible loop is included and described in clear, plain language.

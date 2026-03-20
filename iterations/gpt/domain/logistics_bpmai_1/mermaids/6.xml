@@ -1,0 +1,47 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Receive Shipment Request)
+  2:task:(Check Product Availability)
+  3:exclusivegateway:{x}
+  4:endevent:(((endevent)))
+  5:task:(Perform Further Check)
+  6:exclusivegateway:{x}
+  7:task:(Verify Shipment Address)
+  8:task:(Determine Shipment Type)
+  9:exclusivegateway:{x}
+  10:task:(Confirm Shipment to Service Station)
+  11:task:(Assemble Inbound Shipment)
+  12:task:(Send Inbound Shipment)
+  13:task:(Check Inbound Shipment)
+  14:exclusivegateway:{x}
+  15:task:(Prepare Products for Service Station)
+  16:exclusivegateway:{x}
+  17:task:(Prepare Regional Shipment)
+  18:task:(Check Regional Shipment Preparation)
+  19:exclusivegateway:{x}
+
+  0:startevent:((startevent)) --> 1:task:(Receive Shipment Request)
+  1:task:(Receive Shipment Request) --> 2:task:(Check Product Availability)
+  2:task:(Check Product Availability) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Not available|4:endevent:(((endevent)))
+  3:exclusivegateway:{x} --> |Available|5:task:(Perform Further Check)
+  5:task:(Perform Further Check) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Negative result|5:task:(Perform Further Check)
+  6:exclusivegateway:{x} --> |Positive result|7:task:(Verify Shipment Address)
+  7:task:(Verify Shipment Address) --> 8:task:(Determine Shipment Type)
+  8:task:(Determine Shipment Type) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Type determination fails|10:task:(Confirm Shipment to Service Station)
+  9:exclusivegateway:{x} --> |Type determined|11:task:(Assemble Inbound Shipment)
+  10:task:(Confirm Shipment to Service Station) --> 11:task:(Assemble Inbound Shipment)
+  11:task:(Assemble Inbound Shipment) --> 12:task:(Send Inbound Shipment)
+  12:task:(Send Inbound Shipment) --> 13:task:(Check Inbound Shipment)
+  13:task:(Check Inbound Shipment) --> 14:exclusivegateway:{x}
+  14:exclusivegateway:{x} --> |Check fails|13:task:(Check Inbound Shipment)
+  14:exclusivegateway:{x} --> |Check successful|15:task:(Prepare Products for Service Station)
+  15:task:(Prepare Products for Service Station) --> 16:exclusivegateway:{x}
+  16:exclusivegateway:{x} --> |More preparation needed|15:task:(Prepare Products for Service Station)
+  16:exclusivegateway:{x} --> |Preparation complete|19:exclusivegateway:{x}
+  19:exclusivegateway:{x} --> |Regional preparation needed|17:task:(Prepare Regional Shipment)
+  19:exclusivegateway:{x} --> |No regional preparation|4:endevent:(((endevent)))
+  17:task:(Prepare Regional Shipment) --> 18:task:(Check Regional Shipment Preparation)
+  18:task:(Check Regional Shipment Preparation) --> 19:exclusivegateway:{x}

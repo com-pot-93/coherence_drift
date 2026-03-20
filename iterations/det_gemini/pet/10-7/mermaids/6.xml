@@ -1,0 +1,15 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(The MSPN registers the measurement at the GO)
+1:task:(The MSPN registers the measurement at the GO) --> 2:task:(The GO examines the application of the MSPN)
+2:task:(The GO examines the application of the MSPN) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |reject| 4:task:(The GO rejects the application of the MSPN)
+3:exclusivegateway:{x} --> |confirm| 5:task:(The GO confirmes the application of the MSPN)
+4:task:(The GO rejects the application of the MSPN) --> 6:exclusivegateway:{x}
+5:task:(The GO confirmes the application of the MSPN) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> 7:task:(The GO assigns the MSPN)
+7:task:(The GO assigns the MSPN) --> 8:task:(The GO informs the MSPO about the assignment of MSPN)
+8:task:(The GO informs the MSPO about the assignment of MSPN) --> 9:task:(The GO informs the MPO about the assignment of the MSPN)
+9:task:(The GO informs the MPO about the assignment of the MSPN) --> 10:task:(The GO informs the SP about the assignment of MSPN)
+10:task:(The GO informs the SP about the assignment of MSPN) --> 11:endevent:(((endevent)))
+```

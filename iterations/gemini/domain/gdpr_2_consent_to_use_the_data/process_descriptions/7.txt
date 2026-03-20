@@ -1,0 +1,15 @@
+The process starts, and then proceeds to execute several tasks in parallel: "Add Profiling Information", "Add Right to Rectify Info", "Add Right to Access Info", "Add Right to Erase Info", "Add Right to Data Portability Info", "Add Right to Withdraw Info", "Add Right to Lodge a Complaint Info", "Retrieve Processing Legal Basis", and "Retrieve Processing Purposes".
+
+In parallel with these tasks, the process also branches based on a condition. If the condition is "Yes", the process continues directly. If the condition is "No", the process executes the "Retrieve Source" task before continuing.
+
+Also in parallel, the process branches based on another condition. If the condition is "Yes", the process continues directly. If the condition is "No", the process executes the "Add Info About International Transfer" task before continuing.
+
+In parallel with these tasks and conditional branches, the process also branches based on another condition. If the condition is "Yes", the process executes the "Retrieve Period" task. If the condition is "No", the process executes the "Retrieve Criteria" task.
+
+After all the parallel tasks and conditional branches are completed, the process continues by executing "Retrieve Identity and Contact Details" and "Ask for DPO Details" in parallel. After the "Ask for DPO Details" task, the "Receive DPO Details" task is executed.
+
+Once both "Retrieve Identity and Contact Details" and "Receive DPO Details" are completed, the process executes "Collect Consent Information" followed by "Ask for Consent".
+
+The process then branches based on whether consent is received. If "Consent Received", the "Receive Consent" task is executed. If "Consent Denied", the "Receive Negation" task is executed.
+
+Finally, after either receiving consent or negation, the process ends.

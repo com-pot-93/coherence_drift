@@ -1,0 +1,11 @@
+The process begins with the collection of temperature values. After gathering these values, a decision is made based on whether a certain condition is met. If the condition is met, a standard notification is generated. If the condition is not met, the process skips the notification step. Regardless of the outcome, the process continues to the next stage.
+
+At this point, three activities are carried out at the same time:
+
+1. **First activity:** The status of the container is retrieved. Once this information is available, the condition of the container is estimated. Based on this estimation, a decision is made about whether a change to the container is needed. If a change is needed, a request for a container change is made. If no change is needed, this step is skipped. After this, the process continues.
+
+2. **Second activity:** The location of the client is obtained. Using this information, the distance to the client is estimated. After estimating the distance, a decision is made about whether an estimation of delivery time is needed. If so, the delivery time is estimated. Then, another decision is made about whether a change to the delivery route is necessary. If a route change is needed, a request for a route change is made. If no change is needed, this step is skipped. If no estimation of delivery time is needed, the process skips directly to the next stage. After all these steps, the process continues.
+
+3. **Third activity:** The status of the goods is obtained. Once this is done, the condition of the goods is estimated. After this estimation, a decision is made about whether damages are suspected. If damages are suspected, the damages are evaluated. Based on this evaluation, a decision is made about whether the goods need to be removed. If removal is needed, a request for removal of goods is made. If no removal is needed, this step is skipped. If no damages are suspected, the process skips directly to the next stage. After these steps, a request for a price change is made, and the process continues.
+
+Once all three activities are completed, the process moves forward. All generated messages are then sent out. Finally, the process ends.

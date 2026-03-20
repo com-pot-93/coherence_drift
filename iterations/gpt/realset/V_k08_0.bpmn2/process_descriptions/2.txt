@@ -1,0 +1,19 @@
+The process begins when a person starts the procedure. The first step is to enter login information. After this, the system checks the credentials provided.
+
+If the credentials are incorrect, the process ends immediately. If the credentials are correct, the system checks whether the person has the necessary permission to proceed.
+
+If the person is not allowed, the process ends. If the person is allowed, the process continues to the next step.
+
+At this point, the process checks a certain condition. If the condition is met, the person selects a product. After selecting a product, the person adds the product to the cart. The system then saves the item.
+
+Next, the process checks whether the person wants to add more products. If so, the person can select another product, and this step can repeat as many times as needed.
+
+If the person does not want to add more products, the process moves to order confirmation. The person confirms the order.
+
+After confirming the order, two activities happen at the same time: shipment details are prepared, and payment details are prepared. Once both are ready, the process continues.
+
+The person then enters payment information. After this, two activities happen at the same time: payment data is sent to the bank, and shipping details are entered. Once both are completed, the process continues.
+
+The system then checks if the order is correct. If the order is correct, the person confirms and saves the order, and the process ends. If the order is not correct, the process returns to the step where the person can choose to add more products, and the steps from there are repeated as needed.
+
+The process ends when any of the following occurs: the credentials are incorrect, the person is not allowed, or the order is confirmed and saved correctly.

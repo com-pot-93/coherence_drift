@@ -1,0 +1,1 @@
+The process begins. First, the customer is asked whether they would like a burger or a menu. After this question is asked, a decision is made based on the customer's response. The process then ends.

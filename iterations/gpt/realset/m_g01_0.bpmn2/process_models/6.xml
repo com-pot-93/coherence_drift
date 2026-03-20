@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <choose mode="exclusive" a:alt_id="1">
+    <alternative condition="File not received" language="text/javascript"/>
+    <alternative condition="File received" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="2">
+        <parameters>
+          <label>Receive File</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a9" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Evaluate Outcome</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="5">
+        <alternative condition="Outcome not positive" language="text/javascript"/>
+        <alternative condition="Outcome positive" language="text/javascript">
+          <call id="a15" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Perform Further Check</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="7">
+            <alternative condition="Check fails" language="text/javascript"/>
+            <alternative condition="Check successful" language="text/javascript">
+              <call id="a21" endpoint="" a:alt_id="8">
+                <parameters>
+                  <label>Carry Out Additional Steps</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

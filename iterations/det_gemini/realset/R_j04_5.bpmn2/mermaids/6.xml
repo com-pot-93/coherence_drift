@@ -1,0 +1,24 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(a1788)
+    1:task:(a1788) --> 2:task:(check if car is still registered)
+    2:task:(check if car is still registered) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |yes| 4:task:(notify car owner)
+    3:exclusivegateway:{x} --> |no| 20:task:(receive time for next service)
+    4:task:(notify car owner) --> 5:task:(check if car has been brought to mechanic)
+    5:task:(check if car has been brought to mechanic) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |no| 7:task:(a1796)
+    6:exclusivegateway:{x} --> |yes| 10:task:(receive car problems)
+    7:task:(a1796) --> 8:task:(fine car owner)
+    8:task:(fine car owner) --> 19:exclusivegateway:{x}
+    10:task:(receive car problems) --> 11:task:(offer payment to car owner)
+    11:task:(offer payment to car owner) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |yes| 13:task:(transfer payment to mechanic)
+    12:exclusivegateway:{x} --> |no| 19:exclusivegateway:{x}
+    13:task:(transfer payment to mechanic) --> 19:exclusivegateway:{x}
+    19:exclusivegateway:{x} --> 14:task:(receive confirmation of successful repair)
+    14:task:(receive confirmation of successful repair) --> 15:task:(receive time for next service)
+    15:task:(receive time for next service) --> 21:exclusivegateway:{x}
+    20:task:(receive time for next service) --> 21:exclusivegateway:{x}
+    21:exclusivegateway:{x} --> 22:endevent:(((endevent)))
+```

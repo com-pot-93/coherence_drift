@@ -1,0 +1,34 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Create Parts List)
+    1:task:(Create Parts List) --> 2:task:(Query Webshops)
+    2:task:(Query Webshops) --> 3:task:(Choose Cheapest Shop)
+    3:task:(Choose Cheapest Shop) --> 4:task:(Place Order)
+    4:task:(Place Order) --> 5:parallelgateway:{AND}
+    5:parallelgateway:{AND} --> 6:task:(Receive Order)
+    5:parallelgateway:{AND} --> 7:task:(Send Invoice)
+    5:parallelgateway:{AND} --> 8:task:(Deliver Order)
+    5:parallelgateway:{AND} --> 9:task:(Update Inventory)
+    6:task:(Receive Order) --> 10:parallelgateway:{AND}
+    7:task:(Send Invoice) --> 10:parallelgateway:{AND}
+    8:task:(Deliver Order) --> 10:parallelgateway:{AND}
+    9:task:(Update Inventory) --> 10:parallelgateway:{AND}
+    10:parallelgateway:{AND} --> 11:task:(Receive Order Again)
+    11:task:(Receive Order Again) --> 12:task:(Start Building Process)
+    12:task:(Start Building Process) --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> |Condition Met| 20:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> |Condition Not Met| 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> |Condition A Met| 15:task:(Order Faster Delivery)
+    14:exclusivegateway:{x} --> |Condition A Not Met| 15:task:(Order Faster Delivery)
+    15:task:(Order Faster Delivery) --> 20:exclusivegateway:{x}
+    20:exclusivegateway:{x} --> |Condition C Met| 21:exclusivegateway:{x}
+    20:exclusivegateway:{x} --> |Condition C Not Met| 25:exclusivegateway:{x}
+    21:exclusivegateway:{x} --> |Condition D Met| 22:task:(Write Compliment Email)
+    21:exclusivegateway:{x} --> |Condition D Not Met| 23:task:(Order Cheapest Part)
+    22:task:(Write Compliment Email) --> 24:inclusivegateway:{O}
+    23:task:(Order Cheapest Part) --> 24:inclusivegateway:{O}
+    25:exclusivegateway:{x} --> |Condition E Met| 23:task:(Order Cheapest Part)
+    25:exclusivegateway:{x} --> |Condition E Not Met| 26:task:(Escalate Process)
+    26:task:(Escalate Process) --> 24:inclusivegateway:{O}
+    24:inclusivegateway:{O} --> 27:endevent:(((endevent)))
+```

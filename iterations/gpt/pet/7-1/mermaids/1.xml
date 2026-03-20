@@ -1,0 +1,32 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Check Open Leads)
+  2:task:(Select Top Five Leads)
+  3:task:(Instruct Sales Assistant to Contact Leads)
+  4:parallelgateway:{AND}
+  5:subprocess:(Contact and Process Each Lead)
+  6:parallelgateway:{AND}
+  7:endevent:(((endevent)))
+
+  %% Subprocess for each lead
+  subgraph Contact and Process Each Lead
+    8:task:(Call Customer)
+    9:exclusivegateway:{x}
+    10:task:(Send Note to Manager)
+    11:task:(Manager Processes Lead)
+    12:exclusivegateway:{x}
+    8:task:(Call Customer) --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} --> |Note required|10:task:(Send Note to Manager)
+    9:exclusivegateway:{x} --> |No note|12:exclusivegateway:{x}
+    10:task:(Send Note to Manager) --> 11:task:(Manager Processes Lead)
+    11:task:(Manager Processes Lead) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> 8:task:(Call Customer)
+  end
+
+  0:startevent:((startevent)) --> 1:task:(Check Open Leads)
+  1:task:(Check Open Leads) --> 2:task:(Select Top Five Leads)
+  2:task:(Select Top Five Leads) --> 3:task:(Instruct Sales Assistant to Contact Leads)
+  3:task:(Instruct Sales Assistant to Contact Leads) --> 4:parallelgateway:{AND}
+  4:parallelgateway:{AND} --> 5:subprocess:(Contact and Process Each Lead)
+  5:subprocess:(Contact and Process Each Lead) --> 6:parallelgateway:{AND}
+  6:parallelgateway:{AND} --> 7:endevent:(((endevent)))

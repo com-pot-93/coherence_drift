@@ -1,0 +1,40 @@
+The process begins with the start of the workflow. The first step is to obtain temperature values. After collecting these values, a decision is made based on a specific condition.
+
+If the condition is met, a standard notification is generated. After this notification is prepared, the process waits for other parallel activities to finish before moving forward.
+
+If the initial condition is not met, three activities are started at the same time:
+
+1. **Retrieving Container Status:**  
+   - The container’s status is retrieved.
+   - The condition of the container is then estimated.
+   - A decision is made to determine if a change to the container is needed.
+     - If a change is needed, a request for a container change is generated.
+     - If no change is needed, the process continues.
+   - In both cases, the process waits for the other parallel activities to finish.
+
+2. **Getting Client Location:**  
+   - The client’s location is obtained.
+   - The distance to the client is estimated.
+   - A decision is made to determine if the delivery time needs to be estimated.
+     - If so, the delivery time is estimated.
+       - Another decision is made to check if a route change is needed.
+         - If a route change is needed, a request for a route change is generated.
+         - If no route change is needed, the process continues.
+       - In both cases, the process waits for the other parallel activities to finish.
+     - If no delivery time estimation is needed, the process waits for the other parallel activities to finish.
+
+3. **Getting Goods Status:**  
+   - The status of the goods is obtained.
+   - The condition of the goods is estimated.
+   - A decision is made to determine if damages are suspected.
+     - If damages are suspected, the damages are evaluated.
+       - Another decision is made to determine if removal of goods is needed.
+         - If removal is needed, a removal request is generated.
+         - If removal is not needed, a price change request is generated.
+       - After either the removal request or the price change request, the process waits for the other parallel activities to finish.
+     - If no damages are suspected, a price change request is generated.
+       - After this, the process waits for the other parallel activities to finish.
+
+Once all parallel activities are completed, the process continues. If a standard notification was generated earlier, the process also waits for the parallel activities to finish before moving forward.
+
+After all necessary notifications and requests have been prepared, all generated messages are sent out. The process then ends.

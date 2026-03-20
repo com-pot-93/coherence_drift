@@ -1,0 +1,51 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Collect Mail)
+  2:task:(Sort Unopened Mail)
+  3:task:(Distribute Mail)
+  4:task:(Open Mail)
+  5:task:(Sort Opened Mail)
+  6:task:(Record Mail Details in Register)
+  7:task:(Perform Quality Check)
+  8:exclusivegateway:{x}
+  9:task:(Compile Requisition List)
+  10:task:(Send Requisition List)
+  11:exclusivegateway:{x}
+  12:task:(Capture Matter Details)
+  13:task:(Provide Details to Cashier)
+  14:task:(Collect Fees)
+  15:parallelgateway:{AND}
+  16:task:(Place Receipt in Designated Location)
+  17:task:(Copy Documents into Envelope)
+  18:task:(Post Documents to Relevant Party)
+  19:parallelgateway:{AND}
+  20:task:(Capture Party Details)
+  21:task:(Print Physical Court File)
+  22:parallelgateway:{AND}
+  23:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Collect Mail)
+  1:task:(Collect Mail) --> 2:task:(Sort Unopened Mail)
+  2:task:(Sort Unopened Mail) --> 3:task:(Distribute Mail)
+  3:task:(Distribute Mail) --> 4:task:(Open Mail)
+  4:task:(Open Mail) --> 5:task:(Sort Opened Mail)
+  5:task:(Sort Opened Mail) --> 6:task:(Record Mail Details in Register)
+  6:task:(Record Mail Details in Register) --> 7:task:(Perform Quality Check)
+  7:task:(Perform Quality Check) --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |Requisition required|9:task:(Compile Requisition List)
+  8:exclusivegateway:{x} --> |No requisition required|11:exclusivegateway:{x}
+  9:task:(Compile Requisition List) --> 10:task:(Send Requisition List)
+  10:task:(Send Requisition List) --> 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> 12:task:(Capture Matter Details)
+  12:task:(Capture Matter Details) --> 13:task:(Provide Details to Cashier)
+  13:task:(Provide Details to Cashier) --> 14:task:(Collect Fees)
+  14:task:(Collect Fees) --> 15:parallelgateway:{AND}
+  15:parallelgateway:{AND} --> 16:task:(Place Receipt in Designated Location)
+  15:parallelgateway:{AND} --> 20:task:(Capture Party Details)
+  16:task:(Place Receipt in Designated Location) --> 17:task:(Copy Documents into Envelope)
+  17:task:(Copy Documents into Envelope) --> 18:task:(Post Documents to Relevant Party)
+  18:task:(Post Documents to Relevant Party) --> 19:parallelgateway:{AND}
+  20:task:(Capture Party Details) --> 21:task:(Print Physical Court File)
+  21:task:(Print Physical Court File) --> 19:parallelgateway:{AND}
+  19:parallelgateway:{AND} --> 22:parallelgateway:{AND}
+  22:parallelgateway:{AND} --> 23:endevent:(((endevent)))

@@ -1,0 +1,63 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Send Invitations to Friends)
+2:task:(Ask Friends Which Games They Want to Play)
+3:task:(Receive List of Games)
+4:task:(Choose Games)
+5:parallelgateway:{AND}
+6:subprocess:(Appoint Date for LAN Party)
+7:exclusivegateway:{x}
+8:task:(Change Date)
+9:exclusivegateway:{x}
+10:subprocess:(Confirm Games with Guests)
+11:exclusivegateway:{x}
+12:task:(Ask Guests Which Games They Want)
+13:exclusivegateway:{x}
+14:parallelgateway:{AND}
+15:exclusivegateway:{x}
+16:task:(Download Games)
+17:task:(Ask Friends How Much Beer They Want)
+18:task:(Estimate Total Beer Required)
+19:exclusivegateway:{x}
+20:task:(Go to Supermarket to Buy Beer)
+21:task:(Prepare for LAN Party)
+22:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Send Invitations to Friends)
+1:task:(Send Invitations to Friends) --> 2:task:(Ask Friends Which Games They Want to Play)
+2:task:(Ask Friends Which Games They Want to Play) --> 3:task:(Receive List of Games)
+3:task:(Receive List of Games) --> 4:task:(Choose Games)
+4:task:(Choose Games) --> 5:parallelgateway:{AND}
+
+%% First parallel path: Date appointment with loop
+5:parallelgateway:{AND} --> 6:subprocess:(Appoint Date for LAN Party)
+6:subprocess:(Appoint Date for LAN Party) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Date suitable|9:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Date not suitable|8:task:(Change Date)
+8:task:(Change Date) --> 6:subprocess:(Appoint Date for LAN Party)
+9:exclusivegateway:{x} --> 14:parallelgateway:{AND}
+
+%% Second parallel path: Confirm games with guests with loop
+5:parallelgateway:{AND} --> 10:subprocess:(Confirm Games with Guests)
+10:subprocess:(Confirm Games with Guests) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Games confirmed|13:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Games need change|12:task:(Ask Guests Which Games They Want)
+12:task:(Ask Guests Which Games They Want) --> 10:subprocess:(Confirm Games with Guests)
+13:exclusivegateway:{x} --> 14:parallelgateway:{AND}
+
+14:parallelgateway:{AND} --> 15:exclusivegateway:{x}
+
+%% Download games decision
+15:exclusivegateway:{x} --> |Download needed|16:task:(Download Games)
+15:exclusivegateway:{x} --> |No download needed|17:task:(Ask Friends How Much Beer They Want)
+16:task:(Download Games) --> 17:task:(Ask Friends How Much Beer They Want)
+
+17:task:(Ask Friends How Much Beer They Want) --> 18:task:(Estimate Total Beer Required)
+18:task:(Estimate Total Beer Required) --> 19:exclusivegateway:{x}
+
+%% Go to supermarket decision
+19:exclusivegateway:{x} --> |Need to buy beer|20:task:(Go to Supermarket to Buy Beer)
+19:exclusivegateway:{x} --> |No need to buy beer|21:task:(Prepare for LAN Party)
+20:task:(Go to Supermarket to Buy Beer) --> 21:task:(Prepare for LAN Party)
+
+21:task:(Prepare for LAN Party) --> 22:endevent:(((endevent)))

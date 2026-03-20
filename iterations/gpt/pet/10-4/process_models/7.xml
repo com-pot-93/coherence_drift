@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>MPON informs MPOO about intention to change equipment</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="MPOO removes own equipment" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>MPOO announces decision to remove own equipment</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="MPOO does not remove own equipment" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>MPOO informs MPON of decision not to remove own equipment</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <choose mode="exclusive" a:alt_id="5">
+    <alternative condition="MPON responsible" language="text/javascript">
+      <call id="a13" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>MPON performs final reading</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="MPOO responsible" language="text/javascript">
+      <call id="a15" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>MPOO performs final reading</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <choose mode="exclusive" a:alt_id="8">
+    <alternative condition="MPON removes" language="text/javascript">
+      <call id="a21" endpoint="" a:alt_id="9">
+        <parameters>
+          <label>MPON removes old equipment</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="MPOO removes" language="text/javascript">
+      <call id="a23" endpoint="" a:alt_id="10">
+        <parameters>
+          <label>MPOO removes old equipment</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a25" endpoint="" a:alt_id="11">
+    <parameters>
+      <label>MPON installs new device</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a29" endpoint="" a:alt_id="12">
+    <parameters>
+      <label>MPON reads meter count from new meter</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a31" endpoint="" a:alt_id="13">
+    <parameters>
+      <label>MPON sends final readings and data to GO</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a33" endpoint="" a:alt_id="14">
+    <parameters>
+      <label>GO notifies MSP about required data</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

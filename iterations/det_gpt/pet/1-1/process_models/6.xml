@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>sales department receives an order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="accept" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>sales department  accepts the bike order</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a9" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>sales department informs the storehouse</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a11" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>sales department  informs the engineering department</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <parallel wait="-1" cancel="last" a:alt_id="6">
+        <parallel_branch>
+          <call id="a15" endpoint="" a:alt_id="7">
+            <parameters>
+              <label>engineering department prepares for the bike assembling</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a17" endpoint="" a:alt_id="8">
+            <parameters>
+              <label>storehouse  processes the part list</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a21" endpoint="" a:alt_id="9">
+            <parameters>
+              <label>storehouse checks the  quantity of  parts</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <loop mode="pre_test" condition="true">
+            <choose mode="exclusive" a:alt_id="10">
+              <alternative condition="">
+                <choose mode="exclusive" a:alt_id="11">
+                  <alternative condition=""/>
+                  <alternative condition="">
+                    <choose mode="exclusive" a:alt_id="12">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a33" endpoint="" a:alt_id="14">
+                          <parameters>
+                            <label>storehouse  reserves the part</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a35" endpoint="" a:alt_id="15">
+                          <parameters>
+                            <label>storehouse back-orders the part</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                      </alternative>
+                    </choose>
+                    <escape a:alt_id="-1"/>
+                  </alternative>
+                  <alternative condition="branch 2" language="text/javascript">
+                    <escape a:alt_id="-1"/>
+                  </alternative>
+                </choose>
+              </alternative>
+              <alternative condition="">
+                <choose mode="exclusive" a:alt_id="16">
+                  <alternative condition=""/>
+                  <alternative condition="">
+                    <choose mode="exclusive" a:alt_id="17">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a49" endpoint="" a:alt_id="18">
+                          <parameters>
+                            <label>storehouse  reserves the part</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a51" endpoint="" a:alt_id="19">
+                          <parameters>
+                            <label>storehouse back-orders the part</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                      </alternative>
+                    </choose>
+                    <escape a:alt_id="-1"/>
+                  </alternative>
+                  <alternative condition="branch 2" language="text/javascript">
+                    <escape a:alt_id="-1"/>
+                  </alternative>
+                </choose>
+              </alternative>
+              <alternative condition="">
+                <choose mode="exclusive" a:alt_id="21">
+                  <alternative condition=""/>
+                  <alternative condition="branch 1" language="text/javascript">
+                    <call id="a63" endpoint="" a:alt_id="22">
+                      <parameters>
+                        <label>storehouse  reserves the part</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <escape a:alt_id="-1"/>
+                  </alternative>
+                  <alternative condition="branch 2" language="text/javascript">
+                    <call id="a65" endpoint="" a:alt_id="23">
+                      <parameters>
+                        <label>storehouse back-orders the part</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <escape a:alt_id="-1"/>
+                  </alternative>
+                </choose>
+              </alternative>
+            </choose>
+          </loop>
+          <choose mode="exclusive" a:alt_id="25">
+            <alternative condition="branch 1" language="text/javascript">
+              <call id="a77" endpoint="" a:alt_id="26">
+                <parameters>
+                  <label>storehouse  reserves the part</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="branch 2" language="text/javascript">
+              <call id="a79" endpoint="" a:alt_id="27">
+                <parameters>
+                  <label>storehouse back-orders the part</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+          <call id="a81" endpoint="" a:alt_id="28">
+            <parameters>
+              <label>storehouse  processes the part list</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a85" endpoint="" a:alt_id="29">
+            <parameters>
+              <label>storehouse checks the  quantity of  parts</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+      </parallel>
+      <parallel wait="-1" cancel="last" a:alt_id="30">
+        <parallel_branch>
+          <call id="a89" endpoint="" a:alt_id="31">
+            <parameters>
+              <label>engineering department assembles the bicycle</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a91" endpoint="" a:alt_id="32">
+            <parameters>
+              <label>sales department ships the bicycle</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+      </parallel>
+    </alternative>
+    <alternative condition="reject" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="34">
+        <parameters>
+          <label>sales department rejects the bike order</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

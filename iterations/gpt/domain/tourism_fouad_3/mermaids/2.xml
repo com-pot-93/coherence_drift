@@ -1,0 +1,35 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Receive Travel Request)
+  2:task:(Prepare Tour Plan)
+  3:task:(Send Tour Plan)
+  4:task:(Wait for Response)
+  5:exclusivegateway:{x}
+  6:task:(Book Tour)
+  7:exclusivegateway:{x}
+  8:exclusivegateway:{x}
+  9:task:(Charge Customer)
+  10:exclusivegateway:{x}
+  11:task:(Contact Customer)
+  12:task:(Send Bill)
+  13:task:(Send Booking Confirmation)
+  14:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Receive Travel Request)
+  1:task:(Receive Travel Request) --> 2:task:(Prepare Tour Plan)
+  2:task:(Prepare Tour Plan) --> 3:task:(Send Tour Plan)
+  3:task:(Send Tour Plan) --> 4:task:(Wait for Response)
+  4:task:(Wait for Response) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Positive response|6:task:(Book Tour)
+  5:exclusivegateway:{x} --> |Not positive|14:endevent:(((endevent)))
+  6:task:(Book Tour) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Do not continue|4:task:(Wait for Response)
+  7:exclusivegateway:{x} --> |Continue|9:task:(Charge Customer)
+  9:task:(Charge Customer) --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |Contact customer|11:task:(Contact Customer)
+  8:exclusivegateway:{x} --> |Send bill|12:task:(Send Bill)
+  8:exclusivegateway:{x} --> |No action|10:exclusivegateway:{x}
+  11:task:(Contact Customer) --> 10:exclusivegateway:{x}
+  12:task:(Send Bill) --> 13:task:(Send Booking Confirmation)
+  13:task:(Send Booking Confirmation) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> 8:exclusivegateway:{x}

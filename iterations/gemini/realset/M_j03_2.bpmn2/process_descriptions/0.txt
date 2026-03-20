@@ -1,0 +1,7 @@
+The process starts with creating a list of necessary parts, followed by querying webshops for these parts. After that, the cheapest shop is chosen, and an order is placed.
+
+Subsequently, a decision is made. If the decision is true, the webshop receives the order. Following this, three activities occur in parallel: the webshop sends an invoice, delivers the order, and updates its inventory. Once all three are completed, the manufacturer receives the order and starts building.
+
+Next, a series of decisions are made. Depending on the outcome of the first decision, the process can either proceed to finish the project, or continue to the next decision. If the process continues, depending on the outcome of the second decision, the process can either proceed to finish the project, or continue to the next decision. If the process continues, depending on the outcome of the third decision, the process can either proceed to order the part with faster delivery, or continue to the next decision. If the process continues, depending on the outcome of the fourth decision, the process can either proceed to write a compliment email, or continue to the next decision. If the process continues, the cheapest part is ordered.
+
+After ordering the cheapest part, ordering the part with faster delivery, writing a compliment email, or finishing the project, a series of decisions are made. These decisions lead back to the first decision point, creating a loop. If the initial decision is false, the process ends.

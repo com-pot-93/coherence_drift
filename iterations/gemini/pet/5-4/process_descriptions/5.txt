@@ -1,0 +1,8 @@
+The process starts when a user initiates the process.
+First, the user purchases a product, then submits an expense report.
+After submitting the expense report, a decision is made. If the report requires review, it is sent for supervisor review, otherwise, the process skips directly to the report approval.
+After the supervisor review or if no review is required, the report is approved.
+Following the approval, two activities occur simultaneously: the process proceeds to an escalation task and a check receipts task.
+For the check receipts task, a decision is made. Depending on the outcome, the report is either edited, escalated, or the payment is confirmed. Only one of these three options is chosen.
+After editing, escalating, or confirming the payment, the process waits for the escalation task to complete.
+Once both the escalation task and the selected path from the check receipts task are completed, the process escalates and then ends.

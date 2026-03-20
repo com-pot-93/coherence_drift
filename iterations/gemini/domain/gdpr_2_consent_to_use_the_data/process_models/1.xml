@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <parallel wait="-1" cancel="last" a:alt_id="1">
+    <parallel_branch>
+      <call id="a3" endpoint="" a:alt_id="2">
+        <parameters>
+          <label>Add profiling information</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <choose mode="exclusive" a:alt_id="3">
+        <alternative condition="Yes" language="text/javascript">
+          <call id="a39" endpoint="" a:alt_id="20">
+            <parameters>
+              <label>Retrieve the period</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="No" language="text/javascript">
+          <call id="a41" endpoint="" a:alt_id="21">
+            <parameters>
+              <label>Retrieve the criteria</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a7" endpoint="" a:alt_id="10">
+        <parameters>
+          <label>Add information about the right to rectify</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a9" endpoint="" a:alt_id="11">
+        <parameters>
+          <label>Add information about the right to access</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a11" endpoint="" a:alt_id="12">
+        <parameters>
+          <label>Add information about the right to erase</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a13" endpoint="" a:alt_id="13">
+        <parameters>
+          <label>Add information about the right to data portability</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a15" endpoint="" a:alt_id="14">
+        <parameters>
+          <label>Add information about the right to withdraw</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a17" endpoint="" a:alt_id="15">
+        <parameters>
+          <label>Add information about the right to lodge a complaint</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <choose mode="exclusive" a:alt_id="4">
+        <alternative condition="Yes" language="text/javascript"/>
+        <alternative condition="No" language="text/javascript">
+          <call id="a49" endpoint="" a:alt_id="22">
+            <parameters>
+              <label>Retrieve the source</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </parallel_branch>
+    <parallel_branch>
+      <choose mode="exclusive" a:alt_id="5">
+        <alternative condition="Yes" language="text/javascript"/>
+        <alternative condition="No" language="text/javascript">
+          <call id="a55" endpoint="" a:alt_id="23">
+            <parameters>
+              <label>Add information about international transfer</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </parallel_branch>
+    <parallel_branch>
+      <choose mode="exclusive" a:alt_id="6">
+        <alternative condition="Yes" language="text/javascript"/>
+        <alternative condition="No" language="text/javascript">
+          <call id="a61" endpoint="" a:alt_id="24">
+            <parameters>
+              <label>Retrieve the recipients</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a25" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>Retrieve processing legal basis</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a27" endpoint="" a:alt_id="8">
+        <parameters>
+          <label>Retrieve processing purposes</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch/>
+  </parallel>
+  <parallel wait="-1" cancel="last" a:alt_id="9">
+    <parallel_branch>
+      <call id="a31" endpoint="" a:alt_id="16">
+        <parameters>
+          <label>Retrieve identity and contact details</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a33" endpoint="" a:alt_id="17">
+        <parameters>
+          <label>Ask for DPO details</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a35" endpoint="" a:alt_id="18">
+        <parameters>
+          <label>Receive DPO details</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch/>
+  </parallel>
+  <call id="a87" endpoint="" a:alt_id="26">
+    <parameters>
+      <label>Collect consent information</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a89" endpoint="" a:alt_id="27">
+    <parameters>
+      <label>Ask for consent</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="28">
+    <alternative condition="Consent received" language="text/javascript">
+      <call id="a93" endpoint="" a:alt_id="29">
+        <parameters>
+          <label>Receive consent</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Consent denied" language="text/javascript">
+      <call id="a95" endpoint="" a:alt_id="30">
+        <parameters>
+          <label>Receive negation</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

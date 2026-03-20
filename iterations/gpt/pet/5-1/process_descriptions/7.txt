@@ -1,0 +1,9 @@
+The process begins when a loan request is received. After receiving the request, the next step is to assess the risk associated with the loan application.
+
+Once the risk has been assessed, there are three possible outcomes:
+
+1. If the application is approved, approval feedback is sent to the applicant.
+2. If the application is denied, denial feedback is sent to the applicant.
+3. If further review is needed, a request for further review is made. After this, review feedback is sent to the applicant.
+
+Regardless of which outcome occurs—whether approval feedback, denial feedback, or review feedback is sent—the process then moves to its conclusion and ends.

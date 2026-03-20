@@ -1,0 +1,21 @@
+The process starts with the initiation event and proceeds to develop a basic design. Based on a condition, the process either loops back to itself or continues to order Lego brick sets. If the condition is met and the process loops, it checks for condition M and performs outcome M if true, or checks for condition N and performs outcome N if true, before looping back to the start of the condition check.
+
+After ordering Lego brick sets, another condition is evaluated. If true, the process sorts Lego bricks. If false, the process skips the sorting step. After sorting, the process checks for condition 2. If condition 2 is true, the process skips a series of steps. If condition 2 is false, the process checks for condition M and performs outcome M if true, or checks for condition N and performs outcome N if true, before continuing.
+
+The process then splits into three parallel paths: putting big bricks, medium bricks, and small bricks into containers.
+
+For the big bricks, based on a condition, either outcome A or outcome B is performed.
+For the medium bricks, based on a condition, either outcome C or outcome D is performed.
+For the small bricks, based on a condition, either outcome E or outcome F is performed.
+
+After all three parallel paths are complete, the process merges and splits again into three parallel paths: putting big bricks, medium bricks, and small bricks into containers again.
+
+For the big bricks, based on a condition, either outcome G or outcome H is performed.
+For the medium bricks, based on a condition, either outcome I or outcome J is performed.
+For the small bricks, based on a condition, either outcome K or outcome L is performed.
+
+After all three parallel paths are complete, the process merges and checks for condition 3. If condition 3 is true, the process builds subcomponents, tests them, and then checks if a redesign is needed. If a redesign is needed, the subcomponent is redesigned. If no redesign is needed, the process assembles the subcomponents into a machine. The process then checks if more subcomponents are needed. If more subcomponents are needed, the process loops back to build subcomponents, potentially escalating. If no more subcomponents are needed, the process orders Lego brick sets.
+
+If condition 3 is false, the process skips the subcomponent building and testing steps.
+
+Finally, the process loops back to ordering Lego brick sets and then ends with the termination event.

@@ -1,0 +1,4 @@
+The process starts when an order is received. The order is then processed, and the necessary components are determined.
+If parts are missing, the missing parts are purchased and then added to the stock. If all parts are available, the process skips directly to starting the production.
+After production starts, quality checks are performed. If follow-up is required, it is carried out; otherwise, the process proceeds directly.
+The product is then packaged, filled into packaging, packed and labeled, transported to the warehouse, and finally sent to the customer, which ends the process.

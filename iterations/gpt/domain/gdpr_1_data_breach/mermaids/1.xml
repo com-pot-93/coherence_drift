@@ -1,0 +1,49 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Retrieve Breached Data)
+2:task:(Identify Breached Subjects)
+3:parallelgateway:{AND}
+4:task:(Limit Data Loss)
+5:parallelgateway:{AND}
+6:task:(Notify National Authority)
+7:task:(Evaluate Stolen Data)
+8:exclusivegateway:{x}
+9:task:(Send Notification)
+10:task:(Evaluate Security Standards)
+11:exclusivegateway:{x}
+12:task:(Send Notification)
+13:task:(Request Clarification)
+14:task:(Receive Notification Response)
+15:exclusivegateway:{x}
+16:task:(Send Notification)
+17:parallelgateway:{AND}
+18:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Retrieve Breached Data)
+1:task:(Retrieve Breached Data) --> 2:task:(Identify Breached Subjects)
+2:task:(Identify Breached Subjects) --> 3:parallelgateway:{AND}
+
+%% Parallel branch 1
+3:parallelgateway:{AND} --> 4:task:(Limit Data Loss)
+4:task:(Limit Data Loss) --> 5:parallelgateway:{AND}
+
+%% Parallel branch 2
+3:parallelgateway:{AND} --> 6:task:(Notify National Authority)
+6:task:(Notify National Authority) --> 7:task:(Evaluate Stolen Data)
+7:task:(Evaluate Stolen Data) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Notification required|9:task:(Send Notification)
+8:exclusivegateway:{x} --> |Notification not required|10:task:(Evaluate Security Standards)
+9:task:(Send Notification) --> 5:parallelgateway:{AND}
+10:task:(Evaluate Security Standards) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Notification required|12:task:(Send Notification)
+11:exclusivegateway:{x} --> |Clarification needed|13:task:(Request Clarification)
+12:task:(Send Notification) --> 5:parallelgateway:{AND}
+13:task:(Request Clarification) --> 14:task:(Receive Notification Response)
+14:task:(Receive Notification Response) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> |Notification should be sent|16:task:(Send Notification)
+15:exclusivegateway:{x} --> |No notification|5:parallelgateway:{AND}
+16:task:(Send Notification) --> 5:parallelgateway:{AND}
+
+%% Synchronization and end
+5:parallelgateway:{AND} --> 17:parallelgateway:{AND}
+17:parallelgateway:{AND} --> 18:endevent:(((endevent)))

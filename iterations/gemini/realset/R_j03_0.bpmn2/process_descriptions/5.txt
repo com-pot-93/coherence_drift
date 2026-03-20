@@ -1,0 +1,1 @@
+The process starts when fridge information is received. Then, an appointment is scheduled. Next, the fridge is checked, and its status is confirmed. Finally, the facility is rated, and the process ends.

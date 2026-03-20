@@ -1,0 +1,5 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Select chainsaw properties)
+  1:task:(Select chainsaw properties) --> 2:endevent:(((endevent)))
+```

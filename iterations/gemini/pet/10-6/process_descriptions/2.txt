@@ -1,0 +1,1 @@
+The process starts. First, a dismissal is sent. Next, the dismissal is reviewed. The process ends.

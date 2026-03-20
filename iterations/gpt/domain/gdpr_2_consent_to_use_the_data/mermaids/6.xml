@@ -1,0 +1,43 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:parallelgateway:{AND}
+  2:task:(Add profiling logic info)
+  3:task:(Add right to rectify info)
+  4:task:(Add right to access info)
+  5:task:(Add right to erase info)
+  6:task:(Add data portability info)
+  7:task:(Add withdrawing consent info)
+  8:task:(Add complaint info)
+  9:task:(Retrieve legal basis)
+  10:task:(Retrieve processing purposes)
+  11:task:(Retrieve identity and contact details)
+  12:parallelgateway:{AND}
+  13:task:(Collect consent information)
+  14:task:(Request consent)
+  15:task:(Move to next step)
+  16:endevent:(((endevent)))
+  0:startevent:((startevent)) --> 1:parallelgateway:{AND}
+  1:parallelgateway:{AND} --> 2:task:(Add profiling logic info)
+  1:parallelgateway:{AND} --> 3:task:(Add right to rectify info)
+  1:parallelgateway:{AND} --> 4:task:(Add right to access info)
+  1:parallelgateway:{AND} --> 5:task:(Add right to erase info)
+  1:parallelgateway:{AND} --> 6:task:(Add data portability info)
+  1:parallelgateway:{AND} --> 7:task:(Add withdrawing consent info)
+  1:parallelgateway:{AND} --> 8:task:(Add complaint info)
+  1:parallelgateway:{AND} --> 9:task:(Retrieve legal basis)
+  1:parallelgateway:{AND} --> 10:task:(Retrieve processing purposes)
+  1:parallelgateway:{AND} --> 11:task:(Retrieve identity and contact details)
+  2:task:(Add profiling logic info) --> 12:parallelgateway:{AND}
+  3:task:(Add right to rectify info) --> 12:parallelgateway:{AND}
+  4:task:(Add right to access info) --> 12:parallelgateway:{AND}
+  5:task:(Add right to erase info) --> 12:parallelgateway:{AND}
+  6:task:(Add data portability info) --> 12:parallelgateway:{AND}
+  7:task:(Add withdrawing consent info) --> 12:parallelgateway:{AND}
+  8:task:(Add complaint info) --> 12:parallelgateway:{AND}
+  9:task:(Retrieve legal basis) --> 12:parallelgateway:{AND}
+  10:task:(Retrieve processing purposes) --> 12:parallelgateway:{AND}
+  11:task:(Retrieve identity and contact details) --> 12:parallelgateway:{AND}
+  12:parallelgateway:{AND} --> 13:task:(Collect consent information)
+  13:task:(Collect consent information) --> 14:task:(Request consent)
+  14:task:(Request consent) --> 15:task:(Move to next step)
+  15:task:(Move to next step) --> 16:endevent:(((endevent)))

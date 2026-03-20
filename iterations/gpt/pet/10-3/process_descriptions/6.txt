@@ -1,0 +1,45 @@
+Certainly! Here is a detailed, step-by-step description of the process you provided:
+
+1. The process begins when MPOO initiates a deregistration request at GO.
+
+2. GO then reviews and checks the deregistration request.
+
+3. After reviewing the request, GO decides whether to reject the request or not.
+
+   - **If the request is rejected:**
+     4. GO communicates the rejection.
+     5. Next, a decision is made on whether to continue with readmission.
+        - If the decision is **not to continue with readmission**:
+          6. The decision not to continue with readmission is recorded.
+          7. The process then moves through a series of steps that do not involve any further actions, eventually leading towards the end of the process.
+        - If the decision is **to continue with readmission**:
+          8. MPOO confirms the intention to proceed with readmission.
+          9. This confirmation is recorded.
+          10. GO acquires or changes the necessary equipment.
+          11. GO assigns itself as the new MPO.
+          12. GO informs MPOO that the previous assignment has ended.
+          13. GO notifies MPOO about the new assignment.
+          14. GO informs MSPO about the new assignment.
+          15. GO informs SP about the new assignment.
+          16. The process then moves through a series of steps that do not involve any further actions, eventually leading towards the end of the process.
+
+   - **If the request is not rejected:**
+     17. GO provides a preliminary confirmation.
+     18. Next, a decision is made on whether to continue with readmission.
+        - If the decision is **not to continue with readmission**:
+          19. The decision not to continue with readmission is recorded.
+          20. The process then moves through a series of steps that do not involve any further actions, eventually leading towards the end of the process.
+        - If the decision is **to continue with readmission**:
+          21. MPOO confirms the intention to proceed with readmission.
+          22. This confirmation is recorded.
+          23. GO acquires or changes the necessary equipment.
+          24. GO assigns itself as the new MPO.
+          25. GO informs MPOO that the previous assignment has ended.
+          26. GO notifies MPOO about the new assignment.
+          27. GO informs MSPO about the new assignment.
+          28. GO informs SP about the new assignment.
+          29. The process then moves through a series of steps that do not involve any further actions, eventually leading towards the end of the process.
+
+30. The process concludes.
+
+This description follows the exact sequence and logic of the process model, ensuring that every step and decision point is included and described in clear, plain language.

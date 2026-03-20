@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Shipment Request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Check Product Availability</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Not available" language="text/javascript"/>
+    <alternative condition="Available" language="text/javascript">
+      <loop mode="pre_test" condition="true">
+        <call id="a9" endpoint="" a:alt_id="5">
+          <parameters>
+            <label>Check Shipment Address</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="pre_test" condition="Service station">
+          <choose mode="exclusive" a:alt_id="6">
+            <alternative condition="Service station" language="text/javascript">
+              <choose mode="exclusive" a:alt_id="0">
+                <alternative condition=""/>
+                <alternative condition="">
+                  <call id="a25" endpoint="" a:alt_id="11">
+                    <parameters>
+                      <label>Assemble Inbound Shipment</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a27" endpoint="" a:alt_id="12">
+                    <parameters>
+                      <label>Send Inbound Shipment</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a29" endpoint="" a:alt_id="13">
+                    <parameters>
+                      <label>Receive Inbound Shipment</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a31" endpoint="" a:alt_id="14">
+                    <parameters>
+                      <label>Check Inbound Shipment</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="15">
+                    <alternative condition="Check failed" language="text/javascript"/>
+                    <alternative condition="Check passed" language="text/javascript">
+                      <call id="a37" endpoint="" a:alt_id="16">
+                        <parameters>
+                          <label>Prepare Products for Service Station</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="17">
+                        <alternative condition="More checks needed" language="text/javascript">
+                          <call id="a37" endpoint="" a:alt_id="16">
+                            <parameters>
+                              <label>Prepare Products for Service Station</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <escape a:alt_id="-1"/>
+                        </alternative>
+                        <alternative condition="All checks complete" language="text/javascript"/>
+                      </choose>
+                    </alternative>
+                  </choose>
+                  <call id="a31" endpoint="" a:alt_id="14">
+                    <parameters>
+                      <label>Check Inbound Shipment</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <escape a:alt_id="-1"/>
+                </alternative>
+              </choose>
+              <choose mode="exclusive" a:alt_id="9">
+                <alternative condition="Repeat" language="text/javascript">
+                  <call id="a9" endpoint="" a:alt_id="5">
+                    <parameters>
+                      <label>Check Shipment Address</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Process complete" language="text/javascript">
+                  <escape a:alt_id="-1"/>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="Regional" language="text/javascript">
+              <choose mode="exclusive" a:alt_id="0">
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="9">
+                    <alternative condition="Repeat" language="text/javascript">
+                      <call id="a9" endpoint="" a:alt_id="5">
+                        <parameters>
+                          <label>Check Shipment Address</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Process complete" language="text/javascript">
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="">
+                  <call id="a45" endpoint="" a:alt_id="18">
+                    <parameters>
+                      <label>Prepare Products for Regional Shipment</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="19">
+                    <alternative condition="Continue" language="text/javascript">
+                      <call id="a51" endpoint="" a:alt_id="20">
+                        <parameters>
+                          <label>Prepare Products for Service Station</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="21">
+                        <alternative condition="All checks complete" language="text/javascript">
+                          <call id="a9" endpoint="" a:alt_id="5">
+                            <parameters>
+                              <label>Check Shipment Address</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="More checks needed" language="text/javascript">
+                          <call id="a51" endpoint="" a:alt_id="20">
+                            <parameters>
+                              <label>Prepare Products for Service Station</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <escape a:alt_id="-1"/>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="End process" language="text/javascript">
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </loop>
+      </loop>
+    </alternative>
+  </choose>
+</description>

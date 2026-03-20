@@ -1,0 +1,56 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Receive Invoices)
+    1:task:(Receive Invoices) --> 2:task:(Visual Inspection)
+    2:task:(Visual Inspection) --> 3:task:(Identify Suppliers and Create Invoice)
+    3:task:(Identify Suppliers and Create Invoice) --> 4:task:(Check Invoice Items)
+    4:task:(Check Invoice Items) --> 5:task:(Send to Cost Center Manager)
+    5:task:(Send to Cost Center Manager) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |Review Content|7:task:(Review Content for Accuracy)
+    6:exclusivegateway:{x} --> |Reject AP|24:task:(Clarification with Vendor)
+    7:task:(Review Content for Accuracy) --> 8:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> |Note Code and Return|9:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> |Reject AP|24:task:(Clarification with Vendor)
+    9:exclusivegateway:{x} --> 10:task:(Pass to Next Manager)
+    9:exclusivegateway:{x} --> 11:task:(Send Back to Accounting)
+    10:task:(Pass to Next Manager) --> 12:inclusivegateway:{O}
+    11:task:(Send Back to Accounting) --> 12:inclusivegateway:{O}
+    12:inclusivegateway:{O} --> 5:task:(Send to Cost Center Manager)
+    24:task:(Clarification with Vendor) --> 25:parallelgateway:{AND}
+    25:parallelgateway:{AND} --> 26:parallelgateway:{AND}
+    25:parallelgateway:{AND} --> 30:parallelgateway:{AND}
+    26:parallelgateway:{AND} --> 27:task:(Consult Cost Center Managers)
+    26:parallelgateway:{AND} --> 28:task:(Consult Cost Center Managers)
+    27:task:(Consult Cost Center Managers) --> 29:parallelgateway:{AND}
+    28:task:(Consult Cost Center Managers) --> 29:parallelgateway:{AND}
+    29:parallelgateway:{AND} --> 31:task:(Send Copy to Cost Center Managers)
+    30:parallelgateway:{AND} --> 31:task:(Send Copy to Cost Center Managers)
+    30:parallelgateway:{AND} --> 32:task:(Send Copy to Commercial Manager)
+    31:task:(Send Copy to Cost Center Managers) --> 32:task:(Send Copy to Commercial Manager)
+    32:task:(Send Copy to Commercial Manager) --> 33:task:(Commercial Audit and Approval)
+    33:task:(Commercial Audit and Approval) --> 34:parallelgateway:{AND}
+    34:parallelgateway:{AND} --> 35:parallelgateway:{AND}
+    34:parallelgateway:{AND} --> 39:parallelgateway:{AND}
+    35:parallelgateway:{AND} --> 36:task:(Board Checks Invoice)
+    35:parallelgateway:{AND} --> 37:task:(Board Checks Invoice)
+    36:task:(Board Checks Invoice) --> 38:parallelgateway:{AND}
+    37:task:(Board Checks Invoice) --> 38:parallelgateway:{AND}
+    38:parallelgateway:{AND} --> 40:task:(Move Invoice and Docket to Accounting)
+    39:parallelgateway:{AND} --> 40:task:(Move Invoice and Docket to Accounting)
+    39:parallelgateway:{AND} --> 40:task:(Move Invoice and Docket to Accounting)
+    40:task:(Move Invoice and Docket to Accounting) --> 41:parallelgateway:{AND}
+    41:parallelgateway:{AND} --> 42:parallelgateway:{AND}
+    41:parallelgateway:{AND} --> 46:parallelgateway:{AND}
+    42:parallelgateway:{AND} --> 43:task:(Resolve Complaint)
+    42:parallelgateway:{AND} --> 44:task:(Resolve Complaint)
+    43:task:(Resolve Complaint) --> 45:parallelgateway:{AND}
+    44:task:(Resolve Complaint) --> 45:parallelgateway:{AND}
+    45:parallelgateway:{AND} --> 47:task:(Payment Instructions and Close Invoice)
+    46:parallelgateway:{AND} --> 47:task:(Payment Instructions and Close Invoice)
+    46:parallelgateway:{AND} --> 47:task:(Payment Instructions and Close Invoice)
+    47:task:(Payment Instructions and Close Invoice) --> 48:parallelgateway:{AND}
+    48:parallelgateway:{AND} --> 10:task:(Pass to Next Manager)
+    48:parallelgateway:{AND} --> 7:task:(Review Content for Accuracy)
+    48:parallelgateway:{AND} --> 5:task:(Send to Cost Center Manager)
+    6:exclusivegateway:{x} --> |End|49:endevent:(((endevent)))
+```

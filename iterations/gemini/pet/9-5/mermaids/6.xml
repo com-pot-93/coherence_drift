@@ -1,0 +1,31 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Condition A is true| 2:task:(Receive Expense Report)
+    1:exclusivegateway:{x} --> |Condition A is false| 3:task:(Create New Employee Account)
+    2:task:(Receive Expense Report) --> 4:exclusivegateway:{x}
+    3:task:(Create New Employee Account) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |Condition E is true| 5:task:(Create New Employee Account)
+    4:exclusivegateway:{x} --> |Condition E is false| 6:exclusivegateway:{x}
+    5:task:(Create New Employee Account) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> |Condition G is true| 8:task:(Approve Report Automatically)
+    7:exclusivegateway:{x} --> |Condition G is false| 9:task:(Supervisor Approves Report)
+    8:task:(Approve Report Automatically) --> 10:exclusivegateway:{x}
+    9:task:(Supervisor Approves Report) --> 10:exclusivegateway:{x}
+    10:exclusivegateway:{x} --> 11:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |Condition I is true| 12:task:(Send Reimbursement)
+    11:exclusivegateway:{x} --> |Condition I is false| 13:exclusivegateway:{x}
+    12:task:(Send Reimbursement) --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> |Condition K is true| 15:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> |Condition K is false| 16:exclusivegateway:{x}
+    15:exclusivegateway:{x} --> 16:exclusivegateway:{x}
+    16:exclusivegateway:{x} --> |Condition L is true| 17:task:(Send Approval In Progress Email)
+    16:exclusivegateway:{x} --> |Condition L is false| 18:exclusivegateway:{x}
+    17:task:(Send Approval In Progress Email) --> 18:exclusivegateway:{x}
+    18:exclusivegateway:{x} --> 19:exclusivegateway:{x}
+    19:exclusivegateway:{x} --> |Condition M is true| 20:endevent:(((endevent)))
+    19:exclusivegateway:{x} --> |Condition M is false| 21:task:(Send Rejection Notice)
+    21:task:(Send Rejection Notice) --> 20:endevent:(((endevent)))
+```

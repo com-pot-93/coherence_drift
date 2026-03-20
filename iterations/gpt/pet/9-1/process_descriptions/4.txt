@@ -1,0 +1,15 @@
+The process begins with an initial starting point. The first action is to back up the database. Once the database has been backed up, the next step is to check the database.
+
+After checking the database, a decision is made: either to continue or to skip the next step. If the decision is to continue, the process proceeds to check the CRM system. If the decision is to skip, the process moves directly to the next decision point, bypassing the CRM system check.
+
+After either checking the CRM system or skipping it, another decision is made: either to continue or to skip the next step. If the decision is to continue, the process involves registering defaulting accounts and customers. If the decision is to skip, the process moves directly to the following decision point, bypassing the registration step.
+
+After either registering defaulting accounts and customers or skipping this step, another decision is made: either to continue or to skip the next step. If the decision is to continue, the process involves producing a table of defaulting accounts. Once this table is produced, it is sent to account management. After sending the table, the process moves to the next decision point. If the decision is to skip, the process moves directly to the next decision point, bypassing the production and sending of the table.
+
+At this stage, a decision is made about whether an alert is needed. If an alert is needed, an alert is sent to the supervisor. After sending the alert, or if no alert is needed, the process continues to the next step.
+
+The next action is to check the CRM system again. After this check, a decision is made about whether reconciliation is needed. If reconciliation is needed, the process involves reconciling with the defaulters table. After reconciliation, or if no reconciliation is needed, the process moves to the next decision point.
+
+At this point, there are three possible actions: sending a message to the supervisor, completing reconciliation, or simply continuing. If the decision is to send a message to the supervisor, the message is sent. If the decision is to complete reconciliation, reconciliation is completed. If the decision is to continue, the process moves forward without additional actions. After any of these actions, the process proceeds to the final step.
+
+The final step is performed, and then the process ends.

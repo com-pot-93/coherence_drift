@@ -1,0 +1,1 @@
+The process starts. First, an order is placed. Next, the order is sent to the supplier. Then, the order is processed. After that, an invoice is sent. Subsequently, the invoice is received, and the process ends.

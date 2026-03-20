@@ -1,0 +1,18 @@
+The process begins with a starting point. Immediately after, a decision is made about whether to proceed or not. If the decision is not to proceed, the process ends right away.
+
+If the decision is to proceed, another decision point is reached. From here, the process continues to a further decision. If a certain condition is met (labeled as "true"), the front page is loaded.
+
+After loading the front page, another decision is made. Depending on the outcome, one of two similar sets of activities is performed:
+
+- In the first possible path, four activities are carried out at the same time: topic activity, payment activity, experience activity, and hobbies activity. Once all four are completed, the process continues.
+- In the second possible path, another set of four activities—also topic activity, payment activity, experience activity, and hobbies activity—are performed simultaneously. After all are finished, the process continues.
+
+After either set of activities is completed, the process moves forward to sending a request. Once the request is sent, the process waits for an offer.
+
+At this point, another decision is made. If the process needs to be escalated, the front page is loaded again, and an escalation is performed. After escalation, the process returns to the earlier decision point about whether to proceed.
+
+If escalation is not needed, the process continues by invalidating other offers, sending a weekly status update, receiving a company status update, and finishing the internship.
+
+After finishing the internship, there is a final decision. The process can either end directly or include an additional step where a tweet about the company is posted before ending. In both cases, the process concludes and returns to the earlier decision point about whether to proceed.
+
+This cycle can repeat, depending on the decisions made at each point, until the process is ended by choosing not to proceed.

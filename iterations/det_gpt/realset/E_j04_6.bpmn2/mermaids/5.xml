@@ -1,0 +1,86 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Load front page)
+2:exclusivegateway:{x}
+3:parallelgateway:{AND}
+4:task:(Topic)
+5:task:(Payment)
+6:task:(Expierience)
+7:task:(Hobbies)
+8:parallelgateway:{AND}
+9:parallelgateway:{AND}
+10:task:(Topic)
+11:task:(Payment)
+12:task:(Expierience)
+13:task:(Hobbies)
+14:parallelgateway:{AND}
+15:exclusivegateway:{x}
+16:task:(Send Request)
+17:task:(Wait until offer arrives)
+18:task:(Offer recieved)
+19:exclusivegateway:{x}
+20:task:(All other Offers become Invalid)
+21:task:(Send Status Update every week)
+22:task:(Recieve status update from company)
+23:task:(Internishp is finished)
+24:exclusivegateway:{x}
+25:task:(Tweet to your Friends about the Company)
+26:exclusivegateway:{x}
+27:task:(Load front page)
+28:exclusivegateway:{x}
+29:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Load front page)
+1:task:(Load front page) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Branch 1|3:parallelgateway:{AND}
+2:exclusivegateway:{x} --> |Branch 2|9:parallelgateway:{AND}
+
+%% PG1 branches
+3:parallelgateway:{AND} --> 4:task:(Topic)
+3:parallelgateway:{AND} --> 5:task:(Payment)
+3:parallelgateway:{AND} --> 6:task:(Expierience)
+3:parallelgateway:{AND} --> 7:task:(Hobbies)
+4:task:(Topic) --> 8:parallelgateway:{AND}
+5:task:(Payment) --> 8:parallelgateway:{AND}
+6:task:(Expierience) --> 8:parallelgateway:{AND}
+7:task:(Hobbies) --> 8:parallelgateway:{AND}
+
+%% PG2 branches
+9:parallelgateway:{AND} --> 10:task:(Topic)
+9:parallelgateway:{AND} --> 11:task:(Payment)
+9:parallelgateway:{AND} --> 12:task:(Expierience)
+9:parallelgateway:{AND} --> 13:task:(Hobbies)
+10:task:(Topic) --> 14:parallelgateway:{AND}
+11:task:(Payment) --> 14:parallelgateway:{AND}
+12:task:(Expierience) --> 14:parallelgateway:{AND}
+13:task:(Hobbies) --> 14:parallelgateway:{AND}
+
+%% Merge PG1 and PG2 into exclusive merge
+8:parallelgateway:{AND} --> 15:exclusivegateway:{x}
+14:parallelgateway:{AND} --> 15:exclusivegateway:{x}
+
+15:exclusivegateway:{x} --> 16:task:(Send Request)
+16:task:(Send Request) --> 17:task:(Wait until offer arrives)
+17:task:(Wait until offer arrives) --> 18:task:(Offer recieved)
+18:task:(Offer recieved) --> 19:exclusivegateway:{x}
+
+%% D2 branches
+19:exclusivegateway:{x} --> |Offer accepted|20:task:(All other Offers become Invalid)
+19:exclusivegateway:{x} --> |true|27:task:(Load front page)
+
+20:task:(All other Offers become Invalid) --> 21:task:(Send Status Update every week)
+21:task:(Send Status Update every week) --> 22:task:(Recieve status update from company)
+22:task:(Recieve status update from company) --> 23:task:(Internishp is finished)
+23:task:(Internishp is finished) --> 24:exclusivegateway:{x}
+
+%% D3 branches
+24:exclusivegateway:{x} --> |Branch 1|26:exclusivegateway:{x}
+24:exclusivegateway:{x} --> |Branch 2|25:task:(Tweet to your Friends about the Company)
+25:task:(Tweet to your Friends about the Company) --> 26:exclusivegateway:{x}
+
+%% Merge D3
+26:exclusivegateway:{x} --> 28:exclusivegateway:{x}
+
+%% Merge D2
+27:task:(Load front page) --> 28:exclusivegateway:{x}
+28:exclusivegateway:{x} --> 29:endevent:(((endevent)))

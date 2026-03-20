@@ -1,0 +1,37 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Initiate Assessment Tool)
+2:task:(Specify Incident Type)
+3:exclusivegateway:{x}
+4:task:(Confirm Accident)
+5:task:(Confirm Almost Accident)
+6:task:(Confirm Severe Safety or Health Risk)
+7:task:(Confirm Defective Equipment)
+8:exclusivegateway:{x}
+9:task:(Provide Incident Details)
+10:exclusivegateway:{x}
+11:task:(Review List of Tasks)
+12:task:(Contact Private Insurance)
+13:exclusivegateway:{x}
+14:task:(Execute Proposed Tasks)
+15:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Initiate Assessment Tool)
+1:task:(Initiate Assessment Tool) --> 2:task:(Specify Incident Type)
+2:task:(Specify Incident Type) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Accident|4:task:(Confirm Accident)
+3:exclusivegateway:{x} --> |Almost Accident|5:task:(Confirm Almost Accident)
+3:exclusivegateway:{x} --> |Severe Safety or Health Risk|6:task:(Confirm Severe Safety or Health Risk)
+3:exclusivegateway:{x} --> |Defective Equipment|7:task:(Confirm Defective Equipment)
+4:task:(Confirm Accident) --> 8:exclusivegateway:{x}
+5:task:(Confirm Almost Accident) --> 8:exclusivegateway:{x}
+6:task:(Confirm Severe Safety or Health Risk) --> 8:exclusivegateway:{x}
+7:task:(Confirm Defective Equipment) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> 9:task:(Provide Incident Details)
+9:task:(Provide Incident Details) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Proceed Directly|11:task:(Review List of Tasks)
+10:exclusivegateway:{x} --> |Contact Private Insurance First|12:task:(Contact Private Insurance)
+11:task:(Review List of Tasks) --> 13:exclusivegateway:{x}
+12:task:(Contact Private Insurance) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> 14:task:(Execute Proposed Tasks)
+14:task:(Execute Proposed Tasks) --> 15:endevent:(((endevent)))

@@ -1,0 +1,44 @@
+flowchart LR
+0:startevent:((startevent))
+1:exclusivegateway:{x}
+2:exclusivegateway:{x}
+3:task:(Identify Need for Personnel)
+4:task:(Determine Personnel Requirements)
+5:task:(Report Vacancy to Personnel Department)
+6:exclusivegateway:{x}
+7:exclusivegateway:{x}
+8:task:(Receive Job Description)
+9:exclusivegateway:{x}
+10:task:(Examine Job Description)
+11:exclusivegateway:{x}
+12:task:(Check if Job Description is Satisfactory)
+13:exclusivegateway:{x}
+14:task:(Advertise Vacancy)
+15:exclusivegateway:{x}
+16:task:(Request Corrections)
+17:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Proceed|3:task:(Identify Need for Personnel)
+2:exclusivegateway:{x} --> |Do not proceed|17:endevent:(((endevent)))
+3:task:(Identify Need for Personnel) --> 4:task:(Determine Personnel Requirements)
+4:task:(Determine Personnel Requirements) --> 5:task:(Report Vacancy to Personnel Department)
+5:task:(Report Vacancy to Personnel Department) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Proceed|7:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Do not proceed|3:task:(Identify Need for Personnel)
+7:exclusivegateway:{x} --> |Proceed|8:task:(Receive Job Description)
+7:exclusivegateway:{x} --> |Do not proceed|3:task:(Identify Need for Personnel)
+8:task:(Receive Job Description) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Proceed|10:task:(Examine Job Description)
+9:exclusivegateway:{x} --> |Do not proceed|5:task:(Report Vacancy to Personnel Department)
+10:task:(Examine Job Description) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Proceed|12:task:(Check if Job Description is Satisfactory)
+11:exclusivegateway:{x} --> |Do not proceed|8:task:(Receive Job Description)
+12:task:(Check if Job Description is Satisfactory) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Satisfactory|14:task:(Advertise Vacancy)
+13:exclusivegateway:{x} --> |Not satisfactory|16:task:(Request Corrections)
+14:task:(Advertise Vacancy) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> |Process complete|17:endevent:(((endevent)))
+15:exclusivegateway:{x} --> |Repeat checks|11:exclusivegateway:{x}
+16:task:(Request Corrections) --> 8:task:(Receive Job Description)

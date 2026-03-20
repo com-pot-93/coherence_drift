@@ -1,0 +1,17 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Receive production order)
+    1:task:(Receive production order) --> 2:task:(Prepare materrials)
+    2:task:(Prepare materrials) --> 3:task:(Assemble door)
+    3:task:(Assemble door) --> 4:task:(Send inquiry for quality check)
+    4:task:(Send inquiry for quality check) --> 5:task:(Receive inquiry for quality check)
+    5:task:(Receive inquiry for quality check) --> 6:task:(Check quality)
+    6:task:(Check quality) --> 7:task:(Send quality report)
+    7:task:(Send quality report) --> 8:task:(Receive quality report)
+    8:task:(Receive quality report) --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} --> |yes| 10:task:(Fix door)
+    9:exclusivegateway:{x} --> |no| 11:task:(Release door)
+    10:task:(Fix door) --> 12:exclusivegateway:{x}
+    11:task:(Release door) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> 13:endevent:(((endevent)))
+```

@@ -1,0 +1,12 @@
+The process begins when a request is received and reviewed. After the review, a decision is made:
+
+- If the request is denied, a notification is sent to the GO (Grid Operator) to inform them of the denial. After this notification, the process continues to the next step.
+- If the request is not denied, a measurement is performed. Once the measurement is completed, another decision is made:
+    - If the measurement fails, a notification is sent to the GO to inform them of the measurement failure. After this notification, the process continues to the next step.
+    - If the measurement is successful, the measured values are sent to the GO. These values are then processed. After processing, it is determined whether the values have changed:
+        - If the values have changed, the updated values are sent to the MSP (Metering Service Provider). After sending the updated values, the process continues to the next step.
+        - If there is no change in the values, the process continues directly to the next step.
+
+After either sending the updated values to the MSP or determining that there is no change, the readings are forwarded to the SP (Service Provider). Once the readings have been forwarded, the process continues.
+
+Finally, after all notifications and forwarding of readings are completed, the process ends.

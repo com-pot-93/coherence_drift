@@ -1,0 +1,15 @@
+The process starts with preparing materials, followed by assembling a door. After the door is assembled, a decision is made.
+
+If the decision is true, a quality check inquiry is sent and subsequently received. Then, the quality is checked, and a quality report is sent and received. Following the reception of the quality report, the process merges into a single flow.
+
+If the initial decision is false, the door is fixed, and another decision is made, which immediately merges back. This merge point then joins the flow from the quality check process.
+
+After the merge, another decision is made. If this decision is true, another decision is made based on whether the door needs fixing or no fixing is needed.
+
+If the door needs fixing, it is fixed, and then another decision is made. Depending on the outcome of this decision, the process either escalates or proceeds to a merge point. Escalation can occur multiple times before proceeding to the merge point.
+
+If the door does not need fixing, another decision is made, which can also lead to escalation multiple times before proceeding to a merge point.
+
+Both merge points then converge, and the process returns to the decision point regarding whether the door needs fixing or not.
+
+If the initial decision is false, the process ends.

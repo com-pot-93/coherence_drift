@@ -1,0 +1,21 @@
+The process begins with a starting point. Immediately after, a decision is made about whether to proceed. If the decision is not to proceed, the process ends right away.
+
+If the decision is to proceed, another decision is made. This second decision leads directly to a third decision point. At this third decision, if the choice is not to proceed, the process returns to the previous decision point. If the choice is to proceed, the process continues to a fourth decision.
+
+At the fourth decision, if the choice is not to proceed, the process returns to the previous decision. If the choice is to proceed, the process moves to a fifth decision. Again, if the choice is not to proceed, the process returns to the previous decision. If the choice is to proceed, the process advances to a sixth decision.
+
+At the sixth decision, there are two possible outcomes. If a certain condition is met, the process continues. If the condition is not met, a task is performed to handle an escalation, after which the process continues as if the condition had been met.
+
+Next, the process loads the front page. After this, another decision is made, which leads to a point where several activities are carried out at the same time. These activities include: a topic-related activity, a payment-related activity, an experience-related activity, and a hobbies-related activity. All these activities are performed in parallel, and once all are completed, the process continues.
+
+After the parallel activities, a request is sent, and then the process waits for an offer. Once the offer is received, another decision is made. If the decision is to proceed, any other offers are invalidated, a weekly status update is sent, and a company status update is received.
+
+Following this, another decision is made. If the choice is to continue, the internship is finished. After finishing the internship, two more decisions are made in sequence. The first of these determines whether to repeat the cycle or not. If the cycle is to be repeated, the process returns to loading the front page and follows the same steps as before.
+
+If the cycle is not to be repeated, the next decision is whether to post a tweet about the company. If the decision is to post, the tweet is posted; if not, the process continues. After this, another decision is made about whether to escalate the situation. If escalation is not chosen, the process moves to the next decision, which determines whether to repeat the cycle or trigger an escalation. If the cycle is to be repeated, the process returns to loading the front page. If escalation is triggered, the process continues.
+
+If, at the escalation decision, escalation is chosen, another decision is made: either to end the process or to return to the point where the internship is finished. If the process returns to the internship finish, it follows the same steps as before.
+
+At each of these decision points, if the process is not to continue, it follows a path that eventually leads to the end of the process.
+
+Throughout the process, whenever a cycle is repeated or an escalation is triggered, the process returns to the appropriate earlier step and continues from there. The process ends when a decision is made not to proceed at any of the main decision points, or when the explicit end is chosen after escalation.

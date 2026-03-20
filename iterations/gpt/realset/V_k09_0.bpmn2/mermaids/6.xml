@@ -1,0 +1,13 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Connect to Management System)
+  2:exclusivegateway:{x}
+  3:exclusivegateway:{x}
+  4:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Connect to Management System)
+  1:task:(Connect to Management System) --> 2:exclusivegateway:{x}
+  2:exclusivegateway:{x} --> |Continue|3:exclusivegateway:{x}
+  2:exclusivegateway:{x} --> |Do not continue|4:endevent:(((endevent)))
+  3:exclusivegateway:{x} --> |Path 1|4:endevent:(((endevent)))
+  3:exclusivegateway:{x} --> |Path 2|4:endevent:(((endevent)))

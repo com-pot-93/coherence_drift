@@ -1,0 +1,31 @@
+The process starts when ACME AG receives invoices. The secretariat then performs a visual inspection of the invoice and forwards it to an accounting employee. The accounting employee identifies the charging suppliers and creates a new invoice, then checks the invoice items and notes the cost center and cost center managers. The docket and a copy of the invoice are sent via internal mail to the accounting employee, who then sends them to the cost center manager.
+
+The process then splits into two possible paths. In the first path, the cost center manager receives the copy of the invoice and reviews its content for accuracy. Following this, the process splits again.
+
+In the first scenario, the cost center manager notes their code on the docket and returns the copy of the invoice. The process splits once more. One path involves passing the copy of the invoice to the next cost center manager, eventually merging back. The other path involves the cost center manager sending the invoice back to accounting.
+
+In the second scenario, the cost center manager rejects the AP, and the invoice is sent back to accounting.
+
+From here, the accounting employee proceeds with clarification with the vendor. The process splits into two parallel paths which later merge.
+
+In the first path, the process splits again into two parallel paths which later merge. One path involves the accounting employee consulting the cost center managers. The other path loops back to the same task of consulting the cost center managers.
+
+In the second path, the process splits again into two parallel paths which later merge. One path involves the accounting employee consulting the cost center managers. The other path loops back to the same task of consulting the cost center managers.
+
+After the parallel paths merge, the accounting employee sends a copy of the invoice to the cost center managers and forwards another copy to the commercial manager. The commercial manager conducts a commercial audit and issues an approval for payment. The process splits into two parallel paths which later merge.
+
+In the first path, the process splits again into two parallel paths which later merge. One path involves the board checking the invoice. The other path loops back to the same task of the board checking the invoice.
+
+In the second path, the process splits again into two parallel paths which later merge. One path involves the board checking the invoice. The other path loops back to the same task of the board checking the invoice.
+
+After the parallel paths merge, the commercial manager moves the invoice copy and the docket back to the accounting employee. The process splits into two parallel paths which later merge.
+
+In the first path, the process splits again into two parallel paths which later merge. One path involves the accounting employee resolving a complaint. The other path loops back to the same task of resolving the complaint.
+
+In the second path, the process splits again into two parallel paths which later merge. One path involves the accounting employee resolving a complaint. The other path loops back to the same task of resolving the complaint.
+
+After the parallel paths merge, the accounting employee gives payment instructions and closes the invoice. The process splits into two parallel paths which later merge. One path loops back to the task of passing the copy of the invoice to the next cost center manager. The other path loops back to the task where the cost center manager reviews the content for accuracy.
+
+After the parallel paths merge, the process loops back to the point where the cost center manager receives the copy of the invoice.
+
+In the second path from the first split, the process ends.

@@ -1,0 +1,32 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Create production plan)
+2:task:(Create process order)
+3:task:(Perform material requirements planning)
+4:task:(Evaluate available capacity)
+5:task:(Schedule and release proposal)
+6:task:(Confirm process order)
+7:exclusivegateway:{x}
+8:task:(Create transfer order)
+9:task:(Record goods issue)
+10:exclusivegateway:{x}
+11:task:(Confirm goods issue)
+12:task:(Record receipt of finished goods)
+13:task:(Settle order)
+14:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Create production plan)
+1:task:(Create production plan) --> 2:task:(Create process order)
+2:task:(Create process order) --> 3:task:(Perform material requirements planning)
+3:task:(Perform material requirements planning) --> 4:task:(Evaluate available capacity)
+4:task:(Evaluate available capacity) --> 5:task:(Schedule and release proposal)
+5:task:(Schedule and release proposal) --> 6:task:(Confirm process order)
+6:task:(Confirm process order) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Transfer order needed|8:task:(Create transfer order)
+7:exclusivegateway:{x} --> |Goods issue recorded|9:task:(Record goods issue)
+8:task:(Create transfer order) --> 10:exclusivegateway:{x}
+9:task:(Record goods issue) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> 11:task:(Confirm goods issue)
+11:task:(Confirm goods issue) --> 12:task:(Record receipt of finished goods)
+12:task:(Record receipt of finished goods) --> 13:task:(Settle order)
+13:task:(Settle order) --> 14:endevent:(((endevent)))

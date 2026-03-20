@@ -1,0 +1,23 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(System receives a customer request for a loan amount)
+2:task:(Risk Assessment (RA) Web service assesses the request)
+3:exclusivegateway:{x}
+4:task:(RA Web service  approves the loan)
+5:task:(RA Web service  denies the loan)
+6:task:(RA Web service  send the request to the approver web service)
+7:exclusivegateway:{x}
+8:task:(Customer receives feedback)
+9:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(System receives a customer request for a loan amount)
+1:task:(System receives a customer request for a loan amount) --> 2:task:(Risk Assessment (RA) Web service assesses the request)
+2:task:(Risk Assessment (RA) Web service assesses the request) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Approved|4:task:(RA Web service  approves the loan)
+3:exclusivegateway:{x} --> |Denied|5:task:(RA Web service  denies the loan)
+3:exclusivegateway:{x} --> |Send to approver|6:task:(RA Web service  send the request to the approver web service)
+4:task:(RA Web service  approves the loan) --> 7:exclusivegateway:{x}
+5:task:(RA Web service  denies the loan) --> 7:exclusivegateway:{x}
+6:task:(RA Web service  send the request to the approver web service) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> 8:task:(Customer receives feedback)
+8:task:(Customer receives feedback) --> 9:endevent:(((endevent)))

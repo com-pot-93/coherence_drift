@@ -1,0 +1,7 @@
+The process starts with sending invitations, followed by requesting game preferences and choosing games. Then, the process splits into two parallel paths.
+
+In the first path, the process proposes a LAN party date. If the date needs changing or an issue arises, the process loops back to proposing a LAN party date. If no changes are needed, the process continues. If an issue arises, the process escalates and then loops back to proposing a LAN party date.
+
+In the second parallel path, the process asks guests about games. If the games need changing or an issue arises, the process loops back to asking guests about games. If no changes are needed, the process continues. If an issue arises, the process escalates and then loops back to asking guests about games.
+
+After both parallel paths are complete, the process downloads games and requests beer preferences. If beer is missing, the process buys beer. Finally, the process prepares the LAN party and ends.

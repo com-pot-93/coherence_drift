@@ -1,0 +1,35 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Condition A| 2:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Condition B| 3:task:(company receives expense report)
+    2:exclusivegateway:{x} --> |Condition C| 4:task:(company creates new employee account)
+    2:exclusivegateway:{x} --> |Condition D| 5:exclusivegateway:{x}
+    3:task:(company receives expense report) --> 5:exclusivegateway:{x}
+    4:task:(company creates new employee account) --> 6:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Condition E| 4:task:(company creates new employee account)
+    5:exclusivegateway:{x} --> |Condition F| 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> 7:task:(company reviews report for automatic approval)
+    7:task:(company reviews report for automatic approval) --> 8:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> |Condition G| 9:task:(supervisor approves the report)
+    8:exclusivegateway:{x} --> |Condition H| 10:task:(company automatically approves the report)
+    9:task:(supervisor approves the report) --> 11:exclusivegateway:{x}
+    10:task:(company automatically approves the report) --> 12:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |Condition I| 13:task:(company sends reimbursement to employee's bank account)
+    11:exclusivegateway:{x} --> |Condition J| 14:task:(employee receives a rejection notice)
+    12:exclusivegateway:{x} --> 15:exclusivegateway:{x}
+    13:task:(company sends reimbursement to employee's bank account) --> 16:exclusivegateway:{x}
+    14:task:(employee receives a rejection notice) --> 16:exclusivegateway:{x}
+    15:exclusivegateway:{x} --> 16:exclusivegateway:{x}
+    16:exclusivegateway:{x} --> 17:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> |Condition K| 18:task:(company stops the process)
+    17:exclusivegateway:{x} --> |Condition L| 19:task:(employee receives an approval in progress email)
+    17:exclusivegateway:{x} --> |Condition M| 20:exclusivegateway:{x}
+    18:task:(company stops the process) --> 21:task:(employee receives an email cancellation notice)
+    19:task:(employee receives an approval in progress email) --> 20:exclusivegateway:{x}
+    20:exclusivegateway:{x} --> 2:exclusivegateway:{x}
+    21:task:(employee receives an email cancellation notice) --> 22:task:(employee re-submits the expense report)
+    22:task:(employee re-submits the expense report) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> 23:exclusivegateway:{x}
+    23:exclusivegateway:{x} --> 24:endevent:(((endevent)))
+```

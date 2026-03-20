@@ -1,0 +1,25 @@
+The process begins when it is started. The first step is to search for a customer. After searching for the customer, an offer is made to the customer.
+
+At this point, a decision is made about whether to continue. If the decision is to continue, the process moves on to receiving an additional request from the customer. After receiving this request, more details are provided to the customer. Then, another decision is made about whether to continue. If the decision is not to continue at this point, the process skips ahead to the next decision stage.
+
+If, after making the offer, the decision is not to continue, the process also skips ahead to the next decision stage.
+
+At this next decision point, it is determined whether to continue. If the decision is to continue, a booking request is received from the customer. After receiving the booking request, a bill is sent to the customer. Then, another decision is made about whether to continue. If the decision is not to continue at this point, the process skips ahead to the next decision stage.
+
+If, at the previous decision point, the decision is not to continue, the process also skips ahead to the next decision stage.
+
+At the following decision point, it is again determined whether to continue. If the decision is to continue, payment is received from the customer. After receiving payment, another decision is made about whether to continue. If the decision is not to continue at this point, the process skips ahead to the next decision stage.
+
+If, at the previous decision point, the decision is not to continue, the process also skips ahead to the next decision stage.
+
+At the next stage, a decision is made based on whether a certain condition is met or whether to continue. If the condition is not met, the process ends.
+
+If the condition is met or the decision is to continue, the process moves to another decision point. If the decision here is to continue, the process proceeds to the next stage. If the decision is not to continue, the process loops back to the previous decision point.
+
+At the next stage, another decision is made about whether to continue. If the decision is to continue, travel is booked. After booking the travel, a booking confirmation is sent to the customer. The process then moves to the next stage.
+
+If the decision is not to continue, the customer is contacted, and then the process moves to the next stage.
+
+After either sending the booking confirmation or contacting the customer, the process loops back to the previous decision point. This loop can repeat as long as the decision is to continue.
+
+Finally, after all decisions and actions are completed and the condition is not met at the appropriate stage, the process ends.

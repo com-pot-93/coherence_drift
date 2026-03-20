@@ -1,0 +1,102 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(ACME AG receives invoices)
+2:task:(Secretariat performs invoice's visual inspection)
+3:task:(Secretariat forwards the invoice to an accounting employee)
+4:task:(Accounting employee identifies the charging suppliers)
+5:task:(Accounting employee creates a new invoice)
+6:task:(Accounting employee checks the invoice items)
+7:task:(Accounting employee notes the  cost center and the cost center managers (docket))
+8:task:(Docket and the invoice's copy go to the internal mail)
+9:task:(Accounting employee  sends the docket and the invoice copy to the  cost center manager)
+10:exclusivegateway:{x}
+11:task:(Cost center manager receives the copy of the invoice)
+12:task:(Cost center manager reviews the content for accuracy)
+13:exclusivegateway:{x}
+14:task:(Cost center manager notes his code one on  the docket (AP))
+15:task:(Cost center manager returns the copy of the invoice)
+16:exclusivegateway:{x}
+17:task:(Pass the copy of the invoice to the next cost center manager)
+18:exclusivegateway:{x}
+19:task:(Accounting employee consults the cost center managers)
+20:exclusivegateway:{x}
+21:task:(Cost center manager  sends invoice back to accounting)
+22:task:(Accounting employee proceedes with the clarification with the vendor)
+23:exclusivegateway:{x}
+24:exclusivegateway:{x}
+25:task:(Accounting employee consults the cost center managers)
+26:exclusivegateway:{x}
+27:task:(Cost center manager rejects the AP)
+28:task:(Accounting employee sends the copy of the invoice to the cost center managers)
+29:task:(Accounting employee forwards the copy of the invoice to the commercial manager)
+30:task:(Commercial manager  makes the commercial audit)
+31:task:(Commercial manager  issues the approval for payment)
+32:exclusivegateway:{x}
+33:exclusivegateway:{x}
+34:task:(Board checks invoice)
+35:exclusivegateway:{x}
+36:exclusivegateway:{x}
+37:task:(Commercial manager moves invoice's copy  and the docket to the accounting employee)
+38:exclusivegateway:{x}
+39:exclusivegateway:{x}
+40:task:(Accounting employee resolves complaint)
+41:exclusivegateway:{x}
+42:task:(Accounting employee gives payment instructions)
+43:task:(Accounting employee closes the invoice)
+44:exclusivegateway:{x}
+45:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(ACME AG receives invoices)
+1:task:(ACME AG receives invoices) --> 2:task:(Secretariat performs invoice's visual inspection)
+2:task:(Secretariat performs invoice's visual inspection) --> 3:task:(Secretariat forwards the invoice to an accounting employee)
+3:task:(Secretariat forwards the invoice to an accounting employee) --> 4:task:(Accounting employee identifies the charging suppliers)
+4:task:(Accounting employee identifies the charging suppliers) --> 5:task:(Accounting employee creates a new invoice)
+5:task:(Accounting employee creates a new invoice) --> 6:task:(Accounting employee checks the invoice items)
+6:task:(Accounting employee checks the invoice items) --> 7:task:(Accounting employee notes the  cost center and the cost center managers (docket))
+7:task:(Accounting employee notes the  cost center and the cost center managers (docket)) --> 8:task:(Docket and the invoice's copy go to the internal mail)
+8:task:(Docket and the invoice's copy go to the internal mail) --> 9:task:(Accounting employee  sends the docket and the invoice copy to the  cost center manager)
+9:task:(Accounting employee  sends the docket and the invoice copy to the  cost center manager) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |true|11:task:(Cost center manager receives the copy of the invoice)
+11:task:(Cost center manager receives the copy of the invoice) --> 12:task:(Cost center manager reviews the content for accuracy)
+12:task:(Cost center manager reviews the content for accuracy) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Approved|14:task:(Cost center manager notes his code one on  the docket (AP))
+13:exclusivegateway:{x} --> |Rejected|27:task:(Cost center manager rejects the AP)
+14:task:(Cost center manager notes his code one on  the docket (AP)) --> 15:task:(Cost center manager returns the copy of the invoice)
+15:task:(Cost center manager returns the copy of the invoice) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |Next manager|17:task:(Pass the copy of the invoice to the next cost center manager)
+16:exclusivegateway:{x} --> |Back to accounting|21:task:(Cost center manager  sends invoice back to accounting)
+17:task:(Pass the copy of the invoice to the next cost center manager) --> 18:exclusivegateway:{x}
+18:exclusivegateway:{x} --> |Consult|19:task:(Accounting employee consults the cost center managers)
+18:exclusivegateway:{x} --> |Continue|28:task:(Accounting employee sends the copy of the invoice to the cost center managers)
+19:task:(Accounting employee consults the cost center managers) --> 20:exclusivegateway:{x}
+20:exclusivegateway:{x} --> 28:task:(Accounting employee sends the copy of the invoice to the cost center managers)
+21:task:(Cost center manager  sends invoice back to accounting) --> 22:task:(Accounting employee proceedes with the clarification with the vendor)
+22:task:(Accounting employee proceedes with the clarification with the vendor) --> 23:exclusivegateway:{x}
+23:exclusivegateway:{x} --> |Consult|24:exclusivegateway:{x}
+23:exclusivegateway:{x} --> |Continue|28:task:(Accounting employee sends the copy of the invoice to the cost center managers)
+24:exclusivegateway:{x} --> |Consult|25:task:(Accounting employee consults the cost center managers)
+24:exclusivegateway:{x} --> |Continue|28:task:(Accounting employee sends the copy of the invoice to the cost center managers)
+25:task:(Accounting employee consults the cost center managers) --> 26:exclusivegateway:{x}
+26:exclusivegateway:{x} --> 28:task:(Accounting employee sends the copy of the invoice to the cost center managers)
+27:task:(Cost center manager rejects the AP) --> 21:task:(Cost center manager  sends invoice back to accounting)
+28:task:(Accounting employee sends the copy of the invoice to the cost center managers) --> 29:task:(Accounting employee forwards the copy of the invoice to the commercial manager)
+29:task:(Accounting employee forwards the copy of the invoice to the commercial manager) --> 30:task:(Commercial manager  makes the commercial audit)
+30:task:(Commercial manager  makes the commercial audit) --> 31:task:(Commercial manager  issues the approval for payment)
+31:task:(Commercial manager  issues the approval for payment) --> 32:exclusivegateway:{x}
+32:exclusivegateway:{x} --> |Board approval needed|33:exclusivegateway:{x}
+32:exclusivegateway:{x} --> |No board approval|36:exclusivegateway:{x}
+33:exclusivegateway:{x} --> |Board checks|34:task:(Board checks invoice)
+33:exclusivegateway:{x} --> |No check|36:exclusivegateway:{x}
+34:task:(Board checks invoice) --> 35:exclusivegateway:{x}
+35:exclusivegateway:{x} --> 36:exclusivegateway:{x}
+36:exclusivegateway:{x} --> 37:task:(Commercial manager moves invoice's copy  and the docket to the accounting employee)
+37:task:(Commercial manager moves invoice's copy  and the docket to the accounting employee) --> 38:exclusivegateway:{x}
+38:exclusivegateway:{x} --> |Complaint|39:exclusivegateway:{x}
+38:exclusivegateway:{x} --> |No complaint|41:exclusivegateway:{x}
+39:exclusivegateway:{x} --> |Resolve|40:task:(Accounting employee resolves complaint)
+39:exclusivegateway:{x} --> |No action|41:exclusivegateway:{x}
+40:task:(Accounting employee resolves complaint) --> 41:exclusivegateway:{x}
+41:exclusivegateway:{x} --> 42:task:(Accounting employee gives payment instructions)
+42:task:(Accounting employee gives payment instructions) --> 43:task:(Accounting employee closes the invoice)
+43:task:(Accounting employee closes the invoice) --> 44:exclusivegateway:{x}
+44:exclusivegateway:{x} --> 45:endevent:(((endevent)))

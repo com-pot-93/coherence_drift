@@ -1,0 +1,3 @@
+The process begins when a party sends a request for a warrant of possession. This request is received by the Client Service Back Office. After receiving the request, the Back Office retrieves the relevant SCT file. Once the file is retrieved, the Back Office forwards the SCT Warrant Possession to the Queensland Police.
+
+Following this, the Back Office stores the physical SCT file. The Back Office then waits for a report from the Police. When the Police report is received, the Back Office retrieves the corresponding SCT file again. Next, the Back Office attaches the new SCT document to the file. Finally, the Back Office stores the updated SCT physical file, marking the end of the process.

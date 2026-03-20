@@ -1,0 +1,11 @@
+The process begins with the start of the workflow. The first step is to package the product. Once the product is packaged, it is shipped.
+
+After shipping, a decision is made about the delivery method. If the product is to be delivered to the customer’s door, the process continues with delivering the product to the door. After this delivery, another decision is made regarding whether a receipt is needed. 
+
+If a receipt is needed, a pick-up receipt is printed, and then the receipt is posted. After posting the receipt, the product is rerouted to a station. If no receipt is needed, the process skips directly to the next step.
+
+Whether the product was rerouted to the station or no receipt was needed, the process continues to the next decision point. Alternatively, if the initial decision after shipping was to deliver the product to a station, the product is delivered to the station and then proceeds to the same decision point as above.
+
+At this stage, a check is made to determine if the product has been received back. If the product has been received back, it is processed accordingly. If the product has not been received back, the process moves forward without this step.
+
+Finally, the process concludes with a final step, after which the workflow ends.

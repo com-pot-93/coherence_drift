@@ -1,0 +1,12 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Send Mortgage Offer)
+  1:task:(Send Mortgage Offer) --> 2:exclusivegateway:{x}
+  2:exclusivegateway:{x} --> |Response Received| 3:task:(Perform Administration)
+  2:exclusivegateway:{x} --> |No Response| 4:task:(Update Case Details)
+  3:task:(Perform Administration) --> 5:task:(Generate Document Request)
+  5:task:(Generate Document Request) --> 4:task:(Update Case Details)
+  4:task:(Update Case Details) --> 6:task:(Archive Work)
+  6:task:(Archive Work) --> 7:task:(Perform Cancellation)
+  7:task:(Perform Cancellation) --> 8:endevent:(((endevent)))
+```

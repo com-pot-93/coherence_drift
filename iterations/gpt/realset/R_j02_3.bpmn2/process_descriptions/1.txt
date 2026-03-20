@@ -1,0 +1,3 @@
+The process begins. First, the machine type and serial number are entered. After this information is provided, a series of questions are answered. Once all questions have been answered, the option to continue is selected.
+
+Next, the entered values are checked. After checking, the values are confirmed. Once the confirmation is complete, the inspection is finished. The process then ends.

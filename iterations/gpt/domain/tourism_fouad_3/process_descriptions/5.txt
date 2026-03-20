@@ -1,0 +1,17 @@
+The process begins when a travel request is received. After receiving the request, a tour plan is prepared. Once the tour plan is ready, it is sent out.
+
+At this point, a decision is made about whether to continue with the process. If the decision is not to continue, the process ends immediately. If the process continues, another decision is made to check for a negative outcome. If there is a negative outcome, the process ends. If not, the process waits for a response.
+
+After waiting for a response, another decision is made about whether to continue. If the decision is not to continue, the process ends. If the process continues, another decision is made, again checking whether to continue. If the decision is not to continue, the process ends. If the process continues, the tour is booked.
+
+Once the tour is booked, another decision is made about whether to continue. If the decision is not to continue, the process ends. If the process continues, the customer is charged.
+
+After charging the customer, another decision is made about whether to continue. If the decision is not to continue, the process ends. If the process continues, another decision is made with three possible actions:
+
+1. The customer is contacted, after which the process continues to the next step.
+2. A bill is sent, followed by sending a booking confirmation, after which the process continues to the next step.
+3. No further action is taken, and the process continues to the next step.
+
+This pattern of three possible actions—contacting the customer, sending a bill and booking confirmation, or taking no further action—repeats three more times. Each time, after one of these actions is completed, the process moves to the next similar decision point.
+
+After the fourth repetition of this pattern, the process ends.

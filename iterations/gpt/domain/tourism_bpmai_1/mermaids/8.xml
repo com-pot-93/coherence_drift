@@ -1,0 +1,40 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Receive Customer Request)
+  2:task:(Check Request Details)
+  3:exclusivegateway:{x}
+  4:task:(Complete Manually)
+  5:task:(Complete Automatically)
+  6:exclusivegateway:{x}
+  7:exclusivegateway:{x}
+  8:task:(Send Notification to Customer)
+  9:task:(Search for Attraction Provider)
+  10:exclusivegateway:{x}
+  11:task:(Attempt Booking)
+  12:exclusivegateway:{x}
+  13:task:(Receive Booking Rejection)
+  14:task:(Receive Booking Confirmation)
+  15:task:(Send Confirmation to Customer)
+  16:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Receive Customer Request)
+  1:task:(Receive Customer Request) --> 2:task:(Check Request Details)
+  2:task:(Check Request Details) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Do not continue|16:endevent:(((endevent)))
+  3:exclusivegateway:{x} --> |Continue|6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Manual registration|4:task:(Complete Manually)
+  6:exclusivegateway:{x} --> |Automatic registration|5:task:(Complete Automatically)
+  4:task:(Complete Manually) --> 7:exclusivegateway:{x}
+  5:task:(Complete Automatically) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Do not search|8:task:(Send Notification to Customer)
+  7:exclusivegateway:{x} --> |Search|9:task:(Search for Attraction Provider)
+  8:task:(Send Notification to Customer) --> 16:endevent:(((endevent)))
+  9:task:(Search for Attraction Provider) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |Do not book|16:endevent:(((endevent)))
+  10:exclusivegateway:{x} --> |Attempt booking|11:task:(Attempt Booking)
+  11:task:(Attempt Booking) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> |Rejected|13:task:(Receive Booking Rejection)
+  12:exclusivegateway:{x} --> |Confirmed|14:task:(Receive Booking Confirmation)
+  13:task:(Receive Booking Rejection) --> 16:endevent:(((endevent)))
+  14:task:(Receive Booking Confirmation) --> 15:task:(Send Confirmation to Customer)
+  15:task:(Send Confirmation to Customer) --> 16:endevent:(((endevent)))

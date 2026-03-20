@@ -1,0 +1,55 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:exclusivegateway:{x}
+  2:task:(Select course)
+  3:task:(Show dates)
+  4:task:(Select one date)
+  5:task:(Check if account  at sports institute available)
+  6:exclusivegateway:{x}
+  7:task:(Check if registered at an eligible university)
+  8:exclusivegateway:{x}
+  9:task:(Register with account)
+  10:task:(Send request for activation)
+  11:task:(Wait for response)
+  12:exclusivegateway:{x}
+  13:task:(Send request for activation)
+  14:task:(Wait for response)
+  15:exclusivegateway:{x}
+  16:task:(Log into account)
+  17:task:(Provide payment information)
+  18:task:(Complete registration for course)
+  19:parallelgateway:{AND}
+  20:task:(Tweet friends)
+  21:task:(Receive ticket)
+  22:parallelgateway:{AND}
+  23:exclusivegateway:{x}
+  24:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+  1:exclusivegateway:{x} --> |true|2:task:(Select course)
+  2:task:(Select course) --> 3:task:(Show dates)
+  3:task:(Show dates) --> 4:task:(Select one date)
+  4:task:(Select one date) --> 5:task:(Check if account  at sports institute available)
+  5:task:(Check if account  at sports institute available) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Account available|7:task:(Check if registered at an eligible university)
+  7:task:(Check if registered at an eligible university) --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |Yes|9:task:(Register with account)
+  9:task:(Register with account) --> 12:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |No|10:task:(Send request for activation)
+  10:task:(Send request for activation) --> 11:task:(Wait for response)
+  11:task:(Wait for response) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> 15:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Account not available|13:task:(Send request for activation)
+  13:task:(Send request for activation) --> 14:task:(Wait for response)
+  14:task:(Wait for response) --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> 16:task:(Log into account)
+  16:task:(Log into account) --> 17:task:(Provide payment information)
+  17:task:(Provide payment information) --> 18:task:(Complete registration for course)
+  18:task:(Complete registration for course) --> 19:parallelgateway:{AND}
+  19:parallelgateway:{AND} --> 20:task:(Tweet friends)
+  19:parallelgateway:{AND} --> 21:task:(Receive ticket)
+  20:task:(Tweet friends) --> 22:parallelgateway:{AND}
+  21:task:(Receive ticket) --> 22:parallelgateway:{AND}
+  22:parallelgateway:{AND} --> 23:exclusivegateway:{x}
+  1:exclusivegateway:{x} --> |false|23:exclusivegateway:{x}
+  23:exclusivegateway:{x} --> 24:endevent:(((endevent)))

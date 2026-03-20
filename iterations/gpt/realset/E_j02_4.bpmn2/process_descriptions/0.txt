@@ -1,0 +1,24 @@
+Here is a detailed, step-by-step description of the process as depicted in your model:
+
+The process begins. Immediately, two checks are performed at the same time: one to determine if the baby is younger than two years, and another to identify the parent. Once both checks are completed, the process continues.
+
+Next, a decision is made to determine the parent's situation. If the parent is self-employed, studying, a housewife, or a man, the process moves directly to the end.
+
+If the parent is employed, the process continues with sending a notification to the employer. After this, the process waits to receive confirmation from the employer. Once confirmation is received, the parent takes maternity leave.
+
+After taking maternity leave, another decision is made regarding how the leave will be managed. There are three possible paths:
+
+1. **Splitting Maternity Leave:**  
+   If the parent chooses to split the maternity leave, another decision is made based on the length of the leave:
+   - If the maternity leave is less than two months, a notification is sent to the employer. After this, the process continues and eventually leads to receiving a notification from the employer, followed by taking maternity leave again.
+   - If the maternity leave is more than three months, a notification is also sent to the employer. The process then continues in a similar way, leading to receiving a notification from the employer and taking maternity leave again.
+
+2. **Extending Maternity Leave:**  
+   If the parent chooses to extend the maternity leave, a similar decision is made based on the length of the leave:
+   - If the extended leave is less than two months, a notification is sent to the employer. The process continues, leading to receiving a notification from the employer and taking maternity leave again.
+   - If the extended leave is more than three months, a notification is sent to the employer. The process then continues, leading to receiving a notification from the employer and taking maternity leave again.
+
+3. **Both Parents Take Maternity Leave:**  
+   If both parents decide to take maternity leave, the process continues directly to the next step.
+
+After any of these three paths are completed, the process moves to the next stage, which leads back to the earlier decision point about the parent's situation. Once all steps are completed, the process ends.

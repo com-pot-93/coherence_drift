@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <choose mode="exclusive" a:alt_id="1">
+    <alternative condition="Proceed" language="text/javascript">
+      <call id="a3" endpoint="" a:alt_id="2">
+        <parameters>
+          <label>Proceed to Next Step</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="3">
+        <alternative condition="Proceed" language="text/javascript">
+          <call id="a9" endpoint="" a:alt_id="4">
+            <parameters>
+              <label>Continue Process</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <loop mode="pre_test" condition="Proceed">
+            <choose mode="exclusive" a:alt_id="7">
+              <alternative condition="Proceed" language="text/javascript">
+                <call id="a19" endpoint="" a:alt_id="8">
+                  <parameters>
+                    <label>Further Evaluation</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="Do Not Proceed" language="text/javascript"/>
+            </choose>
+          </loop>
+          <choose mode="exclusive" a:alt_id="9">
+            <alternative condition="Do Not Proceed" language="text/javascript"/>
+            <alternative condition="Proceed" language="text/javascript">
+              <call id="a25" endpoint="" a:alt_id="10">
+                <parameters>
+                  <label>Continue Process</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="13">
+                <alternative condition="Move Forward" language="text/javascript">
+                  <call id="a37" endpoint="" a:alt_id="15">
+                    <parameters>
+                      <label>Identify Need for Personnel</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="16">
+                    <alternative condition="Proceed" language="text/javascript">
+                      <call id="a43" endpoint="" a:alt_id="17">
+                        <parameters>
+                          <label>Determine Personnel Requirements</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="19">
+                        <alternative condition="Move Forward" language="text/javascript">
+                          <choose mode="exclusive" a:alt_id="20">
+                            <alternative condition="Proceed" language="text/javascript">
+                              <call id="a55" endpoint="" a:alt_id="21">
+                                <parameters>
+                                  <label>Report Vacancy to Personnel Dept</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <choose mode="exclusive" a:alt_id="22">
+                                <alternative condition="Proceed" language="text/javascript">
+                                  <call id="a61" endpoint="" a:alt_id="23">
+                                    <parameters>
+                                      <label>Receive Job Description</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <choose mode="exclusive" a:alt_id="24">
+                                    <alternative condition="Proceed" language="text/javascript">
+                                      <call id="a67" endpoint="" a:alt_id="25">
+                                        <parameters>
+                                          <label>Examine Job Description</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                      <choose mode="exclusive" a:alt_id="26">
+                                        <alternative condition="Proceed" language="text/javascript">
+                                          <call id="a73" endpoint="" a:alt_id="27">
+                                            <parameters>
+                                              <label>Check Satisfaction with Job Description</label>
+                                              <method/>
+                                              <type>:task</type>
+                                              <arguments/>
+                                            </parameters>
+                                          </call>
+                                          <choose mode="exclusive" a:alt_id="28">
+                                            <alternative condition="Satisfactory" language="text/javascript">
+                                              <call id="a79" endpoint="" a:alt_id="29">
+                                                <parameters>
+                                                  <label>Advertise Vacancy</label>
+                                                  <method/>
+                                                  <type>:task</type>
+                                                  <arguments/>
+                                                </parameters>
+                                              </call>
+                                              <choose mode="exclusive" a:alt_id="30">
+                                                <alternative condition="Move Forward" language="text/javascript"/>
+                                                <alternative condition="Repeat Advertising" language="text/javascript">
+                                                  <call id="a79" endpoint="" a:alt_id="29">
+                                                    <parameters>
+                                                      <label>Advertise Vacancy</label>
+                                                      <method/>
+                                                      <type>:task</type>
+                                                      <arguments/>
+                                                    </parameters>
+                                                  </call>
+                                                </alternative>
+                                              </choose>
+                                            </alternative>
+                                            <alternative condition="Not Satisfactory" language="text/javascript">
+                                              <call id="a61" endpoint="" a:alt_id="23">
+                                                <parameters>
+                                                  <label>Receive Job Description</label>
+                                                  <method/>
+                                                  <type>:task</type>
+                                                  <arguments/>
+                                                </parameters>
+                                              </call>
+                                            </alternative>
+                                          </choose>
+                                        </alternative>
+                                        <alternative condition="Do Not Proceed" language="text/javascript">
+                                          <call id="a67" endpoint="" a:alt_id="25">
+                                            <parameters>
+                                              <label>Examine Job Description</label>
+                                              <method/>
+                                              <type>:task</type>
+                                              <arguments/>
+                                            </parameters>
+                                          </call>
+                                        </alternative>
+                                      </choose>
+                                    </alternative>
+                                    <alternative condition="Do Not Proceed" language="text/javascript">
+                                      <call id="a61" endpoint="" a:alt_id="23">
+                                        <parameters>
+                                          <label>Receive Job Description</label>
+                                          <method/>
+                                          <type>:task</type>
+                                          <arguments/>
+                                        </parameters>
+                                      </call>
+                                    </alternative>
+                                  </choose>
+                                </alternative>
+                                <alternative condition="Do Not Proceed" language="text/javascript">
+                                  <call id="a55" endpoint="" a:alt_id="21">
+                                    <parameters>
+                                      <label>Report Vacancy to Personnel Dept</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                </alternative>
+                              </choose>
+                            </alternative>
+                            <alternative condition="Do Not Proceed" language="text/javascript">
+                              <call id="a43" endpoint="" a:alt_id="17">
+                                <parameters>
+                                  <label>Determine Personnel Requirements</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                          </choose>
+                        </alternative>
+                        <alternative condition="Repeat Previous Step" language="text/javascript">
+                          <call id="a43" endpoint="" a:alt_id="17">
+                            <parameters>
+                              <label>Determine Personnel Requirements</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Do Not Proceed" language="text/javascript">
+                      <call id="a37" endpoint="" a:alt_id="15">
+                        <parameters>
+                          <label>Identify Need for Personnel</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="Repeat Previous Step" language="text/javascript">
+                  <call id="a25" endpoint="" a:alt_id="10">
+                    <parameters>
+                      <label>Continue Process</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+              <escape a:alt_id="-1"/>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="Do Not Proceed" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="Do Not Proceed" language="text/javascript"/>
+  </choose>
+</description>

@@ -1,0 +1,16 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Prepare Room)
+  1:task:(Prepare Room) --> 2:task:(Perform Surgery)
+  2:task:(Perform Surgery) --> 3:parallelgateway:{AND}
+  3:parallelgateway:{AND} --> 4:task:(Discharge Patient)
+  3:parallelgateway:{AND} --> 5:task:(Sanitize Room)
+  4:task:(Discharge Patient) --> 6:parallelgateway:{AND}
+  5:task:(Sanitize Room) --> 6:parallelgateway:{AND}
+  6:parallelgateway:{AND} --> 7:task:(Fill Out Report)
+  7:task:(Fill Out Report) --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} -->|Bill Paid| 9:task:(Proceed to Next Step)
+  8:exclusivegateway:{x} -->|Bill Not Paid| 10:task:(Record Unpaid Bill)
+  9:task:(Proceed to Next Step) --> 11:endevent:(((endevent)))
+  10:task:(Record Unpaid Bill) --> 11:endevent:(((endevent)))
+```

@@ -1,0 +1,406 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Come to the hospital</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Stay the front</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Visit the nurse</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="4">
+    <parameters>
+      <label>Check insurance</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="5">
+    <alternative condition="Patient state check" language="text/javascript">
+      <call id="a11" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Check patients state</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="7">
+        <alternative condition="Send home" language="text/javascript">
+          <call id="a17" endpoint="" a:alt_id="8">
+            <parameters>
+              <label>Send patient home</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Examine patient" language="text/javascript">
+          <call id="a19" endpoint="" a:alt_id="10">
+            <parameters>
+              <label>Examine the patient</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="12">
+            <alternative condition="Hospitalize" language="text/javascript">
+              <call id="a27" endpoint="" a:alt_id="13">
+                <parameters>
+                  <label>Hospitalize</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="14">
+                <alternative condition="Book doctor" language="text/javascript">
+                  <call id="a35" endpoint="" a:alt_id="15">
+                    <parameters>
+                      <label>Book patient for doctor</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="16">
+                    <alternative condition="Examine again" language="text/javascript">
+                      <call id="a41" endpoint="" a:alt_id="17">
+                        <parameters>
+                          <label>Examine the patient</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="End" language="text/javascript"/>
+                  </choose>
+                </alternative>
+                <alternative condition="Skip" language="text/javascript"/>
+              </choose>
+            </alternative>
+            <alternative condition="End" language="text/javascript">
+              <loop mode="pre_test" condition="true">
+                <call id="a29" endpoint="" a:alt_id="19">
+                  <parameters>
+                    <label>Send patient to pharmacy</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a49" endpoint="" a:alt_id="20">
+                  <parameters>
+                    <label>Visit pharmacy</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a51" endpoint="" a:alt_id="21">
+                  <parameters>
+                    <label>Order medicine</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a53" endpoint="" a:alt_id="22">
+                  <parameters>
+                    <label>Pay medicine</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a55" endpoint="" a:alt_id="23">
+                  <parameters>
+                    <label>Receive medicine</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <loop mode="pre_test" condition="Loop" a:alt_id="24" language="text/javascript">
+                  <call id="a29" endpoint="" a:alt_id="19">
+                    <parameters>
+                      <label>Send patient to pharmacy</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a49" endpoint="" a:alt_id="20">
+                    <parameters>
+                      <label>Visit pharmacy</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a51" endpoint="" a:alt_id="21">
+                    <parameters>
+                      <label>Order medicine</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a53" endpoint="" a:alt_id="22">
+                    <parameters>
+                      <label>Pay medicine</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a55" endpoint="" a:alt_id="23">
+                    <parameters>
+                      <label>Receive medicine</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </loop>
+              </loop>
+            </alternative>
+            <alternative condition="End" language="text/javascript">
+              <loop mode="pre_test" condition="true">
+                <call id="a31" endpoint="" a:alt_id="25">
+                  <parameters>
+                    <label>Send patient home</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <loop mode="pre_test" condition="Loop" a:alt_id="26" language="text/javascript">
+                  <call id="a31" endpoint="" a:alt_id="25">
+                    <parameters>
+                      <label>Send patient home</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </loop>
+              </loop>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="Registration check" language="text/javascript">
+      <call id="a13" endpoint="" a:alt_id="27">
+        <parameters>
+          <label>Check if patient is registered in hospital</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="28">
+        <alternative condition="Not registered" language="text/javascript">
+          <call id="a71" endpoint="" a:alt_id="29">
+            <parameters>
+              <label>Register patient</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Registered" language="text/javascript"/>
+      </choose>
+      <call id="a73" endpoint="" a:alt_id="30">
+        <parameters>
+          <label>Pay fee</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="31">
+        <alternative condition="Book doctor" language="text/javascript">
+          <call id="a79" endpoint="" a:alt_id="32">
+            <parameters>
+              <label>Book patient for doctor</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="33">
+            <alternative condition="Examine" language="text/javascript">
+              <call id="a85" endpoint="" a:alt_id="34">
+                <parameters>
+                  <label>Examine the patient</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="35">
+                <alternative condition="Hospitalize" language="text/javascript">
+                  <call id="a91" endpoint="" a:alt_id="36">
+                    <parameters>
+                      <label>Hospitalize</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="37">
+                    <alternative condition="">
+                      <call id="a35" endpoint="" a:alt_id="15">
+                        <parameters>
+                          <label>Book patient for doctor</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="16">
+                        <alternative condition="Examine again" language="text/javascript">
+                          <call id="a41" endpoint="" a:alt_id="17">
+                            <parameters>
+                              <label>Examine the patient</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="End" language="text/javascript"/>
+                      </choose>
+                    </alternative>
+                    <alternative condition="End" language="text/javascript"/>
+                  </choose>
+                </alternative>
+                <alternative condition="End" language="text/javascript">
+                  <loop mode="pre_test" condition="true">
+                    <call id="a93" endpoint="" a:alt_id="38">
+                      <parameters>
+                        <label>Send patient to pharmacy</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <call id="a103" endpoint="" a:alt_id="39">
+                      <parameters>
+                        <label>Visit pharmacy</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <call id="a105" endpoint="" a:alt_id="40">
+                      <parameters>
+                        <label>Order medicine</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <call id="a107" endpoint="" a:alt_id="41">
+                      <parameters>
+                        <label>Pay medicine</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <call id="a109" endpoint="" a:alt_id="42">
+                      <parameters>
+                        <label>Receive medicine</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <loop mode="pre_test" condition="Loop" a:alt_id="43" language="text/javascript">
+                      <call id="a93" endpoint="" a:alt_id="38">
+                        <parameters>
+                          <label>Send patient to pharmacy</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a103" endpoint="" a:alt_id="39">
+                        <parameters>
+                          <label>Visit pharmacy</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a105" endpoint="" a:alt_id="40">
+                        <parameters>
+                          <label>Order medicine</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a107" endpoint="" a:alt_id="41">
+                        <parameters>
+                          <label>Pay medicine</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a109" endpoint="" a:alt_id="42">
+                        <parameters>
+                          <label>Receive medicine</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </loop>
+                  </loop>
+                </alternative>
+                <alternative condition="Send home" language="text/javascript">
+                  <call id="a95" endpoint="" a:alt_id="44">
+                    <parameters>
+                      <label>Send patient home</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="End" language="text/javascript"/>
+          </choose>
+        </alternative>
+        <alternative condition="End" language="text/javascript"/>
+      </choose>
+    </alternative>
+  </choose>
+</description>

@@ -1,0 +1,44 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Defective Computer)
+2:task:(Examine Computer)
+3:task:(Calculate Repair Costs)
+4:task:(Consult Customer)
+5:exclusivegateway:{x}
+6:task:(Return Computer to Customer)
+7:endevent:(((endevent)))
+8:task:(Perform Repair Activities)
+9:parallelgateway:{AND}
+10:task:(Check and Repair Hardware)
+11:task:(Check and Configure Software)
+12:parallelgateway:{AND}
+13:exclusivegateway:{x}
+14:task:(Wait Until Computer Ready)
+15:task:(Test System Functionality)
+16:exclusivegateway:{x}
+17:task:(Escalate Issue)
+18:task:(Proceed to Completion)
+19:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Defective Computer)
+1:task:(Receive Defective Computer) --> 2:task:(Examine Computer)
+2:task:(Examine Computer) --> 3:task:(Calculate Repair Costs)
+3:task:(Calculate Repair Costs) --> 4:task:(Consult Customer)
+4:task:(Consult Customer) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Decline Repair|6:task:(Return Computer to Customer)
+5:exclusivegateway:{x} --> |Approve Repair|8:task:(Perform Repair Activities)
+6:task:(Return Computer to Customer) --> 7:endevent:(((endevent)))
+8:task:(Perform Repair Activities) --> 9:parallelgateway:{AND}
+9:parallelgateway:{AND} --> 10:task:(Check and Repair Hardware)
+9:parallelgateway:{AND} --> 11:task:(Check and Configure Software)
+10:task:(Check and Repair Hardware) --> 12:parallelgateway:{AND}
+11:task:(Check and Configure Software) --> 12:parallelgateway:{AND}
+12:parallelgateway:{AND} --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Not Ready|14:task:(Wait Until Computer Ready)
+13:exclusivegateway:{x} --> |Ready|15:task:(Test System Functionality)
+14:task:(Wait Until Computer Ready) --> 13:exclusivegateway:{x}
+15:task:(Test System Functionality) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |Test Failed|17:task:(Escalate Issue)
+16:exclusivegateway:{x} --> |Test Successful|18:task:(Proceed to Completion)
+17:task:(Escalate Issue) --> 15:task:(Test System Functionality)
+18:task:(Proceed to Completion) --> 19:endevent:(((endevent)))

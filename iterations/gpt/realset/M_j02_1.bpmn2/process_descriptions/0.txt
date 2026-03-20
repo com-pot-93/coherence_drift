@@ -1,0 +1,25 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when a customized airplane order is received.
+2. Once the order is received, it is processed.
+3. After the order is being processed, two activities happen at the same time:
+   - The base model of the airplane is built.
+   - The requirements for the customization are transmitted to the responsible teams.
+4. When both the base model is built and the customization requirements have been transmitted, the process continues.
+5. At this point, a decision is made. If the condition is met (the model shows a path labeled "true"), the process waits for 14 days.
+6. After the 14-day period, another decision is made:
+   - If the condition is met (again, the path labeled "true"), a reminder is sent to the responsible team.
+   - After the reminder is sent, the process waits for another 14 days.
+   - After this second 14-day period, an escalation occurs, and the process loops back to the previous decision point.
+7. If the process does not loop back, it continues with the installation of the individual customized parts in the airplane.
+8. Once the individual parts are installed, the engines and risk factors are checked.
+9. After the checks, the plane is prepared for a test flight.
+10. A test flight protocol is then received.
+11. The test flight protocol is automatically forwarded to the customer.
+12. Next, a choice is made between two shipping options:
+    - The airplane is shipped to the customer using standard shipping.
+    - Or, the airplane is shipped to the customer using premium shipping.
+13. After the shipping is completed (regardless of the method), a confirmation is received via email.
+14. The process then ends.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that all steps and decision points are included and described in clear, everyday language.

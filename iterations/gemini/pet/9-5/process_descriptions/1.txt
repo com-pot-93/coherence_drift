@@ -1,0 +1,17 @@
+The process starts, and then a decision is made based on Condition A.
+If Condition A is not met, the company receives an expense report.
+Then, a decision is made based on Condition E.
+If Condition E is met, the company creates a new employee account.
+Next, a decision is made based on Condition G.
+If Condition G is not met, the company automatically approves the report.
+Otherwise, the supervisor approves the report.
+Then, a decision is made based on Condition I.
+If Condition I is met, the company sends reimbursement to the employee's bank account.
+Next, a decision is made based on Condition K.
+If Condition K is met, the company stops the process, and the employee receives an email cancellation notice.
+After that, the employee re-submits the expense report.
+Otherwise, if Condition K is not met, a decision is made based on Condition L.
+If Condition L is met, the employee receives an approval in progress email.
+Otherwise, a decision is made based on Condition M.
+If Condition M is not met, the employee receives a rejection notice.
+Otherwise, the process ends.

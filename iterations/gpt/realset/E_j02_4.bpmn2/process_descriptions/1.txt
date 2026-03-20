@@ -1,0 +1,28 @@
+The process begins with a starting point. Immediately, two activities are prepared in parallel:
+
+1. The first activity is to check if the baby is younger than two years.
+2. At the same time, the parent is identified.
+
+Once both of these activities are completed, the process continues.
+
+Next, a decision is made based on the parent's situation. If the parent is self-employed, studying, a housewife, or a man, the process skips ahead to the end. Otherwise, the process continues with the following steps:
+
+- A notification is sent to the employer.
+- The process waits for confirmation from the employer.
+- After receiving confirmation, the parent takes maternity leave.
+
+After the parent has taken maternity leave, another decision is made. There are three possible paths:
+
+1. If the leave is to be split, another decision is made based on the length of the split:
+   - If the split is less than two months, a notification is sent to the employer for a split leave of less than two months. The process waits to receive a notification from the employer for this split leave, and then the parent takes maternity leave again after the split of less than two months.
+   - If the split is more than three months, a notification is sent to the employer for a split leave of more than three months. The process waits to receive a notification from the employer for this split leave, and then the parent takes maternity leave again after the split of more than three months.
+
+2. If the leave is to be extended, another decision is made based on the length of the extension:
+   - If the extension is less than two months, a notification is sent to the employer for an extension of less than two months. The process waits to receive a notification from the employer for this extension, and then the parent takes maternity leave again after the extension of less than two months.
+   - If the extension is more than three months, a notification is sent to the employer for an extension of more than three months. The process waits to receive a notification from the employer for this extension, and then the parent takes maternity leave again after the extension of more than three months.
+
+3. If both parents are taking leave at the same time, both parents take maternity leave together.
+
+After any of these paths are completed, the process continues to the next step.
+
+Finally, the process reaches its end point.

@@ -1,0 +1,29 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Receive Customized Airplane Order)
+1:task:(Receive Customized Airplane Order) --> 2:task:(Process Order)
+2:task:(Process Order) --> 3:parallelgateway:{AND}
+3:parallelgateway:{AND} --> 4:task:(Build Airplane Base Model)
+3:parallelgateway:{AND} --> 5:task:(Transmit Customization Requirements)
+4:task:(Build Airplane Base Model) --> 6:parallelgateway:{AND}
+5:task:(Transmit Customization Requirements) --> 6:parallelgateway:{AND}
+6:parallelgateway:{AND} --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Condition True| 8:task:(Wait for 14 Days)
+7:exclusivegateway:{x} --> |Condition False| 9:exclusivegateway:{x}
+8:task:(Wait for 14 Days) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Condition Met| 11:task:(Send Reminder)
+10:exclusivegateway:{x} --> |Condition Not Met| 12:task:(Install Bits and Pieces)
+11:task:(Send Reminder) --> 12:task:(Install Bits and Pieces)
+12:task:(Install Bits and Pieces) --> 13:task:(Control Engines and Risk Factors)
+13:task:(Control Engines and Risk Factors) --> 14:task:(Prepare for Test Flight)
+14:task:(Prepare for Test Flight) --> 15:task:(Receive Test Flight Protocol)
+15:task:(Receive Test Flight Protocol) --> 16:task:(Forward Test Flight Protocol)
+16:task:(Forward Test Flight Protocol) --> 17:exclusivegateway:{x}
+17:exclusivegateway:{x} --> |Standard Delivery| 18:task:(Ship via Standard Delivery)
+17:exclusivegateway:{x} --> |Premium Delivery| 19:task:(Ship via Premium Delivery)
+18:task:(Ship via Standard Delivery) --> 20:exclusivegateway:{x}
+19:task:(Ship via Premium Delivery) --> 20:exclusivegateway:{x}
+20:exclusivegateway:{x} --> 21:task:(Receive Confirmation Email)
+21:task:(Receive Confirmation Email) --> 22:endevent:(((endevent)))
+```

@@ -1,0 +1,31 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Condition A is met| 2:task:(Receive Expense Report)
+    1:exclusivegateway:{x} --> |Condition A is not met| 14:exclusivegateway:{x}
+    2:task:(Receive Expense Report) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |Condition E is met| 4:task:(Create New Employee Account)
+    3:exclusivegateway:{x} --> |Condition E is not met| 40:exclusivegateway:{x}
+    4:task:(Create New Employee Account) --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Condition G is met| 6:task:(Automatically Approve Report)
+    5:exclusivegateway:{x} --> |Condition G is not met| 7:task:(Supervisor Approves Report)
+    6:task:(Automatically Approve Report) --> 8:exclusivegateway:{x}
+    7:task:(Supervisor Approves Report) --> 8:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> |Condition I is met| 9:task:(Send Reimbursement to Bank Account)
+    8:exclusivegateway:{x} --> |Condition I is not met| 41:exclusivegateway:{x}
+    9:task:(Send Reimbursement to Bank Account) --> 10:exclusivegateway:{x}
+    10:exclusivegateway:{x} --> |Condition K is met| 11:endevent:(((endevent)))
+    10:exclusivegateway:{x} --> |Condition K is not met| 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |Condition L is met| 13:task:(Approval in Progress Email)
+    12:exclusivegateway:{x} --> |Condition L is not met| 39:exclusivegateway:{x}
+    13:task:(Approval in Progress Email) --> 15:endevent:(((endevent)))
+    14:exclusivegateway:{x} --> |Condition E is met| 4:task:(Create New Employee Account)
+    14:exclusivegateway:{x} --> |Condition E is not met| 40:exclusivegateway:{x}
+    39:exclusivegateway:{x} --> |Condition M is met| 15:endevent:(((endevent)))
+    39:exclusivegateway:{x} --> |Condition M is not met| 42:task:(Rejection Notice)
+    40:exclusivegateway:{x} --> |Condition G is met| 6:task:(Automatically Approve Report)
+    40:exclusivegateway:{x} --> |Condition G is not met| 7:task:(Supervisor Approves Report)
+    41:exclusivegateway:{x} --> |Condition K is met| 11:endevent:(((endevent)))
+    41:exclusivegateway:{x} --> |Condition K is not met| 12:exclusivegateway:{x}
+    42:task:(Rejection Notice) --> 15:endevent:(((endevent)))
+```

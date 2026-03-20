@@ -1,0 +1,54 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Collect Requirements)
+2:exclusivegateway:{x}
+3:task:(Send Requirements Forward)
+4:task:(Receive Draft)
+5:task:(Check Feasibility)
+6:exclusivegateway:{x}
+7:task:(Refine Requirements)
+8:exclusivegateway:{x}
+9:exclusivegateway:{x}
+10:task:(Prepare Building Permit Report)
+11:exclusivegateway:{x}
+12:task:(Create Order List)
+13:task:(Place Order)
+14:task:(Calculate Effort)
+15:parallelgateway:{AND}
+16:task:(Receive Order)
+17:exclusivegateway:{x}
+18:task:(Call Friends to Help)
+19:task:(Hire Building Company)
+20:parallelgateway:{AND}
+21:task:(Build House)
+22:exclusivegateway:{x}
+23:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Collect Requirements)
+1:task:(Collect Requirements) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Continue|3:task:(Send Requirements Forward)
+2:exclusivegateway:{x} --> |Do not continue|23:endevent:(((endevent)))
+3:task:(Send Requirements Forward) --> 4:task:(Receive Draft)
+4:task:(Receive Draft) --> 5:task:(Check Feasibility)
+5:task:(Check Feasibility) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Needs refinement|7:task:(Refine Requirements)
+6:exclusivegateway:{x} --> |Feasible|8:exclusivegateway:{x}
+7:task:(Refine Requirements) --> 5:task:(Check Feasibility)
+8:exclusivegateway:{x} --> |Report needed|10:task:(Prepare Building Permit Report)
+8:exclusivegateway:{x} --> |No report needed|9:exclusivegateway:{x}
+10:task:(Prepare Building Permit Report) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> 12:task:(Create Order List)
+12:task:(Create Order List) --> 13:task:(Place Order)
+13:task:(Place Order) --> 14:task:(Calculate Effort)
+14:task:(Calculate Effort) --> 15:parallelgateway:{AND}
+15:parallelgateway:{AND} --> 16:task:(Receive Order)
+15:parallelgateway:{AND} --> 17:exclusivegateway:{x}
+16:task:(Receive Order) --> 20:parallelgateway:{AND}
+17:exclusivegateway:{x} --> |Call friends|18:task:(Call Friends to Help)
+17:exclusivegateway:{x} --> |Hire company|19:task:(Hire Building Company)
+18:task:(Call Friends to Help) --> 20:parallelgateway:{AND}
+19:task:(Hire Building Company) --> 20:parallelgateway:{AND}
+20:parallelgateway:{AND} --> 21:task:(Build House)
+21:task:(Build House) --> 22:exclusivegateway:{x}
+22:exclusivegateway:{x} --> |Repeat process|5:task:(Check Feasibility)
+22:exclusivegateway:{x} --> |Do not continue|23:endevent:(((endevent)))

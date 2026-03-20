@@ -1,0 +1,25 @@
+The process starts. It then proceeds through an exclusive gateway. If a condition is true, the process connects to a management system, then proceeds through two consecutive exclusive gateways. After that, the process continues through another exclusive gateway. If a condition is met, the process reads an order. Following this, the process goes through an exclusive gateway and then another exclusive gateway. If a condition is met, a parallel gateway starts three parallel paths.
+
+In the first path, if a condition is met, Penalty 1 is applied; otherwise, the process is marked OK 1. These paths converge at an exclusive gateway, which then joins the parallel gateway.
+
+In the second path, if a condition is met, Penalty 2 is applied; otherwise, the process is marked OK 2. These paths converge at an exclusive gateway, which then joins the parallel gateway.
+
+In the third path, if a condition is met, Penalty 3 is applied; otherwise, the process is marked OK 3. These paths converge at an exclusive gateway, which then joins the parallel gateway.
+
+After the parallel gateway, the product is marked as OK. Then, another parallel gateway starts two parallel paths.
+
+In the first path, the product is packed.
+
+In the second path, a courier is requested.
+
+These paths converge at a parallel gateway. Following this, the delivery is marked as shipped.
+
+If the condition is not met at the second exclusive gateway, the issue is escalated.
+
+The process then proceeds through an exclusive gateway. If a condition is false, the process connects to the management system again. If the condition is true, the issue is escalated, and the process reads the order again. The process then proceeds through an exclusive gateway.
+
+The process then proceeds through two consecutive exclusive gateways.
+
+The process then escalates and proceeds through an exclusive gateway.
+
+The process returns to the first exclusive gateway. If the condition is not true, the process ends.

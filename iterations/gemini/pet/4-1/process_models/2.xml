@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Customer Notice</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Inquire Patient Data</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Inform Nursing Officer</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="4">
+    <parameters>
+      <label>Full Patient Inquiry</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a9" endpoint="" a:alt_id="5">
+    <parameters>
+      <label>Record Information</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a11" endpoint="" a:alt_id="6">
+    <parameters>
+      <label>Hand In Registration Form</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a13" endpoint="" a:alt_id="7">
+    <parameters>
+      <label>Store Information</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a15" endpoint="" a:alt_id="8">
+    <parameters>
+      <label>Print Form Information</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="9">
+    <alternative condition="Yes, File Needed" language="text/javascript">
+      <call id="a19" endpoint="" a:alt_id="10">
+        <parameters>
+          <label>Create Patient File</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a23" endpoint="" a:alt_id="11">
+        <parameters>
+          <label>Store Registration Form</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a25" endpoint="" a:alt_id="12">
+        <parameters>
+          <label>Produce Registration Cards</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a27" endpoint="" a:alt_id="13">
+        <parameters>
+          <label>Add New Patient</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No, File Needed" language="text/javascript"/>
+  </choose>
+  <call id="a21" endpoint="" a:alt_id="14">
+    <parameters>
+      <label>Hold Staff Meeting</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a31" endpoint="" a:alt_id="15">
+    <parameters>
+      <label>Assign New Patients</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a33" endpoint="" a:alt_id="16">
+    <parameters>
+      <label>Record Assignments</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a35" endpoint="" a:alt_id="17">
+    <parameters>
+      <label>Determine Medical File</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a37" endpoint="" a:alt_id="18">
+    <parameters>
+      <label>Add Info to Assignment List</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a39" endpoint="" a:alt_id="19">
+    <parameters>
+      <label>Store Assignments</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a41" endpoint="" a:alt_id="20">
+    <parameters>
+      <label>Pass On Registration Cards</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="21">
+    <alternative condition="Letter Needed" language="text/javascript">
+      <call id="a45" endpoint="" a:alt_id="22">
+        <parameters>
+          <label>Prepare and Send Letter</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a49" endpoint="" a:alt_id="23">
+        <parameters>
+          <label>Receive Medical File Copy</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a51" endpoint="" a:alt_id="24">
+        <parameters>
+          <label>Inform Intaker</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a53" endpoint="" a:alt_id="25">
+        <parameters>
+          <label>Add Copy to Patient File</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No Letter Needed" language="text/javascript"/>
+  </choose>
+  <call id="a47" endpoint="" a:alt_id="26">
+    <parameters>
+      <label>Plan Meeting</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a57" endpoint="" a:alt_id="27">
+    <parameters>
+      <label>Examine Patient</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a59" endpoint="" a:alt_id="28">
+    <parameters>
+      <label>Register Observations</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a61" endpoint="" a:alt_id="29">
+    <parameters>
+      <label>Copy Notes to File</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a63" endpoint="" a:alt_id="30">
+    <parameters>
+      <label>Add Checklist to File</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="31">
+    <alternative condition="Second Intaker Needed" language="text/javascript">
+      <call id="a67" endpoint="" a:alt_id="32">
+        <parameters>
+          <label>Plan First Meeting</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a71" endpoint="" a:alt_id="33">
+        <parameters>
+          <label>Type Tapes</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a73" endpoint="" a:alt_id="34">
+        <parameters>
+          <label>Add Info to Patient File</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No Second Intaker Needed" language="text/javascript"/>
+  </choose>
+  <call id="a69" endpoint="" a:alt_id="35">
+    <parameters>
+      <label>Add Patient to List</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a77" endpoint="" a:alt_id="36">
+    <parameters>
+      <label>Provide List to Team Leader</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a79" endpoint="" a:alt_id="37">
+    <parameters>
+      <label>Formulate Treatment Plan</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

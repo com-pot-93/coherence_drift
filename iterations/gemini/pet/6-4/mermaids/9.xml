@@ -1,0 +1,29 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Determine contact details)
+1:task:(Determine contact details) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Purchase| 4:task:(Call customer)
+2:exclusivegateway:{x} --> |Known person| 3:task:(Identify interested person)
+3:task:(Identify interested person) --> 4:task:(Call customer)
+4:task:(Call customer) --> 5:task:(Determine contact person and budget)
+5:task:(Determine contact person and budget) --> 6:task:(Assess customer's interest)
+6:task:(Assess customer's interest) --> 7:parallelgateway:{AND}
+7:parallelgateway:{AND} --> 8:exclusivegateway:{x}
+7:parallelgateway:{AND} --> 14:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Sales representative presentation| 9:task:(Give sales representative presentation)
+8:exclusivegateway:{x} --> |Pre-sales presentation| 10:task:(Give pre-sales presentation)
+9:task:(Give sales representative presentation) --> 11:task:(Wait for customer)
+10:task:(Give pre-sales presentation) --> 11:task:(Wait for customer)
+11:task:(Wait for customer) --> 13:parallelgateway:{AND}
+14:exclusivegateway:{x} --> |Sales representative presentation| 15:task:(Give sales representative presentation)
+14:exclusivegateway:{x} --> |Pre-sales presentation| 16:task:(Give pre-sales presentation)
+15:task:(Give sales representative presentation) --> 17:task:(Wait for customer)
+16:task:(Give pre-sales presentation) --> 17:task:(Wait for customer)
+17:task:(Wait for customer) --> 13:parallelgateway:{AND}
+13:parallelgateway:{AND} --> 18:exclusivegateway:{x}
+18:exclusivegateway:{x} --> |Sales representative call| 19:task:(Make a sales representative call)
+18:exclusivegateway:{x} --> |Another sales representative call| 20:task:(Make another sales representative call)
+19:task:(Make a sales representative call) --> 21:task:(Create quotation)
+20:task:(Make another sales representative call) --> 21:task:(Create quotation)
+21:task:(Create quotation) --> 22:endevent:(((endevent)))
+```

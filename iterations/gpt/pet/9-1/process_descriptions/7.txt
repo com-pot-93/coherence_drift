@@ -1,0 +1,17 @@
+The process begins with the initiation of the workflow. The first step is to create a backup of the database. Once the backup is complete, the database is checked.
+
+After checking the database, a decision is made. If the process continues, the next step is to check the CRM system. If not, the process skips ahead to a later stage.
+
+If the CRM system is checked, another decision is made. If the process continues, the next step is to register defaulting accounts and customers. If not, the process skips ahead.
+
+If defaulting accounts and customers are registered, another decision is made. If the process continues, a table of defaulting accounts is produced. If not, the process skips ahead.
+
+If the table is produced, it is then sent to account management. After sending the table, a decision is made about whether to send an alert. If an alert needs to be sent, an alert is sent to the supervisor. If not, the process continues without sending an alert. In both cases, the process moves to the next stage.
+
+If at any of the earlier decision points the process was skipped, or after handling the alert, the next step is to check the CRM system again.
+
+After checking the CRM system again, a decision is made about whether to perform reconciliation. If reconciliation is to be performed, the process continues to perform reconciliation. If not, the process moves ahead.
+
+If reconciliation is performed, another decision is made. If a message needs to be sent, a message is sent to the supervisor. If reconciliation is to be completed, the process completes reconciliation. If neither, the process continues. In all cases, the process moves to the next stage.
+
+Finally, the last step is performed, and the process ends.

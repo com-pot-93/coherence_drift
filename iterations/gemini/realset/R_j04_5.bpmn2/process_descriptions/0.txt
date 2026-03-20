@@ -1,0 +1,15 @@
+The process starts. A task is performed, followed by checking if the car is still registered. Depending on the outcome, the process either proceeds to notify the car owner or skips directly to a merging point.
+
+If the car owner is notified, the process continues by checking if the car has been brought to the mechanic. Depending on the outcome, the process either proceeds to a series of tasks or to receiving the car problems.
+
+In the first case, a task is performed, followed by fining the car owner, and then proceeds to a merging point.
+
+In the second case, the car problems are received, an offer of payment is made to the car owner. Depending on the outcome, the process either proceeds to transfer payment to the mechanic or skips directly to a merging point.
+
+If the payment is transferred to the mechanic, the process continues to a merging point.
+
+After the merging point, the process receives confirmation of a successful repair and then receives the time for the next service, before proceeding to a merging point.
+
+After the merging point, the process continues to a merging point.
+
+After the merging point, the process ends.

@@ -1,0 +1,34 @@
+The process begins when the procedure is initiated. After this, a decision is made about whether to proceed. If the decision is not to proceed, the process ends immediately.
+
+If the process continues, the next step is to select a course. After selecting a course, another decision is made. If the process is stopped at this point, it ends.
+
+If the process continues, the available dates for the selected course are shown. The user then selects a date. After the date is selected, another decision is made. If the process is stopped here, it ends.
+
+If the process continues, the account status is checked. Based on the account status, there are two possible paths:
+
+1. **If the user needs to log in:**
+   - The user is prompted to log in.
+   - The user provides payment information.
+   - Registration is completed.
+   - After registration, a decision is made. If the process is stopped, it ends.
+   - If the process continues, two actions happen at the same time: a message is sent to friends, and a ticket is received.
+   - Once both actions are finished, the process ends.
+
+2. **If the user’s account status requires checking university eligibility:**
+   - University eligibility is checked.
+   - After checking, a decision is made:
+     - If the user is eligible, registration for the course is completed.
+     - If registration fails, the process ends.
+     - If registration is successful, another decision is made. If the process is stopped, it ends.
+     - If the process continues, two actions happen at the same time: a message is sent to friends, and a ticket is received.
+     - Once both actions are finished, the process ends.
+   - If the user is not eligible, an activation request is sent.
+   - The process waits for an activation response.
+   - After receiving the response, a decision is made:
+     - If activation fails, the process ends.
+     - If activation is successful, registration is completed.
+     - After registration, a decision is made. If the process is stopped, it ends.
+     - If the process continues, two actions happen at the same time: a message is sent to friends, and a ticket is received.
+     - Once both actions are finished, the process ends.
+
+At every major decision point, there is an option to stop the process, which leads directly to the end. The process always ends after the final actions are completed or if any decision leads to stopping.

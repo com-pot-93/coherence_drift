@@ -1,0 +1,9 @@
+The process begins when a travel request is received. After getting the travel request, the next step is to prepare the tour plan. Once the tour plan is ready, it is sent out. The process then waits to receive a response.
+
+After receiving the response, a decision is made. If the process continues, the tour is booked. Following the booking, another decision is made. If the outcome is positive, the customer is charged. After charging the customer, there is another decision point.
+
+At this stage, there are two possible actions. One option is to contact the customer, after which the process returns to the previous decision point. The other option is to send the bill, then send the booking confirmation, and finally return to the same decision point. This loop continues until the process moves back to the earlier decision point after booking the tour.
+
+If, at any decision point after booking the tour, the process does not continue, it moves back to the previous decision point after receiving the response. If the process does not continue after receiving the response, it ends.
+
+In summary, the process involves receiving a travel request, preparing and sending a tour plan, waiting for a response, making decisions about booking, charging, contacting the customer, sending the bill, and sending booking confirmation, with several points where the process may loop back or end depending on the outcomes of the decisions.

@@ -1,0 +1,51 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Collect mail)
+2:task:(Sort unopened mail)
+3:task:(Distribute mail to recipients)
+4:task:(Open mail)
+5:task:(Sort opened mail)
+6:task:(Record mail details in register)
+7:task:(Perform quality check)
+8:exclusivegateway:{x}
+9:task:(Compile requisition list)
+10:task:(Send requisition list)
+11:exclusivegateway:{x}
+12:task:(Capture matter details)
+13:task:(Provide details to cashier)
+14:task:(Collect fees)
+15:parallelgateway:{AND}
+16:task:(Place receipt in designated location)
+17:task:(Copy documents into envelope)
+18:task:(Post documents to relevant party)
+19:parallelgateway:{AND}
+20:task:(Capture party details)
+21:task:(Print physical court file)
+22:parallelgateway:{AND}
+23:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Collect mail)
+1:task:(Collect mail) --> 2:task:(Sort unopened mail)
+2:task:(Sort unopened mail) --> 3:task:(Distribute mail to recipients)
+3:task:(Distribute mail to recipients) --> 4:task:(Open mail)
+4:task:(Open mail) --> 5:task:(Sort opened mail)
+5:task:(Sort opened mail) --> 6:task:(Record mail details in register)
+6:task:(Record mail details in register) --> 7:task:(Perform quality check)
+7:task:(Perform quality check) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Requisition required|9:task:(Compile requisition list)
+8:exclusivegateway:{x} --> |No requisition required|11:exclusivegateway:{x}
+9:task:(Compile requisition list) --> 10:task:(Send requisition list)
+10:task:(Send requisition list) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> 12:task:(Capture matter details)
+12:task:(Capture matter details) --> 13:task:(Provide details to cashier)
+13:task:(Provide details to cashier) --> 14:task:(Collect fees)
+14:task:(Collect fees) --> 15:parallelgateway:{AND}
+15:parallelgateway:{AND} --> 16:task:(Place receipt in designated location)
+15:parallelgateway:{AND} --> 20:task:(Capture party details)
+16:task:(Place receipt in designated location) --> 17:task:(Copy documents into envelope)
+17:task:(Copy documents into envelope) --> 18:task:(Post documents to relevant party)
+18:task:(Post documents to relevant party) --> 19:parallelgateway:{AND}
+20:task:(Capture party details) --> 21:task:(Print physical court file)
+21:task:(Print physical court file) --> 19:parallelgateway:{AND}
+19:parallelgateway:{AND} --> 22:parallelgateway:{AND}
+22:parallelgateway:{AND} --> 23:endevent:(((endevent)))

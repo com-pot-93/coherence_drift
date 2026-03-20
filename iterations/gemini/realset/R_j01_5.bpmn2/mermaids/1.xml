@@ -1,0 +1,23 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Run Machine)
+    1:task:(Run Machine) --> 2:task:(Check Connection)
+    2:task:(Check Connection) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} -->|Yes| 14:exclusivegateway:{x}
+    3:exclusivegateway:{x} -->|No| 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} -->|Condition A| 5:task:(Collect Measurements)
+    4:exclusivegateway:{x} -->|Condition B| 10:exclusivegateway:{x}
+    5:task:(Collect Measurements) --> 6:task:(Calculate OEE)
+    6:task:(Calculate OEE) --> 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} -->|Yes| 5:task:(Collect Measurements)
+    7:exclusivegateway:{x} -->|No| 8:parallelgateway:{AND}
+    8:parallelgateway:{AND} --> 9:task:(Stop Machine)
+    8:parallelgateway:{AND} --> 11:task:(Send Email to Engineer)
+    9:task:(Stop Machine) --> 12:parallelgateway:{AND}
+    11:task:(Send Email to Engineer) --> 12:parallelgateway:{AND}
+    10:exclusivegateway:{x} --> 12:parallelgateway:{AND}
+    12:parallelgateway:{AND} --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> 4:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> 15:exclusivegateway:{x}
+    15:exclusivegateway:{x} --> 16:endevent:(((endevent)))
+```

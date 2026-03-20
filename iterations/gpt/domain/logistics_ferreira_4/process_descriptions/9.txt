@@ -1,0 +1,11 @@
+The process begins with the collection of temperature values. Once these values are gathered, a decision is made based on whether a certain condition is met. If the condition is met, a standard notification is generated. If the condition is not met, the process skips the notification step. Regardless of the outcome, the process continues to the next phase.
+
+At this point, three activities are initiated at the same time:
+
+1. The status of the container is retrieved. After obtaining this information, the condition of the container is estimated. Based on this estimation, a decision is made about whether a change to the container is needed. If a change is required, a request for a container change is made. If no change is needed, the process continues without making a request. In both cases, the process moves forward.
+
+2. The location of the client is obtained. Using this information, the distance to the client is estimated. After estimating the distance, a decision is made about whether a delivery time estimation is necessary. If it is, the delivery time is estimated. Following this, another decision is made to determine if a change to the delivery route is needed. If a route change is required, a request for a route change is made. If no change is needed, the process continues. If no delivery time estimation is needed, the process also continues without making any changes. In all cases, the process moves forward.
+
+3. The status of the goods is obtained. After this, the condition of the goods is estimated. Based on this estimation, a decision is made about whether damages are suspected. If damages are suspected, the damages are evaluated. After the evaluation, a decision is made about whether the goods need to be removed. If removal is needed, a request for goods removal is made. If no removal is needed, the process continues. If no damages are suspected, the process skips the evaluation and removal steps and proceeds to request a price change. After the price change request, the process moves forward.
+
+Once all three parallel activities are completed, the process continues by sending all generated messages. After the messages are sent, the process ends.

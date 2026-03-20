@@ -1,0 +1,48 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Data Subject Request)
+2:task:(Check Data Relevance)
+3:exclusivegateway:{x}
+4:task:(Stop Using Withdrawn Data)
+5:task:(Communicate Withdrawal)
+6:exclusivegateway:{x}
+7:exclusivegateway:{x}
+8:exclusivegateway:{x}
+9:task:(Inform User of Impact)
+10:task:(Wait for Notification)
+11:exclusivegateway:{x}
+12:task:(Stop All Business Processes Using Withdrawn Data)
+13:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Data Subject Request)
+1:task:(Receive Data Subject Request) --> 2:task:(Check Data Relevance)
+2:task:(Check Data Relevance) --> 3:exclusivegateway:{x}
+
+%% First Path: Data is relevant
+3:exclusivegateway:{x} --> |Relevant|4:task:(Stop Using Withdrawn Data)
+4:task:(Stop Using Withdrawn Data) --> 5:task:(Communicate Withdrawal)
+5:task:(Communicate Withdrawal) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> 13:endevent:(((endevent)))
+
+%% Second Path: Data not immediately relevant
+3:exclusivegateway:{x} --> |Not Relevant|9:task:(Inform User of Impact)
+9:task:(Inform User of Impact) --> 10:task:(Wait for Notification)
+10:task:(Wait for Notification) --> 11:exclusivegateway:{x}
+
+%% Decision after notification
+11:exclusivegateway:{x} --> |Stop|12:task:(Stop All Business Processes Using Withdrawn Data)
+12:task:(Stop All Business Processes Using Withdrawn Data) --> 4:task:(Stop Using Withdrawn Data)
+11:exclusivegateway:{x} --> |Do Not Stop|7:exclusivegateway:{x}
+
+%% After communicating withdrawal in second path
+5:task:(Communicate Withdrawal) --> 6:exclusivegateway:{x}
+
+%% After stopping all business processes, continue as in first path
+4:task:(Stop Using Withdrawn Data) --> 5:task:(Communicate Withdrawal)
+
+%% Merge points for both paths
+6:exclusivegateway:{x} --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> 13:endevent:(((endevent)))

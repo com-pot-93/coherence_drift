@@ -1,0 +1,18 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |Yes| 2:task:(SP / PU / GO request changes to the MPO)
+1:exclusivegateway:{x} --> |No| 3:task:(MPO causes a change)
+2:task:(SP / PU / GO request changes to the MPO) --> 4:task:(MPO reviews the change request)
+3:task:(MPO causes a change) --> 4:task:(MPO reviews the change request)
+4:task:(MPO reviews the change request) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Yes| 6:task:(MPO rejects the change)
+5:exclusivegateway:{x} --> |No| 7:task:(MPO confirmes the change)
+6:task:(MPO rejects the change) --> 8:task:(MPO performs the change)
+7:task:(MPO confirmes the change) --> 8:task:(MPO performs the change)
+8:task:(MPO performs the change) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Yes| 10:task:(MPO reports the implementation to the SP / PU / GO)
+9:exclusivegateway:{x} --> |No| 11:task:(MPO notifies the SP / PU / GO about the failure)
+10:task:(MPO reports the implementation to the SP / PU / GO) --> 12:endevent:(((endevent)))
+11:task:(MPO notifies the SP / PU / GO about the failure) --> 12:endevent:(((endevent)))
+```

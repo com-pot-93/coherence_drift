@@ -1,0 +1,45 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Back Up Database)
+2:task:(Check Database)
+3:exclusivegateway:{x}
+4:task:(Check CRM System)
+5:exclusivegateway:{x}
+6:task:(Register Defaulting Accounts and Customers)
+7:exclusivegateway:{x}
+8:task:(Produce Table of Defaulting Accounts)
+9:task:(Send Table to Account Management)
+10:exclusivegateway:{x}
+11:task:(Send Alert to Supervisor)
+12:task:(Check CRM System Again)
+13:exclusivegateway:{x}
+14:task:(Reconcile with Defaulters Table)
+15:exclusivegateway:{x}
+16:task:(Send Message to Supervisor)
+17:task:(Complete Reconciliation)
+18:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Back Up Database)
+1:task:(Back Up Database) --> 2:task:(Check Database)
+2:task:(Check Database) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Continue|4:task:(Check CRM System)
+3:exclusivegateway:{x} --> |Skip to next stage|10:exclusivegateway:{x}
+4:task:(Check CRM System) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Continue|6:task:(Register Defaulting Accounts and Customers)
+5:exclusivegateway:{x} --> |Skip to next stage|10:exclusivegateway:{x}
+6:task:(Register Defaulting Accounts and Customers) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Continue|8:task:(Produce Table of Defaulting Accounts)
+7:exclusivegateway:{x} --> |Skip to next stage|10:exclusivegateway:{x}
+8:task:(Produce Table of Defaulting Accounts) --> 9:task:(Send Table to Account Management)
+9:task:(Send Table to Account Management) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Alert needed|11:task:(Send Alert to Supervisor)
+10:exclusivegateway:{x} --> |No alert needed|12:task:(Check CRM System Again)
+11:task:(Send Alert to Supervisor) --> 12:task:(Check CRM System Again)
+12:task:(Check CRM System Again) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Reconciliation needed|14:task:(Reconcile with Defaulters Table)
+13:exclusivegateway:{x} --> |No reconciliation needed|15:exclusivegateway:{x}
+14:task:(Reconcile with Defaulters Table) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> |Send message|16:task:(Send Message to Supervisor)
+15:exclusivegateway:{x} --> |Complete reconciliation|17:task:(Complete Reconciliation)
+16:task:(Send Message to Supervisor) --> 18:endevent:(((endevent)))
+17:task:(Complete Reconciliation) --> 18:endevent:(((endevent)))

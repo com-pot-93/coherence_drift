@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Travel Request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Prepare Tour Plan</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Send Tour Plan</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="4">
+    <alternative condition="Continue" language="text/javascript">
+      <choose mode="exclusive" a:alt_id="5">
+        <alternative condition="Negative outcome" language="text/javascript"/>
+        <alternative condition="No negative outcome" language="text/javascript">
+          <call id="a15" endpoint="" a:alt_id="7">
+            <parameters>
+              <label>Wait for Response</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="8">
+            <alternative condition="Do not continue" language="text/javascript"/>
+            <alternative condition="Continue" language="text/javascript">
+              <choose mode="exclusive" a:alt_id="9">
+                <alternative condition="Do not continue" language="text/javascript"/>
+                <alternative condition="Continue" language="text/javascript">
+                  <call id="a25" endpoint="" a:alt_id="10">
+                    <parameters>
+                      <label>Book Tour</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="11">
+                    <alternative condition="Do not continue" language="text/javascript"/>
+                    <alternative condition="Continue" language="text/javascript">
+                      <call id="a31" endpoint="" a:alt_id="12">
+                        <parameters>
+                          <label>Charge Customer</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="13">
+                        <alternative condition="Do not continue" language="text/javascript"/>
+                        <alternative condition="">
+                          <choose mode="inclusive" a:alt_id="14">
+                            <alternative condition="Contact customer" language="text/javascript">
+                              <call id="a39" endpoint="" a:alt_id="15">
+                                <parameters>
+                                  <label>Contact Customer</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="Send bill and confirmation" language="text/javascript">
+                              <call id="a41" endpoint="" a:alt_id="16">
+                                <parameters>
+                                  <label>Send Bill</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a47" endpoint="" a:alt_id="17">
+                                <parameters>
+                                  <label>Send Booking Confirmation</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="No further action" language="text/javascript"/>
+                          </choose>
+                          <choose mode="inclusive" a:alt_id="19">
+                            <alternative condition="Contact customer" language="text/javascript">
+                              <call id="a53" endpoint="" a:alt_id="20">
+                                <parameters>
+                                  <label>Contact Customer</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="Send bill and confirmation" language="text/javascript">
+                              <call id="a55" endpoint="" a:alt_id="21">
+                                <parameters>
+                                  <label>Send Bill</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a61" endpoint="" a:alt_id="22">
+                                <parameters>
+                                  <label>Send Booking Confirmation</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="No further action" language="text/javascript"/>
+                          </choose>
+                          <choose mode="inclusive" a:alt_id="24">
+                            <alternative condition="Contact customer" language="text/javascript">
+                              <call id="a67" endpoint="" a:alt_id="25">
+                                <parameters>
+                                  <label>Contact Customer</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="Send bill and confirmation" language="text/javascript">
+                              <call id="a69" endpoint="" a:alt_id="26">
+                                <parameters>
+                                  <label>Send Bill</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a75" endpoint="" a:alt_id="27">
+                                <parameters>
+                                  <label>Send Booking Confirmation</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="No further action" language="text/javascript"/>
+                          </choose>
+                          <choose mode="inclusive" a:alt_id="29">
+                            <alternative condition="Contact customer" language="text/javascript">
+                              <call id="a81" endpoint="" a:alt_id="30">
+                                <parameters>
+                                  <label>Contact Customer</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="Send bill and confirmation" language="text/javascript">
+                              <call id="a83" endpoint="" a:alt_id="31">
+                                <parameters>
+                                  <label>Send Bill</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a89" endpoint="" a:alt_id="32">
+                                <parameters>
+                                  <label>Send Booking Confirmation</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="No further action" language="text/javascript"/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                  </choose>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="Do not continue" language="text/javascript"/>
+  </choose>
+</description>

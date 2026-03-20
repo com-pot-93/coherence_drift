@@ -1,0 +1,17 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Receive data subject request)
+  1:task:(Receive data subject request) --> 2:task:(Check if withdrawn data are relevant)
+  2:task:(Check if withdrawn data are relevant) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |yes| 11:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |no| 4:task:(Inform the user that the withdraw will stop all running BPs)
+  4:task:(Inform the user that the withdraw will stop all running BPs) --> 5:task:(Receive the notification about continuation)
+  5:task:(Receive the notification about continuation) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |yes| 7:task:(Stop running BPs using withdrawn data)
+  7:task:(Stop running BPs using withdrawn data) --> 10:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |no| 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> 12:task:(Stop using withdrawn data)
+  12:task:(Stop using withdrawn data) --> 13:task:(Communicate the withdraw)
+  13:task:(Communicate the withdraw) --> 14:endevent:(((endevent)))
+```

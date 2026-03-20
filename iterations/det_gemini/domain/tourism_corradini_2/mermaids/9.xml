@@ -1,0 +1,28 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Search for a customer)
+  1:task:(Search for a customer) --> 2:task:(Make customer an offer)
+  2:task:(Make customer an offer) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |yes| 4:task:(Receive additional request)
+  4:task:(Receive additional request) --> 5:task:(Provide details)
+  5:task:(Provide details) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |yes| 7:task:(Receive booking request)
+  7:task:(Receive booking request) --> 8:task:(Send the bill)
+  8:task:(Send the bill) --> 9:task:(Receive payment)
+  9:task:(Receive payment) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |yes| 11:task:(Contact customer)
+  10:exclusivegateway:{x} --> |no| 12:task:(Book travel)
+  11:task:(Contact customer) --> 13:inclusivegateway:{O}
+  12:task:(Book travel) --> 14:task:(Send booking confirmation)
+  14:task:(Send booking confirmation) --> 13:inclusivegateway:{O}
+  13:inclusivegateway:{O} --> 21:inclusivegateway:{O}
+  6:exclusivegateway:{x} --> |no| 21:inclusivegateway:{O}
+  3:exclusivegateway:{x} --> |no| 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |yes| 16:task:(Contact customer)
+  15:exclusivegateway:{x} --> |no| 17:task:(Book travel)
+  16:task:(Contact customer) --> 20:inclusivegateway:{O}
+  17:task:(Book travel) --> 18:task:(Send booking confirmation)
+  18:task:(Send booking confirmation) --> 20:inclusivegateway:{O}
+  20:inclusivegateway:{O} --> 21:inclusivegateway:{O}
+  21:inclusivegateway:{O} --> 19:endevent:(((endevent)))
+```

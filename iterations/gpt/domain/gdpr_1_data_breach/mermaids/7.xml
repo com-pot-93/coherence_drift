@@ -1,0 +1,49 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Detect Incident)
+2:task:(Retrieve Breached Data)
+3:task:(Identify Affected Individuals)
+4:parallelgateway:{AND}
+5:task:(Limit Further Data Loss)
+6:task:(Notify National Authority)
+7:parallelgateway:{AND}
+8:task:(Evaluate Stolen Data)
+9:exclusivegateway:{x}
+10:task:(Send Stolen Data Notification)
+11:exclusivegateway:{x}
+12:task:(Evaluate Security Standards)
+13:exclusivegateway:{x}
+14:task:(Send Security Standards Notification)
+15:exclusivegateway:{x}
+16:task:(Request Clarification)
+17:task:(Receive Clarification Response)
+18:exclusivegateway:{x}
+19:task:(Send Clarification Notification)
+20:exclusivegateway:{x}
+21:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Detect Incident)
+1:task:(Detect Incident) --> 2:task:(Retrieve Breached Data)
+2:task:(Retrieve Breached Data) --> 3:task:(Identify Affected Individuals)
+3:task:(Identify Affected Individuals) --> 4:parallelgateway:{AND}
+4:parallelgateway:{AND} --> 5:task:(Limit Further Data Loss)
+4:parallelgateway:{AND} --> 6:task:(Notify National Authority)
+5:task:(Limit Further Data Loss) --> 7:parallelgateway:{AND}
+6:task:(Notify National Authority) --> 7:parallelgateway:{AND}
+7:parallelgateway:{AND} --> 8:task:(Evaluate Stolen Data)
+8:task:(Evaluate Stolen Data) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Notification required|10:task:(Send Stolen Data Notification)
+9:exclusivegateway:{x} --> |No notification|11:exclusivegateway:{x}
+10:task:(Send Stolen Data Notification) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> 12:task:(Evaluate Security Standards)
+12:task:(Evaluate Security Standards) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Notification required|14:task:(Send Security Standards Notification)
+13:exclusivegateway:{x} --> |No notification|15:exclusivegateway:{x}
+14:task:(Send Security Standards Notification) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> 16:task:(Request Clarification)
+16:task:(Request Clarification) --> 17:task:(Receive Clarification Response)
+17:task:(Receive Clarification Response) --> 18:exclusivegateway:{x}
+18:exclusivegateway:{x} --> |Notification required|19:task:(Send Clarification Notification)
+18:exclusivegateway:{x} --> |No notification|20:exclusivegateway:{x}
+19:task:(Send Clarification Notification) --> 20:exclusivegateway:{x}
+20:exclusivegateway:{x} --> 21:endevent:(((endevent)))

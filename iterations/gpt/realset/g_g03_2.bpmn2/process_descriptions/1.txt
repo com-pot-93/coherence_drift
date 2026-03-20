@@ -1,0 +1,19 @@
+The process begins when the user starts the procedure. The first step is to open the Battle.net application.
+
+After opening the application, the user is faced with a decision: whether account information is needed. If account information is required, the user must enter their account details. Once the account information is entered, the user needs to click a confirmation link sent via email. After clicking the confirmation link, the process continues.
+
+If account information is not needed, the process skips directly to the next step.
+
+In both cases, the user proceeds to log into Battle.net. After logging in, the user’s account information is loaded.
+
+Next, the user faces another decision: whether to select a payment method. If a payment method is to be selected, the user chooses between two options: credit card or IBAN/BIC. If the user selects credit card, they enter their credit card information. If the user selects IBAN/BIC, they enter their IBAN and BIC details. After entering the relevant payment information, the process continues.
+
+If no payment method is selected, the process moves forward without entering any payment details.
+
+After this, the user logs into the game. Once logged in, the game loads the user’s in-game data and position.
+
+At this point, three actions are performed at the same time: the user selects a realm, selects a race, and selects a class. All three selections must be completed before moving on.
+
+Once these selections are made, the user names their character. After naming the character, the user receives a confirmation and selfies.
+
+The process ends at this point.

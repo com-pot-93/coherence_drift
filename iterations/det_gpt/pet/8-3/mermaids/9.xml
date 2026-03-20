@@ -1,0 +1,42 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(HFD detects a number of personnel requirements)
+2:task:(HFD reports the vacancy to Personnel Department)
+3:task:(HFD gets the job description for review from Personnel Department)
+4:exclusivegateway:{x}
+5:task:(HFD asks for corrections)
+6:exclusivegateway:{x}
+7:task:(HFD gets the job description for review from Personnel Department)
+8:exclusivegateway:{x}
+9:task:(HFD approves the job description)
+10:task:(HFD advertizes the vacancy)
+11:exclusivegateway:{x}
+12:exclusivegateway:{x}
+13:task:(HFD approves the job description)
+14:task:(HFD advertizes the vacancy)
+15:exclusivegateway:{x}
+16:exclusivegateway:{x}
+17:exclusivegateway:{x}
+18:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(HFD detects a number of personnel requirements)
+1:task:(HFD detects a number of personnel requirements) --> 2:task:(HFD reports the vacancy to Personnel Department)
+2:task:(HFD reports the vacancy to Personnel Department) --> 3:task:(HFD gets the job description for review from Personnel Department)
+3:task:(HFD gets the job description for review from Personnel Department) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Corrections needed|5:task:(HFD asks for corrections)
+4:exclusivegateway:{x} --> |No corrections|13:task:(HFD approves the job description)
+5:task:(HFD asks for corrections) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Loop|7:task:(HFD gets the job description for review from Personnel Department)
+6:exclusivegateway:{x} --> |Approve|9:task:(HFD approves the job description)
+7:task:(HFD gets the job description for review from Personnel Department) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Approve|9:task:(HFD approves the job description)
+8:exclusivegateway:{x} --> |Loop|7:task:(HFD gets the job description for review from Personnel Department)
+9:task:(HFD approves the job description) --> 10:task:(HFD advertizes the vacancy)
+10:task:(HFD advertizes the vacancy) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> 17:exclusivegateway:{x}
+13:task:(HFD approves the job description) --> 14:task:(HFD advertizes the vacancy)
+14:task:(HFD advertizes the vacancy) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> 17:exclusivegateway:{x}
+17:exclusivegateway:{x} --> 18:endevent:(((endevent)))

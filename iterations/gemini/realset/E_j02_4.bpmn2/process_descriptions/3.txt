@@ -1,0 +1,15 @@
+The process starts. Then, two tasks, "Check Baby Age" and "Check Parent Status," are performed in parallel. After both tasks are completed, a decision is made based on employment status.
+
+If the person is "Employed," a notification is sent to the employer, followed by receiving a confirmation and then taking maternity leave. Otherwise, if the person is "Self-Employed/Studying/Housewife/Man," this step is skipped.
+
+Next, a decision is made, and depending on the path taken, a notification is sent to the employer.
+
+Following this, another decision is made, leading to either performing "Task A" or "Task B." After either task is completed, an employer notification is received, and maternity leave is taken.
+
+Alternatively, after the first decision, a different notification is sent to the employer.
+
+Subsequently, another decision is made, leading to either performing "Task C" or "Task D." After either task is completed, an employer notification is received, and maternity leave is taken.
+
+As another alternative after the first decision, "Parents Take Leave."
+
+Finally, after any of the paths converge, the process continues, and then it ends.

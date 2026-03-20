@@ -1,0 +1,7 @@
+The process begins when the manager checks the open leads. After reviewing the leads, the manager selects the top five leads from the list. Next, the manager instructs the sales assistant to contact these selected leads.
+
+At this point, the process enters a repeating cycle. For each of the top five leads, the following steps are performed:
+
+The sales assistant calls the customer associated with the lead. After making the call, there is a decision point. If the process requires it, the sales assistant sends a note to the manager about the lead. The manager then processes the lead based on the information received. After this, the process checks if there are more leads among the top five that still need to be contacted. If there are, the cycle repeats for the next lead.
+
+Once all five leads have been contacted and processed in this way, the process comes to an end.

@@ -1,0 +1,50 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive order)
+2:exclusivegateway:{x}
+3:task:(Handle order rejection)
+4:endevent:(((endevent)))
+5:task:(Inform storehouse)
+6:task:(Notify engineering department)
+7:parallelgateway:{AND}
+8:subprocess:(Assembly preparations)
+9:task:(Process part list)
+10:parallelgateway:{AND}
+11:subprocess:(Assembly preparations)
+12:task:(Check part list)
+13:task:(Verify part quantities)
+14:exclusivegateway:{x}
+15:task:(Reserve parts)
+16:task:(Create back-order)
+17:parallelgateway:{AND}
+18:parallelgateway:{AND}
+19:task:(Assemble bicycle)
+20:task:(Ship bicycle)
+21:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive order)
+1:task:(Receive order) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Order rejected|3:task:(Handle order rejection)
+2:exclusivegateway:{x} --> |Order accepted|5:task:(Inform storehouse)
+3:task:(Handle order rejection) --> 4:endevent:(((endevent)))
+5:task:(Inform storehouse) --> 6:task:(Notify engineering department)
+6:task:(Notify engineering department) --> 7:parallelgateway:{AND}
+7:parallelgateway:{AND} --> 8:subprocess:(Assembly preparations)
+7:parallelgateway:{AND} --> 9:task:(Process part list)
+8:subprocess:(Assembly preparations) --> 10:parallelgateway:{AND}
+9:task:(Process part list) --> 10:parallelgateway:{AND}
+10:parallelgateway:{AND} --> 11:subprocess:(Assembly preparations)
+10:parallelgateway:{AND} --> 12:task:(Check part list)
+11:subprocess:(Assembly preparations) --> 17:parallelgateway:{AND}
+12:task:(Check part list) --> 13:task:(Verify part quantities)
+13:task:(Verify part quantities) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |All parts available|15:task:(Reserve parts)
+14:exclusivegateway:{x} --> |Parts missing|16:task:(Create back-order)
+15:task:(Reserve parts) --> 17:parallelgateway:{AND}
+16:task:(Create back-order) --> 17:parallelgateway:{AND}
+17:parallelgateway:{AND} --> 18:parallelgateway:{AND}
+11:subprocess:(Assembly preparations) --> 18:parallelgateway:{AND}
+8:subprocess:(Assembly preparations) --> 18:parallelgateway:{AND}
+18:parallelgateway:{AND} --> 19:task:(Assemble bicycle)
+19:task:(Assemble bicycle) --> 20:task:(Ship bicycle)
+20:task:(Ship bicycle) --> 21:endevent:(((endevent)))

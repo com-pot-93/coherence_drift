@@ -1,0 +1,20 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Dismissal from MSPN)
+2:task:(Review Dismissal by MSPO)
+3:exclusivegateway:{x}
+4:task:(Reject Dismissal)
+5:task:(Confirm Dismissal)
+6:exclusivegateway:{x}
+7:task:(Final Step)
+8:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Dismissal from MSPN)
+1:task:(Receive Dismissal from MSPN) --> 2:task:(Review Dismissal by MSPO)
+2:task:(Review Dismissal by MSPO) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Rejected|4:task:(Reject Dismissal)
+3:exclusivegateway:{x} --> |Confirmed|5:task:(Confirm Dismissal)
+4:task:(Reject Dismissal) --> 6:exclusivegateway:{x}
+5:task:(Confirm Dismissal) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> 7:task:(Final Step)
+7:task:(Final Step) --> 8:endevent:(((endevent)))

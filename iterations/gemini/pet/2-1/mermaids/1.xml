@@ -1,0 +1,56 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Perceive Service Degradation)
+    1:task:(Perceive Service Degradation) --> 2:task:(Send Problem Parameters to Customer Service)
+    2:task:(Send Problem Parameters to Customer Service) --> 3:task:(Enter Problem Report)
+    3:task:(Enter Problem Report) --> 4:task:(Compare to SLA)
+    4:task:(Compare to SLA) --> 5:task:(Determine Countermeasures)
+    5:task:(Determine Countermeasures) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |Path 1| 5:task:(Determine Countermeasures)
+    6:exclusivegateway:{x} --> |Path 2| 7:task:(Determine Customer Significance)
+    6:exclusivegateway:{x} --> |Path 3| 8:task:(Link to Extra Problem Fix Process)
+    7:task:(Determine Customer Significance) --> 9:inclusivegateway:{O}
+    8:task:(Link to Extra Problem Fix Process) --> 9:inclusivegateway:{O}
+    5:task:(Determine Countermeasures) --> 9:inclusivegateway:{O}
+    9:inclusivegateway:{O} --> 10:task:(Create Detailed Problem Report)
+    10:task:(Create Detailed Problem Report) --> 11:task:(Send to Service Management)
+    11:task:(Send to Service Management) --> 12:task:(Deal with Quality Violations and Investigate)
+    12:task:(Deal with Quality Violations and Investigate) --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> |Path 1| 14:task:(Perform Analysis and Create Trouble Report)
+    13:exclusivegateway:{x} --> |Path 2| 15:task:(Send Problem Report to Resource Provisioning)
+    14:task:(Perform Analysis and Create Trouble Report) --> 24:inclusivegateway:{O}
+    15:task:(Send Problem Report to Resource Provisioning) --> 16:task:(Check for Potential Issues)
+    16:task:(Check for Potential Issues) --> 17:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> |Path 1| 18:task:(Analyse Problem and Create Trouble Report)
+    17:exclusivegateway:{x} --> |Path 2| 19:task:(Create Service Execution Notification)
+    18:task:(Analyse Problem and Create Trouble Report) --> 20:inclusivegateway:{O}
+    19:task:(Create Service Execution Notification) --> 20:inclusivegateway:{O}
+    20:inclusivegateway:{O} --> 21:task:(Send Status Report to Service Management)
+    21:task:(Send Status Report to Service Management) --> 24:inclusivegateway:{O}
+    24:inclusivegateway:{O} --> 22:task:(Prepare Final Status Report)
+    22:task:(Prepare Final Status Report) --> 23:exclusivegateway:{x}
+    23:exclusivegateway:{x} --> |Path 1| 25:task:(Create Request for Automatic Resource Restoration)
+    23:exclusivegateway:{x} --> |Path 2| 26:task:(Send Actual Service Performance Data to Customer Service)
+    23:exclusivegateway:{x} --> |Path 3| 27:task:(Undertake Corrective Actions)
+    25:task:(Create Request for Automatic Resource Restoration) --> 28:task:(Send to Resource Provisioning)
+    26:task:(Send Actual Service Performance Data to Customer Service) --> 34:inclusivegateway:{O}
+    27:task:(Undertake Corrective Actions) --> 34:inclusivegateway:{O}
+    28:task:(Send to Resource Provisioning) --> 29:task:(Receive Restoration Request)
+    29:task:(Receive Restoration Request) --> 30:task:(Track Errors and Take Corrective Actions)
+    30:task:(Track Errors and Take Corrective Actions) --> 31:task:(Create Troubleshooting Report)
+    31:task:(Create Troubleshooting Report) --> 32:task:(Send Report to Service Management)
+    32:task:(Send Report to Service Management) --> 33:task:(Send Troubleshooting Report to Customer Service)
+    33:task:(Send Troubleshooting Report to Customer Service) --> 34:inclusivegateway:{O}
+    34:inclusivegateway:{O} --> 35:task:(Create Problem Resolution Report)
+    35:task:(Create Problem Resolution Report) --> 36:task:(Send to Customer Service)
+    36:task:(Send to Customer Service) --> 37:task:(Receive Problem Resolution Report)
+    37:task:(Receive Problem Resolution Report) --> 38:parallelgateway:{AND}
+    38:parallelgateway:{AND} --> 39:task:(Create Report for Customer)
+    38:parallelgateway:{AND} --> 40:task:(Report SLA Violation Rebate to Billing & Collections)
+    39:task:(Create Report for Customer) --> 41:inclusivegateway:{O}
+    40:task:(Report SLA Violation Rebate to Billing & Collections) --> 41:inclusivegateway:{O}
+    41:inclusivegateway:{O} --> 42:task:(Adjust Billing)
+    42:task:(Adjust Billing) --> 43:task:(Send Report to Customer)
+    43:task:(Send Report to Customer) --> 44:task:(Customer Receives Report)
+    44:task:(Customer Receives Report) --> 45:endevent:(((endevent)))
+```

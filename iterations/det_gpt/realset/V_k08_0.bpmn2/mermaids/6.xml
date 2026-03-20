@@ -1,0 +1,98 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Enter login data)
+  2:task:(Check if credentials are correct)
+  3:exclusivegateway:{x}
+  4:exclusivegateway:{x}
+  5:exclusivegateway:{x}
+  6:task:(Select product)
+  7:exclusivegateway:{x}
+  8:task:(Add it to shopping cart)
+  9:task:(Save item)
+  10:exclusivegateway:{x}
+  11:task:(Add it to shopping cart)
+  12:task:(Save item)
+  13:exclusivegateway:{x}
+  14:task:(Select product)
+  15:exclusivegateway:{x}
+  16:task:(Add it to shopping cart)
+  17:task:(Save item)
+  18:exclusivegateway:{x}
+  19:task:(Add it to shopping cart)
+  20:task:(Save item)
+  21:exclusivegateway:{x}
+  22:task:(Check if every selected item is in the shopping cart)
+  23:task:(Confirm order)
+  24:parallelgateway:{AND}
+  25:task:(Prepare shipment details)
+  26:task:(Prepare payment details)
+  27:parallelgateway:{AND}
+  28:task:(Enter payment data)
+  29:parallelgateway:{AND}
+  30:task:(Send payment data to bank institut)
+  31:task:(Enter shipping details)
+  32:parallelgateway:{AND}
+  33:exclusivegateway:{x}
+  34:task:(Confirm and save order)
+  35:exclusivegateway:{x}
+  36:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Enter login data)
+  1:task:(Enter login data) --> 2:task:(Check if credentials are correct)
+  2:task:(Check if credentials are correct) --> 3:exclusivegateway:{x}
+  %% D1
+  3:exclusivegateway:{x} --> |true|4:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |false|21:exclusivegateway:{x}
+  %% D2
+  4:exclusivegateway:{x} --> |true|6:task:(Select product)
+  4:exclusivegateway:{x} --> |false|14:task:(Select product)
+  %% D3
+  6:task:(Select product) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |true|8:task:(Add it to shopping cart)
+  7:exclusivegateway:{x} --> |branch1|10:exclusivegateway:{x}
+  8:task:(Add it to shopping cart) --> 9:task:(Save item)
+  9:task:(Save item) --> 5:exclusivegateway:{x}
+  %% D4
+  10:exclusivegateway:{x} --> |true|11:task:(Add it to shopping cart)
+  10:exclusivegateway:{x} --> |false|5:exclusivegateway:{x}
+  11:task:(Add it to shopping cart) --> 12:task:(Save item)
+  12:task:(Save item) --> 5:exclusivegateway:{x}
+  %% D3 merge
+  5:exclusivegateway:{x} --> 4:exclusivegateway:{x}
+  %% D2 merge
+  4:exclusivegateway:{x} --> 13:exclusivegateway:{x}
+  14:task:(Select product) --> 15:exclusivegateway:{x}
+  %% D5
+  15:exclusivegateway:{x} --> |branch1|16:task:(Add it to shopping cart)
+  15:exclusivegateway:{x} --> |branch2|18:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |branch3|13:exclusivegateway:{x}
+  16:task:(Add it to shopping cart) --> 17:task:(Save item)
+  17:task:(Save item) --> 13:exclusivegateway:{x}
+  %% D6
+  18:exclusivegateway:{x} --> |true|19:task:(Add it to shopping cart)
+  18:exclusivegateway:{x} --> |false|13:exclusivegateway:{x}
+  19:task:(Add it to shopping cart) --> 20:task:(Save item)
+  20:task:(Save item) --> 13:exclusivegateway:{x}
+  %% D5 merge
+  13:exclusivegateway:{x} --> 21:exclusivegateway:{x}
+  %% D1 merge
+  21:exclusivegateway:{x} --> 22:task:(Check if every selected item is in the shopping cart)
+  22:task:(Check if every selected item is in the shopping cart) --> 23:task:(Confirm order)
+  23:task:(Confirm order) --> 24:parallelgateway:{AND}
+  24:parallelgateway:{AND} --> 25:task:(Prepare shipment details)
+  24:parallelgateway:{AND} --> 26:task:(Prepare payment details)
+  25:task:(Prepare shipment details) --> 27:parallelgateway:{AND}
+  26:task:(Prepare payment details) --> 27:parallelgateway:{AND}
+  27:parallelgateway:{AND} --> 28:task:(Enter payment data)
+  28:task:(Enter payment data) --> 29:parallelgateway:{AND}
+  29:parallelgateway:{AND} --> 30:task:(Send payment data to bank institut)
+  29:parallelgateway:{AND} --> 31:task:(Enter shipping details)
+  30:task:(Send payment data to bank institut) --> 32:parallelgateway:{AND}
+  31:task:(Enter shipping details) --> 32:parallelgateway:{AND}
+  32:parallelgateway:{AND} --> 33:exclusivegateway:{x}
+  %% D7
+  33:exclusivegateway:{x} --> |success|34:task:(Confirm and save order)
+  33:exclusivegateway:{x} --> |failure|35:exclusivegateway:{x}
+  34:task:(Confirm and save order) --> 35:exclusivegateway:{x}
+  %% D7 merge
+  35:exclusivegateway:{x} --> 36:endevent:(((endevent)))

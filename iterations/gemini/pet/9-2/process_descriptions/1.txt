@@ -1,0 +1,7 @@
+The process starts with sending a mortgage offer. After sending the offer, the process waits for a reply. Depending on whether a response is received or not, the process follows different paths.
+
+If no response is received, the case details are updated, the work is archived, and a cancellation is performed.
+
+If a response is received, the case is moved to administration, a request for documents is generated, the case details are updated, and the work is archived, followed by performing a cancellation.
+
+Finally, after performing a cancellation in either scenario, the process ends.

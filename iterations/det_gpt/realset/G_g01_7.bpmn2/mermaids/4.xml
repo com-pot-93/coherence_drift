@@ -1,0 +1,22 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(send invitations for friends)
+2:task:(to send questio, which games do you want to play?)
+3:task:(recive list of games)
+4:task:(Choose games)
+5:exclusivegateway:{x}
+6:task:(appoint date  of LAN party  requiest to send)
+7:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x}
+9:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(send invitations for friends)
+1:task:(send invitations for friends) --> 2:task:(to send questio, which games do you want to play?)
+2:task:(to send questio, which games do you want to play?) --> 3:task:(recive list of games)
+3:task:(recive list of games) --> 4:task:(Choose games)
+4:task:(Choose games) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |false|4:task:(Choose games)
+5:exclusivegateway:{x} --> |true|6:task:(appoint date  of LAN party  requiest to send)
+6:task:(appoint date  of LAN party  requiest to send) --> 7:task:(appoint date  of LAN party  requiest to send)
+7:task:(appoint date  of LAN party  requiest to send) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> 9:endevent:(((endevent)))

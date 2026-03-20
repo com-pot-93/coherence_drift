@@ -1,0 +1,4 @@
+The process starts. It then splits into two parallel activities.
+In the first branch, a price request is sent to airlines, and the airline responses are received. Then, an airline is selected.
+In the second branch, a price request is sent to hotels, and the hotel responses are received. Then, a hotel is selected.
+After completing both branches, the process merges back into a single flow. A tour plan is prepared and sent, and the process ends.

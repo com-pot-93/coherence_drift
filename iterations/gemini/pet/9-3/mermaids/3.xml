@@ -1,0 +1,12 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Draft Schedule)
+1:task:(Draft Schedule) --> 2:task:(Add Dates to Calendars)
+2:task:(Add Dates to Calendars) --> 3:task:(Check Dates)
+3:task:(Check Dates) --> 4:task:(Suggest Modifications)
+4:task:(Suggest Modifications) --> 5:task:(Recheck Dates and Conflicts)
+5:task:(Recheck Dates and Conflicts) --> 6:task:(Send Final Schedule)
+6:task:(Send Final Schedule) --> 7:task:(Check Diaries)
+7:task:(Check Diaries) --> 8:task:(Report Conflicts)
+8:task:(Report Conflicts) --> 9:endevent:(((endevent)))
+```

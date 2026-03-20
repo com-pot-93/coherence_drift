@@ -1,0 +1,51 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Receive Call)
+  2:exclusivegateway:{x}
+  3:task:(Add Patient to List)
+  4:exclusivegateway:{x}
+  5:task:(Perform Checks)
+  6:exclusivegateway:{x}
+  7:exclusivegateway:{x}
+  8:exclusivegateway:{x}
+  9:task:(Call Patient to Hospital)
+  10:task:(Hospitalize Patient)
+  11:task:(Childbirth)
+  12:exclusivegateway:{x}
+  13:task:(Provide Post-Hospitalization Care)
+  14:task:(Provide Special Treatment)
+  15:exclusivegateway:{x}
+  16:task:(Finalize Process)
+  17:endevent:(((endevent)))
+  18:task:(Escalate Case)
+  19:task:(Checks After Escalation)
+  20:exclusivegateway:{x}
+
+  0:startevent:((startevent)) --> 1:task:(Receive Call)
+  1:task:(Receive Call) --> 2:exclusivegateway:{x}
+  2:exclusivegateway:{x} --> |Patient not accepted|17:endevent:(((endevent)))
+  2:exclusivegateway:{x} --> |Patient accepted|3:task:(Add Patient to List)
+  3:task:(Add Patient to List) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |Positive outcome|5:task:(Perform Checks)
+  4:exclusivegateway:{x} --> |Negative outcome|18:task:(Escalate Case)
+  5:task:(Perform Checks) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Checks positive|7:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Checks negative|18:task:(Escalate Case)
+  7:exclusivegateway:{x} --> |Positive outcome|8:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Negative outcome|18:task:(Escalate Case)
+  8:exclusivegateway:{x} --> |Proceed to hospital|9:task:(Call Patient to Hospital)
+  8:exclusivegateway:{x} --> |Do not proceed|18:task:(Escalate Case)
+  9:task:(Call Patient to Hospital) --> 10:task:(Hospitalize Patient)
+  10:task:(Hospitalize Patient) --> 11:task:(Childbirth)
+  11:task:(Childbirth) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> |Post-hospitalization care|13:task:(Provide Post-Hospitalization Care)
+  12:exclusivegateway:{x} --> |Special treatment|14:task:(Provide Special Treatment)
+  13:task:(Provide Post-Hospitalization Care) --> 15:exclusivegateway:{x}
+  14:task:(Provide Special Treatment) --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |Further checks needed|5:task:(Perform Checks)
+  15:exclusivegateway:{x} --> |Process complete|16:task:(Finalize Process)
+  16:task:(Finalize Process) --> 17:endevent:(((endevent)))
+  18:task:(Escalate Case) --> 19:task:(Checks After Escalation)
+  19:task:(Checks After Escalation) --> 20:exclusivegateway:{x}
+  20:exclusivegateway:{x} --> |Checks positive|7:exclusivegateway:{x}
+  20:exclusivegateway:{x} --> |Checks negative|17:endevent:(((endevent)))

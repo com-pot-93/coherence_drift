@@ -1,0 +1,1 @@
+The process starts with the initiation of a device takeover bid request. Subsequently, a tender is sent for equipment takeover. Following this, an order is placed, which is then confirmed. Finally, the master data is dispatched, and the process ends.

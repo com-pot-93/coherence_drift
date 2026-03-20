@@ -1,0 +1,41 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Enter Manufacturer)
+    1:task:(Enter Manufacturer) --> 2:task:(Enter Model)
+    2:task:(Enter Model) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |Yes| 4:inclusivegateway:{O}
+    3:exclusivegateway:{x} --> |No| 5:task:(Enter Broken Part)
+    5:task:(Enter Broken Part) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |Yes| 4:inclusivegateway:{O}
+    6:exclusivegateway:{x} --> |No| 5:task:(Enter Broken Part)
+    4:inclusivegateway:{O} --> 7:parallelgateway:{AND}
+    7:parallelgateway:{AND} --> 8:task:(Compute Parts List)
+    7:parallelgateway:{AND} --> 9:task:(Compute Necessary Tools)
+    8:task:(Compute Parts List) --> 10:parallelgateway:{AND}
+    9:task:(Compute Necessary Tools) --> 10:parallelgateway:{AND}
+    10:parallelgateway:{AND} --> 11:task:(Check List Against Inventory)
+    11:task:(Check List Against Inventory) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |Yes| 13:inclusivegateway:{O}
+    12:exclusivegateway:{x} --> |No| 14:task:(Contact a Friend)
+    14:task:(Contact a Friend) --> 15:task:(Get Everything Else Needed)
+    15:task:(Get Everything Else Needed) --> 13:inclusivegateway:{O}
+    13:inclusivegateway:{O} --> 16:task:(Generate Instructions)
+    16:task:(Generate Instructions) --> 17:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> |Yes| 18:inclusivegateway:{O}
+    17:exclusivegateway:{x} --> |No| 19:task:(Follow Instructions)
+    19:task:(Follow Instructions) --> 20:exclusivegateway:{x}
+    20:exclusivegateway:{x} --> |Yes| 21:task:(Escalate)
+    20:exclusivegateway:{x} --> |No| 18:inclusivegateway:{O}
+    21:task:(Escalate) --> 18:inclusivegateway:{O}
+    18:inclusivegateway:{O} --> 22:exclusivegateway:{x}
+    22:exclusivegateway:{x} --> |Yes| 23:inclusivegateway:{O}
+    22:exclusivegateway:{x} --> |No| 24:task:(Leave a Review)
+    24:task:(Leave a Review) --> 25:exclusivegateway:{x}
+    25:exclusivegateway:{x} --> |Yes| 26:task:(Upload Video)
+    26:task:(Upload Video) --> 27:task:(Save to Database)
+    27:task:(Save to Database) --> 23:inclusivegateway:{O}
+    25:exclusivegateway:{x} --> |No| 23:inclusivegateway:{O}
+    23:inclusivegateway:{O} --> 28:task:(Send Phone to Expert)
+    28:task:(Send Phone to Expert) --> 29:inclusivegateway:{O}
+    29:inclusivegateway:{O} --> 30:endevent:(((endevent)))
+```

@@ -1,0 +1,7 @@
+The process starts. Then, based on a condition, the process either sends a bill to MPON or sends a bill to GO.
+
+If the bill is sent to MPON, MPON examines the bill. Depending on the examination result, the invoice is either confirmed with payment advice or rejected. Both outcomes then proceed to a merging point.
+
+Alternatively, if the bill is sent to GO, GO examines the bill. Depending on the examination, the invoice is either rejected or confirmed with payment advice. Both outcomes then proceed to a merging point.
+
+Finally, the process ends after the two alternative paths have merged.

@@ -1,0 +1,360 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Develop basic design</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true" a:alt_id="2" language="text/javascript">
+    <choose mode="exclusive" a:alt_id="10">
+      <alternative condition="Condition M True" language="text/javascript">
+        <call id="a25" endpoint="" a:alt_id="12">
+          <parameters>
+            <label>Outcome M</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <parallel wait="-1" cancel="last" a:alt_id="14">
+          <parallel_branch/>
+          <parallel_branch/>
+        </parallel>
+      </alternative>
+      <alternative condition="Condition N True" language="text/javascript">
+        <call id="a27" endpoint="" a:alt_id="13">
+          <parameters>
+            <label>Outcome N</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <parallel wait="-1" cancel="last" a:alt_id="15">
+          <parallel_branch/>
+          <parallel_branch/>
+        </parallel>
+      </alternative>
+    </choose>
+  </loop>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Order Lego brick sets</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <call id="a11" endpoint="" a:alt_id="5">
+      <parameters>
+        <label>Sort Lego bricks</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <parallel wait="-1" cancel="last" a:alt_id="6">
+      <parallel_branch/>
+      <parallel_branch/>
+    </parallel>
+    <choose mode="exclusive" a:alt_id="21">
+      <alternative condition="Condition 2 True" language="text/javascript"/>
+      <alternative condition="">
+        <choose mode="exclusive" a:alt_id="62">
+          <alternative condition="Condition M True" language="text/javascript">
+            <call id="a165" endpoint="" a:alt_id="63">
+              <parameters>
+                <label>Outcome M</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="Condition N True" language="text/javascript">
+            <call id="a167" endpoint="" a:alt_id="64">
+              <parameters>
+                <label>Outcome N</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+        <escape a:alt_id="-1"/>
+      </alternative>
+    </choose>
+    <parallel wait="-1" cancel="last" a:alt_id="22">
+      <parallel_branch>
+        <call id="a57" endpoint="" a:alt_id="23">
+          <parameters>
+            <label>Put big bricks in container</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="26">
+          <alternative condition="Condition" language="text/javascript">
+            <call id="a69" endpoint="" a:alt_id="29">
+              <parameters>
+                <label>Outcome A</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="Condition" language="text/javascript">
+            <call id="a71" endpoint="" a:alt_id="30">
+              <parameters>
+                <label>Outcome B</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+      </parallel_branch>
+      <parallel_branch>
+        <call id="a59" endpoint="" a:alt_id="24">
+          <parameters>
+            <label>Put medium bricks in container</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="27">
+          <alternative condition="Condition" language="text/javascript">
+            <call id="a73" endpoint="" a:alt_id="31">
+              <parameters>
+                <label>Outcome C</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="Condition" language="text/javascript">
+            <call id="a75" endpoint="" a:alt_id="32">
+              <parameters>
+                <label>Outcome D</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+      </parallel_branch>
+      <parallel_branch>
+        <call id="a61" endpoint="" a:alt_id="25">
+          <parameters>
+            <label>Put small bricks in container</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="28">
+          <alternative condition="Condition" language="text/javascript">
+            <call id="a77" endpoint="" a:alt_id="33">
+              <parameters>
+                <label>Outcome E</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="Condition" language="text/javascript">
+            <call id="a79" endpoint="" a:alt_id="34">
+              <parameters>
+                <label>Outcome F</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+      </parallel_branch>
+    </parallel>
+    <parallel wait="-1" cancel="last" a:alt_id="36">
+      <parallel_branch>
+        <call id="a95" endpoint="" a:alt_id="37">
+          <parameters>
+            <label>Put big bricks in container</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="40">
+          <alternative condition="Condition" language="text/javascript">
+            <call id="a107" endpoint="" a:alt_id="43">
+              <parameters>
+                <label>Outcome G</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="Condition" language="text/javascript">
+            <call id="a109" endpoint="" a:alt_id="44">
+              <parameters>
+                <label>Outcome H</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+      </parallel_branch>
+      <parallel_branch>
+        <call id="a97" endpoint="" a:alt_id="38">
+          <parameters>
+            <label>Put medium bricks in container</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="41">
+          <alternative condition="Condition" language="text/javascript">
+            <call id="a111" endpoint="" a:alt_id="45">
+              <parameters>
+                <label>Outcome I</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="Condition" language="text/javascript">
+            <call id="a113" endpoint="" a:alt_id="46">
+              <parameters>
+                <label>Outcome J</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+      </parallel_branch>
+      <parallel_branch>
+        <call id="a99" endpoint="" a:alt_id="39">
+          <parameters>
+            <label>Put small bricks in container</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="42">
+          <alternative condition="Condition" language="text/javascript">
+            <call id="a115" endpoint="" a:alt_id="47">
+              <parameters>
+                <label>Outcome K</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="Condition" language="text/javascript">
+            <call id="a117" endpoint="" a:alt_id="48">
+              <parameters>
+                <label>Outcome L</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+      </parallel_branch>
+    </parallel>
+    <choose mode="exclusive" a:alt_id="50">
+      <alternative condition="Condition 3 True" language="text/javascript">
+        <call id="a133" endpoint="" a:alt_id="51">
+          <parameters>
+            <label>Build subcomponents</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a137" endpoint="" a:alt_id="52">
+          <parameters>
+            <label>Test subcomponents</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="53">
+          <alternative condition="Redesign needed" language="text/javascript">
+            <call id="a141" endpoint="" a:alt_id="54">
+              <parameters>
+                <label>Redesign subcomponent</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="No redesign needed" language="text/javascript"/>
+        </choose>
+        <call id="a143" endpoint="" a:alt_id="55">
+          <parameters>
+            <label>Assemble subcomponents into machine</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <parallel wait="-1" cancel="last" a:alt_id="56">
+          <parallel_branch/>
+          <parallel_branch/>
+        </parallel>
+        <choose mode="exclusive" a:alt_id="60">
+          <alternative condition="No more subcomponents needed" language="text/javascript">
+            <call id="a161" endpoint="" a:alt_id="61">
+              <parameters>
+                <label>Order Lego brick sets</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="More subcomponents needed" language="text/javascript">
+            <call id="a133" endpoint="" a:alt_id="51">
+              <parameters>
+                <label>Build subcomponents</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <escape a:alt_id="-1"/>
+          </alternative>
+        </choose>
+      </alternative>
+      <alternative condition="Condition 3 False" language="text/javascript">
+        <escape a:alt_id="-1"/>
+      </alternative>
+    </choose>
+  </loop>
+</description>

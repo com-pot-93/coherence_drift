@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Collect Requirements</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="Continue" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Send Requirements Forward</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a9" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Receive Draft</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="5">
+        <alternative condition="Continue" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="6">
+            <alternative condition="Condition met" language="text/javascript">
+              <call id="a17" endpoint="" a:alt_id="7">
+                <parameters>
+                  <label>Evaluate Draft</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="8">
+                <alternative condition="Proceed" language="text/javascript">
+                  <call id="a23" endpoint="" a:alt_id="9">
+                    <parameters>
+                      <label>Checkpoint 1</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a27" endpoint="" a:alt_id="10">
+                    <parameters>
+                      <label>Checkpoint 2</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a29" endpoint="" a:alt_id="11">
+                    <parameters>
+                      <label>Checkpoint 3</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Do not proceed" language="text/javascript"/>
+              </choose>
+            </alternative>
+            <alternative condition="Condition not met" language="text/javascript"/>
+          </choose>
+        </alternative>
+        <alternative condition="Do not continue" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="Do not continue" language="text/javascript"/>
+  </choose>
+</description>

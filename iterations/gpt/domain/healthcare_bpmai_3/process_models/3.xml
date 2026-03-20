@@ -1,0 +1,449 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Call</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="Patient not accepted" language="text/javascript"/>
+    <alternative condition="Patient accepted" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Add Patient to List</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="4">
+        <alternative condition="Positive outcome" language="text/javascript">
+          <loop mode="pre_test" condition="true">
+            <call id="a11" endpoint="" a:alt_id="5">
+              <parameters>
+                <label>Perform Checks</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <loop mode="pre_test" condition="Checks positive">
+              <choose mode="exclusive" a:alt_id="6">
+                <alternative condition="Checks positive" language="text/javascript">
+                  <choose mode="exclusive" a:alt_id="7">
+                    <alternative condition="Positive outcome" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="8">
+                        <alternative condition="Proceed to hospital" language="text/javascript">
+                          <call id="a25" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>Call Patient to Hospital</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a29" endpoint="" a:alt_id="10">
+                            <parameters>
+                              <label>Hospitalize Patient</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a31" endpoint="" a:alt_id="11">
+                            <parameters>
+                              <label>Childbirth</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="12">
+                            <alternative condition="Post-hospitalization care" language="text/javascript">
+                              <call id="a35" endpoint="" a:alt_id="13">
+                                <parameters>
+                                  <label>Provide Post-Hospitalization Care</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="Special treatment" language="text/javascript">
+                              <call id="a37" endpoint="" a:alt_id="14">
+                                <parameters>
+                                  <label>Provide Special Treatment</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                          </choose>
+                          <choose mode="exclusive" a:alt_id="15">
+                            <alternative condition="Further checks needed" language="text/javascript">
+                              <call id="a11" endpoint="" a:alt_id="5">
+                                <parameters>
+                                  <label>Perform Checks</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="Process complete" language="text/javascript">
+                              <call id="a45" endpoint="" a:alt_id="16">
+                                <parameters>
+                                  <label>Finalize Process</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <escape a:alt_id="-1"/>
+                            </alternative>
+                          </choose>
+                        </alternative>
+                        <alternative condition="Do not proceed" language="text/javascript">
+                          <call id="a13" endpoint="" a:alt_id="18">
+                            <parameters>
+                              <label>Escalate Case</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a49" endpoint="" a:alt_id="19">
+                            <parameters>
+                              <label>Checks After Escalation</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="20">
+                            <alternative condition="Checks positive" language="text/javascript"/>
+                            <alternative condition="Checks negative" language="text/javascript"/>
+                          </choose>
+                          <escape a:alt_id="-1"/>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Negative outcome" language="text/javascript">
+                      <call id="a13" endpoint="" a:alt_id="18">
+                        <parameters>
+                          <label>Escalate Case</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a49" endpoint="" a:alt_id="19">
+                        <parameters>
+                          <label>Checks After Escalation</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="20">
+                        <alternative condition="Checks positive" language="text/javascript"/>
+                        <alternative condition="Checks negative" language="text/javascript"/>
+                      </choose>
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="Checks negative" language="text/javascript">
+                  <call id="a13" endpoint="" a:alt_id="18">
+                    <parameters>
+                      <label>Escalate Case</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a49" endpoint="" a:alt_id="19">
+                    <parameters>
+                      <label>Checks After Escalation</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="20">
+                    <alternative condition="Checks positive" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="7">
+                        <alternative condition="Positive outcome" language="text/javascript">
+                          <choose mode="exclusive" a:alt_id="8">
+                            <alternative condition="Proceed to hospital" language="text/javascript">
+                              <call id="a25" endpoint="" a:alt_id="9">
+                                <parameters>
+                                  <label>Call Patient to Hospital</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a29" endpoint="" a:alt_id="10">
+                                <parameters>
+                                  <label>Hospitalize Patient</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a31" endpoint="" a:alt_id="11">
+                                <parameters>
+                                  <label>Childbirth</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <choose mode="exclusive" a:alt_id="12">
+                                <alternative condition="Post-hospitalization care" language="text/javascript">
+                                  <call id="a35" endpoint="" a:alt_id="13">
+                                    <parameters>
+                                      <label>Provide Post-Hospitalization Care</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                </alternative>
+                                <alternative condition="Special treatment" language="text/javascript">
+                                  <call id="a37" endpoint="" a:alt_id="14">
+                                    <parameters>
+                                      <label>Provide Special Treatment</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                </alternative>
+                              </choose>
+                              <choose mode="exclusive" a:alt_id="15">
+                                <alternative condition="Further checks needed" language="text/javascript">
+                                  <call id="a11" endpoint="" a:alt_id="5">
+                                    <parameters>
+                                      <label>Perform Checks</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                </alternative>
+                                <alternative condition="Process complete" language="text/javascript">
+                                  <call id="a45" endpoint="" a:alt_id="16">
+                                    <parameters>
+                                      <label>Finalize Process</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <escape a:alt_id="-1"/>
+                                </alternative>
+                              </choose>
+                            </alternative>
+                            <alternative condition="Do not proceed" language="text/javascript">
+                              <call id="a13" endpoint="" a:alt_id="18">
+                                <parameters>
+                                  <label>Escalate Case</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <escape a:alt_id="-1"/>
+                            </alternative>
+                          </choose>
+                        </alternative>
+                        <alternative condition="Negative outcome" language="text/javascript">
+                          <call id="a13" endpoint="" a:alt_id="18">
+                            <parameters>
+                              <label>Escalate Case</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <escape a:alt_id="-1"/>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Checks negative" language="text/javascript">
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+              </choose>
+            </loop>
+          </loop>
+        </alternative>
+        <alternative condition="Negative outcome" language="text/javascript">
+          <loop mode="pre_test" condition="true">
+            <call id="a13" endpoint="" a:alt_id="18">
+              <parameters>
+                <label>Escalate Case</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a49" endpoint="" a:alt_id="19">
+              <parameters>
+                <label>Checks After Escalation</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <loop mode="pre_test" condition="Checks positive">
+              <choose mode="exclusive" a:alt_id="7">
+                <alternative condition="Positive outcome" language="text/javascript">
+                  <choose mode="exclusive" a:alt_id="8">
+                    <alternative condition="Proceed to hospital" language="text/javascript">
+                      <call id="a25" endpoint="" a:alt_id="9">
+                        <parameters>
+                          <label>Call Patient to Hospital</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a29" endpoint="" a:alt_id="10">
+                        <parameters>
+                          <label>Hospitalize Patient</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a31" endpoint="" a:alt_id="11">
+                        <parameters>
+                          <label>Childbirth</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="12">
+                        <alternative condition="Post-hospitalization care" language="text/javascript">
+                          <call id="a35" endpoint="" a:alt_id="13">
+                            <parameters>
+                              <label>Provide Post-Hospitalization Care</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Special treatment" language="text/javascript">
+                          <call id="a37" endpoint="" a:alt_id="14">
+                            <parameters>
+                              <label>Provide Special Treatment</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                      </choose>
+                      <choose mode="exclusive" a:alt_id="15">
+                        <alternative condition="Further checks needed" language="text/javascript">
+                          <call id="a11" endpoint="" a:alt_id="5">
+                            <parameters>
+                              <label>Perform Checks</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="6">
+                            <alternative condition="Checks negative" language="text/javascript">
+                              <call id="a13" endpoint="" a:alt_id="18">
+                                <parameters>
+                                  <label>Escalate Case</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a49" endpoint="" a:alt_id="19">
+                                <parameters>
+                                  <label>Checks After Escalation</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="Checks positive" language="text/javascript">
+                              <escape a:alt_id="-1"/>
+                            </alternative>
+                          </choose>
+                        </alternative>
+                        <alternative condition="Process complete" language="text/javascript">
+                          <call id="a45" endpoint="" a:alt_id="16">
+                            <parameters>
+                              <label>Finalize Process</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <escape a:alt_id="-1"/>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Do not proceed" language="text/javascript">
+                      <call id="a13" endpoint="" a:alt_id="18">
+                        <parameters>
+                          <label>Escalate Case</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a49" endpoint="" a:alt_id="19">
+                        <parameters>
+                          <label>Checks After Escalation</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="Negative outcome" language="text/javascript">
+                  <call id="a13" endpoint="" a:alt_id="18">
+                    <parameters>
+                      <label>Escalate Case</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a49" endpoint="" a:alt_id="19">
+                    <parameters>
+                      <label>Checks After Escalation</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+            </loop>
+          </loop>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

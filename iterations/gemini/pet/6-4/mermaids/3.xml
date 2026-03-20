@@ -1,0 +1,33 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Determine Contact Details)
+    1:task:(Determine Contact Details) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |Bought| 3:task:(Continue)
+    2:exclusivegateway:{x} --> |Exhibition| 4:task:(Continue)
+    2:exclusivegateway:{x} --> |Known Person| 5:task:(Identify Interested Person)
+    3:task:(Continue) --> 6:task:(Call Customer)
+    4:task:(Continue) --> 6:task:(Call Customer)
+    5:task:(Identify Interested Person) --> 6:task:(Call Customer)
+    6:task:(Call Customer) --> 7:task:(Determine Contact Person)
+    7:task:(Determine Contact Person) --> 8:task:(Determine Budget)
+    8:task:(Determine Budget) --> 9:task:(Assess Customer Interest)
+    9:task:(Assess Customer Interest) --> 10:exclusivegateway:{x}
+    10:exclusivegateway:{x} --> |Assessment Path 1| 11:exclusivegateway:{x}
+    10:exclusivegateway:{x} --> |Assessment Path 2| 15:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |Sales Rep Presentation| 12:task:(Sales Rep Presentation)
+    11:exclusivegateway:{x} --> |Pre-Sales Presentation| 13:task:(Pre-Sales Presentation)
+    12:task:(Sales Rep Presentation) --> 14:task:(Wait for Customer)
+    13:task:(Pre-Sales Presentation) --> 14:task:(Wait for Customer)
+    14:task:(Wait for Customer) --> 19:inclusivegateway:{O}
+    15:exclusivegateway:{x} --> |Sales Rep Presentation| 16:task:(Sales Rep Presentation)
+    15:exclusivegateway:{x} --> |Pre-Sales Presentation| 17:task:(Pre-Sales Presentation)
+    16:task:(Sales Rep Presentation) --> 18:task:(Wait for Customer)
+    17:task:(Pre-Sales Presentation) --> 18:task:(Wait for Customer)
+    18:task:(Wait for Customer) --> 19:inclusivegateway:{O}
+    19:inclusivegateway:{O} --> 20:exclusivegateway:{x}
+    20:exclusivegateway:{x} --> |Sales Rep Call| 21:task:(Sales Rep Calls Customer)
+    20:exclusivegateway:{x} --> |Sales Rep Call Again| 22:task:(Sales Rep Calls Customer Again)
+    21:task:(Sales Rep Calls Customer) --> 23:task:(Create Quotation)
+    22:task:(Sales Rep Calls Customer Again) --> 23:task:(Create Quotation)
+    23:task:(Create Quotation) --> 24:endevent:(((endevent)))
+```

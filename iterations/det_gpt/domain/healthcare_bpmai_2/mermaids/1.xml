@@ -1,0 +1,131 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Come to the hospital)
+2:task:(Stay the front)
+3:task:(Visit the nurse)
+4:task:(Check insurance)
+5:exclusivegateway:{x}
+6:task:(Check patients state)
+7:exclusivegateway:{x}
+8:task:(Send patient home)
+9:exclusivegateway:{x}
+10:task:(Examine the patient)
+11:exclusivegateway:{x}
+12:exclusivegateway:{x}
+13:task:(Hospitalize)
+14:exclusivegateway:{x}
+15:task:(Book patient for doctor)
+16:exclusivegateway:{x}
+17:task:(Examine the patient)
+18:exclusivegateway:{x}
+19:task:(Send patient to pharmacy)
+20:task:(Visit pharmacy)
+21:task:(Order medicine)
+22:task:(Pay medicine)
+23:task:(Receive medicine)
+24:exclusivegateway:{x}
+25:task:(Send patient home)
+26:exclusivegateway:{x}
+27:task:(Check if patient is registered in hospital)
+28:exclusivegateway:{x}
+29:task:(Register patient)
+30:task:(Pay fee)
+31:exclusivegateway:{x}
+32:task:(Book patient for doctor)
+33:exclusivegateway:{x}
+34:task:(Examine the patient)
+35:exclusivegateway:{x}
+36:task:(Hospitalize)
+37:exclusivegateway:{x}
+38:task:(Send patient to pharmacy)
+39:task:(Visit pharmacy)
+40:task:(Order medicine)
+41:task:(Pay medicine)
+42:task:(Receive medicine)
+43:exclusivegateway:{x}
+44:task:(Send patient home)
+45:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Come to the hospital)
+1:task:(Come to the hospital) --> 2:task:(Stay the front)
+2:task:(Stay the front) --> 3:task:(Visit the nurse)
+3:task:(Visit the nurse) --> 4:task:(Check insurance)
+4:task:(Check insurance) --> 5:exclusivegateway:{x}
+
+%% D1
+5:exclusivegateway:{x} --> |Patient state check|6:task:(Check patients state)
+5:exclusivegateway:{x} --> |Registration check|27:task:(Check if patient is registered in hospital)
+
+%% D2
+6:task:(Check patients state) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Send home|8:task:(Send patient home)
+7:exclusivegateway:{x} --> |Examine patient|10:task:(Examine the patient)
+
+%% D3
+10:task:(Examine the patient) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Hospitalize/Pharmacy/Send home|12:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Alternative path|12:exclusivegateway:{x}
+
+%% D4 (3 branches: Hospitalize, Pharmacy, Send home)
+12:exclusivegateway:{x} --> |Hospitalize|13:task:(Hospitalize)
+12:exclusivegateway:{x} --> |Pharmacy|19:task:(Send patient to pharmacy)
+12:exclusivegateway:{x} --> |Send home|25:task:(Send patient home)
+
+%% Hospitalize branch
+13:task:(Hospitalize) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |Book doctor|15:task:(Book patient for doctor)
+14:exclusivegateway:{x} --> |Skip|18:exclusivegateway:{x}
+
+15:task:(Book patient for doctor) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |Examine again|17:task:(Examine the patient)
+16:exclusivegateway:{x} --> |End|18:exclusivegateway:{x}
+17:task:(Examine the patient) --> 18:exclusivegateway:{x}
+18:exclusivegateway:{x} --> 45:endevent:(((endevent)))
+
+%% Pharmacy branch
+19:task:(Send patient to pharmacy) --> 20:task:(Visit pharmacy)
+20:task:(Visit pharmacy) --> 21:task:(Order medicine)
+21:task:(Order medicine) --> 22:task:(Pay medicine)
+22:task:(Pay medicine) --> 23:task:(Receive medicine)
+23:task:(Receive medicine) --> 24:exclusivegateway:{x}
+24:exclusivegateway:{x} --> |End|18:exclusivegateway:{x}
+24:exclusivegateway:{x} --> |Loop|19:task:(Send patient to pharmacy)
+
+%% Send home branch
+25:task:(Send patient home) --> 26:exclusivegateway:{x}
+26:exclusivegateway:{x} --> |End|18:exclusivegateway:{x}
+26:exclusivegateway:{x} --> |Loop|25:task:(Send patient home)
+
+%% Registration check branch
+27:task:(Check if patient is registered in hospital) --> 28:exclusivegateway:{x}
+28:exclusivegateway:{x} --> |Not registered|29:task:(Register patient)
+28:exclusivegateway:{x} --> |Registered|30:task:(Pay fee)
+29:task:(Register patient) --> 30:task:(Pay fee)
+30:task:(Pay fee) --> 31:exclusivegateway:{x}
+31:exclusivegateway:{x} --> |Book doctor|32:task:(Book patient for doctor)
+31:exclusivegateway:{x} --> |End|45:endevent:(((endevent)))
+
+32:task:(Book patient for doctor) --> 33:exclusivegateway:{x}
+33:exclusivegateway:{x} --> |Examine|34:task:(Examine the patient)
+33:exclusivegateway:{x} --> |End|45:endevent:(((endevent)))
+
+34:task:(Examine the patient) --> 35:exclusivegateway:{x}
+35:exclusivegateway:{x} --> |Hospitalize|36:task:(Hospitalize)
+35:exclusivegateway:{x} --> |Pharmacy|38:task:(Send patient to pharmacy)
+35:exclusivegateway:{x} --> |Send home|44:task:(Send patient home)
+
+36:task:(Hospitalize) --> 37:exclusivegateway:{x}
+37:exclusivegateway:{x} --> |Book doctor|15:task:(Book patient for doctor)
+37:exclusivegateway:{x} --> |End|45:endevent:(((endevent)))
+
+38:task:(Send patient to pharmacy) --> 39:task:(Visit pharmacy)
+39:task:(Visit pharmacy) --> 40:task:(Order medicine)
+40:task:(Order medicine) --> 41:task:(Pay medicine)
+41:task:(Pay medicine) --> 42:task:(Receive medicine)
+42:task:(Receive medicine) --> 43:exclusivegateway:{x}
+43:exclusivegateway:{x} --> |End|45:endevent:(((endevent)))
+43:exclusivegateway:{x} --> |Loop|38:task:(Send patient to pharmacy)
+
+44:task:(Send patient home) --> 45:endevent:(((endevent)))
+
+8:task:(Send patient home) --> 45:endevent:(((endevent)))

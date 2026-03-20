@@ -1,0 +1,20 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(EC tells  INQ about the data change)
+2:task:(INQ notifies the IP of the change)
+3:task:(IP checks whether the  data can be changed)
+4:exclusivegateway:{x}
+5:task:(IP confirmes the changes of INQ)
+6:task:(IP rejectes the changes of INQ)
+7:exclusivegateway:{x}
+8:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(EC tells  INQ about the data change)
+1:task:(EC tells  INQ about the data change) --> 2:task:(INQ notifies the IP of the change)
+2:task:(INQ notifies the IP of the change) --> 3:task:(IP checks whether the  data can be changed)
+3:task:(IP checks whether the  data can be changed) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Can be changed|5:task:(IP confirmes the changes of INQ)
+4:exclusivegateway:{x} --> |Cannot be changed|6:task:(IP rejectes the changes of INQ)
+5:task:(IP confirmes the changes of INQ) --> 7:exclusivegateway:{x}
+6:task:(IP rejectes the changes of INQ) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> 8:endevent:(((endevent)))

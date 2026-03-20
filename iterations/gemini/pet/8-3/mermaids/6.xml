@@ -1,0 +1,25 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Detect Personnel Requirements)
+  1:task:(Detect Personnel Requirements) --> 2:task:(Report Vacancy)
+  2:task:(Report Vacancy) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} -->|Job Description Available| 4:task:(Receive Job Description)
+  3:exclusivegateway:{x} -->|No Job Description Available| 16:exclusivegateway:{x}
+  4:task:(Receive Job Description) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} -->|Condition True| 6:exclusivegateway:{x}
+  5:exclusivegateway:{x} -->|Condition False| 15:exclusivegateway:{x}
+  6:exclusivegateway:{x} -->|Condition True| 7:task:(Review Job Description)
+  6:exclusivegateway:{x} -->|Condition False| 15:exclusivegateway:{x}
+  7:task:(Review Job Description) --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} -->|Corrections Needed| 9:task:(Request and Make Corrections)
+  8:exclusivegateway:{x} -->|No Corrections Needed| 10:task:(Advertise Vacancy)
+  9:task:(Request and Make Corrections) --> 7:task:(Review Job Description)
+  10:task:(Advertise Vacancy) --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> 19:exclusivegateway:{O}
+  16:exclusivegateway:{x} -->|Condition True| 17:task:(Advertise Vacancy)
+  16:exclusivegateway:{x} -->|Condition False| 19:exclusivegateway:{O}
+  17:task:(Advertise Vacancy) --> 18:exclusivegateway:{x}
+  18:exclusivegateway:{x} -->|Condition True| 7:task:(Review Job Description)
+  18:exclusivegateway:{x} -->|Condition False| 19:exclusivegateway:{O}
+  19:exclusivegateway:{O} --> 20:endevent:(((endevent)))
+```

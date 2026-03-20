@@ -1,0 +1,10 @@
+The process starts when an office supply request is submitted. The process then splits into two alternative paths.
+In the first path, the process ends immediately.
+In the second path, the request is registered. Then, the process splits into two alternative paths again.
+If Condition A is not met, the process escalates and then registers the request again. If Condition A is met, an approval process is initiated.
+The approval process can either be approved or not approved. If not approved, comments are reviewed, and the approval process is initiated again. If approved, quotations are requested.
+After quotations are requested, the process splits into two parallel paths.
+In the first parallel path, the process waits for vendor selection, generates a purchase order, waits for product delivery, receives an invoice, and sends a notification to the user. After the notification, the process splits into two alternative paths based on a condition. If the condition is false, the process escalates. If the condition is true, the process continues.
+In the second parallel path, the process waits for vendor selection. Then, the process splits into two alternative paths based on Condition B. If Condition B is not met, the process escalates. The escalation splits into two alternative paths based on a condition. If the condition is false, the process escalates again. If the condition is true, the process continues. If Condition B is met, quotations are requested.
+After both parallel paths are complete, the process continues.
+Finally, the process escalates and loops back to the beginning, splitting into two alternative paths.

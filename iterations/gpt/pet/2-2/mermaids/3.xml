@@ -1,0 +1,5 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:endevent:(((endevent)))

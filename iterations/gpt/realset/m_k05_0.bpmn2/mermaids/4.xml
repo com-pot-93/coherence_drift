@@ -1,0 +1,72 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Collect Requirements)
+2:exclusivegateway:{x}
+3:task:(Send Requirements Forward)
+4:task:(Receive Draft)
+5:exclusivegateway:{x}
+6:exclusivegateway:{x}
+7:task:(Evaluate Draft)
+8:exclusivegateway:{x}
+9:task:(Escalate Issue)
+10:task:(Re-evaluate Draft)
+11:exclusivegateway:{x}
+12:task:(Check Feasibility)
+13:exclusivegateway:{x}
+14:task:(Refine Requirements)
+15:exclusivegateway:{x}
+16:exclusivegateway:{x}
+17:task:(Prepare Building Permit Report)
+18:task:(Create Order List)
+19:task:(Place Order)
+20:task:(Calculate Effort)
+21:parallelgateway:{AND}
+22:task:(Receive Order)
+23:exclusivegateway:{x}
+24:task:(Call Friends for Help)
+25:task:(Hire Building Company)
+26:parallelgateway:{AND}
+27:task:(Build House)
+28:exclusivegateway:{x}
+29:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Collect Requirements)
+1:task:(Collect Requirements) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Continue|3:task:(Send Requirements Forward)
+2:exclusivegateway:{x} --> |Do not continue|29:endevent:(((endevent)))
+3:task:(Send Requirements Forward) --> 4:task:(Receive Draft)
+4:task:(Receive Draft) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Continue|6:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Do not continue|29:endevent:(((endevent)))
+6:exclusivegateway:{x} --> |Condition met|7:task:(Evaluate Draft)
+6:exclusivegateway:{x} --> |Condition not met|11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Continue|7:task:(Evaluate Draft)
+11:exclusivegateway:{x} --> |Do not continue|29:endevent:(((endevent)))
+7:task:(Evaluate Draft) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Continue|12:task:(Check Feasibility)
+8:exclusivegateway:{x} --> |Do not continue|29:endevent:(((endevent)))
+8:exclusivegateway:{x} --> |Escalate|9:task:(Escalate Issue)
+9:task:(Escalate Issue) --> 10:task:(Re-evaluate Draft)
+10:task:(Re-evaluate Draft) --> 8:exclusivegateway:{x}
+12:task:(Check Feasibility) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Feasible|15:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Refinement needed|14:task:(Refine Requirements)
+13:exclusivegateway:{x} --> |Not feasible|29:endevent:(((endevent)))
+14:task:(Refine Requirements) --> 12:task:(Check Feasibility)
+15:exclusivegateway:{x} --> |Report needed|17:task:(Prepare Building Permit Report)
+15:exclusivegateway:{x} --> |No report needed|18:task:(Create Order List)
+17:task:(Prepare Building Permit Report) --> 18:task:(Create Order List)
+18:task:(Create Order List) --> 19:task:(Place Order)
+19:task:(Place Order) --> 20:task:(Calculate Effort)
+20:task:(Calculate Effort) --> 21:parallelgateway:{AND}
+21:parallelgateway:{AND} --> 22:task:(Receive Order)
+21:parallelgateway:{AND} --> 23:exclusivegateway:{x}
+22:task:(Receive Order) --> 26:parallelgateway:{AND}
+23:exclusivegateway:{x} --> |Call friends|24:task:(Call Friends for Help)
+23:exclusivegateway:{x} --> |Hire company|25:task:(Hire Building Company)
+24:task:(Call Friends for Help) --> 26:parallelgateway:{AND}
+25:task:(Hire Building Company) --> 26:parallelgateway:{AND}
+26:parallelgateway:{AND} --> 27:task:(Build House)
+27:task:(Build House) --> 28:exclusivegateway:{x}
+28:exclusivegateway:{x} --> |Repeat|12:task:(Check Feasibility)
+28:exclusivegateway:{x} --> |Do not continue|29:endevent:(((endevent)))

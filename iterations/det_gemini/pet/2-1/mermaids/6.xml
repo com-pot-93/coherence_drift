@@ -1,0 +1,57 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(customer perceives service degradation)
+  1:task:(customer perceives service degradation) --> 2:task:(system sends problem parameters list to customer service)
+  2:task:(system sends problem parameters list to customer service) --> 3:task:(service employee enters a problem report into system)
+  3:task:(service employee enters a problem report into system) --> 4:task:(service employee compares problem report to the customer SLA)
+  4:task:(service employee compares problem report to the customer SLA) --> 5:task:(service employee determines necessary counter measures)
+  5:task:(service employee determines necessary counter measures) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |branch 1| 7:task:(electronic service determines the customer significance)
+  6:exclusivegateway:{x} --> |branch 2| 8:task:(service employee  links to an extra problem fix process)
+  6:exclusivegateway:{x} --> |default| 9:exclusivegateway:{x}
+  7:task:(electronic service determines the customer significance) --> 9:exclusivegateway:{x}
+  8:task:(service employee  links to an extra problem fix process) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> 10:task:(service employee  creates a detailed problem report)
+  10:task:(service employee  creates a detailed problem report) --> 11:task:(service employee   sends problem report to Service Management)
+  11:task:(service employee   sends problem report to Service Management) --> 12:task:(service management deals with violations of quality)
+  12:task:(service management deals with violations of quality) --> 13:task:(service management investigates the problem)
+  13:task:(service management investigates the problem) --> 14:exclusivegateway:{x}
+  14:exclusivegateway:{x} --> |branch 1| 15:task:(service management  performs the analysis)
+  14:exclusivegateway:{x} --> |branch 1| 16:exclusivegateway:{x}
+  15:task:(service management  performs the analysis) --> 17:task:(service management  creates a trouble report)
+  17:task:(service management  creates a trouble report) --> 16:exclusivegateway:{x}
+  16:exclusivegateway:{x} --> 18:task:(service management   sends  problem report to Resource Provisioning)
+  18:task:(service management   sends  problem report to Resource Provisioning) --> 19:task:(resource provisioning checks for potential issues)
+  19:task:(resource provisioning checks for potential issues) --> 20:exclusivegateway:{x}
+  20:exclusivegateway:{x} --> |branch 1| 21:task:(resource provisioning analyses the problem)
+  20:exclusivegateway:{x} --> |branch 2| 22:task:(resource provisioning creates a service execution notification)
+  21:task:(resource provisioning analyses the problem) --> 23:task:(resource provisioning creates a trouble report)
+  22:task:(resource provisioning creates a service execution notification) --> 24:exclusivegateway:{x}
+  23:task:(resource provisioning creates a trouble report) --> 24:exclusivegateway:{x}
+  24:exclusivegateway:{x} --> 25:task:(resource provisioning  sends a status report  to service management)
+  25:task:(resource provisioning  sends a status report  to service management) --> 26:task:(service management  prepares the final status report)
+  26:task:(service management  prepares the final status report) --> 27:exclusivegateway:{x}
+  27:exclusivegateway:{x} --> |branch 1| 28:task:(service managementcreates a request for automatic resource restoration)
+  27:exclusivegateway:{x} --> |branch 2| 32:task:(service management  sends  actual service performance  to the customer service)
+  27:exclusivegateway:{x} --> |branch 3| 34:task:(service management  undertakes corrective actions)
+  28:task:(service managementcreates a request for automatic resource restoration) --> 29:task:(service management   sends request to resource provisioning)
+  29:task:(service management   sends request to resource provisioning) --> 30:task:(resource provisioning receives the restoration request)
+  30:task:(resource provisioning receives the restoration request) --> 31:task:(recource provisioning tracks all possible errors)
+  31:task:(recource provisioning tracks all possible errors) --> 33:task:(resource provisioning undertakes all necessary corrective actions)
+  32:task:(service management  sends  actual service performance  to the customer service) --> 33:task:(resource provisioning undertakes all necessary corrective actions)
+  33:task:(resource provisioning undertakes all necessary corrective actions) --> 35:task:(resource provisioning  sends report to service management)
+  34:task:(service management  undertakes corrective actions) --> 35:task:(resource provisioning  sends report to service management)
+  35:task:(resource provisioning  sends report to service management) --> 36:exclusivegateway:{x}
+  36:exclusivegateway:{x} --> 37:task:(service management creates the problem resolution report)
+  37:task:(service management creates the problem resolution report) --> 38:task:(service management  sends the problem resolution report to customer service)
+  38:task:(service management  sends the problem resolution report to customer service) --> 39:task:(customer service receives the problem resolution report)
+  39:task:(customer service receives the problem resolution report) --> 40:parallelgateway:{AND}
+  40:parallelgateway:{AND} --> 41:task:(customer service  creates a report for customer)
+  40:parallelgateway:{AND} --> 42:task:(customer service  reports an SLA violation rebate to billing & collections)
+  41:task:(customer service  creates a report for customer) --> 44:parallelgateway:{AND}
+  42:task:(customer service  reports an SLA violation rebate to billing & collections) --> 43:task:(billing & collections adjusts the billing)
+  43:task:(billing & collections adjusts the billing) --> 44:parallelgateway:{AND}
+  44:parallelgateway:{AND} --> 45:task:(customer service sends report for the customer)
+  45:task:(customer service sends report for the customer) --> 46:task:(customer receives the report)
+  46:task:(customer receives the report) --> 47:endevent:(((endevent)))
+```

@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <parallel wait="-1" cancel="last" a:alt_id="1">
+    <parallel_branch>
+      <call id="a3" endpoint="" a:alt_id="2">
+        <parameters>
+          <label>Check if baby is younger than two years</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Identify parent</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <choose mode="exclusive" a:alt_id="5">
+    <alternative condition="Self-employed/studying/housewife/man" language="text/javascript"/>
+    <alternative condition="">
+      <call id="a15" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Send notification to employer</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a17" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>Wait for employer confirmation</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a19" endpoint="" a:alt_id="8">
+        <parameters>
+          <label>Parent takes maternity leave</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="9">
+        <alternative condition="Split maternity leave" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="10">
+            <alternative condition="&lt;2 months" language="text/javascript">
+              <call id="a29" endpoint="" a:alt_id="11">
+                <parameters>
+                  <label>Send notification to employer for split leave &lt;2 months</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a33" endpoint="" a:alt_id="12">
+                <parameters>
+                  <label>Receive notification from employer for split leave &lt;2 months</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a35" endpoint="" a:alt_id="13">
+                <parameters>
+                  <label>Take maternity leave again after split &lt;2 months</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="&gt;3 months" language="text/javascript">
+              <call id="a31" endpoint="" a:alt_id="14">
+                <parameters>
+                  <label>Send notification to employer for split leave &gt;3 months</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a39" endpoint="" a:alt_id="15">
+                <parameters>
+                  <label>Receive notification from employer for split leave &gt;3 months</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a41" endpoint="" a:alt_id="16">
+                <parameters>
+                  <label>Take maternity leave again after split &gt;3 months</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="Extend maternity leave" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="17">
+            <alternative condition="&lt;2 months" language="text/javascript">
+              <call id="a45" endpoint="" a:alt_id="18">
+                <parameters>
+                  <label>Send notification to employer for extension &lt;2 months</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a49" endpoint="" a:alt_id="19">
+                <parameters>
+                  <label>Receive notification from employer for extension &lt;2 months</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a51" endpoint="" a:alt_id="20">
+                <parameters>
+                  <label>Take maternity leave again after extension &lt;2 months</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="&gt;3 months" language="text/javascript">
+              <call id="a47" endpoint="" a:alt_id="21">
+                <parameters>
+                  <label>Send notification to employer for extension &gt;3 months</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a55" endpoint="" a:alt_id="22">
+                <parameters>
+                  <label>Receive notification from employer for extension &gt;3 months</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a57" endpoint="" a:alt_id="23">
+                <parameters>
+                  <label>Take maternity leave again after extension &gt;3 months</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="Both parents take leave" language="text/javascript">
+          <call id="a27" endpoint="" a:alt_id="24">
+            <parameters>
+              <label>Both parents take maternity leave</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

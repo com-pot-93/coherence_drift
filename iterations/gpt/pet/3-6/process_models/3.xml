@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Claim</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Check Insurance Status</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Continue" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Evaluate Claim Severity</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="5">
+        <alternative condition="Proceed" language="text/javascript">
+          <loop mode="pre_test" condition="true">
+            <call id="a13" endpoint="" a:alt_id="6">
+              <parameters>
+                <label>Send Forms to Claimant</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <loop mode="pre_test" condition="Proceed">
+              <call id="a19" endpoint="" a:alt_id="8">
+                <parameters>
+                  <label>Receive Completed Forms</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a23" endpoint="" a:alt_id="9">
+                <parameters>
+                  <label>Check Forms for Completeness</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="10">
+                <alternative condition="Complete" language="text/javascript">
+                  <call id="a27" endpoint="" a:alt_id="11">
+                    <parameters>
+                      <label>Register Claim</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="12">
+                    <alternative condition="Resend Forms" language="text/javascript">
+                      <call id="a13" endpoint="" a:alt_id="6">
+                        <parameters>
+                          <label>Send Forms to Claimant</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="End" language="text/javascript">
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                    <alternative condition="Escalate" language="text/javascript">
+                      <call id="a31" endpoint="" a:alt_id="15">
+                        <parameters>
+                          <label>Escalate for Review</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="Incomplete" language="text/javascript">
+                  <call id="a29" endpoint="" a:alt_id="14">
+                    <parameters>
+                      <label>Request Updated Forms</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a23" endpoint="" a:alt_id="9">
+                    <parameters>
+                      <label>Check Forms for Completeness</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <escape a:alt_id="-1"/>
+                </alternative>
+                <alternative condition="Escalate" language="text/javascript">
+                  <call id="a31" endpoint="" a:alt_id="15">
+                    <parameters>
+                      <label>Escalate for Review</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <escape a:alt_id="-1"/>
+                </alternative>
+              </choose>
+            </loop>
+            <call id="a15" endpoint="" a:alt_id="13">
+              <parameters>
+                <label>Inform Claimant of Rejection</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="17">
+              <alternative condition="Escalate" language="text/javascript">
+                <call id="a31" endpoint="" a:alt_id="15">
+                  <parameters>
+                    <label>Escalate for Review</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="End" language="text/javascript"/>
+            </choose>
+          </loop>
+        </alternative>
+        <alternative condition="Reject" language="text/javascript">
+          <call id="a15" endpoint="" a:alt_id="13">
+            <parameters>
+              <label>Inform Claimant of Rejection</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="17">
+            <alternative condition="Escalate" language="text/javascript">
+              <call id="a31" endpoint="" a:alt_id="15">
+                <parameters>
+                  <label>Escalate for Review</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="End" language="text/javascript"/>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="Do not continue" language="text/javascript">
+      <choose mode="exclusive" a:alt_id="17">
+        <alternative condition="Escalate" language="text/javascript">
+          <call id="a31" endpoint="" a:alt_id="15">
+            <parameters>
+              <label>Escalate for Review</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="End" language="text/javascript"/>
+      </choose>
+    </alternative>
+  </choose>
+</description>

@@ -1,0 +1,29 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Initial Step)
+2:task:(Check Files)
+3:exclusivegateway:{x}
+4:task:(Physically Track Files)
+5:task:(Search for Missing Files)
+6:exclusivegateway:{x}
+7:parallelgateway:{AND}
+8:task:(Hand Files to Associate)
+9:task:(Distribute Judge’s Lawlist)
+10:parallelgateway:{AND}
+11:task:(Conduct Directions Hearings)
+12:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Initial Step)
+1:task:(Initial Step) --> 2:task:(Check Files)
+2:task:(Check Files) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Files can be tracked|4:task:(Physically Track Files)
+3:exclusivegateway:{x} --> |Files missing|5:task:(Search for Missing Files)
+4:task:(Physically Track Files) --> 6:exclusivegateway:{x}
+5:task:(Search for Missing Files) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> 7:parallelgateway:{AND}
+7:parallelgateway:{AND} --> 8:task:(Hand Files to Associate)
+7:parallelgateway:{AND} --> 9:task:(Distribute Judge’s Lawlist)
+8:task:(Hand Files to Associate) --> 10:parallelgateway:{AND}
+9:task:(Distribute Judge’s Lawlist) --> 10:parallelgateway:{AND}
+10:parallelgateway:{AND} --> 11:task:(Conduct Directions Hearings)
+11:task:(Conduct Directions Hearings) --> 12:endevent:(((endevent)))

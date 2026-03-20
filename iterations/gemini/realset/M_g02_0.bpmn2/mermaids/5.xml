@@ -1,0 +1,70 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Develop basic design)
+    1:task:(Develop basic design) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |true| 3:task:(Order Lego brick sets)
+    2:exclusivegateway:{x} --> |false| 40:exclusivegateway:{x}
+    3:task:(Order Lego brick sets) --> 4:task:(Sort Lego bricks)
+    4:task:(Sort Lego bricks) --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> 6:parallelgateway:{AND}
+    6:parallelgateway:{AND} --> 7:task:(Put big bricks in container)
+    6:parallelgateway:{AND} --> 11:task:(Put medium bricks in container)
+    6:parallelgateway:{AND} --> 15:task:(Put small bricks in container)
+    7:task:(Put big bricks in container) --> 8:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> |Condition A| 9:task:(Outcome A)
+    8:exclusivegateway:{x} --> |Condition B| 10:task:(Outcome B)
+    9:task:(Outcome A) --> 19:parallelgateway:{AND}
+    10:task:(Outcome B) --> 19:parallelgateway:{AND}
+    11:task:(Put medium bricks in container) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |Condition C| 13:task:(Outcome C)
+    12:exclusivegateway:{x} --> |Condition D| 14:task:(Outcome D)
+    13:task:(Outcome C) --> 19:parallelgateway:{AND}
+    14:task:(Outcome D) --> 19:parallelgateway:{AND}
+    15:task:(Put small bricks in container) --> 16:exclusivegateway:{x}
+    16:exclusivegateway:{x} --> |Condition E| 17:task:(Outcome E)
+    16:exclusivegateway:{x} --> |Condition F| 18:task:(Outcome F)
+    17:task:(Outcome E) --> 19:parallelgateway:{AND}
+    18:task:(Outcome F) --> 19:parallelgateway:{AND}
+    19:parallelgateway:{AND} --> 20:parallelgateway:{AND}
+    20:parallelgateway:{AND} --> 21:task:(Put big bricks in container)
+    20:parallelgateway:{AND} --> 25:task:(Put medium bricks in container)
+    20:parallelgateway:{AND} --> 29:task:(Put small bricks in container)
+    21:task:(Put big bricks in container) --> 22:exclusivegateway:{x}
+    22:exclusivegateway:{x} --> |Condition G| 23:task:(Outcome G)
+    22:exclusivegateway:{x} --> |Condition H| 24:task:(Outcome H)
+    23:task:(Outcome G) --> 33:parallelgateway:{AND}
+    24:task:(Outcome H) --> 33:parallelgateway:{AND}
+    25:task:(Put medium bricks in container) --> 26:exclusivegateway:{x}
+    26:exclusivegateway:{x} --> |Condition I| 27:task:(Outcome I)
+    26:exclusivegateway:{x} --> |Condition J| 28:task:(Outcome J)
+    27:task:(Outcome I) --> 33:parallelgateway:{AND}
+    28:task:(Outcome J) --> 33:parallelgateway:{AND}
+    29:task:(Put small bricks in container) --> 30:exclusivegateway:{x}
+    30:exclusivegateway:{x} --> |Condition K| 31:task:(Outcome K)
+    30:exclusivegateway:{x} --> |Condition L| 32:task:(Outcome L)
+    31:task:(Outcome K) --> 33:parallelgateway:{AND}
+    32:task:(Outcome L) --> 33:parallelgateway:{AND}
+    33:parallelgateway:{AND} --> 34:exclusivegateway:{x}
+    34:exclusivegateway:{x} --> |true| 35:task:(Build subcomponents)
+    34:exclusivegateway:{x} --> |false| 40:exclusivegateway:{x}
+    35:task:(Build subcomponents) --> 36:exclusivegateway:{x}
+    36:exclusivegateway:{x} --> 3:task:(Order Lego brick sets)
+    36:exclusivegateway:{x} --> 37:task:(Test subcomponents)
+    36:exclusivegateway:{x} --> 38:task:(Build more subcomponents)
+    37:task:(Test subcomponents) --> 39:exclusivegateway:{x}
+    39:exclusivegateway:{x} --> |Redesign needed| 41:task:(Redesign subcomponent)
+    39:exclusivegateway:{x} --> |Assembly possible| 42:task:(Assemble subcomponents into machine)
+    41:task:(Redesign subcomponent) --> 43:inclusivegateway:{O}
+    42:task:(Assemble subcomponents into machine) --> 43:inclusivegateway:{O}
+    38:task:(Build more subcomponents) --> 43:inclusivegateway:{O}
+    43:inclusivegateway:{O} --> 5:exclusivegateway:{x}
+    40:exclusivegateway:{x} --> 44:exclusivegateway:{x}
+    44:exclusivegateway:{x} --> |Condition M| 45:task:(Outcome M)
+    44:exclusivegateway:{x} --> |Condition N| 46:task:(Outcome N)
+    45:task:(Outcome M) --> 47:task:(Escalate and return to decision)
+    46:task:(Outcome N) --> 47:task:(Escalate and return to decision)
+    47:task:(Escalate and return to decision) --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> 48:exclusivegateway:{x}
+    48:exclusivegateway:{x} --> |true| 49:endevent:(((endevent)))
+    48:exclusivegateway:{x} --> |false| 49:endevent:(((endevent)))
+```

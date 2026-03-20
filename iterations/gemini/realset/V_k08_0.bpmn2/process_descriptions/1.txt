@@ -1,0 +1,7 @@
+The process starts when login data is entered and then checked. If the credentials are not correct, the process proceeds to an end point. If the credentials are correct, the process continues to another end point. From there, if a condition is true, a product is selected and added to the cart, then the item is saved.
+
+Next, a decision is made. If there are more items to add, the process loops back to selecting a product. Alternatively, the process can escalate to an end point. Otherwise, the order is confirmed.
+
+Subsequently, two parallel activities occur simultaneously: preparing shipment details and preparing payment details. After both are completed, payment data is entered.
+
+Following this, two more parallel activities take place: sending payment data and entering shipping details. Once both are done, a decision is made based on whether the order is confirmed. If the order is confirmed, the order is saved. If the order is not confirmed, the process proceeds to an end point. Finally, the process proceeds to an end point.

@@ -1,0 +1,1 @@
+The process starts with the registration of a measurement. The application is then examined. Depending on the outcome, the application is either rejected or confirmed. In the case of rejection or confirmation, an MSPN is assigned. Next, the MSPO is informed, followed by informing the MPO and finally the SP. The process then ends.

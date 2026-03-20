@@ -1,0 +1,11 @@
+The process starts when the manufacturer is entered, followed by entering the model. Then, based on a decision, the process either proceeds directly to a merging point or requires entering the broken part first. If the broken part is entered, there is a loop back to the decision point where the process either proceeds directly to a merging point or requires entering the broken part again.
+
+After the merging point, the process splits into two parallel activities: computing the parts list and computing necessary tools. Once both are completed, the process continues to check the list against the available inventory.
+
+Next, a decision is made. The process either proceeds directly to a merging point, or it branches out to contact a friend and then get everything else needed before reaching the merging point.
+
+After the merging point, instructions to fix the issue are generated. Another decision is made, and the process either proceeds directly to a merging point or involves following the instructions. If the instructions are followed, there is a loop where the instructions are followed repeatedly until a decision is made to either escalate the process or proceed to a merging point.
+
+From the merging point, the process either involves sending the phone to an expert or leaving a review. If the phone is sent to an expert, the process proceeds to a merging point. If a review is left, there is a decision to either upload a video, which is then saved to a database, or proceed directly to a merging point.
+
+Finally, after the merging point, the process ends.

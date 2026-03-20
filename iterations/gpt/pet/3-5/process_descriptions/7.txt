@@ -1,0 +1,9 @@
+The process begins when mail is collected. After collecting the mail, it is sorted while still unopened. Once sorted, the mail is distributed to the intended recipients. The recipients then open the mail. After opening, the mail is sorted again. Next, the details of the mail are recorded in a register. Following this, a quality check is performed.
+
+At this point, a decision is made: if a requisition is required, a list of requisitions is compiled and then sent. If no requisition is required, the process continues without compiling or sending a requisition list. In both cases, the process proceeds to the next step.
+
+The next step is to capture the details of the matter related to the mail. These details are then provided to the cashier. The cashier collects any necessary fees.
+
+After the fees are collected, two sets of activities happen at the same time. First, a receipt is placed in a designated location. After placing the receipt, documents are copied into an envelope, and then these documents are posted to the relevant party. Second, the details of the party involved are captured, and then a physical court file is printed.
+
+Once both sets of activities are completed, the process comes to an end.

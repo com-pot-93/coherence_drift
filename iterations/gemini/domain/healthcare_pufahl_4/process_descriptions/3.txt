@@ -1,0 +1,7 @@
+The process starts. Then, it splits into two parallel activities.
+In the first branch, a physical examination is performed. After the examination is complete, this branch merges back with the other branch.
+The second branch proceeds directly to the merge point.
+Once both branches are complete, a diagnosis is made. Based on the diagnosis, the process follows one of two exclusive paths.
+If the diagnosis is A, a surgical intervention is performed.
+If the diagnosis is B, surgery is planned.
+After either the surgical intervention or the surgery planning is complete, the process merges. Finally, the patient is discharged, and the process ends.

@@ -1,0 +1,7 @@
+The process starts when the Mail Processing Unit collects mail from a party. The Mail Clerk then sorts the unopened mail and distributes it. Following this, the Registry opens the mail, sorts it, and registers it in a Mail Register. An Assistant Registry Manager (ARM) performs a quality check.
+
+Based on the outcome of the quality check, the process diverges. In one branch, the ARM compiles a list of requisitions and sends it back to the party. In the other branch, the ARM captures the matter details and provides them to the Cashier, who takes the applicable fees.
+
+After the fees are taken, two activities occur in parallel: the ARM puts the receipt and copies documents into an envelope, then posts the documents to the party; and the Cashier captures the Party Details and prints the Physical Court File.
+
+Once both sets of parallel activities are completed, the process merges back together. Finally, the process ends.

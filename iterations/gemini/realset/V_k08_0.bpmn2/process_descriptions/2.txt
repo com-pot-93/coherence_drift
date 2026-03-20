@@ -1,0 +1,13 @@
+The process starts when a user enters their login information. The system then checks these credentials. If the credentials are not correct, the process proceeds to an intermediate step before escalating to another intermediate step. From there, the process loops back to the step where the user enters their login information.
+
+If the credentials are correct, the process moves to another intermediate step before escalating to another intermediate step. From there, the user selects a product and adds it to their cart. The item is then saved. The process proceeds through two intermediate steps.
+
+Next, the process splits into two possible paths based on whether the user wants to add more items. If the user wants to add more items, the process loops back to the step where the user selects a product. If the user does not want to add more items, they confirm their order.
+
+Following the order confirmation, the process splits into two parallel activities: preparing shipment details and preparing payment details. Once both are completed, the user enters their payment data.
+
+The process then splits again into two parallel activities: sending payment data and entering shipping details. After both are completed, the process checks if the order is confirmed.
+
+If the order is confirmed, the order is saved. If the order is not confirmed, the process proceeds through an intermediate step before escalating to another intermediate step. From there, the process loops back to the step where the user selects a product.
+
+Finally, the process escalates to an intermediate step before escalating to another intermediate step. From there, the process loops back to the step where the user enters their login information, and the process ends.

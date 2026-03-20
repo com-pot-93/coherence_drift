@@ -1,0 +1,12 @@
+The process begins when a call is received. The first step is to answer the call and record the order from the guest. Once the order is recorded, it is submitted to the kitchen. After submitting the order to the kitchen, the order details are also given to the sommelier. Next, the order is assigned to a waiter.
+
+At this point, three activities happen at the same time:  
+- The kitchen starts preparing the order.  
+- The sommelier begins preparing their part of the order.  
+- The waiter prepares the cart that will be used for delivery.
+
+Once all three preparations are complete, the process continues with the waiter delivering the cart to the guest. After the delivery, the waiter returns to their station.
+
+Next, there is a decision point. If it is time to proceed to billing, the process moves directly to the next step. If not, the waiter waits before proceeding to billing. After any necessary waiting, the process continues.
+
+The next step is to debit the guest’s account for the order. Once the account has been debited, the process ends.

@@ -1,0 +1,30 @@
+Certainly! Here is a detailed, step-by-step description of the process as depicted in your model:
+
+1. The process begins when an employee purchases a product.
+2. After making the purchase, the employee submits an expense report.
+3. At this point, a decision is made about whether to continue with the process. If the decision is not to continue, the process moves directly toward its conclusion. If the decision is to continue, the report is sent to the supervisor.
+4. The supervisor reviews the expense report.
+5. Another decision is made about whether to continue. If the decision is not to continue, the process moves toward its conclusion. If the decision is to continue, the process proceeds to another evaluation.
+6. At this stage, the outcome of the evaluation is considered. If the outcome is negative, the process moves toward its conclusion. If the outcome is positive, another condition is checked.
+7. If the condition is not met, the process moves toward its conclusion. If the condition is met, the supervisor approves the report.
+8. After approval, another decision is made. If the result is positive, a series of checks is performed.
+9. Once the series of checks is completed, another decision is made. If all checks are passed, the report is sent to the treasurer.
+10. The treasurer checks the receipts and then matches the items with the receipts.
+11. After matching, a decision is made. If issues are found, the report is sent back to the employee for editing.
+12. The employee edits the report and then decides whether to send it to the supervisor for approval or directly to the treasurer for another receipt check.
+    - If sent to the supervisor, the supervisor approves the report, and the series of checks is performed again.
+    - If sent to the treasurer, the treasurer checks the receipts again and matches the items with the receipts, after which the process continues.
+13. If, after matching, no issues are found, the treasurer confirms the payment.
+14. At this point, a decision is made:
+    - If the report needs to be returned to the supervisor, it is sent back for approval, and the series of checks is performed again.
+    - If the process can proceed to final checks, these are performed.
+15. After the final checks, another decision is made:
+    - If escalation is needed, the report is escalated to the supervisor for approval, and the series of checks is performed again.
+    - If all checks are satisfied, the process moves to a checkpoint.
+16. At the checkpoint, additional checks are performed, followed by a series of further evaluations. These evaluations determine whether the process can proceed or needs to loop back for further review.
+17. If all evaluations are satisfied, the process continues toward its conclusion.
+18. If, at any point during the treasurer’s review, further escalation is required, the process loops back to an earlier stage for additional review and checks.
+19. If, at any decision point, the process is not to continue, it moves step by step toward its conclusion.
+20. The process ends.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step and decision is included and described in clear, everyday language.

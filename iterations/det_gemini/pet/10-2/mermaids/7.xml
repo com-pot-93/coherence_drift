@@ -1,0 +1,29 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(The MPON reports the meter operation to the GO)
+  1:task:(The MPON reports the meter operation to the GO) --> 2:task:(The GO examines the application)
+  2:task:(The GO examines the application) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |reject| 4:task:(The GO rejects the application)
+  3:exclusivegateway:{x} --> |confirm| 5:task:(The GO confirmes the application)
+  4:task:(The GO rejects the application) --> 6:exclusivegateway:{x}
+  5:task:(The GO confirmes the application) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> 7:task:(The GO informs the MPOO about the registration confirmation)
+  7:task:(The GO informs the MPOO about the registration confirmation) --> 8:task:(The GO informs the MSPO about the registration confirmation)
+  8:task:(The GO informs the MSPO about the registration confirmation) --> 9:task:(The MPON and the MPOO perform the equipment acquisition and / or equipment changes)
+  9:task:(The MPON and the MPOO perform the equipment acquisition and / or equipment changes) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |failure| 11:task:(The MPON informs the GO about the failure)
+  10:exclusivegateway:{x} --> |success| 16:task:(The MPON informs the GO about the successful completion)
+  11:task:(The MPON informs the GO about the failure) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> |inform| 13:task:(The GO informs the MPON about the failure)
+  12:exclusivegateway:{x} --> |confirm| 14:task:(The GO confirms the failure of the assignment)
+  13:task:(The GO informs the MPON about the failure) --> 15:exclusivegateway:{x}
+  14:task:(The GO confirms the failure of the assignment) --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> 20:task:(The GO informs the MPOO about the assignment status of the MPON)
+  16:task:(The MPON informs the GO about the successful completion) --> 17:task:(The GO assigns the MPON)
+  17:task:(The GO assigns the MPON) --> 18:task:(The GO confirms the assignment)
+  18:task:(The GO confirms the assignment) --> 19:exclusivegateway:{x}
+  19:exclusivegateway:{x} --> 20:task:(The GO informs the MPOO about the assignment status of the MPON)
+  20:task:(The GO informs the MPOO about the assignment status of the MPON) --> 21:task:(The GO informs the MSPO about the assignment status of the MPON)
+  21:task:(The GO informs the MSPO about the assignment status of the MPON) --> 22:task:(The GO informs the SP about the assignment status of the MPON)
+  22:task:(The GO informs the SP about the assignment status of the MPON) --> 23:endevent:(((endevent)))
+```

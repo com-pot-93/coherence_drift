@@ -1,0 +1,7 @@
+The process begins when MPON reports the operation of a meter to GO. After receiving this report, GO examines the application. Based on this examination, GO makes a decision: if the application is confirmed, GO proceeds to confirm the application; if the application is rejected, GO rejects the application. Regardless of whether the application is confirmed or rejected, GO then informs MPOO about the registration confirmation, followed by informing MSPO about the registration confirmation.
+
+After both MPOO and MSPO have been informed, two activities happen at the same time: MPON acquires or changes equipment, and MPOO acquires or changes equipment. Once both of these actions are completed, MPON informs GO about the outcome of the equipment process. GO then evaluates the outcome.
+
+At this point, GO decides whether the outcome is a success or a failure. If the outcome is a success, the process continues. If the outcome is a failure, GO informs MPON about the failure and then confirms the failure of the assignment. After either a successful outcome or a confirmed failure, GO assigns MPON and confirms the assignment.
+
+Following this, three notifications are sent out at the same time: GO informs MPOO about the assignment status, GO informs MSPO about the assignment status, and GO informs SP about the assignment status. Once all three parties have been informed, the process ends.

@@ -1,0 +1,15 @@
+The process starts when an employee purchases a product.
+Next, the employee submits an expense report with a list of items.
+After submitting the expense report, a decision is made.
+If the condition is true, the supervisor reviews the expense report and then approves it.
+After the supervisor approves the report, another decision is made.
+Depending on the outcome, the supervisor either moves the report to the treasurer or the employee edits the report.
+If the report is moved to the treasurer, the treasurer checks the receipts and matches the items on the list.
+Following this, a decision is made.
+Depending on the outcome, the treasurer either sends the report back to the employee for editing or accepts the expenses for processing.
+If the report is sent back to the employee, the employee edits the report, and then a decision is made.
+Regardless of the outcome of the decision, the process returns to the point where the treasurer checks the receipts.
+If the treasurer accepts the expenses, they confirm the payment, and the process continues to the point where the supervisor either moves the report to the treasurer or the employee edits the report.
+If, after the supervisor approves the report, the employee edits the report, another decision is made.
+Regardless of the outcome of the decision, the process returns to the point where the supervisor either moves the report to the treasurer or the employee edits the report.
+If the condition after submitting the expense report is false, the process ends.

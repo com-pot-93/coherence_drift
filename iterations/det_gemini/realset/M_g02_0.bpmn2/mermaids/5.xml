@@ -1,0 +1,26 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Develop basic design)
+    1:task:(Develop basic design) --> 2:task:(Order necessary Lego brick sets)
+    2:task:(Order necessary Lego brick sets) --> 3:task:(Sort Lego bricks according to size)
+    3:task:(Sort Lego bricks according to size) --> 4:parallelgateway:{AND}
+    4:parallelgateway:{AND} --> 5:task:(Put big bricks in suitable container)
+    4:parallelgateway:{AND} --> 6:task:(Put medium bricks in suitable container)
+    4:parallelgateway:{AND} --> 7:task:(Put small bricks in suitable container)
+    5:task:(Put big bricks in suitable container) --> 8:parallelgateway:{AND}
+    6:task:(Put medium bricks in suitable container) --> 8:parallelgateway:{AND}
+    7:task:(Put small bricks in suitable container) --> 8:parallelgateway:{AND}
+    8:parallelgateway:{AND} --> 9:task:(Build subcomponents)
+    9:task:(Build subcomponents) --> 10:exclusivegateway:{x}
+    10:exclusivegateway:{x} --> |true| 11:task:(Continue building subcomponents)
+    10:exclusivegateway:{x} --> |false| 12:task:(Reorder Lego bricks)
+    11:task:(Continue building subcomponents) --> 13:exclusivegateway:{x}
+    12:task:(Reorder Lego bricks) --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> 14:task:(Test subcomponents)
+    14:task:(Test subcomponents) --> 15:exclusivegateway:{x}
+    15:exclusivegateway:{x} --> |true| 16:task:(Redesign subcomponent)
+    15:exclusivegateway:{x} --> |false| 17:task:(Assemble to machine)
+    16:task:(Redesign subcomponent) --> 18:exclusivegateway:{x}
+    17:task:(Assemble to machine) --> 18:exclusivegateway:{x}
+    18:exclusivegateway:{x} --> 19:endevent:(((endevent)))
+```

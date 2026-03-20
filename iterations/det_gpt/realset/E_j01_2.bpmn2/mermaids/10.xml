@@ -1,0 +1,33 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive job application)
+2:parallelgateway:{AND}
+3:task:(Confirm job application)
+4:task:(Rate job application)
+5:parallelgateway:{AND}
+6:exclusivegateway:{x}
+7:exclusivegateway:{x}
+8:task:(Negotiate interview)
+9:exclusivegateway:{x}
+10:task:(Rate job seeker)
+11:exclusivegateway:{x}
+12:task:(Hire prospective customers)
+13:exclusivegateway:{x}
+14:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive job application)
+1:task:(Receive job application) --> 2:parallelgateway:{AND}
+2:parallelgateway:{AND} --> 3:task:(Confirm job application)
+2:parallelgateway:{AND} --> 4:task:(Rate job application)
+3:task:(Confirm job application) --> 5:parallelgateway:{AND}
+4:task:(Rate job application) --> 5:parallelgateway:{AND}
+5:parallelgateway:{AND} --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |No negotiation|7:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Negotiate|8:task:(Negotiate interview)
+8:task:(Negotiate interview) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> 10:task:(Rate job seeker)
+10:task:(Rate job seeker) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Hire|12:task:(Hire prospective customers)
+11:exclusivegateway:{x} --> |Do not hire|13:exclusivegateway:{x}
+12:task:(Hire prospective customers) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> 14:endevent:(((endevent)))

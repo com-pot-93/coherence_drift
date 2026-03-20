@@ -1,0 +1,50 @@
+Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins.
+2. First, the manufacturer is entered.
+3. Next, the model is entered.
+4. At this point, a decision is made: you can either continue or stop.  
+   - If you choose to stop, the process ends.
+   - If you choose to continue, you move to the next decision.
+5. Another decision is made: you can proceed with a positive or negative response.
+   - If the response is negative, the process ends.
+   - If the response is positive, you move to the next decision.
+6. A further decision is made, leading to two possible paths:
+   - If the condition is true, you proceed to enter the broken part.
+   - Otherwise, you move forward in the process.
+7. If you are entering the broken part, you do so now. After entering the broken part, you have two options:
+   - You can loop back and enter another broken part.
+   - Or, you can escalate the issue, which then moves you forward in the process.
+8. After handling the broken part, you reach a point where two activities are performed at the same time:
+   - Determining the list of parts needed.
+   - Identifying the necessary tools.
+   Both activities must be completed before moving on.
+9. Once both the parts list and tools are identified, you check the inventory.
+10. After checking the inventory, you decide whether to continue or stop.
+    - If you choose to stop, the process ends.
+    - If you choose to continue, you move to the next decision.
+11. At this point, you decide if help is needed:
+    - If no help is needed, you proceed to obtain the needed items.
+    - If help is needed, you are asked whether you want to contact a friend.
+        - If you choose yes, you contact your friend, then continue.
+        - If you choose no, you continue without contacting anyone.
+12. After obtaining the needed items, you generate repair instructions.
+13. Next, you decide whether to continue or stop.
+    - If you choose to stop, the process ends.
+    - If you choose to continue, you move to the next decision.
+14. Here, you decide whether to repeat the previous step or not:
+    - If you choose to repeat, you follow the instructions again. After following the instructions, you decide whether to repeat this step again or not. This can loop multiple times.
+    - If you do not repeat, you escalate the issue, then continue.
+15. After this, you decide whether the outcome is negative or not:
+    - If negative, you move to the next decision.
+    - If not, you continue.
+16. Now, you decide whether you are unable to proceed or can continue:
+    - If you are unable to proceed, you send the issue to an expert, then continue.
+    - If you can proceed, you continue.
+17. Next, you leave a review.
+18. After leaving a review, you decide whether to upload a video or skip this step:
+    - If you choose to upload a video, you do so, and then save the video to a database.
+    - If you choose to skip, you continue.
+19. The process then ends.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step and decision is included and described in order.

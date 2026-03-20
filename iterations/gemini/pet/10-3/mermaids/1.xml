@@ -1,0 +1,18 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Deregister MPOO at GO)
+  1:task:(Deregister MPOO at GO) --> 2:task:(Verify Deregistration)
+  2:task:(Verify Deregistration) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Reject| 4:task:(Reject Deregistration)
+  3:exclusivegateway:{x} --> |Confirm| 5:task:(Preliminarily Confirm Deregistration)
+  4:task:(Reject Deregistration) --> 12:endevent:(((endevent)))
+  5:task:(Preliminarily Confirm Deregistration) --> 6:task:(Prepare Readmission)
+  6:task:(Prepare Readmission) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Path 1| 8:exclusivegateway:{O}
+  7:exclusivegateway:{x} --> |Path 2| 9:task:(Confirm Continuation to MPOO)
+  9:task:(Confirm Continuation to MPOO) --> 8:exclusivegateway:{O}
+  8:exclusivegateway:{O} --> 10:task:(Perform Equipment Acquisition/Changes)
+  10:task:(Perform Equipment Acquisition/Changes) --> 11:exclusivegateway:{O}
+  10:task:(Perform Equipment Acquisition/Changes) --> 11:exclusivegateway:{O}
+  11:exclusivegateway:{O} --> 12:endevent:(((endevent)))
+```

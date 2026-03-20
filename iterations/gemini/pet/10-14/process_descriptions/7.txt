@@ -1,0 +1,19 @@
+The process starts. A decision is made: either the bill is sent to MPON or to GO.
+
+If the bill is sent to MPON, it is then examined by MPON. Following the examination, another decision is made: either the bill is confirmed or rejected.
+
+If the bill is confirmed, an invoice with payment advice is confirmed. After confirmation, the process merges into one path via a parallel gateway split and join.
+
+If the bill is rejected, the invoice is rejected. After rejection, the process merges into one path via a parallel gateway split and join.
+
+Both paths then merge into one via an exclusive gateway.
+
+Alternatively, if the bill is sent to GO, it is examined by GO. Following the examination, a decision is made: either the bill is rejected or confirmed.
+
+If the bill is rejected, the invoice is rejected. After rejection, the process merges into one path via a parallel gateway split and join.
+
+If the bill is confirmed, an invoice with payment advice is confirmed. After confirmation, the process merges into one path via a parallel gateway split and join.
+
+Both paths then merge into one via an exclusive gateway.
+
+Finally, both main paths merge into one via an exclusive gateway, and the process ends.

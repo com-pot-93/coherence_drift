@@ -1,0 +1,37 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Connect to Management System)
+    1:task:(Connect to Management System) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |Condition Met| 3:task:(Read Order)
+    2:exclusivegateway:{x} --> |Condition Not Met| 4:endevent:(((endevent)))
+    3:task:(Read Order) --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Condition Met| 7:parallelgateway:{AND}
+    5:exclusivegateway:{x} --> |Condition Not Met| 6:task:(Escalate Issue)
+    6:task:(Escalate Issue) --> 19:exclusivegateway:{x}
+    7:parallelgateway:{AND} --> 8:exclusivegateway:{x}
+    7:parallelgateway:{AND} --> 11:exclusivegateway:{x}
+    7:parallelgateway:{AND} --> 14:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> |Condition Met| 9:task:(Apply Penalty 1)
+    8:exclusivegateway:{x} --> |Condition Not Met| 10:task:(Mark OK 1)
+    9:task:(Apply Penalty 1) --> 17:parallelgateway:{AND}
+    10:task:(Mark OK 1) --> 17:parallelgateway:{AND}
+    11:exclusivegateway:{x} --> |Condition Met| 12:task:(Apply Penalty 2)
+    11:exclusivegateway:{x} --> |Condition Not Met| 13:task:(Mark OK 2)
+    12:task:(Apply Penalty 2) --> 17:parallelgateway:{AND}
+    13:task:(Mark OK 2) --> 17:parallelgateway:{AND}
+    14:exclusivegateway:{x} --> |Condition Met| 15:task:(Apply Penalty 3)
+    14:exclusivegateway:{x} --> |Condition Not Met| 16:task:(Mark OK 3)
+    15:task:(Apply Penalty 3) --> 17:parallelgateway:{AND}
+    16:task:(Mark OK 3) --> 17:parallelgateway:{AND}
+    17:parallelgateway:{AND} --> 18:task:(Mark Product OK)
+    18:task:(Mark Product OK) --> 20:parallelgateway:{AND}
+    20:parallelgateway:{AND} --> 21:task:(Pack Product)
+    20:parallelgateway:{AND} --> 22:task:(Request Courier)
+    21:task:(Pack Product) --> 23:parallelgateway:{AND}
+    22:task:(Request Courier) --> 23:parallelgateway:{AND}
+    23:parallelgateway:{AND} --> 24:task:(Mark Delivery Shipped)
+    24:task:(Mark Delivery Shipped) --> 19:exclusivegateway:{x}
+    19:exclusivegateway:{x} --> |Condition False| 1:task:(Connect to Management System)
+    19:exclusivegateway:{x} --> |Condition True| 25:task:(Escalate Issue)
+    25:task:(Escalate Issue) --> 3:task:(Read Order)
+```

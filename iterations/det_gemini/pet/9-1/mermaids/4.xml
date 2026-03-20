@@ -1,0 +1,36 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(back up the database)
+  1:task:(back up the database) --> 2:task:(check the database)
+  2:task:(check the database) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |yes| 4:task:(check the CRM system)
+  4:task:(check the CRM system) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |yes| 6:task:(register all defaulting accounts and customers)
+  6:task:(register all defaulting accounts and customers) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |yes| 8:task:(produce new table of defaulting accounts)
+  8:task:(produce new table of defaulting accounts) --> 9:task:(send table to account management)
+  9:task:(send table to account management) --> 10:parallelgateway:{AND}
+  7:exclusivegateway:{x} --> |no| 11:task:(produce new table of defaulting accounts)
+  11:task:(produce new table of defaulting accounts) --> 10:parallelgateway:{AND}
+  10:parallelgateway:{AND} --> 12:task:(produce new table of defaulting accounts)
+  12:task:(produce new table of defaulting accounts) --> 13:parallelgateway:{AND}
+  5:exclusivegateway:{x} --> |no| 14:task:(reconcile with the existing account defaulters table)
+  14:task:(reconcile with the existing account defaulters table) --> 13:parallelgateway:{AND}
+  3:exclusivegateway:{x} --> |no| 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |yes| 16:task:(send an alert to the supervisor)
+  16:task:(send an alert to the supervisor) --> 17:parallelgateway:{AND}
+  15:exclusivegateway:{x} --> |no| 18:task:(check the CRM system)
+  18:task:(check the CRM system) --> 19:exclusivegateway:{x}
+  19:exclusivegateway:{x} --> |yes| 20:task:(reconcile with the existing account defaulters table)
+  20:task:(reconcile with the existing account defaulters table) --> 21:parallelgateway:{AND}
+  19:exclusivegateway:{x} --> |no| 22:task:(reconcile with the existing account defaulters table)
+  22:task:(reconcile with the existing account defaulters table) --> 21:parallelgateway:{AND}
+  21:parallelgateway:{AND} --> 23:task:(reconcile with the existing account defaulters table)
+  23:task:(reconcile with the existing account defaulters table) --> 17:parallelgateway:{AND}
+  13:parallelgateway:{AND} --> 17:parallelgateway:{AND}
+  17:parallelgateway:{AND} --> 24:exclusivegateway:{x}
+  24:exclusivegateway:{x} --> |yes| 25:task:(send message to the supervisor)
+  25:task:(send message to the supervisor) --> 26:endevent:(((endevent)))
+  24:exclusivegateway:{x} --> |no| 27:task:(complete reconciliation)
+  27:task:(complete reconciliation) --> 26:endevent:(((endevent)))
+```

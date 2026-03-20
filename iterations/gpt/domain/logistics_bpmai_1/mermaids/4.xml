@@ -1,0 +1,48 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Receive Shipment Request)
+  2:task:(Check Product Availability)
+  3:exclusivegateway:{x}
+  4:endevent:(((endevent)))
+  5:task:(Perform Further Check)
+  6:exclusivegateway:{x}
+  7:task:(Check Shipment Address)
+  8:task:(Determine Shipment Type)
+  9:exclusivegateway:{x}
+  10:task:(Confirm Service Station Shipment)
+  11:task:(Assemble Inbound Shipment)
+  12:task:(Send Inbound Shipment)
+  13:task:(Check Inbound Shipment)
+  14:exclusivegateway:{x}
+  15:task:(Prepare Products for Service Station)
+  16:exclusivegateway:{x}
+  17:task:(Prepare Regional Shipment)
+  18:exclusivegateway:{x}
+  19:task:(Escalate and Loop Back)
+  20:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Receive Shipment Request)
+  1:task:(Receive Shipment Request) --> 2:task:(Check Product Availability)
+  2:task:(Check Product Availability) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Not Available|4:endevent:(((endevent)))
+  3:exclusivegateway:{x} --> |Available|5:task:(Perform Further Check)
+  5:task:(Perform Further Check) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Positive|7:task:(Check Shipment Address)
+  6:exclusivegateway:{x} --> |Negative|19:task:(Escalate and Loop Back)
+  7:task:(Check Shipment Address) --> 8:task:(Determine Shipment Type)
+  8:task:(Determine Shipment Type) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Service Station|10:task:(Confirm Service Station Shipment)
+  9:exclusivegateway:{x} --> |Regional|17:task:(Prepare Regional Shipment)
+  10:task:(Confirm Service Station Shipment) --> 11:task:(Assemble Inbound Shipment)
+  11:task:(Assemble Inbound Shipment) --> 12:task:(Send Inbound Shipment)
+  12:task:(Send Inbound Shipment) --> 13:task:(Check Inbound Shipment)
+  13:task:(Check Inbound Shipment) --> 14:exclusivegateway:{x}
+  14:exclusivegateway:{x} --> |Check Passes|15:task:(Prepare Products for Service Station)
+  14:exclusivegateway:{x} --> |Check Fails|13:task:(Check Inbound Shipment)
+  15:task:(Prepare Products for Service Station) --> 16:exclusivegateway:{x}
+  16:exclusivegateway:{x} --> |Preparations Complete|20:endevent:(((endevent)))
+  16:exclusivegateway:{x} --> |More Preparation Needed|15:task:(Prepare Products for Service Station)
+  17:task:(Prepare Regional Shipment) --> 18:exclusivegateway:{x}
+  18:exclusivegateway:{x} --> |Continue to Service Station Prep|15:task:(Prepare Products for Service Station)
+  18:exclusivegateway:{x} --> |Preparations Complete|20:endevent:(((endevent)))
+  19:task:(Escalate and Loop Back) --> 5:task:(Perform Further Check)

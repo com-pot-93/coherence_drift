@@ -1,0 +1,68 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive production order)
+2:task:(Prepare production order)
+3:exclusivegateway:{x}
+4:task:(Collect raw materials)
+5:task:(Cut materials)
+6:parallelgateway:{AND}
+7:task:(Stitching)
+8:task:(Printing)
+9:parallelgateway:{AND}
+10:exclusivegateway:{x}
+11:exclusivegateway:{x}
+12:exclusivegateway:{x}
+13:exclusivegateway:{x}
+14:task:(Complete production)
+15:task:(Perform quality check)
+16:task:(Create quality report)
+17:exclusivegateway:{x}
+18:exclusivegateway:{x}
+19:task:(Determine next step)
+20:exclusivegateway:{x}
+21:task:(Adjust settings)
+22:parallelgateway:{AND}
+23:task:(Send data to warehouse)
+24:exclusivegateway:{x}
+25:task:(Escalation point)
+26:exclusivegateway:{x}
+27:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive production order)
+1:task:(Receive production order) --> 2:task:(Prepare production order)
+2:task:(Prepare production order) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Condition met|4:task:(Collect raw materials)
+3:exclusivegateway:{x} --> |Condition not met|27:endevent:(((endevent)))
+4:task:(Collect raw materials) --> 5:task:(Cut materials)
+5:task:(Cut materials) --> 6:parallelgateway:{AND}
+6:parallelgateway:{AND} --> 7:task:(Stitching)
+6:parallelgateway:{AND} --> 8:task:(Printing)
+7:task:(Stitching) --> 9:parallelgateway:{AND}
+8:task:(Printing) --> 9:parallelgateway:{AND}
+9:parallelgateway:{AND} --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Positive outcome|11:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Negative outcome|27:endevent:(((endevent)))
+11:exclusivegateway:{x} --> |Proceed|12:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Loop back|10:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Continue|13:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Do not continue|27:endevent:(((endevent)))
+13:exclusivegateway:{x} --> |Continue|14:task:(Complete production)
+13:exclusivegateway:{x} --> |Do not continue|27:endevent:(((endevent)))
+14:task:(Complete production) --> 15:task:(Perform quality check)
+15:task:(Perform quality check) --> 16:task:(Create quality report)
+16:task:(Create quality report) --> 17:exclusivegateway:{x}
+17:exclusivegateway:{x} --> |Continue|18:exclusivegateway:{x}
+17:exclusivegateway:{x} --> |Loop back|13:exclusivegateway:{x}
+18:exclusivegateway:{x} --> |Proceed|19:task:(Determine next step)
+18:exclusivegateway:{x} --> |Different path|27:endevent:(((endevent)))
+19:task:(Determine next step) --> 20:exclusivegateway:{x}
+20:exclusivegateway:{x} --> |Adjustments needed|21:task:(Adjust settings)
+20:exclusivegateway:{x} --> |No action required|22:parallelgateway:{AND}
+21:task:(Adjust settings) --> 22:parallelgateway:{AND}
+22:parallelgateway:{AND} --> 23:task:(Send data to warehouse)
+23:task:(Send data to warehouse) --> 24:exclusivegateway:{x}
+24:exclusivegateway:{x} --> |Further actions required|14:task:(Complete production)
+24:exclusivegateway:{x} --> |No further actions|25:task:(Escalation point)
+25:task:(Escalation point) --> 26:exclusivegateway:{x}
+26:exclusivegateway:{x} --> |Loop back|11:exclusivegateway:{x}
+26:exclusivegateway:{x} --> |End process|27:endevent:(((endevent)))

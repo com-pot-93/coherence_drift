@@ -1,0 +1,7 @@
+The process starts with the submission of an office supply request, which is then registered. The process then splits into two alternative paths.
+
+If the request is approved, it is received for approval and proceeds to the purchase department for quotations. After quotations are made, the process splits again. If a vendor is selected, the process continues; otherwise, a different vendor is chosen, and the selection process is repeated. Once a vendor is selected, a purchase order is generated and sent. The process then waits for product delivery, receives the invoice, and sends a notification to the user.
+
+If the request is not approved, it is returned to the employee, who reviews the comments and resubmits the request for approval. The process loops back to the "Receive for Approval" step.
+
+Both paths eventually merge back, leading to the start of the exclusive gateway, and the process ends.

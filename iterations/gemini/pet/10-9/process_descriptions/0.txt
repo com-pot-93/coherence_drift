@@ -1,0 +1,7 @@
+The process starts. Then, depending on the situation, either the SP, PU, or GO requests changes to the MPO, or the MPO causes a change.
+In the first case, the SP, PU, or GO requests changes to the MPO, and after that, the process continues. In the second case, where the MPO causes a change, the process continues as well.
+After one of the previous steps, the MPO reviews the change request. Then, depending on the situation, the MPO either rejects the change or confirms the change.
+In the first case, where the MPO rejects the change, the process continues. In the second case, where the MPO confirms the change, the process continues as well.
+After one of the previous steps, the MPO performs the change. Then, depending on the situation, the MPO either reports the implementation to the SP, PU, or GO, or the MPO notifies the SP, PU, or GO about the failure.
+In the first case, where the MPO reports the implementation to the SP, PU, or GO, the process continues. In the second case, where the MPO notifies the SP, PU, or GO about the failure, the process continues as well.
+After one of the previous steps, the process ends.

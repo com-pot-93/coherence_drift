@@ -1,0 +1,75 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(back up the database)
+2:task:(check the database)
+3:exclusivegateway:{x}
+4:task:(check the CRM system)
+5:exclusivegateway:{x}
+6:task:(register all defaulting accounts and customers)
+7:exclusivegateway:{x}
+8:task:(produce new table of defaulting accounts)
+9:exclusivegateway:{x}
+10:task:(send table to account management)
+11:exclusivegateway:{x}
+12:exclusivegateway:{x}
+13:task:(send an alert to the supervisor)
+14:exclusivegateway:{x}
+15:task:(check the CRM system)
+16:exclusivegateway:{x}
+17:task:(reconcile with the existing account defaulters table)
+18:exclusivegateway:{x}
+19:task:(send message to the supervisor)
+20:task:(complete reconciliation)
+21:exclusivegateway:{x}
+22:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(back up the database)
+1:task:(back up the database) --> 2:task:(check the database)
+2:task:(check the database) --> 3:exclusivegateway:{x}
+
+%% D1
+3:exclusivegateway:{x} --> |Branch 1|4:task:(check the CRM system)
+3:exclusivegateway:{x} --> |Branch 2|11:exclusivegateway:{x}
+
+%% D2
+4:task:(check the CRM system) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Branch 1|6:task:(register all defaulting accounts and customers)
+5:exclusivegateway:{x} --> |Branch 2|7:exclusivegateway:{x}
+6:task:(register all defaulting accounts and customers) --> 7:exclusivegateway:{x}
+
+%% D3
+7:exclusivegateway:{x} --> |Branch 1|8:task:(produce new table of defaulting accounts)
+7:exclusivegateway:{x} --> |Branch 2|9:exclusivegateway:{x}
+8:task:(produce new table of defaulting accounts) --> 9:exclusivegateway:{x}
+
+%% D4
+9:exclusivegateway:{x} --> |Branch 1|10:task:(send table to account management)
+9:exclusivegateway:{x} --> |Branch 2|11:exclusivegateway:{x}
+10:task:(send table to account management) --> 11:exclusivegateway:{x}
+
+%% D1 merge
+11:exclusivegateway:{x} --> 12:exclusivegateway:{x}
+
+%% D5
+12:exclusivegateway:{x} --> |Branch 1|13:task:(send an alert to the supervisor)
+12:exclusivegateway:{x} --> |Branch 2|14:exclusivegateway:{x}
+13:task:(send an alert to the supervisor) --> 14:exclusivegateway:{x}
+
+%% D5 merge
+14:exclusivegateway:{x} --> 15:task:(check the CRM system)
+
+15:task:(check the CRM system) --> 16:exclusivegateway:{x}
+
+%% D6
+16:exclusivegateway:{x} --> |Branch 1|17:task:(reconcile with the existing account defaulters table)
+16:exclusivegateway:{x} --> |Branch 2|18:exclusivegateway:{x}
+17:task:(reconcile with the existing account defaulters table) --> 18:exclusivegateway:{x}
+
+%% D6 merge
+18:exclusivegateway:{x} --> 19:task:(send message to the supervisor)
+18:exclusivegateway:{x} --> 20:task:(complete reconciliation)
+
+19:task:(send message to the supervisor) --> 21:exclusivegateway:{x}
+20:task:(complete reconciliation) --> 21:exclusivegateway:{x}
+
+21:exclusivegateway:{x} --> 22:endevent:(((endevent)))

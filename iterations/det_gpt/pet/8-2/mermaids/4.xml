@@ -1,0 +1,234 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(report the vacancy to HR)
+2:task:(HR creates a job description)
+3:exclusivegateway:{x}
+4:task:(HR asks the Department)
+5:exclusivegateway:{x}
+6:task:(HR submits the job description for consideration)
+7:task:(HR waits for the approval)
+8:exclusivegateway:{x}
+9:exclusivegateway:{x}
+10:exclusivegateway:{x}
+11:exclusivegateway:{x}
+12:task:(Department requests a correction)
+13:task:(HR corrects the description)
+14:exclusivegateway:{x}
+15:exclusivegateway:{x}
+16:exclusivegateway:{x}
+17:exclusivegateway:{x}
+18:task:(Department requests a correction)
+19:task:(HR corrects the description)
+20:exclusivegateway:{x}
+21:exclusivegateway:{x}
+22:exclusivegateway:{x}
+23:exclusivegateway:{x}
+24:task:(Department requests a correction)
+25:task:(HR corrects the description)
+26:exclusivegateway:{x}
+27:exclusivegateway:{x}
+28:exclusivegateway:{x}
+29:exclusivegateway:{x}
+30:task:(Department requests a correction)
+31:task:(HR corrects the description)
+32:exclusivegateway:{x}
+33:exclusivegateway:{x}
+34:exclusivegateway:{x}
+35:exclusivegateway:{x}
+36:task:(Department requests a correction)
+37:task:(HR corrects the description)
+38:exclusivegateway:{x}
+39:exclusivegateway:{x}
+40:exclusivegateway:{x}
+41:exclusivegateway:{x}
+42:task:(Department requests a correction)
+43:task:(HR corrects the description)
+44:exclusivegateway:{x}
+45:exclusivegateway:{x}
+46:exclusivegateway:{x}
+47:exclusivegateway:{x}
+48:task:(Department requests a correction)
+49:task:(HR corrects the description)
+50:exclusivegateway:{x}
+51:exclusivegateway:{x}
+52:exclusivegateway:{x}
+53:exclusivegateway:{x}
+54:task:(Department requests a correction)
+55:task:(HR corrects the description)
+56:exclusivegateway:{x}
+57:exclusivegateway:{x}
+58:exclusivegateway:{x}
+59:exclusivegateway:{x}
+60:task:(Department requests a correction)
+61:task:(HR corrects the description)
+62:exclusivegateway:{x}
+63:exclusivegateway:{x}
+64:exclusivegateway:{x}
+65:exclusivegateway:{x}
+66:task:(Department requests a correction)
+67:task:(HR corrects the description)
+68:exclusivegateway:{x}
+69:exclusivegateway:{x}
+70:exclusivegateway:{x}
+71:exclusivegateway:{x}
+72:task:(Department requests a correction)
+73:task:(HR corrects the description)
+74:exclusivegateway:{x}
+75:exclusivegateway:{x}
+76:exclusivegateway:{x}
+77:exclusivegateway:{x}
+78:task:(Department requests a correction)
+79:task:(HR corrects the description)
+80:exclusivegateway:{x}
+81:exclusivegateway:{x}
+82:task:(HR posts the job)
+83:task:(HR submits the job description for consideration)
+84:task:(HR submits the job description for consideration)
+85:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(report the vacancy to HR)
+1:task:(report the vacancy to HR) --> 2:task:(HR creates a job description)
+2:task:(HR creates a job description) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Department input needed|4:task:(HR asks the Department)
+3:exclusivegateway:{x} --> |No input needed|5:exclusivegateway:{x}
+4:task:(HR asks the Department) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> 6:task:(HR submits the job description for consideration)
+6:task:(HR submits the job description for consideration) --> 7:task:(HR waits for the approval)
+7:task:(HR waits for the approval) --> 8:exclusivegateway:{x}
+
+%% D2
+8:exclusivegateway:{x} --> |Branch 1|9:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Branch 2|27:exclusivegateway:{x}
+
+%% D3
+9:exclusivegateway:{x} --> |Branch 1|10:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Branch 2|22:exclusivegateway:{x}
+
+%% D4
+10:exclusivegateway:{x} --> |Branch 1|11:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Branch 2|16:exclusivegateway:{x}
+
+%% D5
+11:exclusivegateway:{x} --> |Department requests correction|12:task:(Department requests a correction)
+11:exclusivegateway:{x} --> |Approved|15:exclusivegateway:{x}
+12:task:(Department requests a correction) --> 13:task:(HR corrects the description)
+13:task:(HR corrects the description) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> 16:exclusivegateway:{x}
+
+%% D7
+16:exclusivegateway:{x} --> |Department requests correction|18:task:(Department requests a correction)
+16:exclusivegateway:{x} --> |Approved|21:exclusivegateway:{x}
+18:task:(Department requests a correction) --> 19:task:(HR corrects the description)
+19:task:(HR corrects the description) --> 20:exclusivegateway:{x}
+20:exclusivegateway:{x} --> 21:exclusivegateway:{x}
+21:exclusivegateway:{x} --> 22:exclusivegateway:{x}
+
+%% D9
+22:exclusivegateway:{x} --> |Branch 1|23:exclusivegateway:{x}
+22:exclusivegateway:{x} --> |Branch 2|34:exclusivegateway:{x}
+
+%% D10
+23:exclusivegateway:{x} --> |Branch 1|24:exclusivegateway:{x}
+23:exclusivegateway:{x} --> |Branch 2|28:exclusivegateway:{x}
+
+%% D11
+24:exclusivegateway:{x} --> |Department requests correction|25:task:(Department requests a correction)
+24:exclusivegateway:{x} --> |Approved|27:exclusivegateway:{x}
+25:task:(Department requests a correction) --> 26:task:(HR corrects the description)
+26:task:(HR corrects the description) --> 27:exclusivegateway:{x}
+27:exclusivegateway:{x} --> 28:exclusivegateway:{x}
+
+%% D13
+34:exclusivegateway:{x} --> |Department requests correction|36:task:(Department requests a correction)
+34:exclusivegateway:{x} --> |Approved|39:exclusivegateway:{x}
+36:task:(Department requests a correction) --> 37:task:(HR corrects the description)
+37:task:(HR corrects the description) --> 38:exclusivegateway:{x}
+38:exclusivegateway:{x} --> 39:exclusivegateway:{x}
+39:exclusivegateway:{x} --> 40:exclusivegateway:{x}
+
+%% D15
+27:exclusivegateway:{x} --> |Branch 1|41:exclusivegateway:{x}
+27:exclusivegateway:{x} --> |Branch 2|52:exclusivegateway:{x}
+
+%% D16
+41:exclusivegateway:{x} --> |Branch 1|42:exclusivegateway:{x}
+41:exclusivegateway:{x} --> |Branch 2|46:exclusivegateway:{x}
+
+%% D17
+42:exclusivegateway:{x} --> |Department requests correction|43:task:(Department requests a correction)
+42:exclusivegateway:{x} --> |Approved|45:exclusivegateway:{x}
+43:task:(Department requests a correction) --> 44:task:(HR corrects the description)
+44:task:(HR corrects the description) --> 45:exclusivegateway:{x}
+45:exclusivegateway:{x} --> 46:exclusivegateway:{x}
+
+%% D19
+46:exclusivegateway:{x} --> |Department requests correction|48:task:(Department requests a correction)
+46:exclusivegateway:{x} --> |Approved|51:exclusivegateway:{x}
+48:task:(Department requests a correction) --> 49:task:(HR corrects the description)
+49:task:(HR corrects the description) --> 50:exclusivegateway:{x}
+50:exclusivegateway:{x} --> 51:exclusivegateway:{x}
+51:exclusivegateway:{x} --> 52:exclusivegateway:{x}
+
+%% D21
+52:exclusivegateway:{x} --> |Branch 1|53:exclusivegateway:{x}
+52:exclusivegateway:{x} --> |Branch 2|64:exclusivegateway:{x}
+
+%% D22
+53:exclusivegateway:{x} --> |Branch 1|54:exclusivegateway:{x}
+53:exclusivegateway:{x} --> |Branch 2|58:exclusivegateway:{x}
+
+%% D23
+54:exclusivegateway:{x} --> |Department requests correction|55:task:(Department requests a correction)
+54:exclusivegateway:{x} --> |Approved|57:exclusivegateway:{x}
+55:task:(Department requests a correction) --> 56:task:(HR corrects the description)
+56:task:(HR corrects the description) --> 57:exclusivegateway:{x}
+57:exclusivegateway:{x} --> 58:exclusivegateway:{x}
+
+%% D25
+58:exclusivegateway:{x} --> |Department requests correction|60:task:(Department requests a correction)
+58:exclusivegateway:{x} --> |Approved|63:exclusivegateway:{x}
+60:task:(Department requests a correction) --> 61:task:(HR corrects the description)
+61:task:(HR corrects the description) --> 62:exclusivegateway:{x}
+62:exclusivegateway:{x} --> 63:exclusivegateway:{x}
+63:exclusivegateway:{x} --> 64:exclusivegateway:{x}
+
+%% D27
+64:exclusivegateway:{x} --> |Branch 1|65:exclusivegateway:{x}
+64:exclusivegateway:{x} --> |Branch 2|76:exclusivegateway:{x}
+
+%% D28
+65:exclusivegateway:{x} --> |Branch 1|66:exclusivegateway:{x}
+65:exclusivegateway:{x} --> |Branch 2|70:exclusivegateway:{x}
+
+%% D29
+66:exclusivegateway:{x} --> |Department requests correction|67:task:(Department requests a correction)
+66:exclusivegateway:{x} --> |Approved|69:exclusivegateway:{x}
+67:task:(Department requests a correction) --> 68:task:(HR corrects the description)
+68:task:(HR corrects the description) --> 69:exclusivegateway:{x}
+69:exclusivegateway:{x} --> 70:exclusivegateway:{x}
+
+%% D31
+70:exclusivegateway:{x} --> |Department requests correction|72:task:(Department requests a correction)
+70:exclusivegateway:{x} --> |Approved|75:exclusivegateway:{x}
+72:task:(Department requests a correction) --> 73:task:(HR corrects the description)
+73:task:(HR corrects the description) --> 74:exclusivegateway:{x}
+74:exclusivegateway:{x} --> 75:exclusivegateway:{x}
+75:exclusivegateway:{x} --> 76:exclusivegateway:{x}
+
+%% D33
+76:exclusivegateway:{x} --> |Branch 1|77:exclusivegateway:{x}
+76:exclusivegateway:{x} --> |Branch 2|80:exclusivegateway:{x}
+
+%% D34
+77:exclusivegateway:{x} --> |Department requests correction|78:task:(Department requests a correction)
+77:exclusivegateway:{x} --> |Approved|79:task:(HR corrects the description)
+78:task:(Department requests a correction) --> 79:task:(HR corrects the description)
+79:task:(HR corrects the description) --> 80:exclusivegateway:{x}
+80:exclusivegateway:{x} --> 81:exclusivegateway:{x}
+
+81:exclusivegateway:{x} --> 82:task:(HR posts the job)
+81:exclusivegateway:{x} --> 83:task:(HR submits the job description for consideration)
+82:task:(HR posts the job) --> 85:endevent:(((endevent)))
+83:task:(HR submits the job description for consideration) --> 84:task:(HR submits the job description for consideration)
+84:task:(HR submits the job description for consideration) --> 85:endevent:(((endevent)))

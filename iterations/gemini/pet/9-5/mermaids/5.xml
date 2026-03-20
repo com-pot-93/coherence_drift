@@ -1,0 +1,30 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+  1:exclusivegateway:{x} --> |Condition A is true| 2:task:(Receive Expense Report)
+  1:exclusivegateway:{x} --> |Condition A is not true| 5:task:(Create New Employee Account)
+  2:task:(Receive Expense Report) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Condition E is true| 4:task:(Create New Employee Account)
+  3:exclusivegateway:{x} --> |Condition E is not true| 6:parallelgateway:{AND}
+  4:task:(Create New Employee Account) --> 6:parallelgateway:{AND}
+  5:task:(Create New Employee Account) --> 6:parallelgateway:{AND}
+  6:parallelgateway:{AND} --> 7:parallelgateway:{AND}
+  7:parallelgateway:{AND} --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |Condition G is true| 9:task:(Approve Report Automatically)
+  8:exclusivegateway:{x} --> |Condition G is not true| 10:task:(Supervisor Approves Report)
+  9:task:(Approve Report Automatically) --> 11:parallelgateway:{AND}
+  10:task:(Supervisor Approves Report) --> 11:parallelgateway:{AND}
+  11:parallelgateway:{AND} --> 12:parallelgateway:{AND}
+  12:parallelgateway:{AND} --> 13:exclusivegateway:{x}
+  13:exclusivegateway:{x} --> |Condition I is true| 14:task:(Send Reimbursement)
+  13:exclusivegateway:{x} --> |Condition I is not true| 15:exclusivegateway:{x}
+  14:task:(Send Reimbursement) --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |Condition K is true| 19:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |Condition K is not true| 16:exclusivegateway:{x}
+  16:exclusivegateway:{x} --> |Condition L is true| 17:task:(Send Approval in Progress Email)
+  16:exclusivegateway:{x} --> |Condition L is not true| 19:exclusivegateway:{x}
+  17:task:(Send Approval in Progress Email) --> 19:exclusivegateway:{x}
+  19:exclusivegateway:{x} --> |Condition M is true| 20:endevent:(((endevent)))
+  19:exclusivegateway:{x} --> |Condition M is not true| 18:task:(Send Rejection Notice)
+  18:task:(Send Rejection Notice) --> 20:endevent:(((endevent)))
+```

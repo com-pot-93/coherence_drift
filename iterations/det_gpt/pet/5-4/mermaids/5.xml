@@ -1,0 +1,66 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Employee purchases a product)
+2:task:(Employee submits an expense report with a list of items)
+3:task:(Supervisor reviews the expense report)
+4:task:(Supervisor approves the report)
+5:exclusivegateway:{x}
+6:task:(Supervisor moves report to the treasurer)
+7:task:(Treasurer checks receipts)
+8:task:(Treasurer matches the items on the list)
+9:exclusivegateway:{x}
+10:task:(Treasurer  sends report back to the employee)
+11:task:(Employee edits the report)
+12:exclusivegateway:{x}
+13:task:(Treasurer accepts the expenses for processing)
+14:task:(Treasurer confirms the payment)
+15:exclusivegateway:{x}
+16:task:(Employee edits the report)
+17:exclusivegateway:{x}
+18:task:(Supervisor moves report to the treasurer)
+19:task:(Treasurer checks receipts)
+20:task:(Treasurer matches the items on the list)
+21:exclusivegateway:{x}
+22:task:(Treasurer  sends report back to the employee)
+23:task:(Employee edits the report)
+24:task:(Treasurer accepts the expenses for processing)
+25:task:(Treasurer confirms the payment)
+26:exclusivegateway:{x}
+27:task:(Employee edits the report)
+28:task:(Supervisor reviews the expense report)
+29:exclusivegateway:{x}
+30:task:(Supervisor reviews the expense report)
+31:exclusivegateway:{x}
+32:task:(Supervisor reviews the expense report)
+33:exclusivegateway:{x}
+34:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Employee purchases a product)
+1:task:(Employee purchases a product) --> 2:task:(Employee submits an expense report with a list of items)
+2:task:(Employee submits an expense report with a list of items) --> 3:task:(Supervisor reviews the expense report)
+3:task:(Supervisor reviews the expense report) --> 4:task:(Supervisor approves the report)
+4:task:(Supervisor approves the report) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Approve|6:task:(Supervisor moves report to the treasurer)
+5:exclusivegateway:{x} --> |Loop again|29:exclusivegateway:{x}
+6:task:(Supervisor moves report to the treasurer) --> 7:task:(Treasurer checks receipts)
+7:task:(Treasurer checks receipts) --> 8:task:(Treasurer matches the items on the list)
+8:task:(Treasurer matches the items on the list) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Send back|10:task:(Treasurer  sends report back to the employee)
+9:exclusivegateway:{x} --> |Accept|13:task:(Treasurer accepts the expenses for processing)
+10:task:(Treasurer  sends report back to the employee) --> 11:task:(Employee edits the report)
+11:task:(Employee edits the report) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Resubmit|6:task:(Supervisor moves report to the treasurer)
+12:exclusivegateway:{x} --> |Cancel|34:endevent:(((endevent)))
+13:task:(Treasurer accepts the expenses for processing) --> 14:task:(Treasurer confirms the payment)
+14:task:(Treasurer confirms the payment) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> |Done|34:endevent:(((endevent)))
+15:exclusivegateway:{x} --> |Edit|16:task:(Employee edits the report)
+16:task:(Employee edits the report) --> 6:task:(Supervisor moves report to the treasurer)
+29:exclusivegateway:{x} --> |Loop again|30:task:(Supervisor reviews the expense report)
+29:exclusivegateway:{x} --> |Exit loop|34:endevent:(((endevent)))
+30:task:(Supervisor reviews the expense report) --> 31:exclusivegateway:{x}
+31:exclusivegateway:{x} --> |Loop again|32:task:(Supervisor reviews the expense report)
+31:exclusivegateway:{x} --> |Exit loop|34:endevent:(((endevent)))
+32:task:(Supervisor reviews the expense report) --> 33:exclusivegateway:{x}
+33:exclusivegateway:{x} --> |Loop again|32:task:(Supervisor reviews the expense report)
+33:exclusivegateway:{x} --> |Exit loop|34:endevent:(((endevent)))

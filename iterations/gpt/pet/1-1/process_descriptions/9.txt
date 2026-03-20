@@ -1,0 +1,6 @@
+The process begins when an order is received. After receiving the order, the next step is to evaluate the order. Based on the evaluation, there are two possible outcomes:
+
+- If the order is rejected, the process continues with handling the order rejection. Once the rejection is handled, the process moves to the final step.
+- If the order is not rejected, the storehouse is informed about the order. After informing the storehouse, the engineering department is notified. The process then proceeds to assemble the bicycle. Once the bicycle is assembled, it is shipped. After shipping the bicycle, the process moves to the final step.
+
+In both cases—whether the order is rejected or the bicycle is shipped—the process ends.

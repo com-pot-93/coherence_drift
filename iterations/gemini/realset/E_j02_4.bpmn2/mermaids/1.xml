@@ -1,0 +1,40 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:parallelgateway:{AND}
+    1:parallelgateway:{AND} --> 2:task:(Baby younger than 2 years)
+    1:parallelgateway:{AND} --> 3:task:(Parent)
+    2:task:(Baby younger than 2 years) --> 4:parallelgateway:{AND}
+    3:task:(Parent) --> 4:parallelgateway:{AND}
+    4:parallelgateway:{AND} --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Self-employed, studying, housewife, or man| 18:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Employed| 6:task:(Send employer notification)
+    6:task:(Send employer notification) --> 7:task:(Receive employer confirmation)
+    7:task:(Receive employer confirmation) --> 8:task:(Take maternity leave)
+    8:task:(Take maternity leave) --> 18:exclusivegateway:{x}
+    18:exclusivegateway:{x} --> |Split maternity leave| 9:exclusivegateway:{x}
+    18:exclusivegateway:{x} --> |Extend maternity leave| 13:exclusivegateway:{x}
+    18:exclusivegateway:{x} --> |Both parents take maternity leave| 22:task:(Continue)
+    9:exclusivegateway:{x} --> |Less than 2 months| 10:task:(Send employer notification)
+    9:exclusivegateway:{x} --> |More than 3 months| 11:task:(Send employer notification)
+    10:task:(Send employer notification) --> 12:exclusivegateway:{x}
+    11:task:(Send employer notification) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> 121:task:(Decision Path 1)
+    12:exclusivegateway:{x} --> 122:task:(Decision Path 2)
+    121:task:(Decision Path 1) --> 123:exclusivegateway:{O}
+    122:task:(Decision Path 2) --> 123:exclusivegateway:{O}
+    123:exclusivegateway:{O} --> 124:task:(Receive employer notification)
+    124:task:(Receive employer notification) --> 125:task:(Take maternity leave)
+    125:task:(Take maternity leave) --> 22:task:(Continue)
+    13:exclusivegateway:{x} --> |Less than 2 months| 14:task:(Send employer notification)
+    13:exclusivegateway:{x} --> |More than 3 months| 15:task:(Send employer notification)
+    14:task:(Send employer notification) --> 16:exclusivegateway:{x}
+    15:task:(Send employer notification) --> 16:exclusivegateway:{x}
+    16:exclusivegateway:{x} --> 171:task:(Decision Path 1)
+    16:exclusivegateway:{x} --> 172:task:(Decision Path 2)
+    171:task:(Decision Path 1) --> 173:exclusivegateway:{O}
+    172:task:(Decision Path 2) --> 173:exclusivegateway:{O}
+    173:exclusivegateway:{O} --> 174:task:(Receive employer notification)
+    174:task:(Receive employer notification) --> 175:task:(Take maternity leave)
+    175:task:(Take maternity leave) --> 22:task:(Continue)
+    22:task:(Continue) --> 23:endevent:(((endevent)))
+```

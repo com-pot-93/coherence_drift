@@ -1,0 +1,27 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Receive Order from Sales Team)
+  2:task:(Determine Parts, Quantities, and Delivery Dates)
+  3:task:(Enter Information into Production Planning System)
+  4:task:(Generate Parts List)
+  5:task:(Transfer Parts List to ERP System)
+  6:exclusivegateway:{x}
+  7:task:(Procure Missing Parts)
+  8:exclusivegateway:{x}
+  9:task:(Receive System Notification)
+  10:task:(Perform Steps Indicated by System)
+  11:task:(Check Order Quality)
+  12:endevent:(((endevent)))
+  0:startevent:((startevent)) --> 1:task:(Receive Order from Sales Team)
+  1:task:(Receive Order from Sales Team) --> 2:task:(Determine Parts, Quantities, and Delivery Dates)
+  2:task:(Determine Parts, Quantities, and Delivery Dates) --> 3:task:(Enter Information into Production Planning System)
+  3:task:(Enter Information into Production Planning System) --> 4:task:(Generate Parts List)
+  4:task:(Generate Parts List) --> 5:task:(Transfer Parts List to ERP System)
+  5:task:(Transfer Parts List to ERP System) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Parts Missing|7:task:(Procure Missing Parts)
+  6:exclusivegateway:{x} --> |No Parts Missing|8:exclusivegateway:{x}
+  7:task:(Procure Missing Parts) --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> 9:task:(Receive System Notification)
+  9:task:(Receive System Notification) --> 10:task:(Perform Steps Indicated by System)
+  10:task:(Perform Steps Indicated by System) --> 11:task:(Check Order Quality)
+  11:task:(Check Order Quality) --> 12:endevent:(((endevent)))

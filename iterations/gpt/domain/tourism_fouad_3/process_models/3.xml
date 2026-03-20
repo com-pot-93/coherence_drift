@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Travel Request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Prepare Tour Plan</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Send Tour Plan</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="4">
+    <alternative condition="Continue" language="text/javascript">
+      <loop mode="pre_test" condition="true">
+        <call id="a9" endpoint="" a:alt_id="5">
+          <parameters>
+            <label>Wait for Response</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="pre_test" condition="Do not continue">
+          <choose mode="exclusive" a:alt_id="6">
+            <alternative condition="Do not continue" language="text/javascript">
+              <call id="a15" endpoint="" a:alt_id="7">
+                <parameters>
+                  <label>Book Tour</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="8">
+                <alternative condition="Do not continue" language="text/javascript"/>
+                <alternative condition="">
+                  <call id="a23" endpoint="" a:alt_id="9">
+                    <parameters>
+                      <label>Charge Customer</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="10">
+                    <alternative condition="Contact customer" language="text/javascript">
+                      <call id="a29" endpoint="" a:alt_id="11">
+                        <parameters>
+                          <label>Contact Customer</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Send bill" language="text/javascript">
+                      <call id="a31" endpoint="" a:alt_id="12">
+                        <parameters>
+                          <label>Send Bill</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a37" endpoint="" a:alt_id="13">
+                        <parameters>
+                          <label>Send Booking Confirmation</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="No further action" language="text/javascript"/>
+                  </choose>
+                  <escape a:alt_id="-1"/>
+                </alternative>
+                <alternative condition="">
+                  <escape a:alt_id="-1"/>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="Do not continue" language="text/javascript">
+              <choose mode="exclusive" a:alt_id="8">
+                <alternative condition="Do not continue" language="text/javascript"/>
+                <alternative condition="">
+                  <call id="a23" endpoint="" a:alt_id="9">
+                    <parameters>
+                      <label>Charge Customer</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="10">
+                    <alternative condition="Contact customer" language="text/javascript">
+                      <call id="a29" endpoint="" a:alt_id="11">
+                        <parameters>
+                          <label>Contact Customer</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Send bill" language="text/javascript">
+                      <call id="a31" endpoint="" a:alt_id="12">
+                        <parameters>
+                          <label>Send Bill</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a37" endpoint="" a:alt_id="13">
+                        <parameters>
+                          <label>Send Booking Confirmation</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="No further action" language="text/javascript"/>
+                  </choose>
+                  <escape a:alt_id="-1"/>
+                </alternative>
+                <alternative condition="">
+                  <escape a:alt_id="-1"/>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="Do not proceed" language="text/javascript"/>
+          </choose>
+        </loop>
+        <call id="a9" endpoint="" a:alt_id="5">
+          <parameters>
+            <label>Wait for Response</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </loop>
+    </alternative>
+    <alternative condition="Do not continue" language="text/javascript"/>
+  </choose>
+</description>

@@ -1,0 +1,36 @@
+flowchart LR
+0:startevent:((startevent))
+1:parallelgateway:{AND}
+2:task:(Fault Detector Reports Failure)
+3:task:(MPO Suspects Fault)
+4:parallelgateway:{AND}
+5:task:(MPO Examines Reported Failure)
+6:exclusivegateway:{x}
+7:task:(MPO Rejects Failure)
+8:endevent:(((endevent)))
+9:task:(MPO Confirms Failure)
+10:task:(MPO Informs GO of Failure)
+11:task:(MPO Informs MSP of Failure)
+12:task:(MPO Fixes Fault)
+13:task:(MPO Shares Repair Results)
+14:task:(MPO Informs GO of Resolution)
+15:task:(MPO Informs MSP of Resolution)
+16:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:parallelgateway:{AND}
+1:parallelgateway:{AND} --> 2:task:(Fault Detector Reports Failure)
+1:parallelgateway:{AND} --> 3:task:(MPO Suspects Fault)
+2:task:(Fault Detector Reports Failure) --> 4:parallelgateway:{AND}
+3:task:(MPO Suspects Fault) --> 4:parallelgateway:{AND}
+4:parallelgateway:{AND} --> 5:task:(MPO Examines Reported Failure)
+5:task:(MPO Examines Reported Failure) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Reject|7:task:(MPO Rejects Failure)
+6:exclusivegateway:{x} --> |Confirm|9:task:(MPO Confirms Failure)
+7:task:(MPO Rejects Failure) --> 8:endevent:(((endevent)))
+9:task:(MPO Confirms Failure) --> 10:task:(MPO Informs GO of Failure)
+10:task:(MPO Informs GO of Failure) --> 11:task:(MPO Informs MSP of Failure)
+11:task:(MPO Informs MSP of Failure) --> 12:task:(MPO Fixes Fault)
+12:task:(MPO Fixes Fault) --> 13:task:(MPO Shares Repair Results)
+13:task:(MPO Shares Repair Results) --> 14:task:(MPO Informs GO of Resolution)
+14:task:(MPO Informs GO of Resolution) --> 15:task:(MPO Informs MSP of Resolution)
+15:task:(MPO Informs MSP of Resolution) --> 16:endevent:(((endevent)))

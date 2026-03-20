@@ -1,0 +1,7 @@
+The process begins when a customer is asked whether they would like to order just a burger or a menu (which includes additional items). If the customer chooses only a burger, the process moves directly to preparing the burger. If the customer chooses a menu, two things happen at the same time: a drink is prepared, and the customer is asked whether they would like wedges or fries. Depending on the customer's choice, either fries or wedges are prepared. Once both the drink and the chosen side (fries or wedges) are ready, the process continues.
+
+After these preparations, the process proceeds to preparing the burger. Once the burger is prepared, there is a check to determine if more status updates are needed. If more updates are required, the process enters a series of checks, repeatedly asking if further updates are needed. Each time, if more updates are required, status updates are provided, and the process checks again. This loop continues until no more updates are needed.
+
+When no further updates are required, the order is placed on the conveyor belt. After placing the order, there is another check to see if status updates are needed. If so, status updates are provided, and the process checks again if more updates are needed. If more updates are still needed, the process provides another status update and may escalate the situation before returning to the check. This loop continues until no more updates are needed.
+
+Once all updates are complete and the order has been placed on the conveyor belt, the process comes to an end.

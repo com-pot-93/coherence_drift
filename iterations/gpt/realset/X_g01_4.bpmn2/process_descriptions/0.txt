@@ -1,0 +1,9 @@
+The process begins. First, a decision is made about whether to proceed. If the answer is yes, the next step is to select a course. After selecting a course, the process checks again whether to continue. If so, the available dates for the course are shown. Then, one date is selected.
+
+Next, it is checked whether an account at the sports institute is available. If an account is available, the process checks whether the person is registered at an eligible university. If the person is registered, they can register for the course using their account. If the person is not registered at an eligible university, a request for activation is sent, and the process waits for a response. After receiving the response, the process continues.
+
+If an account at the sports institute is not available, the process also continues to the next step.
+
+After these checks, the person logs into their account. Then, they provide payment information. Once payment information is provided, the registration for the course is completed.
+
+After completing the registration, two activities happen at the same time: the person tweets their friends, and they receive a ticket. Once both of these actions are finished, the process ends.

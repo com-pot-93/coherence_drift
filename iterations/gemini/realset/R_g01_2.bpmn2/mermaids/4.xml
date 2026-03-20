@@ -1,0 +1,126 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Enter Manufacturer)
+    1:task:(Enter Manufacturer) --> 2:task:(Enter Model)
+    2:task:(Enter Model) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} -->|Yes| 4:exclusivegateway:{x}
+    3:exclusivegateway:{x} -->|No| 40:task:(Compute Parts List)
+    40:task:(Compute Parts List) --> 41:parallelgateway:{AND}
+    4:exclusivegateway:{x} -->|Yes| 5:task:(Enter Broken Part)
+    4:exclusivegateway:{x} -->|No| 34:task:(Follow Instructions)
+    5:task:(Enter Broken Part) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} -->|Yes| 7:exclusivegateway:{x}
+    6:exclusivegateway:{x} -->|No| 28:task:(Leave Review)
+    7:exclusivegateway:{x} -->|Yes| 8:exclusivegateway:{x}
+    7:exclusivegateway:{x} -->|No| 22:task:(Generate Instructions)
+    8:exclusivegateway:{x} -->|Yes| 9:exclusivegateway:{x}
+    8:exclusivegateway:{x} -->|No| 16:task:(Send Phone to Expert)
+    9:exclusivegateway:{x} -->|Yes| 10:exclusivegateway:{x}
+    9:exclusivegateway:{x} -->|No| 14:task:(Escalate Process)
+    10:exclusivegateway:{x} -->|Yes| 11:task:(Escalate Process)
+    10:exclusivegateway:{x} -->|No| 12:task:(Continue Process)
+    11:task:(Escalate Process) --> 13:inclusivegateway:{O}
+    12:task:(Continue Process) --> 13:inclusivegateway:{O}
+    13:inclusivegateway:{O} --> 15:inclusivegateway:{O}
+    14:task:(Escalate Process) --> 15:inclusivegateway:{O}
+    15:inclusivegateway:{O} --> 39:inclusivegateway:{O}
+    16:task:(Send Phone to Expert) --> 17:exclusivegateway:{x}
+    17:exclusivegateway:{x} -->|Yes| 18:task:(Escalate Process)
+    17:exclusivegateway:{x} -->|No| 19:task:(Continue Process)
+    18:task:(Escalate Process) --> 20:inclusivegateway:{O}
+    19:task:(Continue Process) --> 20:inclusivegateway:{O}
+    20:inclusivegateway:{O} --> 21:inclusivegateway:{O}
+    21:inclusivegateway:{O} --> 39:inclusivegateway:{O}
+    22:task:(Generate Instructions) --> 23:exclusivegateway:{x}
+    23:exclusivegateway:{x} -->|Yes| 24:exclusivegateway:{x}
+    23:exclusivegateway:{x} -->|No| 28:task:(Leave Review)
+    24:exclusivegateway:{x} -->|Yes| 25:exclusivegateway:{x}
+    24:exclusivegateway:{x} -->|No| 16:task:(Send Phone to Expert)
+    25:exclusivegateway:{x} -->|Yes| 11:task:(Escalate Process)
+    25:exclusivegateway:{x} -->|No| 12:task:(Continue Process)
+    28:task:(Leave Review) --> 29:exclusivegateway:{x}
+    29:exclusivegateway:{x} -->|Yes| 16:task:(Send Phone to Expert)
+    29:exclusivegateway:{x} -->|No| 39:inclusivegateway:{O}
+    34:task:(Follow Instructions) --> 35:exclusivegateway:{x}
+    35:exclusivegateway:{x} -->|Yes| 36:exclusivegateway:{x}
+    35:exclusivegateway:{x} -->|No| 28:task:(Leave Review)
+    36:exclusivegateway:{x} -->|Yes| 16:task:(Send Phone to Expert)
+    36:exclusivegateway:{x} -->|No| 39:inclusivegateway:{O}
+    39:inclusivegateway:{O} --> 47:exclusivegateway:{x}
+    41:parallelgateway:{AND} --> 42:task:(Compute Necessary Tools)
+    41:parallelgateway:{AND} --> 43:task:(Check Inventory)
+    42:task:(Compute Necessary Tools) --> 43:task:(Check Inventory)
+    43:task:(Check Inventory) --> 44:exclusivegateway:{x}
+    44:exclusivegateway:{x} -->|Yes| 47:exclusivegateway:{x}
+    44:exclusivegateway:{x} -->|No| 45:task:(Contact a Friend)
+    45:task:(Contact a Friend) --> 47:exclusivegateway:{x}
+    47:exclusivegateway:{x} -->|Yes| 48:exclusivegateway:{x}
+    47:exclusivegateway:{x} -->|No| 28:task:(Leave Review)
+    48:exclusivegateway:{x} -->|Yes| 16:task:(Send Phone to Expert)
+    48:exclusivegateway:{x} -->|No| 54:task:(Follow Instructions)
+    16:task:(Send Phone to Expert) --> 49:exclusivegateway:{x}
+    49:exclusivegateway:{x} -->|Yes| 50:task:(Escalate Process)
+    49:exclusivegateway:{x} -->|No| 51:task:(Continue Process)
+    50:task:(Escalate Process) --> 52:inclusivegateway:{O}
+    51:task:(Continue Process) --> 52:inclusivegateway:{O}
+    52:inclusivegateway:{O} --> 53:inclusivegateway:{O}
+    53:inclusivegateway:{O} --> 59:inclusivegateway:{O}
+    54:task:(Follow Instructions) --> 55:exclusivegateway:{x}
+    55:exclusivegateway:{x} -->|Yes| 16:task:(Send Phone to Expert)
+    55:exclusivegateway:{x} -->|No| 59:inclusivegateway:{O}
+    59:inclusivegateway:{O} --> 60:exclusivegateway:{x}
+    60:exclusivegateway:{x} -->|Yes| 16:task:(Send Phone to Expert)
+    60:exclusivegateway:{x} -->|No| 28:task:(Leave Review)
+    16:task:(Send Phone to Expert) --> 61:exclusivegateway:{x}
+    61:exclusivegateway:{x} -->|Yes| 14:task:(Escalate Process)
+    61:exclusivegateway:{x} -->|No| 12:task:(Continue Process)
+    14:task:(Escalate Process) --> 62:inclusivegateway:{O}
+    12:task:(Continue Process) --> 62:inclusivegateway:{O}
+    62:inclusivegateway:{O} --> 63:inclusivegateway:{O}
+    63:inclusivegateway:{O} --> 64:inclusivegateway:{O}
+    64:inclusivegateway:{O} --> 65:inclusivegateway:{O}
+    65:inclusivegateway:{O} --> 66:exclusivegateway:{x}
+    66:exclusivegateway:{x} -->|Yes| 16:task:(Send Phone to Expert)
+    66:exclusivegateway:{x} -->|No| 28:task:(Leave Review)
+    16:task:(Send Phone to Expert) --> 67:exclusivegateway:{x}
+    67:exclusivegateway:{x} -->|Yes| 14:task:(Escalate Process)
+    67:exclusivegateway:{x} -->|No| 12:task:(Continue Process)
+    14:task:(Escalate Process) --> 68:inclusivegateway:{O}
+    12:task:(Continue Process) --> 68:inclusivegateway:{O}
+    68:inclusivegateway:{O} --> 69:inclusivegateway:{O}
+    69:inclusivegateway:{O} --> 70:inclusivegateway:{O}
+    70:inclusivegateway:{O} --> 71:inclusivegateway:{O}
+    71:inclusivegateway:{O} --> 72:inclusivegateway:{O}
+    72:inclusivegateway:{O} --> 73:inclusivegateway:{O}
+    73:inclusivegateway:{O} --> 74:exclusivegateway:{x}
+    74:exclusivegateway:{x} -->|Yes| 16:task:(Send Phone to Expert)
+    74:exclusivegateway:{x} -->|No| 28:task:(Leave Review)
+    16:task:(Send Phone to Expert) --> 75:exclusivegateway:{x}
+    75:exclusivegateway:{x} -->|Yes| 14:task:(Escalate Process)
+    75:exclusivegateway:{x} -->|No| 12:task:(Continue Process)
+    14:task:(Escalate Process) --> 76:inclusivegateway:{O}
+    12:task:(Continue Process) --> 76:inclusivegateway:{O}
+    76:inclusivegateway:{O} --> 77:inclusivegateway:{O}
+    77:inclusivegateway:{O} --> 78:inclusivegateway:{O}
+    78:inclusivegateway:{O} --> 79:inclusivegateway:{O}
+    79:inclusivegateway:{O} --> 80:inclusivegateway:{O}
+    80:inclusivegateway:{O} --> 81:inclusivegateway:{O}
+    81:inclusivegateway:{O} --> 82:inclusivegateway:{O}
+    82:inclusivegateway:{O} --> 83:exclusivegateway:{x}
+    83:exclusivegateway:{x} -->|Yes| 16:task:(Send Phone to Expert)
+    83:exclusivegateway:{x} -->|No| 28:task:(Leave Review)
+    16:task:(Send Phone to Expert) --> 84:exclusivegateway:{x}
+    84:exclusivegateway:{x} -->|Yes| 14:task:(Escalate Process)
+    84:exclusivegateway:{x} -->|No| 12:task:(Continue Process)
+    14:task:(Escalate Process) --> 85:inclusivegateway:{O}
+    12:task:(Continue Process) --> 85:inclusivegateway:{O}
+    85:inclusivegateway:{O} --> 86:inclusivegateway:{O}
+    86:inclusivegateway:{O} --> 87:inclusivegateway:{O}
+    87:inclusivegateway:{O} --> 88:inclusivegateway:{O}
+    88:inclusivegateway:{O} --> 89:inclusivegateway:{O}
+    89:inclusivegateway:{O} --> 90:inclusivegateway:{O}
+    90:inclusivegateway:{O} --> 91:inclusivegateway:{O}
+    91:inclusivegateway:{O} --> 92:inclusivegateway:{O}
+    92:inclusivegateway:{O} --> 93:endevent:(((endevent)))
+    28:task:(Leave Review) --> 93:endevent:(((endevent)))
+```

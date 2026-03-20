@@ -1,0 +1,1 @@
+The process begins when Assembler AG decides to place an order with the supplier. After making this decision, Assembler AG sends the order to the supplier. Once the supplier receives the order, they process it. After processing the order, the supplier sends an invoice to Assembler AG. Assembler AG then receives the invoice, which marks the end of the process.

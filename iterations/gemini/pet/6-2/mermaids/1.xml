@@ -1,0 +1,9 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Place Order)
+  1:task:(Place Order) --> 2:task:(Send Order to Supplier)
+  2:task:(Send Order to Supplier) --> 3:task:(Process Order)
+  3:task:(Process Order) --> 4:task:(Send Invoice)
+  4:task:(Send Invoice) --> 5:task:(Receive Invoice)
+  5:task:(Receive Invoice) --> 6:endevent:(((endevent)))
+```

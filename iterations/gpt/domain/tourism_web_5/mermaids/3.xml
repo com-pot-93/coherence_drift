@@ -1,0 +1,45 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Booking Request)
+2:task:(Process Booking Request)
+3:exclusivegateway:{x}
+4:task:(Check Availability)
+5:exclusivegateway:{x}
+6:task:(Propose Alternative Time)
+7:task:(Notify Requester of Alternative)
+8:task:(Await Requester Response)
+9:exclusivegateway:{x}
+10:task:(Send Bill)
+11:exclusivegateway:{x}
+12:task:(Confirm Booking)
+13:exclusivegateway:{x}
+14:task:(Handle Escalation)
+15:exclusivegateway:{x}
+16:task:(Notify Requester)
+17:task:(Await Requester Response)
+18:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Booking Request)
+1:task:(Receive Booking Request) --> 2:task:(Process Booking Request)
+2:task:(Process Booking Request) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Continue process|4:task:(Check Availability)
+3:exclusivegateway:{x} --> |End process|18:endevent:(((endevent)))
+4:task:(Check Availability) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Requested time not available|6:task:(Propose Alternative Time)
+5:exclusivegateway:{x} --> |Requested time available|16:task:(Notify Requester)
+6:task:(Propose Alternative Time) --> 7:task:(Notify Requester of Alternative)
+7:task:(Notify Requester of Alternative) --> 8:task:(Await Requester Response)
+8:task:(Await Requester Response) --> 9:exclusivegateway:{x}
+16:task:(Notify Requester) --> 17:task:(Await Requester Response)
+17:task:(Await Requester Response) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Bill needed|10:task:(Send Bill)
+9:exclusivegateway:{x} --> |No bill needed|12:task:(Confirm Booking)
+10:task:(Send Bill) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Further billing needed|10:task:(Send Bill)
+11:exclusivegateway:{x} --> |No further billing|12:task:(Confirm Booking)
+12:task:(Confirm Booking) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Escalation needed|14:task:(Handle Escalation)
+13:exclusivegateway:{x} --> |No escalation|15:exclusivegateway:{x}
+14:task:(Handle Escalation) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> |Repeat booking|3:exclusivegateway:{x}
+15:exclusivegateway:{x} --> |Process complete|18:endevent:(((endevent)))

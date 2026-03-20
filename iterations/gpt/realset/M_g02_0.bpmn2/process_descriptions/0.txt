@@ -1,0 +1,9 @@
+The process begins with the initial step of developing a basic design. Once the basic design is ready, the next step is to order the necessary Lego brick sets required for the project. After the Lego bricks have been ordered, they are sorted according to their size.
+
+Following the sorting, three activities take place at the same time: the big bricks are placed in a suitable container, the medium bricks are placed in a suitable container, and the small bricks are placed in a suitable container. Once all the bricks have been sorted and placed in their respective containers, the process continues.
+
+At this point, a decision is made about whether to proceed further. If the decision is to continue, the next step is to build subcomponents. After building the subcomponents, another decision is made. Depending on the outcome, either the process continues with building more subcomponents, or it is necessary to reorder Lego bricks. After either building more subcomponents or reordering bricks, the process moves on to testing the subcomponents.
+
+Once the subcomponents are tested, another decision is made. Based on the result, either the subcomponent is redesigned, or the subcomponents are assembled into the machine. After either redesigning the subcomponent or assembling it into the machine, the process returns to the earlier decision point about whether to proceed further. This cycle can repeat as needed.
+
+If, at the earlier decision point, the choice is not to continue, the process comes to an end.

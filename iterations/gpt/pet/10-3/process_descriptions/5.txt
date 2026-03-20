@@ -1,0 +1,11 @@
+The process begins when the MPOO starts the deregistration procedure at the GO. After this, the GO reviews and checks the deregistration request.
+
+Next, a decision is made by the GO regarding the request. If the request is rejected, the GO communicates this rejection. After the rejection is communicated, another decision is made about whether to continue with readmission. If the decision is not to continue with readmission, this choice is recorded, and the process moves forward.
+
+If, at the first decision point, the request is not rejected, the GO provides a preliminary confirmation. After this confirmation, the process again reaches the decision about whether to continue with readmission. If the decision is not to continue, this is recorded, and the process continues.
+
+If the decision is to continue with readmission, the MPOO confirms that the process should proceed. This confirmation is then recorded.
+
+After the confirmation to proceed is recorded, the GO acquires or changes any necessary equipment. Following this, the GO assigns itself as the new MPO. The GO then informs the MPOO that the previous assignment has ended, and notifies the MPOO about the new assignment. Afterward, the GO informs the MSPO about the new assignment, and then informs the SP about the new assignment.
+
+The process ends after all these notifications have been made.

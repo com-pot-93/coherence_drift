@@ -1,0 +1,44 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(GO initiates measurement request)
+2:task:(MSP receives and reviews request)
+3:exclusivegateway:{x}
+4:task:(MSP denies request)
+5:task:(MSP informs GO of denial)
+6:exclusivegateway:{x}
+7:task:(MSP approves and performs measurement)
+8:exclusivegateway:{x}
+9:task:(Measurement failed)
+10:task:(MSP notifies GO of failure)
+11:exclusivegateway:{x}
+12:task:(Measurement successful)
+13:task:(MSP sends measured values to GO)
+14:task:(GO processes measured values)
+15:exclusivegateway:{x}
+16:task:(Values changed: GO sends updates to MSP)
+17:exclusivegateway:{x}
+18:task:(GO forwards readings to SP)
+19:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(GO initiates measurement request)
+1:task:(GO initiates measurement request) --> 2:task:(MSP receives and reviews request)
+2:task:(MSP receives and reviews request) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Denied|4:task:(MSP denies request)
+3:exclusivegateway:{x} --> |Approved|7:task:(MSP approves and performs measurement)
+4:task:(MSP denies request) --> 5:task:(MSP informs GO of denial)
+5:task:(MSP informs GO of denial) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> 19:endevent:(((endevent)))
+7:task:(MSP approves and performs measurement) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Failed|9:task:(Measurement failed)
+8:exclusivegateway:{x} --> |Successful|12:task:(Measurement successful)
+9:task:(Measurement failed) --> 10:task:(MSP notifies GO of failure)
+10:task:(MSP notifies GO of failure) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> 19:endevent:(((endevent)))
+12:task:(Measurement successful) --> 13:task:(MSP sends measured values to GO)
+13:task:(MSP sends measured values to GO) --> 14:task:(GO processes measured values)
+14:task:(GO processes measured values) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> |Values changed|16:task:(Values changed: GO sends updates to MSP)
+15:exclusivegateway:{x} --> |No change|17:exclusivegateway:{x}
+16:task:(Values changed: GO sends updates to MSP) --> 17:exclusivegateway:{x}
+17:exclusivegateway:{x} --> 18:task:(GO forwards readings to SP)
+18:task:(GO forwards readings to SP) --> 19:endevent:(((endevent)))

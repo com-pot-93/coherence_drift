@@ -1,0 +1,13 @@
+The process starts when a customer request is received. The request is then checked. Depending on the check, the process either proceeds directly to a later step or branches into two alternative paths: one for manual registration and another for automatic registration.
+
+In the manual registration path, a manual registration is performed, after which the process merges back with the automatic registration path. In the automatic registration path, an automatic registration is performed, and the process merges back with the manual registration path.
+
+After the merge, the process splits into two alternative paths: one to search for an attraction provider and another that proceeds directly to a later step.
+
+In the path where an attraction provider is searched for, the system searches for an attraction provider. This is followed by a split based on a condition. If the condition is met, the process proceeds to a later step. Otherwise, an attraction is booked. After booking, the process splits again based on whether the booking is confirmed or rejected. If rejected, the process proceeds to a later step. If confirmed, a confirmation is sent to the customer, and then the process proceeds to the same later step as in the rejection path.
+
+Both paths from the condition and the confirmation/rejection merge into a single path. This path then merges with the path where the attraction provider was not searched for.
+
+After this merge, the process merges with the path that bypassed the registration steps.
+
+Following this merge, a notification is sent to the customer, and the process ends.

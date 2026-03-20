@@ -1,0 +1,73 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Search for Customer)
+2:task:(Make Offer to Customer)
+3:exclusivegateway:{x}
+4:task:(Receive Additional Request)
+5:task:(Provide More Details)
+6:exclusivegateway:{x}
+7:exclusivegateway:{x}
+8:task:(Receive Booking Request)
+9:task:(Send Bill to Customer)
+10:exclusivegateway:{x}
+11:exclusivegateway:{x}
+12:task:(Receive Payment)
+13:exclusivegateway:{x}
+14:exclusivegateway:{x}
+15:exclusivegateway:{x}
+16:exclusivegateway:{x}
+17:task:(Contact Customer)
+18:task:(Book Travel)
+19:task:(Send Booking Confirmation)
+20:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Search for Customer)
+1:task:(Search for Customer) --> 2:task:(Make Offer to Customer)
+2:task:(Make Offer to Customer) --> 3:exclusivegateway:{x}
+
+%% First decision: continue?
+3:exclusivegateway:{x} --> |Continue|4:task:(Receive Additional Request)
+3:exclusivegateway:{x} --> |Do not continue|7:exclusivegateway:{x}
+
+4:task:(Receive Additional Request) --> 5:task:(Provide More Details)
+5:task:(Provide More Details) --> 6:exclusivegateway:{x}
+
+%% Second decision: continue?
+6:exclusivegateway:{x} --> |Continue|7:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Do not continue|7:exclusivegateway:{x}
+
+%% Next major decision point
+7:exclusivegateway:{x} --> |Continue|8:task:(Receive Booking Request)
+7:exclusivegateway:{x} --> |Do not continue|11:exclusivegateway:{x}
+
+8:task:(Receive Booking Request) --> 9:task:(Send Bill to Customer)
+9:task:(Send Bill to Customer) --> 10:exclusivegateway:{x}
+
+%% Third decision: continue?
+10:exclusivegateway:{x} --> |Continue|11:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Do not continue|11:exclusivegateway:{x}
+
+%% Next major decision point
+11:exclusivegateway:{x} --> |Continue|12:task:(Receive Payment)
+11:exclusivegateway:{x} --> |Do not continue|14:exclusivegateway:{x}
+
+12:task:(Receive Payment) --> 13:exclusivegateway:{x}
+
+%% Fourth decision: continue?
+13:exclusivegateway:{x} --> |Continue|14:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Do not continue|14:exclusivegateway:{x}
+
+%% Next major decision point (loop stage)
+14:exclusivegateway:{x} --> |Condition met|15:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |Condition not met|20:endevent:(((endevent)))
+
+%% Loop: decision to continue?
+15:exclusivegateway:{x} --> |Continue|18:task:(Book Travel)
+15:exclusivegateway:{x} --> |Do not continue|17:task:(Contact Customer)
+
+18:task:(Book Travel) --> 19:task:(Send Booking Confirmation)
+19:task:(Send Booking Confirmation) --> 16:exclusivegateway:{x}
+17:task:(Contact Customer) --> 16:exclusivegateway:{x}
+
+%% Merge for loop
+16:exclusivegateway:{x} --> 15:exclusivegateway:{x}

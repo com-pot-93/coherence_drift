@@ -1,0 +1,47 @@
+flowchart LR
+0:startevent:((startevent))
+1:exclusivegateway:{x}
+2:task:(company receives expense report)
+3:exclusivegateway:{x}
+4:task:(company creates new employee  account)
+5:exclusivegateway:{x}
+6:task:(company reviews report for automatic approval)
+7:exclusivegateway:{x}
+8:task:(supervisor approves the report)
+9:exclusivegateway:{x}
+10:task:(company sends reimbursement to employee's bank account)
+11:task:(employee  receives a rejection notice)
+12:task:(company automatically approves the report)
+13:exclusivegateway:{x}
+14:task:(company stops the process)
+15:task:(employee receives an email cancellation notice)
+16:task:(employee re-submits the expense report)
+17:task:(employee  receives an approval in progress  email)
+18:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |true|2:task:(company receives expense report)
+1:exclusivegateway:{x} --> |exit loop|18:endevent:(((endevent)))
+2:task:(company receives expense report) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |yes|4:task:(company creates new employee  account)
+3:exclusivegateway:{x} --> |no|5:exclusivegateway:{x}
+4:task:(company creates new employee  account) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> 6:task:(company reviews report for automatic approval)
+6:task:(company reviews report for automatic approval) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |manual approval|8:task:(supervisor approves the report)
+7:exclusivegateway:{x} --> |automatic approval|12:task:(company automatically approves the report)
+8:task:(supervisor approves the report) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |approved|10:task:(company sends reimbursement to employee's bank account)
+9:exclusivegateway:{x} --> |rejected|11:task:(employee  receives a rejection notice)
+10:task:(company sends reimbursement to employee's bank account) --> 13:exclusivegateway:{x}
+11:task:(employee  receives a rejection notice) --> 13:exclusivegateway:{x}
+12:task:(company automatically approves the report) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |stop|14:task:(company stops the process)
+13:exclusivegateway:{x} --> |approval in progress|17:task:(employee  receives an approval in progress  email)
+13:exclusivegateway:{x} --> |resubmit|15:task:(employee receives an email cancellation notice)
+14:task:(company stops the process) --> 15:task:(employee receives an email cancellation notice)
+15:task:(employee receives an email cancellation notice) --> 16:task:(employee re-submits the expense report)
+16:task:(employee re-submits the expense report) --> 18:endevent:(((endevent)))
+17:task:(employee  receives an approval in progress  email) --> 18:endevent:(((endevent)))
+15:task:(employee receives an email cancellation notice) --> 16:task:(employee re-submits the expense report)
+16:task:(employee re-submits the expense report) --> 18:endevent:(((endevent)))

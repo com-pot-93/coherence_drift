@@ -1,0 +1,11 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Examine Failure)
+1:task:(Examine Failure) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Rejected| 3:endevent:(((endevent)))
+2:exclusivegateway:{x} --> |Confirmed| 4:task:(Inform GO and MSP)
+4:task:(Inform GO and MSP) --> 5:task:(Fix Fault)
+5:task:(Fix Fault) --> 6:task:(Share Repair Results)
+6:task:(Share Repair Results) --> 7:task:(Inform GO and MSP about Resolution)
+7:task:(Inform GO and MSP about Resolution) --> 8:endevent:(((endevent)))
+```

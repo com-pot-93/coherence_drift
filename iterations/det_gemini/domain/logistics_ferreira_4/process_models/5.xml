@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Get temperature values</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="condition A" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Generate standard notification</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <parallel wait="-1" cancel="last" a:alt_id="4">
+        <parallel_branch>
+          <call id="a9" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Get container status</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a15" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Estimate container status</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="7">
+            <alternative condition="condition C" language="text/javascript"/>
+            <alternative condition="condition D" language="text/javascript">
+              <call id="a21" endpoint="" a:alt_id="8">
+                <parameters>
+                  <label>Generate container change request</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a11" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>Get client location</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a27" endpoint="" a:alt_id="13">
+            <parameters>
+              <label>Estimate distance</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="14">
+            <alternative condition="condition E" language="text/javascript"/>
+            <alternative condition="condition F" language="text/javascript">
+              <call id="a33" endpoint="" a:alt_id="15">
+                <parameters>
+                  <label>Estimate delivery time</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="16">
+                <alternative condition="condition G" language="text/javascript"/>
+                <alternative condition="condition H" language="text/javascript">
+                  <call id="a39" endpoint="" a:alt_id="17">
+                    <parameters>
+                      <label>Generate route change request</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a13" endpoint="" a:alt_id="19">
+            <parameters>
+              <label>Get goods status</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a45" endpoint="" a:alt_id="20">
+            <parameters>
+              <label>Estimate goods status</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="21">
+            <alternative condition="condition I" language="text/javascript">
+              <call id="a49" endpoint="" a:alt_id="22">
+                <parameters>
+                  <label>Evaluate damages</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="23">
+                <alternative condition="condition K" language="text/javascript">
+                  <call id="a55" endpoint="" a:alt_id="24">
+                    <parameters>
+                      <label>Generate removal request</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="condition L" language="text/javascript"/>
+              </choose>
+            </alternative>
+            <alternative condition="condition J" language="text/javascript"/>
+          </choose>
+        </parallel_branch>
+      </parallel>
+    </alternative>
+  </choose>
+  <call id="a65" endpoint="" a:alt_id="28">
+    <parameters>
+      <label>Send generated messages</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

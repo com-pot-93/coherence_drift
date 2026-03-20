@@ -1,0 +1,5 @@
+The process starts. First, a machine is run, and then a connection is checked. Depending on the outcome of the check, the process either proceeds directly to a decision point or goes through another decision point first.
+
+If the process goes through the second decision point, a further decision is made. If the condition is true, information is collected through measurements, and the Overall Equipment Effectiveness (OEE) is calculated. Following this, another decision is made. If the condition is true, the process returns to the information collection step. Otherwise, two parallel activities are initiated: the machine is stopped, and an email is sent to an engineer. After both activities are completed, the process continues to a decision point. Alternatively, instead of the parallel activities, an escalation event can occur, after which the process also continues to the mentioned decision point.
+
+From the decision point, the process returns to the second decision point. If the process skips the second decision point, it proceeds to the final decision point. From there, the process ends.

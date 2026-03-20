@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Determine Contact Details</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="Purchase" language="text/javascript"/>
+    <alternative condition="Known Person" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Identify Interested Person</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a5" endpoint="" a:alt_id="4">
+    <parameters>
+      <label>Call Customer</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a11" endpoint="" a:alt_id="5">
+    <parameters>
+      <label>Determine Contact Person and Budget</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a13" endpoint="" a:alt_id="6">
+    <parameters>
+      <label>Assess Customer Interest</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="7">
+    <parallel_branch>
+      <choose mode="exclusive" a:alt_id="8">
+        <alternative condition="Sales Rep Presentation" language="text/javascript">
+          <call id="a21" endpoint="" a:alt_id="9">
+            <parameters>
+              <label>Give Sales Representative Presentation</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Pre-Sales Presentation" language="text/javascript">
+          <call id="a23" endpoint="" a:alt_id="10">
+            <parameters>
+              <label>Give Pre-Sales Presentation</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a25" endpoint="" a:alt_id="11">
+        <parameters>
+          <label>Wait for Customer</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <choose mode="exclusive" a:alt_id="14">
+        <alternative condition="Sales Rep Presentation" language="text/javascript">
+          <call id="a31" endpoint="" a:alt_id="15">
+            <parameters>
+              <label>Give Sales Representative Presentation</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Pre-Sales Presentation" language="text/javascript">
+          <call id="a33" endpoint="" a:alt_id="16">
+            <parameters>
+              <label>Give Pre-Sales Presentation</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a35" endpoint="" a:alt_id="17">
+        <parameters>
+          <label>Wait for Customer</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <choose mode="exclusive" a:alt_id="18">
+    <alternative condition="Sales Rep Call" language="text/javascript">
+      <call id="a43" endpoint="" a:alt_id="19">
+        <parameters>
+          <label>Make a Sales Representative Call</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Another Sales Rep Call" language="text/javascript">
+      <call id="a45" endpoint="" a:alt_id="20">
+        <parameters>
+          <label>Make Another Sales Representative Call</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a47" endpoint="" a:alt_id="21">
+    <parameters>
+      <label>Create Quotation</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

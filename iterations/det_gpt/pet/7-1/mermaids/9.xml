@@ -1,0 +1,82 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Manager checks the open leads)
+  2:task:(Manager selects the top five leads)
+  3:task:(Manager tells Sales Assistant to  contact the leads)
+  4:exclusivegateway:{x}
+  5:task:(Sales Assistant calls  customer)
+  6:exclusivegateway:{x}
+  7:exclusivegateway:{x}
+  8:exclusivegateway:{x}
+  9:task:(Sales Assistant  sends a note to the Manager)
+  10:task:(Manager  processes the lead)
+  11:exclusivegateway:{x}
+  12:exclusivegateway:{x}
+  13:exclusivegateway:{x}
+  14:task:(Sales Assistant  sends a note to the Manager)
+  15:task:(Manager  processes the lead)
+  16:exclusivegateway:{x}
+  17:exclusivegateway:{x}
+  18:exclusivegateway:{x}
+  19:exclusivegateway:{x}
+  20:task:(Sales Assistant  sends a note to the Manager)
+  21:task:(Manager  processes the lead)
+  22:exclusivegateway:{x}
+  23:exclusivegateway:{x}
+  24:exclusivegateway:{x}
+  25:task:(Sales Assistant  sends a note to the Manager)
+  26:task:(Manager  processes the lead)
+  27:exclusivegateway:{x}
+  28:exclusivegateway:{x}
+  29:exclusivegateway:{x}
+  30:task:(Sales Assistant calls  customer)
+  31:exclusivegateway:{x}
+  32:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Manager checks the open leads)
+  1:task:(Manager checks the open leads) --> 2:task:(Manager selects the top five leads)
+  2:task:(Manager selects the top five leads) --> 3:task:(Manager tells Sales Assistant to  contact the leads)
+  3:task:(Manager tells Sales Assistant to  contact the leads) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> 5:task:(Sales Assistant calls  customer)
+  5:task:(Sales Assistant calls  customer) --> 6:exclusivegateway:{x}
+  %% D1
+  6:exclusivegateway:{x} --> |Branch 1|7:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Branch 2|17:exclusivegateway:{x}
+  %% D2
+  7:exclusivegateway:{x} --> |Branch 1|8:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Branch 2|13:exclusivegateway:{x}
+  %% D3
+  8:exclusivegateway:{x} --> |Requires manager|9:task:(Sales Assistant  sends a note to the Manager)
+  8:exclusivegateway:{x} --> |Lead does not require manager|12:exclusivegateway:{x}
+  9:task:(Sales Assistant  sends a note to the Manager) --> 10:task:(Manager  processes the lead)
+  10:task:(Manager  processes the lead) --> 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> 13:exclusivegateway:{x}
+  %% D5
+  13:exclusivegateway:{x} --> |Requires manager|14:task:(Sales Assistant  sends a note to the Manager)
+  13:exclusivegateway:{x} --> |Lead does not require manager|16:exclusivegateway:{x}
+  14:task:(Sales Assistant  sends a note to the Manager) --> 15:task:(Manager  processes the lead)
+  15:task:(Manager  processes the lead) --> 16:exclusivegateway:{x}
+  16:exclusivegateway:{x} --> 17:exclusivegateway:{x}
+  %% D7
+  17:exclusivegateway:{x} --> |Branch 1|18:exclusivegateway:{x}
+  17:exclusivegateway:{x} --> |Branch 2|23:exclusivegateway:{x}
+  %% D8
+  18:exclusivegateway:{x} --> |Requires manager|20:task:(Sales Assistant  sends a note to the Manager)
+  18:exclusivegateway:{x} --> |Lead does not require manager|22:exclusivegateway:{x}
+  20:task:(Sales Assistant  sends a note to the Manager) --> 21:task:(Manager  processes the lead)
+  21:task:(Manager  processes the lead) --> 22:exclusivegateway:{x}
+  22:exclusivegateway:{x} --> 23:exclusivegateway:{x}
+  %% D10
+  23:exclusivegateway:{x} --> |Requires manager|25:task:(Sales Assistant  sends a note to the Manager)
+  23:exclusivegateway:{x} --> |Lead does not require manager|28:exclusivegateway:{x}
+  25:task:(Sales Assistant  sends a note to the Manager) --> 26:task:(Manager  processes the lead)
+  26:task:(Manager  processes the lead) --> 27:exclusivegateway:{x}
+  27:exclusivegateway:{x} --> 28:exclusivegateway:{x}
+  28:exclusivegateway:{x} --> 29:exclusivegateway:{x}
+  %% Loop back for infinite loop
+  29:exclusivegateway:{x} --> 31:exclusivegateway:{x}
+  %% D12
+  31:exclusivegateway:{x} --> |false|4:exclusivegateway:{x}
+  31:exclusivegateway:{x} --> |true|30:task:(Sales Assistant calls  customer)
+  30:task:(Sales Assistant calls  customer) --> 32:endevent:(((endevent)))

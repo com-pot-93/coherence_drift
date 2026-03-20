@@ -1,0 +1,23 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Call Hospital)
+    1:task:(Call Hospital) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |Accepted| 3:task:(Add Patient to List)
+    2:exclusivegateway:{x} --> |Rejected| 4:exclusivegateway:{x}
+    3:task:(Add Patient to List) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> 6:task:(Patient Control)
+    6:task:(Patient Control) --> 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> |Call Patient to Hospital| 8:task:(Hospitalize Patient)
+    7:exclusivegateway:{x} --> |Yes| 6:task:(Patient Control)
+    6:task:(Patient Control) --> 9:task:(Escalation Event)
+    8:task:(Hospitalize Patient) --> 10:task:(Childbirth)
+    10:task:(Childbirth) --> 11:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |Special Treatment Needed| 12:task:(Provide Special Treatment)
+    11:exclusivegateway:{x} --> |Post-Hospitalization Care Needed| 13:task:(Provide Post-Hospitalization Care)
+    12:task:(Provide Special Treatment) --> 14:exclusivegateway:{x}
+    13:task:(Provide Post-Hospitalization Care) --> 14:exclusivegateway:{x}
+    9:task:(Escalation Event) --> 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> 15:endevent:(((endevent)))
+```

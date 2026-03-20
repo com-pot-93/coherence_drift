@@ -1,0 +1,23 @@
+The process starts. First, the database is backed up, and then it is checked. Following the check, a decision is made.
+
+In the first branch, the CRM system is checked. After that, another decision is made.
+
+In the first path of this decision, all defaulting accounts and customers are registered. Subsequently, another decision is made.
+
+In the first path of this decision, a new table of defaulting accounts is produced and sent to account management. Then, the process merges back based on the previous decision. In the second path of the decision, the process merges back based on the previous decision. The process merges back based on the previous decision.
+
+In the second path of the second decision, the process merges back based on the previous decision. The process merges back based on the first decision.
+
+In the second branch of the first decision, another decision is made.
+
+In the first path of this decision, an alert is sent to the supervisor. Then, the process merges back based on the previous decision. In the second path of this decision, the process merges back based on the previous decision.
+
+After the merge, the CRM system is checked again. Following this check, another decision is made.
+
+In the first path of this decision, a reconciliation is performed with the existing account defaulters table. Then, the process merges back based on the previous decision. In the second path of this decision, the process merges back based on the previous decision.
+
+After the merge, another decision is made.
+
+In the first path of this decision, a message is sent to the supervisor. Then, the process merges back based on the previous decision. In the second path of this decision, the reconciliation is completed. Then, the process merges back based on the previous decision.
+
+Finally, the process ends.

@@ -1,0 +1,15 @@
+The process starts when a customer arrives and is asked whether they want only a burger or a complete menu. Depending on the answer, the process either proceeds to prepare only a burger or a complete menu.
+
+If the customer wants a complete menu, the process splits into two parallel activities: preparing the drink and preparing the side dish.
+
+To prepare the side dish, the customer is asked whether they want wedges or fries. Depending on the answer, either fries or wedges are prepared. After the fries or wedges are prepared, the process merges back together.
+
+Once the drink and the side dish are both prepared, the process merges back together.
+
+If the customer wants only a burger or after the drink and side dish are prepared, the process splits into two parallel activities: preparing the burger and giving enthusiastic status updates.
+
+To give enthusiastic status updates, a decision is made. If the condition is met, enthusiastic status updates are given, and the process escalates. After the escalation, the process loops back to the decision about giving enthusiastic status updates. If the condition is not met, the process skips the status updates.
+
+Once the burger is prepared and the enthusiastic status updates are completed, the process merges back together.
+
+Finally, the order is put on the conveyor belt, and the process ends.

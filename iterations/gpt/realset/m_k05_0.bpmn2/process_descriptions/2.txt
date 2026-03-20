@@ -1,0 +1,17 @@
+The process begins with the collection of requirements. Once the requirements are gathered, a decision is made on whether to continue or not. If the decision is not to continue, the process ends immediately.
+
+If the process continues, the requirements are sent forward. After this, a draft is received. Another decision is made on whether to continue. If not, the process ends.
+
+If the process continues, another decision point is reached. If the condition is met, the draft is evaluated. After evaluating the draft, another decision is made. If the process should not continue, it ends.
+
+If the process continues, another decision is made. If the process should not continue, it ends. If the process should escalate, the issue is escalated. After escalation, there is a choice to either end the process or re-evaluate the draft. If re-evaluation is chosen, the draft is evaluated again, and the process returns to the previous decision point after escalation. If the process is ended after escalation, it proceeds to the end.
+
+If the process continues after the evaluation, the feasibility of the requirements is checked. If the process should not continue, it ends. If the process continues, another decision is made. If the requirements need refinement, they are refined, and feasibility is checked again. If the process should not continue after refinement, it ends.
+
+If the requirements are feasible, another decision is made about whether a building permit report is needed. If a report is needed, it is prepared. If not, the process continues. After this, an order list is created, and an order is placed. The effort required is then calculated.
+
+At this point, two activities happen in parallel. On one side, the order is received. On the other side, a decision is made about how to proceed: either friends are called to help, or a building company is hired. After either friends are called or a company is hired, both paths join back together.
+
+Once the order is received and the help is arranged, the house is built. After building the house, a decision is made on whether to continue. If the process should not continue, it ends. If the process should be repeated, the feasibility check is performed again, and the process follows the same steps as before.
+
+The process ends when any of the decision points result in a choice not to continue, or after escalation if the process is not re-evaluated.

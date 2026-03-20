@@ -1,0 +1,5 @@
+The process starts. It then splits into two parallel paths. 
+In the first path, a price request is sent to airlines, responses are received, and an airline is selected. 
+In the second path, a price request is sent to hotels, responses are received, and a hotel is selected. 
+The two paths then merge back together.
+Finally, a tour plan is prepared and sent to the customer, and the process ends.

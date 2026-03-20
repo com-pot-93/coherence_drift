@@ -1,0 +1,58 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Employee purchases a product)
+2:task:(Employee submits an expense report with a list of items)
+3:exclusivegateway:{x}
+4:task:(Supervisor reviews the expense report)
+5:task:(Supervisor approves the report)
+6:exclusivegateway:{x} %% D1 split
+7:task:(Supervisor moves report to the treasurer)
+8:task:(Treasurer checks receipts)
+9:task:(Treasurer matches the items on the list)
+10:exclusivegateway:{x} %% D2 split
+11:task:(Treasurer  sends report back to the employee)
+12:task:(Employee edits the report)
+13:exclusivegateway:{x} %% D3 split/merge
+14:task:(Treasurer accepts the expenses for processing)
+15:task:(Treasurer confirms the payment)
+16:exclusivegateway:{x} %% D2 merge
+17:exclusivegateway:{x} %% D1 merge
+18:task:(Employee edits the report)
+19:exclusivegateway:{x} %% D4 split/merge
+20:exclusivegateway:{x} %% Loop merge
+21:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Employee purchases a product)
+1:task:(Employee purchases a product) --> 2:task:(Employee submits an expense report with a list of items)
+2:task:(Employee submits an expense report with a list of items) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |true|4:task:(Supervisor reviews the expense report)
+4:task:(Supervisor reviews the expense report) --> 5:task:(Supervisor approves the report)
+5:task:(Supervisor approves the report) --> 6:exclusivegateway:{x}
+%% D1 split
+6:exclusivegateway:{x} --> |To Treasurer|7:task:(Supervisor moves report to the treasurer)
+6:exclusivegateway:{x} --> |Back to Employee|18:task:(Employee edits the report)
+%% D1 branch 1
+7:task:(Supervisor moves report to the treasurer) --> 8:task:(Treasurer checks receipts)
+8:task:(Treasurer checks receipts) --> 9:task:(Treasurer matches the items on the list)
+9:task:(Treasurer matches the items on the list) --> 10:exclusivegateway:{x}
+%% D2 split
+10:exclusivegateway:{x} --> |Report needs correction|11:task:(Treasurer  sends report back to the employee)
+10:exclusivegateway:{x} --> |Expenses accepted|14:task:(Treasurer accepts the expenses for processing)
+%% D2 branch 1
+11:task:(Treasurer  sends report back to the employee) --> 12:task:(Employee edits the report)
+12:task:(Employee edits the report) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> 20:exclusivegateway:{x}
+%% D2 branch 2
+14:task:(Treasurer accepts the expenses for processing) --> 15:task:(Treasurer confirms the payment)
+15:task:(Treasurer confirms the payment) --> 16:exclusivegateway:{x}
+%% D2 merge
+13:exclusivegateway:{x} --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> 17:exclusivegateway:{x}
+%% D1 branch 2
+18:task:(Employee edits the report) --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> 20:exclusivegateway:{x}
+%% D1 merge
+17:exclusivegateway:{x} --> 20:exclusivegateway:{x}
+%% Loop merge
+20:exclusivegateway:{x} --> |Loop again|3:exclusivegateway:{x}
+20:exclusivegateway:{x} --> |Exit loop|21:endevent:(((endevent)))

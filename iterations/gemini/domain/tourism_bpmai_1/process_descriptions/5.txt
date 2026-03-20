@@ -1,0 +1,11 @@
+The process starts when a customer request is received. The request is then checked. Depending on the outcome of the check, the process either proceeds directly to the next step or requires registration.
+
+If registration is needed, there's a choice between manual and automatic registration. After either manual or automatic registration is completed, the process continues.
+
+Following registration (if it occurred) or directly after the initial check, the process continues to another step. Here, there's a decision to either skip searching for an attraction provider or to proceed with the search.
+
+If the search is performed, the process searches for an attraction provider. After the search, a decision is made based on a condition. If the condition is met, the process continues. If not, an attraction is booked. After booking, the booking status is checked.
+
+Based on the booking status, either a confirmation is sent if the booking is confirmed, or the process continues after a booking rejection if the booking is rejected. After either sending a confirmation or continuing after a rejection, the process continues.
+
+Following the search decision (either skipping the search or after the booking process), the process continues. Finally, a notification is sent, and the process ends.

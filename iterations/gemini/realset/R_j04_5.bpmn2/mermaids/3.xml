@@ -1,0 +1,24 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Perform Task)
+  1:task:(Perform Task) --> 2:exclusivegateway:{x}
+  2:exclusivegateway:{x} --> |Yes| 3:task:(Notify Car Owner)
+  2:exclusivegateway:{x} --> |No| 20:exclusivegateway:{x}
+  3:task:(Notify Car Owner) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |Yes| 5:task:(Perform Task)
+  5:task:(Perform Task) --> 6:task:(Fine Car Owner)
+  6:task:(Fine Car Owner) --> 21:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |No| 7:task:(Receive Car Problems)
+  7:task:(Receive Car Problems) --> 8:task:(Offer Payment)
+  8:task:(Offer Payment) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Yes| 10:task:(Transfer Payment)
+  10:task:(Transfer Payment) --> 11:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |No| 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> 21:exclusivegateway:{x}
+  20:exclusivegateway:{x} --> |No| 21:exclusivegateway:{x}
+  21:exclusivegateway:{x} --> 12:exclusivegateway:{x}
+  6:task:(Fine Car Owner) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> 13:task:(Receive Repair Confirmation)
+  13:task:(Receive Repair Confirmation) --> 14:task:(Receive Next Service Time)
+  14:task:(Receive Next Service Time) --> 15:endevent:(((endevent)))
+```

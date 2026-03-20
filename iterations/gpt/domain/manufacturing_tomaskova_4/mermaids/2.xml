@@ -1,0 +1,40 @@
+flowchart LR
+0:startevent:((startevent))
+1:exclusivegateway:{x}
+2:exclusivegateway:{x}
+3:exclusivegateway:{x}
+4:exclusivegateway:{x}
+5:task:(Production Planning)
+6:task:(Assign Workers)
+7:task:(Create Production Design)
+8:task:(Deliver Product)
+9:task:(Production Logout)
+10:task:(Quality Control)
+11:exclusivegateway:{x}
+12:exclusivegateway:{x}
+13:task:(Register Finished Product)
+14:task:(Move to Finished Goods Stock)
+15:task:(Register Semi-Finished Product)
+16:task:(Load into Semi-Finished Stock)
+17:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |true|3:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |false|12:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |condition met|4:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |condition not met|5:task:(Production Planning)
+5:task:(Production Planning) --> 6:task:(Assign Workers)
+6:task:(Assign Workers) --> 7:task:(Create Production Design)
+7:task:(Create Production Design) --> 8:task:(Deliver Product)
+8:task:(Deliver Product) --> 9:task:(Production Logout)
+9:task:(Production Logout) --> 10:task:(Quality Control)
+10:task:(Quality Control) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> 1:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Product finished|13:task:(Register Finished Product)
+12:exclusivegateway:{x} --> |Product semi-finished|15:task:(Register Semi-Finished Product)
+13:task:(Register Finished Product) --> 14:task:(Move to Finished Goods Stock)
+14:task:(Move to Finished Goods Stock) --> 11:exclusivegateway:{x}
+15:task:(Register Semi-Finished Product) --> 16:task:(Load into Semi-Finished Stock)
+16:task:(Load into Semi-Finished Stock) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> 17:endevent:(((endevent)))

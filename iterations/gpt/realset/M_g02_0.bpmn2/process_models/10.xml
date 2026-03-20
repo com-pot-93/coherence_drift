@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Initiate Project</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Develop Basic Design</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Order Lego Brick Sets</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="4">
+    <parameters>
+      <label>Sort Bricks by Size</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="5">
+    <parallel_branch>
+      <call id="a11" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Place Big Bricks in Container</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a13" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>Place Medium Bricks in Container</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a15" endpoint="" a:alt_id="8">
+        <parameters>
+          <label>Place Small Bricks in Container</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <loop mode="pre_test" condition="Not right time" a:alt_id="10" language="text/javascript">
+    <call id="a27" endpoint="" a:alt_id="11">
+      <parameters>
+        <label>Wait Until Right Time</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+  </loop>
+  <call id="a31" endpoint="" a:alt_id="13">
+    <parameters>
+      <label>Proceed with Project</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <call id="a33" endpoint="" a:alt_id="14">
+      <parameters>
+        <label>Build Subcomponents</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <loop mode="pre_test" condition="More subcomponents needed">
+      <choose mode="exclusive" a:alt_id="15">
+        <alternative condition="More subcomponents needed" language="text/javascript">
+          <call id="a37" endpoint="" a:alt_id="16">
+            <parameters>
+              <label>Build Additional Subcomponents</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a33" endpoint="" a:alt_id="14">
+            <parameters>
+              <label>Build Subcomponents</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="More bricks needed" language="text/javascript">
+          <call id="a39" endpoint="" a:alt_id="17">
+            <parameters>
+              <label>Order More Lego Bricks</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a33" endpoint="" a:alt_id="14">
+            <parameters>
+              <label>Build Subcomponents</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <escape a:alt_id="-1"/>
+        </alternative>
+      </choose>
+    </loop>
+    <loop mode="pre_test" condition="true">
+      <call id="a41" endpoint="" a:alt_id="18">
+        <parameters>
+          <label>Test Subcomponents</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <loop mode="pre_test" condition="Ready to assemble">
+        <choose mode="exclusive" a:alt_id="19">
+          <alternative condition="Ready to assemble" language="text/javascript">
+            <call id="a49" endpoint="" a:alt_id="20">
+              <parameters>
+                <label>Assemble Subcomponents</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="24">
+              <alternative condition="More assembly needed" language="text/javascript">
+                <call id="a41" endpoint="" a:alt_id="18">
+                  <parameters>
+                    <label>Test Subcomponents</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="Proceed" language="text/javascript">
+                <call id="a67" endpoint="" a:alt_id="25">
+                  <parameters>
+                    <label>Proceed After Assembly</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <choose mode="exclusive" a:alt_id="26">
+                  <alternative condition="All conditions met" language="text/javascript"/>
+                  <alternative condition="Escalation needed" language="text/javascript">
+                    <call id="a73" endpoint="" a:alt_id="27">
+                      <parameters>
+                        <label>Escalate Issue</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                  </alternative>
+                </choose>
+                <escape a:alt_id="-1"/>
+              </alternative>
+            </choose>
+          </alternative>
+          <alternative condition="Redesign needed" language="text/javascript">
+            <call id="a51" endpoint="" a:alt_id="21">
+              <parameters>
+                <label>Redesign Subcomponents</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a41" endpoint="" a:alt_id="18">
+              <parameters>
+                <label>Test Subcomponents</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="More assembly needed" language="text/javascript">
+            <call id="a41" endpoint="" a:alt_id="18">
+              <parameters>
+                <label>Test Subcomponents</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="Not right time" language="text/javascript">
+            <call id="a55" endpoint="" a:alt_id="22">
+              <parameters>
+                <label>Wait Until Right Time</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a59" endpoint="" a:alt_id="23">
+              <parameters>
+                <label>Proceed with Project</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a41" endpoint="" a:alt_id="18">
+              <parameters>
+                <label>Test Subcomponents</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+      </loop>
+    </loop>
+  </loop>
+</description>

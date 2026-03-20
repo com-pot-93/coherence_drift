@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Start Assessment Tool</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Prompt for Incident Type</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Accident" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Confirm Accident</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Almost Accident" language="text/javascript">
+      <call id="a9" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>Confirm Almost Accident</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Severe Safety/Health Risk" language="text/javascript">
+      <call id="a11" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Confirm Severe Safety/Health Risk</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Defective Protective Equipment" language="text/javascript">
+      <call id="a13" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>Confirm Defective Protective Equipment</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a23" endpoint="" a:alt_id="9">
+    <parameters>
+      <label>Specify Incident Details</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="10">
+    <parallel_branch>
+      <choose mode="exclusive" a:alt_id="0">
+        <alternative condition=""/>
+        <alternative condition="">
+          <parallel wait="-1" cancel="last" a:alt_id="20">
+            <parallel_branch>
+              <call id="a51" endpoint="" a:alt_id="21">
+                <parameters>
+                  <label>Contact Superiors</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </parallel_branch>
+            <parallel_branch>
+              <call id="a53" endpoint="" a:alt_id="22">
+                <parameters>
+                  <label>Contact Accident Insurance</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </parallel_branch>
+            <parallel_branch>
+              <choose mode="exclusive" a:alt_id="23">
+                <alternative condition="Contact Labour Inspectorate" language="text/javascript">
+                  <call id="a61" endpoint="" a:alt_id="24">
+                    <parameters>
+                      <label>Contact Labour Inspectorate</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Skip" language="text/javascript"/>
+              </choose>
+            </parallel_branch>
+          </parallel>
+        </alternative>
+      </choose>
+    </parallel_branch>
+    <parallel_branch>
+      <choose mode="exclusive" a:alt_id="0">
+        <alternative condition=""/>
+        <alternative condition="">
+          <parallel wait="-1" cancel="last" a:alt_id="29">
+            <parallel_branch>
+              <call id="a73" endpoint="" a:alt_id="27">
+                <parameters>
+                  <label>Contact Accident Insurance</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </parallel_branch>
+            <parallel_branch>
+              <call id="a75" endpoint="" a:alt_id="28">
+                <parameters>
+                  <label>Contact Principal</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </parallel_branch>
+          </parallel>
+        </alternative>
+      </choose>
+    </parallel_branch>
+  </parallel>
+  <choose mode="exclusive" a:alt_id="14">
+    <alternative condition="Continue" language="text/javascript"/>
+    <alternative condition="Contact Private Insurance" language="text/javascript">
+      <call id="a39" endpoint="" a:alt_id="15">
+        <parameters>
+          <label>Contact Private Insurance</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a43" endpoint="" a:alt_id="17">
+    <parameters>
+      <label>Review List of Tasks</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a45" endpoint="" a:alt_id="18">
+    <parameters>
+      <label>Execute Proposed Tasks</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

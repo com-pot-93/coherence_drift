@@ -1,0 +1,24 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Data Subject Request)
+2:task:(Send Request to Third Party)
+3:task:(Receive Corresponding Request from Third Party)
+4:parallelgateway:{AND}
+5:task:(Retrieve Elaborations)
+6:task:(Retrieve Available Data)
+7:parallelgateway:{AND}
+8:task:(Communicate Data and Elaborations to Third Party)
+9:task:(Communicate Data and Elaborations to Data Subject)
+10:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Data Subject Request)
+1:task:(Receive Data Subject Request) --> 2:task:(Send Request to Third Party)
+2:task:(Send Request to Third Party) --> 3:task:(Receive Corresponding Request from Third Party)
+3:task:(Receive Corresponding Request from Third Party) --> 4:parallelgateway:{AND}
+4:parallelgateway:{AND} --> 5:task:(Retrieve Elaborations)
+4:parallelgateway:{AND} --> 6:task:(Retrieve Available Data)
+5:task:(Retrieve Elaborations) --> 7:parallelgateway:{AND}
+6:task:(Retrieve Available Data) --> 7:parallelgateway:{AND}
+7:parallelgateway:{AND} --> 8:task:(Communicate Data and Elaborations to Third Party)
+8:task:(Communicate Data and Elaborations to Third Party) --> 9:task:(Communicate Data and Elaborations to Data Subject)
+9:task:(Communicate Data and Elaborations to Data Subject) --> 10:endevent:(((endevent)))

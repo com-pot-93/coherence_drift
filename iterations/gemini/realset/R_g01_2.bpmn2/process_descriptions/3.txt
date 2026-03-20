@@ -1,0 +1,57 @@
+The process starts when the process is initiated. First, the manufacturer is entered, followed by the model. Then, a decision is made. If the answer is "Yes", another decision is made. If the answer is "Yes" again, the broken part is entered. Next, there is another decision.
+
+If the answer is "Yes", another decision is made. If the answer is "Yes" again, instructions are generated. Then, another decision is made.
+
+If the answer is "Yes", another decision is made. If the answer is "Yes" again, the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "No", the process merges. After the merge, the process merges again.
+
+If the answer is "No", a review is left. Then, another decision is made. If the answer is "Yes", the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "No", the process merges. After the merge, the process merges again. Then, another decision is made. If the answer is "Yes", another decision is made. If the answer is "Yes", the process escalates. Otherwise, a review is left. After leaving the review or the escalation, the process merges. After the merge, the process merges again. After the merge, the process merges again.
+
+If the answer is "No", instructions are followed. Then, another decision is made.
+
+If the answer is "Yes", another decision is made. If the answer is "Yes" again, the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "No", the process merges. After the merge, the process merges again.
+
+If the answer is "No", a review is left. Then, another decision is made. If the answer is "Yes", the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "No", the process merges. After the merge, the process merges again. Then, another decision is made. If the answer is "Yes", the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "Yes", another decision is made. If the answer is "Yes", the process escalates. Otherwise, a review is left. After leaving the review or the escalation, the process merges. After the merge, the process merges again. After the merge, the process merges again.
+
+Then, another decision is made. If the answer is "Yes", the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "Yes", the process escalates. After the escalation or the continuation, the process merges.
+
+If the answer is "No", a review is left. Then, another decision is made. If the answer is "Yes", the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "No", the process merges. After the merge, another decision is made. If the answer is "Yes", the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "Yes", the process escalates. After the escalation or the continuation, the process merges. After the merge, the process merges again.
+
+After the merge, the process merges again. After the merge, the process merges again.
+
+If the answer is "No", the broken part is entered. Then, the process escalates. After the escalation, the process merges. After the merge, the process merges again.
+
+If the answer is "No", the following actions are performed in parallel: the parts list is computed and the necessary tools are computed. After both actions are completed, the inventory is checked. Then, a decision is made. If the answer is "Yes", the process merges. If the answer is "No", a friend is contacted. After contacting a friend, the process merges. After the merge, instructions are generated. Then, another decision is made.
+
+If the answer is "Yes", another decision is made. If the answer is "Yes" again, another decision is made. If the answer is "Yes" again, the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "No", the process merges. After the merge, the process merges again.
+
+If the answer is "No", a review is left. Then, another decision is made. If the answer is "Yes", the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "No", the process merges. After the merge, the process merges again. Then, another decision is made. If the answer is "Yes", the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "Yes", another decision is made. If the answer is "Yes", the process escalates. Otherwise, a review is left. After leaving the review or the escalation, the process merges. After the merge, the process merges again. After the merge, the process merges again.
+
+If the answer is "No", instructions are followed. Then, another decision is made.
+
+If the answer is "Yes", another decision is made. If the answer is "Yes" again, the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "No", the process merges. After the merge, the process merges again.
+
+If the answer is "No", a review is left. Then, another decision is made. If the answer is "Yes", the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "No", the process merges. After the merge, the process merges again. Then, another decision is made. If the answer is "Yes", the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "Yes", another decision is made. If the answer is "Yes", the process escalates. Otherwise, a review is left. After leaving the review or the escalation, the process merges. After the merge, the process merges again. After the merge, the process merges again.
+
+Then, another decision is made. If the answer is "Yes", another decision is made. If the answer is "Yes" again, the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "Yes", the process escalates. After the escalation or the continuation, the process merges.
+
+If the answer is "No", a review is left. Then, another decision is made. If the answer is "Yes", the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "No", the process merges. After the merge, another decision is made. If the answer is "Yes", the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "Yes", the process escalates. After the escalation or the continuation, the process merges. After the merge, the process merges again.
+
+After the merge, the process merges again. After the merge, the process merges again.
+
+If the answer is "No", another decision is made.
+
+If the answer is "Yes", another decision is made. If the answer is "Yes" again, the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "Yes", the process escalates. After the escalation or the continuation, the process merges.
+
+If the answer is "No", a review is left. Then, another decision is made. If the answer is "Yes", the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "No", the process merges. After the merge, another decision is made. If the answer is "Yes", the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "Yes", the process escalates. After the escalation or the continuation, the process merges. After the merge, the process merges again.
+
+After the merge, the process merges again. After the merge, the process merges again.
+
+If the answer is "No", instructions are followed. Then, another decision is made.
+
+If the answer is "Yes", the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "Yes", the process escalates. After the escalation or the continuation, the process merges.
+
+If the answer is "No", a review is left. Then, another decision is made. If the answer is "Yes", the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "No", the process merges. After the merge, another decision is made. If the answer is "Yes", the phone is sent to an expert. Then, another decision is made. If the answer is "Yes", the process escalates. Otherwise, the process continues. After the escalation or the continuation, the process merges. If the answer is "Yes", the process escalates. After the escalation or the continuation, the process merges. After the merge, the process merges again.
+
+After the merge, the process merges again. After the merge, the process merges again.
+
+The process ends.

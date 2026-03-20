@@ -1,0 +1,9 @@
+The process begins with a starting point. From there, one of two groups initiates the process: either an external party or the MPO (Metropolitan Planning Organization).
+
+If the external party is the one to start, they submit a change request. If the MPO starts, they begin the change process themselves. Regardless of who initiates, the process continues to the MPO, who reviews the change request.
+
+After reviewing the request, the MPO decides whether to reject or confirm the change request. If the MPO rejects the request, they formally reject it and the process moves forward. If the MPO confirms the request, they confirm it and the process also moves forward.
+
+Next, the MPO carries out the change. Once the change is carried out, the outcome is evaluated. If the change is successful, a report is made to document the successful implementation. If the change fails, a notification is sent out to inform about the failure.
+
+After either reporting the success or notifying about the failure, the process comes to an end.

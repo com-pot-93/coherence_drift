@@ -1,0 +1,17 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Receive Order)
+  1:task:(Receive Order) --> 2:task:(Determine Parts and Delivery Date)
+  2:task:(Determine Parts and Delivery Date) --> 3:task:(Enter Data into PPS)
+  3:task:(Enter Data into PPS) --> 4:task:(Create Procurement List)
+  4:task:(Create Procurement List) --> 5:task:(Transfer Data to ERP)
+  5:task:(Transfer Data to ERP) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Parts Missing| 7:task:(Procure Missing Parts)
+  6:exclusivegateway:{x} --> |All Parts Available| 8:task:(Confirm Availability)
+  7:task:(Procure Missing Parts) --> 9:inclusivegateway:{O}
+  8:task:(Confirm Availability) --> 9:inclusivegateway:{O}
+  9:inclusivegateway:{O} --> 10:task:(Receive System Notice)
+  10:task:(Receive System Notice) --> 11:task:(Handle Implementation)
+  11:task:(Handle Implementation) --> 12:task:(Check Order Quality)
+  12:task:(Check Order Quality) --> 13:endevent:(((endevent)))
+```

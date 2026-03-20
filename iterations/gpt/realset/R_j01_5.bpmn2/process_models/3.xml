@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Run Machine</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Check Connection</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="post_test" condition="Negative"/>
+  <loop mode="post_test" condition="Negative"/>
+  <call id="a11" endpoint="" a:alt_id="5">
+    <parameters>
+      <label>Collect Measurements</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="6">
+    <alternative condition="Escalation required" language="text/javascript">
+      <call id="a17" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>Escalate Issue</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No escalation" language="text/javascript"/>
+  </choose>
+  <call id="a19" endpoint="" a:alt_id="8">
+    <parameters>
+      <label>Calculate OEE</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="11">
+    <parallel_branch>
+      <call id="a29" endpoint="" a:alt_id="12">
+        <parameters>
+          <label>Stop Machine</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a33" endpoint="" a:alt_id="15">
+        <parameters>
+          <label>Check After Stop</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a31" endpoint="" a:alt_id="13">
+        <parameters>
+          <label>Send Email to Engineer</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a35" endpoint="" a:alt_id="16">
+        <parameters>
+          <label>Check After Email</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <loop mode="pre_test" condition="Positive" a:alt_id="17" language="text/javascript">
+    <call id="a43" endpoint="" a:alt_id="18">
+      <parameters>
+        <label>Collect Measurements Again</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+  </loop>
+  <parallel wait="-1" cancel="last" a:alt_id="21">
+    <parallel_branch>
+      <call id="a53" endpoint="" a:alt_id="22">
+        <parameters>
+          <label>Stop Machine Again</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a57" endpoint="" a:alt_id="25">
+        <parameters>
+          <label>Check After Stop Again</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a55" endpoint="" a:alt_id="23">
+        <parameters>
+          <label>Send Email to Engineer Again</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a59" endpoint="" a:alt_id="26">
+        <parameters>
+          <label>Check After Email Again</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <loop mode="pre_test" condition="Positive" a:alt_id="27" language="text/javascript">
+    <call id="a67" endpoint="" a:alt_id="28">
+      <parameters>
+        <label>Collect Measurements Third Time</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+  </loop>
+  <parallel wait="-1" cancel="last" a:alt_id="31">
+    <parallel_branch>
+      <call id="a77" endpoint="" a:alt_id="32">
+        <parameters>
+          <label>Stop Machine Third Time</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a81" endpoint="" a:alt_id="35">
+        <parameters>
+          <label>Check After Stop Third Time</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a79" endpoint="" a:alt_id="33">
+        <parameters>
+          <label>Send Email to Engineer Third Time</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a83" endpoint="" a:alt_id="36">
+        <parameters>
+          <label>Check After Email Third Time</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <loop mode="pre_test" condition="Positive" a:alt_id="37" language="text/javascript">
+    <call id="a91" endpoint="" a:alt_id="38">
+      <parameters>
+        <label>Collect Measurements Fourth Time</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+  </loop>
+  <call id="a97" endpoint="" a:alt_id="40">
+    <parameters>
+      <label>Continue Process</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

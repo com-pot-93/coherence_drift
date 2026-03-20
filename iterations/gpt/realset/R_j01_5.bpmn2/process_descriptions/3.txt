@@ -1,0 +1,17 @@
+The process begins with the start of the workflow. The first step is to run the machine. After the machine is running, the next step is to check the connection.
+
+Following the connection check, the process enters a decision point. If the outcome is positive, the process continues to another decision point. If not, the process loops back and repeats the previous decision point until a positive outcome is achieved.
+
+At the second decision point, if the result is positive, the process moves forward to collect measurements. If not, the process loops back and repeats this decision point until a positive result is obtained.
+
+Once measurements are collected, the process reaches another decision point. Here, if escalation is required, the issue is escalated, and then the process continues. If no escalation is needed, the process proceeds directly to the next step.
+
+After this, the process calculates the OEE (Overall Equipment Effectiveness). Once this calculation is complete, two activities are carried out at the same time: the machine is stopped, and an email is sent to the engineer. After stopping the machine, a check is performed. Similarly, after sending the email, another check is performed. Once both checks are completed, the process continues.
+
+Next, the process reaches another decision point. If the outcome is positive, measurements are collected again, and the process returns to this decision point. If not, the process splits into two parallel activities: stopping the machine again and sending another email to the engineer. After each of these actions, a check is performed. Once both checks are completed, the process moves forward.
+
+The process then arrives at another decision point. If the outcome is positive, measurements are collected for the third time, and the process returns to this decision point. If not, the process again splits into two parallel activities: stopping the machine for the third time and sending a third email to the engineer. After each of these actions, a check is performed. Once both checks are completed, the process continues.
+
+At the next decision point, if the outcome is positive, measurements are collected for the fourth time, and the process returns to this decision point. If not, the process continues to the next step.
+
+Finally, the process continues with the next activity and then ends.

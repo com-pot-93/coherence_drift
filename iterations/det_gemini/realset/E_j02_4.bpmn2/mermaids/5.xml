@@ -1,0 +1,36 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:parallelgateway:{AND}
+    1:parallelgateway:{AND} --> 2:task:(Baby younger than 2 years)
+    1:parallelgateway:{AND} --> 3:task:(Parent)
+    2:task:(Baby younger than 2 years) --> 4:parallelgateway:{AND}
+    3:task:(Parent) --> 4:parallelgateway:{AND}
+    4:parallelgateway:{AND} --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |condition1| 6:task:(Self-employed/studying/housewife/man)
+    5:exclusivegateway:{x} --> |condition2| 7:task:(employed)
+    6:task:(Self-employed/studying/housewife/man) --> 8:exclusivegateway:{x}
+    7:task:(employed) --> 8:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> 9:task:(Send employer notfication)
+    9:task:(Send employer notfication) --> 10:task:(Recieve employer confimation)
+    10:task:(Recieve employer confimation) --> 11:task:(Take maternity leave)
+    11:task:(Take maternity leave) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |condition1| 13:task:(Split maternity leave)
+    12:exclusivegateway:{x} --> |condition2| 19:task:(Extend maternity leave)
+    12:exclusivegateway:{x} --> |condition3| 26:task:(Both parents take maternity leave)
+    13:task:(Split maternity leave) --> 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> |condition1| 15:task:(maternity leave less than 2 months)
+    14:exclusivegateway:{x} --> |condition2| 17:task:(maternity leave more than 3 months)
+    15:task:(maternity leave less than 2 months) --> 16:task:(Send employer notification)
+    17:task:(maternity leave more than 3 months) --> 18:task:(Send employer notification)
+    16:task:(Send employer notification) --> 25:task:(Take maternity leave)
+    18:task:(Send employer notification) --> 25:task:(Take maternity leave)
+    19:task:(Extend maternity leave) --> 20:exclusivegateway:{x}
+    20:exclusivegateway:{x} --> |condition1| 21:task:(maternity leave less than 2 months)
+    20:exclusivegateway:{x} --> |condition2| 23:task:(maternity leave more than 3 months)
+    21:task:(maternity leave less than 2 months) --> 22:task:(Send employer notification)
+    23:task:(maternity leave more than 3 months) --> 24:task:(Send employer notification)
+    22:task:(Send employer notification) --> 25:task:(Take maternity leave)
+    24:task:(Send employer notification) --> 25:task:(Take maternity leave)
+    25:task:(Take maternity leave) --> 27:endevent:(((endevent)))
+    26:task:(Both parents take maternity leave) --> 27:endevent:(((endevent)))
+```

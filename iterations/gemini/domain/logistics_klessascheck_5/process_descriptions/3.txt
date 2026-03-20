@@ -1,0 +1,7 @@
+The process starts with packaging a product, followed by shipping it. Next, a decision is made: either deliver the product to the customer's door or deliver it to a station.
+
+If the product is delivered to the customer's door, another decision is made: either a receipt is printed or not. If a receipt is printed, it is then posted and the product is rerouted to a station. If no receipt is printed, the process proceeds to the next step.
+
+Alternatively, if the product is delivered to a station, a decision is made: either the product is received or not. If the product is received, it is then processed as received. If the product is not received, the process proceeds to the next step.
+
+Finally, regardless of whether the product was delivered to the door (and a receipt was printed or not) or delivered to the station (and was received or not), the process ends.

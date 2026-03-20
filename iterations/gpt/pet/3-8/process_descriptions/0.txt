@@ -1,0 +1,10 @@
+The process begins when a customer submits a claim. After receiving the claim, the notification department checks the documents provided by the customer. Once the documents have been checked, the notification department registers the claim in their system.
+
+Next, the handling department takes over and picks up the claim. The handling department then checks the insurance details related to the claim. After verifying the insurance, the handling department performs an assessment of the claim.
+
+Based on the assessment, there are two possible outcomes:
+
+- If the claim is approved, the handling department calls the garage to authorize the necessary repairs. After authorizing the repairs, the handling department schedules the payment for the claim.
+- If the claim is not approved, the handling department rejects the claim.
+
+Regardless of whether the claim is approved or rejected, the handling department then sends a letter to the customer to inform them of the decision. The process ends after the customer has been notified.

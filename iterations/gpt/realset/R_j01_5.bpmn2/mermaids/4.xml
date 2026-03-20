@@ -1,0 +1,82 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Run Machine)
+2:task:(Check Connection)
+3:exclusivegateway:{x}
+4:exclusivegateway:{x}
+5:task:(Collect Measurements)
+6:exclusivegateway:{x}
+7:task:(Escalate Issue)
+8:task:(Calculate OEE)
+9:parallelgateway:{AND}
+10:task:(Stop Machine)
+11:task:(Send Email to Engineer)
+12:task:(Check After Stop)
+13:task:(Check After Email)
+14:parallelgateway:{AND}
+15:exclusivegateway:{x}
+16:task:(Collect Measurements Again)
+17:exclusivegateway:{x}
+18:parallelgateway:{AND}
+19:task:(Stop Machine Again)
+20:task:(Send Another Email)
+21:task:(Check After Stop Again)
+22:task:(Check After Email Again)
+23:parallelgateway:{AND}
+24:exclusivegateway:{x}
+25:task:(Collect Measurements Third Time)
+26:exclusivegateway:{x}
+27:parallelgateway:{AND}
+28:task:(Stop Machine Third Time)
+29:task:(Send Third Email)
+30:task:(Check After Stop Third Time)
+31:task:(Check After Email Third Time)
+32:parallelgateway:{AND}
+33:exclusivegateway:{x}
+34:task:(Collect Measurements Fourth Time)
+35:task:(Next Activity)
+36:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Run Machine)
+1:task:(Run Machine) --> 2:task:(Check Connection)
+2:task:(Check Connection) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Positive|4:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Negative|3:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Positive|5:task:(Collect Measurements)
+4:exclusivegateway:{x} --> |Negative|4:exclusivegateway:{x}
+5:task:(Collect Measurements) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Escalation required|7:task:(Escalate Issue)
+6:exclusivegateway:{x} --> |No escalation|8:task:(Calculate OEE)
+7:task:(Escalate Issue) --> 8:task:(Calculate OEE)
+8:task:(Calculate OEE) --> 9:parallelgateway:{AND}
+9:parallelgateway:{AND} --> 10:task:(Stop Machine)
+9:parallelgateway:{AND} --> 11:task:(Send Email to Engineer)
+10:task:(Stop Machine) --> 12:task:(Check After Stop)
+11:task:(Send Email to Engineer) --> 13:task:(Check After Email)
+12:task:(Check After Stop) --> 14:parallelgateway:{AND}
+13:task:(Check After Email) --> 14:parallelgateway:{AND}
+14:parallelgateway:{AND} --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> |Positive|16:task:(Collect Measurements Again)
+15:exclusivegateway:{x} --> |Negative|18:parallelgateway:{AND}
+16:task:(Collect Measurements Again) --> 15:exclusivegateway:{x}
+18:parallelgateway:{AND} --> 19:task:(Stop Machine Again)
+18:parallelgateway:{AND} --> 20:task:(Send Another Email)
+19:task:(Stop Machine Again) --> 21:task:(Check After Stop Again)
+20:task:(Send Another Email) --> 22:task:(Check After Email Again)
+21:task:(Check After Stop Again) --> 23:parallelgateway:{AND}
+22:task:(Check After Email Again) --> 23:parallelgateway:{AND}
+23:parallelgateway:{AND} --> 24:exclusivegateway:{x}
+24:exclusivegateway:{x} --> |Positive|25:task:(Collect Measurements Third Time)
+24:exclusivegateway:{x} --> |Negative|27:parallelgateway:{AND}
+25:task:(Collect Measurements Third Time) --> 24:exclusivegateway:{x}
+27:parallelgateway:{AND} --> 28:task:(Stop Machine Third Time)
+27:parallelgateway:{AND} --> 29:task:(Send Third Email)
+28:task:(Stop Machine Third Time) --> 30:task:(Check After Stop Third Time)
+29:task:(Send Third Email) --> 31:task:(Check After Email Third Time)
+30:task:(Check After Stop Third Time) --> 32:parallelgateway:{AND}
+31:task:(Check After Email Third Time) --> 32:parallelgateway:{AND}
+32:parallelgateway:{AND} --> 33:exclusivegateway:{x}
+33:exclusivegateway:{x} --> |Positive|34:task:(Collect Measurements Fourth Time)
+33:exclusivegateway:{x} --> |Negative|35:task:(Next Activity)
+34:task:(Collect Measurements Fourth Time) --> 33:exclusivegateway:{x}
+35:task:(Next Activity) --> 36:endevent:(((endevent)))

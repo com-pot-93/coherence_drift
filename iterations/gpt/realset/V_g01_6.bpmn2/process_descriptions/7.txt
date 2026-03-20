@@ -1,0 +1,6 @@
+The process begins when it is started. First, the customer is asked whether they would like to order a burger or a menu. Based on the customer's response, the process follows one of two paths:
+
+- If the customer chooses a burger, the burger order is processed.
+- If the customer chooses a menu, the menu order is processed.
+
+After either the burger order or the menu order is processed, the process comes back together and then ends.

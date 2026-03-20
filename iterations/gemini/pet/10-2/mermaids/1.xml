@@ -1,0 +1,24 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Report Meter Operation)
+    1:task:(Report Meter Operation) --> 2:task:(Examine Application)
+    2:task:(Examine Application) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |Reject| 4:task:(Reject Application)
+    3:exclusivegateway:{x} --> |Confirm| 5:task:(Confirm Application)
+    4:task:(Reject Application) --> 6:exclusivegateway:{x}
+    5:task:(Confirm Application) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> 7:task:(Inform MPOO and MSPO)
+    7:task:(Inform MPOO and MSPO) --> 8:task:(Perform Equipment Acquisition/Changes)
+    8:task:(Perform Equipment Acquisition/Changes) --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} --> |Failure| 10:task:(Inform GO about Failure)
+    9:exclusivegateway:{x} --> |Success| 16:task:(Inform GO about Completion)
+    10:task:(Inform GO about Failure) --> 11:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |Inform MPON| 12:task:(Inform MPON about Failure)
+    11:exclusivegateway:{x} --> |Confirm Failure| 13:task:(Confirm Failure of Assignment)
+    12:task:(Inform MPON about Failure) --> 14:exclusivegateway:{x}
+    13:task:(Confirm Failure of Assignment) --> 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> 18:task:(Inform MPOO, MSPO, and SP)
+    16:task:(Inform GO about Completion) --> 17:task:(Assign MPON and Confirm)
+    17:task:(Assign MPON and Confirm) --> 18:task:(Inform MPOO, MSPO, and SP)
+    18:task:(Inform MPOO, MSPO, and SP) --> 19:endevent:(((endevent)))
+```

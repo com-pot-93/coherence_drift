@@ -1,0 +1,7 @@
+The process starts. Depending on whether Condition A is met, the process either sends a bill to MPON or, if Condition B is met, sends the bill to GO.
+
+If the bill was sent to MPON, it is then examined. If the bill is confirmed, an invoice is confirmed with payment advice, and the process merges into a single flow. If the bill is rejected, the invoice is rejected, and the process merges into a single flow. The process then merges into a single flow.
+
+Alternatively, if the bill was sent to GO, it is examined. If the bill is rejected, the invoice is rejected, and the process merges into a single flow. If the bill is confirmed, an invoice is confirmed with payment advice, and the process merges into a single flow. The process then merges into a single flow.
+
+The process merges into a single flow and ends.

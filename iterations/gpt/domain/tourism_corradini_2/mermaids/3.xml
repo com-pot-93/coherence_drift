@@ -1,0 +1,57 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Search for Customer)
+2:task:(Make Offer)
+3:exclusivegateway:{x}
+4:task:(Receive Additional Request)
+5:task:(Provide More Details)
+6:exclusivegateway:{x}
+7:task:(Receive Booking Request)
+8:task:(Send Bill)
+9:exclusivegateway:{x}
+10:task:(Receive Payment)
+11:exclusivegateway:{x}
+12:exclusivegateway:{x}
+13:task:(Contact Customer)
+14:exclusivegateway:{x}
+15:task:(Book Travel)
+16:task:(Send Booking Confirmation)
+17:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Search for Customer)
+1:task:(Search for Customer) --> 2:task:(Make Offer)
+2:task:(Make Offer) --> 3:exclusivegateway:{x}
+
+%% First decision: continue or skip to next decision
+3:exclusivegateway:{x} --> |Continue|4:task:(Receive Additional Request)
+3:exclusivegateway:{x} --> |Do not continue|6:exclusivegateway:{x}
+
+4:task:(Receive Additional Request) --> 5:task:(Provide More Details)
+5:task:(Provide More Details) --> 6:exclusivegateway:{x}
+
+%% Second decision: continue or skip to next decision
+6:exclusivegateway:{x} --> |Continue|7:task:(Receive Booking Request)
+6:exclusivegateway:{x} --> |Do not continue|9:exclusivegateway:{x}
+
+7:task:(Receive Booking Request) --> 8:task:(Send Bill)
+8:task:(Send Bill) --> 9:exclusivegateway:{x}
+
+%% Third decision: continue or skip to next decision
+9:exclusivegateway:{x} --> |Continue|10:task:(Receive Payment)
+9:exclusivegateway:{x} --> |Do not continue|11:exclusivegateway:{x}
+
+10:task:(Receive Payment) --> 11:exclusivegateway:{x}
+
+%% Fourth decision: continue or go to final decision
+11:exclusivegateway:{x} --> |Continue|12:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Do not continue|12:exclusivegateway:{x}
+
+%% Final decision: continue to booking or contact customer and loop back
+12:exclusivegateway:{x} --> |Continue|15:task:(Book Travel)
+12:exclusivegateway:{x} --> |Do not continue|13:task:(Contact Customer)
+
+13:task:(Contact Customer) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> 12:exclusivegateway:{x}
+
+15:task:(Book Travel) --> 16:task:(Send Booking Confirmation)
+16:task:(Send Booking Confirmation) --> 17:endevent:(((endevent)))

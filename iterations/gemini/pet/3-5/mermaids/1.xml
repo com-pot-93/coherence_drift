@@ -1,0 +1,19 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Collect Mail)
+1:task:(Collect Mail) --> 2:task:(Sort and Distribute Mail)
+2:task:(Sort and Distribute Mail) --> 3:task:(Open, Sort, and Register Mail)
+3:task:(Open, Sort, and Register Mail) --> 4:task:(Quality Check)
+4:task:(Quality Check) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Quality Failed| 6:task:(Compile Requisitions and Send)
+5:exclusivegateway:{x} --> |Quality Passed| 7:task:(Capture Matter Details)
+6:task:(Compile Requisitions and Send) --> 11:exclusivegateway:{x}
+7:task:(Capture Matter Details) --> 8:task:(Take Fees)
+8:task:(Take Fees) --> 9:parallelgateway:{AND}
+9:parallelgateway:{AND} --> 10:task:(Put Receipt and Post Documents)
+9:parallelgateway:{AND} --> 12:task:(Capture Party Details and Print File)
+10:task:(Put Receipt and Post Documents) --> 13:parallelgateway:{AND}
+12:task:(Capture Party Details and Print File) --> 13:parallelgateway:{AND}
+13:parallelgateway:{AND} --> 14:endevent:(((endevent)))
+11:exclusivegateway:{x} --> 14:endevent:(((endevent)))
+```

@@ -1,0 +1,20 @@
+The process begins when a production order is received. After receiving the order, materials are prepared. Once the materials are ready, the door is assembled.
+
+After assembling the door, a decision is made about the quality check. There are three possible paths from here:
+
+1. **Skip Quality Check (direct path):**  
+   The process can proceed directly without any quality check. In this case, another decision is made to determine if the quality report is satisfactory.  
+   - If the report is not satisfactory, the door is fixed, and then the process continues.  
+   - If the report is satisfactory, the door is released, and the process continues.
+
+2. **Skip Quality Check (with inquiry):**  
+   The process can skip the quality check but still consider whether to send a quality check inquiry.  
+   - If no inquiry is sent, the process moves to the next decision point, which leads to the same outcome as the direct path: checking if the report is satisfactory, fixing the door if not, or releasing it if it is.
+   - If an inquiry is sent, a quality check inquiry is sent out. The response to the inquiry is received, and then a quality check is conducted in response. After the quality check, a quality report is sent. The report is then received and reviewed. Another decision is made, leading to the same outcome: if the report is not satisfactory, the door is fixed; if it is satisfactory, the door is released.
+
+3. **Perform Quality Check:**  
+   The process can also proceed by performing a quality check. Here, another decision is made about whether to send a quality check inquiry.
+   - If no inquiry is sent, the process moves to the next decision point, which leads to the same outcome as before: checking if the report is satisfactory, fixing the door if not, or releasing it if it is.
+   - If an inquiry is sent, the same steps as above are followed: sending the inquiry, receiving the response, conducting the quality check in response, sending the quality report, receiving and reviewing the report, and then making a decision based on the report’s outcome.
+
+In all cases, after the final decision about the quality report, if the report is not satisfactory, the door is fixed. If the report is satisfactory, the door is released. After either fixing or releasing the door, the process ends.

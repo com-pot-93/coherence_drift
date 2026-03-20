@@ -1,0 +1,27 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Data Subject Request)
+2:task:(Check Data Relevance)
+3:exclusivegateway:{x}
+4:task:(Stop Using Withdrawn Data)
+5:task:(Communicate Withdrawal)
+6:exclusivegateway:{x}
+7:task:(Inform User of Impact)
+8:task:(Wait for Notification)
+9:exclusivegateway:{x}
+10:task:(Stop Business Processes Using Withdrawn Data)
+11:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Data Subject Request)
+1:task:(Receive Data Subject Request) --> 2:task:(Check Data Relevance)
+2:task:(Check Data Relevance) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Data relevant|4:task:(Stop Using Withdrawn Data)
+3:exclusivegateway:{x} --> |Data not relevant|7:task:(Inform User of Impact)
+4:task:(Stop Using Withdrawn Data) --> 5:task:(Communicate Withdrawal)
+5:task:(Communicate Withdrawal) --> 6:exclusivegateway:{x}
+7:task:(Inform User of Impact) --> 8:task:(Wait for Notification)
+8:task:(Wait for Notification) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Stop|10:task:(Stop Business Processes Using Withdrawn Data)
+9:exclusivegateway:{x} --> |Do not stop|6:exclusivegateway:{x}
+10:task:(Stop Business Processes Using Withdrawn Data) --> 4:task:(Stop Using Withdrawn Data)
+6:exclusivegateway:{x} --> 11:endevent:(((endevent)))

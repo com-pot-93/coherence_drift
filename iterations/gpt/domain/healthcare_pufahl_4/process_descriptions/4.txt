@@ -1,0 +1,15 @@
+The process begins when the patient’s condition is assessed. After this initial assessment, two activities are started at the same time:
+
+- A physical examination of the patient is performed.
+- Blood samples are drawn from the patient.
+
+Once the blood samples have been drawn, they are sent to the laboratory. The laboratory then processes the samples, and the results are received.
+
+The process waits until both the physical examination is completed and the laboratory results have been received. Only after both are finished does the process continue.
+
+Next, a diagnosis is made based on the information gathered. After the diagnosis, there is a decision point:
+
+- If surgery has already been performed, the patient is discharged.
+- If surgery is planned, preparations for surgery are made.
+
+After either discharging the patient or planning the surgery, the process comes to an end.

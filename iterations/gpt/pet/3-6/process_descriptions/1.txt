@@ -1,0 +1,40 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+---
+
+The process begins when a claim is received. After receiving the claim, the insurance status of the claimant is checked.
+
+At this point, a decision is made based on the insurance status:
+
+- If the process is to continue, the next step is to evaluate the severity of the claim.
+  - After evaluating the claim’s severity, another decision is made.
+    - If the process should proceed, forms are sent to the claimant.
+      - After sending the forms, another decision is made.
+        - If the process should proceed, the completed forms are received from the claimant.
+          - The received forms are then checked for completeness.
+            - If the forms are complete, the claim is registered in the claims management system.
+              - After registration, a decision is made:
+                - If the process should continue, forms are sent to the claimant again, and the process repeats from the step where forms are sent.
+                - If the process should end, the process concludes.
+            - If the forms are incomplete, the claimant is informed to update the forms. The process then returns to checking the forms for completeness after the claimant updates them.
+            - If the process cannot proceed at this point, the process is escalated, and then returns to an earlier decision point.
+        - If the process should not proceed after sending the forms, the claimant is informed of the rejection.
+          - After informing the claimant, another decision is made:
+            - If the process should proceed, forms are sent to the claimant again, and the process continues as before.
+            - If the process cannot proceed, the process is escalated and returns to an earlier decision point.
+    - If the process should not proceed after evaluating the claim’s severity, the claimant is informed of the rejection.
+      - After informing the claimant, another decision is made:
+        - If the process should proceed, forms are sent to the claimant, and the process continues as before.
+        - If the process cannot proceed, the process is escalated and returns to an earlier decision point.
+- If the insurance status check leads to rejection, the process moves to another decision point.
+  - If the process should proceed, the claimant is informed of the rejection.
+    - After informing the claimant, another decision is made:
+      - If the process should proceed, forms are sent to the claimant, and the process continues as before.
+      - If the process cannot proceed, the process is escalated and returns to an earlier decision point.
+  - If the process cannot proceed, the process is escalated and returns to an earlier decision point.
+
+After all possible paths and decisions have been followed, the process eventually reaches its end.
+
+---
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step, decision, and possible loop is included and described in clear, plain language.

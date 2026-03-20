@@ -1,0 +1,30 @@
+The process begins with a starting point. Immediately, a decision is made about whether to proceed or not. If the decision is not to proceed, the process ends. If the decision is to proceed, the next step is carried out.
+
+After this step, another decision is made about whether to continue. If the choice is not to continue, the process ends. If the choice is to continue, the process moves forward.
+
+Next, another decision point is reached. From here, the process can follow two main paths:
+
+**First Path:**
+- If the process continues along the first path, another decision is made. If the answer is positive, the process moves to a further evaluation step.
+- After this evaluation, another decision is made. If the decision is to proceed, the process loops back to the previous decision point, allowing for repeated evaluation as needed. If the decision is not to proceed, the process also loops back, enabling further consideration.
+
+**Second Path:**
+- If the process follows the second path, another decision is made. If the decision is not to proceed, the process ends. If the decision is to proceed, the process continues.
+- The process then moves forward, and another decision is made. If the answer is positive, the process continues to the next step.
+- At this point, the process can repeat the previous step as many times as necessary, based on the outcome of each decision. If the process does not need to repeat, it moves forward.
+
+The process then reaches a point where it identifies whether there is a need for personnel. If the decision is not to proceed, the process loops back to reassess the need for personnel. If the decision is to proceed, the process continues.
+
+Next, the process determines the specific personnel requirements. If the decision is to move forward, the process continues to the next step. If not, the process loops back to reassess the requirements.
+
+Once the requirements are confirmed, the process reports the vacancy to the personnel department. After reporting, the process receives a job description. If the process does not proceed at this point, it loops back to the previous step.
+
+If the process continues, the job description is examined. If the process does not proceed, it loops back to the previous step. If the process continues, satisfaction with the job description is checked.
+
+If the job description is satisfactory, the vacancy is advertised. The process can repeat the advertising step as needed, based on the outcome of each decision. If the process does not need to repeat, it moves forward.
+
+If the job description is not satisfactory, the process loops back to receive a new job description and repeats the examination and satisfaction check steps as necessary.
+
+Throughout the process, at each decision point, if the choice is not to proceed, the process either loops back to a previous step for further consideration or ends if no further action is required.
+
+The process concludes when all necessary steps have been completed and no further actions or decisions are needed.

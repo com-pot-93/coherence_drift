@@ -1,0 +1,54 @@
+Certainly! Here is a detailed, step-by-step description of the process as depicted in your model:
+
+1. The process begins when a request is submitted.
+2. The submitted request is then registered.
+3. After registration, a decision is made on whether to continue with the process. If the decision is not to continue, the process ends here.
+4. If the process continues, an initial continuation check is performed.
+5. Another decision is made on whether to continue. If not, the process ends.
+6. If the process continues, a further check is carried out.
+7. Again, a decision is made on whether to continue. If not, the process ends.
+8. If the process continues, a condition is evaluated.
+9. If the evaluation is negative, the process ends. If positive, another decision is made on whether to proceed.
+10. If the decision is not to proceed, the process ends. If the decision is to proceed, another check is performed.
+11. After this check, a decision is made on whether the outcome is favorable. If not, the process ends.
+12. If the outcome is favorable, another decision is made on whether the result is positive. If not, the process ends.
+13. If the result is positive, another decision is made. If the answer is not positive, the process ends.
+14. If the answer is positive, a supervisor review is performed.
+15. After the supervisor review, a decision is made. If the request is not approved, it is returned with comments.
+16. The employee reviews the comments and decides whether to resubmit or withdraw the request.
+    - If the employee chooses to resubmit, the process returns to the supervisor review.
+    - If the employee chooses to withdraw, the process ends.
+17. If the supervisor approves, the request is forwarded to the purchasing department.
+18. The purchasing department performs a continuation check.
+19. A decision is made on whether to continue. If not, the process ends.
+20. If the process continues, a further check is performed.
+21. Another decision is made on whether to continue. If not, the process ends.
+22. If the process continues, another check is performed.
+23. A decision is made on whether the outcome is favorable. If not, the process ends.
+24. If the outcome is favorable, another decision is made on whether the result is positive. If not, the process ends.
+25. If the result is positive, another decision is made. If the answer is not positive, the process ends.
+26. If the answer is positive, an additional purchase check is performed.
+27. After this check, a decision is made. If the outcome is not positive, the process ends.
+28. If the outcome is positive, another decision is made. If the answer is not positive, the process ends.
+29. If the answer is positive, another decision is made. If the answer is not positive, the process ends.
+30. If the answer is positive, a decision is made on whether to continue or escalate and recheck.
+    - If escalation and rechecking are needed, the process returns to the additional purchase check.
+    - If the answer is positive, the process continues.
+31. If the process continues, quotations are prepared.
+32. After preparing quotations, a decision is made:
+    - If the process cannot continue, it returns to the additional purchase check.
+    - If a vendor is selected, the vendor selection is confirmed.
+33. After confirming the vendor selection, a decision is made:
+    - If changes are needed, the process returns to preparing quotations.
+    - If the vendor is confirmed, a purchase order is generated and sent.
+34. The process waits for product delivery.
+35. Once the product is delivered, the invoice is received.
+36. A decision is made on whether the process is complete:
+    - If not complete, the process returns to preparing quotations.
+    - If complete, the user is notified of the status.
+37. Final checks are performed.
+38. Final evaluations are carried out.
+39. After final evaluations, a series of decisions are made. If any of these decisions result in a negative outcome, the process ends.
+40. If all decisions are positive, the process ends successfully.
+
+Throughout the process, at each decision point, if the outcome is not favorable or the decision is not to continue, the process ends at that point. In some cases, the process may loop back to earlier steps, such as resubmitting after comments or rechecking after escalation. The process is designed to ensure that only requests that pass all checks and evaluations proceed to completion.

@@ -1,0 +1,17 @@
+The process begins with the start of the procedure. The first step is to retrieve the data that has been breached. Once this is done, the next step is to identify and retrieve the subjects whose data has been compromised.
+
+After identifying the breached subjects, the process splits into two parallel activities:
+
+1. On one side, actions are taken to limit the loss of data. Once these actions are completed, this part of the process waits for the other activities to finish before proceeding.
+
+2. At the same time, the national authority is notified about the breach. After the notification, the stolen data is evaluated. Based on this evaluation, a decision is made:
+
+   - If certain conditions are met, a notification is sent out, and the process continues.
+   - If not, the security standards are evaluated. Depending on the outcome of this evaluation:
+     - If a notification is required, it is sent, and the process continues.
+     - If further clarification is needed, a request is made to determine whether the breached data must be communicated to the affected data subject. After making this request, the process waits to receive a notification in response.
+       - Once the notification is received, another decision is made:
+         - If a notification should be sent, it is sent, and the process continues.
+         - If not, the process continues without sending a notification.
+
+All these paths eventually come together and synchronize. Once all parallel and conditional activities are completed, the process ends.

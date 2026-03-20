@@ -1,0 +1,35 @@
+Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins with the start of the event.
+2. The first action is to send invitations to the intended participants.
+3. After sending invitations, the next step is to ask friends for suggestions on which games to play.
+4. Once suggestions are requested, the process continues by receiving the game suggestions from the friends.
+5. After collecting the suggestions, the next step is to choose which games will be played at the event.
+6. At this point, the process splits into two parallel tracks that are handled at the same time:
+   
+   **First Track: Checking the Date**
+   - The process checks if the chosen date for the event is suitable.
+   - If the date is not suitable, the date is changed, and the suitability is checked again. This cycle repeats until a suitable date is found.
+   - Once a suitable date is confirmed, the process continues.
+
+   **Second Track: Checking the Games**
+   - The process checks if the selected games need to be changed.
+   - If the games need to be changed, guests are asked again for game suggestions.
+   - The suitability of the new game suggestions is checked.
+   - If the new games are not suitable, the process returns to checking if the games need to be changed, repeating this cycle until suitable games are found.
+   - Once suitable games are confirmed, the process continues.
+
+7. After both the date and the games have been confirmed as suitable, the process checks if any of the chosen games need to be downloaded.
+   - If downloads are needed, the required games are downloaded.
+   - If no downloads are needed, the process continues.
+
+8. The next step is to ask friends how much beer will be needed for the event.
+9. Based on the responses, the total amount of beer required is estimated.
+10. The process then checks if beer needs to be bought.
+    - If beer needs to be bought, it is purchased at the supermarket.
+    - If no beer needs to be bought, the process continues.
+
+11. The final preparation for the LAN party is carried out.
+12. The process ends.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that all steps, decisions, and possible repetitions are included.

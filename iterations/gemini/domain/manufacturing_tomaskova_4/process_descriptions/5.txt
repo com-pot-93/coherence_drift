@@ -1,0 +1,9 @@
+The process starts. It then encounters a decision point. If the answer is "Yes", it proceeds through a series of decision points, each requiring a "Yes" answer to continue forward. After the fourth "Yes", if the answer is "true", the process continues to another decision point. If "true" again, a "Production Planning" task is performed.
+
+Following the "Production Planning" task, the process splits into two parallel paths, which immediately merge back together. After the merge, there is another decision point. If the answer is "Yes", an "Assign Workers" task is performed, followed by "Production Design", "Product Delivery", "Production Logout", and "Quality Control" tasks. After "Quality Control", there is another decision point.
+
+If the answer is "Yes", the process loops back to the "Production Planning" task. If the answer is "No", the process continues to another decision point, which merges immediately. The process then escalates and loops back to the decision point before the "Assign Workers" task.
+
+If any of the first four decision points (after the start event) receive a "No" answer, or if the fifth decision point receives a "false" answer, or if the sixth decision point receives a "false" answer, the process skips ahead to a parallel gateway.
+
+From the parallel gateway, two tasks are performed simultaneously: "Register to Finished Stock" and "Register to Semi-Finished Stock". "Register to Finished Stock" is followed by "Stocking to Finished Goods", and "Register to Semi-Finished Stock" is followed by "Loading to Semi-Finished Stock". After both sets of tasks are completed, the process merges back together and ends.

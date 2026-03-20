@@ -1,0 +1,25 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Manager checks the open leads)
+2:task:(Manager selects the top five leads)
+3:task:(Manager tells Sales Assistant to  contact the leads)
+4:exclusivegateway:{x}
+5:task:(Sales Assistant calls  customer)
+6:exclusivegateway:{x}
+7:task:(Sales Assistant  sends a note to the Manager)
+8:task:(Manager  processes the lead)
+9:exclusivegateway:{x}
+10:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Manager checks the open leads)
+1:task:(Manager checks the open leads) --> 2:task:(Manager selects the top five leads)
+2:task:(Manager selects the top five leads) --> 3:task:(Manager tells Sales Assistant to  contact the leads)
+3:task:(Manager tells Sales Assistant to  contact the leads) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> 5:task:(Sales Assistant calls  customer)
+5:task:(Sales Assistant calls  customer) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Lead requires manager|7:task:(Sales Assistant  sends a note to the Manager)
+6:exclusivegateway:{x} --> |Lead does not require manager|9:exclusivegateway:{x}
+7:task:(Sales Assistant  sends a note to the Manager) --> 8:task:(Manager  processes the lead)
+8:task:(Manager  processes the lead) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |true|4:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |false|10:endevent:(((endevent)))

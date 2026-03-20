@@ -1,0 +1,7 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Perform database backup)
+  1:task:(Perform database backup) --> 2:task:(Check database)
+  2:task:(Check database) --> 3:task:(Check CRM system)
+  3:task:(Check CRM system) --> 4:endevent:(((endevent)))
+```

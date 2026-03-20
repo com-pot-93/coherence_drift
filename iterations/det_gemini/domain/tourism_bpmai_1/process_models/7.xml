@@ -1,0 +1,340 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive customer request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Check customer request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="yes" language="text/javascript">
+      <choose mode="exclusive" a:alt_id="4">
+        <alternative condition="yes" language="text/javascript">
+          <call id="a11" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Manual registration</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="no" language="text/javascript">
+          <call id="a13" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Automatic registration</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a15" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>Search for attraction provider</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="8">
+        <alternative condition="true" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="9">
+            <alternative condition="true" language="text/javascript">
+              <call id="a25" endpoint="" a:alt_id="10">
+                <parameters>
+                  <label>Book attraction</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="11">
+                <alternative condition="true" language="text/javascript">
+                  <choose mode="exclusive" a:alt_id="12">
+                    <alternative condition="true" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="13">
+                        <alternative condition="true" language="text/javascript">
+                          <call id="a39" endpoint="" a:alt_id="43">
+                            <parameters>
+                              <label>Receive rejection</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a65" endpoint="" a:alt_id="27">
+                            <parameters>
+                              <label>Send confirmation to the customer</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="false" language="text/javascript">
+                          <call id="a37" endpoint="" a:alt_id="14">
+                            <parameters>
+                              <label>Receive booking confirmation</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a43" endpoint="" a:alt_id="16">
+                            <parameters>
+                              <label>Send confirmation to the customer</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="false" language="text/javascript">
+                      <call id="a37" endpoint="" a:alt_id="14">
+                        <parameters>
+                          <label>Receive booking confirmation</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a43" endpoint="" a:alt_id="16">
+                        <parameters>
+                          <label>Send confirmation to the customer</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="false" language="text/javascript">
+                  <choose mode="exclusive" a:alt_id="15">
+                    <alternative condition="true" language="text/javascript">
+                      <call id="a39" endpoint="" a:alt_id="43">
+                        <parameters>
+                          <label>Receive rejection</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a65" endpoint="" a:alt_id="27">
+                        <parameters>
+                          <label>Send confirmation to the customer</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="false" language="text/javascript">
+                      <call id="a37" endpoint="" a:alt_id="14">
+                        <parameters>
+                          <label>Receive booking confirmation</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a43" endpoint="" a:alt_id="16">
+                        <parameters>
+                          <label>Send confirmation to the customer</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                  </choose>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="">
+              <call id="a27" endpoint="" a:alt_id="21">
+                <parameters>
+                  <label>Book attraction</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="22">
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="23">
+                    <alternative condition="">
+                      <choose mode="exclusive" a:alt_id="24">
+                        <alternative condition="">
+                          <call id="a39" endpoint="" a:alt_id="43">
+                            <parameters>
+                              <label>Receive rejection</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="">
+                          <call id="a59" endpoint="" a:alt_id="25">
+                            <parameters>
+                              <label>Receive booking confirmation</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="">
+                      <call id="a59" endpoint="" a:alt_id="25">
+                        <parameters>
+                          <label>Receive booking confirmation</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="26">
+                    <alternative condition="">
+                      <call id="a39" endpoint="" a:alt_id="43">
+                        <parameters>
+                          <label>Receive rejection</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="">
+                      <call id="a59" endpoint="" a:alt_id="25">
+                        <parameters>
+                          <label>Receive booking confirmation</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                  </choose>
+                </alternative>
+              </choose>
+              <call id="a65" endpoint="" a:alt_id="27">
+                <parameters>
+                  <label>Send confirmation to the customer</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="">
+          <choose mode="exclusive" a:alt_id="29">
+            <alternative condition="">
+              <call id="a73" endpoint="" a:alt_id="30">
+                <parameters>
+                  <label>Book attraction</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="31">
+                <alternative condition="true" language="text/javascript">
+                  <call id="a79" endpoint="" a:alt_id="32">
+                    <parameters>
+                      <label>Receive rejection</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="false" language="text/javascript">
+                  <call id="a81" endpoint="" a:alt_id="33">
+                    <parameters>
+                      <label>Receive booking confirmation</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="">
+              <call id="a75" endpoint="" a:alt_id="36">
+                <parameters>
+                  <label>Book attraction</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="37">
+                <alternative condition="true" language="text/javascript">
+                  <call id="a91" endpoint="" a:alt_id="38">
+                    <parameters>
+                      <label>Receive rejection</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="false" language="text/javascript">
+                  <call id="a93" endpoint="" a:alt_id="39">
+                    <parameters>
+                      <label>Receive booking confirmation</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+          <call id="a65" endpoint="" a:alt_id="27">
+            <parameters>
+              <label>Send confirmation to the customer</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="no" language="text/javascript"/>
+  </choose>
+  <call id="a9" endpoint="" a:alt_id="42">
+    <parameters>
+      <label>Send notification to the customer</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

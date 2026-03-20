@@ -1,0 +1,353 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Prompt User to Log In</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Check User Credentials</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Credentials incorrect" language="text/javascript"/>
+    <alternative condition="Credentials correct" language="text/javascript">
+      <call id="a9" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Check User Permissions</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="5">
+        <alternative condition="Permissions insufficient" language="text/javascript"/>
+        <alternative condition="Permissions sufficient" language="text/javascript">
+          <call id="a15" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Check Condition A</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="7">
+            <alternative condition="Condition A met" language="text/javascript">
+              <loop mode="pre_test" condition="true">
+                <call id="a35" endpoint="" a:alt_id="13">
+                  <parameters>
+                    <label>Present Order Confirmation</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a37" endpoint="" a:alt_id="14">
+                  <parameters>
+                    <label>Prompt to Finalize Order</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <loop mode="pre_test" condition="User finalizes">
+                  <call id="a43" endpoint="" a:alt_id="16">
+                    <parameters>
+                      <label>Prepare Shipment Details</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <parallel wait="-1" cancel="last" a:alt_id="17">
+                    <parallel_branch>
+                      <call id="a47" endpoint="" a:alt_id="18">
+                        <parameters>
+                          <label>Collect Payment Information</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </parallel_branch>
+                    <parallel_branch>
+                      <call id="a49" endpoint="" a:alt_id="19">
+                        <parameters>
+                          <label>Collect Shipping Details</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </parallel_branch>
+                    <parallel_branch>
+                      <call id="a51" endpoint="" a:alt_id="20">
+                        <parameters>
+                          <label>Prepare Payment Details</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </parallel_branch>
+                    <parallel_branch>
+                      <call id="a53" endpoint="" a:alt_id="21">
+                        <parameters>
+                          <label>Prepare Shipment Details Again</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </parallel_branch>
+                  </parallel>
+                  <call id="a63" endpoint="" a:alt_id="23">
+                    <parameters>
+                      <label>Check if Order is Correct</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="24">
+                    <alternative condition="Order not correct" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="26">
+                        <alternative condition="Repeat confirmation" language="text/javascript">
+                          <call id="a35" endpoint="" a:alt_id="13">
+                            <parameters>
+                              <label>Present Order Confirmation</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a37" endpoint="" a:alt_id="14">
+                            <parameters>
+                              <label>Prompt to Finalize Order</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Cancel" language="text/javascript">
+                          <escape a:alt_id="-1"/>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Order correct" language="text/javascript">
+                      <call id="a69" endpoint="" a:alt_id="27">
+                        <parameters>
+                          <label>Check if Further Confirmation Needed</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="28">
+                        <alternative condition="Further confirmation needed" language="text/javascript">
+                          <call id="a35" endpoint="" a:alt_id="13">
+                            <parameters>
+                              <label>Present Order Confirmation</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a37" endpoint="" a:alt_id="14">
+                            <parameters>
+                              <label>Prompt to Finalize Order</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="No further confirmation" language="text/javascript">
+                          <escape a:alt_id="-1"/>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                  </choose>
+                </loop>
+              </loop>
+            </alternative>
+            <alternative condition="Condition A not met" language="text/javascript">
+              <call id="a21" endpoint="" a:alt_id="8">
+                <parameters>
+                  <label>Check Condition B</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="9">
+                <alternative condition="Condition B not met" language="text/javascript"/>
+                <alternative condition="Condition B met" language="text/javascript">
+                  <call id="a27" endpoint="" a:alt_id="10">
+                    <parameters>
+                      <label>Check Condition C</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="11">
+                    <alternative condition="Condition C not met" language="text/javascript"/>
+                    <alternative condition="Condition C met" language="text/javascript">
+                      <loop mode="pre_test" condition="true">
+                        <call id="a35" endpoint="" a:alt_id="13">
+                          <parameters>
+                            <label>Present Order Confirmation</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a37" endpoint="" a:alt_id="14">
+                          <parameters>
+                            <label>Prompt to Finalize Order</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <loop mode="pre_test" condition="User finalizes">
+                          <call id="a43" endpoint="" a:alt_id="16">
+                            <parameters>
+                              <label>Prepare Shipment Details</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <parallel wait="-1" cancel="last" a:alt_id="17">
+                            <parallel_branch>
+                              <call id="a47" endpoint="" a:alt_id="18">
+                                <parameters>
+                                  <label>Collect Payment Information</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </parallel_branch>
+                            <parallel_branch>
+                              <call id="a49" endpoint="" a:alt_id="19">
+                                <parameters>
+                                  <label>Collect Shipping Details</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </parallel_branch>
+                            <parallel_branch>
+                              <call id="a51" endpoint="" a:alt_id="20">
+                                <parameters>
+                                  <label>Prepare Payment Details</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </parallel_branch>
+                            <parallel_branch>
+                              <call id="a53" endpoint="" a:alt_id="21">
+                                <parameters>
+                                  <label>Prepare Shipment Details Again</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </parallel_branch>
+                          </parallel>
+                          <call id="a63" endpoint="" a:alt_id="23">
+                            <parameters>
+                              <label>Check if Order is Correct</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="24">
+                            <alternative condition="Order not correct" language="text/javascript">
+                              <choose mode="exclusive" a:alt_id="26">
+                                <alternative condition="Repeat confirmation" language="text/javascript">
+                                  <call id="a35" endpoint="" a:alt_id="13">
+                                    <parameters>
+                                      <label>Present Order Confirmation</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a37" endpoint="" a:alt_id="14">
+                                    <parameters>
+                                      <label>Prompt to Finalize Order</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                </alternative>
+                                <alternative condition="Cancel" language="text/javascript">
+                                  <escape a:alt_id="-1"/>
+                                </alternative>
+                              </choose>
+                            </alternative>
+                            <alternative condition="Order correct" language="text/javascript">
+                              <call id="a69" endpoint="" a:alt_id="27">
+                                <parameters>
+                                  <label>Check if Further Confirmation Needed</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <choose mode="exclusive" a:alt_id="28">
+                                <alternative condition="Further confirmation needed" language="text/javascript">
+                                  <call id="a35" endpoint="" a:alt_id="13">
+                                    <parameters>
+                                      <label>Present Order Confirmation</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                  <call id="a37" endpoint="" a:alt_id="14">
+                                    <parameters>
+                                      <label>Prompt to Finalize Order</label>
+                                      <method/>
+                                      <type>:task</type>
+                                      <arguments/>
+                                    </parameters>
+                                  </call>
+                                </alternative>
+                                <alternative condition="No further confirmation" language="text/javascript">
+                                  <escape a:alt_id="-1"/>
+                                </alternative>
+                              </choose>
+                            </alternative>
+                          </choose>
+                        </loop>
+                      </loop>
+                    </alternative>
+                  </choose>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

@@ -1,0 +1,10 @@
+The process starts, and then proceeds to a decision point.
+Depending on the outcome of the decision, the process either proceeds to another decision point or it ends.
+If the process proceeds to the second decision point, depending on the outcome, the process either continues to a 'Send Status' task or it merges into another gateway.
+After the 'Send Status' task is completed, the process continues to another decision point.
+Depending on the outcome of the decision, the process either executes a 'Print Object' task or merges into another gateway.
+After the 'Print Object' task is completed, the process merges into another gateway.
+The two possible paths from the previous decision point converge into a gateway, which then merges into another gateway.
+The alternative path from the second decision point merges into the same gateway.
+From there, the process returns to the first decision point, forming a loop.
+If the process takes the other path from the first decision point, the process ends.

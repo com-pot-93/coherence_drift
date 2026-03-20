@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Booking Request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Process Booking Request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Continue" language="text/javascript">
+      <loop mode="pre_test" condition="true">
+        <call id="a7" endpoint="" a:alt_id="4">
+          <parameters>
+            <label>Check Availability</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="5">
+          <alternative condition="Not Available" language="text/javascript">
+            <call id="a13" endpoint="" a:alt_id="6">
+              <parameters>
+                <label>Propose Alternative Time</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a17" endpoint="" a:alt_id="7">
+              <parameters>
+                <label>Notify Requester of Alternative</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a19" endpoint="" a:alt_id="9">
+              <parameters>
+                <label>Wait for Requester Response</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <loop mode="pre_test" condition="No Further Billing">
+              <choose mode="exclusive" a:alt_id="10">
+                <alternative condition="No Further Billing" language="text/javascript">
+                  <call id="a25" endpoint="" a:alt_id="11">
+                    <parameters>
+                      <label>Send Bill</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="12">
+                    <alternative condition="No Further Billing" language="text/javascript"/>
+                    <alternative condition="Further Billing Needed" language="text/javascript">
+                      <call id="a31" endpoint="" a:alt_id="13">
+                        <parameters>
+                          <label>Send Additional Bill</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="No Bill Needed" language="text/javascript"/>
+              </choose>
+            </loop>
+            <call id="a27" endpoint="" a:alt_id="14">
+              <parameters>
+                <label>Confirm Booking</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="15">
+              <alternative condition="Escalation Needed" language="text/javascript">
+                <call id="a39" endpoint="" a:alt_id="16">
+                  <parameters>
+                    <label>Handle Escalation</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="No Escalation" language="text/javascript"/>
+            </choose>
+            <call id="a7" endpoint="" a:alt_id="4">
+              <parameters>
+                <label>Check Availability</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a13" endpoint="" a:alt_id="6">
+              <parameters>
+                <label>Propose Alternative Time</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a17" endpoint="" a:alt_id="7">
+              <parameters>
+                <label>Notify Requester of Alternative</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a19" endpoint="" a:alt_id="9">
+              <parameters>
+                <label>Wait for Requester Response</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="Available" language="text/javascript">
+            <call id="a15" endpoint="" a:alt_id="8">
+              <parameters>
+                <label>Notify Requester of Availability</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a19" endpoint="" a:alt_id="9">
+              <parameters>
+                <label>Wait for Requester Response</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <loop mode="pre_test" condition="No Further Billing">
+              <choose mode="exclusive" a:alt_id="10">
+                <alternative condition="No Further Billing" language="text/javascript">
+                  <call id="a25" endpoint="" a:alt_id="11">
+                    <parameters>
+                      <label>Send Bill</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="12">
+                    <alternative condition="No Further Billing" language="text/javascript"/>
+                    <alternative condition="Further Billing Needed" language="text/javascript">
+                      <call id="a31" endpoint="" a:alt_id="13">
+                        <parameters>
+                          <label>Send Additional Bill</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="No Bill Needed" language="text/javascript"/>
+              </choose>
+            </loop>
+            <call id="a27" endpoint="" a:alt_id="14">
+              <parameters>
+                <label>Confirm Booking</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="15">
+              <alternative condition="Escalation Needed" language="text/javascript">
+                <call id="a39" endpoint="" a:alt_id="16">
+                  <parameters>
+                    <label>Handle Escalation</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="No Escalation" language="text/javascript"/>
+            </choose>
+            <call id="a7" endpoint="" a:alt_id="4">
+              <parameters>
+                <label>Check Availability</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a15" endpoint="" a:alt_id="8">
+              <parameters>
+                <label>Notify Requester of Availability</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a19" endpoint="" a:alt_id="9">
+              <parameters>
+                <label>Wait for Requester Response</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+      </loop>
+    </alternative>
+    <alternative condition="Do Not Continue" language="text/javascript"/>
+  </choose>
+</description>

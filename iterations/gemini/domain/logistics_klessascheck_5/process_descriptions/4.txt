@@ -1,0 +1,13 @@
+The process starts with packaging the product, followed by shipping it. Depending on the delivery option, the product is either delivered to the door or to a station.
+
+If delivered to the door, there's a decision point: if a receipt is needed, it is printed and then posted, before the product is delivered to the station. If no receipt is needed, the process skips directly to delivering the product to the station.
+
+If the product is delivered to the station, there's a check to see if the product was received. If the product was received, it is processed as received. If the product was not received, there is another check to see if the product was received. If the product was received, it is processed as received. If the product was not received, the process merges back.
+
+After processing the product as received, the process merges back.
+
+If the product was delivered to the station, there's a check to see if the product was received. If the product was received, it is processed as received. If the product was not received, there is another check to see if the product was received. If the product was received, it is processed as received. If the product was not received, the process merges back.
+
+After processing the product as received, the process merges back.
+
+Finally, all paths converge to the end of the process.

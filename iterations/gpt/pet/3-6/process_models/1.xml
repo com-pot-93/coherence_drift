@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Claim</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Check Insurance Status</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Continue" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Evaluate Claim Severity</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <loop mode="pre_test" condition="true">
+        <call id="a11" endpoint="" a:alt_id="5">
+          <parameters>
+            <label>Send Forms to Claimant</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="pre_test" condition="Proceed">
+          <call id="a15" endpoint="" a:alt_id="7">
+            <parameters>
+              <label>Receive Completed Forms</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a19" endpoint="" a:alt_id="8">
+            <parameters>
+              <label>Check Forms for Completeness</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="9">
+            <alternative condition="Complete" language="text/javascript">
+              <call id="a23" endpoint="" a:alt_id="11">
+                <parameters>
+                  <label>Register Claim in Claims Management</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="12">
+                <alternative condition="Continue" language="text/javascript">
+                  <call id="a11" endpoint="" a:alt_id="5">
+                    <parameters>
+                      <label>Send Forms to Claimant</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="End" language="text/javascript">
+                  <escape a:alt_id="-1"/>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="Incomplete" language="text/javascript">
+              <call id="a25" endpoint="" a:alt_id="10">
+                <parameters>
+                  <label>Inform Claimant to Update Forms</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a19" endpoint="" a:alt_id="8">
+                <parameters>
+                  <label>Check Forms for Completeness</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <escape a:alt_id="-1"/>
+            </alternative>
+          </choose>
+        </loop>
+        <call id="a9" endpoint="" a:alt_id="13">
+          <parameters>
+            <label>Inform Claimant of Rejection</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </loop>
+    </alternative>
+    <alternative condition="Reject" language="text/javascript">
+      <call id="a9" endpoint="" a:alt_id="13">
+        <parameters>
+          <label>Inform Claimant of Rejection</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

@@ -1,0 +1,24 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Yes| 2:task:(Add patient to list)
+    1:exclusivegateway:{x} --> |No| 3:exclusivegateway:{x}
+    2:task:(Add patient to list) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |No| 6:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Yes| 7:task:(Escalation Event)
+    7:task:(Escalation Event) --> 8:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> 9:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} --> 10:exclusivegateway:{x}
+    9:exclusivegateway:{x} --> 11:task:(Hospitalization and Childbirth)
+    9:exclusivegateway:{x} --> 12:exclusivegateway:{x}
+    11:task:(Hospitalization and Childbirth) --> 13:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |Continue| 13:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |Loop to Escalation| 7:task:(Escalation Event)
+    13:exclusivegateway:{x} --> 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> 4:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> 15:endevent:(((endevent)))
+```

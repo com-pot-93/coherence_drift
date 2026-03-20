@@ -1,0 +1,30 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Back up database)
+    1:task:(Back up database) --> 2:task:(Check database)
+    2:task:(Check database) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |Yes| 4:task:(Check CRM system)
+    4:task:(Check CRM system) --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Yes| 6:task:(Register defaulting accounts and customers)
+    6:task:(Register defaulting accounts and customers) --> 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> |Yes| 8:task:(Produce and send table to account management)
+    8:task:(Produce and send table to account management) --> 9:inclusivegateway:{O}
+    7:exclusivegateway:{x} --> |No| 9:inclusivegateway:{O}
+    9:inclusivegateway:{O} --> 10:inclusivegateway:{O}
+    5:exclusivegateway:{x} --> |No| 10:inclusivegateway:{O}
+    3:exclusivegateway:{x} --> |No| 11:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |Yes| 12:task:(Send alert to supervisor)
+    12:task:(Send alert to supervisor) --> 13:inclusivegateway:{O}
+    11:exclusivegateway:{x} --> |No| 13:inclusivegateway:{O}
+    13:inclusivegateway:{O} --> 4:task:(Check CRM system)
+    10:inclusivegateway:{O} --> 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> |Yes| 15:task:(Perform reconciliation)
+    15:task:(Perform reconciliation) --> 16:inclusivegateway:{O}
+    14:exclusivegateway:{x} --> |No| 16:inclusivegateway:{O}
+    16:inclusivegateway:{O} --> 17:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> |Yes| 18:task:(Send message to supervisor)
+    18:task:(Send message to supervisor) --> 19:inclusivegateway:{O}
+    17:exclusivegateway:{x} --> |No| 20:task:(Complete reconciliation)
+    20:task:(Complete reconciliation) --> 19:inclusivegateway:{O}
+    19:inclusivegateway:{O} --> 21:endevent:(((endevent)))
+```

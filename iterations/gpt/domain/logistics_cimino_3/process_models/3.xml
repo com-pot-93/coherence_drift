@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Shipment Request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="2">
+    <parallel_branch>
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Package Goods</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <choose mode="exclusive" a:alt_id="0">
+        <alternative condition=""/>
+        <alternative condition="">
+          <parallel wait="-1" cancel="last" a:alt_id="9">
+            <parallel_branch>
+              <choose mode="exclusive" a:alt_id="0">
+                <alternative condition=""/>
+                <alternative condition="">
+                  <call id="a31" endpoint="" a:alt_id="13">
+                    <parameters>
+                      <label>Check Carrier Required</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="14">
+                    <alternative condition="Carrier required" language="text/javascript">
+                      <call id="a35" endpoint="" a:alt_id="15">
+                        <parameters>
+                          <label>Request Carrier Quotes</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a39" endpoint="" a:alt_id="16">
+                        <parameters>
+                          <label>Assign Carrier</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a41" endpoint="" a:alt_id="17">
+                        <parameters>
+                          <label>Prepare Carrier Paperwork</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Carrier not required" language="text/javascript"/>
+                  </choose>
+                </alternative>
+              </choose>
+            </parallel_branch>
+            <parallel_branch>
+              <choose mode="exclusive" a:alt_id="0">
+                <alternative condition=""/>
+                <alternative condition="">
+                  <call id="a47" endpoint="" a:alt_id="19">
+                    <parameters>
+                      <label>Check Post Required</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="20">
+                    <alternative condition="">
+                      <call id="a51" endpoint="" a:alt_id="21">
+                        <parameters>
+                          <label>Fill Out Post Label</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a55" endpoint="" a:alt_id="22">
+                        <parameters>
+                          <label>Check Extra Insurance Needed</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <choose mode="exclusive" a:alt_id="23">
+                        <alternative condition="Insurance needed" language="text/javascript">
+                          <call id="a59" endpoint="" a:alt_id="24">
+                            <parameters>
+                              <label>Arrange Extra Insurance</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="No insurance needed" language="text/javascript"/>
+                      </choose>
+                      <call id="a61" endpoint="" a:alt_id="25">
+                        <parameters>
+                          <label>Prepare Postal Paperwork</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Post not required" language="text/javascript"/>
+                  </choose>
+                </alternative>
+              </choose>
+            </parallel_branch>
+          </parallel>
+        </alternative>
+      </choose>
+    </parallel_branch>
+  </parallel>
+  <call id="a13" endpoint="" a:alt_id="6">
+    <parameters>
+      <label>Add Paperwork to Package</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a15" endpoint="" a:alt_id="7">
+    <parameters>
+      <label>Move Package to Pickup Area</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

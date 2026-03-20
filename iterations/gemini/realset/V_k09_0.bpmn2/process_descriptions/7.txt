@@ -1,0 +1,19 @@
+The process starts. First, the process connects to a management system. Then, a decision is made. If the condition is true, the process reads an order from the system. Subsequently, another decision is made, followed by another decision. If both conditions are met, the process splits into three parallel paths.
+
+In the first path, a decision is made. If a condition is met, a delivery delay penalty is applied; otherwise, the task is marked as OK. The path then rejoins the main flow.
+
+In the second parallel path, a decision is made. If a condition is met, a delivery delay penalty is applied; otherwise, the task is marked as OK. The path then rejoins the main flow.
+
+In the third parallel path, a decision is made. If a condition is met, a delivery delay penalty is applied; otherwise, the task is marked as OK. The path then rejoins the main flow.
+
+After all three parallel paths rejoin, the arrived product is marked as OK. The process then splits into two parallel paths again.
+
+In the first path, the product is packed, and then the path rejoins the main flow.
+
+In the second path, a courier is requested, and then the path rejoins the main flow.
+
+After both parallel paths rejoin, the delivery is marked as shipped. A decision is then made. If the condition is false, the process proceeds; otherwise, the process reads an order from the system again before proceeding.
+
+If either of the earlier decisions were not met, the process escalates and returns to the first decision point.
+
+If the initial condition was not true, the process ends.

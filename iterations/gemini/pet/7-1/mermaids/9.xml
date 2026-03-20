@@ -1,0 +1,17 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Check open leads)
+  1:task:(Check open leads) --> 2:task:(Select top five leads)
+  2:task:(Select top five leads) --> 3:task:(Contact leads)
+  3:task:(Contact leads) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} -->|Condition Met| 5:exclusivegateway:{x}
+  4:exclusivegateway:{x} -->|Condition Not Met| 14:endevent:(((endevent)))
+  5:exclusivegateway:{x} --> 6:task:(Call customer)
+  6:task:(Call customer) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} -->|Yes| 8:task:(Send note to manager)
+  7:exclusivegateway:{x} -->|No| 10:inclusivegateway:{O}
+  8:task:(Send note to manager) --> 9:task:(Process lead)
+  9:task:(Process lead) --> 10:inclusivegateway:{O}
+  10:inclusivegateway:{O} --> 11:inclusivegateway:{O}
+  11:inclusivegateway:{O} --> 4:exclusivegateway:{x}
+```

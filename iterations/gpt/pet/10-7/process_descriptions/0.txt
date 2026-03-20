@@ -1,0 +1,9 @@
+The process begins when the MSPN submits a measurement registration to the GO. After receiving this registration, the GO reviews the application submitted by the MSPN.
+
+Once the GO has examined the application, a decision is made. If the application is rejected, the GO formally rejects the application. Regardless of whether the application was confirmed or rejected, the process continues to the next step.
+
+If the application is confirmed, the GO approves the application. After this, the process continues in the same way as if the application had been rejected.
+
+Next, the GO assigns the MSPN. Following this assignment, the GO informs the MSPO about the assignment of the MSPN. After notifying the MSPO, the GO also informs the MPO about the assignment of the MSPN. Finally, the GO informs the SP about the assignment of the MSPN.
+
+The process concludes after all these notifications have been sent.

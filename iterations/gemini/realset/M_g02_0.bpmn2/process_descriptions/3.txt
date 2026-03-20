@@ -1,0 +1,31 @@
+The process starts. First, a basic design is developed. Then, a decision is made. If the decision is true, Lego brick sets are ordered, and the Lego bricks are sorted. Another decision is made, after which the process splits into three parallel paths.
+
+In the first path, big bricks are put in a container. Then, a decision is made with two possible outcomes that lead to the same point.
+
+In the second path, medium bricks are put in a container. Then, a decision is made with two possible outcomes that lead to the same point.
+
+In the third path, small bricks are put in a container. Then, a decision is made with two possible outcomes that lead to the same point.
+
+The three parallel paths merge back together.
+
+Alternatively, after sorting the Lego bricks, the process splits into three parallel paths again.
+
+In the first path, big bricks are put in a container. Then, a decision is made with two possible outcomes that lead to the same point.
+
+In the second path, medium bricks are put in a container. Then, a decision is made with two possible outcomes that lead to the same point.
+
+In the third path, small bricks are put in a container. Then, a decision is made with two possible outcomes that lead to the same point.
+
+The three parallel paths merge back together.
+
+After merging, a decision is made. If the decision is true, subcomponents are built. Then, a decision is made, leading to another decision. From here, there are three possible paths.
+
+In the first path, Lego brick sets are ordered.
+
+In the second path, subcomponents are tested. If the test results indicate a redesign is needed, the subcomponent is redesigned. If the test results indicate assembly is possible, the subcomponents are assembled into the machine. After redesigning or assembling, a decision is made with two possible outcomes that lead to the same point.
+
+In the third path, more subcomponents are built.
+
+The three paths merge. After merging, another decision is made with two possible outcomes that lead to the same point. The process escalates and returns to the first decision point.
+
+If the initial decision is false, the process ends.

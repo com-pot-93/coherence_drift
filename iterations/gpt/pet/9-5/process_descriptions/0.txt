@@ -1,0 +1,22 @@
+The process begins. At the start, a decision is made. If the outcome is positive, the company receives an expense report. After receiving the report, another decision is made.
+
+If necessary, the company creates a new employee account. Whether or not a new account is created, the process continues to the next step, where the company reviews the report to determine if it can be approved automatically.
+
+At this point, there are two possible paths:
+
+1. If the report is not approved automatically, a supervisor reviews and approves the report. After the supervisor’s decision, there are two possible outcomes:
+   - If the report is approved, the company sends the reimbursement to the employee’s bank account.
+   - If the report is rejected, the employee receives a rejection notice.
+   After either outcome, the process continues.
+
+2. If the report is approved automatically, the company proceeds with the automatic approval.
+
+After either the supervisor’s approval process or the automatic approval, another decision is made. There are three possible paths from here:
+
+- The company may stop the process. If this happens, the employee receives an email cancellation notice and is prompted to re-submit the expense report. After re-submission, the process returns to the earlier decision point after the company receives the expense report.
+- The employee may receive an email stating that approval is in progress. The process then returns to the earlier decision point after the company receives the expense report.
+- The process may return directly to the earlier decision point after the company receives the expense report.
+
+If, at the very first decision, the outcome is negative, the process ends.
+
+This cycle continues until the process reaches a conclusion at the first decision point, where the process ends.

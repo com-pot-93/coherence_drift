@@ -1,0 +1,14 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Submit Claim)
+1:task:(Submit Claim) --> 2:task:(Check Documents)
+2:task:(Check Documents) --> 3:task:(Register Claim)
+3:task:(Register Claim) --> 4:task:(Check Insurance)
+4:task:(Check Insurance) --> 5:task:(Perform Assessment)
+5:task:(Perform Assessment) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Authorize Repairs| 7:task:(Schedule Payment)
+7:task:(Schedule Payment) --> 9:task:(Send Letter)
+6:exclusivegateway:{x} --> |Reject Claim| 8:task:(Rejection Task)
+8:task:(Rejection Task) --> 9:task:(Send Letter)
+9:task:(Send Letter) --> 10:endevent:(((endevent)))
+```

@@ -1,0 +1,9 @@
+The process begins with the start of the workflow. The first step is to run the machine. Once the machine is running, the next action is to check the connection.
+
+After checking the connection, a decision is made. This leads to another decision point, followed by a third decision point. If the outcome of the third decision is positive, information is collected or measurements are taken. After collecting information or measuring, the next step is to calculate the OEE (Overall Equipment Effectiveness).
+
+Once the OEE is calculated, another decision is made. If the result of this decision is positive, the process returns to the step where information is collected or measurements are taken. After this, an escalation occurs, and the process returns to the previous decision point.
+
+If the decision after calculating OEE does not lead back to collecting information, the process continues with two actions that happen at the same time: stopping the machine and sending an email to the engineer. Both actions must be completed before the process can move forward.
+
+After both stopping the machine and emailing the engineer are finished, the process returns to the previous decision point. From there, the process moves back through the earlier decision points in reverse order, eventually reaching the end of the workflow. The process then concludes.

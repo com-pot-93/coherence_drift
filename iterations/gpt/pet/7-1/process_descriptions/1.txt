@@ -1,0 +1,21 @@
+Here is a detailed, step-by-step description of the process as depicted in your model:
+
+1. The process begins.
+2. A decision is made at the first point. Depending on the outcome, the process continues to a second decision point.
+3. At the second decision point, if the answer is “true,” the next step is to call the customer.
+4. After calling the customer, another decision is made.
+5. This leads to a third decision point. If it is determined that a note is required, a note is sent to the manager.
+6. Once the note is sent, the manager processes the lead.
+7. After the manager processes the lead, another decision is made.
+8. This leads to a fourth decision point. The process can either continue to another decision or return to calling the customer.
+9. If the process returns to calling the customer, the call is made again, and then the process escalates before returning to the previous decision point.
+10. If the process continues forward, it moves to the next decision point.
+11. At this point, the process can either return to calling the customer (with escalation and a return to the previous decision) or proceed to the next step.
+12. If the process proceeds, it moves to the next decision point.
+13. Here, if the answer is “true,” the customer is called again, followed by escalation and a return to the previous decision point.
+14. If the process does not return to calling the customer, it moves forward to the next step.
+15. The process then loops back to the first decision point, repeating the cycle.
+16. If, at the third decision point, it is determined that no note is required, the customer is called again, followed by escalation and a return to the previous decision point.
+17. If, at the second decision point, the answer is not “true,” the process ends.
+
+Throughout the process, there are several points where the customer may be called again, and escalation occurs before returning to a previous decision. The process contains multiple cycles and decision points, ensuring that certain steps, such as calling the customer or sending a note to the manager, are repeated as needed based on the outcomes of each decision. The process continues looping through these steps until a specific condition is met, at which point the process ends.

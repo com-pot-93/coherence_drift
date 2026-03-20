@@ -1,0 +1,12 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(EC informs the INQ)
+    1:task:(EC informs the INQ) --> 2:task:(INQ notifies the IP)
+    2:task:(INQ notifies the IP) --> 3:task:(IP checks the data)
+    3:task:(IP checks the data) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |Changes are confirmed| 5:task:(IP confirms the changes)
+    4:exclusivegateway:{x} --> |Changes are rejected| 6:task:(IP rejects the changes)
+    5:task:(IP confirms the changes) --> 7:exclusivegateway:{x}
+    6:task:(IP rejects the changes) --> 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> 8:endevent:(((endevent)))
+```

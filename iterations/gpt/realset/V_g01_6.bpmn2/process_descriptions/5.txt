@@ -1,0 +1,29 @@
+Certainly! Here is a detailed, step-by-step description of the process as depicted in your model:
+
+1. The process begins.
+2. The staff asks the customer whether they would like to order just a burger or a menu (which includes a drink and a side).
+3. If the customer chooses only a burger, the process moves directly to preparing the burger.
+4. If the customer chooses a menu, two things happen at the same time:
+   - A drink is prepared.
+   - The staff asks the customer whether they would like wedges or fries as their side.
+5. If the customer chooses fries, fries are prepared. If the customer chooses wedges, wedges are prepared. Once the chosen side is ready, the process continues.
+6. After both the drink and the chosen side are prepared, the process moves on to preparing the burger.
+7. Once the burger is prepared, the process checks if an update for the customer is needed.
+8. If an update is needed, the staff provides an update to the customer.
+9. After providing an update, the process checks if more updates are needed.
+   - If more updates are needed, the process checks again after each update, repeating this step as necessary.
+   - If no more updates are needed, the order is placed on the conveyor.
+10. After the order is placed on the conveyor, the process checks if more updates are needed.
+    - If more updates are needed, the staff provides an update after the conveyor, and the process checks again if further updates are needed, repeating as necessary.
+    - If no more updates are needed, the process checks if a final update is needed.
+11. If a final update is needed, the staff provides the final update.
+12. After the final update, the process checks if the situation needs to be escalated.
+    - If escalation is needed, the situation is escalated, and the process checks again if further escalation is required, repeating as necessary.
+    - If no escalation is needed, the process continues.
+13. If no final update is needed, the process continues.
+14. After all updates and escalations (if any) are handled, the process checks again if more updates are needed after the conveyor, or if a final update is needed, repeating the steps above as necessary.
+15. Once all updates and escalations are resolved, the process ends.
+
+Throughout the process, at several points after updates or final updates, there are checks to determine if escalation is needed. If escalation is required, the situation is escalated, and the process checks again if further escalation is necessary, repeating as needed. If no escalation is needed, the process continues.
+
+The process ensures that the customer is kept informed at various stages, and that any issues can be escalated if necessary, before the process concludes.

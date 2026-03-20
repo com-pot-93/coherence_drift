@@ -1,0 +1,5 @@
+The process begins when the MSPO initiates a deregistration with the GO. After receiving this request, the GO reviews and verifies the deregistration. At this point, the GO must make a decision: either to reject the deregistration or to give a preliminary confirmation.
+
+If the GO decides to reject the deregistration, this decision is recorded, and the process continues to the next step. Alternatively, if the GO gives a preliminary confirmation of the deregistration, the process also moves forward.
+
+Regardless of whether the deregistration was rejected or preliminarily confirmed, the GO then assigns himself as the MSP. Following this assignment, the GO communicates the current status of the assignment to the MSPO. After informing the MSPO, the GO also notifies the MPO about the assignment. Finally, the GO informs the SP about the assignment as well. Once all parties have been informed, the process comes to an end.

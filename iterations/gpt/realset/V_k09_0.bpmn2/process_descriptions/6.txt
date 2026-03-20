@@ -1,0 +1,3 @@
+The process begins.  
+First, a connection is established to the management system.  
+After this connection is made, the process ends.

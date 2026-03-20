@@ -1,0 +1,11 @@
+The process starts. Then, based on whether Condition A is true or false, the process either receives an expense report or creates a new employee account. After either of these actions, the process continues to the next step.
+
+Next, based on whether Condition E is true or false, the process either creates a new employee account or proceeds directly to the subsequent step.
+
+Following this, based on whether Condition G is true or false, the process either automatically approves the report or requires supervisor approval.
+
+After that, based on whether Condition I is true or false, the process either sends a reimbursement or proceeds directly to the subsequent step.
+
+Then, based on whether Condition L is true or false, the process either sends an approval in progress email or proceeds directly to the subsequent step.
+
+Finally, based on whether Condition M is false or true, the process either sends a rejection notice or proceeds directly to the end. The process then ends.

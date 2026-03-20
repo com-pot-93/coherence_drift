@@ -1,0 +1,9 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Assembler AG places an order with the supplier)
+1:task:(Assembler AG places an order with the supplier) --> 2:task:(Assembler AG sends the order to the supplier)
+2:task:(Assembler AG sends the order to the supplier) --> 3:task:(The supplier processes the order)
+3:task:(The supplier processes the order) --> 4:task:(The supplier sends an invoice to Assembler AG)
+4:task:(The supplier sends an invoice to Assembler AG) --> 5:task:(Assembler AG receives the invoice)
+5:task:(Assembler AG receives the invoice) --> 6:endevent:(((endevent)))
+```

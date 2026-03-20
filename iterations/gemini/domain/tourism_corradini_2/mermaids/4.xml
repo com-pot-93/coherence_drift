@@ -1,0 +1,10 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Search Customer)
+1:task:(Search Customer) --> 2:task:(Make Offer)
+2:task:(Make Offer) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} -->|Offer Accepted| 4:endevent:(((endevent)))
+3:exclusivegateway:{x} -->|Offer Rejected| 5:task:(Create Customer Request)
+5:task:(Create Customer Request) --> 6:task:(Provide Details)
+6:task:(Provide Details) --> 4:endevent:(((endevent)))
+```

@@ -1,0 +1,43 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when invoices are received.
+2. The secretariat performs a visual inspection of the invoices.
+3. After inspection, the invoice is forwarded to an accounting employee.
+4. The accounting employee identifies the suppliers related to the invoice.
+5. An invoice record is created.
+6. The items listed on the invoice are checked.
+7. The relevant cost center and the managers responsible are noted.
+8. A docket and a copy of the invoice are placed in the internal mail system.
+
+9. At this point, a decision is made. If the process should continue, the invoice is sent to the cost center manager.
+
+10. The cost center manager receives the invoice copy and reviews its content.
+
+11. After the review, another decision is made:
+    - If the invoice is approved, the manager writes an approval code and returns the invoice.
+    - If there are issues, the invoice is sent back to the accounting employee, who then clarifies the issue with the vendor. Depending on the outcome:
+        - If further consultation with managers is needed, the invoice copy is sent to the cost center managers again, and the process of review repeats.
+        - If the issue is resolved, the invoice copy is sent to the cost center managers for another review.
+
+12. Once the approval code is written and the invoice is returned, another decision is made:
+    - If there are more managers who need to review, the invoice is passed to the next cost center manager, and the review process repeats.
+    - If there are no more managers to review, the invoice is forwarded to the commercial manager.
+
+13. The commercial manager conducts a commercial audit of the invoice.
+14. If the audit is successful, the commercial manager approves the invoice for payment.
+
+15. At this stage, it is determined whether a board review is needed:
+    - If a board review is required, the board checks the invoice.
+    - If not, the process continues.
+
+16. The invoice copy and docket are then moved to the accounting employee.
+
+17. The accounting employee checks for any complaints or issues:
+    - If there are no issues, payment instructions are given, and the invoice is closed.
+    - If there are complaints or issues, these are resolved. After resolution, the process returns to the step where the accounting employee checks for complaints or issues.
+
+18. After closing the invoice, a decision is made:
+    - If another manager needs to review, the process returns to sending the invoice to the cost center manager.
+    - If the process is complete, the process ends.
+
+Throughout the process, whenever an issue is identified during a manager’s review, the invoice may be sent back for clarification with the vendor, and the cycle of review and approval may repeat as necessary. The process ensures that all necessary managers review and approve the invoice, all issues are resolved, and the invoice is properly audited and approved before payment instructions are given and the invoice is closed. The process concludes when all required steps are completed and no further action is needed.

@@ -1,0 +1,24 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive File)
+2:exclusivegateway:{x}
+3:task:(Evaluate Outcome)
+4:exclusivegateway:{x}
+5:task:(Perform Further Check)
+6:exclusivegateway:{x}
+7:task:(Additional Steps)
+8:exclusivegateway:{x}
+9:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive File)
+1:task:(Receive File) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |File not received|9:endevent:(((endevent)))
+2:exclusivegateway:{x} --> |File received|3:task:(Evaluate Outcome)
+3:task:(Evaluate Outcome) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Outcome not positive|9:endevent:(((endevent)))
+4:exclusivegateway:{x} --> |Outcome positive|5:task:(Perform Further Check)
+5:task:(Perform Further Check) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Check failed|9:endevent:(((endevent)))
+6:exclusivegateway:{x} --> |Check successful|7:task:(Additional Steps)
+7:task:(Additional Steps) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Any result|9:endevent:(((endevent)))

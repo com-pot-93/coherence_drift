@@ -1,0 +1,49 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins.
+2. The first step is to enter the manufacturer.
+3. Next, the model is entered.
+4. At this point, a decision is made:
+   - If the choice is to stop, the process ends.
+   - If the choice is to continue, another decision follows.
+5. In the next decision:
+   - If the outcome is negative, the process ends.
+   - If the outcome is positive, another decision is made.
+6. In this decision:
+   - If the condition is false, the process continues with two activities happening at the same time:
+     - One activity is to determine the list of parts needed.
+     - The other activity is to identify the necessary tools.
+   - Once both activities are completed, the next step is to check the inventory.
+   - After checking the inventory, a decision is made:
+     - If the choice is to stop, the process ends.
+     - If the choice is to continue, another decision follows.
+   - In this decision:
+     - If no help is needed, the process continues.
+     - Otherwise, another decision is made:
+       - If the choice is to contact a friend, the friend is contacted, and the process continues.
+       - If the choice is not to contact a friend, the process continues.
+   - The next step is to obtain the needed items.
+   - After obtaining the items, repair instructions are generated.
+   - Then, a decision is made:
+     - If the choice is to stop, the process ends.
+     - If the choice is to continue, another decision follows.
+   - In this decision:
+     - If the choice is to repeat, the instructions are followed, and the process returns to the previous decision point.
+     - If the choice is not to repeat, the issue is escalated, and another decision is made.
+   - In this decision:
+     - If it is not possible to proceed, the issue is sent to an expert, and the process continues.
+     - If it is possible to proceed, the process continues.
+   - The next step is to leave a review.
+   - After leaving a review, a decision is made:
+     - If the choice is to upload a video, the video is uploaded and saved to a database, and the process continues.
+     - If the choice is to skip, the process continues.
+   - The process then returns to the previous decision point after generating repair instructions.
+7. Returning to the earlier decision after entering the model, if the condition is true, another decision is made.
+   - If the outcome is true, the next step is to enter the broken part.
+   - After entering the broken part, a decision is made:
+     - If the choice is to enter another broken part, the process repeats the step of entering the broken part.
+     - Otherwise, the issue is escalated, and the process continues.
+   - After escalation, the process returns to the earlier decision point.
+8. The process continues through these steps and decisions until it eventually reaches the end.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that all steps, decisions, and possible paths are included and clearly explained.

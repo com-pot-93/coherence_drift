@@ -1,0 +1,19 @@
+The process begins when a notice is received at the secretarial office. After receiving the notice, the secretarial office requests patient data. Once the patient data is obtained, the office connects the doctor to the nursing officer. The nursing officer then inquires about the patient’s condition.
+
+Following this, the nursing officer records the information on a registration form. The completed registration form is returned to the secretarial office. The secretarial office enters the information from the form into the information system and then prints the information from the form.
+
+At this point, a decision is made about whether a patient file is required. If a file is required, a patient file is created, and the registration form along with the printout is stored in the patient file. If no file is required, this step is skipped. Regardless of the decision, the process continues to the next step.
+
+Next, two registration cards are produced. The new patient is then added to the list of new notices. A staff meeting is held, during which new patients are assigned to team members. These assignments are recorded on an assignment list.
+
+Another decision is made to determine if a medical file is needed. If a medical file is needed, a decision is made regarding the medical file. If not, this step is skipped. In both cases, the process continues by adding information to the assignment list.
+
+The assignment information is then stored in the information system. After this, the registration cards are distributed.
+
+A further decision is made about whether a letter needs to be sent to the family doctor. If a letter is needed, it is prepared and sent to the family doctor. If not, this step is skipped. The process then continues with the receipt of a copy of the patient’s medical file.
+
+Once the copy of the medical file is received, the responsible intake person is informed. The copy is then added to the patient file. A meeting with the patient is planned, and the patient is examined. Any additional observations are recorded in notes, and a copy of these notes is added to the patient file. A standard checklist is also added to the patient file.
+
+At this stage, a decision is made about whether a second intake is needed. If a second intake is needed, the second intake worker plans the first meeting. If not, this step is skipped. The process then continues with typing out recorded tapes.
+
+The typed notes are added to the patient file. The patient is then put on the list of patients, and this list is provided to the team leader. Finally, a treatment plan is created, marking the end of the process.

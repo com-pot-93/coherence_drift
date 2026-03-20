@@ -1,0 +1,33 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Assess Patient Condition)
+  2:parallelgateway:{AND}
+  3:task:(Perform Physical Examination)
+  4:task:(Draw Blood Samples)
+  5:task:(Send Samples to Laboratory)
+  6:task:(Receive Lab Results)
+  7:parallelgateway:{AND}
+  8:task:(Make Diagnosis)
+  9:exclusivegateway:{x}
+  10:task:(Perform Surgical Intervention)
+  11:task:(Plan Surgery)
+  12:exclusivegateway:{x}
+  13:task:(Discharge Patient)
+  14:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Assess Patient Condition)
+  1:task:(Assess Patient Condition) --> 2:parallelgateway:{AND}
+  2:parallelgateway:{AND} --> 3:task:(Perform Physical Examination)
+  2:parallelgateway:{AND} --> 4:task:(Draw Blood Samples)
+  4:task:(Draw Blood Samples) --> 5:task:(Send Samples to Laboratory)
+  5:task:(Send Samples to Laboratory) --> 6:task:(Receive Lab Results)
+  3:task:(Perform Physical Examination) --> 7:parallelgateway:{AND}
+  6:task:(Receive Lab Results) --> 7:parallelgateway:{AND}
+  7:parallelgateway:{AND} --> 8:task:(Make Diagnosis)
+  8:task:(Make Diagnosis) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Surgery Performed|10:task:(Perform Surgical Intervention)
+  9:exclusivegateway:{x} --> |Surgery Planned|11:task:(Plan Surgery)
+  10:task:(Perform Surgical Intervention) --> 12:exclusivegateway:{x}
+  11:task:(Plan Surgery) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> 13:task:(Discharge Patient)
+  13:task:(Discharge Patient) --> 14:endevent:(((endevent)))

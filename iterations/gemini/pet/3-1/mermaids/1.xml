@@ -1,0 +1,12 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Receive Warrant Possession Request)
+1:task:(Receive Warrant Possession Request) --> 2:task:(Retrieve SCT File)
+2:task:(Retrieve SCT File) --> 3:task:(Forward SCT Warrant Possession to Queensland Police)
+3:task:(Forward SCT Warrant Possession to Queensland Police) --> 4:task:(Store SCT Physical File)
+4:task:(Store SCT Physical File) --> 5:task:(Wait for Police Report)
+5:task:(Wait for Police Report) --> 6:task:(Retrieve Respective SCT File)
+6:task:(Retrieve Respective SCT File) --> 7:task:(Attach New SCT Document)
+7:task:(Attach New SCT Document) --> 8:task:(Store Expanded SCT Physical File)
+8:task:(Store Expanded SCT Physical File) --> 9:endevent:(((endevent)))
+```

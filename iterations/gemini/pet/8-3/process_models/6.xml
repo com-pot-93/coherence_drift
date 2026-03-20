@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Detect Personnel Requirements</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Report Vacancy</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Job Description Available" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Receive Job Description</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="5">
+        <alternative condition="Condition True" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="6">
+            <alternative condition="Condition True" language="text/javascript">
+              <loop mode="pre_test" condition="true">
+                <call id="a17" endpoint="" a:alt_id="7">
+                  <parameters>
+                    <label>Review Job Description</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <loop mode="pre_test" condition="Corrections Needed" a:alt_id="8" language="text/javascript">
+                  <call id="a23" endpoint="" a:alt_id="9">
+                    <parameters>
+                      <label>Request and Make Corrections</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a17" endpoint="" a:alt_id="7">
+                    <parameters>
+                      <label>Review Job Description</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </loop>
+                <call id="a25" endpoint="" a:alt_id="10">
+                  <parameters>
+                    <label>Advertise Vacancy</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </loop>
+            </alternative>
+            <alternative condition="Condition False" language="text/javascript"/>
+          </choose>
+        </alternative>
+        <alternative condition="Condition False" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="No Job Description Available" language="text/javascript">
+      <choose mode="exclusive" a:alt_id="16">
+        <alternative condition="Condition True" language="text/javascript">
+          <call id="a33" endpoint="" a:alt_id="17">
+            <parameters>
+              <label>Advertise Vacancy</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="18">
+            <alternative condition="Condition True" language="text/javascript">
+              <loop mode="pre_test" condition="true">
+                <call id="a17" endpoint="" a:alt_id="7">
+                  <parameters>
+                    <label>Review Job Description</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <loop mode="pre_test" condition="Corrections Needed" a:alt_id="8" language="text/javascript">
+                  <call id="a23" endpoint="" a:alt_id="9">
+                    <parameters>
+                      <label>Request and Make Corrections</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a17" endpoint="" a:alt_id="7">
+                    <parameters>
+                      <label>Review Job Description</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </loop>
+                <call id="a25" endpoint="" a:alt_id="10">
+                  <parameters>
+                    <label>Advertise Vacancy</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </loop>
+            </alternative>
+            <alternative condition="Condition False" language="text/javascript"/>
+          </choose>
+        </alternative>
+        <alternative condition="Condition False" language="text/javascript"/>
+      </choose>
+    </alternative>
+  </choose>
+</description>

@@ -1,0 +1,96 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Travel Request)
+2:task:(Prepare Tour Plan)
+3:task:(Send Tour Plan)
+4:exclusivegateway:{x}
+5:exclusivegateway:{x}
+6:task:(Wait for Response)
+7:exclusivegateway:{x}
+8:exclusivegateway:{x}
+9:task:(Book Tour)
+10:exclusivegateway:{x}
+11:task:(Charge Customer)
+12:exclusivegateway:{x}
+13:exclusivegateway:{x}
+14:task:(Contact Customer)
+15:parallelgateway:{AND}
+16:task:(Send Bill)
+17:task:(Send Booking Confirmation)
+18:parallelgateway:{AND}
+19:exclusivegateway:{x}
+20:task:(Contact Customer)
+21:parallelgateway:{AND}
+22:task:(Send Bill)
+23:task:(Send Booking Confirmation)
+24:parallelgateway:{AND}
+25:exclusivegateway:{x}
+26:task:(Contact Customer)
+27:parallelgateway:{AND}
+28:task:(Send Bill)
+29:task:(Send Booking Confirmation)
+30:parallelgateway:{AND}
+31:exclusivegateway:{x}
+32:task:(Contact Customer)
+33:parallelgateway:{AND}
+34:task:(Send Bill)
+35:task:(Send Booking Confirmation)
+36:parallelgateway:{AND}
+37:exclusivegateway:{x}
+38:task:(Contact Customer)
+39:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Travel Request)
+1:task:(Receive Travel Request) --> 2:task:(Prepare Tour Plan)
+2:task:(Prepare Tour Plan) --> 3:task:(Send Tour Plan)
+3:task:(Send Tour Plan) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Continue|5:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Do not continue|39:endevent:(((endevent)))
+5:exclusivegateway:{x} --> |Outcome positive|6:task:(Wait for Response)
+5:exclusivegateway:{x} --> |Outcome negative|39:endevent:(((endevent)))
+6:task:(Wait for Response) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Continue|8:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Do not continue|39:endevent:(((endevent)))
+8:exclusivegateway:{x} --> |Continue|9:task:(Book Tour)
+8:exclusivegateway:{x} --> |Do not continue|39:endevent:(((endevent)))
+9:task:(Book Tour) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Continue|11:task:(Charge Customer)
+10:exclusivegateway:{x} --> |Do not continue|39:endevent:(((endevent)))
+11:task:(Charge Customer) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Continue|13:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Do not continue|39:endevent:(((endevent)))
+13:exclusivegateway:{x} --> |Contact needed|14:task:(Contact Customer)
+13:exclusivegateway:{x} --> |No contact|15:parallelgateway:{AND}
+14:task:(Contact Customer) --> 15:parallelgateway:{AND}
+15:parallelgateway:{AND} --> 16:task:(Send Bill)
+15:parallelgateway:{AND} --> 17:task:(Send Booking Confirmation)
+16:task:(Send Bill) --> 18:parallelgateway:{AND}
+17:task:(Send Booking Confirmation) --> 18:parallelgateway:{AND}
+18:parallelgateway:{AND} --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> |Contact needed|20:task:(Contact Customer)
+19:exclusivegateway:{x} --> |No contact|21:parallelgateway:{AND}
+20:task:(Contact Customer) --> 21:parallelgateway:{AND}
+21:parallelgateway:{AND} --> 22:task:(Send Bill)
+21:parallelgateway:{AND} --> 23:task:(Send Booking Confirmation)
+22:task:(Send Bill) --> 24:parallelgateway:{AND}
+23:task:(Send Booking Confirmation) --> 24:parallelgateway:{AND}
+24:parallelgateway:{AND} --> 25:exclusivegateway:{x}
+25:exclusivegateway:{x} --> |Contact needed|26:task:(Contact Customer)
+25:exclusivegateway:{x} --> |No contact|27:parallelgateway:{AND}
+26:task:(Contact Customer) --> 27:parallelgateway:{AND}
+27:parallelgateway:{AND} --> 28:task:(Send Bill)
+27:parallelgateway:{AND} --> 29:task:(Send Booking Confirmation)
+28:task:(Send Bill) --> 30:parallelgateway:{AND}
+29:task:(Send Booking Confirmation) --> 30:parallelgateway:{AND}
+30:parallelgateway:{AND} --> 31:exclusivegateway:{x}
+31:exclusivegateway:{x} --> |Contact needed|32:task:(Contact Customer)
+31:exclusivegateway:{x} --> |No contact|33:parallelgateway:{AND}
+32:task:(Contact Customer) --> 33:parallelgateway:{AND}
+33:parallelgateway:{AND} --> 34:task:(Send Bill)
+33:parallelgateway:{AND} --> 35:task:(Send Booking Confirmation)
+34:task:(Send Bill) --> 36:parallelgateway:{AND}
+35:task:(Send Booking Confirmation) --> 36:parallelgateway:{AND}
+36:parallelgateway:{AND} --> 37:exclusivegateway:{x}
+37:exclusivegateway:{x} --> |Contact needed|38:task:(Contact Customer)
+37:exclusivegateway:{x} --> |No contact|39:endevent:(((endevent)))
+38:task:(Contact Customer) --> 39:endevent:(((endevent)))

@@ -1,0 +1,4 @@
+The process starts when a trip request is received. Subsequently, two parallel activities are initiated.
+In the first activity, a price request is sent to the airlines, the responses from the airlines are collected, and an airline is selected.
+In the second activity, a price request is sent to the hotels, the responses from the hotels are collected, and a hotel is selected.
+Once both activities are completed, the tour plan is prepared and sent to the customer. The process then ends.

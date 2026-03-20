@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Customer Order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Process Order and Determine Components</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Parts missing" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Purchase Missing Parts</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a11" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>Stock Arrived Parts</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No parts missing" language="text/javascript"/>
+  </choose>
+  <call id="a9" endpoint="" a:alt_id="6">
+    <parameters>
+      <label>Move Order to Production</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a15" endpoint="" a:alt_id="7">
+    <parameters>
+      <label>Produce Items</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a17" endpoint="" a:alt_id="8">
+    <parameters>
+      <label>Perform Quality Check</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="Fail" a:alt_id="9" language="text/javascript">
+    <call id="a23" endpoint="" a:alt_id="10">
+      <parameters>
+        <label>Initiate Follow-up Production</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a25" endpoint="" a:alt_id="11">
+      <parameters>
+        <label>Perform Quality Re-check</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+  </loop>
+  <call id="a21" endpoint="" a:alt_id="12">
+    <parameters>
+      <label>Fill Items into Packaging</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="Follow-up needed" a:alt_id="13" language="text/javascript">
+    <call id="a33" endpoint="" a:alt_id="14">
+      <parameters>
+        <label>Initiate Follow-up Production</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a35" endpoint="" a:alt_id="15">
+      <parameters>
+        <label>Perform Quality Re-check</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+  </loop>
+  <call id="a31" endpoint="" a:alt_id="16">
+    <parameters>
+      <label>Pack and Label Items</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="Follow-up needed" a:alt_id="17" language="text/javascript">
+    <call id="a43" endpoint="" a:alt_id="18">
+      <parameters>
+        <label>Initiate Follow-up Production</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a45" endpoint="" a:alt_id="19">
+      <parameters>
+        <label>Perform Quality Re-check</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+  </loop>
+  <call id="a41" endpoint="" a:alt_id="20">
+    <parameters>
+      <label>Transport to Warehouse</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="Follow-up needed" a:alt_id="21" language="text/javascript">
+    <call id="a53" endpoint="" a:alt_id="22">
+      <parameters>
+        <label>Initiate Follow-up Production</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a55" endpoint="" a:alt_id="23">
+      <parameters>
+        <label>Perform Quality Re-check</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+  </loop>
+  <call id="a51" endpoint="" a:alt_id="24">
+    <parameters>
+      <label>Send Items to Customer</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

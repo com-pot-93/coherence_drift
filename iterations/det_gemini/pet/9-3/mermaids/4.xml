@@ -1,0 +1,13 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Coordination Unit drafts a schedule of meetings)
+1:task:(Coordination Unit drafts a schedule of meetings) --> 2:task:(Coordination Unit adds draft dates to all calendars)
+2:task:(Coordination Unit adds draft dates to all calendars) --> 3:task:(Support Officer checks the dates)
+3:task:(Support Officer checks the dates) --> 4:task:(Support Officer suggests modifications)
+4:task:(Support Officer suggests modifications) --> 5:task:(Coordination Unit rechecks all dates)
+5:task:(Coordination Unit rechecks all dates) --> 6:task:(Coordination Unit looks for potential conflicts)
+6:task:(Coordination Unit looks for potential conflicts) --> 7:task:(Coordination Unit sends final schedule to Committee Members)
+7:task:(Coordination Unit sends final schedule to Committee Members) --> 8:task:(Committee Members check diaries)
+8:task:(Committee Members check diaries) --> 9:task:(Committee Members advise the Coordination Unit of any conflicts)
+9:task:(Committee Members advise the Coordination Unit of any conflicts) --> 10:endevent:(((endevent)))
+```

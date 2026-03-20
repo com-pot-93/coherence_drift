@@ -1,0 +1,15 @@
+The process starts. First, contact details are determined. Then, a decision is made based on whether it is a purchase or a known person.
+
+If it is a purchase, the process proceeds directly to calling the customer. If it is a known person, the interested person is identified before calling the customer.
+
+After calling the customer, the contact person and budget are determined, and the customer's interest is assessed. Following this, the process splits into two parallel paths.
+
+In the first path, a decision is made between giving a sales representative presentation or a pre-sales presentation. After either presentation, the process waits for the customer.
+
+In the second parallel path, a similar decision is made between giving a sales representative presentation or a pre-sales presentation. After either presentation, the process waits for the customer.
+
+Once both paths have completed waiting for the customer, the process merges back into a single flow.
+
+Next, a decision is made between making a sales representative call or making another sales representative call. After either call, a quotation is created.
+
+The process then ends.

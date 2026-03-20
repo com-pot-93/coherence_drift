@@ -1,0 +1,1 @@
+The process begins when a decision is made to place an order. After this decision, the order is sent to the supplier. Once the supplier receives the order, the supplier processes it. Following the processing of the order, the supplier sends an invoice. The process continues with the receipt of the invoice. The process ends after the invoice has been received.

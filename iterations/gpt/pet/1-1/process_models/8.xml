@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="Order rejected" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Handle order rejection</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a7" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>Inform storehouse</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a11" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Notify engineering department</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <parallel wait="-1" cancel="last" a:alt_id="7">
+        <parallel_branch>
+          <choose mode="exclusive" a:alt_id="0">
+            <alternative condition="">
+              <parallel wait="-1" cancel="last" a:alt_id="10">
+                <parallel_branch>
+                  <choose mode="exclusive" a:alt_id="0">
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                  </choose>
+                </parallel_branch>
+                <parallel_branch>
+                  <call id="a25" endpoint="" a:alt_id="12">
+                    <parameters>
+                      <label>Check part list</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a29" endpoint="" a:alt_id="13">
+                    <parameters>
+                      <label>Verify part quantities</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="14">
+                    <alternative condition="All parts available" language="text/javascript">
+                      <call id="a33" endpoint="" a:alt_id="15">
+                        <parameters>
+                          <label>Reserve parts</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Parts missing" language="text/javascript">
+                      <call id="a35" endpoint="" a:alt_id="16">
+                        <parameters>
+                          <label>Create back-order</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                  </choose>
+                </parallel_branch>
+              </parallel>
+            </alternative>
+            <alternative condition=""/>
+          </choose>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a17" endpoint="" a:alt_id="9">
+            <parameters>
+              <label>Process part list</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <parallel wait="-1" cancel="last" a:alt_id="10">
+            <parallel_branch>
+              <choose mode="exclusive" a:alt_id="0">
+                <alternative condition=""/>
+                <alternative condition=""/>
+              </choose>
+            </parallel_branch>
+            <parallel_branch>
+              <call id="a25" endpoint="" a:alt_id="12">
+                <parameters>
+                  <label>Check part list</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a29" endpoint="" a:alt_id="13">
+                <parameters>
+                  <label>Verify part quantities</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="14">
+                <alternative condition="All parts available" language="text/javascript">
+                  <call id="a33" endpoint="" a:alt_id="15">
+                    <parameters>
+                      <label>Reserve parts</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Parts missing" language="text/javascript">
+                  <call id="a35" endpoint="" a:alt_id="16">
+                    <parameters>
+                      <label>Create back-order</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+            </parallel_branch>
+          </parallel>
+        </parallel_branch>
+      </parallel>
+      <call id="a47" endpoint="" a:alt_id="19">
+        <parameters>
+          <label>Assemble bicycle</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a49" endpoint="" a:alt_id="20">
+        <parameters>
+          <label>Ship bicycle</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

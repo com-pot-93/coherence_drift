@@ -1,0 +1,15 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Register Measurement)
+  1:task:(Register Measurement) --> 2:task:(Examine Application)
+  2:task:(Examine Application) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Reject| 4:task:(Reject Application)
+  3:exclusivegateway:{x} --> |Confirm| 5:task:(Confirm Application)
+  4:task:(Reject Application) --> 6:exclusivegateway:{x}
+  5:task:(Confirm Application) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> 7:task:(Assign MSPN)
+  7:task:(Assign MSPN) --> 8:task:(Inform MSPO)
+  8:task:(Inform MSPO) --> 9:task:(Inform MPO)
+  9:task:(Inform MPO) --> 10:task:(Inform SP)
+  10:task:(Inform SP) --> 11:endevent:(((endevent)))
+```

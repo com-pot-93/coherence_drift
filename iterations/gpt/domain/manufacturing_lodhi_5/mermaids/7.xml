@@ -1,0 +1,55 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Production Order)
+2:task:(Prepare Production Order)
+3:exclusivegateway:{x}
+4:task:(Collect Raw Materials)
+5:task:(Cut Materials)
+6:parallelgateway:{AND}
+7:task:(Stitching)
+8:task:(Printing)
+9:parallelgateway:{AND}
+10:exclusivegateway:{x}
+11:task:(Complete Production)
+12:task:(Quality Check)
+13:task:(Create Quality Report)
+14:exclusivegateway:{x}
+15:exclusivegateway:{x}
+16:task:(Determine Next Step)
+17:exclusivegateway:{x}
+18:task:(Adjust Settings)
+19:task:(Send Data to Warehouse)
+20:exclusivegateway:{x}
+21:exclusivegateway:{x}
+22:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Production Order)
+1:task:(Receive Production Order) --> 2:task:(Prepare Production Order)
+2:task:(Prepare Production Order) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Condition met|4:task:(Collect Raw Materials)
+3:exclusivegateway:{x} --> |Condition not met|22:endevent:(((endevent)))
+4:task:(Collect Raw Materials) --> 5:task:(Cut Materials)
+5:task:(Cut Materials) --> 6:parallelgateway:{AND}
+6:parallelgateway:{AND} --> 7:task:(Stitching)
+6:parallelgateway:{AND} --> 8:task:(Printing)
+7:task:(Stitching) --> 9:parallelgateway:{AND}
+8:task:(Printing) --> 9:parallelgateway:{AND}
+9:parallelgateway:{AND} --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Positive outcome|11:task:(Complete Production)
+10:exclusivegateway:{x} --> |Negative outcome|22:endevent:(((endevent)))
+11:task:(Complete Production) --> 12:task:(Quality Check)
+12:task:(Quality Check) --> 13:task:(Create Quality Report)
+13:task:(Create Quality Report) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |Continue|15:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |End|22:endevent:(((endevent)))
+15:exclusivegateway:{x} --> |Adjustments needed|16:task:(Determine Next Step)
+15:exclusivegateway:{x} --> |No adjustments|19:task:(Send Data to Warehouse)
+16:task:(Determine Next Step) --> 17:exclusivegateway:{x}
+17:exclusivegateway:{x} --> |Adjust settings|18:task:(Adjust Settings)
+17:exclusivegateway:{x} --> |No further action|19:task:(Send Data to Warehouse)
+18:task:(Adjust Settings) --> 19:task:(Send Data to Warehouse)
+19:task:(Send Data to Warehouse) --> 20:exclusivegateway:{x}
+20:exclusivegateway:{x} --> |Further actions required|11:task:(Complete Production)
+20:exclusivegateway:{x} --> |No further actions|21:exclusivegateway:{x}
+21:exclusivegateway:{x} --> |End process|22:endevent:(((endevent)))
+21:exclusivegateway:{x} --> |Escalation/loop|14:exclusivegateway:{x}

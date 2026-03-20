@@ -1,0 +1,25 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive File)
+2:exclusivegateway:{x}
+3:task:(Heat Bed and Extruder)
+4:exclusivegateway:{x}
+5:task:(Send Status Update)
+6:exclusivegateway:{x}
+7:task:(Print Object)
+8:task:(Escalate Issue)
+9:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive File)
+1:task:(Receive File) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Positive outcome|3:task:(Heat Bed and Extruder)
+2:exclusivegateway:{x} --> |Negative outcome|9:endevent:(((endevent)))
+3:task:(Heat Bed and Extruder) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> 5:task:(Send Status Update)
+5:task:(Send Status Update) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Ready to proceed|7:task:(Print Object)
+6:exclusivegateway:{x} --> |Do not continue|4:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Heat again|3:task:(Heat Bed and Extruder)
+7:task:(Print Object) --> 4:exclusivegateway:{x}
+3:task:(Heat Bed and Extruder) --> |After Heat again|8:task:(Escalate Issue)
+8:task:(Escalate Issue) --> 4:exclusivegateway:{x}

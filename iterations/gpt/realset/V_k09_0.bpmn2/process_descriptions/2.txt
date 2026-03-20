@@ -1,0 +1,32 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins.
+2. The first step is to connect to the management system.
+3. Next, a decision is made about whether to continue. If the decision is not to continue, the process ends. If the decision is to continue, the process moves forward.
+4. The process continues with the next step.
+5. Another decision is made based on the outcome. If the outcome is negative, the process ends. If the outcome is positive, the process proceeds.
+6. The process reaches another decision point. If the condition is not met, the process loops back to the previous decision. If the condition is met, the process continues.
+7. The next step is to read an order from the system.
+8. Another decision is made. If the condition is not met, the process loops back to the previous decision. If the condition is met, the process continues.
+9. The process then registers the product in the management system.
+10. After registering the product, two activities are carried out at the same time: the product is packed, and a courier is requested.
+11. Once both packing and courier request are completed, the process continues with shipping the delivery.
+12. After shipping, a decision is made about whether to finish or repeat. If the process is to finish, it proceeds to the next step. If the process is to repeat, an escalation occurs, and the process returns to reading the order from the system.
+13. If the process is to finish, it proceeds to the next decision point.
+14. At this point, another decision is made. If the condition is not met, the process loops back to the previous decision. If the condition is met, the process continues.
+15. The process then checks whether to follow the wholesaler path or the warehouse path.
+16. If the wholesaler path is chosen, the wholesaler is contacted, and a product reorder is made from the wholesaler.
+17. After reordering, a decision is made about whether a penalty for delivery delay is needed. If a penalty is needed, it is applied. If not, the process continues.
+18. The arrived product is then approved.
+19. Another decision is made about whether to continue or repeat. If the process is to repeat, an escalation occurs, and the process returns to reordering the product from the wholesaler. If the process is to continue, it proceeds to the next step.
+20. The process then moves forward to the next decision point.
+21. If the warehouse path is chosen, the warehouse is browsed, and the product is withdrawn from the warehouse.
+22. After withdrawing the product, a decision is made about whether a penalty for delivery delay is needed. If a penalty is needed, it is applied. If not, the process continues.
+23. The arrived product is then approved.
+24. Another decision is made about whether to continue or repeat. If the process is to repeat, an escalation occurs, and the process returns to withdrawing the product from the warehouse. If the process is to continue, it proceeds to the next step.
+25. The process then moves forward to the next decision point.
+26. After completing the wholesaler or warehouse path, the process continues to the next step.
+27. If at any point an escalation occurs, the process returns to the previous decision point.
+28. Finally, the process ends.
+
+This description follows the exact sequence and logic of the process model, ensuring that all steps, decisions, and possible loops are included and clearly explained.

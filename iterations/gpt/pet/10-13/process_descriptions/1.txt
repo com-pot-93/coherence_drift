@@ -1,0 +1,1 @@
+The process begins when a request for transaction data is sent by INQ. After this request is sent, IP receives and reviews the request. Once the review is complete, IP provides a response to INQ. The process concludes after IP has responded.

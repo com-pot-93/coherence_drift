@@ -1,0 +1,7 @@
+The process starts. First, the breached data is retrieved, followed by retrieving the breached subjects. After this, the process splits into two parallel paths.
+
+In the first path, data loss limitation is performed.
+
+In the second path, the national authority is notified, and then the stolen data is evaluated. Depending on whether Condition A is met, a notification is sent; otherwise, the security standard is evaluated. Depending on whether Condition B is met, a notification is sent; otherwise, a request for data subject communication is made. After that, a notification for the request is received. Depending on whether Condition C is met, a notification is sent; otherwise, no notification is sent.
+
+The second path merges, and the process joins the first path. Finally, the process ends.

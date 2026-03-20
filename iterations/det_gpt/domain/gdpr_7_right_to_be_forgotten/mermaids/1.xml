@@ -1,0 +1,24 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive data subject request)
+2:task:(Retrieve data)
+3:task:(Check if received data is still relevant)
+4:exclusivegateway:{x}
+5:task:(Explain why data is still relevant)
+6:exclusivegateway:{x}
+7:task:(Eliminate data)
+8:task:(Send notification about  elimination)
+9:exclusivegateway:{x}
+10:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive data subject request)
+1:task:(Receive data subject request) --> 2:task:(Retrieve data)
+2:task:(Retrieve data) --> 3:task:(Check if received data is still relevant)
+3:task:(Check if received data is still relevant) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Data still relevant|5:task:(Explain why data is still relevant)
+4:exclusivegateway:{x} --> |Data not relevant|7:task:(Eliminate data)
+5:task:(Explain why data is still relevant) --> 6:exclusivegateway:{x}
+7:task:(Eliminate data) --> 8:task:(Send notification about  elimination)
+8:task:(Send notification about  elimination) --> 9:exclusivegateway:{x}
+6:exclusivegateway:{x} --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> 10:endevent:(((endevent)))

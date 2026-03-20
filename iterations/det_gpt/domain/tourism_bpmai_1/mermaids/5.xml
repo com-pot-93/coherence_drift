@@ -1,0 +1,25 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Receive customer request)
+  2:task:(Check customer request)
+  3:exclusivegateway:{x}
+  4:exclusivegateway:{x}
+  5:task:(Manual registration)
+  6:task:(Automatic registration)
+  7:exclusivegateway:{x}
+  8:task:(Send notification to the customer)
+  9:exclusivegateway:{x}
+  10:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Receive customer request)
+  1:task:(Receive customer request) --> 2:task:(Check customer request)
+  2:task:(Check customer request) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Request valid|4:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Request invalid|8:task:(Send notification to the customer)
+  4:exclusivegateway:{x} --> |Manual|5:task:(Manual registration)
+  4:exclusivegateway:{x} --> |Automatic|6:task:(Automatic registration)
+  5:task:(Manual registration) --> 7:exclusivegateway:{x}
+  6:task:(Automatic registration) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> 9:exclusivegateway:{x}
+  8:task:(Send notification to the customer) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> 10:endevent:(((endevent)))

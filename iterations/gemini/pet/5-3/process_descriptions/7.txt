@@ -1,0 +1,9 @@
+The process starts with submitting an office supply request, which is then registered. Depending on whether Condition A is met, the process proceeds differently.
+
+If Condition A is met, the process continues to another decision point. If the condition at this point is true, an approval process is initiated. Following the approval process, there's a decision point. If the request is not approved, comments are reviewed, and the request is resubmitted for approval. If the request is approved, quotations are requested.
+
+After requesting quotations, the process waits for vendor selection, then generates a purchase order, waits for product delivery, and receives an invoice. A notification is then sent to the user.
+
+Following the notification, a check is performed to see if Condition B is met. If Condition B is not met, an escalation event is triggered, and the process loops back to the decision point after the escalation event. If Condition B is met, the process loops back to requesting quotations.
+
+If, at the initial decision point, Condition A is not met, the process ends. Also, if the approval process results in a negative decision, an escalation event is triggered, and the process loops back to the decision point after the initial registration.

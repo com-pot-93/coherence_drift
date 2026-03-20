@@ -1,0 +1,56 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Search for Customer)
+2:task:(Make Offer)
+3:exclusivegateway:{x}
+4:task:(Receive Additional Request)
+5:task:(Provide More Details)
+6:exclusivegateway:{x}
+7:task:(Receive Booking Request)
+8:task:(Send Bill)
+9:exclusivegateway:{x}
+10:task:(Receive Payment)
+11:exclusivegateway:{x}
+12:task:(Book Travel)
+13:task:(Send Booking Confirmation)
+14:exclusivegateway:{x}
+15:task:(Contact Customer)
+16:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Search for Customer)
+1:task:(Search for Customer) --> 2:task:(Make Offer)
+2:task:(Make Offer) --> 3:exclusivegateway:{x}
+
+%% After Offer Decision
+3:exclusivegateway:{x} --> |Continue|4:task:(Receive Additional Request)
+3:exclusivegateway:{x} --> |Do not continue|6:exclusivegateway:{x}
+
+4:task:(Receive Additional Request) --> 5:task:(Provide More Details)
+5:task:(Provide More Details) --> 6:exclusivegateway:{x}
+
+%% After Details Decision
+6:exclusivegateway:{x} --> |Continue|7:task:(Receive Booking Request)
+6:exclusivegateway:{x} --> |Do not continue|9:exclusivegateway:{x}
+
+7:task:(Receive Booking Request) --> 8:task:(Send Bill)
+8:task:(Send Bill) --> 9:exclusivegateway:{x}
+
+%% After Bill Decision
+9:exclusivegateway:{x} --> |Continue|10:task:(Receive Payment)
+9:exclusivegateway:{x} --> |Do not continue|11:exclusivegateway:{x}
+
+10:task:(Receive Payment) --> 11:exclusivegateway:{x}
+
+%% After Payment Decision
+11:exclusivegateway:{x} --> |Continue|12:task:(Book Travel)
+11:exclusivegateway:{x} --> |Do not continue|15:task:(Contact Customer)
+
+12:task:(Book Travel) --> 13:task:(Send Booking Confirmation)
+13:task:(Send Booking Confirmation) --> 14:exclusivegateway:{x}
+
+%% After Confirmation Decision
+14:exclusivegateway:{x} --> |Continue|16:endevent:(((endevent)))
+14:exclusivegateway:{x} --> |Do not continue|16:endevent:(((endevent)))
+
+%% Contact Customer returns to previous decision point (after payment)
+15:task:(Contact Customer) --> 11:exclusivegateway:{x}

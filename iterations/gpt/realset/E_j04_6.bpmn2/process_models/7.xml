@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <choose mode="exclusive" a:alt_id="1">
+    <alternative condition="Proceed" language="text/javascript">
+      <loop mode="pre_test" condition="Proceed">
+        <choose mode="exclusive" a:alt_id="3">
+          <alternative condition="Do not proceed" language="text/javascript"/>
+          <alternative condition="Proceed" language="text/javascript">
+            <choose mode="exclusive" a:alt_id="4">
+              <alternative condition="Proceed" language="text/javascript">
+                <choose mode="exclusive" a:alt_id="5">
+                  <alternative condition="Proceed" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="6">
+                      <alternative condition="Condition met" language="text/javascript"/>
+                      <alternative condition="Condition not met" language="text/javascript">
+                        <call id="a25" endpoint="" a:alt_id="8">
+                          <parameters>
+                            <label>Handle Escalation</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                      </alternative>
+                    </choose>
+                    <call id="a23" endpoint="" a:alt_id="9">
+                      <parameters>
+                        <label>Load Front Page</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <choose mode="exclusive" a:alt_id="10">
+                      <alternative condition="Proceed" language="text/javascript">
+                        <parallel wait="-1" cancel="last" a:alt_id="11">
+                          <parallel_branch>
+                            <call id="a35" endpoint="" a:alt_id="12">
+                              <parameters>
+                                <label>Topic Activity</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </parallel_branch>
+                          <parallel_branch>
+                            <call id="a37" endpoint="" a:alt_id="13">
+                              <parameters>
+                                <label>Payment Activity</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </parallel_branch>
+                          <parallel_branch>
+                            <call id="a39" endpoint="" a:alt_id="14">
+                              <parameters>
+                                <label>Experience Activity</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </parallel_branch>
+                          <parallel_branch>
+                            <call id="a41" endpoint="" a:alt_id="15">
+                              <parameters>
+                                <label>Hobbies Activity</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </parallel_branch>
+                        </parallel>
+                        <call id="a51" endpoint="" a:alt_id="17">
+                          <parameters>
+                            <label>Send Request</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <call id="a53" endpoint="" a:alt_id="18">
+                          <parameters>
+                            <label>Wait for Offer</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="19">
+                          <alternative condition="Proceed" language="text/javascript">
+                            <call id="a57" endpoint="" a:alt_id="20">
+                              <parameters>
+                                <label>Invalidate Other Offers</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a61" endpoint="" a:alt_id="21">
+                              <parameters>
+                                <label>Send Weekly Status Update</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <call id="a63" endpoint="" a:alt_id="22">
+                              <parameters>
+                                <label>Receive Company Status Update</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <choose mode="exclusive" a:alt_id="23">
+                              <alternative condition="Continue" language="text/javascript">
+                                <call id="a67" endpoint="" a:alt_id="24">
+                                  <parameters>
+                                    <label>Finish Internship</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <choose mode="exclusive" a:alt_id="25">
+                                  <alternative condition="Repeat cycle" language="text/javascript">
+                                    <call id="a23" endpoint="" a:alt_id="9">
+                                      <parameters>
+                                        <label>Load Front Page</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                  </alternative>
+                                  <alternative condition="Do not repeat" language="text/javascript">
+                                    <choose mode="exclusive" a:alt_id="26">
+                                      <alternative condition="Post tweet" language="text/javascript">
+                                        <call id="a77" endpoint="" a:alt_id="27">
+                                          <parameters>
+                                            <label>Post Tweet</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                      </alternative>
+                                      <alternative condition="Do not post" language="text/javascript"/>
+                                    </choose>
+                                    <choose mode="exclusive" a:alt_id="28">
+                                      <alternative condition="Escalate" language="text/javascript">
+                                        <choose mode="exclusive" a:alt_id="29">
+                                          <alternative condition="End process" language="text/javascript"/>
+                                          <alternative condition="Return to internship finish" language="text/javascript">
+                                            <call id="a67" endpoint="" a:alt_id="24">
+                                              <parameters>
+                                                <label>Finish Internship</label>
+                                                <method/>
+                                                <type>:task</type>
+                                                <arguments/>
+                                              </parameters>
+                                            </call>
+                                          </alternative>
+                                        </choose>
+                                      </alternative>
+                                      <alternative condition="Do not escalate" language="text/javascript">
+                                        <choose mode="exclusive" a:alt_id="30">
+                                          <alternative condition="Repeat cycle" language="text/javascript">
+                                            <call id="a23" endpoint="" a:alt_id="9">
+                                              <parameters>
+                                                <label>Load Front Page</label>
+                                                <method/>
+                                                <type>:task</type>
+                                                <arguments/>
+                                              </parameters>
+                                            </call>
+                                          </alternative>
+                                          <alternative condition="Trigger escalation" language="text/javascript">
+                                            <choose mode="exclusive" a:alt_id="29">
+                                              <alternative condition="End process" language="text/javascript"/>
+                                              <alternative condition="Return to internship finish" language="text/javascript">
+                                                <call id="a67" endpoint="" a:alt_id="24">
+                                                  <parameters>
+                                                    <label>Finish Internship</label>
+                                                    <method/>
+                                                    <type>:task</type>
+                                                    <arguments/>
+                                                  </parameters>
+                                                </call>
+                                              </alternative>
+                                            </choose>
+                                          </alternative>
+                                        </choose>
+                                      </alternative>
+                                    </choose>
+                                  </alternative>
+                                </choose>
+                              </alternative>
+                              <alternative condition="Do not continue" language="text/javascript"/>
+                            </choose>
+                          </alternative>
+                          <alternative condition="Do not proceed" language="text/javascript"/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="Do not proceed" language="text/javascript"/>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Do not proceed" language="text/javascript"/>
+                </choose>
+              </alternative>
+              <alternative condition="Do not proceed" language="text/javascript"/>
+            </choose>
+            <escape a:alt_id="-1"/>
+          </alternative>
+        </choose>
+      </loop>
+    </alternative>
+    <alternative condition="Do not proceed" language="text/javascript"/>
+  </choose>
+</description>

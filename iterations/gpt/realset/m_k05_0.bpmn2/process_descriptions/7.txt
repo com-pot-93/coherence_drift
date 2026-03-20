@@ -1,0 +1,43 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins.
+2. The first step is to collect requirements.
+3. After collecting requirements, a decision is made whether to continue or not.
+   - If the decision is not to continue, the process ends.
+   - If the decision is to continue, the requirements are sent forward.
+4. Once the requirements are sent, a draft is received.
+5. After receiving the draft, another decision is made about whether to continue.
+   - If the decision is not to continue, the process ends.
+   - If the decision is to continue, another condition is checked.
+6. At this point, a check is made to see if a certain condition is met.
+   - If the condition is met, the draft is evaluated.
+     - After evaluating the draft, another decision is made, which leads to the next set of checks.
+   - If the condition is not met, the process moves directly to the next set of checks.
+7. The process now enters a series of checks:
+   - One path leads to escalating the issue. If escalation is chosen, the issue is escalated, and the draft is re-evaluated. After re-evaluation, the process returns to the start of this set of checks.
+   - Another path leads to checking feasibility. If this path is chosen, feasibility is checked.
+8. After checking feasibility, the process continues with further checks.
+9. If the outcome is that the plan is feasible, the process continues to another check.
+   - If it is determined that a building permit report is needed, the report is prepared.
+   - If no report is needed, the process skips this step.
+10. After handling the report (if needed), an order list is created.
+11. The order is then placed.
+12. The effort required is calculated.
+13. At this point, two activities happen in parallel:
+    - The order is received.
+    - A decision is made about who will help with the building:
+      - If friends will help, arrangements are made for their help.
+      - If a building company will help, arrangements are made with the company.
+    - After these arrangements, the process waits until both the order is received and the help is arranged.
+14. Once both parallel activities are complete, the house is built.
+15. After building the house, a decision is made whether to repeat the feasibility check:
+    - If a repeat is needed, feasibility is checked again, and the process continues from there.
+    - If no repeat is needed, final checks are performed.
+16. After final checks, another decision is made, which may lead back to the previous step or allow the process to continue.
+17. If the process continues, it moves to the next check.
+18. If at any point it is determined that the plan is not feasible, the requirements are refined, and feasibility is checked again.
+19. After checking feasibility again, the process either continues or loops back as needed.
+20. If the process cannot proceed further, it escalates and loops back to an earlier check.
+21. If all steps are completed successfully and no further actions are needed, the process ends.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step and decision point is included and described in clear, everyday language.

@@ -1,0 +1,7 @@
+The process starts. Then, based on a condition, the process follows one of two paths.
+
+In the first path, a bill for equipment acquisition is sent to MPON, who then examines the bill. Depending on whether MPON confirms or rejects the bill, the process proceeds accordingly. If MPON confirms the bill, the invoice is confirmed with payment advice. If MPON rejects the bill, the invoice is rejected. After either confirmation or rejection, the process merges back to a single flow.
+
+In the second path, based on the type of bill (Metering Point Operations Bill, Measurement Bill, Additional Readings Bill, or Equipment Acquisition Bill), the corresponding bill is sent to GO. After sending the bill, the process waits until one of the bill types is processed. GO then examines the bill. Depending on whether GO confirms or rejects the bill, the process proceeds accordingly. If GO rejects the bill, the invoice is rejected. If GO confirms the bill, the invoice is confirmed with payment advice. After either confirmation or rejection, the process merges back to a single flow.
+
+Finally, after both paths have converged, the process ends.

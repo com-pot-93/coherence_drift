@@ -1,0 +1,5 @@
+The process starts. First, a machine is run, and then a connection is checked. If the connection check is positive, the process proceeds to a merging point. If the connection check is negative, the process branches to another merging point based on whether Condition A or Condition B is met. If Condition A is met, the process continues to the next step. If Condition B is met, the process loops back to the merging point of the connection check.
+
+If Condition A is met, measurements are collected. Subsequently, the process either calculates the Overall Equipment Effectiveness (OEE) or escalates to a merging point based on a condition. If the condition is met, the OEE is calculated. After calculating OEE, the process splits into two parallel activities: stopping the machine and sending an email to an engineer. After both activities are completed, the process merges. If the condition is not met, the process escalates and merges.
+
+After the merging point, the process merges again with the positive branch of the connection check. Finally, the process ends.

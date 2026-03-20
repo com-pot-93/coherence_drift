@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Collect requirements</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Send requirements</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a9" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>draft received</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a11" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>Check feasibility</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="6">
+        <alternative condition="branch 1" language="text/javascript">
+          <call id="a15" endpoint="" a:alt_id="7">
+            <parameters>
+              <label>Refine requirements</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="branch 2" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="8">
+            <alternative condition="branch 1" language="text/javascript">
+              <call id="a21" endpoint="" a:alt_id="9">
+                <parameters>
+                  <label>Report for builing permit</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="branch 2" language="text/javascript"/>
+          </choose>
+        </alternative>
+      </choose>
+      <choose mode="exclusive" a:alt_id="12">
+        <alternative condition="">
+          <call id="a31" endpoint="" a:alt_id="13">
+            <parameters>
+              <label>Create order list</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a35" endpoint="" a:alt_id="14">
+            <parameters>
+              <label>Place order</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a37" endpoint="" a:alt_id="15">
+            <parameters>
+              <label>Calculate effort</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <parallel wait="-1" cancel="last" a:alt_id="16">
+            <parallel_branch>
+              <call id="a41" endpoint="" a:alt_id="17">
+                <parameters>
+                  <label>Get order</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </parallel_branch>
+            <parallel_branch>
+              <choose mode="exclusive" a:alt_id="18">
+                <alternative condition="branch 1" language="text/javascript">
+                  <call id="a47" endpoint="" a:alt_id="19">
+                    <parameters>
+                      <label>Call friends</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="branch 2" language="text/javascript">
+                  <call id="a49" endpoint="" a:alt_id="20">
+                    <parameters>
+                      <label>Hire building company</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+            </parallel_branch>
+          </parallel>
+        </alternative>
+        <alternative condition="false" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="false" language="text/javascript"/>
+  </choose>
+  <call id="a63" endpoint="" a:alt_id="34">
+    <parameters>
+      <label>Build house</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

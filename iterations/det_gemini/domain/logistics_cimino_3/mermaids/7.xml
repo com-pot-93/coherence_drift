@@ -1,0 +1,23 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Receive shipment request)
+1:task:(Receive shipment request) --> 2:parallelgateway:{AND}
+2:parallelgateway:{AND} --> 3:task:(Package goods)
+2:parallelgateway:{AND} --> 4:task:(Select kind of shipment)
+4:task:(Select kind of shipment) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |yes| 6:task:(Request quotes from carriers)
+6:task:(Request quotes from carriers) --> 7:task:(Assign a carrier)
+7:task:(Assign a carrier) --> 8:task:(Prepare paperwork)
+5:exclusivegateway:{x} --> |no| 9:task:(Fill in a post label)
+9:task:(Fill in a post label) --> 10:task:(Check insuarance)
+10:task:(Check insuarance) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |yes| 12:task:(Take out extra insuarance)
+11:exclusivegateway:{x} --> |no| 13:exclusivegateway:{x}
+12:task:(Take out extra insuarance) --> 13:exclusivegateway:{x}
+8:task:(Prepare paperwork) --> 13:exclusivegateway:{x}
+3:task:(Package goods) --> 14:parallelgateway:{AND}
+13:exclusivegateway:{x} --> 14:parallelgateway:{AND}
+14:parallelgateway:{AND} --> 15:task:(Add paperwork)
+15:task:(Add paperwork) --> 16:task:(Move package to pickup area)
+16:task:(Move package to pickup area) --> 17:endevent:(((endevent)))
+```

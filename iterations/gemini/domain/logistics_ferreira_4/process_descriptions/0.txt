@@ -1,0 +1,9 @@
+The process starts with the retrieval of temperature values. Based on these values, the process either generates a standard notification or proceeds to a parallel execution of several tasks.
+
+In the first branch of the parallel execution, the container status is retrieved and then estimated. Depending on the estimation, the process either generates a container change request or proceeds directly.
+
+In the second parallel branch, the client location is retrieved, and the distance is estimated. Based on the distance estimation, the process either estimates the delivery time, which may lead to generating a route change request, or proceeds directly.
+
+In the third parallel branch, the goods status is retrieved and then estimated. Depending on this estimation, the process either evaluates damages, which may lead to generating a removal request or a price change request, or proceeds directly.
+
+After all parallel branches are completed, the process merges back and sends the generated messages. The process then ends.

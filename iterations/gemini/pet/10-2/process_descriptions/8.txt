@@ -1,0 +1,17 @@
+The process starts with the creation of a report on meter operation. This report is then examined. Based on the examination, a decision is made: either the application is rejected or confirmed.
+
+If the application is rejected, the process proceeds to the rejection of the application. If the application is confirmed, the process proceeds to the confirmation of the application.
+
+After either rejection or confirmation, both paths converge to inform MPOO and MSPO. Following this, equipment acquisition or changes are performed.
+
+The process then branches based on whether the equipment acquisition or changes were successful or not.
+
+If successful, GO is informed about the completion. If not successful, GO is informed about the failure.
+
+In case of failure, the process branches again based on whether MPON is informed or the failure is confirmed.
+
+If MPON is informed, then MPON is informed about the failure. If the failure is confirmed, then the failure of the assignment is confirmed.
+
+After either informing MPON or confirming the failure, both paths converge. This convergence point then merges with the path where GO was informed about the completion.
+
+After this merge, MPON is assigned and confirmed. Finally, MPOO, MSPO, and SP are informed, and the process ends.

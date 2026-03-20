@@ -1,0 +1,19 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Backup Database)
+  1:task:(Backup Database) --> 2:task:(Check Database)
+  2:task:(Check Database) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Successful| 4:task:(Check CRM System)
+  3:exclusivegateway:{x} --> |Not Successful| 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Yes| 4:task:(Check CRM System)
+  5:exclusivegateway:{x} --> |No| 4:task:(Check CRM System)
+  4:task:(Check CRM System) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Yes| 7:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |No| 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Yes| 8:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |No| 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |Yes| 9:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |No| 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Yes| 10:endevent:(((endevent)))
+  9:exclusivegateway:{x} --> |No| 10:endevent:(((endevent)))
+```

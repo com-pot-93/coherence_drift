@@ -1,0 +1,24 @@
+The process begins when you start by opening the Battle.net application. At this point, you are faced with a decision: you need to determine whether your account information is required.
+
+If account information is needed, you proceed to enter your account details. After entering these details, you must click on an email confirmation link to verify your account. Once this is done, you move forward to the next step.
+
+If no account information is needed, you skip directly to the next step.
+
+In both cases, you now log into Battle.net. After logging in, you wait for your account information to load.
+
+Next, you encounter another decision: you need to determine whether a payment method is required.
+
+If a payment method is needed, you select your preferred payment method. You are then presented with two options: you can either choose to pay by credit card or by providing your IBAN and BIC information.
+
+- If you choose to pay by credit card, you enter your credit card information.
+- If you choose to pay by IBAN and BIC, you enter those details.
+
+After entering the necessary payment information, you proceed to the next step.
+
+If no payment method is needed, you skip directly to the next step.
+
+Now, you log into the game. Once logged in, you wait for your in-game data and position to load.
+
+At this point, you need to make three selections, which can be done in any order: you select the realm you want to play in, you select your character’s race, and you select your character’s class. Once all three selections are made, you move on.
+
+Next, you name your character. After naming your character, you receive a confirmation along with selfies. This marks the end of the process.

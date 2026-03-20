@@ -1,0 +1,15 @@
+The process starts. Then, it splits into two parallel activities: packaging goods and selecting the kind of shipment.
+
+For the "Package Goods" branch: After packaging, a decision is made. If "Request Quotes from Carriers" is chosen, then quotes are requested from carriers, and a carrier is assigned. Another decision is made, and if extra insurance is needed, it is taken out. This decision and insurance step can be repeated.
+
+Alternatively, if "Fill in Post Label" is chosen after packaging, a post label is filled in, and the insurance is checked. If extra insurance is needed, it is taken out. This decision and insurance step can be repeated.
+
+After either of these paths, paperwork is prepared.
+
+For the "Select Kind of Shipment" branch: After selecting the shipment type, a decision is made. If "Request Quotes from Carriers" is chosen, then quotes are requested from carriers, and a carrier is assigned. Another decision is made, and if extra insurance is needed, it is taken out. This decision and insurance step can be repeated.
+
+Alternatively, if "Fill in Post Label" is chosen after selecting the shipment type, a post label is filled in, and the insurance is checked. If extra insurance is needed, it is taken out. This decision and insurance step can be repeated.
+
+After either of these paths, paperwork is prepared.
+
+Once both branches are complete, the paperwork is added, the package is moved to the pickup area, and the process ends.

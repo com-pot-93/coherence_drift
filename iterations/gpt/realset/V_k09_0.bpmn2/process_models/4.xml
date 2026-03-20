@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Connect to Management System</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="Continue" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Continue Process</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a11" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>Next Step</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <loop mode="post_test" condition="true">
+        <call id="a15" endpoint="" a:alt_id="7">
+          <parameters>
+            <label>Next Step</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </loop>
+      <loop mode="pre_test" condition="true">
+        <call id="a19" endpoint="" a:alt_id="9">
+          <parameters>
+            <label>Read Order from System</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="pre_test" condition="true">
+          <call id="a25" endpoint="" a:alt_id="11">
+            <parameters>
+              <label>Next Decision Point</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="12">
+            <alternative condition="Condition met" language="text/javascript">
+              <call id="a29" endpoint="" a:alt_id="13">
+                <parameters>
+                  <label>Register Product in Management System</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <parallel wait="-1" cancel="last" a:alt_id="14">
+                <parallel_branch>
+                  <call id="a35" endpoint="" a:alt_id="15">
+                    <parameters>
+                      <label>Pack Product</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </parallel_branch>
+                <parallel_branch>
+                  <call id="a37" endpoint="" a:alt_id="16">
+                    <parameters>
+                      <label>Request Courier</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </parallel_branch>
+              </parallel>
+              <call id="a43" endpoint="" a:alt_id="18">
+                <parameters>
+                  <label>Ship Delivery</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="19">
+                <alternative condition="Repeat" language="text/javascript">
+                  <call id="a47" endpoint="" a:alt_id="20">
+                    <parameters>
+                      <label>Escalate and Repeat</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a19" endpoint="" a:alt_id="9">
+                    <parameters>
+                      <label>Read Order from System</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Finish" language="text/javascript">
+                  <choose mode="exclusive" a:alt_id="22">
+                    <alternative condition="Condition not met" language="text/javascript"/>
+                    <alternative condition="Condition met" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="24">
+                        <alternative condition="Wholesaler" language="text/javascript">
+                          <call id="a59" endpoint="" a:alt_id="27">
+                            <parameters>
+                              <label>Contact Wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a63" endpoint="" a:alt_id="28">
+                            <parameters>
+                              <label>Reorder Product from Wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="30">
+                            <alternative condition="Penalty needed" language="text/javascript">
+                              <call id="a69" endpoint="" a:alt_id="31">
+                                <parameters>
+                                  <label>Apply Penalty for Delay</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="No penalty" language="text/javascript"/>
+                          </choose>
+                          <call id="a71" endpoint="" a:alt_id="32">
+                            <parameters>
+                              <label>Approve Arrived Product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="33">
+                            <alternative condition="Repeat" language="text/javascript">
+                              <call id="a77" endpoint="" a:alt_id="34">
+                                <parameters>
+                                  <label>Escalate and Repeat Wholesaler</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a63" endpoint="" a:alt_id="28">
+                                <parameters>
+                                  <label>Reorder Product from Wholesaler</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <escape a:alt_id="-1"/>
+                            </alternative>
+                            <alternative condition="Continue" language="text/javascript"/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="Warehouse" language="text/javascript">
+                          <call id="a61" endpoint="" a:alt_id="35">
+                            <parameters>
+                              <label>Browse Warehouse</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a83" endpoint="" a:alt_id="36">
+                            <parameters>
+                              <label>Withdraw Product from Warehouse</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="38">
+                            <alternative condition="Penalty needed" language="text/javascript">
+                              <call id="a89" endpoint="" a:alt_id="39">
+                                <parameters>
+                                  <label>Apply Penalty for Delay</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="No penalty" language="text/javascript"/>
+                          </choose>
+                          <call id="a91" endpoint="" a:alt_id="40">
+                            <parameters>
+                              <label>Approve Arrived Product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="41">
+                            <alternative condition="Repeat" language="text/javascript">
+                              <call id="a97" endpoint="" a:alt_id="42">
+                                <parameters>
+                                  <label>Escalate and Repeat Warehouse</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a83" endpoint="" a:alt_id="36">
+                                <parameters>
+                                  <label>Withdraw Product from Warehouse</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <escape a:alt_id="-1"/>
+                            </alternative>
+                            <alternative condition="Continue" language="text/javascript"/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                      <call id="a79" endpoint="" a:alt_id="43">
+                        <parameters>
+                          <label>Continue Process</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                  </choose>
+                  <escape a:alt_id="-1"/>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="Condition not met" language="text/javascript"/>
+          </choose>
+        </loop>
+      </loop>
+    </alternative>
+    <alternative condition="Do not continue" language="text/javascript"/>
+  </choose>
+</description>

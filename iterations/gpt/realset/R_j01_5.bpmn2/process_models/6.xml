@@ -1,0 +1,496 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Run Machine</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Check Connection</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="Negative" a:alt_id="3" language="text/javascript">
+    <call id="a7" endpoint="" a:alt_id="4">
+      <parameters>
+        <label>Check Connection Again</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+  </loop>
+  <loop mode="pre_test" condition="Negative">
+    <choose mode="exclusive" a:alt_id="5">
+      <alternative condition="Negative" language="text/javascript">
+        <call id="a13" endpoint="" a:alt_id="6">
+          <parameters>
+            <label>Check Connection Again 2</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+      <alternative condition="Positive" language="text/javascript">
+        <choose mode="exclusive" a:alt_id="7">
+          <alternative condition="Negative" language="text/javascript">
+            <call id="a13" endpoint="" a:alt_id="6">
+              <parameters>
+                <label>Check Connection Again 2</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="Positive" language="text/javascript">
+            <call id="a19" endpoint="" a:alt_id="8">
+              <parameters>
+                <label>Collect Measurements</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="9">
+              <alternative condition="Escalation required" language="text/javascript">
+                <call id="a25" endpoint="" a:alt_id="10">
+                  <parameters>
+                    <label>Escalate Issue</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="No escalation" language="text/javascript"/>
+            </choose>
+            <call id="a31" endpoint="" a:alt_id="12">
+              <parameters>
+                <label>Calculate OEE</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <parallel wait="-1" cancel="last" a:alt_id="13">
+              <parallel_branch>
+                <call id="a35" endpoint="" a:alt_id="14">
+                  <parameters>
+                    <label>Stop Machine</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </parallel_branch>
+              <parallel_branch>
+                <call id="a37" endpoint="" a:alt_id="15">
+                  <parameters>
+                    <label>Send Email to Engineer</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </parallel_branch>
+            </parallel>
+            <parallel wait="-1" cancel="last" a:alt_id="16">
+              <parallel_branch>
+                <call id="a43" endpoint="" a:alt_id="17">
+                  <parameters>
+                    <label>Check After Stop</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </parallel_branch>
+              <parallel_branch>
+                <call id="a45" endpoint="" a:alt_id="18">
+                  <parameters>
+                    <label>Check After Email</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </parallel_branch>
+            </parallel>
+            <choose mode="exclusive" a:alt_id="20">
+              <alternative condition="Positive" language="text/javascript">
+                <choose mode="exclusive" a:alt_id="21">
+                  <alternative condition="True" language="text/javascript">
+                    <call id="a57" endpoint="" a:alt_id="22">
+                      <parameters>
+                        <label>Collect Measurements Again</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <choose mode="exclusive" a:alt_id="23">
+                      <alternative condition="Positive" language="text/javascript">
+                        <call id="a63" endpoint="" a:alt_id="24">
+                          <parameters>
+                            <label>Collect Measurements Loop</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="25">
+                          <alternative condition="Positive" language="text/javascript">
+                            <call id="a63" endpoint="" a:alt_id="24">
+                              <parameters>
+                                <label>Collect Measurements Loop</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <escape a:alt_id="-1"/>
+                          </alternative>
+                          <alternative condition="Not positive" language="text/javascript"/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="Not positive" language="text/javascript"/>
+                    </choose>
+                    <escape a:alt_id="-1"/>
+                  </alternative>
+                  <alternative condition="False" language="text/javascript"/>
+                </choose>
+              </alternative>
+              <alternative condition="Negative" language="text/javascript"/>
+            </choose>
+            <parallel wait="-1" cancel="last" a:alt_id="26">
+              <parallel_branch>
+                <call id="a73" endpoint="" a:alt_id="27">
+                  <parameters>
+                    <label>Stop Machine Again</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </parallel_branch>
+              <parallel_branch>
+                <call id="a75" endpoint="" a:alt_id="28">
+                  <parameters>
+                    <label>Send Another Email</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </parallel_branch>
+            </parallel>
+            <parallel wait="-1" cancel="last" a:alt_id="29">
+              <parallel_branch>
+                <call id="a81" endpoint="" a:alt_id="30">
+                  <parameters>
+                    <label>Check After Stop Again</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </parallel_branch>
+              <parallel_branch>
+                <call id="a83" endpoint="" a:alt_id="31">
+                  <parameters>
+                    <label>Check After Email Again</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </parallel_branch>
+            </parallel>
+            <choose mode="exclusive" a:alt_id="33">
+              <alternative condition="Positive" language="text/javascript">
+                <choose mode="exclusive" a:alt_id="34">
+                  <alternative condition="True" language="text/javascript">
+                    <call id="a95" endpoint="" a:alt_id="35">
+                      <parameters>
+                        <label>Collect Measurements Third Time</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                    <choose mode="exclusive" a:alt_id="36">
+                      <alternative condition="Positive" language="text/javascript">
+                        <call id="a101" endpoint="" a:alt_id="37">
+                          <parameters>
+                            <label>Collect Measurements Loop 2</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="38">
+                          <alternative condition="Positive" language="text/javascript">
+                            <call id="a101" endpoint="" a:alt_id="37">
+                              <parameters>
+                                <label>Collect Measurements Loop 2</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <escape a:alt_id="-1"/>
+                          </alternative>
+                          <alternative condition="Not positive" language="text/javascript"/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="Not positive" language="text/javascript"/>
+                    </choose>
+                    <escape a:alt_id="-1"/>
+                  </alternative>
+                  <alternative condition="False" language="text/javascript"/>
+                </choose>
+              </alternative>
+              <alternative condition="Negative" language="text/javascript"/>
+            </choose>
+            <parallel wait="-1" cancel="last" a:alt_id="39">
+              <parallel_branch>
+                <call id="a111" endpoint="" a:alt_id="40">
+                  <parameters>
+                    <label>Stop Machine Third Time</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </parallel_branch>
+              <parallel_branch>
+                <call id="a113" endpoint="" a:alt_id="41">
+                  <parameters>
+                    <label>Send Third Email</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </parallel_branch>
+            </parallel>
+            <parallel wait="-1" cancel="last" a:alt_id="42">
+              <parallel_branch>
+                <call id="a119" endpoint="" a:alt_id="43">
+                  <parameters>
+                    <label>Check After Stop Third Time</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </parallel_branch>
+              <parallel_branch>
+                <call id="a121" endpoint="" a:alt_id="44">
+                  <parameters>
+                    <label>Check After Email Third Time</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </parallel_branch>
+            </parallel>
+            <choose mode="exclusive" a:alt_id="46">
+              <alternative condition="Positive" language="text/javascript">
+                <choose mode="exclusive" a:alt_id="47">
+                  <alternative condition="Positive" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="48">
+                      <alternative condition="True" language="text/javascript">
+                        <call id="a137" endpoint="" a:alt_id="49">
+                          <parameters>
+                            <label>Collect Measurements Fourth Time</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="50">
+                          <alternative condition="Positive" language="text/javascript">
+                            <call id="a143" endpoint="" a:alt_id="51">
+                              <parameters>
+                                <label>Collect Measurements Loop 3</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <choose mode="exclusive" a:alt_id="52">
+                              <alternative condition="Positive" language="text/javascript">
+                                <call id="a143" endpoint="" a:alt_id="51">
+                                  <parameters>
+                                    <label>Collect Measurements Loop 3</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <escape a:alt_id="-1"/>
+                              </alternative>
+                              <alternative condition="Not positive" language="text/javascript"/>
+                            </choose>
+                          </alternative>
+                          <alternative condition="Not positive" language="text/javascript"/>
+                        </choose>
+                        <call id="a145" endpoint="" a:alt_id="53">
+                          <parameters>
+                            <label>Final Activity</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <escape a:alt_id="-1"/>
+                      </alternative>
+                      <alternative condition="False" language="text/javascript">
+                        <choose mode="exclusive" a:alt_id="55">
+                          <alternative condition="True" language="text/javascript">
+                            <call id="a157" endpoint="" a:alt_id="56">
+                              <parameters>
+                                <label>Final Activity 2</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <choose mode="exclusive" a:alt_id="57">
+                              <alternative condition="True" language="text/javascript">
+                                <call id="a163" endpoint="" a:alt_id="58">
+                                  <parameters>
+                                    <label>Collect Measurements Fourth Time 2</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <choose mode="exclusive" a:alt_id="59">
+                                  <alternative condition="Positive" language="text/javascript">
+                                    <call id="a169" endpoint="" a:alt_id="60">
+                                      <parameters>
+                                        <label>Collect Measurements Loop 4</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <choose mode="exclusive" a:alt_id="61">
+                                      <alternative condition="Positive" language="text/javascript">
+                                        <call id="a169" endpoint="" a:alt_id="60">
+                                          <parameters>
+                                            <label>Collect Measurements Loop 4</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                        <escape a:alt_id="-1"/>
+                                      </alternative>
+                                      <alternative condition="Not positive" language="text/javascript"/>
+                                    </choose>
+                                  </alternative>
+                                  <alternative condition="Not positive" language="text/javascript"/>
+                                </choose>
+                                <call id="a171" endpoint="" a:alt_id="62">
+                                  <parameters>
+                                    <label>Final Activity 3</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                              </alternative>
+                              <alternative condition="False" language="text/javascript"/>
+                            </choose>
+                          </alternative>
+                          <alternative condition="False" language="text/javascript"/>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Negative" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="55">
+                      <alternative condition="True" language="text/javascript">
+                        <call id="a157" endpoint="" a:alt_id="56">
+                          <parameters>
+                            <label>Final Activity 2</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="57">
+                          <alternative condition="True" language="text/javascript">
+                            <call id="a163" endpoint="" a:alt_id="58">
+                              <parameters>
+                                <label>Collect Measurements Fourth Time 2</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <choose mode="exclusive" a:alt_id="59">
+                              <alternative condition="Positive" language="text/javascript">
+                                <call id="a169" endpoint="" a:alt_id="60">
+                                  <parameters>
+                                    <label>Collect Measurements Loop 4</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                                <choose mode="exclusive" a:alt_id="61">
+                                  <alternative condition="Positive" language="text/javascript">
+                                    <call id="a169" endpoint="" a:alt_id="60">
+                                      <parameters>
+                                        <label>Collect Measurements Loop 4</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                    <escape a:alt_id="-1"/>
+                                  </alternative>
+                                  <alternative condition="Not positive" language="text/javascript"/>
+                                </choose>
+                              </alternative>
+                              <alternative condition="Not positive" language="text/javascript"/>
+                            </choose>
+                            <call id="a171" endpoint="" a:alt_id="62">
+                              <parameters>
+                                <label>Final Activity 3</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                          </alternative>
+                          <alternative condition="False" language="text/javascript"/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="False" language="text/javascript"/>
+                    </choose>
+                  </alternative>
+                </choose>
+              </alternative>
+              <alternative condition="Negative" language="text/javascript"/>
+            </choose>
+            <escape a:alt_id="-1"/>
+          </alternative>
+        </choose>
+      </alternative>
+    </choose>
+  </loop>
+</description>

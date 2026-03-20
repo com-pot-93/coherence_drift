@@ -1,0 +1,15 @@
+The process begins with entering the manufacturer, followed by entering the model.
+Next, there is a decision point. If the answer is "Yes", the process proceeds to another decision point. Otherwise, the process skips the next task and proceeds to a parallel gateway.
+If the answer is "Yes", the process proceeds to the task "Enter Broken Part".
+After entering the broken part, there is a decision point. If the answer is "No", the process loops back to the "Enter Broken Part" task. If the answer is "Yes", the process escalates and proceeds to the next decision point.
+The process then returns to the previous decision point.
+After the second decision point, the process proceeds to a parallel gateway where two tasks are performed in parallel: "Compute Parts List" and "Compute Necessary Tools".
+After both tasks are completed, the process continues to "Check List Against Inventory".
+Another decision point follows. If the answer is "Yes", the process proceeds directly to the next task. If the answer is "No", the process continues to "Contact a Friend" and then to "Get Everything Else Needed" before proceeding to the next task.
+The process continues to "Generate Instructions", followed by another decision point. If the answer is "Yes", the process proceeds directly to the next task. If the answer is "No", the process continues to "Follow Instructions".
+After following the instructions, there is another decision point. If the answer is "Yes", the process escalates. If the answer is "No", the process proceeds to the next task.
+The process then returns to the previous decision point.
+The process continues to the next decision point. If the answer is "Yes", the process proceeds directly to the next task. If the answer is "No", the process continues to "Leave a Review".
+After leaving a review, there is another decision point. If the answer is "Yes", the process continues to "Upload Video" and then to "Save to Database". If the answer is "No", the process skips these tasks.
+The process then returns to the previous decision point.
+The process continues to "Send Phone to Expert", and the process ends.

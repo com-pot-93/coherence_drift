@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <choose mode="exclusive" a:alt_id="1">
+    <alternative condition="Condition A is true" language="text/javascript">
+      <call id="a3" endpoint="" a:alt_id="2">
+        <parameters>
+          <label>Receive Expense Report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Condition A is false" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Create New Employee Account</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <choose mode="exclusive" a:alt_id="4">
+    <alternative condition="Condition E is true" language="text/javascript">
+      <call id="a11" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>Create New Employee Account</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Condition E is false" language="text/javascript"/>
+  </choose>
+  <choose mode="exclusive" a:alt_id="7">
+    <alternative condition="Condition G is true" language="text/javascript">
+      <call id="a19" endpoint="" a:alt_id="8">
+        <parameters>
+          <label>Approve Report Automatically</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Condition G is false" language="text/javascript">
+      <call id="a21" endpoint="" a:alt_id="9">
+        <parameters>
+          <label>Supervisor Approves Report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <choose mode="exclusive" a:alt_id="11">
+    <alternative condition="Condition I is true" language="text/javascript">
+      <call id="a29" endpoint="" a:alt_id="12">
+        <parameters>
+          <label>Send Reimbursement</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Condition I is false" language="text/javascript"/>
+  </choose>
+  <choose mode="exclusive" a:alt_id="14">
+    <alternative condition="Condition K is true or Condition K is false" language="text/javascript"/>
+    <alternative condition="Condition K is false" language="text/javascript"/>
+  </choose>
+  <choose mode="exclusive" a:alt_id="16">
+    <alternative condition="Condition L is true" language="text/javascript">
+      <call id="a43" endpoint="" a:alt_id="17">
+        <parameters>
+          <label>Send Approval In Progress Email</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Condition L is false" language="text/javascript"/>
+  </choose>
+  <choose mode="exclusive" a:alt_id="19">
+    <alternative condition="Condition M is true" language="text/javascript"/>
+    <alternative condition="Condition M is false" language="text/javascript">
+      <call id="a53" endpoint="" a:alt_id="21">
+        <parameters>
+          <label>Send Rejection Notice</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

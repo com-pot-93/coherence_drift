@@ -1,0 +1,110 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Customer notices service quality decline)
+2:task:(Send problem details to customer service)
+3:task:(Service employee enters problem report)
+4:task:(Compare report with service agreement)
+5:task:(Determine necessary countermeasures)
+6:exclusivegateway:{x}
+7:exclusivegateway:{x}
+8:task:(Determine customer significance)
+9:task:(Link case to extra problem-fixing process)
+10:task:(Proceed to next step)
+11:exclusivegateway:{x}
+12:task:(Create detailed problem report)
+13:task:(Send report to Service Management)
+14:task:(Service Management handles quality violation)
+15:task:(Service Management investigates problem)
+16:exclusivegateway:{x}
+17:task:(Perform analysis and create trouble report)
+18:task:(Send report to Resource Provisioning)
+19:exclusivegateway:{x}
+20:task:(Resource Provisioning checks for issues)
+21:exclusivegateway:{x}
+22:task:(Analyze problem and create trouble report)
+23:task:(Create notification about service execution)
+24:task:(Send status report to Service Management)
+25:task:(Prepare final status report)
+26:inclusivegateway:{O}
+27:task:(Request automatic restoration of resources)
+28:task:(Resource Provisioning tracks errors and corrective actions)
+29:task:(Create troubleshooting report)
+30:task:(Send troubleshooting report to Service Management)
+31:task:(Forward report to customer service)
+32:task:(Create problem resolution report)
+33:task:(Send resolution report to customer service)
+34:task:(Receive resolution report)
+35:task:(Send actual service performance to customer service)
+36:task:(Receive performance information)
+37:task:(Undertake corrective actions)
+38:task:(Create problem resolution report)
+39:task:(Send resolution report to customer service)
+40:task:(Receive resolution report)
+41:inclusivegateway:{O}
+42:parallelgateway:{AND}
+43:task:(Create report for customer)
+44:task:(Report violation rebate to billing)
+45:task:(Billing adjusts billing)
+46:parallelgateway:{AND}
+47:task:(Send report to customer)
+48:task:(Customer receives report)
+49:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Customer notices service quality decline)
+1:task:(Customer notices service quality decline) --> 2:task:(Send problem details to customer service)
+2:task:(Send problem details to customer service) --> 3:task:(Service employee enters problem report)
+3:task:(Service employee enters problem report) --> 4:task:(Compare report with service agreement)
+4:task:(Compare report with service agreement) --> 5:task:(Determine necessary countermeasures)
+5:task:(Determine necessary countermeasures) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Countermeasures needed|7:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |No countermeasures needed|11:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Determine significance|8:task:(Determine customer significance)
+7:exclusivegateway:{x} --> |Link to extra process|9:task:(Link case to extra problem-fixing process)
+7:exclusivegateway:{x} --> |Proceed|10:task:(Proceed to next step)
+8:task:(Determine customer significance) --> 11:exclusivegateway:{x}
+9:task:(Link case to extra problem-fixing process) --> 11:exclusivegateway:{x}
+10:task:(Proceed to next step) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> 12:task:(Create detailed problem report)
+12:task:(Create detailed problem report) --> 13:task:(Send report to Service Management)
+13:task:(Send report to Service Management) --> 14:task:(Service Management handles quality violation)
+14:task:(Service Management handles quality violation) --> 15:task:(Service Management investigates problem)
+15:task:(Service Management investigates problem) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |Analysis & trouble report|17:task:(Perform analysis and create trouble report)
+16:exclusivegateway:{x} --> |Send to Resource Provisioning|18:task:(Send report to Resource Provisioning)
+17:task:(Perform analysis and create trouble report) --> 24:task:(Send status report to Service Management)
+18:task:(Send report to Resource Provisioning) --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> |Check issues|20:task:(Resource Provisioning checks for issues)
+20:task:(Resource Provisioning checks for issues) --> 21:exclusivegateway:{x}
+21:exclusivegateway:{x} --> |Analyze & trouble report|22:task:(Analyze problem and create trouble report)
+21:exclusivegateway:{x} --> |Notification|23:task:(Create notification about service execution)
+22:task:(Analyze problem and create trouble report) --> 24:task:(Send status report to Service Management)
+23:task:(Create notification about service execution) --> 24:task:(Send status report to Service Management)
+19:exclusivegateway:{x} --> |No issues|24:task:(Send status report to Service Management)
+24:task:(Send status report to Service Management) --> 25:task:(Prepare final status report)
+25:task:(Prepare final status report) --> 26:inclusivegateway:{O}
+26:inclusivegateway:{O} --> |Auto restoration|27:task:(Request automatic restoration of resources)
+26:inclusivegateway:{O} --> |Service performance|35:task:(Send actual service performance to customer service)
+26:inclusivegateway:{O} --> |Corrective actions|37:task:(Undertake corrective actions)
+27:task:(Request automatic restoration of resources) --> 28:task:(Resource Provisioning tracks errors and corrective actions)
+28:task:(Resource Provisioning tracks errors and corrective actions) --> 29:task:(Create troubleshooting report)
+29:task:(Create troubleshooting report) --> 30:task:(Send troubleshooting report to Service Management)
+30:task:(Send troubleshooting report to Service Management) --> 31:task:(Forward report to customer service)
+31:task:(Forward report to customer service) --> 32:task:(Create problem resolution report)
+32:task:(Create problem resolution report) --> 33:task:(Send resolution report to customer service)
+33:task:(Send resolution report to customer service) --> 34:task:(Receive resolution report)
+34:task:(Receive resolution report) --> 41:inclusivegateway:{O}
+35:task:(Send actual service performance to customer service) --> 36:task:(Receive performance information)
+36:task:(Receive performance information) --> 41:inclusivegateway:{O}
+37:task:(Undertake corrective actions) --> 38:task:(Create problem resolution report)
+38:task:(Create problem resolution report) --> 39:task:(Send resolution report to customer service)
+39:task:(Send resolution report to customer service) --> 40:task:(Receive resolution report)
+40:task:(Receive resolution report) --> 41:inclusivegateway:{O}
+41:inclusivegateway:{O} --> 42:parallelgateway:{AND}
+42:parallelgateway:{AND} --> 43:task:(Create report for customer)
+42:parallelgateway:{AND} --> 44:task:(Report violation rebate to billing)
+44:task:(Report violation rebate to billing) --> 45:task:(Billing adjusts billing)
+43:task:(Create report for customer) --> 46:parallelgateway:{AND}
+45:task:(Billing adjusts billing) --> 46:parallelgateway:{AND}
+46:parallelgateway:{AND} --> 47:task:(Send report to customer)
+47:task:(Send report to customer) --> 48:task:(Customer receives report)
+48:task:(Customer receives report) --> 49:endevent:(((endevent)))

@@ -1,0 +1,7 @@
+The process starts with determining the required resources. Then, the process splits into two parallel activities: checking the repository and collecting urgently needed resources. After both activities are completed, the process merges back together. Next, a decision is made: if the resources are sufficient, the process proceeds directly; otherwise, tools are built. After building tools (if necessary), the process continues to collect the remaining resources. The process then splits into two parallel activities: evaluating a condition and updating the resource list. After both activities are completed, the process merges back together.
+
+A decision is then made. If the condition is true, the process waits for an event. After the event, another decision is made: either the bot is reset and farming is started, or farming is started directly. After farming is started, another decision is made based on a condition. If the condition is true, the player is notified; otherwise, the process proceeds directly.
+
+Next, a decision is made among three options: giving a sleeping break, bragging to friends, or helping with materials. After any of these options is chosen, the process continues to evaluate the condition again.
+
+After evaluating the condition, a decision is made. The process can either proceed, escalate, or escalate again. After any of these options, the process loops back to the earlier decision point where the condition was checked, and the process either waits for an event or ends. The process ends after the condition is false.

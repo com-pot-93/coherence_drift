@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <choose mode="exclusive" a:alt_id="1">
+    <alternative condition="true" language="text/javascript">
+      <call id="a3" endpoint="" a:alt_id="2">
+        <parameters>
+          <label>company receives expense report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="3">
+        <alternative condition="yes" language="text/javascript">
+          <call id="a7" endpoint="" a:alt_id="4">
+            <parameters>
+              <label>company creates new employee  account</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="no" language="text/javascript"/>
+      </choose>
+      <call id="a13" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>company reviews report for automatic approval</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="7">
+        <alternative condition="manual approval" language="text/javascript">
+          <call id="a17" endpoint="" a:alt_id="8">
+            <parameters>
+              <label>supervisor approves the report</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="9">
+            <alternative condition="approved" language="text/javascript">
+              <call id="a23" endpoint="" a:alt_id="10">
+                <parameters>
+                  <label>company sends reimbursement to employee's bank account</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="rejected" language="text/javascript">
+              <call id="a25" endpoint="" a:alt_id="11">
+                <parameters>
+                  <label>employee  receives a rejection notice</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="automatic approval" language="text/javascript">
+          <call id="a19" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>company automatically approves the report</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <choose mode="exclusive" a:alt_id="13">
+        <alternative condition="stop" language="text/javascript">
+          <call id="a33" endpoint="" a:alt_id="14">
+            <parameters>
+              <label>company stops the process</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a37" endpoint="" a:alt_id="15">
+            <parameters>
+              <label>employee receives an email cancellation notice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a41" endpoint="" a:alt_id="16">
+            <parameters>
+              <label>employee re-submits the expense report</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="approval in progress" language="text/javascript">
+          <call id="a35" endpoint="" a:alt_id="17">
+            <parameters>
+              <label>employee  receives an approval in progress  email</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="resubmit" language="text/javascript">
+          <call id="a37" endpoint="" a:alt_id="15">
+            <parameters>
+              <label>employee receives an email cancellation notice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a41" endpoint="" a:alt_id="16">
+            <parameters>
+              <label>employee re-submits the expense report</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="exit loop" language="text/javascript"/>
+  </choose>
+</description>

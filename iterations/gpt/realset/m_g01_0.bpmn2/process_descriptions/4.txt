@@ -1,0 +1,7 @@
+The process begins when a file is received. After receiving the file, a decision is made about whether the file was actually received or not. If the file was not received, the process ends immediately.
+
+If the file was received, the next step is to evaluate the outcome related to the file. After this evaluation, another decision is made to determine if the outcome is positive or not. If the outcome is not positive, the process ends.
+
+If the outcome is positive, a further check is performed. Once this check is completed, a decision is made based on the result of the check. If the check is successful, the process continues with additional steps. After these steps, another decision is made, and regardless of the result, the process ends.
+
+If the further check fails, the process also ends at that point.

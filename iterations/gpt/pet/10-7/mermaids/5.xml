@@ -1,0 +1,26 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Submit Measurement Registration)
+2:task:(Review Application)
+3:exclusivegateway:{x}
+4:task:(Formally Reject Application)
+5:task:(Formally Approve Application)
+6:exclusivegateway:{x}
+7:task:(Assign MSPN)
+8:task:(Inform MSPO)
+9:task:(Inform MPO)
+10:task:(Inform SP)
+11:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Submit Measurement Registration)
+1:task:(Submit Measurement Registration) --> 2:task:(Review Application)
+2:task:(Review Application) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Rejected|4:task:(Formally Reject Application)
+3:exclusivegateway:{x} --> |Approved|5:task:(Formally Approve Application)
+4:task:(Formally Reject Application) --> 6:exclusivegateway:{x}
+5:task:(Formally Approve Application) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> 7:task:(Assign MSPN)
+7:task:(Assign MSPN) --> 8:task:(Inform MSPO)
+8:task:(Inform MSPO) --> 9:task:(Inform MPO)
+9:task:(Inform MPO) --> 10:task:(Inform SP)
+10:task:(Inform SP) --> 11:endevent:(((endevent)))

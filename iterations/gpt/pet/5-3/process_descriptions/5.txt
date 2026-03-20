@@ -1,0 +1,34 @@
+Certainly! Here is a detailed, step-by-step description of the process as depicted in your model:
+
+1. The process begins when a request is submitted.
+2. The submitted request is then registered in the system.
+3. At this point, a decision is made on whether to continue with the process. If the decision is not to continue, the process ends here. If the decision is to continue, the process moves to an initial continuation check.
+4. The initial continuation check is performed. Again, a decision is made: if the process should not continue, it ends; if it should continue, a further check is carried out.
+5. After the further check, another decision is made. If the process should not continue, it ends. If it should continue, the next step is to evaluate a specific condition.
+6. The condition is evaluated. If the result is negative, the process ends. If the result is positive, another decision is made on whether to proceed.
+7. If the decision is not to proceed, the process ends. If the decision is to proceed, another check is performed.
+8. The result of this check determines the next step. If the result is not favorable, the process ends. If the result is favorable, the request is sent for supervisor review.
+9. The supervisor reviews the request. After the review, a decision is made.
+10. If the supervisor does not approve the request, it is returned with comments. The employee then reviews these comments and decides whether to resubmit the request or withdraw it.
+    - If the employee chooses to resubmit, the request is sent again for supervisor review.
+    - If the employee chooses to withdraw, the process ends.
+11. If the supervisor approves the request, it is forwarded to the purchase department.
+12. The purchase department checks whether to continue with the process. If the decision is not to continue, the process ends. If the decision is to continue, a further check is performed by the purchase department.
+13. After this further check, another decision is made. If the process should not continue, it ends. If it should continue, another check is performed.
+14. The result of this check determines the next step. If the result is not favorable, the process ends. If the result is favorable, the purchase department performs an additional purchase check.
+15. After this additional check, a decision is made. If the process should not continue, it ends. If it should continue, the process moves to the preparation of quotations.
+16. Quotations are prepared. At this point, several possible outcomes are considered:
+    - If the process cannot continue, the issue is escalated and rechecked, leading back to the additional purchase check by the purchase department.
+    - If a vendor is selected, the process moves to vendor selection.
+17. During vendor selection, a vendor is chosen. A decision is then made:
+    - If the vendor is confirmed, a purchase order is generated and sent.
+    - If changes are needed, the process returns to the preparation of quotations.
+18. Once the purchase order is sent, the process waits for product delivery.
+19. After the product is delivered, the invoice is received.
+20. At this point, a check is made to determine if everything is complete:
+    - If not complete, the process returns to the preparation of quotations.
+    - If complete, the user is notified of the status.
+21. Final checks are performed, followed by final evaluations.
+22. After the final evaluations, the process ends.
+
+Throughout the process, at each decision point, if the outcome is not favorable, the process ends immediately. In some cases, such as after supervisor review or during the preparation of quotations, the process may loop back to earlier steps for rechecking or resubmission, ensuring that all necessary conditions are met before proceeding to the next stage. The process concludes after all checks and evaluations are successfully completed.

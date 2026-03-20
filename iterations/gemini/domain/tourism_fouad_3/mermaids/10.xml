@@ -1,0 +1,27 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Receive Travel Request)
+    1:task:(Receive Travel Request) --> 2:task:(Prepare Tour Plan)
+    2:task:(Prepare Tour Plan) --> 3:task:(Send Tour Plan)
+    3:task:(Send Tour Plan) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |True| 5:task:(Receive Response)
+    4:exclusivegateway:{x} --> |False| 24:endevent:(((endevent)))
+    5:task:(Receive Response) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |True| 7:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |False| 5:task:(Receive Response)
+    7:exclusivegateway:{x} --> |True| 8:task:(Book Tour)
+    7:exclusivegateway:{x} --> |False| 5:task:(Receive Response)
+    8:task:(Book Tour) --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} --> |Negative| 5:task:(Receive Response)
+    9:exclusivegateway:{x} --> |Positive| 10:task:(Charge Customer)
+    10:task:(Charge Customer) --> 11:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |Contact| 12:task:(Contact Customer)
+    11:exclusivegateway:{x} --> |Bill| 13:task:(Send Bill)
+    12:task:(Contact Customer) --> 14:task:(Send Booking Confirmation)
+    13:task:(Send Bill) --> 14:task:(Send Booking Confirmation)
+    14:task:(Send Booking Confirmation) --> 15:exclusivegateway:{x}
+    15:exclusivegateway:{x} --> |True| 16:exclusivegateway:{x}
+    15:exclusivegateway:{x} --> |False| 14:task:(Send Booking Confirmation)
+    16:exclusivegateway:{x} --> |Escalate| 8:task:(Book Tour)
+    16:exclusivegateway:{x} --> |No Escalate| 4:exclusivegateway:{x}
+```

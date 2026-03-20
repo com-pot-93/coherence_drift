@@ -1,0 +1,28 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Option 1| 2:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Option 2| 20:task:(MPOO sends the bill for the equipment acquisition to the MPON)
+    2:exclusivegateway:{x} --> |Condition A| 3:task:(MPOO sends the metering point operations bill to the GO)
+    2:exclusivegateway:{x} --> |Condition B| 4:task:(MSPO sends the measurement bill to the GO)
+    2:exclusivegateway:{x} --> |Condition C| 5:task:(MSPO sends the bill for additional readings to the GO)
+    2:exclusivegateway:{x} --> |Condition D| 6:task:(the MPOO sends the bill for the equipment acquisition to the GO)
+    3:task:(MPOO sends the metering point operations bill to the GO) --> 7:exclusivegateway:{x}
+    4:task:(MSPO sends the measurement bill to the GO) --> 7:exclusivegateway:{x}
+    5:task:(MSPO sends the bill for additional readings to the GO) --> 7:exclusivegateway:{x}
+    6:task:(the MPOO sends the bill for the equipment acquisition to the GO) --> 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> 8:task:(the GO examines the bill)
+    8:task:(the GO examines the bill) --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} --> |Reject| 10:task:(the GO rejects the invoice)
+    9:exclusivegateway:{x} --> |Confirm| 11:task:(the GO confirms the invoice with payment advice)
+    10:task:(the GO rejects the invoice) --> 12:exclusivegateway:{x}
+    11:task:(the GO confirms the invoice with payment advice) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> 26:endevent:(((endevent)))
+    20:task:(MPOO sends the bill for the equipment acquisition to the MPON) --> 21:task:(the MPON examines the bill)
+    21:task:(the MPON examines the bill) --> 22:exclusivegateway:{x}
+    22:exclusivegateway:{x} --> |Confirm| 23:task:(the MPON confirms the invoice with payment advice)
+    22:exclusivegateway:{x} --> |Reject| 24:task:(the MPON rejects the invoice)
+    23:task:(the MPON confirms the invoice with payment advice) --> 25:exclusivegateway:{x}
+    24:task:(the MPON rejects the invoice) --> 25:exclusivegateway:{x}
+    25:exclusivegateway:{x} --> 26:endevent:(((endevent)))
+```

@@ -1,0 +1,16 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(arrive to the hospital)
+1:task:(arrive to the hospital) --> 2:task:(prepare room for the surgery)
+2:task:(prepare room for the surgery) --> 3:task:(perform surgery)
+3:task:(perform surgery) --> 4:parallelgateway:{AND}
+4:parallelgateway:{AND} --> 5:task:(discharge patient)
+4:parallelgateway:{AND} --> 6:task:(sanitize room for the surgery)
+5:task:(discharge patient) --> 7:parallelgateway:{AND}
+6:task:(sanitize room for the surgery) --> 7:parallelgateway:{AND}
+7:parallelgateway:{AND} --> 8:task:(fill the report)
+8:task:(fill the report) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |yes| 10:task:(pay the bill)
+9:exclusivegateway:{x} --> |no| 11:endevent:(((endevent)))
+10:task:(pay the bill) --> 11:endevent:(((endevent)))
+```

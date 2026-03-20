@@ -1,0 +1,29 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(enter manufacturer)
+  1:task:(enter manufacturer) --> 2:task:(enter model)
+  2:task:(enter model) --> 3:task:(enter broken part)
+  3:task:(enter broken part) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |false|5:parallelgateway:{AND}
+  4:exclusivegateway:{x} --> |true|17:task:(enter broken part)
+  5:parallelgateway:{AND} --> 6:task:(compute parts list)
+  5:parallelgateway:{AND} --> 7:task:(compute necessary Tools)
+  6:task:(compute parts list) --> 8:parallelgateway:{AND}
+  7:task:(compute necessary Tools) --> 8:parallelgateway:{AND}
+  8:parallelgateway:{AND} --> 9:task:(check list with own inventory (tool/screw))
+  9:task:(check list with own inventory (tool/screw)) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |true| 16:task:(getting everything else needed)
+  10:exclusivegateway:{x} --> |false| 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |false| 12:task:(contact friend)
+  11:exclusivegateway:{x} --> |true| 16:task:(getting everything else needed)
+  12:task:(contact friend) --> 13:exclusivegateway:{x}
+  16:task:(getting everything else needed) --> 14:task:(Generating instructions to fix)
+  14:task:(Generating instructions to fix) --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> 18:task:(follow instructions)
+  15:exclusivegateway:{x} --> 19:exclusivegateway:{x}
+  19:exclusivegateway:{x} --> 20:task:(follow instructions)
+  17:task:(enter broken part) --> 21:endevent:(((endevent)))
+  18:task:(follow instructions) --> 21:endevent:(((endevent)))
+  20:task:(follow instructions) --> 21:endevent:(((endevent)))
+  13:exclusivegateway:{x} --> 16:task:(getting everything else needed)
+```

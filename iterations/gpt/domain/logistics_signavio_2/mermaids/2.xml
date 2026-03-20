@@ -1,0 +1,42 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Customer Order)
+2:task:(Pick Items from Stock)
+3:task:(Pack Items into Parcels)
+4:task:(Weigh Parcels)
+5:task:(Print Shipping Labels)
+6:parallelgateway:{AND}
+7:task:(Move Parcels to Loading Dock)
+8:task:(Check Number of Parcels)
+9:task:(Inspect Packing Quality)
+10:parallelgateway:{AND}
+11:parallelgateway:{AND}
+12:task:(Load Parcels onto Truck)
+13:task:(Send Delivery Instructions to Transporter)
+14:parallelgateway:{AND}
+15:task:(Update Order Status)
+16:task:(Adjust Stock Levels)
+17:parallelgateway:{AND}
+18:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Customer Order)
+1:task:(Receive Customer Order) --> 2:task:(Pick Items from Stock)
+2:task:(Pick Items from Stock) --> 3:task:(Pack Items into Parcels)
+3:task:(Pack Items into Parcels) --> 4:task:(Weigh Parcels)
+4:task:(Weigh Parcels) --> 5:task:(Print Shipping Labels)
+5:task:(Print Shipping Labels) --> 6:parallelgateway:{AND}
+6:parallelgateway:{AND} --> 7:task:(Move Parcels to Loading Dock)
+6:parallelgateway:{AND} --> 8:task:(Check Number of Parcels)
+6:parallelgateway:{AND} --> 9:task:(Inspect Packing Quality)
+7:task:(Move Parcels to Loading Dock) --> 10:parallelgateway:{AND}
+8:task:(Check Number of Parcels) --> 10:parallelgateway:{AND}
+9:task:(Inspect Packing Quality) --> 10:parallelgateway:{AND}
+10:parallelgateway:{AND} --> 11:parallelgateway:{AND}
+11:parallelgateway:{AND} --> 12:task:(Load Parcels onto Truck)
+11:parallelgateway:{AND} --> 15:task:(Update Order Status)
+12:task:(Load Parcels onto Truck) --> 13:task:(Send Delivery Instructions to Transporter)
+13:task:(Send Delivery Instructions to Transporter) --> 14:parallelgateway:{AND}
+15:task:(Update Order Status) --> 16:task:(Adjust Stock Levels)
+16:task:(Adjust Stock Levels) --> 14:parallelgateway:{AND}
+14:parallelgateway:{AND} --> 17:parallelgateway:{AND}
+17:parallelgateway:{AND} --> 18:endevent:(((endevent)))

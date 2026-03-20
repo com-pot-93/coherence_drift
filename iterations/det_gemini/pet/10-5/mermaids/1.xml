@@ -1,0 +1,8 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(The MPON requests a device takeover bid of the MPOO)
+  1:task:(The MPON requests a device takeover bid of the MPOO) --> 2:task:(The MPOO sends a tender for the equipment takeover to the MPON)
+  2:task:(The MPOO sends a tender for the equipment takeover to the MPON) --> 3:task:(The MPON places an order at the MPOO)
+  3:task:(The MPON places an order at the MPOO) --> 4:task:(The MPOO confirms the order of the MPON and sends the master data)
+  4:task:(The MPOO confirms the order of the MPON and sends the master data) --> 5:endevent:(((endevent)))
+```

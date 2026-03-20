@@ -1,0 +1,25 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Receive customer request)
+  1:task:(Receive customer request) --> 2:task:(Check customer request)
+  2:task:(Check customer request) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |yes| 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |yes| 5:task:(Manual registration)
+  5:task:(Manual registration) --> 8:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |no| 6:task:(Automatic registration)
+  6:task:(Automatic registration) --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> 9:task:(Search for attraction provider)
+  9:task:(Search for attraction provider) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |yes| 11:task:(Book attraction)
+  11:task:(Book attraction) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> |yes| 13:task:(Receive rejection)
+  13:task:(Receive rejection) --> 15:task:(Send confirmation to the customer)
+  12:exclusivegateway:{x} --> |no| 14:task:(Receive booking confirmation)
+  14:task:(Receive booking confirmation) --> 15:task:(Send confirmation to the customer)
+  15:task:(Send confirmation to the customer) --> 16:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |no| 16:exclusivegateway:{x}
+  16:exclusivegateway:{x} --> |true| 9:task:(Search for attraction provider)
+  3:exclusivegateway:{x} --> |no| 7:task:(Send notification to the customer)
+  7:task:(Send notification to the customer) --> 17:endevent:(((endevent)))
+  16:exclusivegateway:{x} --> 17:endevent:(((endevent)))
+```

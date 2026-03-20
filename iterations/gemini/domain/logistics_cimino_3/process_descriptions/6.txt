@@ -1,0 +1,7 @@
+The process starts. Then, two activities occur in parallel: "Package Goods" and "Select Kind of Shipment". After packaging the goods, the process continues after both activities are completed.
+
+If quotes are requested, the process proceeds to "Request Quotes from Carriers", then "Assign Carrier". Otherwise, if quotes are not requested, the process proceeds to "Fill in Post Label", then "Check Insurance". After either assigning a carrier or checking insurance, the process continues.
+
+If extra insurance is needed, the process proceeds to "Take out Extra Insurance". Otherwise, the process skips this step. After either taking out extra insurance or skipping this step, the process proceeds to "Prepare Paperwork".
+
+After preparing the paperwork and packaging the goods, the process continues after both activities are completed. The process proceeds to "Add Paperwork", then "Move Package to Pickup Area", and finally ends.

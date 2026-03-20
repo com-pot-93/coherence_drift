@@ -1,0 +1,37 @@
+Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when a customized airplane order is received.
+2. The order is then processed.
+3. After processing the order, two activities happen at the same time:
+   - The base model of the airplane is built.
+   - The customization requirements are transmitted.
+4. Once both the base model is built and the customization requirements are transmitted, the process continues to a check of the first condition.
+5. If the first condition is met, the process moves forward. If not, a second condition is checked.
+6. If the second condition is not met, the process continues. If the second condition is met, a third condition is checked.
+7. If the third condition is not met, the process continues. If the third condition is met, the process waits for 14 days.
+8. After waiting 14 days, the outcome is evaluated.
+9. If the desired outcome is achieved, the process continues. If not, the process moves to a series of reminders and escalations:
+   - A reminder is sent to the team.
+   - The issue is escalated.
+   - The process waits another 14 days.
+   - The outcome is evaluated again.
+   - If the outcome is still not achieved, the reminder and escalation cycle repeats.
+   - If the outcome is achieved at any point, the process continues.
+10. Once the outcome is achieved, customized parts are installed.
+11. After installing the customized parts, the process checks if further reminders and escalations are needed:
+    - If necessary, the reminder and escalation cycle (reminder, escalation, wait 14 days, evaluate outcome) repeats until the outcome is achieved.
+12. Once the outcome is achieved, the process waits another 14 days.
+13. After this waiting period, the outcome is evaluated again.
+14. If the outcome is not achieved, the reminder and escalation cycle (reminder, escalation, wait 14 days, evaluate outcome) repeats until the outcome is achieved.
+15. Once the outcome is achieved, the engines and risk factors are checked.
+16. If further reminders and escalations are needed after checking engines and risk factors, the reminder and escalation cycle (reminder, escalation, wait 14 days, evaluate outcome) repeats until the outcome is achieved.
+17. Once all checks and outcomes are achieved, the process prepares for a test flight.
+18. The test flight protocol is received.
+19. The protocol is forwarded to the customer.
+20. The shipping method is determined:
+    - If standard shipping is chosen, the airplane is shipped via standard shipping.
+    - If premium shipping is chosen, the airplane is shipped via premium shipping.
+21. After shipping, an email confirmation is received.
+22. The process ends.
+
+This description follows the exact sequence and logic of the process as depicted in your model, including all checks, waiting periods, reminders, escalations, and decision points.

@@ -1,0 +1,1 @@
+First, a task with the id a1211 and the label "Create list of necessary parts" occurs. Then a task with the id a1212 and the label "Query Webshops fo" occurs, and the process ends.

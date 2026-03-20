@@ -1,0 +1,84 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:parallelgateway:{AND}
+  1:parallelgateway:{AND} --> 2:task:(Add "profiling about logic involved, significance and envisaged consequences of processing")
+  1:parallelgateway:{AND} --> 3:task:(Check if it is possible to determine the period for which personal data will be stored)
+  3:task:(Check if it is possible to determine the period for which personal data will be stored) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |condition1| 5:task:(Retrieve the period)
+  5:task:(Retrieve the period) --> 6:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |condition2| 7:task:(Retrieve the criteria used to determine the period)
+  7:task:(Retrieve the criteria used to determine the period) --> 6:exclusivegateway:{x}
+  1:parallelgateway:{AND} --> 8:task:(Add "existence of the right to rectify of personal data")
+  1:parallelgateway:{AND} --> 9:task:(Add "existence of the right to access personal data")
+  1:parallelgateway:{AND} --> 10:task:(Add "existence of the right to erase personal data")
+  1:parallelgateway:{AND} --> 11:task:(Add "existence of the right to data portability")
+  1:parallelgateway:{AND} --> 12:task:(Add "existence of the right to withdraw")
+  1:parallelgateway:{AND} --> 13:task:(Add "existence of the right to lodge a complaint to a supervisory authority")
+  1:parallelgateway:{AND} --> 14:task:(Check if data has been obtained from Data Subject)
+  14:task:(Check if data has been obtained from Data Subject) --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |condition1| 16:task:(Retrieve the source from which personal data are originated)
+  16:task:(Retrieve the source from which personal data are originated) --> 17:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |condition2| 18:task:(Retrieve the criteria used to determine the period)
+  18:task:(Retrieve the criteria used to determine the period) --> 17:exclusivegateway:{x}
+  1:parallelgateway:{AND} --> 19:task:(Check if personal data can be transferred internationally)
+  19:task:(Check if personal data can be transferred internationally) --> 20:exclusivegateway:{x}
+  20:exclusivegateway:{x} --> |condition1| 21:task:(Add "personal data will be transferred internationally")
+  21:task:(Add "personal data will be transferred internationally") --> 22:exclusivegateway:{x}
+  20:exclusivegateway:{x} --> |condition2| 23:task:(Add "personal data will be transferred internationally")
+  23:task:(Add "personal data will be transferred internationally") --> 22:exclusivegateway:{x}
+  1:parallelgateway:{AND} --> 24:task:(Check if recipients are present)
+  24:task:(Check if recipients are present) --> 25:exclusivegateway:{x}
+  25:exclusivegateway:{x} --> |condition1| 26:task:(Retrieve recipients)
+  26:task:(Retrieve recipients) --> 27:exclusivegateway:{x}
+  25:exclusivegateway:{x} --> |condition2| 28:task:(Retrieve recipients)
+  28:task:(Retrieve recipients) --> 27:exclusivegateway:{x}
+  1:parallelgateway:{AND} --> 29:task:(Check if legitimate interests are presents)
+  29:task:(Check if legitimate interests are presents) --> 30:exclusivegateway:{x}
+  30:exclusivegateway:{x} --> |condition1| 31:task:(Retrieve legitimate interests)
+  31:task:(Retrieve legitimate interests) --> 32:exclusivegateway:{x}
+  30:exclusivegateway:{x} --> |condition2| 33:task:(Retrieve legitimate interests)
+  33:task:(Retrieve legitimate interests) --> 32:exclusivegateway:{x}
+  1:parallelgateway:{AND} --> 34:task:(Retrieve processing legal basis)
+  1:parallelgateway:{AND} --> 35:task:(Retrieve processing purposses)
+  1:parallelgateway:{AND} --> 36:parallelgateway:{AND}
+  36:parallelgateway:{AND} --> 37:task:(Retrieve identity and contact details)
+  36:parallelgateway:{AND} --> 38:task:(Ask DPO details)
+  38:task:(Ask DPO details) --> 39:task:(Receive details From DPO)
+  37:task:(Retrieve identity and contact details) --> 40:parallelgateway:{AND}
+  39:task:(Receive details From DPO) --> 40:parallelgateway:{AND}
+  6:exclusivegateway:{x} --> 41:parallelgateway:{AND}
+  17:exclusivegateway:{x} --> 41:parallelgateway:{AND}
+  22:exclusivegateway:{x} --> 41:parallelgateway:{AND}
+  27:exclusivegateway:{x} --> 41:parallelgateway:{AND}
+  32:exclusivegateway:{x} --> 41:parallelgateway:{AND}
+  40:parallelgateway:{AND} --> 41:parallelgateway:{AND}
+  41:parallelgateway:{AND} --> 42:task:(Collect consent information)
+  42:task:(Collect consent information) --> 43:task:(Ask consent)
+  43:task:(Ask consent) --> 44:exclusivegateway:{x}
+  44:exclusivegateway:{x} --> 45:exclusivegateway:{x}
+  45:exclusivegateway:{x} --> |condition1| 46:task:(Receive consent)
+  46:task:(Receive consent) --> 51:exclusivegateway:{x}
+  45:exclusivegateway:{x} --> |condition2| 47:task:(Receive negation)
+  47:task:(Receive negation) --> 51:exclusivegateway:{x}
+  44:exclusivegateway:{x} --> 48:exclusivegateway:{x}
+  48:exclusivegateway:{x} --> |condition1| 49:task:(Receive consent)
+  49:task:(Receive consent) --> 51:exclusivegateway:{x}
+  48:exclusivegateway:{x} --> |condition2| 50:task:(Receive negation)
+  50:task:(Receive negation) --> 51:exclusivegateway:{x}
+  44:exclusivegateway:{x} --> 52:exclusivegateway:{x}
+  52:exclusivegateway:{x} --> |condition1| 53:task:(Receive consent)
+  53:task:(Receive consent) --> 51:exclusivegateway:{x}
+  52:exclusivegateway:{x} --> |condition2| 54:task:(Receive negation)
+  54:task:(Receive negation) --> 51:exclusivegateway:{x}
+  44:exclusivegateway:{x} --> 55:exclusivegateway:{x}
+  55:exclusivegateway:{x} --> |condition1| 56:task:(Receive consent)
+  56:task:(Receive consent) --> 51:exclusivegateway:{x}
+  55:exclusivegateway:{x} --> |condition2| 57:task:(Receive negation)
+  57:task:(Receive negation) --> 51:exclusivegateway:{x}
+  44:exclusivegateway:{x} --> 58:exclusivegateway:{x}
+  58:exclusivegateway:{x} --> |condition1| 59:task:(Receive consent)
+  59:task:(Receive consent) --> 51:exclusivegateway:{x}
+  58:exclusivegateway:{x} --> |condition2| 60:task:(Receive negation)
+  60:task:(Receive negation) --> 51:exclusivegateway:{x}
+  51:exclusivegateway:{x} --> 61:endevent:(((endevent)))
+```

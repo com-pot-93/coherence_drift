@@ -1,0 +1,13 @@
+The process begins when a customer request is received. After receiving the request, the details of the request are checked.
+
+At this point, a decision is made about whether to continue with the process. If the decision is not to continue, the process activity ends immediately.
+
+If the process continues, another decision is made to determine how the registration should be handled. There are two possible paths: manual registration or automatic registration. If manual registration is chosen, the registration is completed manually. If automatic registration is chosen, the registration is completed automatically. After either type of registration, the process continues to the next step.
+
+Next, a decision is made about whether to search for an attraction provider. If the decision is not to search, a notification is sent to the customer, and the process moves towards completion.
+
+If the decision is to search for an attraction provider, the search is performed. After the search, another decision is made about whether to proceed with booking the attraction. If the decision is not to book, the process activity ends.
+
+If the decision is to book the attraction, the booking is attempted. After attempting the booking, a decision is made based on the outcome. If the booking is rejected, the rejection is received, and the process moves towards completion. If the booking is confirmed, the confirmation is received, and a confirmation is sent to the customer. After this, the process moves towards completion.
+
+Finally, the process ends.

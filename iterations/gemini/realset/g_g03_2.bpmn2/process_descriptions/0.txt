@@ -1,0 +1,5 @@
+The process starts when Battle.net is opened. Following this, a decision is made. If the decision leads down one path, account information is entered, and then a confirmation email is received and the link within is clicked. Alternatively, the decision may lead directly to the next step. After clicking the link or bypassing the account information entry, the user logs into Battle.net and then loads account information.
+
+Another decision is then made, leading to one of two paths. One path involves selecting a payment method, followed by another decision. Depending on the decision, either credit card information or IBAN and BIC are entered. After entering either of these, the process merges back together. Alternatively, the initial decision may lead directly to the merging point.
+
+Following this, the user logs into the game and loads in-game data and position. Then, realm, race, and class are selected in parallel. After all three selections are made, the character is named, and a confirmation and selfies are received, concluding the process.

@@ -1,0 +1,8 @@
+The process starts when an event occurs.
+First, the 'Notify MPOO of equipment change' task is performed.
+Then, a decision is made. If 'MPOO announces self-dismounting', the 'Notify MPON of self-dismount' task is performed.
+Otherwise, if there is 'No self-dismounting', the 'Notify MPON of absence of self-dismount' task is performed.
+After either of these tasks, the process continues to the 'Perform final reading' task.
+Following this, the 'Dismount old equipment' task is performed, and then the 'Mount new device' task.
+Next, the 'Read meter count' task is performed, followed by the 'Send final reading to GO' task.
+Finally, the 'Inform GO and MSP of required data' task is performed, and the process ends.

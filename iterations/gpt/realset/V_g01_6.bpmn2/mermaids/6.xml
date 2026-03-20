@@ -1,0 +1,67 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Ask customer: Burger or Menu?)
+2:exclusivegateway:{x}
+3:task:(Prepare Burger)
+4:parallelgateway:{AND}
+5:task:(Prepare Drink)
+6:task:(Ask: Wedges or Fries?)
+7:exclusivegateway:{x}
+8:task:(Prepare Fries)
+9:task:(Prepare Wedges)
+10:parallelgateway:{AND}
+11:task:(Check if update needed)
+12:exclusivegateway:{x}
+13:task:(Provide update to customer)
+14:exclusivegateway:{x}
+15:task:(Place order on conveyor)
+16:task:(Check if update needed after conveyor)
+17:exclusivegateway:{x}
+18:task:(Provide update after conveyor)
+19:exclusivegateway:{x}
+20:task:(Check if final update needed)
+21:exclusivegateway:{x}
+22:task:(Provide final update)
+23:task:(Check if escalation needed)
+24:exclusivegateway:{x}
+25:task:(Escalate situation)
+26:exclusivegateway:{x}
+27:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Ask customer: Burger or Menu?)
+1:task:(Ask customer: Burger or Menu?) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Burger only|3:task:(Prepare Burger)
+2:exclusivegateway:{x} --> |Menu|4:parallelgateway:{AND}
+4:parallelgateway:{AND} --> 5:task:(Prepare Drink)
+4:parallelgateway:{AND} --> 6:task:(Ask: Wedges or Fries?)
+5:task:(Prepare Drink) --> 10:parallelgateway:{AND}
+6:task:(Ask: Wedges or Fries?) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Fries|8:task:(Prepare Fries)
+7:exclusivegateway:{x} --> |Wedges|9:task:(Prepare Wedges)
+8:task:(Prepare Fries) --> 10:parallelgateway:{AND}
+9:task:(Prepare Wedges) --> 10:parallelgateway:{AND}
+10:parallelgateway:{AND} --> 3:task:(Prepare Burger)
+3:task:(Prepare Burger) --> 11:task:(Check if update needed)
+11:task:(Check if update needed) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Yes|13:task:(Provide update to customer)
+12:exclusivegateway:{x} --> |No|15:task:(Place order on conveyor)
+13:task:(Provide update to customer) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |More updates needed|11:task:(Check if update needed)
+14:exclusivegateway:{x} --> |No more updates|15:task:(Place order on conveyor)
+15:task:(Place order on conveyor) --> 16:task:(Check if update needed after conveyor)
+16:task:(Check if update needed after conveyor) --> 17:exclusivegateway:{x}
+17:exclusivegateway:{x} --> |Yes|18:task:(Provide update after conveyor)
+17:exclusivegateway:{x} --> |No|20:task:(Check if final update needed)
+18:task:(Provide update after conveyor) --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> |More updates needed|16:task:(Check if update needed after conveyor)
+19:exclusivegateway:{x} --> |No more updates|20:task:(Check if final update needed)
+20:task:(Check if final update needed) --> 21:exclusivegateway:{x}
+21:exclusivegateway:{x} --> |Yes|22:task:(Provide final update)
+21:exclusivegateway:{x} --> |No|27:endevent:(((endevent)))
+22:task:(Provide final update) --> 23:task:(Check if escalation needed)
+23:task:(Check if escalation needed) --> 24:exclusivegateway:{x}
+24:exclusivegateway:{x} --> |Escalation needed|25:task:(Escalate situation)
+24:exclusivegateway:{x} --> |No escalation|27:endevent:(((endevent)))
+25:task:(Escalate situation) --> 26:exclusivegateway:{x}
+26:exclusivegateway:{x} --> |Further escalation needed|23:task:(Check if escalation needed)
+26:exclusivegateway:{x} --> |No further escalation|27:endevent:(((endevent)))

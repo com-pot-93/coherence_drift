@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Employee purchases a product</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Employee submits an expense report with a list of items</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Employee submits an expense report with a list of items</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <call id="a7" endpoint="" a:alt_id="4">
+      <parameters>
+        <label>Supervisor reviews the expense report</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a9" endpoint="" a:alt_id="5">
+      <parameters>
+        <label>Supervisor approves the report</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <loop mode="pre_test" condition="true">
+      <choose mode="exclusive" a:alt_id="6">
+        <alternative condition="">
+          <choose mode="exclusive" a:alt_id="10">
+            <alternative condition="">
+              <call id="a33" endpoint="" a:alt_id="12">
+                <parameters>
+                  <label>Supervisor moves report to the treasurer</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a35" endpoint="" a:alt_id="13">
+                <parameters>
+                  <label>Treasurer checks receipts</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="14">
+                <alternative condition="">
+                  <call id="a39" endpoint="" a:alt_id="15">
+                    <parameters>
+                      <label>Treasurer matches the items on the list</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="16">
+                    <alternative condition="">
+                      <call id="a49" endpoint="" a:alt_id="18">
+                        <parameters>
+                          <label>Treasurer sends report back to the employee</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a51" endpoint="" a:alt_id="19">
+                        <parameters>
+                          <label>Employee edits the report</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a7" endpoint="" a:alt_id="4">
+                        <parameters>
+                          <label>Supervisor reviews the expense report</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a9" endpoint="" a:alt_id="5">
+                        <parameters>
+                          <label>Supervisor approves the report</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="">
+                      <call id="a55" endpoint="" a:alt_id="21">
+                        <parameters>
+                          <label>Treasurer accepts the expenses for processing</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="">
+                  <call id="a41" endpoint="" a:alt_id="22">
+                    <parameters>
+                      <label>Treasurer accepts the expenses for processing</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <escape a:alt_id="-1"/>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="">
+              <choose mode="exclusive" a:alt_id="23">
+                <alternative condition="">
+                  <call id="a61" endpoint="" a:alt_id="24">
+                    <parameters>
+                      <label>Treasurer matches the items on the list</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="25">
+                    <alternative condition="">
+                      <call id="a71" endpoint="" a:alt_id="27">
+                        <parameters>
+                          <label>Treasurer sends report back to the employee</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a73" endpoint="" a:alt_id="28">
+                        <parameters>
+                          <label>Employee edits the report</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a7" endpoint="" a:alt_id="4">
+                        <parameters>
+                          <label>Supervisor reviews the expense report</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a9" endpoint="" a:alt_id="5">
+                        <parameters>
+                          <label>Supervisor approves the report</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="">
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="">
+                  <call id="a63" endpoint="" a:alt_id="30">
+                    <parameters>
+                      <label>Treasurer accepts the expenses for processing</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a79" endpoint="" a:alt_id="31">
+                    <parameters>
+                      <label>Treasurer confirms the payment</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="32">
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                  </choose>
+                  <escape a:alt_id="-1"/>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="">
+          <call id="a101" endpoint="" a:alt_id="43">
+            <parameters>
+              <label>Employee edits the report</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a7" endpoint="" a:alt_id="4">
+            <parameters>
+              <label>Supervisor reviews the expense report</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a9" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Supervisor approves the report</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <call id="a19" endpoint="" a:alt_id="46">
+            <parameters>
+              <label>Employee edits the report</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a7" endpoint="" a:alt_id="4">
+            <parameters>
+              <label>Supervisor reviews the expense report</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a9" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Supervisor approves the report</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </loop>
+    <choose mode="exclusive" a:alt_id="7">
+      <alternative condition=""/>
+      <alternative condition=""/>
+    </choose>
+  </loop>
+</description>

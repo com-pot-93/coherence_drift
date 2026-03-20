@@ -1,0 +1,26 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Submit Office Supply Request)
+    1:task:(Submit Office Supply Request) --> 2:task:(Register Request)
+    2:task:(Register Request) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |Condition A Met| 4:exclusivegateway:{x}
+    3:exclusivegateway:{x} --> |Condition A Not Met| 22:endevent:(((endevent)))
+    4:exclusivegateway:{x} --> |Condition is True| 5:task:(Initiate Approval Process)
+    4:exclusivegateway:{x} --> |Condition is False| 22:endevent:(((endevent)))
+    5:task:(Initiate Approval Process) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |Request Not Approved| 7:task:(Review Comments)
+    6:exclusivegateway:{x} --> |Request Approved| 8:task:(Request Quotations)
+    7:task:(Review Comments) --> 5:task:(Initiate Approval Process)
+    8:task:(Request Quotations) --> 9:task:(Wait for Vendor Selection)
+    9:task:(Wait for Vendor Selection) --> 10:task:(Generate Purchase Order)
+    10:task:(Generate Purchase Order) --> 11:task:(Wait for Product Delivery)
+    11:task:(Wait for Product Delivery) --> 12:task:(Receive Invoice)
+    12:task:(Receive Invoice) --> 13:task:(Send Notification to User)
+    13:task:(Send Notification to User) --> 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> |Condition B Not Met| 15:task:(Trigger Escalation Event)
+    14:exclusivegateway:{x} --> |Condition B Met| 8:task:(Request Quotations)
+    15:task:(Trigger Escalation Event) --> 4:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |Request Not Approved| 16:task:(Trigger Escalation Event)
+    16:task:(Trigger Escalation Event) --> 2:task:(Register Request)
+    3:exclusivegateway:{x} --> |Condition A Met| 4:exclusivegateway:{x}
+```

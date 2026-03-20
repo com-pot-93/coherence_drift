@@ -1,0 +1,56 @@
+flowchart LR
+0:startevent:((startevent))
+1:exclusivegateway:{x}
+2:task:(Select Course)
+3:exclusivegateway:{x}
+4:task:(Show Available Dates)
+5:task:(Select Date)
+6:exclusivegateway:{x}
+7:task:(Log Into Account)
+8:task:(Provide Payment Information)
+9:task:(Complete Registration)
+10:parallelgateway:{AND}
+11:task:(Tweet Friends)
+12:task:(Receive Ticket)
+13:parallelgateway:{AND}
+14:endevent:(((endevent)))
+15:exclusivegateway:{x}
+16:exclusivegateway:{x}
+17:task:(Register for Course)
+18:task:(Check Registration Outcome)
+19:exclusivegateway:{x}
+20:task:(Send Activation Request)
+21:task:(Wait for Response)
+22:task:(Check Activation Outcome)
+23:exclusivegateway:{x}
+
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |Proceed|2:task:(Select Course)
+1:exclusivegateway:{x} --> |Do not proceed|14:endevent:(((endevent)))
+2:task:(Select Course) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Continue|4:task:(Show Available Dates)
+3:exclusivegateway:{x} --> |Do not continue|14:endevent:(((endevent)))
+4:task:(Show Available Dates) --> 5:task:(Select Date)
+5:task:(Select Date) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |No account|7:task:(Log Into Account)
+6:exclusivegateway:{x} --> |Has account|15:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Do not continue|14:endevent:(((endevent)))
+7:task:(Log Into Account) --> 8:task:(Provide Payment Information)
+8:task:(Provide Payment Information) --> 9:task:(Complete Registration)
+9:task:(Complete Registration) --> 10:parallelgateway:{AND}
+10:parallelgateway:{AND} --> 11:task:(Tweet Friends)
+10:parallelgateway:{AND} --> 12:task:(Receive Ticket)
+11:task:(Tweet Friends) --> 13:parallelgateway:{AND}
+12:task:(Receive Ticket) --> 13:parallelgateway:{AND}
+13:parallelgateway:{AND} --> 14:endevent:(((endevent)))
+15:exclusivegateway:{x} --> |Eligible university?|17:task:(Register for Course)
+15:exclusivegateway:{x} --> |Not eligible|20:task:(Send Activation Request)
+17:task:(Register for Course) --> 18:task:(Check Registration Outcome)
+18:task:(Check Registration Outcome) --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> |Success|9:task:(Complete Registration)
+19:exclusivegateway:{x} --> |Failure|14:endevent:(((endevent)))
+20:task:(Send Activation Request) --> 21:task:(Wait for Response)
+21:task:(Wait for Response) --> 22:task:(Check Activation Outcome)
+22:task:(Check Activation Outcome) --> 23:exclusivegateway:{x}
+23:exclusivegateway:{x} --> |Success|9:task:(Complete Registration)
+23:exclusivegateway:{x} --> |Failure|14:endevent:(((endevent)))

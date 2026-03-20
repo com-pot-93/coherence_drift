@@ -1,0 +1,35 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive data subject request)
+2:task:(Check if withdrawn data are relevant)
+3:exclusivegateway:{x}
+4:task:(Stop using withdrawn data)
+5:task:(Communicate the withdraw)
+6:exclusivegateway:{x}
+7:task:(Inform the user that the withdraw will stop all running BPs)
+8:task:(Receive the notification about continuation)
+9:exclusivegateway:{x}
+10:task:(Stop running BPs using withdrawn data)
+11:task:(Stop using withdrawn data)
+12:task:(Communicate the withdraw)
+13:exclusivegateway:{x}
+14:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive data subject request)
+1:task:(Receive data subject request) --> 2:task:(Check if withdrawn data are relevant)
+2:task:(Check if withdrawn data are relevant) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Data relevant|4:task:(Stop using withdrawn data)
+3:exclusivegateway:{x} --> |Data not relevant|6:exclusivegateway:{x}
+4:task:(Stop using withdrawn data) --> 5:task:(Communicate the withdraw)
+5:task:(Communicate the withdraw) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> 14:endevent:(((endevent)))
+6:exclusivegateway:{x} --> 7:task:(Inform the user that the withdraw will stop all running BPs)
+7:task:(Inform the user that the withdraw will stop all running BPs) --> 8:task:(Receive the notification about continuation)
+8:task:(Receive the notification about continuation) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Continue|10:task:(Stop running BPs using withdrawn data)
+9:exclusivegateway:{x} --> |Do not continue|13:exclusivegateway:{x}
+10:task:(Stop running BPs using withdrawn data) --> 11:task:(Stop using withdrawn data)
+11:task:(Stop using withdrawn data) --> 12:task:(Communicate the withdraw)
+12:task:(Communicate the withdraw) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> 6:exclusivegateway:{x}
+13:exclusivegateway:{x} --> 6:exclusivegateway:{x}

@@ -1,0 +1,26 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Connect to the managment system)
+  2:task:(Register the product in the management system)
+  3:exclusivegateway:{x}
+  4:parallelgateway:{AND}
+  5:task:(Pack the product)
+  6:task:(Request a courier)
+  7:parallelgateway:{AND}
+  8:task:(Ship the delivery)
+  9:task:(Read order from system)
+  10:exclusivegateway:{x}
+  11:endevent:(((endevent)))
+  0:startevent:((startevent)) --> 1:task:(Connect to the managment system)
+  1:task:(Connect to the managment system) --> 2:task:(Register the product in the management system)
+  2:task:(Register the product in the management system) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |not true|4:parallelgateway:{AND}
+  3:exclusivegateway:{x} --> |true|9:task:(Read order from system)
+  4:parallelgateway:{AND} --> 5:task:(Pack the product)
+  4:parallelgateway:{AND} --> 6:task:(Request a courier)
+  5:task:(Pack the product) --> 7:parallelgateway:{AND}
+  6:task:(Request a courier) --> 7:parallelgateway:{AND}
+  7:parallelgateway:{AND} --> 8:task:(Ship the delivery)
+  8:task:(Ship the delivery) --> 10:exclusivegateway:{x}
+  9:task:(Read order from system) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> 11:endevent:(((endevent)))

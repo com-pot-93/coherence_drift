@@ -1,0 +1,51 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Customized Airplane Order)
+2:task:(Process Order)
+3:parallelgateway:{AND}
+4:task:(Build Base Model)
+5:task:(Transmit Customization Requirements)
+6:parallelgateway:{AND}
+7:exclusivegateway:{x}
+8:task:(Wait 14 Days)
+9:exclusivegateway:{x}
+10:task:(Send Reminder to Responsible Team)
+11:task:(Escalate Issue)
+12:task:(Install Customized Parts)
+13:task:(Check Engines and Risk Factors)
+14:task:(Prepare for Test Flight)
+15:task:(Receive Test Flight Protocol)
+16:task:(Forward Protocol to Customer)
+17:exclusivegateway:{x}
+18:task:(Ship via Standard Shipping)
+19:task:(Ship via Premium Shipping)
+20:exclusivegateway:{x}
+21:task:(Receive Email Confirmation)
+22:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Customized Airplane Order)
+1:task:(Receive Customized Airplane Order) --> 2:task:(Process Order)
+2:task:(Process Order) --> 3:parallelgateway:{AND}
+3:parallelgateway:{AND} --> 4:task:(Build Base Model)
+3:parallelgateway:{AND} --> 5:task:(Transmit Customization Requirements)
+4:task:(Build Base Model) --> 6:parallelgateway:{AND}
+5:task:(Transmit Customization Requirements) --> 6:parallelgateway:{AND}
+6:parallelgateway:{AND} --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Condition met|12:task:(Install Customized Parts)
+7:exclusivegateway:{x} --> |Condition not met|8:task:(Wait 14 Days)
+8:task:(Wait 14 Days) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Outcome achieved|12:task:(Install Customized Parts)
+9:exclusivegateway:{x} --> |Outcome not achieved|10:task:(Send Reminder to Responsible Team)
+10:task:(Send Reminder to Responsible Team) --> 11:task:(Escalate Issue)
+11:task:(Escalate Issue) --> 8:task:(Wait 14 Days)
+12:task:(Install Customized Parts) --> 13:task:(Check Engines and Risk Factors)
+13:task:(Check Engines and Risk Factors) --> 14:task:(Prepare for Test Flight)
+14:task:(Prepare for Test Flight) --> 15:task:(Receive Test Flight Protocol)
+15:task:(Receive Test Flight Protocol) --> 16:task:(Forward Protocol to Customer)
+16:task:(Forward Protocol to Customer) --> 17:exclusivegateway:{x}
+17:exclusivegateway:{x} --> |Standard Shipping|18:task:(Ship via Standard Shipping)
+17:exclusivegateway:{x} --> |Premium Shipping|19:task:(Ship via Premium Shipping)
+18:task:(Ship via Standard Shipping) --> 20:exclusivegateway:{x}
+19:task:(Ship via Premium Shipping) --> 20:exclusivegateway:{x}
+20:exclusivegateway:{x} --> 21:task:(Receive Email Confirmation)
+21:task:(Receive Email Confirmation) --> 22:endevent:(((endevent)))

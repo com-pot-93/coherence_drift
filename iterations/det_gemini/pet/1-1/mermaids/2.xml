@@ -1,0 +1,117 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(sales department receives an order)
+    1:task:(sales department receives an order) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |Accept| 3:task:(sales department accepts the bike order)
+    2:exclusivegateway:{x} --> |Reject| 4:task:(sales department rejects the bike order)
+    3:task:(sales department accepts the bike order) --> 5:task:(sales department informs the storehouse)
+    5:task:(sales department informs the storehouse) --> 6:task:(sales department informs the engineering department)
+    6:task:(sales department informs the engineering department) --> 7:parallelgateway:{AND}
+    7:parallelgateway:{AND} --> 8:task:(storehouse processes the part list)
+    8:task:(storehouse processes the part list) --> 9:task:(storehouse checks the quantity of parts)
+    9:task:(storehouse checks the quantity of parts) --> 10:exclusivegateway:{x}
+    10:exclusivegateway:{x} --> 11:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> 12:task:(storehouse reserves the part)
+    11:exclusivegateway:{x} --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    13:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    14:task:(storehouse processes the part list) --> 9:task:(storehouse checks the quantity of parts)
+    12:task:(storehouse reserves the part) --> 15:exclusivegateway:{x}
+    15:exclusivegateway:{x} --> 16:exclusivegateway:{x}
+    16:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    16:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    10:exclusivegateway:{x} --> 17:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> 18:task:(storehouse reserves the part)
+    17:exclusivegateway:{x} --> 19:task:(storehouse back-orders the part)
+    19:task:(storehouse back-orders the part) --> 20:exclusivegateway:{x}
+    20:exclusivegateway:{x} --> 21:exclusivegateway:{x}
+    21:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    21:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    20:exclusivegateway:{x} --> 22:exclusivegateway:{x}
+    22:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    22:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    18:task:(storehouse reserves the part) --> 23:exclusivegateway:{x}
+    23:exclusivegateway:{x} --> 24:exclusivegateway:{x}
+    24:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    24:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    23:exclusivegateway:{x} --> 25:exclusivegateway:{x}
+    25:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    25:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    10:exclusivegateway:{x} --> 26:task:(storehouse reserves the part)
+    26:task:(storehouse reserves the part) --> 27:exclusivegateway:{x}
+    27:exclusivegateway:{x} --> 28:exclusivegateway:{x}
+    28:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    28:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    27:exclusivegateway:{x} --> 29:exclusivegateway:{x}
+    29:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    29:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    10:exclusivegateway:{x} --> 30:exclusivegateway:{x}
+    30:exclusivegateway:{x} --> 31:task:(storehouse reserves the part)
+    31:task:(storehouse reserves the part) --> 32:exclusivegateway:{x}
+    32:exclusivegateway:{x} --> 33:exclusivegateway:{x}
+    33:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    33:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    32:exclusivegateway:{x} --> 34:exclusivegateway:{x}
+    34:exclusivegateway:{x} --> 35:task:(storehouse reserves the part)
+    35:task:(storehouse reserves the part) --> 36:exclusivegateway:{x}
+    36:exclusivegateway:{x} --> 37:exclusivegateway:{x}
+    37:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    37:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    36:exclusivegateway:{x} --> 38:exclusivegateway:{x}
+    38:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    38:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    34:exclusivegateway:{x} --> 39:exclusivegateway:{x}
+    39:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    39:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    30:exclusivegateway:{x} --> 40:exclusivegateway:{x}
+    40:exclusivegateway:{x} --> 41:task:(storehouse back-orders the part)
+    41:task:(storehouse back-orders the part) --> 42:exclusivegateway:{x}
+    42:exclusivegateway:{x} --> 43:exclusivegateway:{x}
+    43:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    43:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    42:exclusivegateway:{x} --> 44:exclusivegateway:{x}
+    44:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    44:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    40:exclusivegateway:{x} --> 45:exclusivegateway:{x}
+    45:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    45:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    10:exclusivegateway:{x} --> 46:task:(storehouse back-orders the part)
+    46:task:(storehouse back-orders the part) --> 47:exclusivegateway:{x}
+    47:exclusivegateway:{x} --> 48:exclusivegateway:{x}
+    48:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    48:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    47:exclusivegateway:{x} --> 49:exclusivegateway:{x}
+    49:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    49:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    10:exclusivegateway:{x} --> 50:exclusivegateway:{x}
+    50:exclusivegateway:{x} --> 51:task:(storehouse back-orders the part)
+    51:task:(storehouse back-orders the part) --> 52:exclusivegateway:{x}
+    52:exclusivegateway:{x} --> 53:exclusivegateway:{x}
+    53:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    53:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    52:exclusivegateway:{x} --> 54:exclusivegateway:{x}
+    54:exclusivegateway:{x} --> 55:task:(storehouse back-orders the part)
+    55:task:(storehouse back-orders the part) --> 56:exclusivegateway:{x}
+    56:exclusivegateway:{x} --> 57:exclusivegateway:{x}
+    57:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    57:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    56:exclusivegateway:{x} --> 58:exclusivegateway:{x}
+    58:exclusivegateway:{x} --> 59:task:(storehouse back-orders the part)
+    59:task:(storehouse back-orders the part) --> 60:exclusivegateway:{x}
+    60:exclusivegateway:{x} --> 61:exclusivegateway:{x}
+    61:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    61:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    58:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    58:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    54:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    54:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    50:exclusivegateway:{x} --> |true| 14:task:(storehouse processes the part list)
+    50:exclusivegateway:{x} --> 9:task:(storehouse checks the quantity of parts)
+    7:parallelgateway:{AND} --> 66:task:(engineering department prepares for the bike assembling)
+    66:task:(engineering department prepares for the bike assembling) --> 67:parallelgateway:{AND}
+    67:parallelgateway:{AND} --> 68:task:(engineering department assembles the bicycle)
+    68:task:(engineering department assembles the bicycle) --> 69:task:(sales department ships the bicycle)
+    69:task:(sales department ships the bicycle) --> 70:endevent:(((endevent)))
+    4:task:(sales department rejects the bike order) --> 70:endevent:(((endevent)))
+    67:parallelgateway:{AND} --> 70:endevent:(((endevent)))
+```

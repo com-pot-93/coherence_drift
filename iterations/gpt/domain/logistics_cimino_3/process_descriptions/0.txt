@@ -1,0 +1,13 @@
+The process begins when a shipment request is received. Once the request is received, two activities are started at the same time:
+
+1. The goods are packaged.
+2. The kind of shipment is selected.
+
+While the goods are being packaged, the selection of the shipment type proceeds in parallel. After the kind of shipment is chosen, the process continues with one of two possible paths, depending on the type selected:
+
+- If a carrier shipment is chosen, quotes are requested from carriers. After receiving the quotes, a carrier is assigned, and then the necessary paperwork is prepared.
+- If a postal shipment is chosen, a post label is filled in. After that, insurance is checked. If extra insurance is needed, it is taken out; otherwise, the process continues without this step.
+
+Both paths eventually lead to the completion of the paperwork. Once the paperwork is ready and the goods have been packaged, these two streams come together. The paperwork is then added to the package.
+
+After the paperwork is added, the package is moved to the pickup area. The process ends once the package has been moved to the pickup area.

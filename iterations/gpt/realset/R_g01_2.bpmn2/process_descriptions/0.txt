@@ -1,0 +1,29 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins.
+2. First, the manufacturer of the device is entered.
+3. Next, the model of the device is entered.
+4. After entering the model, a decision is made. If the process continues, another decision is made immediately.
+5. If the outcome of this second decision is positive, the broken part is entered.
+6. After entering the broken part, another decision is made. If the outcome is positive, the process loops back to entering the broken part.
+7. If the process continues, two activities are carried out at the same time:  
+   - The list of required parts is determined.
+   - The necessary tools are identified.
+8. Once both the parts list and the tools list are ready, the next step is to check these lists against your own inventory of tools and screws.
+9. After checking your inventory, a decision is made. If the process continues, another decision is made immediately.
+10. At this point, another decision is made. If you need additional help, you contact a friend.
+11. After contacting a friend, the process continues to the next step.
+12. The next step is to obtain everything else that is needed.
+13. Once all items are gathered, the process continues to generating instructions for the repair.
+14. After the instructions are generated, a decision is made. If the process continues, another decision is made immediately.
+15. If the outcome is positive, you follow the instructions to fix the device.
+16. After following the instructions, a decision is made. If the outcome is positive, you repeat the step of following the instructions.
+17. If the process continues, another decision is made. If you are unable to proceed, you send the phone to an expert.
+18. After sending the phone to an expert, the process continues.
+19. Alternatively, you may leave a review.
+20. After leaving a review, you may choose to upload a video.
+21. If you upload a video, the video is saved to a database.
+22. The process then continues.
+23. The process eventually reaches its end.
+
+Throughout the process, there are several points where the process may loop back to earlier steps, particularly after entering the broken part or after following the instructions, allowing for repeated attempts or corrections as needed. The process also allows for escalation to an expert if the repair cannot be completed, and provides options for sharing feedback and documentation after the repair is attempted.

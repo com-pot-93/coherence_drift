@@ -1,0 +1,63 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:parallelgateway:{AND}
+  2:task:(Check if baby is younger than two years)
+  3:task:(Identify parent)
+  4:parallelgateway:{AND}
+  5:exclusivegateway:{x}
+  6:task:(Send notification to employer)
+  7:task:(Wait for employer confirmation)
+  8:task:(Parent takes maternity leave)
+  9:exclusivegateway:{x}
+  10:exclusivegateway:{x}
+  11:task:(Send notification to employer for split leave <2 months)
+  12:task:(Receive notification from employer for split leave <2 months)
+  13:task:(Take maternity leave again after split <2 months)
+  14:task:(Send notification to employer for split leave >3 months)
+  15:task:(Receive notification from employer for split leave >3 months)
+  16:task:(Take maternity leave again after split >3 months)
+  17:exclusivegateway:{x}
+  18:task:(Send notification to employer for extension <2 months)
+  19:task:(Receive notification from employer for extension <2 months)
+  20:task:(Take maternity leave again after extension <2 months)
+  21:task:(Send notification to employer for extension >3 months)
+  22:task:(Receive notification from employer for extension >3 months)
+  23:task:(Take maternity leave again after extension >3 months)
+  24:task:(Both parents take maternity leave)
+  25:parallelgateway:{AND}
+  26:exclusivegateway:{x}
+  27:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:parallelgateway:{AND}
+  1:parallelgateway:{AND} --> 2:task:(Check if baby is younger than two years)
+  1:parallelgateway:{AND} --> 3:task:(Identify parent)
+  2:task:(Check if baby is younger than two years) --> 4:parallelgateway:{AND}
+  3:task:(Identify parent) --> 4:parallelgateway:{AND}
+  4:parallelgateway:{AND} --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Self-employed/studying/housewife/man|26:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Employed|6:task:(Send notification to employer)
+  6:task:(Send notification to employer) --> 7:task:(Wait for employer confirmation)
+  7:task:(Wait for employer confirmation) --> 8:task:(Parent takes maternity leave)
+  8:task:(Parent takes maternity leave) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Split maternity leave|10:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Extend maternity leave|17:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Both parents take leave|24:task:(Both parents take maternity leave)
+  10:exclusivegateway:{x} --> |<2 months|11:task:(Send notification to employer for split leave <2 months)
+  10:exclusivegateway:{x} --> |>3 months|14:task:(Send notification to employer for split leave >3 months)
+  11:task:(Send notification to employer for split leave <2 months) --> 12:task:(Receive notification from employer for split leave <2 months)
+  12:task:(Receive notification from employer for split leave <2 months) --> 13:task:(Take maternity leave again after split <2 months)
+  13:task:(Take maternity leave again after split <2 months) --> 25:parallelgateway:{AND}
+  14:task:(Send notification to employer for split leave >3 months) --> 15:task:(Receive notification from employer for split leave >3 months)
+  15:task:(Receive notification from employer for split leave >3 months) --> 16:task:(Take maternity leave again after split >3 months)
+  16:task:(Take maternity leave again after split >3 months) --> 25:parallelgateway:{AND}
+  17:exclusivegateway:{x} --> |<2 months|18:task:(Send notification to employer for extension <2 months)
+  17:exclusivegateway:{x} --> |>3 months|21:task:(Send notification to employer for extension >3 months)
+  18:task:(Send notification to employer for extension <2 months) --> 19:task:(Receive notification from employer for extension <2 months)
+  19:task:(Receive notification from employer for extension <2 months) --> 20:task:(Take maternity leave again after extension <2 months)
+  20:task:(Take maternity leave again after extension <2 months) --> 25:parallelgateway:{AND}
+  21:task:(Send notification to employer for extension >3 months) --> 22:task:(Receive notification from employer for extension >3 months)
+  22:task:(Receive notification from employer for extension >3 months) --> 23:task:(Take maternity leave again after extension >3 months)
+  23:task:(Take maternity leave again after extension >3 months) --> 25:parallelgateway:{AND}
+  24:task:(Both parents take maternity leave) --> 25:parallelgateway:{AND}
+  25:parallelgateway:{AND} --> 26:exclusivegateway:{x}
+  26:exclusivegateway:{x} --> |Process complete|27:endevent:(((endevent)))

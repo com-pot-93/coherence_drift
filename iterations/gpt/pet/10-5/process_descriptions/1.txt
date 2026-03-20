@@ -1,0 +1,1 @@
+The process begins when MPON asks MPOO to submit a bid. After receiving this request, MPOO sends a tender to MPON. Once MPON receives the tender, MPON places an order with MPOO. Following this, MPOO confirms the order and provides the necessary master data. The process ends after MPOO has confirmed the order and supplied the master data.

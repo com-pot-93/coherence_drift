@@ -1,0 +1,37 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Manager checks the open leads)
+  1:task:(Manager checks the open leads) --> 2:task:(Manager selects the top five leads)
+  2:task:(Manager selects the top five leads) --> 3:task:(Manager tells Sales Assistant to contact the leads)
+  3:task:(Manager tells Sales Assistant to contact the leads) --> 4:task:(Sales Assistant calls customer)
+  4:task:(Sales Assistant calls customer) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |yes| 6:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |no| 18:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |yes| 7:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |no| 10:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |yes| 8:task:(Sales Assistant sends a note to the Manager)
+  7:exclusivegateway:{x} --> |no| 9:task:(Sales Assistant sends a note to the Manager)
+  8:task:(Sales Assistant sends a note to the Manager) --> 28:exclusivegateway:{x}
+  9:task:(Sales Assistant sends a note to the Manager) --> 28:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |yes| 11:task:(Sales Assistant sends a note to the Manager)
+  10:exclusivegateway:{x} --> |no| 12:task:(Sales Assistant sends a note to the Manager)
+  11:task:(Sales Assistant sends a note to the Manager) --> 28:exclusivegateway:{x}
+  12:task:(Sales Assistant sends a note to the Manager) --> 28:exclusivegateway:{x}
+  18:exclusivegateway:{x} --> |yes| 19:exclusivegateway:{x}
+  18:exclusivegateway:{x} --> |no| 22:exclusivegateway:{x}
+  19:exclusivegateway:{x} --> |yes| 20:exclusivegateway:{x}
+  19:exclusivegateway:{x} --> |no| 21:task:(Sales Assistant sends a note to the Manager)
+  20:exclusivegateway:{x} --> |yes| 23:task:(Sales Assistant sends a note to the Manager)
+  20:exclusivegateway:{x} --> |no| 23:task:(Sales Assistant sends a note to the Manager)
+  21:task:(Sales Assistant sends a note to the Manager) --> 28:exclusivegateway:{x}
+  22:exclusivegateway:{x} --> |yes| 23:task:(Sales Assistant sends a note to the Manager)
+  22:exclusivegateway:{x} --> |no| 23:task:(Sales Assistant sends a note to the Manager)
+  23:task:(Sales Assistant sends a note to the Manager) --> 28:exclusivegateway:{x}
+  28:exclusivegateway:{x} --> |yes| 29:task:(Sales Assistant sends a note to the Manager)
+  28:exclusivegateway:{x} --> |no| 30:task:(Sales Assistant sends a note to the Manager)
+  29:task:(Sales Assistant sends a note to the Manager) --> 31:exclusivegateway:{x}
+  30:task:(Sales Assistant sends a note to the Manager) --> 31:exclusivegateway:{x}
+  31:exclusivegateway:{x} --> |true| 32:task:(Sales Assistant calls customer)
+  31:exclusivegateway:{x} --> |false| 33:endevent:(((endevent)))
+  32:task:(Sales Assistant calls customer) --> 33:endevent:(((endevent)))
+```

@@ -1,0 +1,43 @@
+The process starts with registering a claim. Then, a decision is made, and if the answer is "No", the decision is repeated. If the answer is "true", the claim is examined. Following the examination, another decision is made. If the first decision is true, two tasks, "Task in Path A" and "Task in Path B", are performed in parallel.
+
+After "Task in Path A", a decision is made. If the answer is "Yes", a settlement recommendation is written, then the recommendation is checked, and the claim is marked. Following this, a decision is made, which is repeated. If the answer is "No", the process continues. If the answer is "Yes", the settlement recommendation is written, then the recommendation is checked, and the claim is marked. Following this, a decision is made, which is repeated. If the answer is "No", the process continues.
+
+If the first decision after "Task in Path A" is "No", the process continues.
+
+After "Task in Path B", a decision is made. If the answer is "Yes", a settlement recommendation is written, then the recommendation is checked, and the claim is marked. Following this, a decision is made, which is repeated. If the answer is "No", the process continues. If the answer is "Yes", the settlement recommendation is written, then the recommendation is checked, and the claim is marked. Following this, a decision is made, which is repeated. If the answer is "No", the process continues.
+
+If the first decision after "Task in Path B" is "No", the process continues.
+
+After both "Task in Path A" and "Task in Path B" are completed, the process continues.
+
+If the first decision after the examination is false, two tasks, "Task in Path A" and "Task in Path B", are performed in parallel.
+
+After "Task in Path A", a decision is made. If the answer is "Yes", a settlement recommendation is written, then the recommendation is checked, and the claim is marked. Following this, a decision is made, which is repeated. If the answer is "No", the process continues. If the answer is "Yes", the settlement recommendation is written, then the recommendation is checked, and the claim is marked. Following this, a decision is made, which is repeated. If the answer is "No", the process continues.
+
+If the first decision after "Task in Path A" is "No", the process continues.
+
+After "Task in Path B", a decision is made. If the answer is "Yes", a settlement recommendation is written, then the recommendation is checked, and the claim is marked. Following this, a decision is made, which is repeated. If the answer is "No", the process continues. If the answer is "Yes", the settlement recommendation is written, then the recommendation is checked, and the claim is marked. Following this, a decision is made, which is repeated. If the answer is "No", the process continues.
+
+If the first decision after "Task in Path B" is "No", the process continues.
+
+After both "Task in Path A" and "Task in Path B" are completed, the claim is handled.
+
+Following the handling of the claim, a decision is made. If the first decision is true, two tasks, "Task in Path C" and "Task in Path D", are performed in parallel.
+
+After "Task in Path C", a decision is made, which is repeated.
+
+After "Task in Path D", a decision is made, which is repeated.
+
+After both "Task in Path C" and "Task in Path D" are completed, the process continues.
+
+If the first decision after the handling of the claim is false, two tasks, "Task in Path C" and "Task in Path D", are performed in parallel.
+
+After "Task in Path C", a decision is made, which is repeated.
+
+After "Task in Path D", a decision is made, which is repeated.
+
+After both "Task in Path C" and "Task in Path D" are completed, the claim is escalated.
+
+After the escalation, a decision is made. If the answer is "true", the claim is examined again. If the answer is "true", the claim is escalated.
+
+The process ends.

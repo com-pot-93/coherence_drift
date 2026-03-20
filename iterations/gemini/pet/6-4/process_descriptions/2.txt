@@ -1,0 +1,13 @@
+The process starts. First, contact details are determined. Then, a decision is made based on how the contact was established. If the details were bought, the process continues. If the contact was made at an exhibition, the process continues. If the contact is a known person, an interested person is identified, and the process continues.
+
+After any of the previous paths, the customer is called, and the contact person is determined. Next, the budget is determined, and the customer's interest is assessed.
+
+Based on the assessment, there are two possible paths. In the first path, a decision is made between giving a sales representative presentation or a pre-sales employee presentation. After either presentation, the process waits for the customer.
+
+In the second path, a decision is made between giving a sales representative presentation or a pre-sales employee presentation.
+
+After either presentation in the second path, the process merges back with the first path after waiting for the customer.
+
+Following this merge, a decision is made whether a sales representative calls the customer or the sales representative calls the customer again.
+
+After either call, a quotation is created, and the process ends.

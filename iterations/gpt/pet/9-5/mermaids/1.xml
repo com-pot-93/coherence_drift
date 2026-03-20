@@ -1,0 +1,43 @@
+flowchart LR
+0:startevent:((startevent))
+1:exclusivegateway:{x}
+2:task:(Receive Expense Report)
+3:exclusivegateway:{x}
+4:task:(Create Employee Account)
+5:exclusivegateway:{x}
+6:task:(Review for Automatic Approval)
+7:exclusivegateway:{x}
+8:task:(Supervisor Reviews Report)
+9:exclusivegateway:{x}
+10:task:(Send Reimbursement)
+11:task:(Send Rejection Notice)
+12:task:(Automatic Approval)
+13:exclusivegateway:{x}
+14:task:(Send Cancellation Notice)
+15:task:(Prompt Resubmission)
+16:task:(Send Approval In Progress Email)
+17:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |Positive outcome|2:task:(Receive Expense Report)
+1:exclusivegateway:{x} --> |Negative outcome|17:endevent:(((endevent)))
+2:task:(Receive Expense Report) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Account needed|4:task:(Create Employee Account)
+3:exclusivegateway:{x} --> |No account needed|5:exclusivegateway:{x}
+4:task:(Create Employee Account) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> 6:task:(Review for Automatic Approval)
+6:task:(Review for Automatic Approval) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Not approved automatically|8:task:(Supervisor Reviews Report)
+7:exclusivegateway:{x} --> |Approved automatically|12:task:(Automatic Approval)
+8:task:(Supervisor Reviews Report) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Approved|10:task:(Send Reimbursement)
+9:exclusivegateway:{x} --> |Rejected|11:task:(Send Rejection Notice)
+10:task:(Send Reimbursement) --> 13:exclusivegateway:{x}
+11:task:(Send Rejection Notice) --> 13:exclusivegateway:{x}
+12:task:(Automatic Approval) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Stop process|14:task:(Send Cancellation Notice)
+13:exclusivegateway:{x} --> |Approval in progress|16:task:(Send Approval In Progress Email)
+13:exclusivegateway:{x} --> |Return to review|2:task:(Receive Expense Report)
+14:task:(Send Cancellation Notice) --> 15:task:(Prompt Resubmission)
+15:task:(Prompt Resubmission) --> 2:task:(Receive Expense Report)
+16:task:(Send Approval In Progress Email) --> 2:task:(Receive Expense Report)

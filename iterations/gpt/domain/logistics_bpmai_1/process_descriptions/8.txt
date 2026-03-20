@@ -1,0 +1,26 @@
+Here is a detailed, step-by-step description of the process as depicted in your model:
+
+1. The process begins when a shipment request is received.
+2. The next step is to check if the requested product is available.
+3. If the product is not available, the process moves directly towards completion.
+4. If the product is available, a further decision is required.
+5. This further decision leads to verifying the shipment address.
+6. After verifying the address, the shipment type is determined.
+7. If the shipment type cannot be determined, the shipment is confirmed to be sent to a service station.
+8. Whether the shipment type is determined or not, the process continues to assembling the inbound shipment.
+9. Once the inbound shipment is assembled, it is sent out.
+10. After sending the shipment, a check is performed on the inbound shipment.
+11. If this check fails, it is repeated until it passes.
+12. When the check is successful, preparations are made for the products to be sent to the service station.
+13. If more preparation is needed, this step is repeated until all preparations are complete.
+14. Next, it is checked whether regional preparation is needed.
+15. If regional preparation is not needed, the process escalates and returns to a previous step for further action.
+16. If regional preparation is needed but not complete, regional shipment preparation is performed.
+17. After performing regional shipment preparation, it is checked if this preparation is complete.
+18. If the preparation is still not complete, the regional shipment preparation is repeated.
+19. If the preparation is complete, the process continues.
+20. If at any point escalation is required, the process returns to a previous step for further action.
+21. Once all checks and preparations are complete, the process moves towards completion.
+22. The process ends.
+
+Throughout the process, there are several points where decisions are made, and steps may be repeated or escalated based on the outcome of checks and preparations. The process ensures that all necessary verifications and preparations are completed before the shipment is finalized.

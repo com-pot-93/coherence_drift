@@ -1,0 +1,7 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Selection of properties of chainsaw)
+2:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Selection of properties of chainsaw)
+1:task:(Selection of properties of chainsaw) --> 2:endevent:(((endevent)))

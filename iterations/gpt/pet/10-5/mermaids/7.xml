@@ -1,0 +1,20 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Send Request for Bid to MPOO)
+  2:task:(Send Tender to MPON)
+  3:task:(Place Order with MPOO)
+  4:parallelgateway:{AND}
+  5:task:(Confirm Order)
+  6:task:(Provide Master Data)
+  7:parallelgateway:{AND}
+  8:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Send Request for Bid to MPOO)
+  1:task:(Send Request for Bid to MPOO) --> 2:task:(Send Tender to MPON)
+  2:task:(Send Tender to MPON) --> 3:task:(Place Order with MPOO)
+  3:task:(Place Order with MPOO) --> 4:parallelgateway:{AND}
+  4:parallelgateway:{AND} --> 5:task:(Confirm Order)
+  4:parallelgateway:{AND} --> 6:task:(Provide Master Data)
+  5:task:(Confirm Order) --> 7:parallelgateway:{AND}
+  6:task:(Provide Master Data) --> 7:parallelgateway:{AND}
+  7:parallelgateway:{AND} --> 8:endevent:(((endevent)))

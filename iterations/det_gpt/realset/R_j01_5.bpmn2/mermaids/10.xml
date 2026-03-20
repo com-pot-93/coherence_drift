@@ -1,0 +1,39 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Run machine)
+2:task:(Check connection)
+3:exclusivegateway:{x}
+4:task:(Collect information/measuring)
+5:task:(Calculate OEE)
+6:exclusivegateway:{x}
+7:task:(Collect information/measuring)
+8:parallelgateway:{AND}
+9:task:(Stop machine)
+10:task:(E-Mail engineer)
+11:parallelgateway:{AND}
+12:task:(Collect information/measuring)
+13:exclusivegateway:{x}
+14:task:(Collect information/measuring)
+15:exclusivegateway:{x}
+16:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Run machine)
+1:task:(Run machine) --> 2:task:(Check connection)
+2:task:(Check connection) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |true|4:task:(Collect information/measuring)
+3:exclusivegateway:{x} --> |false|16:endevent:(((endevent)))
+4:task:(Collect information/measuring) --> 5:task:(Calculate OEE)
+5:task:(Calculate OEE) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |continue|7:task:(Collect information/measuring)
+6:exclusivegateway:{x} --> |exit|15:exclusivegateway:{x}
+7:task:(Collect information/measuring) --> 8:parallelgateway:{AND}
+8:parallelgateway:{AND} --> 9:task:(Stop machine)
+8:parallelgateway:{AND} --> 10:task:(E-Mail engineer)
+9:task:(Stop machine) --> 11:parallelgateway:{AND}
+10:task:(E-Mail engineer) --> 11:parallelgateway:{AND}
+11:parallelgateway:{AND} --> 12:task:(Collect information/measuring)
+12:task:(Collect information/measuring) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |true|14:task:(Collect information/measuring)
+13:exclusivegateway:{x} --> |exit|15:exclusivegateway:{x}
+14:task:(Collect information/measuring) --> 13:exclusivegateway:{x}
+15:exclusivegateway:{x} --> 16:endevent:(((endevent)))

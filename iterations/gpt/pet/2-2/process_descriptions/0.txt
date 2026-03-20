@@ -1,0 +1,42 @@
+Certainly! Here is a detailed, step-by-step description of the process as depicted in your model:
+
+1. The process begins when the customer sends their data to the customer service department.
+2. The customer service department receives the customer’s data.
+3. The customer service department enters the received customer data into the CRM system.
+4. The customer service department compares the newly entered data with the internal customer data.
+5. The customer service department checks the customer data for completeness and plausibility.
+6. At this point, a decision is made:
+   - If the data is not complete or plausible, the customer service department corrects the customer data, after which the process returns to the decision point for another check.
+   - If the data is complete and plausible, the process continues.
+7. Next, another decision is made:
+   - If a new customer object needs to be created, the customer service department creates a new customer object.
+   - If not, the process continues without creating a new customer object.
+8. The customer service department prepares the contract documents for the power supplier switch.
+9. The process continues to the next decision point, regardless of whether a new customer object was created.
+10. The CIS (Customer Information System) checks the contract documents.
+11. At this stage, another decision is made:
+    - If there are issues with the contract documents, the customer service department analyzes the issues, resolves them, and generates new contract documents. The process then returns to the decision point for another check.
+    - If there are no issues, the process continues.
+12. The CIS sends a confirmation document to the customer.
+13. The CIS sends a request to the grid operator.
+14. The grid operator checks the request for supplier concurrence.
+15. The grid operator transmits a response comment.
+16. At this point, a decision is made:
+    - If there is a conflict, the grid operator informs all suppliers and demands the resolution of the conflict. The process then returns to the decision point for another check.
+    - If there is no conflict, the process continues.
+17. The grid operator communicates with the old supplier.
+18. The grid operator terminates the sales agreement with the old supplier.
+19. Another decision is made:
+    - If a CIS contract needs to be created, the customer service department creates a CIS contract.
+    - If not, the process continues.
+20. The customer checks the contract details.
+21. At this point, the customer makes a decision:
+    - If the customer confirms the switch contract, the process continues with several activities happening at the same time:
+        - The grid operator transmits the power meter data.
+        - The grid operator computes the final billing and sends the billing to the old supplier.
+        - The old supplier creates the final billing and sends it to the customer.
+      Once all these activities are completed, the customer service department receives the meter data and imports it into their systems.
+    - If the customer withdraws from the switch contract, the process skips the parallel activities and continues.
+22. The process ends.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that all steps, decisions, and parallel activities are included and described in clear, plain language.

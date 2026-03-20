@@ -1,0 +1,10 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Employee searches the police report)
+1:task:(Employee searches the police report) --> 2:task:(Employee puts together claim documentation and police report)
+2:task:(Employee puts together claim documentation and police report) --> 3:task:(Claims handler calculates an initial claim estimate)
+3:task:(Claims handler calculates an initial claim estimate) --> 4:task:(Claims handler creates an action plan)
+4:task:(Claims handler creates an action plan) --> 5:task:(Claims manager negotiates a settlement on the claim estimate)
+5:task:(Claims manager negotiates a settlement on the claim estimate) --> 6:task:(Claims manager informs claimant of the outcome)
+6:task:(Claims manager informs claimant of the outcome) --> 7:endevent:(((endevent)))
+```

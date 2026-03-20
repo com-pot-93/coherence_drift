@@ -1,0 +1,15 @@
+The process begins with an initial step. First, the database is backed up. After the backup, the database is checked.
+
+Next, a decision is made: either to continue or to skip the next step. If the process continues, the CRM system is checked. If the process is skipped, it moves directly to the following decision point.
+
+After checking the CRM system (if that path was chosen), another decision is made: either to continue or to skip the next step. If the process continues, defaulting accounts and customers are registered. If the process is skipped, it moves directly to the next decision point.
+
+After registering defaulting accounts and customers (if that path was chosen), another decision is made: either to continue or to skip the next step. If the process continues, a table of defaulting accounts is produced, and this table is sent to account management. If the process is skipped, it moves directly to the next decision point.
+
+After sending the table to account management (if that path was chosen), another decision is made: either an alert needs to be sent to the supervisor, or no alert is needed. If an alert is needed, it is sent to the supervisor. If no alert is needed, the process moves forward.
+
+After this, the CRM system is checked again. Then, another decision is made: either reconciliation with the defaulters table is needed, or it is not. If reconciliation is needed, it is performed. If not, the process moves forward.
+
+After reconciliation (if that path was chosen), another decision is made with three possible actions: send a message to the supervisor, complete the reconciliation, or simply continue. If a message needs to be sent to the supervisor, it is sent. If reconciliation needs to be completed, it is done. If the process simply continues, it moves forward.
+
+Finally, the process reaches the last step, which is performed, and then the process ends.

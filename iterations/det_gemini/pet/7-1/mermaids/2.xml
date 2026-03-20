@@ -1,0 +1,22 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Manager checks the open leads)
+  1:task:(Manager checks the open leads) --> 2:task:(Manager selects the top five leads)
+  2:task:(Manager selects the top five leads) --> 3:task:(Manager tells Sales Assistant to contact the leads)
+  3:task:(Manager tells Sales Assistant to contact the leads) --> 4:task:(Sales Assistant calls customer)
+  4:task:(Sales Assistant calls customer) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |yes| 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |yes| 7:task:(Sales Assistant sends a note to the Manager)
+  7:task:(Sales Assistant sends a note to the Manager) --> 8:task:(Manager processes the lead)
+  8:task:(Manager processes the lead) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> 10:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |no| 10:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |no| 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |yes| 7:task:(Sales Assistant sends a note to the Manager)
+  11:exclusivegateway:{x} --> |no| 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> 12:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> 13:exclusivegateway:{x}
+  13:exclusivegateway:{x} --> |true| 4:task:(Sales Assistant calls customer)
+  13:exclusivegateway:{x} --> |false| 14:endevent:(((endevent)))
+```

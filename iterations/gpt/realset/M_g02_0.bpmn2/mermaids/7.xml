@@ -1,0 +1,71 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Initiate Project)
+2:task:(Develop Basic Design)
+3:task:(Order Lego Brick Sets)
+4:task:(Receive Brick Sets)
+5:task:(Sort Bricks by Size)
+6:parallelgateway:{AND}
+7:task:(Place Big Bricks in Container)
+8:task:(Place Medium Bricks in Container)
+9:task:(Place Small Bricks in Container)
+10:parallelgateway:{AND}
+11:exclusivegateway:{x}
+12:task:(Move Forward)
+13:exclusivegateway:{x}
+14:task:(Proceed with Project)
+15:exclusivegateway:{x}
+16:task:(Wait Until Ready)
+17:task:(Build Subcomponents)
+18:exclusivegateway:{x}
+19:task:(Build Additional Subcomponents)
+20:task:(Order More Lego Bricks)
+21:exclusivegateway:{x}
+22:task:(Test Subcomponents)
+23:exclusivegateway:{x}
+24:task:(Redesign Subcomponent)
+25:task:(Assemble Subcomponents)
+26:exclusivegateway:{x}
+27:task:(Move Forward After Assembly)
+28:exclusivegateway:{x}
+29:task:(Wait Until Ready After Assembly)
+30:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Initiate Project)
+1:task:(Initiate Project) --> 2:task:(Develop Basic Design)
+2:task:(Develop Basic Design) --> 3:task:(Order Lego Brick Sets)
+3:task:(Order Lego Brick Sets) --> 4:task:(Receive Brick Sets)
+4:task:(Receive Brick Sets) --> 5:task:(Sort Bricks by Size)
+5:task:(Sort Bricks by Size) --> 6:parallelgateway:{AND}
+6:parallelgateway:{AND} --> 7:task:(Place Big Bricks in Container)
+6:parallelgateway:{AND} --> 8:task:(Place Medium Bricks in Container)
+6:parallelgateway:{AND} --> 9:task:(Place Small Bricks in Container)
+7:task:(Place Big Bricks in Container) --> 10:parallelgateway:{AND}
+8:task:(Place Medium Bricks in Container) --> 10:parallelgateway:{AND}
+9:task:(Place Small Bricks in Container) --> 10:parallelgateway:{AND}
+10:parallelgateway:{AND} --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Condition met|12:task:(Move Forward)
+11:exclusivegateway:{x} --> |Condition not met|11:exclusivegateway:{x}
+12:task:(Move Forward) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Time to proceed|14:task:(Proceed with Project)
+13:exclusivegateway:{x} --> |Not time|16:task:(Wait Until Ready)
+16:task:(Wait Until Ready) --> 13:exclusivegateway:{x}
+14:task:(Proceed with Project) --> 17:task:(Build Subcomponents)
+17:task:(Build Subcomponents) --> 18:exclusivegateway:{x}
+18:exclusivegateway:{x} --> |More subcomponents needed|19:task:(Build Additional Subcomponents)
+18:exclusivegateway:{x} --> |More bricks needed|20:task:(Order More Lego Bricks)
+18:exclusivegateway:{x} --> |None needed|21:exclusivegateway:{x}
+19:task:(Build Additional Subcomponents) --> 17:task:(Build Subcomponents)
+20:task:(Order More Lego Bricks) --> 17:task:(Build Subcomponents)
+21:exclusivegateway:{x} --> 22:task:(Test Subcomponents)
+22:task:(Test Subcomponents) --> 23:exclusivegateway:{x}
+23:exclusivegateway:{x} --> |Redesign needed|24:task:(Redesign Subcomponent)
+23:exclusivegateway:{x} --> |Ready to assemble|25:task:(Assemble Subcomponents)
+24:task:(Redesign Subcomponent) --> 22:task:(Test Subcomponents)
+25:task:(Assemble Subcomponents) --> 26:exclusivegateway:{x}
+26:exclusivegateway:{x} --> |More assembly needed|22:task:(Test Subcomponents)
+26:exclusivegateway:{x} --> |Assembly complete|27:task:(Move Forward After Assembly)
+27:task:(Move Forward After Assembly) --> 28:exclusivegateway:{x}
+28:exclusivegateway:{x} --> |Time to proceed|30:endevent:(((endevent)))
+28:exclusivegateway:{x} --> |Not time|29:task:(Wait Until Ready After Assembly)
+29:task:(Wait Until Ready After Assembly) --> 28:exclusivegateway:{x}

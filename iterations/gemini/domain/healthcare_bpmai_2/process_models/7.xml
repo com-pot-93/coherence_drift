@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Visit Patient</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Check Insurance</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Patient Registered" language="text/javascript"/>
+    <alternative condition="">
+      <call id="a9" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Check Registration Status</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="5">
+        <alternative condition="Not Registered" language="text/javascript">
+          <call id="a13" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Register Patient and Pay Fee</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Already Registered" language="text/javascript"/>
+      </choose>
+    </alternative>
+  </choose>
+  <call id="a7" endpoint="" a:alt_id="8">
+    <parameters>
+      <label>Book Appointment</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a21" endpoint="" a:alt_id="9">
+    <parameters>
+      <label>Doctor's Examination</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="10">
+    <alternative condition="Hospitalize" language="text/javascript"/>
+    <alternative condition="Send to Pharmacy" language="text/javascript">
+      <call id="a27" endpoint="" a:alt_id="11">
+        <parameters>
+          <label>Order and Pay for Medicine</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a29" endpoint="" a:alt_id="12">
+        <parameters>
+          <label>Receive Medicine</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a33" endpoint="" a:alt_id="15">
+    <parameters>
+      <label>Book Appointment</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a35" endpoint="" a:alt_id="16">
+    <parameters>
+      <label>Doctor's Examination</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

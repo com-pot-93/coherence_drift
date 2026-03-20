@@ -1,0 +1,1 @@
+The process starts. First, a database backup is performed. Next, the database is checked. Then, the CRM system is checked. The process ends.

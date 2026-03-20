@@ -1,0 +1,26 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Register Claim)
+2:task:(Examine Claim)
+3:exclusivegateway:{x}
+4:task:(Write Settlement Recommendation)
+5:task:(Check Recommendation)
+6:task:(Mark Claim)
+7:exclusivegateway:{x}
+8:task:(Send for Additional Review)
+9:task:(Handle Claim)
+10:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Register Claim)
+1:task:(Register Claim) --> 2:task:(Examine Claim)
+2:task:(Examine Claim) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Continue|4:task:(Write Settlement Recommendation)
+3:exclusivegateway:{x} --> |No further action|10:endevent:(((endevent)))
+4:task:(Write Settlement Recommendation) --> 5:task:(Check Recommendation)
+5:task:(Check Recommendation) --> 6:task:(Mark Claim)
+6:task:(Mark Claim) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Send back for review|8:task:(Send for Additional Review)
+7:exclusivegateway:{x} --> |Continue handling|9:task:(Handle Claim)
+7:exclusivegateway:{x} --> |No further action|10:endevent:(((endevent)))
+8:task:(Send for Additional Review) --> 7:exclusivegateway:{x}
+9:task:(Handle Claim) --> 7:exclusivegateway:{x}

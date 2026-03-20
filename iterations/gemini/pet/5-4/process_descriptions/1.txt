@@ -1,0 +1,11 @@
+The process starts when an employee purchases a product. Next, the employee submits an expense report. A decision is then made: if the report requires a supervisor review, the supervisor reviews the report and then approves it. Another decision point is reached, from which the process moves to the treasurer.
+
+At the treasurer's level, another decision is made to either move the process forward to the treasurer or allow the employee to edit the report. If the employee edits the report, the process continues. The treasurer then checks the receipts. Based on this review, the treasurer can either accept the expenses and confirm the payment, or send the report back to the employee for editing. If the report is sent back for editing, the employee edits the report again.
+
+Alternatively, after the treasurer checks the receipts, the process can escalate.
+
+If, at the initial decision point, the report does not require a supervisor review, the process proceeds directly to the end.
+
+At the treasurer's level, another decision is made to either move the process forward to the treasurer or allow the employee to edit the report. If the employee edits the report, the process continues. The treasurer then checks the receipts. Based on this review, the treasurer can either accept the expenses and confirm the payment, or send the report back to the employee for editing. If the report is sent back for editing, the employee edits the report again.
+
+Alternatively, after the treasurer checks the receipts, the process can escalate.

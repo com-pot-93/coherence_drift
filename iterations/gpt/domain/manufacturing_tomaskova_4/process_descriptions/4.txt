@@ -1,0 +1,13 @@
+The process begins with a starting point. Immediately after, a decision is made based on a certain condition. If the answer to this condition is "false," the process moves directly to another decision point further along the path. If the answer is "true," the process continues to a second decision point.
+
+From this second decision point, the process advances to a third decision point. If the answer at this third point is "true," the process checks another condition at a fourth decision point. If the answer at this fourth point is "false," the process moves to a fifth decision point. If the answer at the fifth decision point is "finished," the process continues with registering the finished product, then moving it to the finished goods stock, and finally proceeds to the next decision point. If the answer at the fifth decision point is "semi-finished," the process involves registering the semi-finished product, loading it to the semi-finished stock, and then proceeds to the next decision point.
+
+At this next decision point, if the answer is "finished," an escalation step is performed before moving to the following decision point. If the answer is "not finished," the process skips the escalation and moves directly to the next decision point. After this, the process returns to the previous decision point, and from there, it continues to the third decision point.
+
+If, at the third decision point, the answer is "condition not met," the process follows a sequence of production activities: production planning, assigning workers, creating a production design, delivering the product, logging out production, and performing a quality control check. After the quality control check, the process returns to the third decision point.
+
+After returning to the third decision point, the process moves to a sixth decision point. If the answer at this sixth point is "condition not met," an escalation occurs, after which the process continues to the next decision point. From there, the process returns to the second decision point.
+
+If, at any point, the process follows the path from the second decision point back to the first, it then proceeds to the final decision point. From this final decision point, the process ends.
+
+In summary, the process involves a series of decisions that determine whether to proceed with production activities, register products as finished or semi-finished, escalate issues, or end the process. The flow is cyclical, with several points where the process can loop back to earlier decisions based on the outcomes of various checks and conditions.

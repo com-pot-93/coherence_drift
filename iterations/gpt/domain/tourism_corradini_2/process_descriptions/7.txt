@@ -1,0 +1,25 @@
+The process begins when it is started. First, a search is performed to find the customer. After the customer is found, an offer is made to them.
+
+At this point, a decision is made about whether to continue. If the process is to continue, an additional request is received from the customer. More details are then provided in response to this request. After providing more details, another decision is made about whether to continue.
+
+If, at either of these decision points, the process is not continued, it moves directly to the next decision stage.
+
+After the second decision, another choice is made about whether to continue. If the process continues, a booking request is received from the customer. A bill is then sent to the customer. After sending the bill, another decision is made about whether to continue.
+
+If the process is not continued at this stage, it moves directly to the next decision point.
+
+After this, another decision is made about whether to continue. If the process continues, payment is received from the customer. After receiving payment, another decision is made about whether to continue.
+
+If the process is not continued at this stage, it moves directly to the next decision point.
+
+Next, another decision is made. Regardless of the previous path, the process always reaches this point. Here, a check is performed, and if the result is positive, the process continues to the next decision.
+
+At this next decision, if the process is to continue, the travel is booked for the customer. After booking the travel, a booking confirmation is sent to the customer. After sending the confirmation, another decision is made about whether to continue.
+
+If the process is not continued at this stage, it moves directly to the next decision point.
+
+At the next decision, if the process is to continue, it moves forward. If the process is not continued, the customer is contacted. After contacting the customer, the process moves forward.
+
+After this, the process returns to the earlier check, creating a loop. If, at the check, the result is not positive, the process ends.
+
+In summary, the process involves searching for a customer, making an offer, handling additional requests and details, managing booking and billing, receiving payment, booking travel, sending confirmations, and possibly contacting the customer, with several decision points throughout that determine whether the process continues, loops, or ends.

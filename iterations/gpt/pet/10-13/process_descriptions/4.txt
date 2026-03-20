@@ -1,0 +1,1 @@
+The process begins when a transaction data request is initiated. Once this request is started, it is then received by the appropriate party. After receiving the request, the next step is to review it carefully. Following the review, a response is prepared and provided based on the request. The process concludes once the response has been given.

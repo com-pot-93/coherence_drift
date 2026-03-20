@@ -1,0 +1,23 @@
+Certainly! Here is a detailed, step-by-step description of the process you provided:
+
+1. The process begins when a Customer Service Representative (CSR) sends a mortgage offer to a customer.
+
+2. After sending the offer, the CSR waits for a reply from the customer.
+
+3. Once a reply is received, the process reaches a decision point where the next step depends on the nature of the customer's response.
+
+4. If the process follows one path, the CSR updates the case details. After updating the case, the CSR archives the work. Once the work is archived, the CSR performs a cancellation. After the cancellation, there is another decision point. Regardless of the outcome at this point, the process continues to a subsequent decision point.
+
+5. Alternatively, if the process follows a different path from the initial decision, the CSR moves the case to administration. This leads to another decision point.
+
+6. From this point, if required, the CSR generates a request for any outstanding documents. After generating this request, there is another decision point.
+
+7. If the process continues, the CSR updates the case details, archives the work, and performs a cancellation, just as described in the earlier path. After the cancellation, there is another decision point. Regardless of the outcome at this point, the process continues to a subsequent decision point.
+
+8. If the process does not require generating a request for outstanding documents, it proceeds directly to the next decision point.
+
+9. After passing through these decision points, the process eventually converges back to the main flow.
+
+10. Finally, the process reaches its end.
+
+Throughout the process, the CSR is responsible for all actions, including sending the offer, waiting for a reply, updating case details, archiving work, performing cancellations, moving cases to administration, and generating requests for outstanding documents. The process includes several decision points that determine the exact sequence of actions, but all paths eventually lead to the conclusion of the process.

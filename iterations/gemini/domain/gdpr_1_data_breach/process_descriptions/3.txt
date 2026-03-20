@@ -1,0 +1,4 @@
+The process starts. First, the breached data is retrieved, followed by retrieving the breached subjects. After this, the process splits into two parallel activities.
+In the first branch, data loss limitation is performed, and then the stolen data is evaluated. Depending on whether Condition A is met, a notification is sent; otherwise, the security standard is evaluated. If Condition B is met, a notification is sent. Otherwise, a data subject communication is requested, and a notification for the request is received. After sending a notification or receiving a notification for the request, the process continues to the next decision point. Depending on whether Condition C is met, a notification is sent.
+In the second parallel branch, the national authority is notified.
+Finally, after both parallel branches are completed, the process ends.

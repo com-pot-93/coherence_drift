@@ -1,0 +1,29 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Only burger| 2:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Otherwise| 3:parallelgateway:{AND}
+    3:parallelgateway:{AND} --> 4:task:(Prepare drink)
+    3:parallelgateway:{AND} --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Wedges| 6:task:(Prepare wedges)
+    5:exclusivegateway:{x} --> |Fries| 7:task:(Prepare fries)
+    6:task:(Prepare wedges) --> 8:inclusivegateway:{O}
+    7:task:(Prepare fries) --> 8:inclusivegateway:{O}
+    8:inclusivegateway:{O} --> 9:parallelgateway:{AND}
+    4:task:(Prepare drink) --> 9:parallelgateway:{AND}
+    9:parallelgateway:{AND} --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |Choice A| 10:parallelgateway:{AND}
+    2:exclusivegateway:{x} --> |Choice B| 10:parallelgateway:{AND}
+    10:parallelgateway:{AND} --> 11:task:(Prepare burger)
+    10:parallelgateway:{AND} --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> |Enthusiastic updates| 15:task:(Give enthusiastic status updates)
+    14:exclusivegateway:{x} --> |Otherwise| 16:inclusivegateway:{O}
+    15:task:(Give enthusiastic status updates) --> 17:task:(Escalate)
+    17:task:(Escalate) --> 12:exclusivegateway:{x}
+    11:task:(Prepare burger) --> 16:inclusivegateway:{O}
+    16:inclusivegateway:{O} --> 18:parallelgateway:{AND}
+    18:parallelgateway:{AND} --> 19:task:(Put order on conveyor belt)
+    19:task:(Put order on conveyor belt) --> 20:endevent:(((endevent)))
+```

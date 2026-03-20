@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>report the vacancy to HR</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>HR creates a job description</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="yes" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>HR asks the Department</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="no" language="text/javascript"/>
+  </choose>
+  <loop mode="pre_test" condition="true">
+    <call id="a13" endpoint="" a:alt_id="6">
+      <parameters>
+        <label>HR submits the job description for consideration</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a15" endpoint="" a:alt_id="7">
+      <parameters>
+        <label>HR waits for the approval</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <choose mode="exclusive" a:alt_id="8">
+      <alternative condition="yes" language="text/javascript">
+        <call id="a19" endpoint="" a:alt_id="9">
+          <parameters>
+            <label>Department requests a correction</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a23" endpoint="" a:alt_id="10">
+          <parameters>
+            <label>HR corrects the description</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+      <alternative condition="no" language="text/javascript"/>
+    </choose>
+    <loop mode="pre_test" condition="true" a:alt_id="11" language="text/javascript">
+      <call id="a13" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>HR submits the job description for consideration</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a15" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>HR waits for the approval</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="8">
+        <alternative condition="yes" language="text/javascript">
+          <call id="a19" endpoint="" a:alt_id="9">
+            <parameters>
+              <label>Department requests a correction</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a23" endpoint="" a:alt_id="10">
+            <parameters>
+              <label>HR corrects the description</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="no" language="text/javascript"/>
+      </choose>
+    </loop>
+    <call id="a29" endpoint="" a:alt_id="12">
+      <parameters>
+        <label>HR posts the job</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+  </loop>
+</description>

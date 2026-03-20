@@ -1,0 +1,35 @@
+The process starts with preparing materials, followed by assembling a door. After the door is assembled, a decision is made.
+
+If the decision is true, a quality check inquiry is sent and then received. The quality is then checked, and a quality report is sent and subsequently received. Following the reception of the quality report, another decision is made.
+
+If the initial decision is false, the door is fixed, and then a decision is made.
+
+Regardless of whether the door passed the quality check or was fixed, a decision is made. If this decision is true, another decision is made.
+
+If the second decision is true, another decision is made.
+
+If the third decision is true, the door is fixed again. Following this, a decision is made, which leads to another decision.
+
+If the fifth decision is true, the process is escalated, leading to another decision. This decision branches into three possibilities.
+
+The first possibility involves another decision. If this decision is true, the process is escalated again, leading to another decision. If this subsequent decision is true, the process is escalated once more. After this escalation or if the subsequent decision is false, the process is escalated.
+
+The second possibility involves another decision. If this decision is true, the process is escalated again, leading to another decision. If this subsequent decision is true, the process is escalated once more. After this escalation or if the subsequent decision is false, the process is escalated.
+
+The third possibility involves another decision. If this decision is true, the process is escalated. If the decision is false, the door is fixed again. After fixing the door or escalating the process, the process is escalated.
+
+If the fifth decision is false, another decision is made. If this decision is true, the process is escalated. If the decision is false, the door is fixed again. After fixing the door or escalating the process, the process is escalated.
+
+After the fourth decision, if it's false, another decision is made. If this decision is true, the process is escalated, leading to another decision. This decision branches into three possibilities.
+
+The first possibility involves fixing the door again, leading to another decision. This decision branches into two possibilities. If the first possibility is true, the process is escalated. If the first possibility is false, another decision is made. If this decision is true, the process is escalated again. If this decision is false, the door is fixed again. After fixing the door or escalating the process, the process is escalated.
+
+The second possibility involves another decision. If this decision is true, the process is escalated. If the decision is false, the process is escalated.
+
+The third possibility involves another decision. If this decision is true, the process is escalated again. If this decision is false, the process is escalated.
+
+If the fourth decision is false, another decision is made. If this decision is true, the process is escalated. If the decision is false, the process is escalated.
+
+If the third decision is false, the process is escalated.
+
+If the initial decision is false, the process is ended.

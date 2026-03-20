@@ -1,0 +1,34 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Receive Customer Data)
+    1:task:(Receive Customer Data) --> 2:task:(Enter Data into CRM)
+    2:task:(Enter Data into CRM) --> 3:task:(Compare Data Accuracy)
+    3:task:(Compare Data Accuracy) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |No| 5:task:(Correct Data)
+    4:exclusivegateway:{x} --> |Yes| 6:exclusivegateway:{x}
+    5:task:(Correct Data) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> 7:task:(Create Customer Object)
+    6:exclusivegateway:{x} --> |No| 8:exclusivegateway:{x}
+    7:task:(Create Customer Object) --> 8:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> 9:task:(Prepare Contract Documents)
+    9:task:(Prepare Contract Documents) --> 10:task:(Check for Issues)
+    10:task:(Check for Issues) --> 11:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |Yes| 12:task:(Analyze and Resolve Issues)
+    11:exclusivegateway:{x} --> |No| 13:exclusivegateway:{x}
+    12:task:(Analyze and Resolve Issues) --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> 14:task:(Send Confirmation and Request)
+    14:task:(Send Confirmation and Request) --> 15:task:(Check Request)
+    15:task:(Check Request) --> 16:exclusivegateway:{x}
+    16:exclusivegateway:{x} --> |Confirmed| 17:task:(Inform Suppliers)
+    16:exclusivegateway:{x} --> |Not Confirmed| 24:task:(Communicate Agreement)
+    17:task:(Inform Suppliers) --> 18:task:(Initiate Demand Resolution)
+    18:task:(Initiate Demand Resolution) --> 19:exclusivegateway:{x}
+    19:exclusivegateway:{x} --> |Yes| 20:task:(Create CIS Contract)
+    19:exclusivegateway:{x} --> |No| 21:exclusivegateway:{x}
+    20:task:(Create CIS Contract) --> 21:exclusivegateway:{x}
+    21:exclusivegateway:{x} --> 22:task:(Check Contract Details)
+    22:task:(Check Contract Details) --> 23:task:(Receive Meter Data)
+    23:task:(Receive Meter Data) --> 25:endevent:(((endevent)))
+    24:task:(Communicate Agreement) --> 26:task:(Terminate Agreement)
+    26:task:(Terminate Agreement) --> 25:endevent:(((endevent)))
+```

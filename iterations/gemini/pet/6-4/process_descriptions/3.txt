@@ -1,0 +1,11 @@
+The process starts, and then contact details are determined. Depending on the situation, the process continues if the contact was "Bought" or from an "Exhibition". Alternatively, if the contact is a "Known Person", an interested person is identified. Regardless of the path taken, the process continues by calling the customer, determining the contact person, and determining the budget. The customer's interest is then assessed.
+
+Based on the assessment, the process splits into two parallel paths.
+
+In the first path, the process splits again. Either a "Sales Rep Presentation" or a "Pre-Sales Presentation" is given. After either presentation, the process waits for the customer.
+
+In the second path, the process splits again. Either a "Sales Rep Presentation" or a "Pre-Sales Presentation" is given. After either presentation, the process waits for the customer.
+
+After waiting for the customer in both paths, the process merges back into a single flow.
+
+The process then splits again. Either a "Sales Rep Call" or "Sales Rep Call Again" is made to the customer. After either call, a quotation is created, and the process ends.

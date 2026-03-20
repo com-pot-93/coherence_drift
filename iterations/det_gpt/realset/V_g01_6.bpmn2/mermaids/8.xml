@@ -1,0 +1,59 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(ask customer if he wants only a burger or a menu)
+2:exclusivegateway:{x}
+3:parallelgateway:{AND}
+4:task:(prepare drink)
+5:task:(a2669)
+6:task:(ask whether customer wants wedges or fries)
+7:exclusivegateway:{x}
+8:task:(prepare fries)
+9:task:(a2674)
+10:task:(prepare wedges)
+11:task:(a2676)
+12:parallelgateway:{AND}
+13:exclusivegateway:{x}
+14:parallelgateway:{AND}
+15:task:(prepares burger)
+16:task:(a2680)
+17:task:(a2682 gives enthusiastic status updates)
+18:task:(a2683)
+19:exclusivegateway:{x}
+20:task:(a2682 gives enthusiastic status updates)
+21:task:(a2682 gives enthusiastic status updates)
+22:parallelgateway:{AND}
+23:task:(puts order on conveyer belt)
+24:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(ask customer if he wants only a burger or a menu)
+1:task:(ask customer if he wants only a burger or a menu) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |menu|3:parallelgateway:{AND}
+2:exclusivegateway:{x} --> |only burger|13:exclusivegateway:{x}
+%% PG1 branches
+3:parallelgateway:{AND} --> 4:task:(prepare drink)
+4:task:(prepare drink) --> 5:task:(a2669)
+5:task:(a2669) --> 12:parallelgateway:{AND}
+3:parallelgateway:{AND} --> 6:task:(ask whether customer wants wedges or fries)
+6:task:(ask whether customer wants wedges or fries) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |fries|8:task:(prepare fries)
+8:task:(prepare fries) --> 9:task:(a2674)
+9:task:(a2674) --> 12:parallelgateway:{AND}
+7:exclusivegateway:{x} --> |wedges|10:task:(prepare wedges)
+10:task:(prepare wedges) --> 11:task:(a2676)
+11:task:(a2676) --> 12:parallelgateway:{AND}
+12:parallelgateway:{AND} --> 13:exclusivegateway:{x}
+%% D1 merge
+13:exclusivegateway:{x} --> 14:parallelgateway:{AND}
+%% PG2 branches
+14:parallelgateway:{AND} --> 15:task:(prepares burger)
+15:task:(prepares burger) --> 16:task:(a2680)
+16:task:(a2680) --> 22:parallelgateway:{AND}
+14:parallelgateway:{AND} --> 17:task:(a2682 gives enthusiastic status updates)
+17:task:(a2682 gives enthusiastic status updates) --> 18:task:(a2683)
+18:task:(a2683) --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> |true|20:task:(a2682 gives enthusiastic status updates)
+20:task:(a2682 gives enthusiastic status updates) --> 21:task:(a2682 gives enthusiastic status updates)
+21:task:(a2682 gives enthusiastic status updates) --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> |false|22:parallelgateway:{AND}
+22:parallelgateway:{AND} --> 23:task:(puts order on conveyer belt)
+23:task:(puts order on conveyer belt) --> 24:endevent:(((endevent)))

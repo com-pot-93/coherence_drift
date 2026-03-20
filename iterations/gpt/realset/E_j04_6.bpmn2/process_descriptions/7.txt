@@ -1,0 +1,13 @@
+The process begins with a starting point. Immediately, a decision is made about whether to proceed. If the decision is not to proceed, the process ends right away. If the decision is to proceed, another decision is made, and the process continues through a series of similar decision points, each asking whether to proceed or not. At each of these points, if the answer is not to proceed, the process either ends or loops back to an earlier decision, depending on the stage.
+
+If all decisions up to this point are to proceed, the process eventually reaches a point where a specific condition is checked. If this condition is met, the process continues. If the condition is not met, an escalation is handled, after which the process continues as if the condition had been met.
+
+Next, the front page is loaded, and another series of decisions are made. If the process continues, it reaches a stage where several activities are carried out at the same time: topic activity, payment activity, experience activity, and hobbies activity. All these activities must be completed before moving forward.
+
+Once these activities are finished, a request is sent, and the process waits for an offer. After receiving the offer, another decision is made about whether to proceed. If the decision is not to proceed, the process ends. If the decision is to proceed, any other offers are invalidated, a weekly status update is sent, and a company status update is received.
+
+Following this, another decision is made about whether to continue. If the decision is not to continue, the process ends. If the decision is to continue, the internship is finished, and a series of further decisions are made about whether to repeat the cycle, post a tweet, escalate, or end the process.
+
+If the decision is to repeat the cycle, the process returns to loading the front page and continues from there. If the decision is to post a tweet, the tweet is posted, and the process continues. If the decision is to escalate, the process either ends or returns to the point where the internship is finished, depending on further decisions.
+
+Throughout the process, at each major stage, there are opportunities to either proceed, repeat, escalate, or end the process, ensuring that every possible outcome is accounted for. The process finally ends when a decision is made to do so at any of the end points.

@@ -1,0 +1,51 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Mail Processing Unit collects mail from the party)
+2:task:(Mail Clerk sorts the unopened mail)
+3:task:(Mail Clerk  distributes the mail)
+4:task:(Registry opens mail)
+5:task:(Registry sorts mail)
+6:task:(Registry register mail in a Mail Register)
+7:task:(Assistant Registry Manager  (ARM) performs a quality check)
+8:exclusivegateway:{x}
+9:task:(ARM compiles a list of requisition)
+10:task:(ARM sends  a list of requisition  back to the party)
+11:exclusivegateway:{x}
+12:task:(ARM captures the matter details)
+13:task:(ARM provides the matter details to the Cashier)
+14:task:(Cashier takes the applicable fees)
+15:parallelgateway:{AND}
+16:task:(ARM puts the receipt)
+17:task:(ARM copied documents into an envelope)
+18:task:(ARM posts documents to the party)
+19:parallelgateway:{AND}
+20:task:(Cashier captures the Party Details)
+21:task:(Cashier  prints the Physical Court File)
+22:exclusivegateway:{x}
+23:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Mail Processing Unit collects mail from the party)
+1:task:(Mail Processing Unit collects mail from the party) --> 2:task:(Mail Clerk sorts the unopened mail)
+2:task:(Mail Clerk sorts the unopened mail) --> 3:task:(Mail Clerk  distributes the mail)
+3:task:(Mail Clerk  distributes the mail) --> 4:task:(Registry opens mail)
+4:task:(Registry opens mail) --> 5:task:(Registry sorts mail)
+5:task:(Registry sorts mail) --> 6:task:(Registry register mail in a Mail Register)
+6:task:(Registry register mail in a Mail Register) --> 7:task:(Assistant Registry Manager  (ARM) performs a quality check)
+7:task:(Assistant Registry Manager  (ARM) performs a quality check) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Requisition|9:task:(ARM compiles a list of requisition)
+8:exclusivegateway:{x} --> |Not Requisition|12:task:(ARM captures the matter details)
+9:task:(ARM compiles a list of requisition) --> 10:task:(ARM sends  a list of requisition  back to the party)
+10:task:(ARM sends  a list of requisition  back to the party) --> 11:exclusivegateway:{x}
+12:task:(ARM captures the matter details) --> 13:task:(ARM provides the matter details to the Cashier)
+13:task:(ARM provides the matter details to the Cashier) --> 14:task:(Cashier takes the applicable fees)
+14:task:(Cashier takes the applicable fees) --> 15:parallelgateway:{AND}
+15:parallelgateway:{AND} --> 16:task:(ARM puts the receipt)
+15:parallelgateway:{AND} --> 20:task:(Cashier captures the Party Details)
+16:task:(ARM puts the receipt) --> 17:task:(ARM copied documents into an envelope)
+17:task:(ARM copied documents into an envelope) --> 18:task:(ARM posts documents to the party)
+18:task:(ARM posts documents to the party) --> 19:parallelgateway:{AND}
+20:task:(Cashier captures the Party Details) --> 21:task:(Cashier  prints the Physical Court File)
+21:task:(Cashier  prints the Physical Court File) --> 19:parallelgateway:{AND}
+19:parallelgateway:{AND} --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> 22:exclusivegateway:{x}
+22:exclusivegateway:{x} --> 23:endevent:(((endevent)))

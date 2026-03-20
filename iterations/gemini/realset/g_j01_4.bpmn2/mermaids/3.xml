@@ -1,0 +1,56 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Determine Required Resources)
+    1:task:(Determine Required Resources) --> 2:parallelgateway:{AND}
+    2:parallelgateway:{AND} --> 3:task:(Check Repository)
+    2:parallelgateway:{AND} --> 4:task:(Collect Urgently Needed Resources)
+    3:task:(Check Repository) --> 5:parallelgateway:{AND}
+    4:task:(Collect Urgently Needed Resources) --> 5:parallelgateway:{AND}
+    5:parallelgateway:{AND} --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |Resources Sufficient| 10:task:(Collect Remaining Resources)
+    6:exclusivegateway:{x} --> |Resources Insufficient| 7:task:(Build Tools)
+    7:task:(Build Tools) --> 10:task:(Collect Remaining Resources)
+    10:task:(Collect Remaining Resources) --> 11:parallelgateway:{AND}
+    11:parallelgateway:{AND} --> 12:task:(Evaluate Condition)
+    11:parallelgateway:{AND} --> 21:task:(Update Resource List)
+    12:task:(Evaluate Condition) --> 13:task:(Wait for Event)
+    13:task:(Wait for Event) --> 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> |Reset Bot| 15:task:(Reset Bot)
+    14:exclusivegateway:{x} --> |Do Not Reset Bot| 16:task:(Start Farming)
+    15:task:(Reset Bot) --> 16:task:(Start Farming)
+    16:task:(Start Farming) --> 17:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> |Condition True| 18:task:(Notify Player)
+    17:exclusivegateway:{x} --> |Condition False| 19:task:(Do Not Notify Player)
+    18:task:(Notify Player) --> 20:exclusivegateway:{x}
+    19:task:(Do Not Notify Player) --> 20:exclusivegateway:{x}
+    20:exclusivegateway:{x} --> 25:task:(Give Sleeping Break)
+    20:exclusivegateway:{x} --> 26:task:(Brag to Friends)
+    20:exclusivegateway:{x} --> 27:task:(Help with Materials)
+    21:task:(Update Resource List) --> 22:parallelgateway:{AND}
+    25:task:(Give Sleeping Break) --> 22:parallelgateway:{AND}
+    26:task:(Brag to Friends) --> 22:parallelgateway:{AND}
+    27:task:(Help with Materials) --> 22:parallelgateway:{AND}
+    22:parallelgateway:{AND} --> 28:exclusivegateway:{x}
+    28:exclusivegateway:{x} --> |Condition True| 29:exclusivegateway:{x}
+    28:exclusivegateway:{x} --> |Condition False| 31:task:(Escalate)
+    29:exclusivegateway:{x} --> |Condition True| 30:task:(Wait for Event)
+    29:exclusivegateway:{x} --> |Condition False| 31:task:(Escalate)
+    30:task:(Wait for Event) --> 32:exclusivegateway:{x}
+    32:exclusivegateway:{x} --> |Reset Bot| 33:task:(Reset Bot)
+    32:exclusivegateway:{x} --> |Do Not Reset Bot| 34:task:(Start Farming)
+    33:task:(Reset Bot) --> 34:task:(Start Farming)
+    34:task:(Start Farming) --> 35:exclusivegateway:{x}
+    35:exclusivegateway:{x} --> |Condition True| 36:task:(Notify Player)
+    35:exclusivegateway:{x} --> |Condition False| 37:task:(Do Not Notify Player)
+    36:task:(Notify Player) --> 38:exclusivegateway:{x}
+    37:task:(Do Not Notify Player) --> 38:exclusivegateway:{x}
+    38:exclusivegateway:{x} --> 39:task:(Give Sleeping Break)
+    38:exclusivegateway:{x} --> 40:task:(Brag to Friends)
+    38:exclusivegateway:{x} --> 41:task:(Help with Materials)
+    39:task:(Give Sleeping Break) --> 42:exclusivegateway:{x}
+    40:task:(Brag to Friends) --> 42:exclusivegateway:{x}
+    41:task:(Help with Materials) --> 42:exclusivegateway:{x}
+    42:exclusivegateway:{x} --> 31:task:(Escalate)
+    31:task:(Escalate) --> 28:exclusivegateway:{x}
+    28:exclusivegateway:{x} --> 43:endevent:(((endevent)))
+```

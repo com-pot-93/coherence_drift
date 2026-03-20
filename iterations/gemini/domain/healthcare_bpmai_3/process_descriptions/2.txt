@@ -1,0 +1,15 @@
+The process starts when the hospital is called. Following the call, a decision is made: if the call is accepted, the patient is added to a list; otherwise, the process proceeds directly to the next decision point.
+
+After adding the patient to the list, or if the call was rejected, another decision is made. If the condition is true, the patient control task is performed. After the patient control, there is a series of three consecutive decisions.
+
+From the first of these three decisions, the process splits into two possible paths. In the first path, there is another decision. If the answer is "Yes", the process loops back to the patient control task, and an escalation event is raised.
+
+From the second path, the process continues to the hospitalization of the patient, followed by childbirth. After childbirth, a decision is made: if special treatment is needed, it is provided; if post-hospitalization care is needed, it is provided. After either of these tasks, the process merges back together.
+
+From the second of the three consecutive decisions, if the condition is met, an escalation event occurs.
+
+From the third of the three consecutive decisions, the process either continues directly, or loops back to the patient control task, raising an escalation event.
+
+After the escalation event or the merge of the special treatment and post-hospitalization care paths, the process merges back together through the last two of the three consecutive decisions.
+
+Finally, the process returns to the second decision point, and then ends.

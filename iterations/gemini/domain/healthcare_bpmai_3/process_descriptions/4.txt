@@ -1,0 +1,19 @@
+The process starts when a call is received. Based on whether the call is accepted or rejected, the process follows different paths.
+
+If the call is accepted, the patient is added to a list. If the call is rejected, this step is skipped.
+
+After either accepting or rejecting the call, the process proceeds to a decision point. From here, the process loops back to the same decision point.
+
+When a certain condition is met, the process moves to another decision point. Here, if the answer is "No," the process continues to another decision point. If the answer is "Yes," an escalation event occurs.
+
+After the escalation event, the process merges back. This merge point then leads to the decision point reached when the answer was "No".
+
+From there, the process continues to another decision point. Alternatively, the process can proceed to a task labeled "Hospitalization and Childbirth," after which it merges. There is also a third option to proceed to another decision point.
+
+At this decision point, the process can either "Continue" or "Loop to Escalation". If it loops to escalation, the escalation event occurs again, followed by a merge. This merge point then leads to the "Continue" path.
+
+The "Continue" path merges and leads back to the decision point.
+
+Finally, the process merges and loops back to the initial decision point.
+
+The process ends.

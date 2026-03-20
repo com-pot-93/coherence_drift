@@ -1,0 +1,11 @@
+The process starts when the GO requests measurements from the MSP. The MSP then checks the received request. Depending on the check, the process either proceeds with the MSP denying the request, or the MSP performing the measurement.
+
+If the MSP denies the request, the process proceeds to a merging point.
+
+If the MSP performs the measurement, there is a decision to be made. Either the MSP informs the GO about a failure, or the MSP transmits the measured values to the GO.
+
+If the MSP informs the GO about a failure, the process proceeds to a merging point.
+
+If the MSP transmits the measured values to the GO, the GO processes these values and sends the changed values to the MSP. Following this, the GO transmits the readings to the SP, and the process proceeds to a merging point.
+
+After these possible paths converge, the process proceeds to another merging point before it ends.

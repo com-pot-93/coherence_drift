@@ -1,0 +1,32 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Call)
+2:exclusivegateway:{x}
+3:task:(Add Patient to List)
+4:subprocess:(Check Patient Condition)
+5:exclusivegateway:{x}
+6:task:(Call Patient to Hospital)
+7:task:(Hospitalize Patient)
+8:task:(Childbirth)
+9:exclusivegateway:{x}
+10:task:(Post-hospitalization Care)
+11:task:(Special Treatment)
+12:exclusivegateway:{x}
+13:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Call)
+1:task:(Receive Call) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Patient accepted|3:task:(Add Patient to List)
+2:exclusivegateway:{x} --> |Patient not accepted|13:endevent:(((endevent)))
+3:task:(Add Patient to List) --> 4:subprocess:(Check Patient Condition)
+4:subprocess:(Check Patient Condition) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Condition not met|4:subprocess:(Check Patient Condition)
+5:exclusivegateway:{x} --> |Condition met|6:task:(Call Patient to Hospital)
+6:task:(Call Patient to Hospital) --> 7:task:(Hospitalize Patient)
+7:task:(Hospitalize Patient) --> 8:task:(Childbirth)
+8:task:(Childbirth) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Post-hospitalization care|10:task:(Post-hospitalization Care)
+9:exclusivegateway:{x} --> |Special treatment|11:task:(Special Treatment)
+10:task:(Post-hospitalization Care) --> 12:exclusivegateway:{x}
+11:task:(Special Treatment) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> 13:endevent:(((endevent)))

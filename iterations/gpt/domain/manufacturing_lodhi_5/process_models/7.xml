@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Production Order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Prepare Production Order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Condition met" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Collect Raw Materials</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a11" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>Cut Materials</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <parallel wait="-1" cancel="last" a:alt_id="6">
+        <parallel_branch>
+          <call id="a15" endpoint="" a:alt_id="7">
+            <parameters>
+              <label>Stitching</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a17" endpoint="" a:alt_id="8">
+            <parameters>
+              <label>Printing</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+      </parallel>
+      <choose mode="exclusive" a:alt_id="10">
+        <alternative condition="Positive outcome" language="text/javascript">
+          <loop mode="pre_test" condition="true">
+            <call id="a25" endpoint="" a:alt_id="11">
+              <parameters>
+                <label>Complete Production</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a29" endpoint="" a:alt_id="12">
+              <parameters>
+                <label>Quality Check</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a31" endpoint="" a:alt_id="13">
+              <parameters>
+                <label>Create Quality Report</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <loop mode="pre_test" condition="Continue">
+              <choose mode="exclusive" a:alt_id="15">
+                <alternative condition="Adjustments needed" language="text/javascript">
+                  <call id="a39" endpoint="" a:alt_id="16">
+                    <parameters>
+                      <label>Determine Next Step</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="17">
+                    <alternative condition="Adjust settings" language="text/javascript">
+                      <call id="a45" endpoint="" a:alt_id="18">
+                        <parameters>
+                          <label>Adjust Settings</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="No further action" language="text/javascript"/>
+                  </choose>
+                </alternative>
+                <alternative condition="No adjustments" language="text/javascript"/>
+              </choose>
+              <call id="a41" endpoint="" a:alt_id="19">
+                <parameters>
+                  <label>Send Data to Warehouse</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="20">
+                <alternative condition="Further actions required" language="text/javascript">
+                  <call id="a25" endpoint="" a:alt_id="11">
+                    <parameters>
+                      <label>Complete Production</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a29" endpoint="" a:alt_id="12">
+                    <parameters>
+                      <label>Quality Check</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a31" endpoint="" a:alt_id="13">
+                    <parameters>
+                      <label>Create Quality Report</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="No further actions" language="text/javascript">
+                  <choose mode="exclusive" a:alt_id="21">
+                    <alternative condition="Escalation/loop" language="text/javascript"/>
+                    <alternative condition="End process" language="text/javascript">
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+              </choose>
+            </loop>
+          </loop>
+        </alternative>
+        <alternative condition="Negative outcome" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="Condition not met" language="text/javascript"/>
+  </choose>
+</description>

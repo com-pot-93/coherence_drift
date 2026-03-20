@@ -1,0 +1,3 @@
+The process starts. A decision is made. If the decision is "Reject", the process ends. Otherwise, the process proceeds to a parallel execution.
+In parallel, the process prepares for bike assembly and processes the part list. After the part list is processed, a decision is made based on parts availability. If parts are available, they are reserved. If parts are not available, they are back-ordered. Once the parts are either reserved or back-ordered, the process waits for the preparation for bike assembly to complete.
+After both parallel paths are completed, the bicycle is assembled and shipped. Finally, the process merges back with the "Reject" branch and ends.

@@ -1,0 +1,20 @@
+The process starts. It then splits into two alternative paths.
+
+In the first path, the process splits into four alternative branches.
+- In the first branch, a metering point operations bill is sent to the GO.
+- In the second branch, a measurement bill is sent to the GO.
+- In the third branch, a bill for additional readings is sent to the GO.
+- In the fourth branch, a bill for the equipment acquisition is sent to the GO.
+After any of the four branches, the process continues to examine the bill.
+The process then splits based on whether the GO rejects or confirms the bill.
+- If the GO rejects the bill, the invoice is rejected.
+- If the GO confirms the bill, the invoice is confirmed with payment advice.
+After either rejection or confirmation, the process merges back.
+
+In the second path, a bill for equipment acquisition is sent to MPON. The bill is then examined.
+The process then splits based on whether the MPON confirms or rejects the bill.
+- If the MPON confirms the bill, the invoice is confirmed with payment advice.
+- If the MPON rejects the bill, the invoice is rejected.
+After either confirmation or rejection, the process merges back.
+
+Finally, the two paths merge, and the process ends.

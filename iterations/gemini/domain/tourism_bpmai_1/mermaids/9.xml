@@ -1,0 +1,29 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Receive Customer Request)
+  1:task:(Receive Customer Request) --> 2:task:(Check Request)
+  2:task:(Check Request) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |No Registration Required| 8:task:(Continue Process)
+  3:exclusivegateway:{x} --> |Registration Required| 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |Manual| 5:task:(Manual Registration)
+  4:exclusivegateway:{x} --> |Automatic| 6:task:(Automatic Registration)
+  5:task:(Manual Registration) --> 7:exclusivegateway:{x}
+  6:task:(Automatic Registration) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> 8:task:(Continue Process)
+  8:task:(Continue Process) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Skip Search| 16:task:(Continue)
+  9:exclusivegateway:{x} --> |Otherwise| 10:task:(Search Attraction Provider)
+  10:task:(Search Attraction Provider) --> 11:task:(Check Condition)
+  11:task:(Check Condition) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> |Condition Met| 16:task:(Continue)
+  12:exclusivegateway:{x} --> |Condition Not Met| 13:task:(Book Attraction)
+  13:task:(Book Attraction) --> 14:task:(Check Booking Status)
+  14:task:(Check Booking Status) --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |Booking Confirmed| 17:task:(Send Confirmation)
+  15:exclusivegateway:{x} --> |Booking Rejected| 18:task:(Send Rejection Notification)
+  17:task:(Send Confirmation) --> 19:exclusivegateway:{x}
+  18:task:(Send Rejection Notification) --> 19:exclusivegateway:{x}
+  19:exclusivegateway:{x} --> 16:task:(Continue)
+  16:task:(Continue) --> 20:task:(Send Notification)
+  20:task:(Send Notification) --> 21:endevent:(((endevent)))
+```

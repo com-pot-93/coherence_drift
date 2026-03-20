@@ -1,0 +1,3 @@
+The process starts when the Manager checks the open leads. Next, the Manager selects the top five leads and tells the Sales Assistant to contact the leads.
+After that, a decision is made. If the condition is true, the Sales Assistant calls the customer. Then, another decision is made. If the condition is met, the Sales Assistant sends a note to the Manager, who then processes the lead. After the lead is processed or if the condition is not met, the process returns to the previous decision point.
+If the condition at the first decision point is false, the process ends.

@@ -1,0 +1,23 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when a defective computer is received.
+2. The computer is then examined to assess its condition.
+3. After the examination, the repair costs are calculated.
+4. The customer is consulted regarding the repair costs and the proposed repair.
+5. At this point, the customer decides whether to approve or decline the repair:
+   - If the customer declines the repair, the computer is returned to the customer, who takes it home. This leads directly to the end of the process.
+   - If the customer approves the repair, the process continues with the repair activities.
+6. Once the repair is approved, two activities are carried out at the same time:
+   - The hardware of the computer is checked and repaired.
+   - The software of the computer is checked and configured.
+7. After both the hardware and software tasks are completed, the process checks if the computer is ready.
+8. If the computer is not ready, the process waits until the computer becomes ready, and then checks again.
+9. Once the computer is ready, the system functionality is tested.
+10. If the test fails, the issue is escalated, and the system functionality is tested again. This cycle repeats until the test is successful.
+11. If the test is successful, the process checks again if the computer is ready:
+    - If the computer is not ready, the process waits until it is ready, and then tests the system functionality again.
+    - If the computer is ready, the process continues.
+12. This cycle of waiting for readiness and testing system functionality may repeat several times, with escalation and retesting if necessary, until the computer passes the test and is ready.
+13. Once all checks are complete and the computer is confirmed to be ready and functioning properly, the process ends.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that all steps, decisions, and possible repetitions are included.

@@ -1,0 +1,1 @@
+The process begins with a starting point. First, a request to send transaction data is initiated. After this request is sent, it is received by the intended recipient. Once the request has been received, it is carefully reviewed. Following the review, a response is prepared and provided. The process concludes after the response has been given.

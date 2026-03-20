@@ -1,0 +1,5 @@
+The process begins when a dismissal is sent by MPON. After this, the dismissal is reviewed by MPOO. Following the review, a decision is made: either to oppose the dismissal or to confirm it.
+
+If the decision is to oppose the dismissal, a formal opposition to the dismissal is made. If the decision is to confirm the dismissal, the dismissal is confirmed.
+
+Regardless of whether the dismissal was formally opposed or confirmed, the process then continues to the next step. After this, the process ends.

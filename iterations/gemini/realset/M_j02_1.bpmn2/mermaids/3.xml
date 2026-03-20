@@ -1,0 +1,31 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Receive Customized Airplane Order)
+  1:task:(Receive Customized Airplane Order) --> 2:task:(Process Order)
+  2:task:(Process Order) --> 3:parallelgateway:{AND}
+  3:parallelgateway:{AND} --> 4:task:(Build Airplane Base Model)
+  3:parallelgateway:{AND} --> 5:task:(Transmit Customization Requirements)
+  4:task:(Build Airplane Base Model) --> 6:parallelgateway:{AND}
+  5:task:(Transmit Customization Requirements) --> 6:parallelgateway:{AND}
+  6:parallelgateway:{AND} --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Condition is True| 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Condition is False| 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |Condition is False| 10:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |Condition is True| 9:task:(Wait for 14 Days)
+  9:task:(Wait for 14 Days) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |Condition is Met| 12:task:(Send Reminder)
+  12:task:(Send Reminder) --> 13:task:(Wait for 14 Days)
+  13:task:(Wait for 14 Days) --> 14:task:(Install Bits and Pieces)
+  11:exclusivegateway:{x} --> |Condition is Not Met| 14:task:(Install Bits and Pieces)
+  14:task:(Install Bits and Pieces) --> 15:task:(Control Engines and Risk Factors)
+  15:task:(Control Engines and Risk Factors) --> 16:task:(Prepare for Test Flight)
+  16:task:(Prepare for Test Flight) --> 17:task:(Receive Test Flight Protocol)
+  17:task:(Receive Test Flight Protocol) --> 18:task:(Forward Protocol to Customer)
+  18:task:(Forward Protocol to Customer) --> 19:exclusivegateway:{x}
+  19:exclusivegateway:{x} --> |Standard Shipping| 20:task:(Ship Airplane Standard)
+  19:exclusivegateway:{x} --> |Premium Shipping| 21:task:(Ship Airplane Premium)
+  20:task:(Ship Airplane Standard) --> 22:task:(Receive Confirmation Email)
+  21:task:(Ship Airplane Premium) --> 22:task:(Receive Confirmation Email)
+  22:task:(Receive Confirmation Email) --> 23:endevent:(((endevent)))
+```

@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Collect Requirements</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="Continue" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Send Requirements</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a9" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Receive Draft</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="5">
+        <alternative condition="Continue" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="6">
+            <alternative condition="Condition met" language="text/javascript">
+              <call id="a17" endpoint="" a:alt_id="7">
+                <parameters>
+                  <label>Evaluate Draft</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Condition not met" language="text/javascript"/>
+          </choose>
+          <loop mode="pre_test" condition="Escalate" a:alt_id="8" language="text/javascript">
+            <call id="a23" endpoint="" a:alt_id="10">
+              <parameters>
+                <label>Escalate Issue</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a27" endpoint="" a:alt_id="11">
+              <parameters>
+                <label>Re-evaluate Draft</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </loop>
+          <loop mode="pre_test" condition="true">
+            <call id="a25" endpoint="" a:alt_id="12">
+              <parameters>
+                <label>Check Feasibility</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <loop mode="pre_test" condition="Feasible">
+              <choose mode="exclusive" a:alt_id="13">
+                <alternative condition="Feasible" language="text/javascript">
+                  <choose mode="exclusive" a:alt_id="16">
+                    <alternative condition="Report needed" language="text/javascript">
+                      <call id="a41" endpoint="" a:alt_id="18">
+                        <parameters>
+                          <label>Prepare Building Permit Report</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="No report needed" language="text/javascript"/>
+                  </choose>
+                  <call id="a47" endpoint="" a:alt_id="19">
+                    <parameters>
+                      <label>Create Order List</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a49" endpoint="" a:alt_id="20">
+                    <parameters>
+                      <label>Place Order</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a51" endpoint="" a:alt_id="21">
+                    <parameters>
+                      <label>Calculate Effort</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <parallel wait="-1" cancel="last" a:alt_id="22">
+                    <parallel_branch>
+                      <call id="a55" endpoint="" a:alt_id="23">
+                        <parameters>
+                          <label>Receive Order</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </parallel_branch>
+                    <parallel_branch>
+                      <choose mode="exclusive" a:alt_id="24">
+                        <alternative condition="Friends help" language="text/javascript">
+                          <call id="a61" endpoint="" a:alt_id="25">
+                            <parameters>
+                              <label>Arrange Friends Help</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Building company" language="text/javascript">
+                          <call id="a63" endpoint="" a:alt_id="26">
+                            <parameters>
+                              <label>Arrange Building Company</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                      </choose>
+                    </parallel_branch>
+                  </parallel>
+                  <call id="a69" endpoint="" a:alt_id="28">
+                    <parameters>
+                      <label>Build House</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="29">
+                    <alternative condition="Repeat feasibility" language="text/javascript">
+                      <call id="a25" endpoint="" a:alt_id="12">
+                        <parameters>
+                          <label>Check Feasibility</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="No repeat" language="text/javascript">
+                      <call id="a75" endpoint="" a:alt_id="30">
+                        <parameters>
+                          <label>Perform Final Checks</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <escape a:alt_id="-1"/>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="Not feasible" language="text/javascript">
+                  <call id="a35" endpoint="" a:alt_id="14">
+                    <parameters>
+                      <label>Refine Requirements</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a37" endpoint="" a:alt_id="15">
+                    <parameters>
+                      <label>Check Feasibility Again</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+            </loop>
+          </loop>
+        </alternative>
+        <alternative condition="Do not continue" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="Do not continue" language="text/javascript"/>
+  </choose>
+</description>

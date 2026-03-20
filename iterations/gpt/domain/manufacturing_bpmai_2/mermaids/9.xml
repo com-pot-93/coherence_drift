@@ -1,0 +1,55 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Customer Order)
+2:task:(Process Order and Determine Components)
+3:exclusivegateway:{x}
+4:task:(Purchase Missing Parts)
+5:task:(Stock Arrived Parts)
+6:task:(Move Order to Production)
+7:task:(Produce Items)
+8:task:(Perform Quality Check)
+9:exclusivegateway:{x}
+10:task:(Initiate Follow-up Production)
+11:task:(Perform Quality Re-check)
+12:exclusivegateway:{x}
+13:task:(Escalate Issue)
+14:task:(Handle Escalation)
+15:task:(Fill Items into Packaging)
+16:exclusivegateway:{x}
+17:task:(Pack and Label Items)
+18:task:(Transport to Warehouse)
+19:exclusivegateway:{x}
+20:task:(Send Items to Customer)
+21:exclusivegateway:{x}
+22:task:(Final Check)
+23:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Customer Order)
+1:task:(Receive Customer Order) --> 2:task:(Process Order and Determine Components)
+2:task:(Process Order and Determine Components) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Parts missing|4:task:(Purchase Missing Parts)
+3:exclusivegateway:{x} --> |No parts missing|6:task:(Move Order to Production)
+4:task:(Purchase Missing Parts) --> 5:task:(Stock Arrived Parts)
+5:task:(Stock Arrived Parts) --> 6:task:(Move Order to Production)
+6:task:(Move Order to Production) --> 7:task:(Produce Items)
+7:task:(Produce Items) --> 8:task:(Perform Quality Check)
+8:task:(Perform Quality Check) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Pass|15:task:(Fill Items into Packaging)
+9:exclusivegateway:{x} --> |Fail|10:task:(Initiate Follow-up Production)
+10:task:(Initiate Follow-up Production) --> 11:task:(Perform Quality Re-check)
+11:task:(Perform Quality Re-check) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Pass|15:task:(Fill Items into Packaging)
+12:exclusivegateway:{x} --> |Fail|13:task:(Escalate Issue)
+13:task:(Escalate Issue) --> 14:task:(Handle Escalation)
+14:task:(Handle Escalation) --> 10:task:(Initiate Follow-up Production)
+15:task:(Fill Items into Packaging) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |No follow-up needed|17:task:(Pack and Label Items)
+16:exclusivegateway:{x} --> |Follow-up needed|10:task:(Initiate Follow-up Production)
+17:task:(Pack and Label Items) --> 18:task:(Transport to Warehouse)
+18:task:(Transport to Warehouse) --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> |No follow-up needed|20:task:(Send Items to Customer)
+19:exclusivegateway:{x} --> |Follow-up needed|10:task:(Initiate Follow-up Production)
+20:task:(Send Items to Customer) --> 21:exclusivegateway:{x}
+21:exclusivegateway:{x} --> |No issues|23:endevent:(((endevent)))
+21:exclusivegateway:{x} --> |Issues found|22:task:(Final Check)
+22:task:(Final Check) --> 10:task:(Initiate Follow-up Production)

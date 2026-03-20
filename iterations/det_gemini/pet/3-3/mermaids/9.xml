@@ -1,0 +1,14 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(system registers a claim)
+  1:task:(system registers a claim) --> 2:task:(claims officer examines a claim)
+  2:task:(claims officer examines a claim) --> 3:task:(claims officer writes a settlement recommendation)
+  3:task:(claims officer writes a settlement recommendation) --> 4:task:(senior claims officer checks recommendation)
+  4:task:(senior claims officer checks recommendation) --> 5:task:(senior claims officer marks the claim)
+  5:task:(senior claims officer marks the claim) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |condition1| 7:task:(system sends claim back)
+  6:exclusivegateway:{x} --> |condition2| 8:task:(system proceeds the claim handling process)
+  7:task:(system sends claim back) --> 9:exclusivegateway:{x}
+  8:task:(system proceeds the claim handling process) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> 10:endevent:(((endevent)))
+```

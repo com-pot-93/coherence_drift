@@ -1,0 +1,67 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Manager checks the open leads)
+2:task:(Manager selects the top five leads)
+3:task:(Manager tells Sales Assistant to  contact the leads)
+4:subprocess:(Process Each Lead)
+5:task:(Sales Assistant calls  customer)
+6:exclusivegateway:{x}
+7:exclusivegateway:{x}
+8:exclusivegateway:{x}
+9:task:(Sales Assistant  sends a note to the Manager)
+10:task:(Manager  processes the lead)
+11:exclusivegateway:{x}
+12:task:(Sales Assistant  sends a note to the Manager)
+13:task:(Manager  processes the lead)
+14:exclusivegateway:{x}
+15:exclusivegateway:{x}
+16:task:(Sales Assistant  sends a note to the Manager)
+17:task:(Manager  processes the lead)
+18:exclusivegateway:{x}
+19:task:(Sales Assistant  sends a note to the Manager)
+20:task:(Manager  processes the lead)
+21:exclusivegateway:{x}
+22:task:(Sales Assistant calls  customer)
+23:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Manager checks the open leads)
+1:task:(Manager checks the open leads) --> 2:task:(Manager selects the top five leads)
+2:task:(Manager selects the top five leads) --> 3:task:(Manager tells Sales Assistant to  contact the leads)
+3:task:(Manager tells Sales Assistant to  contact the leads) --> 4:subprocess:(Process Each Lead)
+4:subprocess:(Process Each Lead) --> 22:task:(Sales Assistant calls  customer)
+22:task:(Sales Assistant calls  customer) --> 23:endevent:(((endevent)))
+
+%% Subprocess for looping over each lead
+subgraph Process Each Lead
+    5:task:(Sales Assistant calls  customer)
+    5:task:(Sales Assistant calls  customer) --> 6:exclusivegateway:{x}
+    %% D1
+    6:exclusivegateway:{x} --> |Branch 1|7:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |Branch 2|14:exclusivegateway:{x}
+    %% D2
+    7:exclusivegateway:{x} --> |Branch 1|8:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> |Branch 2|11:exclusivegateway:{x}
+    %% D3
+    8:exclusivegateway:{x} --> |Requires manager|9:task:(Sales Assistant  sends a note to the Manager)
+    8:exclusivegateway:{x} --> |Lead does not require manager|11:exclusivegateway:{x}
+    9:task:(Sales Assistant  sends a note to the Manager) --> 10:task:(Manager  processes the lead)
+    10:task:(Manager  processes the lead) --> 11:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> 12:task:(Sales Assistant  sends a note to the Manager)
+    11:exclusivegateway:{x} --> 14:exclusivegateway:{x}
+    12:task:(Sales Assistant  sends a note to the Manager) --> 13:task:(Manager  processes the lead)
+    13:task:(Manager  processes the lead) --> 14:exclusivegateway:{x}
+    %% D4
+    14:exclusivegateway:{x} --> |Requires manager|16:task:(Sales Assistant  sends a note to the Manager)
+    14:exclusivegateway:{x} --> |Lead does not require manager|15:exclusivegateway:{x}
+    16:task:(Sales Assistant  sends a note to the Manager) --> 17:task:(Manager  processes the lead)
+    17:task:(Manager  processes the lead) --> 15:exclusivegateway:{x}
+    15:exclusivegateway:{x} --> 18:exclusivegateway:{x}
+    %% D5
+    18:exclusivegateway:{x} --> |Branch 1|19:task:(Sales Assistant  sends a note to the Manager)
+    18:exclusivegateway:{x} --> |Branch 2|21:exclusivegateway:{x}
+    19:task:(Sales Assistant  sends a note to the Manager) --> 20:task:(Manager  processes the lead)
+    20:task:(Manager  processes the lead) --> 21:exclusivegateway:{x}
+    %% D7
+    21:exclusivegateway:{x} --> |Requires manager|19:task:(Sales Assistant  sends a note to the Manager)
+    21:exclusivegateway:{x} --> |Lead does not require manager|5:task:(Sales Assistant calls  customer)
+end

@@ -1,0 +1,61 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(MPON reports meter operation to GO)
+2:task:(GO examines application)
+3:exclusivegateway:{x}
+4:task:(GO confirms application)
+5:task:(GO rejects application)
+6:exclusivegateway:{x}
+7:task:(GO informs MPOO about registration confirmation)
+8:task:(GO informs MSPO about registration confirmation)
+9:parallelgateway:{AND}
+10:task:(MPON acquires/changes equipment)
+11:task:(MPOO acquires/changes equipment)
+12:parallelgateway:{AND}
+13:exclusivegateway:{x}
+14:task:(MPON informs GO of failure)
+15:task:(MPON informs GO of success)
+16:exclusivegateway:{x}
+17:task:(GO informs MPON about failure)
+18:task:(GO confirms failure of assignment)
+19:exclusivegateway:{x}
+20:task:(GO assigns MPON and confirms assignment)
+21:parallelgateway:{AND}
+22:task:(GO informs MPOO about assignment status)
+23:task:(GO informs MSPO about assignment status)
+24:task:(GO informs SP about assignment status)
+25:parallelgateway:{AND}
+26:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(MPON reports meter operation to GO)
+1:task:(MPON reports meter operation to GO) --> 2:task:(GO examines application)
+2:task:(GO examines application) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Confirm|4:task:(GO confirms application)
+3:exclusivegateway:{x} --> |Reject|5:task:(GO rejects application)
+4:task:(GO confirms application) --> 6:exclusivegateway:{x}
+5:task:(GO rejects application) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> 7:task:(GO informs MPOO about registration confirmation)
+7:task:(GO informs MPOO about registration confirmation) --> 8:task:(GO informs MSPO about registration confirmation)
+8:task:(GO informs MSPO about registration confirmation) --> 9:parallelgateway:{AND}
+9:parallelgateway:{AND} --> 10:task:(MPON acquires/changes equipment)
+9:parallelgateway:{AND} --> 11:task:(MPOO acquires/changes equipment)
+10:task:(MPON acquires/changes equipment) --> 12:parallelgateway:{AND}
+11:task:(MPOO acquires/changes equipment) --> 12:parallelgateway:{AND}
+12:parallelgateway:{AND} --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Failure|14:task:(MPON informs GO of failure)
+13:exclusivegateway:{x} --> |Success|15:task:(MPON informs GO of success)
+14:task:(MPON informs GO of failure) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |Inform MPON|17:task:(GO informs MPON about failure)
+16:exclusivegateway:{x} --> |Confirm failure|18:task:(GO confirms failure of assignment)
+17:task:(GO informs MPON about failure) --> 19:exclusivegateway:{x}
+18:task:(GO confirms failure of assignment) --> 19:exclusivegateway:{x}
+15:task:(MPON informs GO of success) --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> 20:task:(GO assigns MPON and confirms assignment)
+20:task:(GO assigns MPON and confirms assignment) --> 21:parallelgateway:{AND}
+21:parallelgateway:{AND} --> 22:task:(GO informs MPOO about assignment status)
+21:parallelgateway:{AND} --> 23:task:(GO informs MSPO about assignment status)
+21:parallelgateway:{AND} --> 24:task:(GO informs SP about assignment status)
+22:task:(GO informs MPOO about assignment status) --> 25:parallelgateway:{AND}
+23:task:(GO informs MSPO about assignment status) --> 25:parallelgateway:{AND}
+24:task:(GO informs SP about assignment status) --> 25:parallelgateway:{AND}
+25:parallelgateway:{AND} --> 26:endevent:(((endevent)))

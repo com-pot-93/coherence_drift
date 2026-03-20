@@ -1,0 +1,21 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Take Order)
+  1:task:(Take Order) --> 2:task:(Submit Order Ticket)
+  2:task:(Submit Order Ticket) --> 3:task:(Give Order to Sommelier)
+  3:task:(Give Order to Sommelier) --> 4:task:(Assign Order to Waiter)
+  4:task:(Assign Order to Waiter) --> 5:parallelgateway:{AND}
+  5:parallelgateway:{AND} --> 6:task:(Prepare Food)
+  5:parallelgateway:{AND} --> 7:task:(Select Drinks)
+  5:parallelgateway:{AND} --> 8:task:(Ready Cart)
+  6:task:(Prepare Food) --> 9:parallelgateway:{AND}
+  7:task:(Select Drinks) --> 9:parallelgateway:{AND}
+  8:task:(Ready Cart) --> 9:parallelgateway:{AND}
+  9:parallelgateway:{AND} --> 10:task:(Deliver Cart)
+  10:task:(Deliver Cart) --> 11:task:(Return to Station)
+  11:task:(Return to Station) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} -->|Wait for billing| 13:task:(Wait for Billing)
+  12:exclusivegateway:{x} -->|Debit guest account| 14:task:(Debit Guest Account)
+  13:task:(Wait for Billing) --> 15:endevent:(((endevent)))
+  14:task:(Debit Guest Account) --> 15:endevent:(((endevent)))
+```

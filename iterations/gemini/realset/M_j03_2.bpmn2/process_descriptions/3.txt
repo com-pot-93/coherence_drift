@@ -1,0 +1,15 @@
+The process starts with creating a parts list, followed by querying webshops and choosing the cheapest shop. An order is then placed.
+
+After placing the order, the process splits into four parallel activities: receiving the order, sending the invoice, delivering the order, and updating the inventory. Once all four activities are completed, the process continues with receiving the order again and starting the building process.
+
+The process then encounters a series of exclusive gateways (where only one path is taken based on a condition). First, a condition is checked. If the condition is met, the process proceeds to another exclusive gateway. If the condition is not met, the process continues to a series of exclusive gateways to determine whether to order faster delivery based on whether a series of conditions are met or not.
+
+After this, the process continues through a series of nested exclusive gateways that check various conditions and series of conditions. Depending on whether these conditions are met or not, the process may:
+
+*   Write a compliment email.
+*   Order the cheapest part.
+*   Escalate the process.
+
+These actions are determined by a complex decision-making structure involving multiple exclusive gateways. The process may loop back to previous gateways based on the outcome of these decisions.
+
+Eventually, the process converges and ends.

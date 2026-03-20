@@ -1,0 +1,13 @@
+The process begins when a person starts the procedure. First, they enter their login information. After this, the system checks whether the provided credentials are correct.
+
+Next, there is a decision point. If the credentials are not correct, the process ends immediately. If the credentials are correct, the person can proceed to the next step.
+
+The person then selects a product. After selecting a product, they add it to their shopping cart. Once the product is added, the system saves the item. At this point, there is another decision: the process checks whether every selected item is already in the shopping cart. If not, the person can select and add more products, repeating the previous steps as needed. This loop continues until all desired items are in the shopping cart.
+
+Once all selected items are in the shopping cart, the person confirms the order. After confirming the order, two activities happen at the same time: shipment details are prepared, and payment details are prepared. Both of these tasks must be completed before moving forward.
+
+After both shipment and payment details are ready, the person enters their payment information. At this stage, two activities also happen in parallel: the payment data is sent to the bank, and the person enters their shipping details. Both of these actions must be completed before proceeding.
+
+Once both the payment data has been sent to the bank and the shipping details have been entered, there is another decision point. If everything is in order, the order is confirmed and saved. If not, the process skips this step and moves forward.
+
+Finally, the process ends.

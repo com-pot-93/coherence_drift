@@ -1,0 +1,5 @@
+The process begins when a request for a bid is sent to the MPOO. After this, a tender is sent to the MPON. Once the tender has been sent, an order is placed with the MPOO.
+
+Following the placement of the order, two activities happen at the same time. One activity is to confirm the order, and the other is to provide master data. Both of these activities proceed independently and can be carried out simultaneously.
+
+Once both the order has been confirmed and the master data has been provided, the process comes to an end.

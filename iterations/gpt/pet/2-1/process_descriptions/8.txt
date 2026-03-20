@@ -1,0 +1,37 @@
+Certainly! Here is a detailed, step-by-step description of the process you provided:
+
+1. The process begins when a customer notices a decline in the quality of a service.
+2. The customer sends the details of the problem to the customer service team.
+3. The customer service team receives the problem report and enters it into their system.
+4. The problem is then compared with the existing service agreement to check if it falls under the agreed terms.
+5. Based on this comparison, the necessary countermeasures are determined.
+6. At this point, there are three possible paths:
+   - If no countermeasures are needed, this is noted, and the process continues.
+   - If further assessment is required, the significance of the customer is evaluated before proceeding.
+   - If the issue needs to be linked to an extra problem-fixing process, this is done before moving on.
+7. After any of these three actions, a detailed problem report is created.
+8. This report is sent to the Service Management team.
+9. The Service Management team handles the quality violation.
+10. They then investigate the problem.
+11. After the investigation, there are two possible outcomes:
+    - If an analysis is performed, an analysis is conducted and a trouble report is created.
+    - If no analysis is needed, the process continues without it.
+12. The report is then sent to the Resource Provisioning team.
+13. The Resource Provisioning team receives the report.
+14. They check for any issues related to the resources.
+15. At this stage, there are three possible actions:
+    - If issues are found, the problem is analyzed and a trouble report is created.
+    - If a notification about service execution is needed, it is created.
+    - If no further action is required, the process continues.
+16. After any of these actions, a status report is sent to the Service Management team.
+17. The Service Management team prepares a final status report.
+18. At this point, there are three possible next steps:
+    - If automatic restoration is requested, this request is made. The Resource Provisioning team then tracks errors and corrective actions, creates a troubleshooting report, and sends it to Service Management. Service Management forwards the report to customer service, which creates a problem resolution report, sends it to customer service, and the customer service team receives the resolution report.
+    - If actual service performance needs to be sent, this information is sent to customer service, and the customer service team receives the performance report.
+    - If corrective actions need to be performed, these actions are carried out, a problem resolution report is created and sent to customer service, and the customer service team receives the resolution report.
+19. After any of these three paths, the process continues with two activities happening at the same time:
+    - A report for the customer is created.
+    - Any violation rebate is reported to the billing department, which then adjusts the billing accordingly.
+20. Once both activities are completed, the report is sent to the customer.
+21. The customer receives the report.
+22. The process ends.

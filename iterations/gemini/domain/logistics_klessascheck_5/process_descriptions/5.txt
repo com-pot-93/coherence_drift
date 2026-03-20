@@ -1,0 +1,13 @@
+The process starts with the event of starting the process.
+First, the product is packaged.
+Then, the packaged product is shipped.
+Next, a decision is made.
+If a receipt is needed, it is printed and then posted. Otherwise, if no receipt is needed, this step is skipped.
+After printing and posting the receipt, or if no receipt is needed, the product is delivered to the station.
+In parallel, another decision is made.
+If the product is received, it is processed as received.
+In parallel with that, another decision is made.
+If the product is received, it is processed as received. Otherwise, if the product is not received, this step is skipped.
+After processing the product as received or skipping the processing, the process continues.
+After processing the product as received, the process continues.
+Finally, the process ends.

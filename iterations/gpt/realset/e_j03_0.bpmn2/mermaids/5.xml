@@ -1,0 +1,81 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Initiate Assessment Tool)
+2:task:(Specify Incident Type)
+3:exclusivegateway:{x}
+4:task:(Confirm Accident)
+5:task:(Confirm Almost Accident)
+6:task:(Confirm Severe Safety/Health Risk)
+7:task:(Confirm Defective Protective Equipment)
+8:exclusivegateway:{x}
+9:task:(Provide Incident Details)
+10:parallelgateway:{AND}
+11:subprocess:(Path 1 Notifications)
+12:subprocess:(Path 2 Notifications)
+13:parallelgateway:{AND}
+14:exclusivegateway:{x}
+15:task:(Review List of Tasks)
+16:task:(Execute Proposed Tasks)
+17:endevent:(((endevent)))
+18:task:(Proceed Directly - Path 1)
+19:exclusivegateway:{x}
+20:task:(Contact Superiors)
+21:task:(Contact Accident Insurance (Path 1))
+22:exclusivegateway:{x}
+23:task:(Contact Labour Inspectorate)
+24:exclusivegateway:{x}
+25:task:(Proceed Directly - Path 2)
+26:exclusivegateway:{x}
+27:task:(Contact Accident Insurance (Path 2))
+28:task:(Contact Principal)
+29:exclusivegateway:{x}
+30:task:(Contact Private Insurance)
+31:exclusivegateway:{x}
+
+0:startevent:((startevent)) --> 1:task:(Initiate Assessment Tool)
+1:task:(Initiate Assessment Tool) --> 2:task:(Specify Incident Type)
+2:task:(Specify Incident Type) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Accident|4:task:(Confirm Accident)
+3:exclusivegateway:{x} --> |Almost Accident|5:task:(Confirm Almost Accident)
+3:exclusivegateway:{x} --> |Severe Safety/Health Risk|6:task:(Confirm Severe Safety/Health Risk)
+3:exclusivegateway:{x} --> |Defective Protective Equipment|7:task:(Confirm Defective Protective Equipment)
+4:task:(Confirm Accident) --> 8:exclusivegateway:{x}
+5:task:(Confirm Almost Accident) --> 8:exclusivegateway:{x}
+6:task:(Confirm Severe Safety/Health Risk) --> 8:exclusivegateway:{x}
+7:task:(Confirm Defective Protective Equipment) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> 9:task:(Provide Incident Details)
+9:task:(Provide Incident Details) --> 10:parallelgateway:{AND}
+10:parallelgateway:{AND} --> 11:subprocess:(Path 1 Notifications)
+10:parallelgateway:{AND} --> 12:subprocess:(Path 2 Notifications)
+11:subprocess:(Path 1 Notifications) --> 13:parallelgateway:{AND}
+12:subprocess:(Path 2 Notifications) --> 13:parallelgateway:{AND}
+%% Path 1 Notifications subprocess
+11:subprocess:(Path 1 Notifications) --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> |Proceed Directly|18:task:(Proceed Directly - Path 1)
+19:exclusivegateway:{x} --> |Notifications Needed|20:task:(Contact Superiors)
+19:exclusivegateway:{x} --> |Notifications Needed|21:task:(Contact Accident Insurance (Path 1))
+19:exclusivegateway:{x} --> |Notifications Needed|22:exclusivegateway:{x}
+20:task:(Contact Superiors) --> 24:exclusivegateway:{x}
+21:task:(Contact Accident Insurance (Path 1)) --> 24:exclusivegateway:{x}
+22:exclusivegateway:{x} --> |Contact Labour Inspectorate|23:task:(Contact Labour Inspectorate)
+22:exclusivegateway:{x} --> |Do Not Contact|24:exclusivegateway:{x}
+23:task:(Contact Labour Inspectorate) --> 24:exclusivegateway:{x}
+18:task:(Proceed Directly - Path 1) --> 24:exclusivegateway:{x}
+24:exclusivegateway:{x} --> 13:parallelgateway:{AND}
+%% Path 2 Notifications subprocess
+12:subprocess:(Path 2 Notifications) --> 26:exclusivegateway:{x}
+26:exclusivegateway:{x} --> |Proceed Directly|25:task:(Proceed Directly - Path 2)
+26:exclusivegateway:{x} --> |Notifications Needed|27:task:(Contact Accident Insurance (Path 2))
+26:exclusivegateway:{x} --> |Notifications Needed|28:task:(Contact Principal)
+25:task:(Proceed Directly - Path 2) --> 29:exclusivegateway:{x}
+27:task:(Contact Accident Insurance (Path 2)) --> 29:exclusivegateway:{x}
+28:task:(Contact Principal) --> 29:exclusivegateway:{x}
+29:exclusivegateway:{x} --> 13:parallelgateway:{AND}
+%% After parallel merge
+13:parallelgateway:{AND} --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |Proceed Directly|15:task:(Review List of Tasks)
+14:exclusivegateway:{x} --> |Contact Private Insurance|30:task:(Contact Private Insurance)
+30:task:(Contact Private Insurance) --> 31:exclusivegateway:{x}
+15:task:(Review List of Tasks) --> 31:exclusivegateway:{x}
+31:exclusivegateway:{x} --> 16:task:(Execute Proposed Tasks)
+16:task:(Execute Proposed Tasks) --> 17:endevent:(((endevent)))

@@ -1,0 +1,5 @@
+The process begins. Immediately, two activities are carried out at the same time: the Fault Detector reports a failure, and the MPO suspects a fault. Once both of these actions are completed, the process continues.
+
+Next, the MPO examines the reported failure. After this examination, a decision is made. If the MPO rejects the failure, the process moves directly to the end. If the MPO confirms the failure, the MPO informs the GO about the failure, then informs the MSP about the failure, and proceeds to fix the fault.
+
+After fixing the fault, the MPO shares the repair results, then informs the GO that the issue has been resolved, and finally informs the MSP that the issue has been resolved. Once this sequence is complete, the process ends.

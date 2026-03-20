@@ -1,0 +1,37 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Run Machine)
+2:task:(Check Connection)
+3:exclusivegateway:{x}
+4:exclusivegateway:{x}
+5:task:(Collect Information/Measure)
+6:exclusivegateway:{x}
+7:task:(Escalate Issue)
+8:task:(Calculate OEE)
+9:exclusivegateway:{x}
+10:parallelgateway:{AND}
+11:task:(Stop Machine)
+12:task:(Send Email to Engineer)
+13:parallelgateway:{AND}
+14:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Run Machine)
+1:task:(Run Machine) --> 2:task:(Check Connection)
+2:task:(Check Connection) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Positive|4:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Negative|14:endevent:(((endevent)))
+4:exclusivegateway:{x} --> |Negative|3:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Positive|5:task:(Collect Information/Measure)
+5:task:(Collect Information/Measure) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Positive|5:task:(Collect Information/Measure)
+6:exclusivegateway:{x} --> |Escalation|7:task:(Escalate Issue)
+6:exclusivegateway:{x} --> |Not Positive|8:task:(Calculate OEE)
+7:task:(Escalate Issue) --> 8:task:(Calculate OEE)
+8:task:(Calculate OEE) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Positive|5:task:(Collect Information/Measure)
+9:exclusivegateway:{x} --> |Not Positive|10:parallelgateway:{AND}
+10:parallelgateway:{AND} --> 11:task:(Stop Machine)
+10:parallelgateway:{AND} --> 12:task:(Send Email to Engineer)
+11:task:(Stop Machine) --> 13:parallelgateway:{AND}
+12:task:(Send Email to Engineer) --> 13:parallelgateway:{AND}
+13:parallelgateway:{AND} --> 14:endevent:(((endevent)))

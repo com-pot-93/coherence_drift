@@ -1,0 +1,24 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+  1:exclusivegateway:{x} --> |Condition A is true| 2:task:(Receive Expense Report)
+  1:exclusivegateway:{x} --> |Condition A is false| 3:task:(Create New Employee Account)
+  2:task:(Receive Expense Report) --> 4:exclusivegateway:{x}
+  3:task:(Create New Employee Account) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |Condition E is true| 5:task:(Create New Employee Account)
+  4:exclusivegateway:{x} --> |Condition E is false| 6:exclusivegateway:{x}
+  5:task:(Create New Employee Account) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Condition G is true| 7:task:(Automatically Approve Report)
+  6:exclusivegateway:{x} --> |Condition G is false| 8:task:(Require Supervisor Approval)
+  7:task:(Automatically Approve Report) --> 9:exclusivegateway:{x}
+  8:task:(Require Supervisor Approval) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Condition I is true| 10:task:(Send Reimbursement)
+  9:exclusivegateway:{x} --> |Condition I is false| 11:exclusivegateway:{x}
+  10:task:(Send Reimbursement) --> 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |Condition L is true| 12:task:(Send Approval In Progress Email)
+  11:exclusivegateway:{x} --> |Condition L is false| 13:exclusivegateway:{x}
+  12:task:(Send Approval In Progress Email) --> 13:exclusivegateway:{x}
+  13:exclusivegateway:{x} --> |Condition M is false| 14:task:(Send Rejection Notice)
+  13:exclusivegateway:{x} --> |Condition M is true| 15:endevent:(((endevent)))
+  14:task:(Send Rejection Notice) --> 15:endevent:(((endevent)))
+```

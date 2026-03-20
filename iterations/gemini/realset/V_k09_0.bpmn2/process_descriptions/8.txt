@@ -1,0 +1,7 @@
+The process starts. First, it connects to a management system. Then, based on a condition, it either proceeds to read an order from the system or it ends. If the order is read, the process checks another condition. If this condition is not met, the process escalates the issue. If the condition is met, the process splits into three parallel paths.
+
+In each of these parallel paths, a condition is checked. If the condition is met, a delivery delay penalty is applied. If not, the item is marked as OK. After each of these conditional checks and subsequent actions (applying penalty or marking as OK), the parallel paths converge.
+
+After the parallel paths merge, the arrived product is marked as OK. Then, the process splits into two parallel activities: packing the product and requesting a courier. Once both are completed, the delivery is marked as shipped.
+
+Finally, a condition is evaluated. If the condition is false, the process proceeds. If the condition is true, the process loops back to read the order from the system again, and also escalates the issue. After either proceeding or escalating and looping back, the process merges with the path where the condition was not initially met, eventually leading back to the initial condition check after connecting to the management system, and potentially to the end of the process.

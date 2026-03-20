@@ -1,0 +1,34 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Company decides to go public)
+2:task:(Select underwriters)
+3:task:(Underwriters prepare registration statement)
+4:task:(SEC reviews registration statement)
+5:task:(Underwriters check compliance)
+6:parallelgateway:{AND}
+7:task:(Determine final issue price)
+8:task:(Arrange road show)
+9:task:(Wait for SEC approval)
+10:parallelgateway:{AND}
+11:task:(Receive SEC clearance)
+12:task:(Set final issue price)
+13:task:(Enter firm commitment to purchase stock)
+14:task:(Offer stock to public)
+15:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Company decides to go public)
+1:task:(Company decides to go public) --> 2:task:(Select underwriters)
+2:task:(Select underwriters) --> 3:task:(Underwriters prepare registration statement)
+3:task:(Underwriters prepare registration statement) --> 4:task:(SEC reviews registration statement)
+4:task:(SEC reviews registration statement) --> 5:task:(Underwriters check compliance)
+5:task:(Underwriters check compliance) --> 6:parallelgateway:{AND}
+6:parallelgateway:{AND} --> 7:task:(Determine final issue price)
+6:parallelgateway:{AND} --> 9:task:(Wait for SEC approval)
+7:task:(Determine final issue price) --> 8:task:(Arrange road show)
+8:task:(Arrange road show) --> 10:parallelgateway:{AND}
+9:task:(Wait for SEC approval) --> 10:parallelgateway:{AND}
+10:parallelgateway:{AND} --> 11:task:(Receive SEC clearance)
+11:task:(Receive SEC clearance) --> 12:task:(Set final issue price)
+12:task:(Set final issue price) --> 13:task:(Enter firm commitment to purchase stock)
+13:task:(Enter firm commitment to purchase stock) --> 14:task:(Offer stock to public)
+14:task:(Offer stock to public) --> 15:endevent:(((endevent)))

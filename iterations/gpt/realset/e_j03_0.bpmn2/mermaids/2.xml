@@ -1,0 +1,68 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Start Assessment Tool)
+2:task:(Prompt User for Incident Type)
+3:exclusivegateway:{x}
+4:task:(Confirm Accident)
+5:task:(Confirm Almost Accident)
+6:task:(Confirm Severe Safety/Health Risk)
+7:task:(Confirm Defective Protective Equipment)
+8:exclusivegateway:{x}
+9:task:(Specify Incident Details)
+10:exclusivegateway:{x}
+11:subprocess:(Enter Own or Victim's Data)
+12:parallelgateway:{AND}
+13:task:(Contact Superiors)
+14:parallelgateway:{AND}
+15:task:(Contact Accident Insurance)
+16:exclusivegateway:{x}
+17:task:(Contact Labour Inspectorate)
+18:exclusivegateway:{x}
+19:parallelgateway:{AND}
+20:task:(Contact Accident Insurance)
+21:task:(Contact Principal)
+22:parallelgateway:{AND}
+23:exclusivegateway:{x}
+24:task:(Contact Private Insurance)
+25:exclusivegateway:{x}
+26:task:(Review List of Tasks)
+27:task:(Execute Proposed Tasks)
+28:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Start Assessment Tool)
+1:task:(Start Assessment Tool) --> 2:task:(Prompt User for Incident Type)
+2:task:(Prompt User for Incident Type) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Accident|4:task:(Confirm Accident)
+3:exclusivegateway:{x} --> |Almost Accident|5:task:(Confirm Almost Accident)
+3:exclusivegateway:{x} --> |Severe Safety/Health Risk|6:task:(Confirm Severe Safety/Health Risk)
+3:exclusivegateway:{x} --> |Defective Protective Equipment|7:task:(Confirm Defective Protective Equipment)
+4:task:(Confirm Accident) --> 8:exclusivegateway:{x}
+5:task:(Confirm Almost Accident) --> 8:exclusivegateway:{x}
+6:task:(Confirm Severe Safety/Health Risk) --> 8:exclusivegateway:{x}
+7:task:(Confirm Defective Protective Equipment) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> 9:task:(Specify Incident Details)
+9:task:(Specify Incident Details) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Path 1|11:subprocess:(Enter Own or Victim's Data)
+10:exclusivegateway:{x} --> |Path 2|19:parallelgateway:{AND}
+11:subprocess:(Enter Own or Victim's Data) --> 12:parallelgateway:{AND}
+12:parallelgateway:{AND} --> |Contact Superiors|13:task:(Contact Superiors)
+12:parallelgateway:{AND} --> |Parallel Actions|14:parallelgateway:{AND}
+13:task:(Contact Superiors) --> 23:exclusivegateway:{x}
+14:parallelgateway:{AND} --> 15:task:(Contact Accident Insurance)
+14:parallelgateway:{AND} --> 16:exclusivegateway:{x}
+15:task:(Contact Accident Insurance) --> 18:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |Contact Labour Inspectorate|17:task:(Contact Labour Inspectorate)
+16:exclusivegateway:{x} --> |Skip|18:exclusivegateway:{x}
+17:task:(Contact Labour Inspectorate) --> 18:exclusivegateway:{x}
+18:exclusivegateway:{x} --> 23:exclusivegateway:{x}
+19:parallelgateway:{AND} --> 20:task:(Contact Accident Insurance)
+19:parallelgateway:{AND} --> 21:task:(Contact Principal)
+20:task:(Contact Accident Insurance) --> 22:parallelgateway:{AND}
+21:task:(Contact Principal) --> 22:parallelgateway:{AND}
+22:parallelgateway:{AND} --> 23:exclusivegateway:{x}
+23:exclusivegateway:{x} --> |Continue|26:task:(Review List of Tasks)
+23:exclusivegateway:{x} --> |Contact Private Insurance|24:task:(Contact Private Insurance)
+24:task:(Contact Private Insurance) --> 25:exclusivegateway:{x}
+25:exclusivegateway:{x} --> 26:task:(Review List of Tasks)
+26:task:(Review List of Tasks) --> 27:task:(Execute Proposed Tasks)
+27:task:(Execute Proposed Tasks) --> 28:endevent:(((endevent)))

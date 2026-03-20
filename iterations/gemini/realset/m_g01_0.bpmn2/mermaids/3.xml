@@ -1,0 +1,14 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+  1:exclusivegateway:{x} --> |Yes| 2:exclusivegateway:{x}
+  1:exclusivegateway:{x} --> |No| 10:endevent:(((endevent)))
+  2:exclusivegateway:{x} --> |Yes| 3:task:(Send Status)
+  2:exclusivegateway:{x} --> |No| 8:inclusivegateway:{O}
+  3:task:(Send Status) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |Yes| 5:task:(Print Object)
+  4:exclusivegateway:{x} --> |No| 8:inclusivegateway:{O}
+  5:task:(Print Object) --> 8:inclusivegateway:{O}
+  8:inclusivegateway:{O} --> 1:exclusivegateway:{x}
+  10:endevent:(((endevent)))
+```

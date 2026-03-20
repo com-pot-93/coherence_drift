@@ -1,0 +1,20 @@
+Here is a detailed, step-by-step description of the process as depicted in your model:
+
+1. The process begins when a travel request is received.
+2. After receiving the travel request, a tour plan is prepared.
+3. Once the tour plan is ready, it is sent out.
+4. At this point, a decision is made. If the process should not continue, it ends immediately. Otherwise, the process moves to the next decision point.
+5. Another decision is made. If the outcome is negative, the process ends. If not, the process waits for a response.
+6. After waiting for a response, another decision is made. If the process should not continue, it ends. Otherwise, it moves to the next decision.
+7. Another decision is made. If the process should not continue, it ends. Otherwise, the tour is booked.
+8. After booking the tour, another decision is made. If the process should not continue, it ends. Otherwise, the customer is charged.
+9. After charging the customer, another decision is made. If the process should not continue, it ends. Otherwise, the process continues to the next set of actions.
+10. At this point, there are three possible actions:
+    - The customer may be contacted, after which the process continues.
+    - A bill is sent and a booking confirmation is sent, after which the process continues.
+    - No further action is taken, and the process continues.
+11. This pattern repeats several times: at each stage, the process can either contact the customer, send a bill and booking confirmation, or take no further action. After each action, the process continues to the next similar decision point.
+12. This sequence of contacting the customer, sending a bill and confirmation, or taking no further action, repeats four times in total.
+13. After the last set of actions, the process ends.
+
+Throughout the process, at each major step, there are decision points where the process may end early if certain conditions are not met. If the process continues through all steps, it involves preparing and sending a tour plan, waiting for responses, booking the tour, charging the customer, and then a series of possible actions involving customer contact and sending confirmations, before finally ending.

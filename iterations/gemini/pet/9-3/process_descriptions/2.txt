@@ -1,0 +1,1 @@
+The process starts. First, a schedule is drafted. Then, the dates are added to calendars. After this, the dates are checked. Next, modifications are suggested. Following this, the dates and any conflicts are rechecked. Then, the final schedule is sent. After this, diaries are checked. Finally, any conflicts are reported, and the process ends.

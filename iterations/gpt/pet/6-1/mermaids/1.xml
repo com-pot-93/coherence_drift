@@ -1,0 +1,77 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Invoices)
+2:task:(Visual Inspection by Secretariat)
+3:task:(Forward Invoice to Accounting Employee)
+4:task:(Identify Suppliers)
+5:task:(Create Invoice Record)
+6:task:(Check Invoice Items)
+7:task:(Note Cost Center and Managers)
+8:task:(Place Docket and Invoice Copy in Internal Mail)
+9:task:(Send to Cost Center Manager)
+10:task:(Cost Center Manager Receives Invoice Copy)
+11:task:(Review Invoice Content)
+12:exclusivegateway:{x}
+13:task:(Write Approval Code and Return Invoice)
+14:exclusivegateway:{x}
+15:task:(Pass to Next Cost Center Manager)
+16:exclusivegateway:{x}
+17:task:(Send Back to Accounting Employee)
+18:task:(Clarify Issue with Vendor)
+19:exclusivegateway:{x}
+20:task:(Consult Cost Center Managers Again)
+21:task:(Send Invoice Copy to Cost Center Managers)
+22:task:(Forward to Commercial Manager)
+23:task:(Commercial Audit)
+24:task:(Approve for Payment)
+25:exclusivegateway:{x}
+26:task:(Board Checks Invoice)
+27:exclusivegateway:{x}
+28:task:(Move Invoice Copy and Docket to Accounting Employee)
+29:exclusivegateway:{x}
+30:task:(Resolve Complaints or Issues)
+31:task:(Give Payment Instructions)
+32:task:(Close Invoice)
+33:exclusivegateway:{x}
+34:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Invoices)
+1:task:(Receive Invoices) --> 2:task:(Visual Inspection by Secretariat)
+2:task:(Visual Inspection by Secretariat) --> 3:task:(Forward Invoice to Accounting Employee)
+3:task:(Forward Invoice to Accounting Employee) --> 4:task:(Identify Suppliers)
+4:task:(Identify Suppliers) --> 5:task:(Create Invoice Record)
+5:task:(Create Invoice Record) --> 6:task:(Check Invoice Items)
+6:task:(Check Invoice Items) --> 7:task:(Note Cost Center and Managers)
+7:task:(Note Cost Center and Managers) --> 8:task:(Place Docket and Invoice Copy in Internal Mail)
+8:task:(Place Docket and Invoice Copy in Internal Mail) --> 9:task:(Send to Cost Center Manager)
+9:task:(Send to Cost Center Manager) --> 10:task:(Cost Center Manager Receives Invoice Copy)
+10:task:(Cost Center Manager Receives Invoice Copy) --> 11:task:(Review Invoice Content)
+11:task:(Review Invoice Content) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Approved|13:task:(Write Approval Code and Return Invoice)
+12:exclusivegateway:{x} --> |Rejected|17:task:(Send Back to Accounting Employee)
+13:task:(Write Approval Code and Return Invoice) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |Another Manager|15:task:(Pass to Next Cost Center Manager)
+14:exclusivegateway:{x} --> |No More Managers|16:exclusivegateway:{x}
+15:task:(Pass to Next Cost Center Manager) --> 10:task:(Cost Center Manager Receives Invoice Copy)
+16:exclusivegateway:{x} --> 22:task:(Forward to Commercial Manager)
+17:task:(Send Back to Accounting Employee) --> 18:task:(Clarify Issue with Vendor)
+18:task:(Clarify Issue with Vendor) --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> |Consult Managers Again|20:task:(Consult Cost Center Managers Again)
+19:exclusivegateway:{x} --> |Issue Resolved|21:task:(Send Invoice Copy to Cost Center Managers)
+20:task:(Consult Cost Center Managers Again) --> 21:task:(Send Invoice Copy to Cost Center Managers)
+21:task:(Send Invoice Copy to Cost Center Managers) --> 10:task:(Cost Center Manager Receives Invoice Copy)
+22:task:(Forward to Commercial Manager) --> 23:task:(Commercial Audit)
+23:task:(Commercial Audit) --> 24:task:(Approve for Payment)
+24:task:(Approve for Payment) --> 25:exclusivegateway:{x}
+25:exclusivegateway:{x} --> |Board Review Needed|26:task:(Board Checks Invoice)
+25:exclusivegateway:{x} --> |No Board Review|27:exclusivegateway:{x}
+26:task:(Board Checks Invoice) --> 27:exclusivegateway:{x}
+27:exclusivegateway:{x} --> 28:task:(Move Invoice Copy and Docket to Accounting Employee)
+28:task:(Move Invoice Copy and Docket to Accounting Employee) --> 29:exclusivegateway:{x}
+29:exclusivegateway:{x} --> |Complaints/Issues|30:task:(Resolve Complaints or Issues)
+29:exclusivegateway:{x} --> |No Issues|31:task:(Give Payment Instructions)
+30:task:(Resolve Complaints or Issues) --> 29:exclusivegateway:{x}
+31:task:(Give Payment Instructions) --> 32:task:(Close Invoice)
+32:task:(Close Invoice) --> 33:exclusivegateway:{x}
+33:exclusivegateway:{x} --> |Repeat for Another Manager|9:task:(Send to Cost Center Manager)
+33:exclusivegateway:{x} --> |Process Complete|34:endevent:(((endevent)))

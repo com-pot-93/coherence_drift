@@ -1,0 +1,8 @@
+The process starts when an MSP Operator deregisters at the Government Organization.
+The Government Organization then verifies the deregistration.
+Based on the verification, the process follows one of two paths.
+In the first path, the Government Organization rejects the deregistration.
+In the second path, the Government Organization preliminarily confirms the deregistration.
+Both paths then converge, and the Government Organization assigns itself as the MSP.
+Following this, the Government Organization informs the MSP Operator about the state of the assignment, then informs the MPO, and finally informs the SP about the assignment.
+The process then ends.

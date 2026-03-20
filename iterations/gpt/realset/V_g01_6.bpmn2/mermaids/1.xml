@@ -1,0 +1,39 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Ask Customer for Burger or Menu)
+  2:exclusivegateway:{x}
+  3:parallelgateway:{AND}
+  4:task:(Prepare Drink)
+  5:exclusivegateway:{x}
+  6:task:(Ask for Wedges or Fries)
+  7:exclusivegateway:{x}
+  8:task:(Prepare Fries)
+  9:task:(Prepare Wedges)
+  10:parallelgateway:{AND}
+  11:task:(Prepare Burger)
+  12:exclusivegateway:{x}
+  13:task:(Provide Status Updates)
+  14:exclusivegateway:{x}
+  15:task:(Place Order on Conveyor Belt)
+  16:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Ask Customer for Burger or Menu)
+  1:task:(Ask Customer for Burger or Menu) --> 2:exclusivegateway:{x}
+  2:exclusivegateway:{x} --> |Menu|3:parallelgateway:{AND}
+  2:exclusivegateway:{x} --> |Only Burger|11:task:(Prepare Burger)
+  3:parallelgateway:{AND} --> 4:task:(Prepare Drink)
+  3:parallelgateway:{AND} --> 6:task:(Ask for Wedges or Fries)
+  4:task:(Prepare Drink) --> 10:parallelgateway:{AND}
+  6:task:(Ask for Wedges or Fries) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Fries|8:task:(Prepare Fries)
+  7:exclusivegateway:{x} --> |Wedges|9:task:(Prepare Wedges)
+  8:task:(Prepare Fries) --> 10:parallelgateway:{AND}
+  9:task:(Prepare Wedges) --> 10:parallelgateway:{AND}
+  10:parallelgateway:{AND} --> 11:task:(Prepare Burger)
+  11:task:(Prepare Burger) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> |Give Updates|13:task:(Provide Status Updates)
+  12:exclusivegateway:{x} --> |No Updates|15:task:(Place Order on Conveyor Belt)
+  13:task:(Provide Status Updates) --> 14:exclusivegateway:{x}
+  14:exclusivegateway:{x} --> |More Updates Needed|13:task:(Provide Status Updates)
+  14:exclusivegateway:{x} --> |Done|15:task:(Place Order on Conveyor Belt)
+  15:task:(Place Order on Conveyor Belt) --> 16:endevent:(((endevent)))

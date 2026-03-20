@@ -1,0 +1,47 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive shipment request)
+2:task:(Check product availability)
+3:exclusivegateway:{x}
+4:task:(Check shipment address)
+5:exclusivegateway:{x}
+6:task:(Assemble inbound shipment)
+7:task:(Send inbound shipment)
+8:task:(Receive inbound shipment)
+9:task:(Check inbound shipment)
+10:task:(Prepare products for shipment to particular service station)
+11:task:(Prepare products for regional shipment)
+12:exclusivegateway:{x}
+13:task:(Prepare products for shipment to particular service station)
+14:exclusivegateway:{x}
+15:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive shipment request)
+1:task:(Receive shipment request) --> 2:task:(Check product availability)
+2:task:(Check product availability) --> 3:exclusivegateway:{x}
+
+%% D1 Branch 1
+3:exclusivegateway:{x} --> |"Branch 1"|4:task:(Check shipment address)
+4:task:(Check shipment address) --> 5:exclusivegateway:{x}
+
+%% D2 Branch 1
+5:exclusivegateway:{x} --> |"Branch 1"|6:task:(Assemble inbound shipment)
+6:task:(Assemble inbound shipment) --> 7:task:(Send inbound shipment)
+7:task:(Send inbound shipment) --> 8:task:(Receive inbound shipment)
+8:task:(Receive inbound shipment) --> 9:task:(Check inbound shipment)
+9:task:(Check inbound shipment) --> 10:task:(Prepare products for shipment to particular service station)
+10:task:(Prepare products for shipment to particular service station) --> 12:exclusivegateway:{x}
+
+%% D2 Branch 2
+5:exclusivegateway:{x} --> |"Branch 2"|11:task:(Prepare products for regional shipment)
+11:task:(Prepare products for regional shipment) --> 12:exclusivegateway:{x}
+
+%% D2 Merge
+12:exclusivegateway:{x} --> 14:exclusivegateway:{x}
+
+%% D1 Branch 2
+3:exclusivegateway:{x} --> |"Branch 2"|13:task:(Prepare products for shipment to particular service station)
+13:task:(Prepare products for shipment to particular service station) --> 14:exclusivegateway:{x}
+
+%% D1 Merge to End
+14:exclusivegateway:{x} --> 15:endevent:(((endevent)))

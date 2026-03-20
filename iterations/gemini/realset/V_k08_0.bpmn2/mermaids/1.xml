@@ -1,0 +1,28 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Enter Login Data)
+  1:task:(Enter Login Data) --> 2:task:(Check Credentials)
+  2:task:(Check Credentials) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Not Correct| 4:endevent:(((endevent)))
+  3:exclusivegateway:{x} --> |Correct| 5:task:(Select Product)
+  5:task:(Select Product) --> 6:task:(Add to Cart)
+  6:task:(Add to Cart) --> 7:task:(Save Item)
+  7:task:(Save Item) --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |More Items| 5:task:(Select Product)
+  8:exclusivegateway:{x} --> |No More Items| 9:task:(Confirm Order)
+  9:task:(Confirm Order) --> 10:parallelgateway:{AND}
+  10:parallelgateway:{AND} --> 11:task:(Prepare Shipment Details)
+  10:parallelgateway:{AND} --> 12:task:(Prepare Payment Details)
+  11:task:(Prepare Shipment Details) --> 13:parallelgateway:{AND}
+  12:task:(Prepare Payment Details) --> 13:parallelgateway:{AND}
+  13:parallelgateway:{AND} --> 14:task:(Enter Payment Data)
+  14:task:(Enter Payment Data) --> 15:parallelgateway:{AND}
+  15:parallelgateway:{AND} --> 16:task:(Send Payment Data)
+  15:parallelgateway:{AND} --> 17:task:(Enter Shipping Details)
+  16:task:(Send Payment Data) --> 18:parallelgateway:{AND}
+  17:task:(Enter Shipping Details) --> 18:parallelgateway:{AND}
+  18:parallelgateway:{AND} --> 19:exclusivegateway:{x}
+  19:exclusivegateway:{x} --> |Order Confirmed| 20:task:(Save Order)
+  19:exclusivegateway:{x} --> |Order Not Confirmed| 21:endevent:(((endevent)))
+  20:task:(Save Order) --> 22:endevent:(((endevent)))
+```

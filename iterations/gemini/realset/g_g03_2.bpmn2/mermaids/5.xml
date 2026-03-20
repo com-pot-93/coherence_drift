@@ -1,0 +1,30 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+  1:exclusivegateway:{x} --> |Yes| 2:task:(Enter Account Information)
+  1:exclusivegateway:{x} --> |No| 6:inclusivegateway:{O}
+  2:task:(Enter Account Information) --> 3:task:(Receive Confirmation Email)
+  3:task:(Receive Confirmation Email) --> 4:task:(Click Link in Email)
+  4:task:(Click Link in Email) --> 6:inclusivegateway:{O}
+  6:inclusivegateway:{O} --> 7:task:(Log into Battle.net)
+  7:task:(Log into Battle.net) --> 8:task:(Load Account Information)
+  8:task:(Load Account Information) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Yes| 10:task:(Select Payment Method)
+  9:exclusivegateway:{x} --> |No| 15:inclusivegateway:{O}
+  10:task:(Select Payment Method) --> 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |Credit Card| 12:task:(Enter Credit Card Information)
+  11:exclusivegateway:{x} --> |IBAN/BIC| 13:task:(Enter IBAN/BIC Information)
+  12:task:(Enter Credit Card Information) --> 15:inclusivegateway:{O}
+  13:task:(Enter IBAN/BIC Information) --> 15:inclusivegateway:{O}
+  15:inclusivegateway:{O} --> 16:task:(Log into Game)
+  16:task:(Log into Game) --> 17:parallelgateway:{AND}
+  17:parallelgateway:{AND} --> 18:task:(Select Realm)
+  17:parallelgateway:{AND} --> 19:task:(Select Race)
+  17:parallelgateway:{AND} --> 20:task:(Select Class)
+  18:task:(Select Realm) --> 21:parallelgateway:{AND}
+  19:task:(Select Race) --> 21:parallelgateway:{AND}
+  20:task:(Select Class) --> 21:parallelgateway:{AND}
+  21:parallelgateway:{AND} --> 22:task:(Name Character)
+  22:task:(Name Character) --> 23:task:(Receive Confirmation and Selfies)
+  23:task:(Receive Confirmation and Selfies) --> 24:endevent:(((endevent)))
+```

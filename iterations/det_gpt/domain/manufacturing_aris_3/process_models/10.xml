@@ -1,0 +1,419 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive production order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Prepare materrials</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Assemble door</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <call id="a9" endpoint="" a:alt_id="5">
+      <parameters>
+        <label>Send inquiry for quality check</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a11" endpoint="" a:alt_id="6">
+      <parameters>
+        <label>Receive inquiry for quality check</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a13" endpoint="" a:alt_id="7">
+      <parameters>
+        <label>Check quality</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a15" endpoint="" a:alt_id="8">
+      <parameters>
+        <label>Send quality report</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a17" endpoint="" a:alt_id="9">
+      <parameters>
+        <label>Receive quality report</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <choose mode="exclusive" a:alt_id="10">
+      <alternative condition="D1-1" language="text/javascript">
+        <choose mode="exclusive" a:alt_id="12">
+          <alternative condition="D2-1" language="text/javascript">
+            <choose mode="exclusive" a:alt_id="14">
+              <alternative condition="D3-1" language="text/javascript">
+                <call id="a29" endpoint="" a:alt_id="16">
+                  <parameters>
+                    <label>Fix door</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <choose mode="exclusive" a:alt_id="0">
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                </choose>
+              </alternative>
+              <alternative condition="D3-2" language="text/javascript">
+                <call id="a31" endpoint="" a:alt_id="19">
+                  <parameters>
+                    <label>Release door</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <choose mode="exclusive" a:alt_id="0">
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                </choose>
+              </alternative>
+            </choose>
+          </alternative>
+          <alternative condition="D2-2" language="text/javascript">
+            <choose mode="exclusive" a:alt_id="22">
+              <alternative condition="D6-1" language="text/javascript">
+                <call id="a29" endpoint="" a:alt_id="16">
+                  <parameters>
+                    <label>Fix door</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <choose mode="exclusive" a:alt_id="0">
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                </choose>
+              </alternative>
+              <alternative condition="D6-2" language="text/javascript">
+                <call id="a31" endpoint="" a:alt_id="19">
+                  <parameters>
+                    <label>Release door</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <choose mode="exclusive" a:alt_id="0">
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                </choose>
+              </alternative>
+            </choose>
+          </alternative>
+        </choose>
+      </alternative>
+      <alternative condition="D1-2" language="text/javascript">
+        <choose mode="exclusive" a:alt_id="28">
+          <alternative condition="D9-1" language="text/javascript">
+            <choose mode="exclusive" a:alt_id="30">
+              <alternative condition="D10-1" language="text/javascript">
+                <call id="a29" endpoint="" a:alt_id="16">
+                  <parameters>
+                    <label>Fix door</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <choose mode="exclusive" a:alt_id="0">
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                </choose>
+              </alternative>
+              <alternative condition="D10-2" language="text/javascript">
+                <call id="a31" endpoint="" a:alt_id="19">
+                  <parameters>
+                    <label>Release door</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <choose mode="exclusive" a:alt_id="0">
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                </choose>
+              </alternative>
+            </choose>
+          </alternative>
+          <alternative condition="D9-2" language="text/javascript">
+            <choose mode="exclusive" a:alt_id="36">
+              <alternative condition="D13-1" language="text/javascript">
+                <call id="a29" endpoint="" a:alt_id="16">
+                  <parameters>
+                    <label>Fix door</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <choose mode="exclusive" a:alt_id="0">
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                </choose>
+              </alternative>
+              <alternative condition="D13-2" language="text/javascript">
+                <call id="a31" endpoint="" a:alt_id="19">
+                  <parameters>
+                    <label>Release door</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <choose mode="exclusive" a:alt_id="0">
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                  <alternative condition=""/>
+                </choose>
+              </alternative>
+            </choose>
+          </alternative>
+        </choose>
+      </alternative>
+    </choose>
+    <loop mode="pre_test" condition="true" a:alt_id="42" language="text/javascript">
+      <call id="a9" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>Send inquiry for quality check</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a11" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Receive inquiry for quality check</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a13" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>Check quality</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a15" endpoint="" a:alt_id="8">
+        <parameters>
+          <label>Send quality report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a17" endpoint="" a:alt_id="9">
+        <parameters>
+          <label>Receive quality report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="10">
+        <alternative condition="D1-1" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="12">
+            <alternative condition="D2-1" language="text/javascript">
+              <choose mode="exclusive" a:alt_id="14">
+                <alternative condition="D3-1" language="text/javascript">
+                  <call id="a29" endpoint="" a:alt_id="16">
+                    <parameters>
+                      <label>Fix door</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="0">
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                  </choose>
+                </alternative>
+                <alternative condition="D3-2" language="text/javascript">
+                  <call id="a31" endpoint="" a:alt_id="19">
+                    <parameters>
+                      <label>Release door</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="0">
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                  </choose>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="D2-2" language="text/javascript">
+              <choose mode="exclusive" a:alt_id="22">
+                <alternative condition="D6-1" language="text/javascript">
+                  <call id="a29" endpoint="" a:alt_id="16">
+                    <parameters>
+                      <label>Fix door</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="0">
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                  </choose>
+                </alternative>
+                <alternative condition="D6-2" language="text/javascript">
+                  <call id="a31" endpoint="" a:alt_id="19">
+                    <parameters>
+                      <label>Release door</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="0">
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                  </choose>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="D1-2" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="28">
+            <alternative condition="D9-1" language="text/javascript">
+              <choose mode="exclusive" a:alt_id="30">
+                <alternative condition="D10-1" language="text/javascript">
+                  <call id="a29" endpoint="" a:alt_id="16">
+                    <parameters>
+                      <label>Fix door</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="0">
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                  </choose>
+                </alternative>
+                <alternative condition="D10-2" language="text/javascript">
+                  <call id="a31" endpoint="" a:alt_id="19">
+                    <parameters>
+                      <label>Release door</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="0">
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                  </choose>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="D9-2" language="text/javascript">
+              <choose mode="exclusive" a:alt_id="36">
+                <alternative condition="D13-1" language="text/javascript">
+                  <call id="a29" endpoint="" a:alt_id="16">
+                    <parameters>
+                      <label>Fix door</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="0">
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                  </choose>
+                </alternative>
+                <alternative condition="D13-2" language="text/javascript">
+                  <call id="a31" endpoint="" a:alt_id="19">
+                    <parameters>
+                      <label>Release door</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="0">
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                    <alternative condition=""/>
+                  </choose>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </loop>
+  </loop>
+</description>

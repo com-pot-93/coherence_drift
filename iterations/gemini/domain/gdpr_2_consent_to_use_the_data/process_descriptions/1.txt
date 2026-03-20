@@ -1,0 +1,20 @@
+The process starts. Then, the process splits into multiple parallel paths.
+In the first path, the process adds profiling information.
+In the second path, a decision is made. If the answer is "Yes", the process retrieves the period. If the answer is "No", the process retrieves the criteria. After retrieving either the period or the criteria, these paths merge back together.
+In the third path, the process adds information about the right to rectify.
+In the fourth path, the process adds information about the right to access.
+In the fifth path, the process adds information about the right to erase.
+In the sixth path, the process adds information about the right to data portability.
+In the seventh path, the process adds information about the right to withdraw.
+In the eighth path, the process adds information about the right to lodge a complaint.
+In the ninth path, a decision is made. If the answer is "Yes", the process proceeds directly to the merge point. If the answer is "No", the process retrieves the source before merging.
+In the tenth path, a decision is made. If the answer is "Yes", the process proceeds directly to the merge point. If the answer is "No", the process adds information about international transfer before merging.
+In the eleventh path, a decision is made. If the answer is "Yes", the process proceeds directly to the merge point. If the answer is "No", the process retrieves the recipients before merging.
+In the twelfth path, the process retrieves the processing legal basis.
+In the thirteenth path, the process retrieves the processing purposes.
+All the parallel paths merge.
+The process then splits again into parallel paths.
+In the first path, the process retrieves identity and contact details.
+In the second path, the process asks for DPO details and then receives the DPO details.
+These parallel paths merge.
+The process collects consent information, asks for consent, and then makes a decision based on the response. If consent is received, the process receives the consent. If consent is denied, the process receives the negation. After receiving either the consent or the negation, the process ends.

@@ -1,0 +1,11 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(back up the database)
+1:task:(back up the database) --> 2:task:(check the database)
+2:task:(check the database) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |true| 4:task:(check the CRM system)
+4:task:(check the CRM system) --> 5:task:(register all defaulting accounts and customers)
+5:task:(register all defaulting accounts and customers) --> 6:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |no| 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> 7:endevent:(((endevent)))
+```

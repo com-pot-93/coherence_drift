@@ -1,0 +1,196 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(send invitations for friends)
+2:task:(to send questio, which games do you want to play?)
+3:task:(recive list of games)
+4:task:(Choose games)
+5:parallelgateway:{AND}
+6:exclusivegateway:{x}
+7:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x}
+9:task:(Date change)
+10:task:(appoint date  of LAN party  requiest to send)
+11:exclusivegateway:{x}
+12:task:(guest games do you want ?)
+13:exclusivegateway:{x}
+14:task:(change guest games)
+15:task:(guest games do you want ?)
+16:parallelgateway:{AND}
+17:exclusivegateway:{x}
+18:task:(download them)
+19:task:(send to Fragen how much Bier want to trink?)
+20:task:(to recieve estimation number of all bier require)
+21:exclusivegateway:{x}
+22:task:(go to supermarket)
+23:task:(buy bier missing)
+24:task:(prepare to LAN party)
+25:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(send invitations for friends)
+1:task:(send invitations for friends) --> 2:task:(to send questio, which games do you want to play?)
+2:task:(to send questio, which games do you want to play?) --> 3:task:(recive list of games)
+3:task:(recive list of games) --> 4:task:(Choose games)
+4:task:(Choose games) --> 5:parallelgateway:{AND}
+
+%% First parallel branch (PG1-1): Date appointment loop
+5:parallelgateway:{AND} --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |false|7:task:(appoint date  of LAN party  requiest to send)
+7:task:(appoint date  of LAN party  requiest to send) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+10:task:(appoint date  of LAN party  requiest to send) --> 16:parallelgateway:{AND}
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |true|10:task:(appoint date  of LAN party  requiest to send)
+8:exclusivegateway:{x} --> |false|6:exclusivegateway:{x

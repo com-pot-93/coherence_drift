@@ -1,0 +1,40 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Guest Calls Room Service)
+2:task:(Manager Answers Call and Records Order)
+3:task:(Manager Submits Order to Kitchen)
+4:task:(Manager Gives Order to Sommelier)
+5:task:(Manager Assigns Order to Waiter)
+6:parallelgateway:{AND}
+7:task:(Kitchen Prepares Order)
+8:task:(Sommelier Prepares Order)
+9:task:(Waiter Prepares Cart for Delivery)
+10:parallelgateway:{AND}
+11:task:(Waiter Delivers Cart to Guest)
+12:task:(Waiter Returns to Station)
+13:exclusivegateway:{x}
+14:task:(Waiter Waits Before Billing)
+15:exclusivegateway:{x}
+16:task:(Guest's Account Debited)
+17:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Guest Calls Room Service)
+1:task:(Guest Calls Room Service) --> 2:task:(Manager Answers Call and Records Order)
+2:task:(Manager Answers Call and Records Order) --> 3:task:(Manager Submits Order to Kitchen)
+3:task:(Manager Submits Order to Kitchen) --> 4:task:(Manager Gives Order to Sommelier)
+4:task:(Manager Gives Order to Sommelier) --> 5:task:(Manager Assigns Order to Waiter)
+5:task:(Manager Assigns Order to Waiter) --> 6:parallelgateway:{AND}
+6:parallelgateway:{AND} --> 7:task:(Kitchen Prepares Order)
+6:parallelgateway:{AND} --> 8:task:(Sommelier Prepares Order)
+6:parallelgateway:{AND} --> 9:task:(Waiter Prepares Cart for Delivery)
+7:task:(Kitchen Prepares Order) --> 10:parallelgateway:{AND}
+8:task:(Sommelier Prepares Order) --> 10:parallelgateway:{AND}
+9:task:(Waiter Prepares Cart for Delivery) --> 10:parallelgateway:{AND}
+10:parallelgateway:{AND} --> 11:task:(Waiter Delivers Cart to Guest)
+11:task:(Waiter Delivers Cart to Guest) --> 12:task:(Waiter Returns to Station)
+12:task:(Waiter Returns to Station) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Proceed to Billing|15:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Wait Before Billing|14:task:(Waiter Waits Before Billing)
+14:task:(Waiter Waits Before Billing) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> 16:task:(Guest's Account Debited)
+16:task:(Guest's Account Debited) --> 17:endevent:(((endevent)))

@@ -1,0 +1,35 @@
+The process starts. Then, it splits into multiple parallel paths.
+
+In the first path, the process adds profiling information.
+
+In the second path, a decision is made. If the answer is yes, the process retrieves the period. If the answer is no, the process retrieves the criteria. After either of these tasks, the path merges.
+
+In the third path, the process adds information about the right to rectify.
+
+In the fourth path, the process adds information about the right to access.
+
+In the fifth path, the process adds information about the right to erase.
+
+In the sixth path, the process adds information about the right to data portability.
+
+In the seventh path, the process adds information about the right to withdraw.
+
+In the eighth path, the process adds information about the right to lodge a complaint.
+
+In the ninth path, a decision is made. If the answer is yes, the path proceeds directly to a merge point. If the answer is no, the process retrieves the source before merging.
+
+In the tenth path, a decision is made. If the answer is yes, the path proceeds directly to a merge point. If the answer is no, the process adds information about international transfer before merging.
+
+In the eleventh path, a decision is made. If the answer is yes, the path proceeds directly to a merge point. If the answer is no, the process retrieves the recipients before merging.
+
+In the twelfth path, the process retrieves the processing legal basis.
+
+In the thirteenth path, the process retrieves the processing purposes.
+
+All the parallel paths merge. Then, the process splits into two parallel paths again.
+
+In the first path, the process retrieves identity and contact details.
+
+In the second path, the process asks for DPO details, then receives the DPO details.
+
+The two parallel paths merge. The process then collects consent information and asks for consent. A decision is made based on the consent. If consent is received, the process receives the consent. If consent is denied, the process receives the negation. Finally, the two possible paths merge, and the process ends.

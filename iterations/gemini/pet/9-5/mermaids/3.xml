@@ -1,0 +1,32 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Condition A is met| 2:task:(Receive Expense Report)
+    1:exclusivegateway:{x} --> |Condition A is not met| 3:task:(Create New Employee Account)
+    2:task:(Receive Expense Report) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |Condition E is met| 3:task:(Create New Employee Account)
+    4:exclusivegateway:{x} --> |Condition E is not met| 5:exclusivegateway:{x}
+    3:task:(Create New Employee Account) --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Condition G is met| 6:task:(Automatically Approve Report)
+    5:exclusivegateway:{x} --> |Condition G is not met| 7:task:(Supervisor Approves Report)
+    6:task:(Automatically Approve Report) --> 8:inclusivegateway:{O}
+    7:task:(Supervisor Approves Report) --> 8:inclusivegateway:{O}
+    8:inclusivegateway:{O} --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Condition G is met| 6:task:(Automatically Approve Report)
+    5:exclusivegateway:{x} --> |Condition G is not met| 7:task:(Supervisor Approves Report)
+    6:task:(Automatically Approve Report) --> 8:inclusivegateway:{O}
+    7:task:(Supervisor Approves Report) --> 8:inclusivegateway:{O}
+    8:inclusivegateway:{O} --> 9:inclusivegateway:{O}
+    9:inclusivegateway:{O} --> 10:exclusivegateway:{x}
+    10:exclusivegateway:{x} --> |Condition I is met| 11:task:(Send Reimbursement to Bank Account)
+    10:exclusivegateway:{x} --> |Condition I is not met| 12:exclusivegateway:{x}
+    11:task:(Send Reimbursement to Bank Account) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |Condition K is not met| 13:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |Condition K is met| 14:endevent:(((endevent)))
+    13:exclusivegateway:{x} --> |Condition L is met| 15:task:(Send Approval in Progress Email)
+    13:exclusivegateway:{x} --> |Condition L is not met| 16:exclusivegateway:{x}
+    15:task:(Send Approval in Progress Email) --> 14:endevent:(((endevent)))
+    16:exclusivegateway:{x} --> |Condition M is not met| 17:task:(Send Rejection Notice)
+    16:exclusivegateway:{x} --> |Condition M is met| 14:endevent:(((endevent)))
+    17:task:(Send Rejection Notice) --> 14:endevent:(((endevent)))
+```

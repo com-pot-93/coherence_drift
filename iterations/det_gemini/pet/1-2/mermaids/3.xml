@@ -1,0 +1,22 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(customer brings a defective computer)
+    1:task:(customer brings a defective computer) --> 2:task:(CRS checks the defect)
+    2:task:(CRS checks the defect) --> 3:task:(CRS hands out a repair cost calculation)
+    3:task:(CRS hands out a repair cost calculation) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |yes| 5:parallelgateway:{AND}
+    4:exclusivegateway:{x} --> |no| 18:task:(customer takes computer home)
+    5:parallelgateway:{AND} --> 6:task:(CRS checks the hardware)
+    5:parallelgateway:{AND} --> 8:task:(CRS checks the software)
+    6:task:(CRS checks the hardware) --> 7:task:(CRS repairs the hardware)
+    7:task:(CRS repairs the hardware) --> 10:parallelgateway:{AND}
+    8:task:(CRS checks the software) --> 9:task:(CRS configures the software)
+    9:task:(CRS configures the software) --> 10:parallelgateway:{AND}
+    10:parallelgateway:{AND} --> 11:task:(CRS tests system functionality)
+    11:task:(CRS tests system functionality) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |yes| 18:task:(customer takes computer home)
+    12:exclusivegateway:{x} --> |no| 18:task:(customer takes computer home)
+    18:task:(customer takes computer home) --> 19:exclusivegateway:{x}
+    19:exclusivegateway:{x} --> 20:endevent:(((endevent)))
+    19:exclusivegateway:{x} --> 20:endevent:(((endevent)))
+```

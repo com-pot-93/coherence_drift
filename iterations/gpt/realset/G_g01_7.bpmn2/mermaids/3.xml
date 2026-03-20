@@ -1,0 +1,38 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Send Invitations)
+2:task:(Ask Friends for Game Suggestions)
+3:task:(Receive Game Suggestions)
+4:task:(Choose Games to Play)
+5:parallelgateway:{AND}
+6:subprocess:(Check and Confirm Date)
+7:subprocess:(Check and Confirm Games)
+8:parallelgateway:{AND}
+9:exclusivegateway:{x}
+10:task:(Download Required Games)
+11:task:(Ask Friends About Beer Needs)
+12:task:(Estimate Total Beer Needed)
+13:exclusivegateway:{x}
+14:task:(Buy Beer at Supermarket)
+15:task:(Final LAN Party Preparation)
+16:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Send Invitations)
+1:task:(Send Invitations) --> 2:task:(Ask Friends for Game Suggestions)
+2:task:(Ask Friends for Game Suggestions) --> 3:task:(Receive Game Suggestions)
+3:task:(Receive Game Suggestions) --> 4:task:(Choose Games to Play)
+4:task:(Choose Games to Play) --> 5:parallelgateway:{AND}
+5:parallelgateway:{AND} --> 6:subprocess:(Check and Confirm Date)
+5:parallelgateway:{AND} --> 7:subprocess:(Check and Confirm Games)
+6:subprocess:(Check and Confirm Date) --> 8:parallelgateway:{AND}
+7:subprocess:(Check and Confirm Games) --> 8:parallelgateway:{AND}
+8:parallelgateway:{AND} --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Downloads needed|10:task:(Download Required Games)
+9:exclusivegateway:{x} --> |No downloads needed|11:task:(Ask Friends About Beer Needs)
+10:task:(Download Required Games) --> 11:task:(Ask Friends About Beer Needs)
+11:task:(Ask Friends About Beer Needs) --> 12:task:(Estimate Total Beer Needed)
+12:task:(Estimate Total Beer Needed) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Beer needs to be bought|14:task:(Buy Beer at Supermarket)
+13:exclusivegateway:{x} --> |No beer needs to be bought|15:task:(Final LAN Party Preparation)
+14:task:(Buy Beer at Supermarket) --> 15:task:(Final LAN Party Preparation)
+15:task:(Final LAN Party Preparation) --> 16:endevent:(((endevent)))

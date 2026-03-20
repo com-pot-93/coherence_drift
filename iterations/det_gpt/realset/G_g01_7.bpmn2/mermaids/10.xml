@@ -1,0 +1,77 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(send invitations for friends)
+  2:task:(to send questio, which games do you want to play?)
+  3:task:(recive list of games)
+  4:subprocess:(Game Selection Loop)
+  5:endevent:(((endevent)))
+  6:task:(Choose games)
+  7:exclusivegateway:{x} %% D1 split
+  8:exclusivegateway:{x} %% D1 merge
+  9:exclusivegateway:{x} %% D2 split
+  10:exclusivegateway:{x} %% D2 merge
+  11:exclusivegateway:{x} %% D3 split
+  12:exclusivegateway:{x} %% D3 merge
+  13:exclusivegateway:{x} %% D4 split
+  14:exclusivegateway:{x} %% D4 merge
+  15:exclusivegateway:{x} %% D5 split
+  16:exclusivegateway:{x} %% D5 merge
+  17:exclusivegateway:{x} %% D6 split
+  18:exclusivegateway:{x} %% D6 merge
+  19:task:(appoint date  of LAN party  requiest to send)
+  20:task:(appoint date  of LAN party  requiest to send)
+  
+  0:startevent:((startevent)) --> 1:task:(send invitations for friends)
+  1:task:(send invitations for friends) --> 2:task:(to send questio, which games do you want to play?)
+  2:task:(to send questio, which games do you want to play?) --> 3:task:(recive list of games)
+  3:task:(recive list of games) --> 4:subprocess:(Game Selection Loop)
+  4:subprocess:(Game Selection Loop) --> 5:endevent:(((endevent)))
+
+  %% Game Selection Loop subprocess internal flow
+  subgraph Game Selection Loop [Game Selection Loop]
+    4a:startevent:((startevent))
+    4b:task:(Choose games)
+    4c:exclusivegateway:{x} %% D1 split
+    4d:exclusivegateway:{x} %% D1 merge
+
+    4a:startevent:((startevent)) --> 4b:task:(Choose games)
+    4b:task:(Choose games) --> 4c:exclusivegateway:{x}
+    %% D1 branch 1
+    4c:exclusivegateway:{x} --> |branch 1|9:exclusivegateway:{x}
+    %% D2 split
+    9:exclusivegateway:{x} --> |branch 1|11:exclusivegateway:{x}
+    %% D3 split
+    11:exclusivegateway:{x} --> |branch 1|13:exclusivegateway:{x}
+    %% D4 split
+    13:exclusivegateway:{x} --> |branch 1|15:exclusivegateway:{x}
+    %% D5 split
+    15:exclusivegateway:{x} --> |branch 2|17:exclusivegateway:{x}
+    %% D6 split
+    17:exclusivegateway:{x} --> |true|19:task:(appoint date  of LAN party  requiest to send)
+    17:exclusivegateway:{x} --> |false|4b:task:(Choose games)
+    19:task:(appoint date  of LAN party  requiest to send) --> 20:task:(appoint date  of LAN party  requiest to send)
+    20:task:(appoint date  of LAN party  requiest to send) --> 18:exclusivegateway:{x}
+    4b:task:(Choose games) --> 18:exclusivegateway:{x}
+    18:exclusivegateway:{x} --> 16:exclusivegateway:{x}
+    %% D6 merge to D5 merge
+    16:exclusivegateway:{x} --> 14:exclusivegateway:{x}
+    %% D5 merge to D4 merge
+    14:exclusivegateway:{x} --> 12:exclusivegateway:{x}
+    %% D4 merge to D3 merge
+    12:exclusivegateway:{x} --> 10:exclusivegateway:{x}
+    %% D3 merge to D2 merge
+    10:exclusivegateway:{x} --> 4d:exclusivegateway:{x}
+    %% D2 merge to D1 merge
+    %% D5 branch 2 (no action, direct to merge)
+    15:exclusivegateway:{x} --> |else|16:exclusivegateway:{x}
+    %% D4 branch 2 (no action, direct to merge)
+    13:exclusivegateway:{x} --> |branch 2|14:exclusivegateway:{x}
+    %% D3 branch 2 (no action, direct to merge)
+    11:exclusivegateway:{x} --> |branch 2|12:exclusivegateway:{x}
+    %% D2 branch 2 (no action, direct to merge)
+    9:exclusivegateway:{x} --> |branch 2|10:exclusivegateway:{x}
+    %% D1 branch 2 (no action, direct to merge)
+    4c:exclusivegateway:{x} --> |branch 2|4d:exclusivegateway:{x}
+    %% D1 merge to end of subprocess
+    4d:exclusivegateway:{x} --> 4e:endevent:(((endevent)))
+  end

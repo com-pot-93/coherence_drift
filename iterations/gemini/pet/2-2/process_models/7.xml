@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Customer Data</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Enter Data into CRM</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Compare Data Accuracy</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="4">
+    <alternative condition="Not Accurate" language="text/javascript">
+      <call id="a9" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>Correct Data</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Accurate" language="text/javascript"/>
+  </choose>
+  <call id="a17" endpoint="" a:alt_id="8">
+    <parameters>
+      <label>Create Customer Object?</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="9">
+    <alternative condition="Yes" language="text/javascript">
+      <call id="a21" endpoint="" a:alt_id="10">
+        <parameters>
+          <label>Create Customer Object</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No" language="text/javascript"/>
+  </choose>
+  <call id="a27" endpoint="" a:alt_id="12">
+    <parameters>
+      <label>Prepare Contract Documents</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a29" endpoint="" a:alt_id="13">
+    <parameters>
+      <label>Check Contract Documents</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="14">
+    <alternative condition="Issues Found" language="text/javascript">
+      <call id="a33" endpoint="" a:alt_id="15">
+        <parameters>
+          <label>Analyze and Resolve Issues</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No Issues Found" language="text/javascript"/>
+  </choose>
+  <call id="a39" endpoint="" a:alt_id="17">
+    <parameters>
+      <label>Send Confirmation and Request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a41" endpoint="" a:alt_id="18">
+    <parameters>
+      <label>Check Request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="19">
+    <alternative condition="Confirmed" language="text/javascript">
+      <call id="a45" endpoint="" a:alt_id="20">
+        <parameters>
+          <label>Inform Suppliers</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a47" endpoint="" a:alt_id="21">
+        <parameters>
+          <label>Initiate Demand Resolution</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Not Confirmed" language="text/javascript"/>
+  </choose>
+  <call id="a53" endpoint="" a:alt_id="23">
+    <parameters>
+      <label>Communicate and Terminate Agreement</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a55" endpoint="" a:alt_id="24">
+    <parameters>
+      <label>Create CIS Contract?</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="25">
+    <alternative condition="Yes" language="text/javascript">
+      <call id="a59" endpoint="" a:alt_id="26">
+        <parameters>
+          <label>Create CIS Contract</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No" language="text/javascript"/>
+  </choose>
+  <call id="a65" endpoint="" a:alt_id="28">
+    <parameters>
+      <label>Check Contract Details</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a67" endpoint="" a:alt_id="29">
+    <parameters>
+      <label>Receive Meter Data</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

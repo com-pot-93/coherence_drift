@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <choose mode="exclusive" a:alt_id="1">
+    <alternative condition="Condition A" language="text/javascript">
+      <call id="a3" endpoint="" a:alt_id="2">
+        <parameters>
+          <label>Receive Expense Report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="3">
+        <alternative condition="Condition E" language="text/javascript">
+          <call id="a5" endpoint="" a:alt_id="4">
+            <parameters>
+              <label>Create New Employee Account</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Not Condition E" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="Not Condition A" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Create New Employee Account</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <choose mode="exclusive" a:alt_id="7">
+    <alternative condition="Condition G" language="text/javascript">
+      <choose mode="exclusive" a:alt_id="8">
+        <alternative condition="Condition G" language="text/javascript">
+          <call id="a25" endpoint="" a:alt_id="9">
+            <parameters>
+              <label>Automatically Approve Report</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Not Condition G" language="text/javascript">
+          <call id="a23" endpoint="" a:alt_id="10">
+            <parameters>
+              <label>Supervisor Approves Report</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="Not Condition G" language="text/javascript">
+      <call id="a23" endpoint="" a:alt_id="10">
+        <parameters>
+          <label>Supervisor Approves Report</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <choose mode="exclusive" a:alt_id="12">
+    <alternative condition="Condition I" language="text/javascript">
+      <call id="a35" endpoint="" a:alt_id="13">
+        <parameters>
+          <label>Send Reimbursement</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Not Condition I" language="text/javascript"/>
+  </choose>
+  <choose mode="exclusive" a:alt_id="15">
+    <alternative condition="Condition K" language="text/javascript"/>
+    <alternative condition="Not Condition K" language="text/javascript">
+      <choose mode="exclusive" a:alt_id="16">
+        <alternative condition="Condition L" language="text/javascript">
+          <call id="a47" endpoint="" a:alt_id="17">
+            <parameters>
+              <label>Send Approval In Progress Email</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Not Condition L" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="18">
+            <alternative condition="Not Condition M" language="text/javascript">
+              <call id="a53" endpoint="" a:alt_id="20">
+                <parameters>
+                  <label>Send Rejection Notice</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Condition M" language="text/javascript"/>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

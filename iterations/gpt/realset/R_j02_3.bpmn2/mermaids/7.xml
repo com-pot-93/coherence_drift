@@ -1,0 +1,17 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Enter Machine Type and Serial Number)
+2:task:(Answer Series of Questions)
+3:task:(Select Option to Continue)
+4:task:(Check Entered Values)
+5:task:(Confirm Values are Correct)
+6:task:(Finish Inspection)
+7:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Enter Machine Type and Serial Number)
+1:task:(Enter Machine Type and Serial Number) --> 2:task:(Answer Series of Questions)
+2:task:(Answer Series of Questions) --> 3:task:(Select Option to Continue)
+3:task:(Select Option to Continue) --> 4:task:(Check Entered Values)
+4:task:(Check Entered Values) --> 5:task:(Confirm Values are Correct)
+5:task:(Confirm Values are Correct) --> 6:task:(Finish Inspection)
+6:task:(Finish Inspection) --> 7:endevent:(((endevent)))

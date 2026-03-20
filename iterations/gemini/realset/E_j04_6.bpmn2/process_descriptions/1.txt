@@ -1,0 +1,49 @@
+The process starts and immediately proceeds to a decision point.
+
+If the decision is true, the process continues to another decision point. If this second decision is "Yes", the process loads the front page. Following this, the process reaches another decision point, which immediately merges into another decision point. If the decision at the second of these points is "Yes", the process sends a request, waits for an offer, and then receives an offer.
+
+After receiving the offer, there is another decision. If the answer is "Yes", the process invalidates offers, sends a status update, receives a status update, and finishes the internship. Following this, there is another decision. If the answer is "Yes", the process tweets to friends and then proceeds to another decision point. If the answer is "No", the process skips tweeting and proceeds directly to the decision point.
+
+From this decision point, the process continues to another decision point. If the answer is "Yes" at this point, there is another decision. If the answer to this decision is "No", the process proceeds to another decision point. If the answer is "Yes", the process loads the front page again, and then proceeds to an escalation event before continuing to another decision point. This decision point merges with the previous one, and the process continues to another decision point. If the answer is "No" at this point, the process proceeds to another decision point.
+
+If the answer is "No" at the decision point after receiving the offer, the process loads the front page again, and then proceeds to an escalation event before continuing to another decision point. This decision point merges with the previous one, and the process continues to another decision point.
+
+If the decision at the second of the two initial decision points is "Yes", the process continues to another decision point. If the answer is "Yes", the process splits into parallel paths to work on a topic, handle payment, gain experience, and pursue hobbies simultaneously.
+
+For working on a topic, the process continues to a decision point, which immediately merges into another decision point. If the answer is "Yes" at the second of these points, the process proceeds to another decision point. If the answer is "No", the process works on the topic again, and then proceeds to an escalation event before continuing to another decision point. This decision point merges with the previous one, and the process continues to another decision point.
+
+For handling payment, the process continues to a decision point, which immediately merges into another decision point. If the answer is "Yes" at the second of these points, the process proceeds to another decision point. If the answer is "No", the process handles the payment again, and then proceeds to an escalation event before continuing to another decision point. This decision point merges with the previous one, and the process continues to another decision point.
+
+For gaining experience, the process continues to a decision point, which immediately merges into another decision point. If the answer is "Yes" at the second of these points, the process proceeds to another decision point. If the answer is "No", the process gains experience again, and then proceeds to an escalation event before continuing to another decision point. This decision point merges with the previous one, and the process continues to another decision point.
+
+For pursuing hobbies, the process continues to a decision point, which immediately merges into another decision point. If the answer is "Yes" at the second of these points, the process proceeds to another decision point. If the answer is "No", the process pursues hobbies again, and then proceeds to an escalation event before continuing to another decision point. This decision point merges with the previous one, and the process continues to another decision point.
+
+After completing all four parallel paths, the process merges back together at a decision point.
+
+If the answer is "No" at the decision point after the initial split, the process proceeds to an escalation event before continuing to another decision point. This decision point merges with the previous one, and the process continues to another decision point.
+
+If the decision at the second of the two initial decision points is "No", the process continues to another decision point. If the answer is "Yes", the process sends a request, waits for an offer, and then receives an offer.
+
+After receiving the offer, there is another decision. If the answer is "Yes", the process invalidates offers, sends a status update, receives a status update, and finishes the internship. Following this, there is another decision. If the answer is "Yes", the process tweets to friends and then proceeds to another decision point. If the answer is "No", the process skips tweeting and proceeds directly to the decision point.
+
+From this decision point, the process continues to another decision point. If the answer is "Yes" at this point, there is another decision. If the answer to this decision is "Yes", the process loads the front page again, and then proceeds to a decision point. This decision point immediately splits into two identical decision points, and then proceeds to an escalation event before continuing to another decision point. This decision point merges with the previous one, and the process continues to another decision point. If the answer is "No" at this point, the process proceeds to another decision point.
+
+If the answer is "No" at the decision point after receiving the offer, the process loads the front page again, and then proceeds to a decision point. This decision point immediately splits into two identical decision points, and then proceeds to an escalation event before continuing to another decision point. This decision point merges with the previous one, and the process continues to another decision point.
+
+If the decision at the second of the two initial decision points is "Yes", the process continues to another decision point. If the answer is "Yes", the process splits into parallel paths to work on a topic, handle payment, gain experience, and pursue hobbies simultaneously.
+
+For working on a topic, the process continues to a decision point, which immediately merges into another decision point. If the answer is "Yes" at the second of these points, the process proceeds to another decision point. If the answer is "No", the process works on the topic again, and then proceeds to an escalation event before continuing to another decision point. This decision point merges with the previous one, and the process continues to another decision point.
+
+For handling payment, the process continues to a decision point, which immediately merges into another decision point. If the answer is "Yes" at the second of these points, the process proceeds to another decision point. If the answer is "No", the process handles the payment again, and then proceeds to an escalation event before continuing to another decision point. This decision point merges with the previous one, and the process continues to another decision point.
+
+For gaining experience, the process continues to a decision point, which immediately merges into another decision point. If the answer is "Yes" at the second of these points, the process proceeds to another decision point. If the answer is "No", the process gains experience again, and then proceeds to an escalation event before continuing to another decision point. This decision point merges with the previous one, and the process continues to another decision point.
+
+For pursuing hobbies, the process continues to a decision point, which immediately merges into another decision point. If the answer is "Yes" at the second of these points, the process proceeds to another decision point. If the answer is "No", the process pursues hobbies again, and then proceeds to an escalation event before continuing to another decision point. This decision point merges with the previous one, and the process continues to another decision point.
+
+After completing all four parallel paths, the process merges back together at a decision point.
+
+If the answer is "No" at the decision point after the initial split, the process proceeds to an escalation event before continuing to another decision point.
+
+The process then returns to the initial decision point.
+
+If the initial decision is "No", the process proceeds to the end.

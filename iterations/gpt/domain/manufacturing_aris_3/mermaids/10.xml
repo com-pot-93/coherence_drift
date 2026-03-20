@@ -1,0 +1,76 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Production Order)
+2:task:(Prepare Materials)
+3:task:(Assemble Door)
+4:exclusivegateway:{x}
+5:task:(Skip Quality Check)
+6:task:(Skip Quality Check with Inquiry)
+7:task:(Perform Quality Check)
+8:exclusivegateway:{x}
+9:task:(Check Report Satisfactory)
+10:exclusivegateway:{x}
+11:task:(Fix Door)
+12:exclusivegateway:{x}
+13:task:(Escalate Issue)
+14:exclusivegateway:{x}
+15:task:(Release Door)
+16:task:(Check Condition 1)
+17:task:(Check Condition 2)
+18:task:(Check Condition 3)
+19:endevent:(((endevent)))
+20:task:(Send Inquiry)
+21:task:(Wait for Response)
+22:task:(Quality Check in Response)
+23:task:(Send Quality Report)
+24:task:(Review Quality Report)
+
+0:startevent:((startevent)) --> 1:task:(Receive Production Order)
+1:task:(Receive Production Order) --> 2:task:(Prepare Materials)
+2:task:(Prepare Materials) --> 3:task:(Assemble Door)
+3:task:(Assemble Door) --> 4:exclusivegateway:{x}
+
+%% Three possible paths after assembly
+4:exclusivegateway:{x} --> |Skip QC|5:task:(Skip Quality Check)
+4:exclusivegateway:{x} --> |Skip QC w/ Inquiry|6:task:(Skip Quality Check with Inquiry)
+4:exclusivegateway:{x} --> |Perform QC|7:task:(Perform Quality Check)
+
+%% Path 1: Skip Quality Check
+5:task:(Skip Quality Check) --> 8:exclusivegateway:{x}
+
+%% Path 2: Skip Quality Check with Inquiry
+6:task:(Skip Quality Check with Inquiry) --> 20:task:(Send Inquiry)
+20:task:(Send Inquiry) --> 21:task:(Wait for Response)
+21:task:(Wait for Response) --> 22:task:(Quality Check in Response)
+22:task:(Quality Check in Response) --> 23:task:(Send Quality Report)
+23:task:(Send Quality Report) --> 24:task:(Review Quality Report)
+24:task:(Review Quality Report) --> 10:exclusivegateway:{x}
+
+%% If no inquiry is sent (simplified as direct to check)
+6:task:(Skip Quality Check with Inquiry) --> 8:exclusivegateway:{x}
+
+%% Path 3: Perform Quality Check
+7:task:(Perform Quality Check) --> 8:exclusivegateway:{x}
+
+%% Merge for all initial quality check paths
+8:exclusivegateway:{x} --> 9:task:(Check Report Satisfactory)
+
+%% Satisfactory check
+9:task:(Check Report Satisfactory) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Satisfactory|15:task:(Release Door)
+10:exclusivegateway:{x} --> |Not Satisfactory|11:task:(Fix Door)
+
+%% Fixing loop
+11:task:(Fix Door) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Retry|9:task:(Check Report Satisfactory)
+12:exclusivegateway:{x} --> |Escalate|13:task:(Escalate Issue)
+
+%% Escalation loops back to check
+13:task:(Escalate Issue) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> 9:task:(Check Report Satisfactory)
+
+%% Door released, proceed to checks
+15:task:(Release Door) --> 16:task:(Check Condition 1)
+16:task:(Check Condition 1) --> 17:task:(Check Condition 2)
+17:task:(Check Condition 2) --> 18:task:(Check Condition 3)
+18:task:(Check Condition 3) --> 19:endevent:(((endevent)))

@@ -1,0 +1,15 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Check Files)
+1:task:(Check Files) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Files Okay| 3:task:(Physically Track Files)
+3:task:(Physically Track Files) --> 6:parallelgateway:{AND}
+2:exclusivegateway:{x} --> |Files Missing| 4:task:(Search for Missing Files)
+4:task:(Search for Missing Files) --> 6:parallelgateway:{AND}
+6:parallelgateway:{AND} --> 7:task:(Hand Files to Associate)
+6:parallelgateway:{AND} --> 8:task:(Distribute Judge's Lawlist)
+7:task:(Hand Files to Associate) --> 9:parallelgateway:{AND}
+8:task:(Distribute Judge's Lawlist) --> 9:parallelgateway:{AND}
+9:parallelgateway:{AND} --> 10:task:(Conduct Directions Hearing)
+10:task:(Conduct Directions Hearing) --> 11:endevent:(((endevent)))
+```

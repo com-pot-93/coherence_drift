@@ -1,0 +1,31 @@
+The process starts with connecting to a management system. Then, a decision is made. If the condition is not met, the process proceeds to read an order from the system. Subsequently, another decision is made, followed by another decision. If all conditions are met, the process splits into three parallel paths.
+
+In the first path, a decision is made. If the condition is met, a delivery delay penalty is applied; otherwise, the task is marked as OK. After either applying the penalty or marking the task as OK, the process merges back.
+
+In the second parallel path, a decision is made. If the condition is met, a delivery delay penalty is applied; otherwise, the task is marked as OK. After either applying the penalty or marking the task as OK, the process merges back.
+
+In the third parallel path, a decision is made. If the condition is met, a delivery delay penalty is applied; otherwise, the task is marked as OK. After either applying the penalty or marking the task as OK, the process merges back.
+
+After all three parallel paths converge, the arrived product is marked as OK. The process then splits into two parallel paths. One path involves packing the product, while the other involves requesting a courier. After both paths are completed, the delivery is marked as shipped.
+
+Next, a decision is made. If the condition is false, the process escalates. If the condition is true, the process reads an order from the system and then makes another decision. Regardless of the outcome of this decision, the process escalates. The process then merges.
+
+If the condition is not met in the earlier decision, the process reads an order from the system and escalates. The process then merges.
+
+The process then merges.
+
+If the condition is not met in the initial decision, the process splits into three parallel paths.
+
+In the first path, a decision is made. If the condition is met, a delivery delay penalty is applied; otherwise, the task is marked as OK. After either applying the penalty or marking the task as OK, the process merges back.
+
+In the second parallel path, a decision is made. If the condition is met, a delivery delay penalty is applied; otherwise, the task is marked as OK. After either applying the penalty or marking the task as OK, the process merges back.
+
+In the third parallel path, a decision is made. If the condition is met, a delivery delay penalty is applied; otherwise, the task is marked as OK. After either applying the penalty or marking the task as OK, the process merges back.
+
+After all three parallel paths converge, the arrived product is marked as OK, and the product is registered in the management system. The process then splits into two parallel paths. One path involves packing the product, while the other involves requesting a courier. After both paths are completed, the delivery is marked as shipped.
+
+Next, a decision is made. If the condition is true, the process reads an order from the system and then makes another decision. Regardless of the outcome of this decision, the process escalates. If the condition is false, the process escalates. The process then merges.
+
+The process then loops back to the initial decision point.
+
+If the initial condition is met, the process ends.

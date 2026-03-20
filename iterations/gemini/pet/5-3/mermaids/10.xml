@@ -1,0 +1,35 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Submit Office Supply Request)
+    1:task:(Submit Office Supply Request) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> 3:endevent:(((endevent)))
+    2:exclusivegateway:{x} --> 4:task:(Register Request)
+    4:task:(Register Request) --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> |Not Condition A| 6:task:(Escalate)
+    6:task:(Escalate) --> 4:task:(Register Request)
+    5:exclusivegateway:{x} --> |Condition A| 7:task:(Initiate Approval Process)
+    7:task:(Initiate Approval Process) --> 8:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> |Not Approved| 9:task:(Review Comments)
+    9:task:(Review Comments) --> 7:task:(Initiate Approval Process)
+    8:exclusivegateway:{x} --> |Approved| 10:task:(Request Quotations)
+    10:task:(Request Quotations) --> 11:parallelgateway:{AND}
+    11:parallelgateway:{AND} --> 12:task:(Wait for Vendor Selection)
+    11:parallelgateway:{AND} --> 18:task:(Wait for Vendor Selection)
+    12:task:(Wait for Vendor Selection) --> 13:task:(Generate Purchase Order)
+    13:task:(Generate Purchase Order) --> 14:task:(Wait for Product Delivery)
+    14:task:(Wait for Product Delivery) --> 15:task:(Receive Invoice)
+    15:task:(Receive Invoice) --> 16:task:(Send Notification to User)
+    16:task:(Send Notification to User) --> 17:exclusivegateway:{x}
+    17:exclusivegateway:{x} --> |False| 6:task:(Escalate)
+    17:exclusivegateway:{x} --> |True| 24:parallelgateway:{AND}
+    18:task:(Wait for Vendor Selection) --> 19:exclusivegateway:{x}
+    19:exclusivegateway:{x} --> |Not Condition B| 20:task:(Escalate)
+    20:task:(Escalate) --> 21:exclusivegateway:{x}
+    21:exclusivegateway:{x} --> |False| 6:task:(Escalate)
+    21:exclusivegateway:{x} --> |True| 24:parallelgateway:{AND}
+    19:exclusivegateway:{x} --> |Condition B| 10:task:(Request Quotations)
+    24:parallelgateway:{AND} --> 25:task:(Escalate)
+    25:task:(Escalate) --> 26:exclusivegateway:{x}
+    26:exclusivegateway:{x} --> 3:endevent:(((endevent)))
+    26:exclusivegateway:{x} --> 1:task:(Submit Office Supply Request)
+```

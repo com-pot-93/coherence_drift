@@ -1,0 +1,11 @@
+The process begins with the start event. The first step is to obtain temperature values. After getting the temperature values, a decision is made: if a certain condition is met, a standard notification is generated. Once the standard notification is generated, the process waits for other activities to complete before moving forward.
+
+If the initial condition is not met, three activities are started at the same time:
+
+1. The process retrieves the status of a container. After obtaining the container status, it estimates the container’s condition. Based on this estimation, another decision is made. If a change is needed, a request to change the container is generated. If not, the process continues. Both paths eventually come together before moving forward.
+
+2. At the same time, the process gets the client’s location. After obtaining the location, it estimates the distance to the client. Based on this estimation, a decision is made. If necessary, the delivery time is estimated. After estimating the delivery time, another decision is made. If a route change is needed, a request for a route change is generated. If not, the process continues. Both paths eventually come together before moving forward.
+
+3. Also in parallel, the process gets the status of the goods. After obtaining the goods status, it estimates the condition of the goods. Based on this estimation, a decision is made. If damages are suspected, the process evaluates the damages. After evaluating damages, another decision is made. If needed, a request for removal is generated. If not, a request for a price change is generated. Both paths eventually come together before moving forward.
+
+Once all three parallel activities (container status, client location, and goods status) are completed and their respective decisions and requests have been handled, the process waits for the standard notification (if it was generated earlier) to be ready as well. When all these activities are finished, the process sends all the generated messages. Finally, the process ends.

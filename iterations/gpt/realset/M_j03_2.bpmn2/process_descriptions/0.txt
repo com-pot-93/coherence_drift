@@ -1,0 +1,11 @@
+Certainly! Here is a detailed, step-by-step description of the process depicted in your model:
+
+The process begins with the creation of a list of necessary parts. Once this list is prepared, the next step is to search various online shops to find the required parts. After gathering information from these shops, the shop offering the lowest prices for the needed parts is selected. An order is then placed with this chosen shop.
+
+Following the order placement, a decision point is reached. If the process continues, the online shop receives the order. Upon receiving the order, the shop performs three activities at the same time: it sends an invoice, delivers the ordered items, and updates its inventory records. Once all three of these actions are completed, the manufacturer receives the order and begins the building process.
+
+At this stage, another decision point is encountered, leading to several possible paths. One path involves ordering the cheapest available part, after which the process continues to another decision point. Another path leads directly to finishing the project. When the project is finished, there is a further decision point that can loop back to the previous decision point, allowing for repeated actions if necessary.
+
+Alternatively, the process may involve ordering a part with faster delivery, after which the process continues to the next decision point. Another possible action is to write a compliment email, which is then followed by finishing the project. After finishing the project, another decision point is reached, which can also loop back to an earlier stage in the process.
+
+At various points, finishing the project leads to decision points that can loop back to earlier stages, allowing the process to repeat certain steps as needed. Eventually, after all necessary actions and decisions have been completed, the process comes to an end.

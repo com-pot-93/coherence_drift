@@ -1,0 +1,26 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+  1:exclusivegateway:{x} --> |Condition 1| 2:task:(Loop 1)
+  2:task:(Loop 1) --> 1:exclusivegateway:{x}
+  1:exclusivegateway:{x} --> |Otherwise| 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Condition 2| 4:task:(Loop 2)
+  4:task:(Loop 2) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Otherwise| 5:task:(Select a course)
+  5:task:(Select a course) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Condition 3| 7:task:(Loop 3)
+  7:task:(Loop 3) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Otherwise| 8:task:(View dates)
+  8:task:(View dates) --> 9:task:(Select a date)
+  9:task:(Select a date) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |User is registered| 14:parallelgateway:{AND}
+  10:exclusivegateway:{x} --> |User is not registered| 11:task:(Send activation request)
+  11:task:(Send activation request) --> 14:parallelgateway:{AND}
+  10:exclusivegateway:{x} --> |Otherwise| 12:task:(Provide payment information)
+  12:task:(Provide payment information) --> 14:parallelgateway:{AND}
+  14:parallelgateway:{AND} --> 15:task:(Tweet friends)
+  14:parallelgateway:{AND} --> 16:task:(Receive ticket)
+  15:task:(Tweet friends) --> 17:parallelgateway:{AND}
+  16:task:(Receive ticket) --> 17:parallelgateway:{AND}
+  17:parallelgateway:{AND} --> 18:endevent:(((endevent)))
+```

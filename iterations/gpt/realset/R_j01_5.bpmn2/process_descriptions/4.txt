@@ -1,0 +1,21 @@
+The process begins with the start of the workflow. The first step is to run the machine. After the machine is running, the next step is to check the connection.
+
+Once the connection is checked, a decision is made. If the outcome is positive, the process continues; otherwise, it loops back and checks the connection again until a positive result is achieved.
+
+After a successful connection check, another decision is made. If the outcome is positive, the process continues; otherwise, it loops back and checks the connection again until a positive result is achieved.
+
+Once both connection checks are successful, the next step is to collect measurements. After collecting measurements, a decision is made to determine if escalation is required. If escalation is needed, the issue is escalated, and then the process continues. If no escalation is required, the process continues directly.
+
+The next step is to calculate the OEE (Overall Equipment Effectiveness). After this calculation, two activities are carried out at the same time: stopping the machine and sending an email to the engineer. After the machine is stopped, a check is performed. Similarly, after the email is sent, another check is performed. Once both checks are completed, the process continues.
+
+A decision is made based on the results of the previous steps. If the outcome is positive, measurements are collected again, and the process returns to the same decision point, repeating this cycle as long as the outcome remains positive.
+
+If the outcome is not positive, two activities are carried out at the same time: stopping the machine again and sending another email. After stopping the machine, a check is performed. After sending the email, another check is performed. Once both checks are completed, the process continues.
+
+Another decision is made. If the outcome is positive, measurements are collected for the third time, and the process returns to the same decision point, repeating this cycle as long as the outcome remains positive.
+
+If the outcome is not positive, two activities are carried out at the same time: stopping the machine for the third time and sending a third email. After stopping the machine, a check is performed. After sending the email, another check is performed. Once both checks are completed, the process continues.
+
+A final decision is made. If the outcome is positive, measurements are collected for the fourth time, and the process returns to the same decision point, repeating this cycle as long as the outcome remains positive.
+
+If the outcome is not positive, the process moves to the next activity. After this activity is completed, the process ends.

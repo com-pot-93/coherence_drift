@@ -1,0 +1,1 @@
+The process starts with examining a failure. Based on the examination, a decision is made. If the failure is rejected, the process ends. Alternatively, if the failure is confirmed, the GO and MSP are informed, and the fault is fixed. After fixing the fault, the repair results are shared, and the GO and MSP are informed about the resolution. Finally, the process ends.

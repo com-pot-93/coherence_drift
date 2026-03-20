@@ -1,0 +1,40 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Search for Customer)
+  2:task:(Make Offer)
+  3:exclusivegateway:{x}
+  4:task:(Receive Additional Request)
+  5:task:(Provide More Details)
+  6:exclusivegateway:{x}
+  7:task:(Receive Booking Request)
+  8:task:(Send Bill)
+  9:exclusivegateway:{x}
+  10:task:(Receive Payment)
+  11:exclusivegateway:{x}
+  12:exclusivegateway:{x}
+  13:task:(Contact Customer)
+  14:task:(Book Travel)
+  15:task:(Send Booking Confirmation)
+  16:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Search for Customer)
+  1:task:(Search for Customer) --> 2:task:(Make Offer)
+  2:task:(Make Offer) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Continue|4:task:(Receive Additional Request)
+  3:exclusivegateway:{x} --> |Do not continue|6:exclusivegateway:{x}
+  4:task:(Receive Additional Request) --> 5:task:(Provide More Details)
+  5:task:(Provide More Details) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Continue|7:task:(Receive Booking Request)
+  6:exclusivegateway:{x} --> |Do not continue|9:exclusivegateway:{x}
+  7:task:(Receive Booking Request) --> 8:task:(Send Bill)
+  8:task:(Send Bill) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Continue|10:task:(Receive Payment)
+  9:exclusivegateway:{x} --> |Do not continue|11:exclusivegateway:{x}
+  10:task:(Receive Payment) --> 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |Continue|12:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |Do not continue|12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> |Continue|14:task:(Book Travel)
+  12:exclusivegateway:{x} --> |Do not continue|13:task:(Contact Customer)
+  13:task:(Contact Customer) --> 11:exclusivegateway:{x}
+  14:task:(Book Travel) --> 15:task:(Send Booking Confirmation)
+  15:task:(Send Booking Confirmation) --> 16:endevent:(((endevent)))

@@ -1,0 +1,46 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Search for a customer)
+2:task:(Make customer an offer)
+3:exclusivegateway:{x}
+4:task:(Receive additional request)
+5:task:(Provide details)
+6:exclusivegateway:{x}
+7:task:(Receive booking request)
+8:task:(Send the bill)
+9:exclusivegateway:{x}
+10:exclusivegateway:{x}
+11:task:(Receive payment)
+12:exclusivegateway:{x}
+13:task:(Contact customer)
+14:task:(Book travel)
+15:task:(Send booking confirmation)
+16:exclusivegateway:{x}
+17:exclusivegateway:{x}
+18:exclusivegateway:{x}
+19:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Search for a customer)
+1:task:(Search for a customer) --> 2:task:(Make customer an offer)
+2:task:(Make customer an offer) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |true|4:task:(Receive additional request)
+3:exclusivegateway:{x} --> |No additional request|18:exclusivegateway:{x}
+4:task:(Receive additional request) --> 5:task:(Provide details)
+5:task:(Provide details) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Receive booking request|7:task:(Receive booking request)
+6:exclusivegateway:{x} --> |No booking request|17:exclusivegateway:{x}
+7:task:(Receive booking request) --> 8:task:(Send the bill)
+8:task:(Send the bill) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |true|10:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |false|16:exclusivegateway:{x}
+10:exclusivegateway:{x} --> 11:task:(Receive payment)
+11:task:(Receive payment) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Contact customer|13:task:(Contact customer)
+12:exclusivegateway:{x} --> |Book travel|14:task:(Book travel)
+13:task:(Contact customer) --> 15:task:(Send booking confirmation)
+14:task:(Book travel) --> 15:task:(Send booking confirmation)
+15:task:(Send booking confirmation) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> 9:exclusivegateway:{x}
+17:exclusivegateway:{x} --> 18:exclusivegateway:{x}
+16:exclusivegateway:{x} --> 9:exclusivegateway:{x}
+18:exclusivegateway:{x} --> 19:endevent:(((endevent)))

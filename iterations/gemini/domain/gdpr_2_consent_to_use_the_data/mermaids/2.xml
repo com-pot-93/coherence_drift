@@ -1,0 +1,56 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:parallelgateway:{AND}
+    1:parallelgateway:{AND} --> 2:task:(Add profiling information)
+    1:parallelgateway:{AND} --> 3:exclusivegateway:{x}
+    1:parallelgateway:{AND} --> 10:task:(Add information about the right to rectify)
+    1:parallelgateway:{AND} --> 11:task:(Add information about the right to access)
+    1:parallelgateway:{AND} --> 12:task:(Add information about the right to erase)
+    1:parallelgateway:{AND} --> 13:task:(Add information about the right to data portability)
+    1:parallelgateway:{AND} --> 14:task:(Add information about the right to withdraw)
+    1:parallelgateway:{AND} --> 15:task:(Add information about the right to lodge a complaint)
+    1:parallelgateway:{AND} --> 16:exclusivegateway:{x}
+    1:parallelgateway:{AND} --> 19:exclusivegateway:{x}
+    1:parallelgateway:{AND} --> 22:exclusivegateway:{x}
+    1:parallelgateway:{AND} --> 25:task:(Retrieve the processing legal basis)
+    1:parallelgateway:{AND} --> 26:task:(Retrieve the processing purposes)
+    2:task:(Add profiling information) --> 27:parallelgateway:{AND}
+    3:exclusivegateway:{x} --> |Yes| 4:task:(Retrieve the period)
+    3:exclusivegateway:{x} --> |No| 5:task:(Retrieve the criteria)
+    4:task:(Retrieve the period) --> 6:inclusivegateway:{O}
+    5:task:(Retrieve the criteria) --> 6:inclusivegateway:{O}
+    6:inclusivegateway:{O} --> 27:parallelgateway:{AND}
+    10:task:(Add information about the right to rectify) --> 27:parallelgateway:{AND}
+    11:task:(Add information about the right to access) --> 27:parallelgateway:{AND}
+    12:task:(Add information about the right to erase) --> 27:parallelgateway:{AND}
+    13:task:(Add information about the right to data portability) --> 27:parallelgateway:{AND}
+    14:task:(Add information about the right to withdraw) --> 27:parallelgateway:{AND}
+    15:task:(Add information about the right to lodge a complaint) --> 27:parallelgateway:{AND}
+    16:exclusivegateway:{x} --> |Yes| 27:parallelgateway:{AND}
+    16:exclusivegateway:{x} --> |No| 17:task:(Retrieve the source)
+    17:task:(Retrieve the source) --> 18:inclusivegateway:{O}
+    18:inclusivegateway:{O} --> 27:parallelgateway:{AND}
+    19:exclusivegateway:{x} --> |Yes| 27:parallelgateway:{AND}
+    19:exclusivegateway:{x} --> |No| 20:task:(Add information about international transfer)
+    20:task:(Add information about international transfer) --> 21:inclusivegateway:{O}
+    21:inclusivegateway:{O} --> 27:parallelgateway:{AND}
+    22:exclusivegateway:{x} --> |Yes| 27:parallelgateway:{AND}
+    22:exclusivegateway:{x} --> |No| 23:task:(Retrieve the recipients)
+    23:task:(Retrieve the recipients) --> 24:inclusivegateway:{O}
+    24:inclusivegateway:{O} --> 27:parallelgateway:{AND}
+    25:task:(Retrieve the processing legal basis) --> 27:parallelgateway:{AND}
+    26:task:(Retrieve the processing purposes) --> 27:parallelgateway:{AND}
+    27:parallelgateway:{AND} --> 28:parallelgateway:{AND}
+    28:parallelgateway:{AND} --> 29:task:(Retrieve identity and contact details)
+    28:parallelgateway:{AND} --> 30:task:(Ask for DPO details)
+    29:task:(Retrieve identity and contact details) --> 32:inclusivegateway:{O}
+    30:task:(Ask for DPO details) --> 31:task:(Receive the DPO details)
+    31:task:(Receive the DPO details) --> 32:inclusivegateway:{O}
+    32:inclusivegateway:{O} --> 33:task:(Collect consent information)
+    33:task:(Collect consent information) --> 34:task:(Ask for consent)
+    34:task:(Ask for consent) --> 35:exclusivegateway:{x}
+    35:exclusivegateway:{x} --> |Consent received| 36:task:(Receive the consent)
+    35:exclusivegateway:{x} --> |Consent denied| 37:task:(Receive the negation)
+    36:task:(Receive the consent) --> 38:endevent:(((endevent)))
+    37:task:(Receive the negation) --> 38:endevent:(((endevent)))
+```

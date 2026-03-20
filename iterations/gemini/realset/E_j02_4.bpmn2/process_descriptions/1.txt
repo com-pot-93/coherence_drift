@@ -1,0 +1,11 @@
+The process starts. Then, two activities, "Baby younger than 2 years" and "Parent," are performed in parallel. After both are completed, a decision is made. If the person is "Self-employed, studying, housewife, or man," the process proceeds to the next decision point. If the person is "Employed," a notification is sent to the employer, confirmation is received, and then maternity leave is taken, after which the process proceeds to the next decision point.
+
+From there, the process splits into three exclusive paths based on different conditions.
+
+In the first path, a decision is made based on whether the duration is "Less than 2 months" or "More than 3 months," and the corresponding employer notification is sent. Then, another decision is made, leading to either "Decision Path 1" or "Decision Path 2." After completing either path, an employer notification is received, maternity leave is taken, and the process merges back.
+
+In the second path, a decision is made based on whether the duration is "Less than 2 months" or "More than 3 months," and the corresponding employer notification is sent. Then, another decision is made, leading to either "Decision Path 1" or "Decision Path 2." After completing either path, an employer notification is received, maternity leave is taken, and the process merges back.
+
+In the third path, if "Both parents take maternity leave," the process merges directly.
+
+Finally, after the merge, the process continues with a "Continue" task and then ends.

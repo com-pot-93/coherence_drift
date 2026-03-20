@@ -1,0 +1,47 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Connect to Management System)
+  1:task:(Connect to Management System) --> 2:exclusivegateway:{x}
+  2:exclusivegateway:{x} --> |Condition True| 3:task:(Read Order from System)
+  2:exclusivegateway:{x} --> |Condition False| 30:exclusivegateway:{x}
+  3:task:(Read Order from System) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |Path 1| 5:exclusivegateway:{O}
+  4:exclusivegateway:{x} --> |Path 2| 17:exclusivegateway:{O}
+  5:exclusivegateway:{O} --> |Contact Wholesaler| 6:task:(Contact Wholesaler)
+  5:exclusivegateway:{O} --> |Browse Warehouse| 10:task:(Browse Warehouse)
+  6:task:(Contact Wholesaler) --> 7:task:(Reorder Product)
+  7:task:(Reorder Product) --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |Apply Penalty| 9:task:(Apply Delivery Delay Penalty)
+  8:exclusivegateway:{x} --> |Give OK| 16:task:(Give OK for Arrived Product)
+  9:task:(Apply Delivery Delay Penalty) --> 16:task:(Give OK for Arrived Product)
+  10:task:(Browse Warehouse) --> 11:task:(Withdraw Product)
+  11:task:(Withdraw Product) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> |Apply Penalty| 13:task:(Apply Delivery Delay Penalty)
+  12:exclusivegateway:{x} --> |Give OK| 16:task:(Give OK for Arrived Product)
+  13:task:(Apply Delivery Delay Penalty) --> 16:task:(Give OK for Arrived Product)
+  16:task:(Give OK for Arrived Product) --> 15:inclusivegateway:{O}
+  17:exclusivegateway:{O} --> |Contact Wholesaler| 18:task:(Contact Wholesaler)
+  17:exclusivegateway:{O} --> |Browse Warehouse| 22:task:(Browse Warehouse)
+  18:task:(Contact Wholesaler) --> 19:task:(Reorder Product)
+  19:task:(Reorder Product) --> 20:exclusivegateway:{x}
+  20:exclusivegateway:{x} --> |Apply Penalty| 21:task:(Apply Delivery Delay Penalty)
+  20:exclusivegateway:{x} --> |Give OK| 16:task:(Give OK for Arrived Product)
+  21:task:(Apply Delivery Delay Penalty) --> 16:task:(Give OK for Arrived Product)
+  22:task:(Browse Warehouse) --> 23:task:(Withdraw Product)
+  23:task:(Withdraw Product) --> 24:exclusivegateway:{x}
+  24:exclusivegateway:{x} --> |Apply Penalty| 25:task:(Apply Delivery Delay Penalty)
+  24:exclusivegateway:{x} --> |Give OK| 16:task:(Give OK for Arrived Product)
+  25:task:(Apply Delivery Delay Penalty) --> 16:task:(Give OK for Arrived Product)
+  15:inclusivegateway:{O} --> 26:task:(Register Product in Management System)
+  26:task:(Register Product in Management System) --> 27:parallelgateway:{AND}
+  27:parallelgateway:{AND} --> 28:task:(Pack Product)
+  27:parallelgateway:{AND} --> 29:task:(Request Courier)
+  28:task:(Pack Product) --> 31:parallelgateway:{AND}
+  29:task:(Request Courier) --> 31:parallelgateway:{AND}
+  31:parallelgateway:{AND} --> 32:task:(Ship Delivery)
+  32:task:(Ship Delivery) --> 33:exclusivegateway:{x}
+  33:exclusivegateway:{x} --> |Condition True| 3:task:(Read Order from System)
+  33:exclusivegateway:{x} --> |Condition False| 34:task:(Escalation Event)
+  34:task:(Escalation Event) --> 2:exclusivegateway:{x}
+  30:exclusivegateway:{x} --> 35:endevent:(((endevent)))
+```

@@ -1,0 +1,35 @@
+Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins when a travel request is received.
+2. After receiving the travel request, a tour plan is prepared.
+3. Once the tour plan is ready, it is sent out.
+4. At this point, a decision is made about whether to continue with the process. If the decision is not to continue, the process ends here.
+5. If the decision is to continue, another decision is made. If the outcome is negative, the process ends.
+6. If the outcome is positive, the process waits for a response.
+7. After waiting for a response, another decision is made. If the process should not continue, it ends.
+8. If the process should continue, another decision is made. If the process should not continue, it ends.
+9. If the process should continue, the tour is booked.
+10. After booking the tour, another decision is made. If the process should not continue, it ends.
+11. If the process should continue, the customer is charged.
+12. After charging the customer, another decision is made. If the process should not continue, it ends.
+13. If the process should continue, another decision is made with three possible actions:
+    - The customer is contacted, after which another decision is made. Regardless of the outcome, the process continues to the next step.
+    - A bill is sent to the customer, followed by sending a booking confirmation. After this, another decision is made. Regardless of the outcome, the process continues to the next step.
+    - No further action is taken, and the process continues to the next step.
+14. The process then moves to another decision point with three possible actions:
+    - The customer is contacted, after which another decision is made. Regardless of the outcome, the process continues to the next step.
+    - A bill is sent to the customer, followed by sending a booking confirmation. After this, another decision is made. Regardless of the outcome, the process continues to the next step.
+    - No further action is taken, and the process continues to the next step.
+15. The process then moves to another decision point with three possible actions:
+    - The customer is contacted, after which another decision is made. Regardless of the outcome, the process continues to the next step.
+    - A bill is sent to the customer, followed by sending a booking confirmation. After this, another decision is made. Regardless of the outcome, the process continues to the next step.
+    - No further action is taken, and the process continues to the next step.
+16. The process then moves to another decision point with three possible actions:
+    - The customer is contacted, after which another decision is made. Regardless of the outcome, the process continues to the next step.
+    - A bill is sent to the customer, followed by sending a booking confirmation. After this, another decision is made. Regardless of the outcome, the process continues to the next step.
+    - No further action is taken, and the process continues to the next step.
+17. After all these steps, the process ends.
+
+Additionally, if at any point after waiting for a response the process loops back (for example, if an escalation occurs), it returns to the earlier decision point and repeats the decision-making steps as described above.
+
+This process involves a series of decisions after each major step, with the possibility to end the process, continue to the next step, or perform additional actions such as contacting the customer, sending a bill, or sending a booking confirmation. The process is designed to handle various outcomes at each stage, ensuring that all necessary actions are taken before the process concludes.

@@ -1,0 +1,16 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Initiate Process Order and Create Production Plan)
+    1:task:(Initiate Process Order and Create Production Plan) --> 2:task:(Execute Material Requirements Planning)
+    2:task:(Execute Material Requirements Planning) --> 3:task:(Evaluate Capacity)
+    3:task:(Evaluate Capacity) --> 4:task:(Create and Release Schedule Proposal)
+    4:task:(Create and Release Schedule Proposal) --> 5:task:(Confirm Process Order)
+    5:task:(Confirm Process Order) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |Create Transfer Order| 7:task:(Create Transfer Order)
+    6:exclusivegateway:{x} --> |Confirm Goods Issue| 8:task:(Confirm Goods Issue)
+    7:task:(Create Transfer Order) --> 9:inclusivegateway:{O}
+    8:task:(Confirm Goods Issue) --> 9:inclusivegateway:{O}
+    9:inclusivegateway:{O} --> 10:task:(Register Goods Receipt)
+    10:task:(Register Goods Receipt) --> 11:task:(Settle Order)
+    11:task:(Settle Order) --> 12:endevent:(((endevent)))
+```

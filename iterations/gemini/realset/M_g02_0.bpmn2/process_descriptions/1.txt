@@ -1,0 +1,10 @@
+The process begins with a start event.
+First, a basic design is developed. Then, Lego brick sets are ordered, followed by sorting the Lego bricks.
+Next, the process splits into three parallel activities: putting big bricks in a container, putting medium bricks in a container, and putting small bricks in a container. These three activities occur simultaneously.
+Once all three container tasks are completed, the process merges back together.
+The process then proceeds to a decision point. If the condition is true, subcomponents are built.
+After building subcomponents, there is another decision point. If the decision is to continue building, more subcomponents are built, and the process merges. Alternatively, if the decision is to reorder Lego bricks, Lego bricks are reordered, and the process merges.
+Following this, the subcomponents are tested.
+Another decision point is reached. If the decision is to redesign, the subcomponent is redesigned, and the process merges. If the decision is to assemble, the subcomponents are assembled into the machine, and the process merges.
+The process then loops back to the initial decision point regarding building subcomponents. If the condition is false, the process ends.
+Finally, the process concludes with an end event.

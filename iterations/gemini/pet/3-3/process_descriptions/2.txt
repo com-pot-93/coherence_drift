@@ -1,0 +1,7 @@
+The process starts with the registration of a claim. Subsequently, a decision is made, leading to another decision point. If the condition is met, the claim is examined. Following the examination, there's a dual-path decision, both paths leading to a merge point. This merge point then leads to another decision point. If a condition is met, a settlement recommendation is written, which is then checked. After checking, the claim is marked.
+
+Following the marking of the claim, a decision is made. If the decision is to send the claim back, it returns to the "Examine Claim" task. If the decision is to proceed, the claim is handled. After handling the claim, there's a dual-path decision, both paths leading to a merge point.
+
+The merge point after handling the claim and the merge point after examining the claim converge into another merge point. From this merge point, an escalation event occurs, leading to a merge point. This merge point then loops back to the initial decision point after the "Register Claim" task.
+
+If the initial decision after registering the claim is not met, the process ends.

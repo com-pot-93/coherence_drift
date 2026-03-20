@@ -1,0 +1,38 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Send Invitations)
+  1:task:(Send Invitations) --> 2:task:(Request Game Preferences)
+  2:task:(Request Game Preferences) --> 3:task:(Choose Games)
+  3:task:(Choose Games) --> 4:parallelgateway:{AND}
+  4:parallelgateway:{AND} --> 5:exclusivegateway:{x}
+  4:parallelgateway:{AND} --> 16:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Yes| 6:task:(Propose LAN Party Date)
+  5:exclusivegateway:{x} --> |No| 15:exclusivegateway:{O}
+  6:task:(Propose LAN Party Date) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Date Change Needed| 6:task:(Propose LAN Party Date)
+  7:exclusivegateway:{x} --> |Issue Arises| 8:task:(Escalate)
+  7:exclusivegateway:{x} --> |No| 15:exclusivegateway:{O}
+  8:task:(Escalate) --> 6:task:(Propose LAN Party Date)
+  15:exclusivegateway:{O} --> 5:exclusivegateway:{x}
+  16:exclusivegateway:{x} --> |Yes| 17:task:(Ask Guests About Games)
+  16:exclusivegateway:{x} --> |No| 22:exclusivegateway:{O}
+  17:task:(Ask Guests About Games) --> 18:exclusivegateway:{x}
+  18:exclusivegateway:{x} --> |Games Need Change| 17:task:(Ask Guests About Games)
+  18:exclusivegateway:{x} --> |Issue Arises| 19:task:(Escalate)
+  18:exclusivegateway:{x} --> |No| 22:exclusivegateway:{O}
+  19:task:(Escalate) --> 17:task:(Ask Guests About Games)
+  22:exclusivegateway:{O} --> 16:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |No| 15:exclusivegateway:{O}
+  7:exclusivegateway:{x} --> |No| 15:exclusivegateway:{O}
+  16:exclusivegateway:{x} --> |No| 22:exclusivegateway:{O}
+  18:exclusivegateway:{x} --> |No| 22:exclusivegateway:{O}
+  15:exclusivegateway:{O} --> 23:parallelgateway:{AND}
+  22:exclusivegateway:{O} --> 23:parallelgateway:{AND}
+  23:parallelgateway:{AND} --> 24:task:(Download Games)
+  24:task:(Download Games) --> 25:task:(Request Beer Preferences)
+  25:task:(Request Beer Preferences) --> 26:exclusivegateway:{x}
+  26:exclusivegateway:{x} --> |Beer Missing| 27:task:(Buy Beer)
+  26:exclusivegateway:{x} --> |All Beer Present| 28:task:(Prepare LAN Party)
+  27:task:(Buy Beer) --> 28:task:(Prepare LAN Party)
+  28:task:(Prepare LAN Party) --> 29:endevent:(((endevent)))
+```

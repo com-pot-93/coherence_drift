@@ -1,0 +1,38 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Perform Initial Action)
+  2:exclusivegateway:{x}
+  3:task:(Notify Car Owner)
+  4:exclusivegateway:{x}
+  5:task:(Take Alternative Action)
+  6:task:(Issue Fine)
+  7:exclusivegateway:{x}
+  8:task:(Receive Car Problem Info)
+  9:task:(Make Payment Offer)
+  10:exclusivegateway:{x}
+  11:task:(Send Payment to Mechanic)
+  12:exclusivegateway:{x}
+  13:task:(Receive Repair Confirmation)
+  14:task:(Provide Next Service Info)
+  15:task:(Carry Out Next Step)
+  16:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Perform Initial Action)
+  1:task:(Perform Initial Action) --> 2:exclusivegateway:{x}
+  2:exclusivegateway:{x} --> |Car Not Registered|7:exclusivegateway:{x}
+  2:exclusivegateway:{x} --> |Car Registered|3:task:(Notify Car Owner)
+  3:task:(Notify Car Owner) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |Not Brought to Mechanic|5:task:(Take Alternative Action)
+  4:exclusivegateway:{x} --> |Brought to Mechanic|8:task:(Receive Car Problem Info)
+  5:task:(Take Alternative Action) --> 6:task:(Issue Fine)
+  6:task:(Issue Fine) --> 7:exclusivegateway:{x}
+  8:task:(Receive Car Problem Info) --> 9:task:(Make Payment Offer)
+  9:task:(Make Payment Offer) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |Payment Transferred|11:task:(Send Payment to Mechanic)
+  10:exclusivegateway:{x} --> |Payment Not Transferred|12:exclusivegateway:{x}
+  11:task:(Send Payment to Mechanic) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> 13:task:(Receive Repair Confirmation)
+  13:task:(Receive Repair Confirmation) --> 14:task:(Provide Next Service Info)
+  14:task:(Provide Next Service Info) --> 15:task:(Carry Out Next Step)
+  15:task:(Carry Out Next Step) --> 16:endevent:(((endevent)))

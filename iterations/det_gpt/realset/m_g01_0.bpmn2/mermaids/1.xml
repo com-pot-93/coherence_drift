@@ -1,0 +1,25 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive File)
+2:parallelgateway:{AND}
+3:task:(Heat up bed and extruder)
+4:task:(Send status)
+5:exclusivegateway:{x}
+6:task:(Print object)
+7:exclusivegateway:{x}
+8:task:(Heat up bed and extruder)
+9:parallelgateway:{AND}
+10:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive File)
+1:task:(Receive File) --> 2:parallelgateway:{AND}
+2:parallelgateway:{AND} --> 3:task:(Heat up bed and extruder)
+3:task:(Heat up bed and extruder) --> 4:task:(Send status)
+4:task:(Send status) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> | |6:task:(Print object)
+5:exclusivegateway:{x} --> |true|8:task:(Heat up bed and extruder)
+6:task:(Print object) --> 7:exclusivegateway:{x}
+8:task:(Heat up bed and extruder) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> 9:parallelgateway:{AND}
+9:parallelgateway:{AND} --> 2:parallelgateway:{AND}
+9:parallelgateway:{AND} --> 10:endevent:(((endevent)))

@@ -1,0 +1,29 @@
+The process starts when the manufacturer is entered, followed by entering the model.
+After this, a decision is made.
+If the answer is "Yes", another decision is made.
+If the answer is "Yes" again, the broken part is entered.
+Then, a decision is made.
+If the answer is "Yes", another decision is made.
+If the answer is "No", the broken part is entered again.
+Additionally, an escalation event occurs after entering the broken part.
+After the escalation event, a decision is made.
+The process returns to the second decision point.
+If the answer to the first decision is "No", the process continues to a parallel gateway.
+At the parallel gateway, the process splits into two parallel activities: computing the parts list and computing the necessary tools.
+After both activities are completed, the process merges back together.
+The list is then checked against the inventory.
+Following this, a decision is made.
+If the answer is "Yes", the process continues.
+If the answer is "No", a friend is contacted, and everything else needed is obtained.
+After obtaining everything else, the process continues.
+Instructions are then generated.
+Another decision is made.
+If the answer is "Yes", the process continues.
+If the answer is "No", the instructions are followed.
+After following the instructions, the process continues.
+A loop occurs.
+Another decision is made.
+If the answer is "Yes", the process continues.
+If the answer is "No", a review is left.
+After leaving a review, the process continues.
+Finally, the phone is sent to an expert, and the process ends.

@@ -1,0 +1,18 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+    1:exclusivegateway:{x} --> |Condition Met| 2:task:(Select Underwriters)
+    1:exclusivegateway:{x} --> |Condition Not Met| 14:task:(Offer Stock to Public)
+    2:task:(Select Underwriters) --> 3:task:(Prepare Registration Statement)
+    3:task:(Prepare Registration Statement) --> 4:task:(Check Issue Compliance)
+    4:task:(Check Issue Compliance) --> 5:parallelgateway:{AND}
+    5:parallelgateway:{AND} --> 6:task:(Confirm Issue Price)
+    5:parallelgateway:{AND} --> 7:task:(Arrange Road Show)
+    6:task:(Confirm Issue Price) --> 8:parallelgateway:{AND}
+    7:task:(Arrange Road Show) --> 8:parallelgateway:{AND}
+    8:parallelgateway:{AND} --> 9:task:(Receive SEC Clearance)
+    9:task:(Receive SEC Clearance) --> 10:task:(Fix Issue Price)
+    10:task:(Fix Issue Price) --> 11:task:(Enter Firm Commitment)
+    11:task:(Enter Firm Commitment) --> 14:task:(Offer Stock to Public)
+    14:task:(Offer Stock to Public) --> 15:endevent:(((endevent)))
+```

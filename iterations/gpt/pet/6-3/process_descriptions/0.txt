@@ -1,0 +1,7 @@
+The process begins when a new order is received from the sales department. Once the order is obtained, a supervisor or responsible person determines which parts are needed, how many of each are required, and when they must be delivered. This information is then entered into the production planning system.
+
+After the details are entered, the production planning system generates a list of the parts that need to be procured. This list is then transferred to the enterprise resource planning system.
+
+At this point, the process checks whether any parts are missing. If there are missing parts, they are procured. If no parts are missing, or once the missing parts have been procured, the process continues.
+
+Next, a notification is received from the system. An employee then takes responsibility for carrying out the necessary implementation steps. After the implementation is complete, the order is checked to ensure its quality. Once the quality check is finished, the process ends.

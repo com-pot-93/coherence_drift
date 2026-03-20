@@ -1,0 +1,11 @@
+The process starts when a customer makes a notice at the secretarial office. The secretarial worker then inquires about the patient's data and puts the doctor through to the nursing officer. The nursing officer makes a full inquiry into the patient's state and records the information on a registration form, which is then handed in at the secretarial office.
+
+The secretarial office stores the information in the information system and prints the form's information. Following this, a decision is made.
+
+If a patient file needs to be created, the secretarial office creates one and stores the registration form and the print in it. They then produce two registration cards and add the new patient to the list of new notices. Regardless of whether a new patient file is created or not, the process continues with team members having a staff meeting.
+
+The secretarial office assigns new patients to team members and records these assignments on an assignment list. The team members then determine whether the medical file of the patient is required and add this information to the assignment list. The secretarial office stores the assignments in the information system and passes the produced registration cards. Another decision is made at this point.
+
+If a letter to the family doctor is needed, the secretarial office prepares and sends it. After sending the letter, the secretarial office receives a copy of the medical file, informs the intaker, and adds the copy to the patient file. Whether or not a letter is sent, the first intaker plans a meeting with the patient, examines the patient, and registers additional observations in notes. The first intaker puts a copy of the notes in the patient's file and adds a standard checklist to the patient's file. A decision is made again.
+
+If a second intaker is required, the second intaker plans the first meeting. The secretarial office types out the tapes and adds the information to the patient file. Regardless of whether a second intaker is involved or not, the secretarial office puts the patient on the list of patients and provides the team leader with a list of these patients. Finally, the team members formulate a treatment plan for the patients, and the process ends.

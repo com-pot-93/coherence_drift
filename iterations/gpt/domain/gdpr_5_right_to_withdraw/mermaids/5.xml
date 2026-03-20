@@ -1,0 +1,33 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Data Subject Request)
+2:task:(Check Data Relevance)
+3:exclusivegateway:{x}
+4:task:(Stop Use of Withdrawn Data)
+5:task:(Communicate Withdrawal)
+6:exclusivegateway:{x}
+7:task:(Inform User of Impact)
+8:task:(Wait for Notification)
+9:exclusivegateway:{x}
+10:task:(Stop Business Activities)
+11:task:(Stop Use of Withdrawn Data)
+12:task:(Communicate Withdrawal)
+13:exclusivegateway:{x}
+14:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Data Subject Request)
+1:task:(Receive Data Subject Request) --> 2:task:(Check Data Relevance)
+2:task:(Check Data Relevance) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Relevant|4:task:(Stop Use of Withdrawn Data)
+3:exclusivegateway:{x} --> |Not Relevant|7:task:(Inform User of Impact)
+4:task:(Stop Use of Withdrawn Data) --> 5:task:(Communicate Withdrawal)
+5:task:(Communicate Withdrawal) --> 6:exclusivegateway:{x}
+7:task:(Inform User of Impact) --> 8:task:(Wait for Notification)
+8:task:(Wait for Notification) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Stop Business Activities|10:task:(Stop Business Activities)
+9:exclusivegateway:{x} --> |Do Not Stop|13:exclusivegateway:{x}
+10:task:(Stop Business Activities) --> 11:task:(Stop Use of Withdrawn Data)
+11:task:(Stop Use of Withdrawn Data) --> 12:task:(Communicate Withdrawal)
+12:task:(Communicate Withdrawal) --> 13:exclusivegateway:{x}
+6:exclusivegateway:{x} --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> 14:endevent:(((endevent)))

@@ -1,0 +1,27 @@
+The process starts and immediately encounters a decision point. If the condition is "Yes", it proceeds to another decision point; otherwise, it jumps to a parallel gateway.
+
+If the second decision point evaluates to "Yes", the process moves to a third decision point; otherwise, it jumps to the parallel gateway.
+
+If the third decision point evaluates to "Yes", the process moves to a fourth decision point; otherwise, it jumps to the parallel gateway.
+
+If the fourth decision point evaluates to "Yes", the process moves to a fifth decision point; otherwise, it jumps to the parallel gateway.
+
+If the fifth decision point evaluates to "true", the process moves to a sixth decision point; otherwise, it jumps to the fourth decision point's end gateway.
+
+If the sixth decision point evaluates to "true", the process moves to a seventh decision point; otherwise, it jumps to the fifth decision point's end gateway.
+
+The seventh decision point leads to another decision point. If this decision point evaluates to "true", the process executes "Production Planning".
+
+"Production Planning" is followed by a split into two identical exclusive gateways, which immediately merge into one. This merged gateway then leads to another decision point.
+
+If this decision point evaluates to "Yes", the process moves to another decision point. If this subsequent decision point evaluates to "Yes", the process executes "Assign Workers", followed by "Production Design", "Product Delivery", "Production Logout", and "Quality Control".
+
+"Quality Control" leads to a decision point. If the condition is "Yes", the process loops back to "Production Planning", which then merges into a gateway. Otherwise, the process proceeds through two identical exclusive gateways that immediately merge into one. This merged gateway then merges into the gateway after "Production Planning".
+
+If the decision point after the merged gateway evaluates to "No", the process escalates and loops back to the seventh decision point.
+
+If the decision point after "Assign Workers" evaluates to "No", the process proceeds through two identical exclusive gateways that immediately merge into one. This merged gateway then merges into the gateway after "Production Planning".
+
+If the first decision point evaluates to "No", the second decision point evaluates to "No", the third decision point evaluates to "No", the fourth decision point evaluates to "No", the fifth decision point evaluates to "false", or the sixth decision point evaluates to "false", the process merges into the parallel gateway.
+
+The parallel gateway initiates two parallel paths. One path executes "Register to Finished Stock" followed by "Stocking to Finished Goods". The other path executes "Register to Semi-Finished Stock" followed by "Loading to Semi-Finished Stock". Both paths converge at the parallel gateway's end gateway, and the process ends.

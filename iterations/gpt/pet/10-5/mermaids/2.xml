@@ -1,0 +1,13 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Request Bid from MPOO)
+2:task:(Send Tender to MPON)
+3:task:(Place Order with MPOO)
+4:task:(Confirm Order and Provide Master Data)
+5:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Request Bid from MPOO)
+1:task:(Request Bid from MPOO) --> 2:task:(Send Tender to MPON)
+2:task:(Send Tender to MPON) --> 3:task:(Place Order with MPOO)
+3:task:(Place Order with MPOO) --> 4:task:(Confirm Order and Provide Master Data)
+4:task:(Confirm Order and Provide Master Data) --> 5:endevent:(((endevent)))

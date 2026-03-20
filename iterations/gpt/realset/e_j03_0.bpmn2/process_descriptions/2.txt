@@ -1,0 +1,13 @@
+The process begins when the assessment tool is started. After this, the user is prompted to specify the type of incident that has occurred. The user must choose one of the following options: Accident, Almost Accident, Severe Safety/Health Risk, or Defective Protective Equipment.
+
+Depending on the selected incident type, the process continues with a confirmation step specific to the chosen option. If the user selects "Accident," the process asks for confirmation of the accident. If "Almost Accident" is chosen, the process asks for confirmation of the almost accident. If "Severe Safety/Health Risk" is selected, the process asks for confirmation of the severe safety or health risk. If "Defective Protective Equipment" is chosen, the process asks for confirmation of the defective protective equipment.
+
+After the relevant confirmation, the process moves on to specifying the details of the incident.
+
+Next, the process splits into two possible paths. In the first path, three actions are performed, some of which can happen at the same time. First, the process involves contacting superiors. At the same time, it also involves contacting accident insurance. Additionally, there is a decision about whether to contact the labour inspectorate. If the decision is to contact the labour inspectorate, this action is performed; otherwise, it is skipped. After these actions are completed, the process continues.
+
+In the second path, two actions are performed at the same time: contacting accident insurance and contacting the principal. Once both actions are completed, the process continues.
+
+After either of these two paths is completed, the process moves to a decision point. Here, there are two options: either continue with the process or contact private insurance. If the decision is to contact private insurance, this action is performed before continuing.
+
+Finally, the process continues with reviewing a list of tasks, followed by executing the proposed tasks. Once these tasks are executed, the process ends.

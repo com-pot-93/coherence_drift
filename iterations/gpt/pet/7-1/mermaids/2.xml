@@ -1,0 +1,32 @@
+flowchart LR
+0:startevent:((startevent))
+1:exclusivegateway:{x}
+2:exclusivegateway:{x}
+3:task:(Call Customer)
+4:exclusivegateway:{x}
+5:exclusivegateway:{x}
+6:task:(Send Note to Manager)
+7:task:(Manager Processes Lead)
+8:exclusivegateway:{x}
+9:exclusivegateway:{x}
+10:task:(Escalate Issue)
+11:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |Proceed|2:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |End|11:endevent:(((endevent)))
+2:exclusivegateway:{x} --> |True|3:task:(Call Customer)
+2:exclusivegateway:{x} --> |False|11:endevent:(((endevent)))
+3:task:(Call Customer) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Note required|6:task:(Send Note to Manager)
+4:exclusivegateway:{x} --> |No note|3:task:(Call Customer)
+6:task:(Send Note to Manager) --> 7:task:(Manager Processes Lead)
+7:task:(Manager Processes Lead) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Continue|8:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Return to call|3:task:(Call Customer)
+8:exclusivegateway:{x} --> |Return to call|3:task:(Call Customer)
+8:exclusivegateway:{x} --> |Proceed|9:exclusivegateway:{x}
+3:task:(Call Customer) --> 10:task:(Escalate Issue)
+10:task:(Escalate Issue) --> 5:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Return to call|3:task:(Call Customer)
+9:exclusivegateway:{x} --> |Proceed|1:exclusivegateway:{x}

@@ -1,0 +1,39 @@
+Certainly! Here is a detailed, step-by-step description of the process as depicted in your model, using clear and plain language:
+
+---
+
+The process begins with the collection of requirements. Once the requirements are gathered, a decision is made whether to continue or not. If the decision is not to continue, the process ends immediately.
+
+If the process continues, the requirements are sent forward. After this, a draft is received. Another decision is made at this point: whether to continue or not. If the decision is not to continue, the process ends.
+
+If the process continues, another condition is checked. If a certain condition is met, the process moves forward; if not, another decision is made about whether to continue. If the decision is not to continue, the process ends.
+
+If the process continues, a series of checks and decisions follow. If the condition is met, the draft is evaluated. After evaluating the draft, further decisions are made. If the process is to continue, it moves on; if not, the process ends.
+
+At several points, if issues arise or if escalation is needed, the issue is escalated and the draft is re-evaluated. This can lead to either ending the process or returning to the evaluation step.
+
+If the process continues after evaluation, the feasibility of the project is checked. Depending on the outcome, the process may continue, require refinement of requirements, or end.
+
+If the process continues, it is determined whether a building permit report is needed. If a report is needed, it is prepared. If not, the process moves on.
+
+Next, an order list is created, and an order is placed. The effort required for the project is then calculated.
+
+After calculating the effort, two parallel activities take place:
+- The order is received.
+- A decision is made whether to call friends for help or to hire a building company. Depending on the choice, either friends are called to help, or a building company is hired.
+
+Once both the order is received and the help (either friends or a company) is arranged, the process continues.
+
+After these parallel activities are completed, the house is built.
+
+Following the building of the house, another decision is made: whether to continue or repeat the process. If the process is to be repeated, the feasibility is checked again, and the process loops back as needed. If the decision is not to continue, the process ends.
+
+Throughout the process, at various decision points, if refinement is needed, the requirements are refined and feasibility is checked again. If escalation is needed, the issue is escalated, and the draft is re-evaluated.
+
+This cycle of checking feasibility, preparing reports, creating order lists, placing orders, arranging help, building the house, and making decisions about continuation or repetition continues until a final decision is made to end the process.
+
+The process ends when a decision is made not to continue at any of the decision points.
+
+---
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that all steps, decisions, and possible loops are included and described in a way that can be reconstructed into the original process model.

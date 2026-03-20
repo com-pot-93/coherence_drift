@@ -1,0 +1,43 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(MPON informs MPOO about intention to change equipment)
+2:exclusivegateway:{x}
+3:task:(MPOO announces to MPON they will remove their own equipment)
+4:task:(MPOO informs MPON they will not remove their own equipment)
+5:exclusivegateway:{x}
+6:inclusivegateway:{O}
+7:task:(MPON performs final reading)
+8:task:(MPOO performs final reading)
+9:inclusivegateway:{O}
+10:inclusivegateway:{O}
+11:task:(MPON removes old equipment)
+12:task:(MPOO removes old equipment)
+13:inclusivegateway:{O}
+14:task:(MPON installs new device)
+15:task:(MPON reads meter count from new meter)
+16:task:(MPON sends final reading values to GO)
+17:task:(MPON provides other required data to GO)
+18:task:(GO notifies MSP about required data)
+19:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(MPON informs MPOO about intention to change equipment)
+1:task:(MPON informs MPOO about intention to change equipment) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |MPOO will remove own equipment|3:task:(MPOO announces to MPON they will remove their own equipment)
+2:exclusivegateway:{x} --> |MPOO will not remove own equipment|4:task:(MPOO informs MPON they will not remove their own equipment)
+3:task:(MPOO announces to MPON they will remove their own equipment) --> 5:exclusivegateway:{x}
+4:task:(MPOO informs MPON they will not remove their own equipment) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> 6:inclusivegateway:{O}
+6:inclusivegateway:{O} --> |MPON|7:task:(MPON performs final reading)
+6:inclusivegateway:{O} --> |MPOO|8:task:(MPOO performs final reading)
+7:task:(MPON performs final reading) --> 9:inclusivegateway:{O}
+8:task:(MPOO performs final reading) --> 9:inclusivegateway:{O}
+9:inclusivegateway:{O} --> |MPON|11:task:(MPON removes old equipment)
+9:inclusivegateway:{O} --> |MPOO|12:task:(MPOO removes old equipment)
+11:task:(MPON removes old equipment) --> 13:inclusivegateway:{O}
+12:task:(MPOO removes old equipment) --> 13:inclusivegateway:{O}
+13:inclusivegateway:{O} --> 14:task:(MPON installs new device)
+14:task:(MPON installs new device) --> 15:task:(MPON reads meter count from new meter)
+15:task:(MPON reads meter count from new meter) --> 16:task:(MPON sends final reading values to GO)
+16:task:(MPON sends final reading values to GO) --> 17:task:(MPON provides other required data to GO)
+17:task:(MPON provides other required data to GO) --> 18:task:(GO notifies MSP about required data)
+18:task:(GO notifies MSP about required data) --> 19:endevent:(((endevent)))

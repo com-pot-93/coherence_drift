@@ -1,0 +1,17 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Receive Data Subject Request)
+1:task:(Receive Data Subject Request) --> 2:task:(Check Relevance of Withdrawn Data)
+2:task:(Check Relevance of Withdrawn Data) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |is relevant| 4:task:(Stop Using Withdrawn Data)
+3:exclusivegateway:{x} --> |is not relevant| 5:task:(Inform User About Impact)
+5:task:(Inform User About Impact) --> 6:task:(Wait for Continuation Notification)
+6:task:(Wait for Continuation Notification) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |stop processes| 8:task:(Stop Running Business Processes)
+7:exclusivegateway:{x} --> |continue| 9:task:(Continue Process)
+8:task:(Stop Running Business Processes) --> 10:exclusivegateway:{x}
+9:task:(Continue Process) --> 10:exclusivegateway:{x}
+4:task:(Stop Using Withdrawn Data) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> 11:task:(Communicate Withdrawal)
+11:task:(Communicate Withdrawal) --> 12:endevent:(((endevent)))
+```

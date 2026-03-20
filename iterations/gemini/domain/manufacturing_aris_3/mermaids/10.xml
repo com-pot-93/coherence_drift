@@ -1,0 +1,27 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Prepare Materials)
+    1:task:(Prepare Materials) --> 2:task:(Assemble Door)
+    2:task:(Assemble Door) --> 3:exclusivegateway:{x}
+    3:exclusivegateway:{x} -->|true| 4:task:(Send Quality Check Inquiry)
+    3:exclusivegateway:{x} -->|false| 34:endevent:(((endevent)))
+    4:task:(Send Quality Check Inquiry) --> 5:task:(Receive Quality Check Inquiry)
+    5:task:(Receive Quality Check Inquiry) --> 6:task:(Check Quality)
+    6:task:(Check Quality) --> 7:task:(Send Quality Report)
+    7:task:(Send Quality Report) --> 8:task:(Receive Quality Report)
+    8:task:(Receive Quality Report) --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} -->|true| 11:exclusivegateway:{x}
+    9:exclusivegateway:{x} -->|false| 10:exclusivegateway:{x}
+    10:exclusivegateway:{x} -->|true| 12:exclusivegateway:{x}
+    10:exclusivegateway:{x} -->|false| 33:task:(Escalate Process)
+    11:exclusivegateway:{x} -->|true| 13:exclusivegateway:{x}
+    11:exclusivegateway:{x} -->|false| 33:task:(Escalate Process)
+    12:exclusivegateway:{x} -->|true| 33:task:(Escalate Process)
+    12:exclusivegateway:{x} -->|false| 32:task:(Fix Door Again)
+    13:exclusivegateway:{x} -->|true| 33:task:(Escalate Process)
+    13:exclusivegateway:{x} -->|false| 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} -->|true| 33:task:(Escalate Process)
+    14:exclusivegateway:{x} -->|false| 32:task:(Fix Door Again)
+    32:task:(Fix Door Again) --> 33:task:(Escalate Process)
+    33:task:(Escalate Process) --> 34:endevent:(((endevent)))
+```

@@ -1,0 +1,14 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Coordination Unit finalizes the dates)
+  1:task:(Coordination Unit finalizes the dates) --> 2:task:(Support Officer updates all group calendars)
+  2:task:(Support Officer updates all group calendars) --> 3:task:(Support Officer creates meeting folders)
+  3:task:(Support Officer creates meeting folders) --> 4:task:(Support Officer ensures all appropriate documents are uploaded to system)
+  4:task:(Support Officer ensures all appropriate documents are uploaded to system) --> 5:task:(Support Officer advises Committee Members to read all documents)
+  5:task:(Support Officer advises Committee Members to read all documents) --> 6:task:(Committee Members hold meeting)
+  6:task:(Committee Members hold meeting) --> 7:task:(Support Office produces minutes)
+  7:task:(Support Office produces minutes) --> 8:task:(Coordination Unit conducts a QA check on the minutes)
+  8:task:(Coordination Unit conducts a QA check on the minutes) --> 9:task:(Coordination Unit sends QA check to all Committee Members)
+  9:task:(Coordination Unit sends QA check to all Committee Members) --> 10:task:(Support Officer updates departmental records)
+  10:task:(Support Officer updates departmental records) --> 11:endevent:(((endevent)))
+```

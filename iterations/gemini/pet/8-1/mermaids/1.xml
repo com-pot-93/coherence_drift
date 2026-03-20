@@ -1,0 +1,9 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Demand to fill a post)
+  1:task:(Demand to fill a post) --> 2:task:(Advertise the post)
+  2:task:(Advertise the post) --> 3:task:(Receive applications)
+  3:task:(Receive applications) --> 4:task:(Check applications)
+  4:task:(Check applications) --> 5:task:(Fill the post)
+  5:task:(Fill the post) --> 6:endevent:(((endevent)))
+```

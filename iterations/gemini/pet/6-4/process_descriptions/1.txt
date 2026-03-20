@@ -1,0 +1,24 @@
+The process starts. First, contact details are determined. Then, a decision is made based on how the contact was established. It could be that details are bought for cold calls, or the contact was made at exhibitions, or the person is already known.
+
+- If details are bought for cold calls, the process continues.
+- If the contact was made at exhibitions, the process continues.
+- If the person is already known, an interested person is identified, and the process continues.
+
+After any of the above options, the process continues by calling the customer, determining the contact person, determining the budget, and assessing the customer's interest.
+
+Next, a decision is made. Either the head of development acquires the customer, or the process continues directly to another decision point.
+
+- If the head of development acquires the customer, a further decision is made between a sales representative presentation or a pre-sales employee presentation.
+  - If it's a sales representative presentation, the presentation is given, and the process continues.
+  - If it's a pre-sales employee presentation, the presentation is given, and the process continues.
+  - After either presentation, the process waits for the customer.
+- If the head of development does not acquire the customer, a decision is made between a sales representative presentation or a pre-sales employee presentation.
+  - If it's a sales representative presentation, the presentation is given, and the process continues.
+  - If it's a pre-sales employee presentation, the presentation is given, and the process continues.
+
+After waiting for the customer or after the second decision point, a decision is made to either have the sales representative call the customer or call again.
+
+- If the sales representative calls the customer, the call is made, and the process continues.
+- If the decision is to call again, the sales representative calls the customer again, and the process continues.
+
+Finally, after either call, a quotation is created, and the process ends.

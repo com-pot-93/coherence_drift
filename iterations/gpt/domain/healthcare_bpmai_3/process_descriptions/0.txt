@@ -1,0 +1,9 @@
+The process begins when a call is made to the hospital. After the call, a decision is made about whether the patient will be accepted. Based on this decision, the process can follow one of two paths:
+
+If the patient is accepted, the patient is added to a list of patients. After being added to the list, there is a repeated cycle where the patient's condition is checked. This cycle continues until a certain condition is met, at which point the patient is called to the hospital.
+
+Once the patient is called to the hospital, the patient is hospitalized. After hospitalization, childbirth takes place. Following childbirth, there is a choice between two possible actions: either the patient receives post-hospitalization care, or the patient receives special treatment. Regardless of which action is taken, the process continues to the next step.
+
+If the patient is not accepted at the initial decision point, the process moves directly to the end.
+
+After either post-hospitalization care or special treatment, the process concludes.

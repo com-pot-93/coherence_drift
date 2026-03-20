@@ -1,0 +1,44 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(MPOO initiates deregistration at GO)
+2:task:(GO checks and verifies deregistration)
+3:exclusivegateway:{x}
+4:task:(GO communicates rejection)
+5:endevent:(((endevent)))
+6:task:(GO gives preliminary confirmation)
+7:task:(GO prepares for readmission)
+8:exclusivegateway:{x}
+9:task:(Process does not continue with readmission)
+10:task:(MPOO confirms continuation)
+11:parallelgateway:{AND}
+12:task:(GO acquires/changes equipment)
+13:task:(GO assigns itself as new MPO)
+14:task:(GO informs MPOO of end of assignment)
+15:task:(GO notifies MPOO of new assignment)
+16:task:(GO informs MSPO of new assignment)
+17:task:(GO informs SP of new assignment)
+18:parallelgateway:{AND}
+19:endevent:(((endevent)))
+20:exclusivegateway:{x}
+
+0:startevent:((startevent)) --> 1:task:(MPOO initiates deregistration at GO)
+1:task:(MPOO initiates deregistration at GO) --> 2:task:(GO checks and verifies deregistration)
+2:task:(GO checks and verifies deregistration) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Reject|4:task:(GO communicates rejection)
+3:exclusivegateway:{x} --> |Preliminary confirmation|6:task:(GO gives preliminary confirmation)
+4:task:(GO communicates rejection) --> 20:exclusivegateway:{x}
+6:task:(GO gives preliminary confirmation) --> 7:task:(GO prepares for readmission)
+7:task:(GO prepares for readmission) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |No continuation|9:task:(Process does not continue with readmission)
+8:exclusivegateway:{x} --> |MPOO confirms continuation|10:task:(MPOO confirms continuation)
+9:task:(Process does not continue with readmission) --> 11:parallelgateway:{AND}
+10:task:(MPOO confirms continuation) --> 11:parallelgateway:{AND}
+11:parallelgateway:{AND} --> 12:task:(GO acquires/changes equipment)
+12:task:(GO acquires/changes equipment) --> 13:task:(GO assigns itself as new MPO)
+13:task:(GO assigns itself as new MPO) --> 14:task:(GO informs MPOO of end of assignment)
+14:task:(GO informs MPOO of end of assignment) --> 15:task:(GO notifies MPOO of new assignment)
+15:task:(GO notifies MPOO of new assignment) --> 16:task:(GO informs MSPO of new assignment)
+16:task:(GO informs MSPO of new assignment) --> 17:task:(GO informs SP of new assignment)
+17:task:(GO informs SP of new assignment) --> 18:parallelgateway:{AND}
+18:parallelgateway:{AND} --> 19:endevent:(((endevent)))
+20:exclusivegateway:{x} --> 5:endevent:(((endevent)))

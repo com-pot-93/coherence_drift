@@ -1,0 +1,78 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Order)
+2:task:(Evaluate Order)
+3:exclusivegateway:{x}
+4:task:(Handle Order Rejection)
+5:endevent:(((endevent)))
+6:task:(Inform Storehouse)
+7:task:(Notify Engineering Department)
+8:parallelgateway:{AND}
+9:subprocess:(Part List Processing)
+10:subprocess:(Parts Verification)
+11:parallelgateway:{AND}
+12:task:(Assemble Bicycle)
+13:task:(Ship Bicycle)
+14:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Order)
+1:task:(Receive Order) --> 2:task:(Evaluate Order)
+2:task:(Evaluate Order) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Order rejected|4:task:(Handle Order Rejection)
+3:exclusivegateway:{x} --> |Order accepted|6:task:(Inform Storehouse)
+4:task:(Handle Order Rejection) --> 5:endevent:(((endevent)))
+6:task:(Inform Storehouse) --> 7:task:(Notify Engineering Department)
+7:task:(Notify Engineering Department) --> 8:parallelgateway:{AND}
+8:parallelgateway:{AND} --> 9:subprocess:(Part List Processing)
+8:parallelgateway:{AND} --> 10:subprocess:(Parts Verification)
+9:subprocess:(Part List Processing) --> 11:parallelgateway:{AND}
+10:subprocess:(Parts Verification) --> 11:parallelgateway:{AND}
+11:parallelgateway:{AND} --> 12:task:(Assemble Bicycle)
+12:task:(Assemble Bicycle) --> 13:task:(Ship Bicycle)
+13:task:(Ship Bicycle) --> 14:endevent:(((endevent)))
+
+%% Subprocess: Part List Processing
+subgraph PartListProcessing [Part List Processing]
+  direction LR
+  a1:parallelgateway:{AND}
+  a2:task:(Check Part List)
+  a3:task:(Verify Quantities)
+  a4:parallelgateway:{AND}
+  a5:exclusivegateway:{x}
+  a6:task:(Reserve Parts)
+  a7:task:(Create Back-Order)
+  a8:exclusivegateway:{x}
+  a1:parallelgateway:{AND} --> a2:task:(Check Part List)
+  a1:parallelgateway:{AND} --> a3:task:(Verify Quantities)
+  a2:task:(Check Part List) --> a4:parallelgateway:{AND}
+  a3:task:(Verify Quantities) --> a4:parallelgateway:{AND}
+  a4:parallelgateway:{AND} --> a5:exclusivegateway:{x}
+  a5:exclusivegateway:{x} --> |All parts available|a6:task:(Reserve Parts)
+  a5:exclusivegateway:{x} --> |Parts missing|a7:task:(Create Back-Order)
+  a6:task:(Reserve Parts) --> a8:exclusivegateway:{x}
+  a7:task:(Create Back-Order) --> a8:exclusivegateway:{x}
+end
+a8:exclusivegateway:{x} --> 11:parallelgateway:{AND}
+
+%% Subprocess: Parts Verification
+subgraph PartsVerification [Parts Verification]
+  direction LR
+  b1:parallelgateway:{AND}
+  b2:task:(Check Part List)
+  b3:task:(Verify Quantities)
+  b4:parallelgateway:{AND}
+  b5:exclusivegateway:{x}
+  b6:task:(Reserve Parts)
+  b7:task:(Create Back-Order)
+  b8:exclusivegateway:{x}
+  b1:parallelgateway:{AND} --> b2:task:(Check Part List)
+  b1:parallelgateway:{AND} --> b3:task:(Verify Quantities)
+  b2:task:(Check Part List) --> b4:parallelgateway:{AND}
+  b3:task:(Verify Quantities) --> b4:parallelgateway:{AND}
+  b4:parallelgateway:{AND} --> b5:exclusivegateway:{x}
+  b5:exclusivegateway:{x} --> |All parts available|b6:task:(Reserve Parts)
+  b5:exclusivegateway:{x} --> |Parts missing|b7:task:(Create Back-Order)
+  b6:task:(Reserve Parts) --> b8:exclusivegateway:{x}
+  b7:task:(Create Back-Order) --> b8:exclusivegateway:{x}
+end
+b8:exclusivegateway:{x} --> 11:parallelgateway:{AND}

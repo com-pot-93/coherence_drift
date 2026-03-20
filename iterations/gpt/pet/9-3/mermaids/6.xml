@@ -1,0 +1,29 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Prepare Draft Schedule)
+2:task:(Add Dates to Calendars)
+3:task:(Support Officer Reviews Dates)
+4:exclusivegateway:{x}
+5:task:(Suggest Modifications)
+6:task:(Coordination Unit Reviews Updated Dates)
+7:task:(Check for Schedule Conflicts)
+8:task:(Send Finalized Schedule to Committee)
+9:task:(Committee Reviews Schedule)
+10:exclusivegateway:{x}
+11:task:(Inform Coordination Unit of Conflicts)
+12:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Prepare Draft Schedule)
+1:task:(Prepare Draft Schedule) --> 2:task:(Add Dates to Calendars)
+2:task:(Add Dates to Calendars) --> 3:task:(Support Officer Reviews Dates)
+3:task:(Support Officer Reviews Dates) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |No modifications needed|7:task:(Check for Schedule Conflicts)
+4:exclusivegateway:{x} --> |Modifications needed|5:task:(Suggest Modifications)
+5:task:(Suggest Modifications) --> 6:task:(Coordination Unit Reviews Updated Dates)
+6:task:(Coordination Unit Reviews Updated Dates) --> 7:task:(Check for Schedule Conflicts)
+7:task:(Check for Schedule Conflicts) --> 8:task:(Send Finalized Schedule to Committee)
+8:task:(Send Finalized Schedule to Committee) --> 9:task:(Committee Reviews Schedule)
+9:task:(Committee Reviews Schedule) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |No conflicts|12:endevent:(((endevent)))
+10:exclusivegateway:{x} --> |Conflicts found|11:task:(Inform Coordination Unit of Conflicts)
+11:task:(Inform Coordination Unit of Conflicts) --> 12:endevent:(((endevent)))

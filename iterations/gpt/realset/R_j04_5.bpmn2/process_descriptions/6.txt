@@ -1,0 +1,15 @@
+The process begins with an initial action being performed. After this, a decision is made to determine whether the car is registered.
+
+If the car is not registered, the process moves forward to another decision point.
+
+If the car is registered, the car owner is notified. After notifying the car owner, another decision is made to check whether the car has been brought to a mechanic.
+
+If the car has not been brought to a mechanic, an alternative action is taken, followed by issuing a fine. After the fine is issued, the process continues to the next step.
+
+If the car has been brought to a mechanic, information about the car’s problem is received. Following this, a payment offer is made. Then, a decision is made to check whether the payment has been transferred.
+
+If the payment has been transferred, the payment is sent to the mechanic. If the payment has not been transferred, the process continues without sending the payment. In both cases, the process proceeds to the next step.
+
+Next, confirmation of the repair is received, followed by receiving information about the next service time. After this, the process continues to the next step.
+
+At this point, regardless of the previous path taken, the process reaches a common decision point and then moves on to carry out the next step. Finally, the process ends.

@@ -1,0 +1,7 @@
+The process starts when a file is received. Then, a decision is made, leading to two possible paths that converge later.
+
+In the first path, if the decision is true, the bed and extruder are heated up. Subsequently, a status is sent. Following this, another decision is made, leading to two possible paths that converge later. One path involves printing an object. The other path, if the decision is true, involves heating up the bed and extruder again, followed by an escalation event. Both paths then merge.
+
+In the second path, if the initial decision is true, the process ends.
+
+Finally, the two initial paths merge, and the process loops back to the first decision point.

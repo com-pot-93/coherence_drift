@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Diagnose Non, Specific Low Back Pain</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Apply Superficial Heat or other Nonpharmocol. Treatments</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="4">
+        <alternative condition="Branch 1" language="text/javascript">
+          <call id="a11" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Prescribe NSAID or SMR</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Branch 2" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="Branch 2" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>Apply Exercise or other Nonpharmacol. Treatments</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="8">
+        <alternative condition="Branch 1" language="text/javascript">
+          <call id="a21" endpoint="" a:alt_id="9">
+            <parameters>
+              <label>Prescribe NSAID</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Branch 2" language="text/javascript"/>
+      </choose>
+      <choose mode="exclusive" a:alt_id="10">
+        <alternative condition="Branch 1" language="text/javascript">
+          <call id="a27" endpoint="" a:alt_id="11">
+            <parameters>
+              <label>Prescribe Opioid</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Branch 2" language="text/javascript"/>
+      </choose>
+    </alternative>
+  </choose>
+</description>

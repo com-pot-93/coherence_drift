@@ -1,0 +1,20 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Diagnose non-specific low back pain)
+    1:task:(Diagnose non-specific low back pain) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |Apply superficial heat| 3:task:(Apply superficial heat or other non-pharmacological treatments)
+    2:exclusivegateway:{x} --> |Apply exercise| 10:task:(Apply exercise or other non-pharmacological treatments)
+    3:task:(Apply superficial heat or other non-pharmacological treatments) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |Prescribe| 5:task:(Prescribe NSAID or SMR)
+    4:exclusivegateway:{x} --> |Nothing| 6:exclusivegateway:{x}
+    5:task:(Prescribe NSAID or SMR) --> 6:exclusivegateway:{x}
+    10:task:(Apply exercise or other non-pharmacological treatments) --> 11:exclusivegateway:{x}
+    11:exclusivegateway:{x} --> |Prescribe NSAID| 12:task:(Prescribe NSAID)
+    11:exclusivegateway:{x} --> |Nothing| 15:exclusivegateway:{x}
+    12:task:(Prescribe NSAID) --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> |Prescribe opioid| 14:task:(Prescribe opioid)
+    13:exclusivegateway:{x} --> |Nothing| 15:exclusivegateway:{x}
+    14:task:(Prescribe opioid) --> 15:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> 16:endevent:(((endevent)))
+    15:exclusivegateway:{x} --> 16:endevent:(((endevent)))
+```

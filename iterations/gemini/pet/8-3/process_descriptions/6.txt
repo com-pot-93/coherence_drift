@@ -1,0 +1,13 @@
+The process starts with detecting personnel requirements and then reporting a vacancy. Subsequently, a decision is made based on whether a job description is available.
+
+If a job description is available, it is received. Another decision is then made based on a certain condition. If this condition is true, another condition is evaluated. If this second condition is also true, a third condition is checked. If this third condition is true, the job description is reviewed.
+
+Following the review, there are two possible paths. In the first path, there is a decision point. From here, there are two options: either proceed to advertise the vacancy or, if corrections are needed, request and make corrections before returning to review the job description. This loop can repeat. The second path is similar to the first one. There is a decision point. From here, there are two options: either proceed to advertise the vacancy or, if corrections are needed, request and make corrections before returning to review the job description. This loop can repeat.
+
+If either of the conditions is false, the process skips ahead.
+
+If no job description is available, a decision is made based on a certain condition. If this condition is true, the vacancy is advertised. Following the advertisement, there are two possible paths. In the first path, there is a decision point. From here, there are two options: either proceed to advertise the vacancy or, if corrections are needed, request and make corrections before returning to review the job description. This loop can repeat. The second path is similar to the first one. There is a decision point. From here, there are two options: either proceed to advertise the vacancy or, if corrections are needed, request and make corrections before returning to review the job description. This loop can repeat.
+
+If the condition is false, the process skips ahead.
+
+Finally, the process ends.

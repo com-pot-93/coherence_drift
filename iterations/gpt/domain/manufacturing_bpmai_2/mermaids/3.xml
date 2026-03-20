@@ -1,0 +1,44 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Receive Customer Order)
+  2:task:(Process Customer Order)
+  3:task:(Determine Required Components)
+  4:exclusivegateway:{x}
+  5:task:(Purchase Missing Parts)
+  6:task:(Stock Arrived Parts)
+  7:parallelgateway:{AND}
+  8:task:(Production)
+  9:task:(Quality Check)
+  10:exclusivegateway:{x}
+  11:task:(Follow-up Production)
+  12:task:(Quality Re-Check)
+  13:exclusivegateway:{x}
+  14:task:(Fill into Packaging)
+  15:exclusivegateway:{x}
+  16:task:(Pack and Label)
+  17:task:(Transport to Warehouse)
+  18:task:(Send to Customer)
+  19:endevent:(((endevent)))
+  0:startevent:((startevent)) --> 1:task:(Receive Customer Order)
+  1:task:(Receive Customer Order) --> 2:task:(Process Customer Order)
+  2:task:(Process Customer Order) --> 3:task:(Determine Required Components)
+  3:task:(Determine Required Components) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |Parts missing|5:task:(Purchase Missing Parts)
+  4:exclusivegateway:{x} --> |No parts missing|7:parallelgateway:{AND}
+  5:task:(Purchase Missing Parts) --> 6:task:(Stock Arrived Parts)
+  6:task:(Stock Arrived Parts) --> 7:parallelgateway:{AND}
+  7:parallelgateway:{AND} --> 8:task:(Production)
+  8:task:(Production) --> 9:task:(Quality Check)
+  9:task:(Quality Check) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |Pass|14:task:(Fill into Packaging)
+  10:exclusivegateway:{x} --> |Fail or follow-up needed|11:task:(Follow-up Production)
+  11:task:(Follow-up Production) --> 12:task:(Quality Re-Check)
+  12:task:(Quality Re-Check) --> 13:exclusivegateway:{x}
+  13:exclusivegateway:{x} --> |Pass|14:task:(Fill into Packaging)
+  13:exclusivegateway:{x} --> |Fail or follow-up needed|11:task:(Follow-up Production)
+  14:task:(Fill into Packaging) --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |No follow-up needed|16:task:(Pack and Label)
+  15:exclusivegateway:{x} --> |Follow-up needed|11:task:(Follow-up Production)
+  16:task:(Pack and Label) --> 17:task:(Transport to Warehouse)
+  17:task:(Transport to Warehouse) --> 18:task:(Send to Customer)
+  18:task:(Send to Customer) --> 19:endevent:(((endevent)))

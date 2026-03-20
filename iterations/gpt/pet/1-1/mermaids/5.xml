@@ -1,0 +1,43 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Order)
+2:exclusivegateway:{x}
+3:task:(Handle Order Rejection)
+4:endevent:(((endevent)))
+5:task:(Inform Storehouse)
+6:task:(Inform Engineering Department)
+7:parallelgateway:{AND}
+8:task:(Prepare for Assembly)
+9:task:(Process Part List)
+10:task:(Check Part List)
+11:task:(Verify Part Quantities)
+12:exclusivegateway:{x}
+13:task:(Reserve Parts)
+14:task:(Create Back-Order)
+15:exclusivegateway:{x}
+16:parallelgateway:{AND}
+17:task:(Assemble Bicycle)
+18:task:(Ship to Customer)
+19:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Order)
+1:task:(Receive Order) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Reject|3:task:(Handle Order Rejection)
+2:exclusivegateway:{x} --> |Continue|5:task:(Inform Storehouse)
+3:task:(Handle Order Rejection) --> 4:endevent:(((endevent)))
+5:task:(Inform Storehouse) --> 6:task:(Inform Engineering Department)
+6:task:(Inform Engineering Department) --> 7:parallelgateway:{AND}
+7:parallelgateway:{AND} --> 8:task:(Prepare for Assembly)
+7:parallelgateway:{AND} --> 9:task:(Process Part List)
+8:task:(Prepare for Assembly) --> 16:parallelgateway:{AND}
+9:task:(Process Part List) --> 10:task:(Check Part List)
+10:task:(Check Part List) --> 11:task:(Verify Part Quantities)
+11:task:(Verify Part Quantities) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |All parts available|13:task:(Reserve Parts)
+12:exclusivegateway:{x} --> |Parts missing|14:task:(Create Back-Order)
+13:task:(Reserve Parts) --> 15:exclusivegateway:{x}
+14:task:(Create Back-Order) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> 16:parallelgateway:{AND}
+16:parallelgateway:{AND} --> 17:task:(Assemble Bicycle)
+17:task:(Assemble Bicycle) --> 18:task:(Ship to Customer)
+18:task:(Ship to Customer) --> 19:endevent:(((endevent)))

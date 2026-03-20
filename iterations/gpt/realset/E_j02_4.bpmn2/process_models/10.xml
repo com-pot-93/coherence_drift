@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <parallel wait="-1" cancel="last" a:alt_id="1">
+    <parallel_branch>
+      <call id="a3" endpoint="" a:alt_id="2">
+        <parameters>
+          <label>Check if baby is younger than two years</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Identify parent</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <choose mode="exclusive" a:alt_id="5">
+    <alternative condition="">
+      <call id="a13" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Send notification to employer</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a17" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>Wait for employer confirmation</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a19" endpoint="" a:alt_id="8">
+        <parameters>
+          <label>Parent takes maternity leave</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="9">
+        <alternative condition="Split &lt; 2 months" language="text/javascript">
+          <call id="a23" endpoint="" a:alt_id="11">
+            <parameters>
+              <label>Notify employer: split &lt; 2 months</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a35" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>Wait for employer notification: split &lt; 2 months</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a37" endpoint="" a:alt_id="13">
+            <parameters>
+              <label>Parent takes leave after split &lt; 2 months</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Split &gt; 3 months" language="text/javascript">
+          <call id="a25" endpoint="" a:alt_id="14">
+            <parameters>
+              <label>Notify employer: split &gt; 3 months</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a41" endpoint="" a:alt_id="15">
+            <parameters>
+              <label>Wait for employer notification: split &gt; 3 months</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a43" endpoint="" a:alt_id="16">
+            <parameters>
+              <label>Parent takes leave after split &gt; 3 months</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Extension &lt; 2 months" language="text/javascript">
+          <call id="a27" endpoint="" a:alt_id="17">
+            <parameters>
+              <label>Notify employer: extension &lt; 2 months</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a47" endpoint="" a:alt_id="18">
+            <parameters>
+              <label>Wait for employer notification: extension &lt; 2 months</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a49" endpoint="" a:alt_id="19">
+            <parameters>
+              <label>Parent takes leave after extension &lt; 2 months</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Extension &gt; 3 months" language="text/javascript">
+          <call id="a29" endpoint="" a:alt_id="20">
+            <parameters>
+              <label>Notify employer: extension &gt; 3 months</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a53" endpoint="" a:alt_id="21">
+            <parameters>
+              <label>Wait for employer notification: extension &gt; 3 months</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a55" endpoint="" a:alt_id="22">
+            <parameters>
+              <label>Parent takes leave after extension &gt; 3 months</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Both parents take leave together" language="text/javascript">
+          <call id="a31" endpoint="" a:alt_id="23">
+            <parameters>
+              <label>Record both parents taking leave together</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="None apply" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="Conditions not met" language="text/javascript"/>
+  </choose>
+  <call id="a15" endpoint="" a:alt_id="25">
+    <parameters>
+      <label>Continue process</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

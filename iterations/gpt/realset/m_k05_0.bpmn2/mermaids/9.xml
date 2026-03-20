@@ -1,0 +1,31 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Collect Requirements)
+2:exclusivegateway:{x}
+3:task:(Send Requirements Forward)
+4:task:(Receive Draft)
+5:exclusivegateway:{x}
+6:exclusivegateway:{x}
+7:task:(Evaluate Draft)
+8:exclusivegateway:{x}
+9:task:(Checkpoint 1)
+10:task:(Checkpoint 2)
+11:task:(Checkpoint 3)
+12:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Collect Requirements)
+1:task:(Collect Requirements) --> 2:exclusivegateway:{x}
+2:exclusivegateway:{x} --> |Continue|3:task:(Send Requirements Forward)
+2:exclusivegateway:{x} --> |Do not continue|12:endevent:(((endevent)))
+3:task:(Send Requirements Forward) --> 4:task:(Receive Draft)
+4:task:(Receive Draft) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Continue|6:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Do not continue|12:endevent:(((endevent)))
+6:exclusivegateway:{x} --> |Condition met|7:task:(Evaluate Draft)
+6:exclusivegateway:{x} --> |Condition not met|12:endevent:(((endevent)))
+7:task:(Evaluate Draft) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Proceed|9:task:(Checkpoint 1)
+8:exclusivegateway:{x} --> |Do not proceed|12:endevent:(((endevent)))
+9:task:(Checkpoint 1) --> 10:task:(Checkpoint 2)
+10:task:(Checkpoint 2) --> 11:task:(Checkpoint 3)
+11:task:(Checkpoint 3) --> 12:endevent:(((endevent)))

@@ -1,0 +1,33 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Send Invitations to Friends)
+2:task:(Request Game Suggestions)
+3:task:(Receive Game Suggestions)
+4:task:(Select Games to Play)
+5:exclusivegateway:{x}
+6:task:(Download Necessary Games)
+7:exclusivegateway:{x}
+8:task:(Ask Friends if They Need Beer)
+9:task:(Estimate Total Beer Needed)
+10:exclusivegateway:{x}
+11:task:(Buy Additional Beer)
+12:exclusivegateway:{x}
+13:task:(Final Party Preparations)
+14:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Send Invitations to Friends)
+1:task:(Send Invitations to Friends) --> 2:task:(Request Game Suggestions)
+2:task:(Request Game Suggestions) --> 3:task:(Receive Game Suggestions)
+3:task:(Receive Game Suggestions) --> 4:task:(Select Games to Play)
+4:task:(Select Games to Play) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Downloads needed|6:task:(Download Necessary Games)
+5:exclusivegateway:{x} --> |No downloads needed|7:exclusivegateway:{x}
+6:task:(Download Necessary Games) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> 8:task:(Ask Friends if They Need Beer)
+8:task:(Ask Friends if They Need Beer) --> 9:task:(Estimate Total Beer Needed)
+9:task:(Estimate Total Beer Needed) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |More beer needed|11:task:(Buy Additional Beer)
+10:exclusivegateway:{x} --> |Enough beer|12:exclusivegateway:{x}
+11:task:(Buy Additional Beer) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> 13:task:(Final Party Preparations)
+13:task:(Final Party Preparations) --> 14:endevent:(((endevent)))

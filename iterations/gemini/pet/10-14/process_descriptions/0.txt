@@ -1,0 +1,9 @@
+The process starts. Then, a decision is made.
+
+If the first option is chosen, there is another decision. Depending on the outcome, one of the following tasks is performed: "MPOO sends the metering point operations bill to the GO", "MSPO sends the measurement bill to the GO", "MSPO sends the bill for additional readings to the GO", or "the MPOO sends the bill for the equipment acquisition to the GO". After any of these tasks, another decision is made.
+
+Following this decision, the task "the GO examines the bill" is performed. Then, a decision is made again. Depending on the outcome, either "the GO rejects the invoice" or "the GO confirms the invoice with payment advice" is performed. After either of these tasks, another decision is made.
+
+If the second option is chosen after the initial decision, the task "MPOO sends the bill for the equipment acquisition to the MPON" is performed, followed by the task "the MPON examines the bill". Then, a decision is made. Depending on the outcome, either "the MPON confirms the invoice with payment advice" or "the MPON rejects the invoice" is performed. After either of these tasks, another decision is made.
+
+Following this decision, the process ends.

@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Send Invitations</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Ask Friends for Game Suggestions</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Receive Game Suggestions</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="4">
+    <parameters>
+      <label>Choose Games for Event</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="5">
+    <parallel_branch>
+      <loop mode="pre_test" condition="true">
+        <call id="a11" endpoint="" a:alt_id="6">
+          <parameters>
+            <label>Check if Date is Suitable</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="pre_test" condition="Date not suitable" a:alt_id="7" language="text/javascript">
+          <call id="a15" endpoint="" a:alt_id="8">
+            <parameters>
+              <label>Change Date</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a11" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Check if Date is Suitable</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </loop>
+      </loop>
+    </parallel_branch>
+    <parallel_branch>
+      <loop mode="pre_test" condition="true">
+        <call id="a25" endpoint="" a:alt_id="10">
+          <parameters>
+            <label>Check if Games Need to be Changed</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="pre_test" condition="Games need to be changed">
+          <call id="a29" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>Ask Guests Again for Game Suggestions</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a31" endpoint="" a:alt_id="13">
+            <parameters>
+              <label>Check if Games are Suitable</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="14">
+            <alternative condition="Games not suitable" language="text/javascript">
+              <call id="a25" endpoint="" a:alt_id="10">
+                <parameters>
+                  <label>Check if Games Need to be Changed</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Games suitable" language="text/javascript">
+              <escape a:alt_id="-1"/>
+            </alternative>
+          </choose>
+        </loop>
+      </loop>
+    </parallel_branch>
+  </parallel>
+  <call id="a41" endpoint="" a:alt_id="16">
+    <parameters>
+      <label>Check if Games Need to be Downloaded</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="17">
+    <alternative condition="Downloads needed" language="text/javascript">
+      <call id="a45" endpoint="" a:alt_id="18">
+        <parameters>
+          <label>Download Required Games</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No downloads needed" language="text/javascript"/>
+  </choose>
+  <call id="a47" endpoint="" a:alt_id="19">
+    <parameters>
+      <label>Ask Friends How Much Beer is Needed</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a51" endpoint="" a:alt_id="20">
+    <parameters>
+      <label>Estimate Total Beer Required</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a53" endpoint="" a:alt_id="21">
+    <parameters>
+      <label>Check if Beer Needs to be Bought</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="22">
+    <alternative condition="Beer needed" language="text/javascript">
+      <call id="a57" endpoint="" a:alt_id="23">
+        <parameters>
+          <label>Buy Beer at Supermarket</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No beer needed" language="text/javascript"/>
+  </choose>
+  <call id="a59" endpoint="" a:alt_id="24">
+    <parameters>
+      <label>Prepare for LAN Party</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

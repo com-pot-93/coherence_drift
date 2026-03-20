@@ -1,0 +1,7 @@
+The process starts. An exclusive gateway then determines whether to loop back to itself based on a condition; if the condition is true, it loops, otherwise, the process continues. A course is selected, and the process returns to the same exclusive gateway, which again determines whether to loop or proceed. If the process proceeds, available dates are shown, and a date is selected. The process then checks if an account at a sports institute is available.
+
+Another exclusive gateway determines the next step. In one branch, the process checks if the user is registered at an eligible university. Based on another exclusive gateway, the process either registers with an account or sends a request for activation and waits for a response. Both paths then converge at an exclusive gateway.
+
+The other branch of the first exclusive gateway merges with the previous branch at another exclusive gateway. The user then logs into their account and provides payment information. The registration for the course is completed.
+
+The process then splits into two parallel activities: tweeting friends and receiving a ticket. Both activities are performed simultaneously, and once both are completed, the process ends.

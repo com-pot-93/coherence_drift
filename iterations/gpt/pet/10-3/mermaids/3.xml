@@ -1,0 +1,44 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(MPOO initiates deregistration at GO)
+2:task:(GO reviews and verifies deregistration request)
+3:exclusivegateway:{x}
+4:task:(GO communicates rejection)
+5:exclusivegateway:{x}
+6:task:(GO provides preliminary confirmation)
+7:task:(GO prepares for possible readmission)
+8:exclusivegateway:{x}
+9:task:(Record decision not to continue with readmission)
+10:task:(MPOO confirms process should proceed)
+11:task:(Record confirmation to continue)
+12:exclusivegateway:{x}
+13:task:(GO acquires or changes necessary equipment)
+14:task:(GO assigns itself as new MPO)
+15:task:(GO informs MPOO previous assignment ended)
+16:task:(GO notifies MPOO about new assignment)
+17:task:(GO informs MSPO about new assignment)
+18:task:(GO informs SP about new assignment)
+19:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(MPOO initiates deregistration at GO)
+1:task:(MPOO initiates deregistration at GO) --> 2:task:(GO reviews and verifies deregistration request)
+2:task:(GO reviews and verifies deregistration request) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Rejected|4:task:(GO communicates rejection)
+3:exclusivegateway:{x} --> |Not rejected|6:task:(GO provides preliminary confirmation)
+4:task:(GO communicates rejection) --> 5:exclusivegateway:{x}
+6:task:(GO provides preliminary confirmation) --> 7:task:(GO prepares for possible readmission)
+7:task:(GO prepares for possible readmission) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Do not continue|9:task:(Record decision not to continue with readmission)
+8:exclusivegateway:{x} --> |Continue|10:task:(MPOO confirms process should proceed)
+10:task:(MPOO confirms process should proceed) --> 11:task:(Record confirmation to continue)
+9:task:(Record decision not to continue with readmission) --> 12:exclusivegateway:{x}
+11:task:(Record confirmation to continue) --> 12:exclusivegateway:{x}
+5:exclusivegateway:{x} --> 12:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Rejected|5:exclusivegateway:{x}
+12:exclusivegateway:{x} --> 13:task:(GO acquires or changes necessary equipment)
+13:task:(GO acquires or changes necessary equipment) --> 14:task:(GO assigns itself as new MPO)
+14:task:(GO assigns itself as new MPO) --> 15:task:(GO informs MPOO previous assignment ended)
+15:task:(GO informs MPOO previous assignment ended) --> 16:task:(GO notifies MPOO about new assignment)
+16:task:(GO notifies MPOO about new assignment) --> 17:task:(GO informs MSPO about new assignment)
+17:task:(GO informs MSPO about new assignment) --> 18:task:(GO informs SP about new assignment)
+18:task:(GO informs SP about new assignment) --> 19:endevent:(((endevent)))

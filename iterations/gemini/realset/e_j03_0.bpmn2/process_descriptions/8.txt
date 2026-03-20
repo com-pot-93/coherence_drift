@@ -1,0 +1,5 @@
+The process starts with the initiation of an assessment tool, followed by starting the tool itself. The user then enters the incident type and specifies the incident. Based on the incident, one of three paths is taken: contacting accident insurance and the principal, contacting private insurance, or entering user/victim data. After any of these paths, the process merges back together.
+
+Next, a decision is made. Depending on the decision, either two tasks are performed in parallel – contacting accident insurance and contacting the labor inspectorate – or no further action is required. If the two tasks are performed, they both must be completed before proceeding.
+
+After these steps, the process merges again. Finally, superiors are contacted, tasks are proposed to the user, the proposed task is executed, and the process ends.

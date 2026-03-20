@@ -1,0 +1,37 @@
+Here is a detailed, step-by-step description of the process as depicted in your model:
+
+1. The process begins.
+2. A decision is made at the first point. Depending on the outcome, the process continues to the next decision point.
+3. At the next decision point, if the condition is met (true), the front page is loaded.
+4. After loading the front page, another decision is made. From here, the process can proceed in two different ways, both of which eventually lead to the same outcome:
+   
+   **First Path:**
+   - The process splits into four parallel activities:
+     - The first activity is about the topic. After this, a decision is made, and regardless of the outcome, the process continues.
+     - The second activity is about payment. After this, a decision is made, and regardless of the outcome, the process continues.
+     - The third activity is about experience. After this, a decision is made, and regardless of the outcome, the process continues.
+     - The fourth activity is about hobbies. After this, a decision is made, and regardless of the outcome, the process continues.
+   - Once all four activities are completed, the process continues to the next decision point.
+
+   **Second Path:**
+   - The process also splits into four parallel activities:
+     - The first activity is about the topic. After this, a decision is made, and regardless of the outcome, the process continues.
+     - The second activity is about payment. After this, a decision is made, and regardless of the outcome, the process continues.
+     - The third activity is about experience. After this, a decision is made, and regardless of the outcome, the process continues.
+     - The fourth activity is about hobbies. After this, a decision is made, and regardless of the outcome, the process continues.
+   - Once all four activities are completed, the process continues to the same decision point as the first path.
+
+5. After completing either set of parallel activities, a request is sent.
+6. The process waits until an offer arrives.
+7. Once the offer is received, another decision is made.
+8. If the process continues, all other offers become invalid.
+9. A status update is sent every week.
+10. A status update is received from the company.
+11. The internship is finished.
+12. Another decision is made. The process can either:
+    - End the process, or
+    - Tweet to your friends about the company, and then end the process.
+13. Alternatively, after receiving the offer, if the condition is met (true), the front page is loaded again, and an escalation occurs. After the escalation, the process returns to the previous decision point, and then loops back to the first decision point.
+14. If, at the second decision point at the beginning, the condition is not met, the process ends.
+
+This description follows the exact sequence and structure of the process as depicted in your model, ensuring that all steps and decision points are included and described in the correct order.

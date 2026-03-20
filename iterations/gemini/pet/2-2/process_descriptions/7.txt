@@ -1,0 +1,9 @@
+The process starts when customer data is received. This data is then entered into a CRM system, after which its accuracy is compared. If the data is not accurate, it is corrected and then proceeds to the next step. If the data is accurate, the process skips the correction step.
+
+Next, a decision is made whether to create a customer object. If the decision is yes, the customer object is created; otherwise, this step is skipped. Following this, contract documents are prepared and then checked.
+
+If issues are found in the contract documents, they are analyzed and resolved. If no issues are found, this analysis step is skipped. Subsequently, a confirmation and request are sent, and the request is checked.
+
+If the request is confirmed, the suppliers are informed, and demand resolution is initiated. If the request is not confirmed, these steps are skipped. Then, the agreement is communicated and terminated.
+
+Following this, a decision is made whether to create a CIS contract. If the decision is yes, the CIS contract is created; otherwise, this step is skipped. Finally, the contract details are checked, meter data is received, and the process ends.

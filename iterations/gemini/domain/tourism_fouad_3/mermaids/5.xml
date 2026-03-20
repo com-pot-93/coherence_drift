@@ -1,0 +1,19 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Receive Travel Request)
+    1:task:(Receive Travel Request) --> 2:task:(Prepare and Send Tour Plan)
+    2:task:(Prepare and Send Tour Plan) --> 3:task:(Receive Response)
+    3:task:(Receive Response) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |Yes| 5:task:(Book Tour)
+    4:exclusivegateway:{x} --> |No| 16:endevent:(((endevent)))
+    5:task:(Book Tour) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |Negative Outcome| 16:endevent:(((endevent)))
+    6:exclusivegateway:{x} --> |Charge Customer| 7:task:(Charge Customer)
+    7:task:(Charge Customer) --> 8:exclusivegateway:{x}
+    8:exclusivegateway:{x} --> |Contact Customer| 9:task:(Contact Customer)
+    8:exclusivegateway:{x} --> |Send Bill| 10:task:(Send Bill)
+    9:task:(Contact Customer) --> 11:task:(Send Booking Confirmation)
+    10:task:(Send Bill) --> 11:task:(Send Booking Confirmation)
+    11:task:(Send Booking Confirmation) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> 4:exclusivegateway:{x}
+```

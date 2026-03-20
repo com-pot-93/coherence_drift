@@ -1,0 +1,49 @@
+Here is a detailed, step-by-step description of the process as depicted in the provided model:
+
+The process begins with the initiation of the procedure. After starting, a decision is made about whether to continue or stop. If the process continues, the next step is to select a course. Again, there is a decision point: if the process is to continue, the available dates for the selected course are shown. The user then selects a date, followed by another decision about whether to proceed or stop.
+
+If the process continues, the account status is checked. At this point, there are two possible paths:
+
+1. **If logging in is required:**  
+   - The user is prompted to log in.
+   - After logging in, the user provides payment information.
+   - Once payment information is provided, registration is completed.
+   - After completing registration, there is a decision to either continue or stop.
+     - If continuing, two activities happen at the same time:
+       - A message is sent to friends. After sending the message, there is a decision point with three possible outcomes, all leading to the same next step.
+       - The user receives a ticket. After receiving the ticket, there is another decision point with three possible outcomes, all leading to the same next step.
+     - Once both activities are finished, the process continues to the next decision point.
+     - If the process is stopped at any decision point, it moves directly to the next decision.
+
+2. **If university eligibility needs to be checked:**  
+   - The system checks university eligibility.
+   - There are three possible outcomes:
+     - **If eligible:**  
+       - Registration for the course is completed.
+       - After completing registration, there is a decision to either continue or stop.
+         - If continuing, two activities happen at the same time:
+           - A message is sent to friends. After sending the message, there is a decision point with three possible outcomes, all leading to the same next step.
+           - The user receives a ticket. After receiving the ticket, there is another decision point with three possible outcomes, all leading to the same next step.
+         - Once both activities are finished, the process continues to the next decision point.
+         - If the process is stopped at any decision point, it moves directly to the next decision.
+     - **If not eligible:**  
+       - An activation request is sent.
+       - The process waits for an activation response.
+       - There are two possible outcomes:
+         - **If activation fails:**  
+           - The process moves to the next decision point.
+         - **If activation is successful:**  
+           - Registration is completed.
+           - After completing registration, there is a decision to either continue or stop.
+             - If continuing, two activities happen at the same time:
+               - A message is sent to friends. After sending the message, there is a decision point with three possible outcomes, all leading to the same next step.
+               - The user receives a ticket. After receiving the ticket, there is another decision point with three possible outcomes, all leading to the same next step.
+             - Once both activities are finished, the process continues to the next decision point.
+             - If the process is stopped at any decision point, it moves directly to the next decision.
+         - After either outcome, the process moves to the next decision point.
+     - **If registration fails:**  
+       - The process moves to the next decision point.
+
+After each major branch or outcome, the process continues through a series of decision points, each offering the possibility to stop or proceed. If at any point the decision is to stop, the process moves directly to the next decision or to the end. The process concludes with the end event.
+
+Throughout the process, at several points, there are decisions to either continue with the next step or to stop, which leads directly to the end of the process. The process ensures that all necessary steps—such as logging in, providing payment, checking eligibility, sending messages, and receiving tickets—are completed in the correct order, depending on the choices and outcomes at each decision point.

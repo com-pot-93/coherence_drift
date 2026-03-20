@@ -1,0 +1,35 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Claim)
+2:task:(Check Insurance Status)
+3:exclusivegateway:{x}
+4:task:(Evaluate Claim Severity)
+5:task:(Send Forms to Claimant)
+6:exclusivegateway:{x}
+7:task:(Receive Completed Forms)
+8:task:(Check Forms for Completeness)
+9:exclusivegateway:{x}
+10:task:(Inform Claimant to Update Forms)
+11:task:(Register Claim in Claims Management)
+12:exclusivegateway:{x}
+13:task:(Inform Claimant of Rejection)
+14:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Claim)
+1:task:(Receive Claim) --> 2:task:(Check Insurance Status)
+2:task:(Check Insurance Status) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Continue|4:task:(Evaluate Claim Severity)
+3:exclusivegateway:{x} --> |Reject|13:task:(Inform Claimant of Rejection)
+4:task:(Evaluate Claim Severity) --> 5:task:(Send Forms to Claimant)
+5:task:(Send Forms to Claimant) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Proceed|7:task:(Receive Completed Forms)
+6:exclusivegateway:{x} --> |Reject|13:task:(Inform Claimant of Rejection)
+7:task:(Receive Completed Forms) --> 8:task:(Check Forms for Completeness)
+8:task:(Check Forms for Completeness) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Complete|11:task:(Register Claim in Claims Management)
+9:exclusivegateway:{x} --> |Incomplete|10:task:(Inform Claimant to Update Forms)
+10:task:(Inform Claimant to Update Forms) --> 8:task:(Check Forms for Completeness)
+11:task:(Register Claim in Claims Management) --> 12:exclusivegateway:{x}
+12:exclusivegateway:{x} --> |Continue|5:task:(Send Forms to Claimant)
+12:exclusivegateway:{x} --> |End|14:endevent:(((endevent)))
+13:task:(Inform Claimant of Rejection) --> 14:endevent:(((endevent)))

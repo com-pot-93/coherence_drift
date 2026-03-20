@@ -1,0 +1,5 @@
+The process begins when an employee submits a vacation request. After the request is submitted, it is registered in the system. Once registered, the supervisor receives the request. The supervisor then reviews the request and makes a decision.
+
+If the supervisor does not approve the request, the application is returned to the employee. After this, the process comes to an end.
+
+If the supervisor approves the request, the HR representative is notified. The HR representative then completes the necessary procedure. Once this is done, the process comes to an end.

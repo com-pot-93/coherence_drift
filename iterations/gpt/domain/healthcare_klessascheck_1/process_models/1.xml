@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Diagnose Non-specific Low Back Pain</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="Superficial heat/other" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Apply Superficial Heat or Other Non-drug Treatments</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="5">
+        <alternative condition="Medication needed" language="text/javascript">
+          <call id="a11" endpoint="" a:alt_id="7">
+            <parameters>
+              <label>Prescribe NSAID or SMR</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="No medication" language="text/javascript"/>
+      </choose>
+    </alternative>
+    <alternative condition="Exercise/other" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>Apply Exercise or Other Non-drug Treatments</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="9">
+        <alternative condition="NSAID needed" language="text/javascript">
+          <call id="a23" endpoint="" a:alt_id="10">
+            <parameters>
+              <label>Prescribe NSAID</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="11">
+            <alternative condition="Opioid needed" language="text/javascript">
+              <call id="a29" endpoint="" a:alt_id="12">
+                <parameters>
+                  <label>Prescribe Opioid</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="No opioid" language="text/javascript"/>
+          </choose>
+        </alternative>
+        <alternative condition="No medication" language="text/javascript"/>
+      </choose>
+    </alternative>
+  </choose>
+  <call id="a39" endpoint="" a:alt_id="15">
+    <parameters>
+      <label>Proceed to Next Stage</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

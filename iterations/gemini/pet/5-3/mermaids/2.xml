@@ -1,0 +1,23 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Submit Office Supply Request)
+  1:task:(Submit Office Supply Request) --> 2:task:(Register Request)
+  2:task:(Register Request) --> 3:task:(Receive for Approval)
+  3:task:(Receive for Approval) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |Not Approved| 5:task:(Return to Employee)
+  5:task:(Return to Employee) --> 6:task:(Review Comments)
+  6:task:(Review Comments) --> 7:task:(Resubmit Request)
+  7:task:(Resubmit Request) --> 3:task:(Receive for Approval)
+  4:exclusivegateway:{x} --> |Approved| 8:task:(Proceed to Purchase Department)
+  8:task:(Proceed to Purchase Department) --> 9:task:(Make Quotations)
+  9:task:(Make Quotations) --> 10:task:(Select Vendor)
+  10:task:(Select Vendor) --> 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |Vendor Not Selected| 12:task:(Choose Different Vendor)
+  12:task:(Choose Different Vendor) --> 10:task:(Select Vendor)
+  11:exclusivegateway:{x} --> |Vendor Selected| 13:task:(Generate Purchase Order)
+  13:task:(Generate Purchase Order) --> 14:task:(Send Purchase Order)
+  14:task:(Send Purchase Order) --> 15:task:(Wait for Product Delivery)
+  15:task:(Wait for Product Delivery) --> 16:task:(Receive Invoice)
+  16:task:(Receive Invoice) --> 17:task:(Send Notification to User)
+  17:task:(Send Notification to User) --> 18:endevent:(((endevent)))
+```

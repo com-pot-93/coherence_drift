@@ -1,0 +1,11 @@
+The process starts when a customer request is received. This request is then checked. Following the check, the process diverges based on a condition.
+
+In one branch, the process splits again, determining whether to proceed with manual or automatic registration. If manual registration is chosen, it is performed, and the process merges back. If automatic registration is chosen, it is performed, and the process merges back with the manual registration branch. The process then splits into two parallel paths that immediately merge back together. From there, if a certain condition is met, the process continues; otherwise, it merges with another branch.
+
+The process continues with a search for an attraction provider. The process then splits based on a condition. One path leads directly to a merge point. The other path involves booking an attraction, which can result in either a rejection or a booking confirmation. If a rejection is received, the process merges. If a booking confirmation is received, a confirmation is sent to the customer, and the process merges with the rejection branch. Both paths then merge.
+
+The merged path then rejoins the path that bypassed the booking process. All paths merge again.
+
+In another branch that occurs in parallel with the previous one, a notification is sent to the customer. This branch then merges with the main flow.
+
+Finally, the process ends.

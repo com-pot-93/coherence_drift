@@ -1,0 +1,9 @@
+The process begins when a vacancy is reported to the Human Resources (HR) department. Once HR receives the report, they create a job description for the open position.
+
+After the job description is prepared, there is a decision point. At this stage, HR may need to consult the relevant Department. If consultation is required, HR asks the Department for input. After this, the process continues to the next decision point. If consultation is not needed, the process moves directly to the same decision point.
+
+At this next decision point, the process checks whether the job description is ready to be submitted for consideration. If it is not ready, the process loops back to the previous decision point, allowing for further consultation if necessary. If the job description is ready, HR submits it for consideration.
+
+Once submitted, HR waits for the approval of the job description. After waiting, there is another decision point. Here, the Department may request a correction to the job description. If a correction is requested, HR makes the necessary changes to the description. After correcting, the process returns to the previous decision point, where the approval process is repeated.
+
+If no correction is requested, or after corrections have been made and approved, the process continues. Once the job description is approved, HR posts the job. The process ends after the job has been posted.

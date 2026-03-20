@@ -1,0 +1,9 @@
+The process begins when the system receives a customer’s request for a loan amount. After receiving the request, the system forwards it to a risk assessment web service, which evaluates the request.
+
+Based on the assessment, there are three possible outcomes:
+
+1. The risk assessment web service approves the loan.
+2. The risk assessment web service denies the loan.
+3. The risk assessment web service decides to send the request to an approver web service for further review.
+
+Regardless of which outcome occurs, the process continues in the same way: the customer receives feedback about the result of their loan request. Once the feedback is provided to the customer, the process ends.

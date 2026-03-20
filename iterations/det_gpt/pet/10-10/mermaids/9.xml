@@ -1,0 +1,41 @@
+flowchart LR
+0:startevent:((startevent))
+1:exclusivegateway:{x}
+2:task:(Fault detector reports a failure to the MPO)
+3:task:(MPO has a suspicion of  own fault)
+4:exclusivegateway:{x}
+5:task:(MPO  examines the failure)
+6:exclusivegateway:{x}
+7:task:(MPO rejects the failure of the fault detector)
+8:exclusivegateway:{x}
+9:task:(MPO confirms the failure of the fault detector)
+10:task:(MPO informes the GO)
+11:task:(MPO informes the MSP)
+12:task:(MPO fixes the fault at the measuring device)
+13:task:(MPO shares the results of the repairs)
+14:task:(MPO informs the GO about the resolution of the interference)
+15:task:(MPO informs the MSP about the resolution of the interference)
+16:exclusivegateway:{x}
+17:exclusivegateway:{x}
+18:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:exclusivegateway:{x}
+1:exclusivegateway:{x} --> |D1: Fault detector reports failure|2:task:(Fault detector reports a failure to the MPO)
+1:exclusivegateway:{x} --> |D1: MPO suspects own fault|3:task:(MPO has a suspicion of  own fault)
+2:task:(Fault detector reports a failure to the MPO) --> 4:exclusivegateway:{x}
+3:task:(MPO has a suspicion of  own fault) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> 5:task:(MPO  examines the failure)
+4:exclusivegateway:{x} --> |D2: No examination|17:exclusivegateway:{x}
+5:task:(MPO  examines the failure) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |D2: Rejects failure|7:task:(MPO rejects the failure of the fault detector)
+6:exclusivegateway:{x} --> |D2: Confirms failure|9:task:(MPO confirms the failure of the fault detector)
+7:task:(MPO rejects the failure of the fault detector) --> 8:exclusivegateway:{x}
+9:task:(MPO confirms the failure of the fault detector) --> 10:task:(MPO informes the GO)
+10:task:(MPO informes the GO) --> 11:task:(MPO informes the MSP)
+11:task:(MPO informes the MSP) --> 12:task:(MPO fixes the fault at the measuring device)
+12:task:(MPO fixes the fault at the measuring device) --> 13:task:(MPO shares the results of the repairs)
+13:task:(MPO shares the results of the repairs) --> 14:task:(MPO informs the GO about the resolution of the interference)
+14:task:(MPO informs the GO about the resolution of the interference) --> 15:task:(MPO informs the MSP about the resolution of the interference)
+15:task:(MPO informs the MSP about the resolution of the interference) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> 17:exclusivegateway:{x}
+17:exclusivegateway:{x} --> 18:endevent:(((endevent)))

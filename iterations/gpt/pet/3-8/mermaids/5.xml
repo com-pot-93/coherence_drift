@@ -1,0 +1,30 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Claim)
+2:task:(Check Documents)
+3:task:(Register Claim)
+4:task:(Pick Up for Processing)
+5:task:(Check Insurance Details)
+6:task:(Assess Claim Validity)
+7:exclusivegateway:{x}
+8:task:(Authorize Repairs)
+9:task:(Schedule Payment)
+10:task:(Reject Claim)
+11:exclusivegateway:{x}
+12:task:(Send Decision Letter)
+13:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Claim)
+1:task:(Receive Claim) --> 2:task:(Check Documents)
+2:task:(Check Documents) --> 3:task:(Register Claim)
+3:task:(Register Claim) --> 4:task:(Pick Up for Processing)
+4:task:(Pick Up for Processing) --> 5:task:(Check Insurance Details)
+5:task:(Check Insurance Details) --> 6:task:(Assess Claim Validity)
+6:task:(Assess Claim Validity) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Approved|8:task:(Authorize Repairs)
+7:exclusivegateway:{x} --> |Not Approved|10:task:(Reject Claim)
+8:task:(Authorize Repairs) --> 9:task:(Schedule Payment)
+9:task:(Schedule Payment) --> 11:exclusivegateway:{x}
+10:task:(Reject Claim) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> 12:task:(Send Decision Letter)
+12:task:(Send Decision Letter) --> 13:endevent:(((endevent)))

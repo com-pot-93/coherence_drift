@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Call</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="Accept" language="text/javascript">
+      <call id="a5" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Add Patient to List</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Reject" language="text/javascript"/>
+  </choose>
+  <loop mode="pre_test" condition="Condition True">
+    <call id="a11" endpoint="" a:alt_id="5">
+      <parameters>
+        <label>Patient Control</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <choose mode="exclusive" a:alt_id="6">
+      <alternative condition="Path 1" language="text/javascript">
+        <choose mode="exclusive" a:alt_id="7">
+          <alternative condition="No" language="text/javascript"/>
+          <alternative condition="Yes" language="text/javascript">
+            <call id="a23" endpoint="" a:alt_id="8">
+              <parameters>
+                <label>Escalation Event</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a11" endpoint="" a:alt_id="5">
+              <parameters>
+                <label>Patient Control</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <escape a:alt_id="-1"/>
+          </alternative>
+        </choose>
+      </alternative>
+      <alternative condition="">
+        <call id="a19" endpoint="" a:alt_id="11">
+          <parameters>
+            <label>Hospitalization</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a29" endpoint="" a:alt_id="12">
+          <parameters>
+            <label>Childbirth</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="13">
+          <alternative condition="Special Treatment Needed" language="text/javascript">
+            <call id="a33" endpoint="" a:alt_id="14">
+              <parameters>
+                <label>Special Treatment</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="Post-Hospitalization Care Needed" language="text/javascript"/>
+        </choose>
+      </alternative>
+      <alternative condition="Path 3" language="text/javascript">
+        <choose mode="exclusive" a:alt_id="15">
+          <alternative condition="Continue" language="text/javascript"/>
+          <alternative condition="Loop" language="text/javascript">
+            <call id="a23" endpoint="" a:alt_id="8">
+              <parameters>
+                <label>Escalation Event</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a11" endpoint="" a:alt_id="5">
+              <parameters>
+                <label>Patient Control</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <escape a:alt_id="-1"/>
+          </alternative>
+        </choose>
+      </alternative>
+    </choose>
+  </loop>
+</description>

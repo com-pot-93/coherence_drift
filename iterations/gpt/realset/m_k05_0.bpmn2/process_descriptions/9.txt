@@ -1,0 +1,9 @@
+The process begins with the collection of requirements. Once the requirements have been gathered, a decision is made about whether to continue. If the decision is not to continue, the process ends immediately.
+
+If the decision is to proceed, the requirements are sent forward. After this, a draft is received. Another decision is then made about whether to continue. If the decision is not to continue at this point, the process ends.
+
+If the process continues, another decision is made based on a specific condition. If this condition is not met, the process ends.
+
+If the condition is met, the draft is evaluated. After the evaluation, a decision is made about whether to proceed. If the decision is not to proceed, the process ends.
+
+If the decision is to proceed, the process moves through three checkpoints in sequence: Checkpoint 1, Checkpoint 2, and Checkpoint 3. After completing Checkpoint 3, the process ends.

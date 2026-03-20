@@ -1,0 +1,9 @@
+The process starts. Then, depending on whether a service provider, public utility, or government organization requests changes to the MPO, or the MPO causes a change, the process continues down one of two alternative paths.
+If a service provider, public utility, or government organization requests changes to the MPO, the process proceeds to request changes to the MPO. Alternatively, if the MPO causes a change, the process proceeds directly to the MPO causing the change.
+After either requesting changes to the MPO or the MPO causing a change, the change request is reviewed.
+Next, depending on whether the MPO rejects or confirms the change, the process continues down one of two alternative paths.
+If the MPO rejects the change, the change is rejected. Alternatively, if the MPO confirms the change, the change is confirmed.
+After either rejecting or confirming the change, the change is performed.
+Next, depending on whether the MPO reports the implementation to the service provider, public utility, or government organization, or the MPO notifies the service provider, public utility, or government organization about the failure, the process continues down one of two alternative paths.
+If the MPO reports the implementation to the service provider, public utility, or government organization, the implementation is reported. Alternatively, if the MPO notifies the service provider, public utility, or government organization about the failure, the failure is notified.
+After either reporting the implementation or notifying about the failure, the process ends.

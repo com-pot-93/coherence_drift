@@ -1,0 +1,1729 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Connect to the managment system</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <call id="a3" endpoint="" a:alt_id="2">
+      <parameters>
+        <label>Read order from system</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <choose mode="exclusive" a:alt_id="3">
+      <alternative condition="branch 1" language="text/javascript">
+        <choose mode="exclusive" a:alt_id="4">
+          <alternative condition="branch 1" language="text/javascript">
+            <call id="a9" endpoint="" a:alt_id="5">
+              <parameters>
+                <label>Contact the wholesaler</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a11" endpoint="" a:alt_id="6">
+              <parameters>
+                <label>Reordered from the wholesaler</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="0">
+              <alternative condition="">
+                <choose mode="exclusive" a:alt_id="7">
+                  <alternative condition="branch 1" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="8">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a17" endpoint="" a:alt_id="9">
+                          <parameters>
+                            <label>delivery delay penalty from the wholesaler</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a23" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Give the Ok for the arrived product</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="branch 2" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="15">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a17" endpoint="" a:alt_id="9">
+                          <parameters>
+                            <label>delivery delay penalty from the wholesaler</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a23" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Give the Ok for the arrived product</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                </choose>
+              </alternative>
+              <alternative condition="">
+                <choose mode="exclusive" a:alt_id="31">
+                  <alternative condition="branch 1" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="32">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a17" endpoint="" a:alt_id="9">
+                          <parameters>
+                            <label>delivery delay penalty from the wholesaler</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a23" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Give the Ok for the arrived product</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="branch 2" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="37">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a17" endpoint="" a:alt_id="9">
+                          <parameters>
+                            <label>delivery delay penalty from the wholesaler</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a23" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Give the Ok for the arrived product</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                </choose>
+              </alternative>
+            </choose>
+          </alternative>
+          <alternative condition="branch 2" language="text/javascript">
+            <call id="a47" endpoint="" a:alt_id="19">
+              <parameters>
+                <label>Browse the warehouse</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a49" endpoint="" a:alt_id="20">
+              <parameters>
+                <label>Withdrawn  the product from the warehouse</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="0">
+              <alternative condition="">
+                <choose mode="exclusive" a:alt_id="21">
+                  <alternative condition="branch 1" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="22">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a17" endpoint="" a:alt_id="9">
+                          <parameters>
+                            <label>delivery delay penalty from the wholesaler</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a23" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Give the Ok for the arrived product</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="branch 2" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="27">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a17" endpoint="" a:alt_id="9">
+                          <parameters>
+                            <label>delivery delay penalty from the wholesaler</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a23" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Give the Ok for the arrived product</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                </choose>
+              </alternative>
+              <alternative condition="">
+                <choose mode="exclusive" a:alt_id="41">
+                  <alternative condition="branch 1" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="42">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a17" endpoint="" a:alt_id="9">
+                          <parameters>
+                            <label>delivery delay penalty from the wholesaler</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a23" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Give the Ok for the arrived product</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="branch 2" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="47">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a17" endpoint="" a:alt_id="9">
+                          <parameters>
+                            <label>delivery delay penalty from the wholesaler</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a23" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Give the Ok for the arrived product</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                </choose>
+              </alternative>
+            </choose>
+          </alternative>
+        </choose>
+      </alternative>
+      <alternative condition="branch 2" language="text/javascript">
+        <choose mode="exclusive" a:alt_id="30">
+          <alternative condition="branch 1" language="text/javascript">
+            <call id="a9" endpoint="" a:alt_id="5">
+              <parameters>
+                <label>Contact the wholesaler</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a11" endpoint="" a:alt_id="6">
+              <parameters>
+                <label>Reordered from the wholesaler</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="0">
+              <alternative condition="">
+                <choose mode="exclusive" a:alt_id="7">
+                  <alternative condition="branch 1" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="8">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a17" endpoint="" a:alt_id="9">
+                          <parameters>
+                            <label>delivery delay penalty from the wholesaler</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a23" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Give the Ok for the arrived product</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="branch 2" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="15">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a17" endpoint="" a:alt_id="9">
+                          <parameters>
+                            <label>delivery delay penalty from the wholesaler</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a23" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Give the Ok for the arrived product</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                </choose>
+              </alternative>
+              <alternative condition="">
+                <choose mode="exclusive" a:alt_id="31">
+                  <alternative condition="branch 1" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="32">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a17" endpoint="" a:alt_id="9">
+                          <parameters>
+                            <label>delivery delay penalty from the wholesaler</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a23" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Give the Ok for the arrived product</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="branch 2" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="37">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a17" endpoint="" a:alt_id="9">
+                          <parameters>
+                            <label>delivery delay penalty from the wholesaler</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a23" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Give the Ok for the arrived product</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                </choose>
+              </alternative>
+            </choose>
+          </alternative>
+          <alternative condition="branch 2" language="text/javascript">
+            <call id="a47" endpoint="" a:alt_id="19">
+              <parameters>
+                <label>Browse the warehouse</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a49" endpoint="" a:alt_id="20">
+              <parameters>
+                <label>Withdrawn  the product from the warehouse</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="0">
+              <alternative condition="">
+                <choose mode="exclusive" a:alt_id="21">
+                  <alternative condition="branch 1" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="22">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a17" endpoint="" a:alt_id="9">
+                          <parameters>
+                            <label>delivery delay penalty from the wholesaler</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a23" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Give the Ok for the arrived product</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="branch 2" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="27">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a17" endpoint="" a:alt_id="9">
+                          <parameters>
+                            <label>delivery delay penalty from the wholesaler</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a23" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Give the Ok for the arrived product</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                </choose>
+              </alternative>
+              <alternative condition="">
+                <choose mode="exclusive" a:alt_id="41">
+                  <alternative condition="branch 1" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="42">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a17" endpoint="" a:alt_id="9">
+                          <parameters>
+                            <label>delivery delay penalty from the wholesaler</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a23" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Give the Ok for the arrived product</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="branch 2" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="47">
+                      <alternative condition="branch 1" language="text/javascript">
+                        <call id="a17" endpoint="" a:alt_id="9">
+                          <parameters>
+                            <label>delivery delay penalty from the wholesaler</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                      <alternative condition="branch 2" language="text/javascript">
+                        <call id="a23" endpoint="" a:alt_id="12">
+                          <parameters>
+                            <label>Give the Ok for the arrived product</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                        <choose mode="exclusive" a:alt_id="0">
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                          <alternative condition=""/>
+                        </choose>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                </choose>
+              </alternative>
+            </choose>
+          </alternative>
+        </choose>
+      </alternative>
+    </choose>
+    <call id="a163" endpoint="" a:alt_id="50">
+      <parameters>
+        <label>Register the product in the management system</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <loop mode="pre_test" condition="true" a:alt_id="51" language="text/javascript">
+      <call id="a3" endpoint="" a:alt_id="2">
+        <parameters>
+          <label>Read order from system</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="3">
+        <alternative condition="branch 1" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="4">
+            <alternative condition="branch 1" language="text/javascript">
+              <call id="a9" endpoint="" a:alt_id="5">
+                <parameters>
+                  <label>Contact the wholesaler</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a11" endpoint="" a:alt_id="6">
+                <parameters>
+                  <label>Reordered from the wholesaler</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="0">
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="7">
+                    <alternative condition="branch 1" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="8">
+                        <alternative condition="branch 1" language="text/javascript">
+                          <call id="a17" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>delivery delay penalty from the wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="branch 2" language="text/javascript">
+                          <call id="a23" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Give the Ok for the arrived product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="branch 2" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="15">
+                        <alternative condition="branch 1" language="text/javascript">
+                          <call id="a17" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>delivery delay penalty from the wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="branch 2" language="text/javascript">
+                          <call id="a23" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Give the Ok for the arrived product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="31">
+                    <alternative condition="branch 1" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="32">
+                        <alternative condition="branch 1" language="text/javascript">
+                          <call id="a17" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>delivery delay penalty from the wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="branch 2" language="text/javascript">
+                          <call id="a23" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Give the Ok for the arrived product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="branch 2" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="37">
+                        <alternative condition="branch 1" language="text/javascript">
+                          <call id="a17" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>delivery delay penalty from the wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="branch 2" language="text/javascript">
+                          <call id="a23" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Give the Ok for the arrived product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                  </choose>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="branch 2" language="text/javascript">
+              <call id="a47" endpoint="" a:alt_id="19">
+                <parameters>
+                  <label>Browse the warehouse</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a49" endpoint="" a:alt_id="20">
+                <parameters>
+                  <label>Withdrawn  the product from the warehouse</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="0">
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="21">
+                    <alternative condition="branch 1" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="22">
+                        <alternative condition="branch 1" language="text/javascript">
+                          <call id="a17" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>delivery delay penalty from the wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="branch 2" language="text/javascript">
+                          <call id="a23" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Give the Ok for the arrived product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="branch 2" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="27">
+                        <alternative condition="branch 1" language="text/javascript">
+                          <call id="a17" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>delivery delay penalty from the wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="branch 2" language="text/javascript">
+                          <call id="a23" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Give the Ok for the arrived product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="41">
+                    <alternative condition="branch 1" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="42">
+                        <alternative condition="branch 1" language="text/javascript">
+                          <call id="a17" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>delivery delay penalty from the wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="branch 2" language="text/javascript">
+                          <call id="a23" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Give the Ok for the arrived product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="branch 2" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="47">
+                        <alternative condition="branch 1" language="text/javascript">
+                          <call id="a17" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>delivery delay penalty from the wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="branch 2" language="text/javascript">
+                          <call id="a23" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Give the Ok for the arrived product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                  </choose>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="branch 2" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="30">
+            <alternative condition="branch 1" language="text/javascript">
+              <call id="a9" endpoint="" a:alt_id="5">
+                <parameters>
+                  <label>Contact the wholesaler</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a11" endpoint="" a:alt_id="6">
+                <parameters>
+                  <label>Reordered from the wholesaler</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="0">
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="7">
+                    <alternative condition="branch 1" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="8">
+                        <alternative condition="branch 1" language="text/javascript">
+                          <call id="a17" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>delivery delay penalty from the wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="branch 2" language="text/javascript">
+                          <call id="a23" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Give the Ok for the arrived product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="branch 2" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="15">
+                        <alternative condition="branch 1" language="text/javascript">
+                          <call id="a17" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>delivery delay penalty from the wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="branch 2" language="text/javascript">
+                          <call id="a23" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Give the Ok for the arrived product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="31">
+                    <alternative condition="branch 1" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="32">
+                        <alternative condition="branch 1" language="text/javascript">
+                          <call id="a17" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>delivery delay penalty from the wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="branch 2" language="text/javascript">
+                          <call id="a23" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Give the Ok for the arrived product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="branch 2" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="37">
+                        <alternative condition="branch 1" language="text/javascript">
+                          <call id="a17" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>delivery delay penalty from the wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="branch 2" language="text/javascript">
+                          <call id="a23" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Give the Ok for the arrived product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                  </choose>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="branch 2" language="text/javascript">
+              <call id="a47" endpoint="" a:alt_id="19">
+                <parameters>
+                  <label>Browse the warehouse</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a49" endpoint="" a:alt_id="20">
+                <parameters>
+                  <label>Withdrawn  the product from the warehouse</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="0">
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="21">
+                    <alternative condition="branch 1" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="22">
+                        <alternative condition="branch 1" language="text/javascript">
+                          <call id="a17" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>delivery delay penalty from the wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="branch 2" language="text/javascript">
+                          <call id="a23" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Give the Ok for the arrived product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="branch 2" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="27">
+                        <alternative condition="branch 1" language="text/javascript">
+                          <call id="a17" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>delivery delay penalty from the wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="branch 2" language="text/javascript">
+                          <call id="a23" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Give the Ok for the arrived product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="41">
+                    <alternative condition="branch 1" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="42">
+                        <alternative condition="branch 1" language="text/javascript">
+                          <call id="a17" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>delivery delay penalty from the wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="branch 2" language="text/javascript">
+                          <call id="a23" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Give the Ok for the arrived product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                    <alternative condition="branch 2" language="text/javascript">
+                      <choose mode="exclusive" a:alt_id="47">
+                        <alternative condition="branch 1" language="text/javascript">
+                          <call id="a17" endpoint="" a:alt_id="9">
+                            <parameters>
+                              <label>delivery delay penalty from the wholesaler</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="branch 2" language="text/javascript">
+                          <call id="a23" endpoint="" a:alt_id="12">
+                            <parameters>
+                              <label>Give the Ok for the arrived product</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <choose mode="exclusive" a:alt_id="0">
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                            <alternative condition=""/>
+                          </choose>
+                        </alternative>
+                      </choose>
+                    </alternative>
+                  </choose>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+      <call id="a163" endpoint="" a:alt_id="50">
+        <parameters>
+          <label>Register the product in the management system</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </loop>
+    <parallel wait="-1" cancel="last" a:alt_id="52">
+      <parallel_branch>
+        <call id="a171" endpoint="" a:alt_id="53">
+          <parameters>
+            <label>Pack the product</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </parallel_branch>
+      <parallel_branch>
+        <call id="a173" endpoint="" a:alt_id="54">
+          <parameters>
+            <label>Request a courier</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </parallel_branch>
+    </parallel>
+    <call id="a179" endpoint="" a:alt_id="56">
+      <parameters>
+        <label>Ship the delivery</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+  </loop>
+</description>

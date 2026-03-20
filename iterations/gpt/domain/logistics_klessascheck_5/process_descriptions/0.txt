@@ -1,0 +1,17 @@
+The process begins with the start of the procedure. The first step is to package the product. Once the product is packaged, it is shipped.
+
+After shipping, a decision is made about how to deliver the product. There are two possible delivery methods:
+
+1. **Deliver to Door:**  
+   If the product is to be delivered to the recipient’s door, the process continues with the delivery to the door. After this, another decision is made:
+   - If a pick-up receipt needs to be printed, the process continues with printing the pick-up receipt, followed by posting the pick-up receipt. After posting, the product is rerouted to the closest station. Once rerouted, the process rejoins the main flow.
+   - If printing a pick-up receipt is not required, the process skips directly to the next step, rejoining the main flow.
+
+2. **Deliver to Station:**  
+   If the product is to be delivered to a station, the process continues with the delivery to the station. After this, the process rejoins the main flow.
+
+Once both delivery methods have converged, another decision is made:
+- If the product needs to be received back, the process continues with receiving the product back, after which the process rejoins the main flow.
+- If the product does not need to be received back, the process skips this step.
+
+Finally, the process ends.

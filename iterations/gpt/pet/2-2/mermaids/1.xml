@@ -1,0 +1,79 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Customer Data)
+2:task:(Enter Data into CRM)
+3:task:(Compare with Internal Data)
+4:task:(Check Data Completeness and Plausibility)
+5:exclusivegateway:{x}
+6:task:(Correct Customer Data)
+7:exclusivegateway:{x}
+8:task:(Create New Customer Object)
+9:task:(Prepare Contract Documents)
+10:task:(CIS Checks Contract Documents)
+11:exclusivegateway:{x}
+12:task:(Analyze and Resolve Contract Issues)
+13:task:(Generate New Contract Documents)
+14:exclusivegateway:{x}
+15:task:(CIS Sends Confirmation to Customer)
+16:task:(CIS Sends Request to Grid Operator)
+17:task:(Grid Operator Checks Supplier Concurrence)
+18:task:(Grid Operator Transmits Response Comment)
+19:exclusivegateway:{x}
+20:task:(Grid Operator Informs Suppliers and Demands Resolution)
+21:exclusivegateway:{x}
+22:task:(Grid Operator Communicates with Old Supplier)
+23:task:(Grid Operator Terminates Sales Agreement)
+24:exclusivegateway:{x}
+25:task:(Create CIS Contract)
+26:task:(Customer Checks Contract Details)
+27:exclusivegateway:{x}
+28:parallelgateway:{AND}
+29:task:(Grid Operator Transmits Meter Data)
+30:task:(Grid Operator Computes and Sends Final Billing to Old Supplier)
+31:task:(Old Supplier Creates and Sends Final Billing to Customer)
+32:parallelgateway:{AND}
+33:task:(Customer Service Receives and Imports Meter Data)
+34:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Customer Data)
+1:task:(Receive Customer Data) --> 2:task:(Enter Data into CRM)
+2:task:(Enter Data into CRM) --> 3:task:(Compare with Internal Data)
+3:task:(Compare with Internal Data) --> 4:task:(Check Data Completeness and Plausibility)
+4:task:(Check Data Completeness and Plausibility) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Incomplete or Implausible|6:task:(Correct Customer Data)
+5:exclusivegateway:{x} --> |Complete and Plausible|7:exclusivegateway:{x}
+6:task:(Correct Customer Data) --> 5:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Create New Object|8:task:(Create New Customer Object)
+7:exclusivegateway:{x} --> |No New Object|9:task:(Prepare Contract Documents)
+8:task:(Create New Customer Object) --> 9:task:(Prepare Contract Documents)
+9:task:(Prepare Contract Documents) --> 10:task:(CIS Checks Contract Documents)
+10:task:(CIS Checks Contract Documents) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Issues Found|12:task:(Analyze and Resolve Contract Issues)
+11:exclusivegateway:{x} --> |No Issues|14:exclusivegateway:{x}
+12:task:(Analyze and Resolve Contract Issues) --> 13:task:(Generate New Contract Documents)
+13:task:(Generate New Contract Documents) --> 10:task:(CIS Checks Contract Documents)
+14:exclusivegateway:{x} --> 15:task:(CIS Sends Confirmation to Customer)
+15:task:(CIS Sends Confirmation to Customer) --> 16:task:(CIS Sends Request to Grid Operator)
+16:task:(CIS Sends Request to Grid Operator) --> 17:task:(Grid Operator Checks Supplier Concurrence)
+17:task:(Grid Operator Checks Supplier Concurrence) --> 18:task:(Grid Operator Transmits Response Comment)
+18:task:(Grid Operator Transmits Response Comment) --> 19:exclusivegateway:{x}
+19:exclusivegateway:{x} --> |Conflict|20:task:(Grid Operator Informs Suppliers and Demands Resolution)
+19:exclusivegateway:{x} --> |No Conflict|21:exclusivegateway:{x}
+20:task:(Grid Operator Informs Suppliers and Demands Resolution) --> 18:task:(Grid Operator Transmits Response Comment)
+21:exclusivegateway:{x} --> 22:task:(Grid Operator Communicates with Old Supplier)
+22:task:(Grid Operator Communicates with Old Supplier) --> 23:task:(Grid Operator Terminates Sales Agreement)
+23:task:(Grid Operator Terminates Sales Agreement) --> 24:exclusivegateway:{x}
+24:exclusivegateway:{x} --> |Create CIS Contract|25:task:(Create CIS Contract)
+24:exclusivegateway:{x} --> |No CIS Contract|26:task:(Customer Checks Contract Details)
+25:task:(Create CIS Contract) --> 26:task:(Customer Checks Contract Details)
+26:task:(Customer Checks Contract Details) --> 27:exclusivegateway:{x}
+27:exclusivegateway:{x} --> |Customer Confirms|28:parallelgateway:{AND}
+27:exclusivegateway:{x} --> |Customer Withdraws|34:endevent:(((endevent)))
+28:parallelgateway:{AND} --> 29:task:(Grid Operator Transmits Meter Data)
+28:parallelgateway:{AND} --> 30:task:(Grid Operator Computes and Sends Final Billing to Old Supplier)
+28:parallelgateway:{AND} --> 31:task:(Old Supplier Creates and Sends Final Billing to Customer)
+29:task:(Grid Operator Transmits Meter Data) --> 32:parallelgateway:{AND}
+30:task:(Grid Operator Computes and Sends Final Billing to Old Supplier) --> 32:parallelgateway:{AND}
+31:task:(Old Supplier Creates and Sends Final Billing to Customer) --> 32:parallelgateway:{AND}
+32:parallelgateway:{AND} --> 33:task:(Customer Service Receives and Imports Meter Data)
+33:task:(Customer Service Receives and Imports Meter Data) --> 34:endevent:(((endevent)))

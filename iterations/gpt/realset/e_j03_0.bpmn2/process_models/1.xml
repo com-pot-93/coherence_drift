@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Start Assessment Tool</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Tool Ready for Use</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="3">
+    <parameters>
+      <label>Enter Incident Type</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="4">
+    <alternative condition="Accident" language="text/javascript">
+      <call id="a9" endpoint="" a:alt_id="5">
+        <parameters>
+          <label>Select Accident</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Almost Accident" language="text/javascript">
+      <call id="a11" endpoint="" a:alt_id="6">
+        <parameters>
+          <label>Select Almost Accident</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Severe Safety/Health Risk" language="text/javascript">
+      <call id="a13" endpoint="" a:alt_id="7">
+        <parameters>
+          <label>Select Severe Safety/Health Risk</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Defective Protective Equipment" language="text/javascript">
+      <call id="a15" endpoint="" a:alt_id="8">
+        <parameters>
+          <label>Select Defective Protective Equipment</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a25" endpoint="" a:alt_id="10">
+    <parameters>
+      <label>Specify Incident</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="11">
+    <alternative condition="">
+      <choose mode="exclusive" a:alt_id="12">
+        <alternative condition="Own Data" language="text/javascript">
+          <call id="a33" endpoint="" a:alt_id="13">
+            <parameters>
+              <label>Enter Own Data</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Victim's Data" language="text/javascript">
+          <call id="a35" endpoint="" a:alt_id="14">
+            <parameters>
+              <label>Enter Victim's Data</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <choose mode="exclusive" a:alt_id="15">
+        <alternative condition="">
+          <parallel wait="-1" cancel="last" a:alt_id="16">
+            <parallel_branch>
+              <call id="a45" endpoint="" a:alt_id="17">
+                <parameters>
+                  <label>Contact Accident Insurance</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </parallel_branch>
+            <parallel_branch>
+              <choose mode="exclusive" a:alt_id="18">
+                <alternative condition="Contact Labour Inspectorate" language="text/javascript">
+                  <call id="a51" endpoint="" a:alt_id="19">
+                    <parameters>
+                      <label>Contact Labour Inspectorate</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="No Contact" language="text/javascript"/>
+              </choose>
+            </parallel_branch>
+          </parallel>
+        </alternative>
+        <alternative condition="Contact Superiors" language="text/javascript">
+          <call id="a43" endpoint="" a:alt_id="21">
+            <parameters>
+              <label>Contact Superiors</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="">
+      <parallel wait="-1" cancel="last" a:alt_id="23">
+        <parallel_branch>
+          <call id="a63" endpoint="" a:alt_id="24">
+            <parameters>
+              <label>Contact Accident Insurance</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a65" endpoint="" a:alt_id="25">
+            <parameters>
+              <label>Contact Principal</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+      </parallel>
+    </alternative>
+  </choose>
+  <choose mode="exclusive" a:alt_id="27">
+    <alternative condition="Continue" language="text/javascript"/>
+    <alternative condition="Contact Private Insurance" language="text/javascript">
+      <call id="a75" endpoint="" a:alt_id="28">
+        <parameters>
+          <label>Contact Private Insurance</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a79" endpoint="" a:alt_id="30">
+    <parameters>
+      <label>Propose Tasks to User</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a81" endpoint="" a:alt_id="31">
+    <parameters>
+      <label>Execute Proposed Tasks</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

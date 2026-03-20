@@ -1,0 +1,14 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:parallelgateway:{AND}
+1:parallelgateway:{AND} --> 2:task:(Check Baby Age)
+1:parallelgateway:{AND} --> 3:task:(Check Parent Status)
+2:task:(Check Baby Age) --> 4:parallelgateway:{AND}
+3:task:(Check Parent Status) --> 4:parallelgateway:{AND}
+4:parallelgateway:{AND} --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} -->|Employed| 6:task:(Send Notification to Employer)
+5:exclusivegateway:{x} -->|Self-Employed/Studying/Housewife/Man| 7:exclusivegateway:{x}
+6:task:(Send Notification to Employer) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> 8:task:(Parents Take Leave)
+8:task:(Parents Take Leave) --> 9:endevent:(((endevent)))
+```

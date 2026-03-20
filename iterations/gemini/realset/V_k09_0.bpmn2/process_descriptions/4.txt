@@ -1,0 +1,7 @@
+The process starts with connecting to a management system. Then, a decision is made. If the condition is not met, the process proceeds to read an order from the system. Subsequently, a series of three consecutive decisions are made. If any of these conditions are not met, the process loops back to the first decision. If all three conditions are met, the process splits into three parallel paths.
+
+In each of these parallel paths, a decision is made. If the condition is met, a delivery delay penalty is applied. Otherwise, an "OK" task is performed. After each of these conditional tasks, the paths converge back together.
+
+Following the convergence, an "OK for Arrived Product" task is performed, and then the product is registered in the management system. The process then splits into two parallel paths: one to pack the product and another to request a courier. After both tasks are completed, the paths converge, and the delivery is shipped.
+
+A decision is then made. If the condition is false, the process ends. If the condition is true, the process loops back to read the order from the system. If an escalation event occurs while reading the order, the process ends.

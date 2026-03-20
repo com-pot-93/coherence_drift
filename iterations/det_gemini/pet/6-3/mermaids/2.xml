@@ -1,0 +1,16 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(get a new order from the sales department)
+  1:task:(get a new order from the sales department) --> 2:task:(master determines the necessary parts, quantities and delivery date)
+  2:task:(master determines the necessary parts, quantities and delivery date) --> 3:task:(enter info into production planning system ( PPS ))
+  3:task:(enter info into production planning system ( PPS )) --> 4:task:(PPS creates a list of procured parts)
+  4:task:(PPS creates a list of procured parts) --> 5:task:(transfer data from PPS to Enterprise Resource Planning system ( ERP ))
+  5:task:(transfer data from PPS to Enterprise Resource Planning system ( ERP )) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |yes| 7:task:(procure missing parts)
+  6:exclusivegateway:{x} --> |no| 8:exclusivegateway:{x}
+  7:task:(procure missing parts) --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> 9:task:(receive a notice from the system)
+  9:task:(receive a notice from the system) --> 10:task:(employee takes care of the implementation)
+  10:task:(employee takes care of the implementation) --> 11:task:(check the order for its quality)
+  11:task:(check the order for its quality) --> 12:endevent:(((endevent)))
+```

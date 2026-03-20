@@ -1,0 +1,9 @@
+The process begins when a mortgage offer is sent. After this, there is a period of waiting for a reply from the customer.
+
+Once the reply is received, a decision is made about whether the case needs to be updated. If it is determined that the case does need an update, the case details are updated. After updating the case details, the work is archived, and then a cancellation is performed. Following the cancellation, the process moves to another decision point.
+
+If, after waiting for the customer reply, it is determined that the case does not need an update, a set of administrative tasks is performed. After these tasks, another decision is made about whether a request for outstanding documents is needed. If such a request is needed, outstanding documents are requested, the case details are updated, the work is archived, and a cancellation is performed. After this, the process moves to the same decision point as before.
+
+If, after performing administrative tasks, it is determined that no request for outstanding documents is needed, the process moves directly to the same decision point as after the cancellation steps.
+
+Finally, after reaching this last decision point, the process comes to an end.

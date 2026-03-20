@@ -1,0 +1,13 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Create production plan and process order)
+1:task:(Create production plan and process order) --> 2:task:(Execute MRP)
+2:task:(Execute MRP) --> 3:task:(Evaluate Capacity)
+3:task:(Evaluate Capacity) --> 4:task:(Schedule and release proposal)
+4:task:(Schedule and release proposal) --> 5:task:(Confirm process order)
+5:task:(Confirm process order) --> 6:task:(Create transfer order or good issue)
+6:task:(Create transfer order or good issue) --> 7:task:(Confirm good issue)
+7:task:(Confirm good issue) --> 8:task:(Good Receipt)
+8:task:(Good Receipt) --> 9:task:(Order Settlement)
+9:task:(Order Settlement) --> 10:endevent:(((endevent)))
+```

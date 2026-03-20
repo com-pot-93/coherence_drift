@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>enter manufacturer</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>enter model</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="continue" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>enter broken part</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="5">
+        <alternative condition="false" language="text/javascript">
+          <parallel wait="-1" cancel="last" a:alt_id="6">
+            <parallel_branch>
+              <call id="a17" endpoint="" a:alt_id="7">
+                <parameters>
+                  <label>compute parts list</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </parallel_branch>
+            <parallel_branch>
+              <call id="a19" endpoint="" a:alt_id="8">
+                <parameters>
+                  <label>compute necessary Tools</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </parallel_branch>
+          </parallel>
+          <call id="a25" endpoint="" a:alt_id="10">
+            <parameters>
+              <label>check list with own inventory (tool/screw)</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="11">
+            <alternative condition="false" language="text/javascript">
+              <call id="a29" endpoint="" a:alt_id="12">
+                <parameters>
+                  <label>getting everything else needed</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="true" language="text/javascript">
+              <call id="a31" endpoint="" a:alt_id="13">
+                <parameters>
+                  <label>contact friend</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+          <call id="a37" endpoint="" a:alt_id="15">
+            <parameters>
+              <label>Generating instructions to fix</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="16">
+            <alternative condition="false" language="text/javascript">
+              <choose mode="exclusive" a:alt_id="17">
+                <alternative condition="first branch" language="text/javascript">
+                  <call id="a45" endpoint="" a:alt_id="18">
+                    <parameters>
+                      <label>follow instructions</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="second branch" language="text/javascript">
+                  <call id="a47" endpoint="" a:alt_id="19">
+                    <parameters>
+                      <label>follow instructions</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="true" language="text/javascript"/>
+          </choose>
+          <choose mode="exclusive" a:alt_id="20">
+            <alternative condition="">
+              <call id="a53" endpoint="" a:alt_id="21">
+                <parameters>
+                  <label>send phone to expert</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a55" endpoint="" a:alt_id="22">
+                <parameters>
+                  <label>Leave Review</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="23">
+                <alternative condition="true" language="text/javascript">
+                  <call id="a59" endpoint="" a:alt_id="24">
+                    <parameters>
+                      <label>Upload video</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="false" language="text/javascript"/>
+              </choose>
+              <call id="a65" endpoint="" a:alt_id="26">
+                <parameters>
+                  <label>Saving video to DB</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition=""/>
+          </choose>
+        </alternative>
+        <alternative condition="true" language="text/javascript">
+          <call id="a15" endpoint="" a:alt_id="27">
+            <parameters>
+              <label>enter broken part</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="exit" language="text/javascript"/>
+  </choose>
+</description>

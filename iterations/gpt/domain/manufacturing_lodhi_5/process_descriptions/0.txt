@@ -1,0 +1,16 @@
+The process begins when a production order is received. After receiving the production order, the next step is to prepare the production order for processing.
+
+Once the production order is prepared, a decision is made. If the decision leads to continuing the process, raw materials are collected. After collecting the raw materials, the materials are cut as required.
+
+Following the cutting step, two activities take place at the same time: stitching and printing. Both stitching and printing are performed independently and simultaneously. Once both stitching and printing are completed, the process continues.
+
+The next step is to complete the production. After production is completed, the quality of the finished product is checked. Once the quality check is done, a quality report is created.
+
+After the quality report is created, another decision is made. Based on this decision, one of two actions is taken:
+
+- If adjustments are needed, the settings are adjusted. After adjusting the settings, the process returns to the previous decision point for further evaluation.
+- If no adjustments are needed, the data is sent to the warehouse. After sending the data to the warehouse, the process also returns to the previous decision point for further evaluation.
+
+At the earlier decision point, if the process does not need to continue, it ends.
+
+This cycle allows for repeated quality checks and adjustments until the process is ready to be completed and ended.

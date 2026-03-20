@@ -1,0 +1,11 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(Receive Data Subject Request)
+1:task:(Receive Data Subject Request) --> 2:task:(Retrieve Data)
+2:task:(Retrieve Data) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Data is Relevant| 4:task:(Provide Explanation)
+4:task:(Provide Explanation) --> 6:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Data is Not Relevant| 5:task:(Eliminate Data and Notify)
+5:task:(Eliminate Data and Notify) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> 7:endevent:(((endevent)))
+```

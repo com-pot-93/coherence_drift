@@ -1,0 +1,1 @@
+The process starts when the MSPN sends a dismissal. The MSPO then reviews the dismissal. Based on the review, the dismissal is either rejected or confirmed. In either case, the process ends.

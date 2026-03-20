@@ -1,0 +1,11 @@
+The process starts when a customer request is received. The request is then checked. Depending on whether registration is required, the process either proceeds directly to "Continue Process" or goes through a registration step.
+
+If registration is required, there's a choice between manual and automatic registration. After either manual or automatic registration is completed, the process continues to "Continue Process".
+
+After "Continue Process", there is a decision whether to skip searching for an attraction provider. If the search is not skipped, the process searches for an attraction provider. Following the search, there's a check to see if a certain condition is met. If the condition is not met, an attraction is booked. After booking, the booking status is checked.
+
+Based on the booking status, either a confirmation is sent if the booking is confirmed, or a rejection notification is sent if the booking is rejected. After either sending the confirmation or rejection, the process rejoins and proceeds as if the condition was initially met.
+
+If the condition was initially met, or after handling the booking confirmation/rejection, the process proceeds as if the search was skipped.
+
+If the search was skipped initially, or after the condition is met, the process continues with a "Continue" task, followed by sending a notification, and then the process ends.

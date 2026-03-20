@@ -1,0 +1,15 @@
+The process begins when a booking request is received. After receiving the request, the next step is to process it.
+
+Once the request has been processed, a decision is made about whether to continue with the process or not. If the decision is not to continue, the process moves directly towards its conclusion. If the decision is to continue, the process proceeds to the next step.
+
+The next step involves continuing the process, after which another decision is made based on the outcome. If the outcome is negative, the process moves towards its conclusion. If the outcome is positive, the outcome is checked in detail.
+
+After checking the outcome in detail, the availability is checked. If the requested time or resource is not available, an alternative time is proposed, and the requester is notified of this alternative. If the requested time or resource is available, the requester is notified of the availability. In both cases, the process then waits for a response from the requester.
+
+Once a response is received from the requester, a decision is made based on whether the booking is confirmed or not. If the booking is confirmed, the booking is marked as confirmed. After this, another decision is made regarding escalation. If no escalation is needed, the process moves towards its conclusion. If further escalation is required, the process enters an escalation handling loop.
+
+During escalation, the situation is handled and availability is checked again. If escalation is still needed, the escalation handling repeats. Once escalation is resolved, the process returns to the previous decision point and continues towards its conclusion.
+
+If the booking is not confirmed, the booking is marked as not confirmed. Then, a decision is made about whether a bill needs to be sent. If no bill is needed, the process moves towards its conclusion. If a bill is needed, a bill is sent. After sending the bill, another decision is made about whether further billing is required. If further billing is needed, an additional bill is sent, and this step repeats as necessary. Once no further billing is needed, the process moves towards its conclusion.
+
+Finally, the process ends.

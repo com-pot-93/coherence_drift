@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="a500">
+    <parameters>
+      <label>Coordination Unit drafts a schedule of meetings</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="a501">
+    <parameters>
+      <label>Coordination Unit adds draft dates to all calendars</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="a502">
+    <parameters>
+      <label>Support Officer  checks the dates</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="a503">
+    <parameters>
+      <label>Support Officer suggests modifications</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a9" endpoint="" a:alt_id="a504">
+    <parameters>
+      <label>Coordination Unit rechecks all dates</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a11" endpoint="" a:alt_id="a505">
+    <parameters>
+      <label>Coordination Unit looks for potential conflicts</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a13" endpoint="" a:alt_id="a506">
+    <parameters>
+      <label>Coordination Unit sends final schedule to  Committee Members</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a15" endpoint="" a:alt_id="a507">
+    <parameters>
+      <label>Committee Members check diaries</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a17" endpoint="" a:alt_id="a508">
+    <parameters>
+      <label>Committee Members advise the Coordination Unit of any conflicts</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

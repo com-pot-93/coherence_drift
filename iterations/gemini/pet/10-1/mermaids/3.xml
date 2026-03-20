@@ -1,0 +1,11 @@
+```mermaid
+graph LR
+0:startevent:((startevent)) --> 1:task:(MPON sends a dismissal)
+1:task:(MPON sends a dismissal) --> 2:task:(MPOO reviews the dismissal)
+2:task:(MPOO reviews the dismissal) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Dismissal is opposed| 4:task:(Opposing the dismissal)
+3:exclusivegateway:{x} --> |Dismissal is confirmed| 5:task:(Confirming the dismissal)
+4:task:(Opposing the dismissal) --> 6:exclusivegateway:{x}
+5:task:(Confirming the dismissal) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> 7:endevent:(((endevent)))
+```

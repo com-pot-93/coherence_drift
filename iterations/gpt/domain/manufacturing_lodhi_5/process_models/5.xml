@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Receive Production Order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>Prepare Production Order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="post_test" condition="No"/>
+  <call id="a7" endpoint="" a:alt_id="4">
+    <parameters>
+      <label>Condition Met?</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a13" endpoint="" a:alt_id="6">
+    <parameters>
+      <label>Collect Raw Materials</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a15" endpoint="" a:alt_id="7">
+    <parameters>
+      <label>Cut Materials</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="8">
+    <parallel_branch>
+      <call id="a19" endpoint="" a:alt_id="9">
+        <parameters>
+          <label>Stitching</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a21" endpoint="" a:alt_id="10">
+        <parameters>
+          <label>Printing</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a27" endpoint="" a:alt_id="12">
+    <parameters>
+      <label>Complete Production</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a29" endpoint="" a:alt_id="13">
+    <parameters>
+      <label>Quality Check</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a31" endpoint="" a:alt_id="14">
+    <parameters>
+      <label>Create Quality Report</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="Yes" a:alt_id="15" language="text/javascript">
+    <call id="a37" endpoint="" a:alt_id="16">
+      <parameters>
+        <label>Adjustments Needed?</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <choose mode="exclusive" a:alt_id="17">
+      <alternative condition="Adjust" language="text/javascript">
+        <call id="a41" endpoint="" a:alt_id="18">
+          <parameters>
+            <label>Determine Next Step</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="19">
+          <alternative condition="Settings Adjusted" language="text/javascript">
+            <call id="a47" endpoint="" a:alt_id="20">
+              <parameters>
+                <label>Settings Adjusted</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="No" language="text/javascript">
+            <call id="a43" endpoint="" a:alt_id="21">
+              <parameters>
+                <label>Send Data to Warehouse</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+      </alternative>
+      <alternative condition="No Adjust" language="text/javascript">
+        <call id="a43" endpoint="" a:alt_id="21">
+          <parameters>
+            <label>Send Data to Warehouse</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+    </choose>
+  </loop>
+</description>

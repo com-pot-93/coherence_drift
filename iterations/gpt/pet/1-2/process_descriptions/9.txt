@@ -1,0 +1,27 @@
+Certainly! Here is a detailed, step-by-step description of the process as depicted in your model:
+
+1. The process begins when a defective computer is received.
+2. The computer is then examined to assess its condition.
+3. After the examination, the repair costs are calculated.
+4. The calculated repair costs are discussed with the customer.
+5. At this point, the customer decides whether to approve or decline the repair:
+   - If the customer declines the repair, the computer is returned to the customer, and the process ends.
+   - If the customer approves the repair, the process continues.
+6. Once the customer approves, two activities are carried out at the same time:
+   - The hardware of the computer is repaired.
+   - The software is checked and configured.
+7. After both the hardware repair and software check are completed, the process continues to the next step.
+8. The next step is to check if the computer is ready:
+   - If the computer is not ready, the process waits until it is ready, and then checks again.
+   - If the computer is ready, the process continues.
+9. Once the computer is ready, the system functionality is tested.
+10. The outcome of the system test is evaluated:
+    - If the test is successful, the process moves forward.
+    - If the test fails, the issue is escalated for further attention.
+11. After escalation, the process checks whether to repeat the system functionality test:
+    - If it is decided to repeat the test, the system functionality is tested again.
+    - If not, the process ends.
+12. This cycle of testing and escalation can repeat as needed. If the test is eventually successful, the process continues; if not, the process ends.
+13. Once all necessary tests are completed and the computer is confirmed to be ready and functioning, the process concludes.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step and decision is included and described in clear, everyday language.

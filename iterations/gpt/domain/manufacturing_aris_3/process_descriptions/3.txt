@@ -1,0 +1,9 @@
+The process begins when a production order is received. After receiving the order, the next step is to prepare the necessary materials. Once the materials are ready, the door is assembled.
+
+After assembling the door, a decision is made about whether to proceed with a quality check. If the decision is to proceed, the process continues to another decision point, where it is determined whether to send a quality check inquiry or not. If the choice is not to proceed with the quality check, the process skips the quality check steps and moves towards the end.
+
+If the decision is to send a quality check inquiry, the inquiry is sent, and then received by the responsible party. The quality check is then performed. After the quality check is completed, a quality report is sent and subsequently received and reviewed.
+
+Following the review of the quality report, another decision is made based on the results. If the report is not satisfactory, the door is fixed, and the process returns to the point after the review for another evaluation. If the report is satisfactory, the door is released, and the process also returns to the same point after the review.
+
+After either fixing the door or releasing it, the process moves past the quality check section and continues towards the end. Finally, the process concludes.

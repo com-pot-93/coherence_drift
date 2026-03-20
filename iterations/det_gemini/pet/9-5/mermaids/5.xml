@@ -1,0 +1,25 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(company receives expense report)
+    1:task:(company receives expense report) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |condition1| 3:task:(company creates new employee account)
+    2:exclusivegateway:{x} --> |condition2| 4:task:(company creates new employee account)
+    3:task:(company creates new employee account) --> 5:exclusivegateway:{x}
+    4:task:(company creates new employee account) --> 5:exclusivegateway:{x}
+    5:exclusivegateway:{x} --> 6:task:(company reviews report for automatic approval)
+    6:task:(company reviews report for automatic approval) --> 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} --> |condition4| 8:task:(company automatically approves the report)
+    7:exclusivegateway:{x} --> 9:task:(supervisor approves the report)
+    9:task:(supervisor approves the report) --> 10:exclusivegateway:{x}
+    8:task:(company automatically approves the report) --> 10:exclusivegateway:{x}
+    10:exclusivegateway:{x} --> |condition5| 11:task:(company sends reimbursement to employee's bank account)
+    10:exclusivegateway:{x} --> |condition6| 12:task:(employee receives a rejection notice)
+    11:task:(company sends reimbursement to employee's bank account) --> 13:exclusivegateway:{x}
+    12:task:(employee receives a rejection notice) --> 13:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> |condition9| 15:task:(company stops the process)
+    14:exclusivegateway:{x} --> 17:task:(employee receives an approval in progress email)
+    15:task:(company stops the process) --> 16:task:(employee receives an email cancellation notice)
+    16:task:(employee receives an email cancellation notice) --> 18:endevent:(((endevent)))
+    17:task:(employee receives an approval in progress email) --> 18:endevent:(((endevent)))
+```

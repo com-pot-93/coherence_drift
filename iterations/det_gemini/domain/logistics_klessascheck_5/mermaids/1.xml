@@ -1,0 +1,19 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Package product)
+  1:task:(Package product) --> 2:task:(Ship product)
+  2:task:(Ship product) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Yes| 4:task:(Deliver to door)
+  3:exclusivegateway:{x} --> |No| 10:task:(Deliver to station)
+  4:task:(Deliver to door) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Yes| 6:task:(Print pick-up receipt)
+  6:task:(Print pick-up receipt) --> 7:task:(Post pick-up receipt)
+  7:task:(Post pick-up receipt) --> 8:task:(Reroute to the closest station)
+  8:task:(Reroute to the closest station) --> 9:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |No| 9:exclusivegateway:{x}
+  10:task:(Deliver to station) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |Yes| 12:endevent:(((endevent)))
+  11:exclusivegateway:{x} --> |No| 13:task:(Receive the product back)
+  13:task:(Receive the product back) --> 12:endevent:(((endevent)))
+```

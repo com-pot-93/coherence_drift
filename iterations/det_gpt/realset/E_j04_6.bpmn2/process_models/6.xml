@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>Load front page</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="2">
+    <alternative condition="">
+      <parallel wait="-1" cancel="last" a:alt_id="3">
+        <parallel_branch>
+          <call id="a9" endpoint="" a:alt_id="4">
+            <parameters>
+              <label>Topic</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a11" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Payment</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a13" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Expierience</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a15" endpoint="" a:alt_id="7">
+            <parameters>
+              <label>Hobbies</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+      </parallel>
+    </alternative>
+    <alternative condition="">
+      <parallel wait="-1" cancel="last" a:alt_id="9">
+        <parallel_branch>
+          <call id="a25" endpoint="" a:alt_id="10">
+            <parameters>
+              <label>Topic</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a27" endpoint="" a:alt_id="11">
+            <parameters>
+              <label>Payment</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a29" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>Expierience</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a31" endpoint="" a:alt_id="13">
+            <parameters>
+              <label>Hobbies</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+      </parallel>
+    </alternative>
+  </choose>
+  <call id="a45" endpoint="" a:alt_id="16">
+    <parameters>
+      <label>Send Request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a47" endpoint="" a:alt_id="17">
+    <parameters>
+      <label>Wait until offer arrives</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a49" endpoint="" a:alt_id="18">
+    <parameters>
+      <label>Offer recieved</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="19">
+    <alternative condition="">
+      <call id="a53" endpoint="" a:alt_id="20">
+        <parameters>
+          <label>All other Offers become Invalid</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a57" endpoint="" a:alt_id="21">
+        <parameters>
+          <label>Send Status Update every week</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a59" endpoint="" a:alt_id="22">
+        <parameters>
+          <label>Recieve status update from company</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a61" endpoint="" a:alt_id="23">
+        <parameters>
+          <label>Internishp is finished</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="24">
+        <alternative condition="Branch 1" language="text/javascript"/>
+        <alternative condition="Branch 2" language="text/javascript">
+          <call id="a67" endpoint="" a:alt_id="25">
+            <parameters>
+              <label>Tweet to your Friends about the Company</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="D2-Branch 2" language="text/javascript">
+      <call id="a55" endpoint="" a:alt_id="27">
+        <parameters>
+          <label>Load front page</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

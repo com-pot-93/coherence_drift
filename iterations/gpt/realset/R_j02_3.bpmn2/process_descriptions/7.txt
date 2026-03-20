@@ -1,0 +1,3 @@
+The process begins when the user starts the procedure. First, the user is asked to enter the machine type and its serial number. After providing this information, the user proceeds to answer a series of questions. Once all questions have been answered, the user selects an option to continue.
+
+Next, the process involves checking the values that have been entered so far. After this check, the user is prompted to confirm that the values are correct. If the values are confirmed, the process moves on to finishing the inspection. Once the inspection is finished, the process comes to an end.

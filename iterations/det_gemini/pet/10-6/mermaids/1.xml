@@ -1,0 +1,11 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(MSPN sends a dismissal)
+  1:task:(MSPN sends a dismissal) --> 2:task:(MSPO reviews the dismissal)
+  2:task:(MSPO reviews the dismissal) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} -->|rejects| 4:task:(MSPO rejects the dismissal of the MSPN)
+  3:exclusivegateway:{x} -->|confirms| 5:task:(MSPO confirms the dismissal of the MSPN)
+  4:task:(MSPO rejects the dismissal of the MSPN) --> 6:exclusivegateway:{x}
+  5:task:(MSPO confirms the dismissal of the MSPN) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> 7:endevent:(((endevent)))
+```

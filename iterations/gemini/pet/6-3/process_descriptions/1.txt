@@ -1,0 +1,5 @@
+The process starts when an order is received. Next, the necessary parts, their quantities, and the delivery date are determined. This data is then entered into a Production Planning System (PPS). Following this, a list of procured parts is created, and the data is transferred to an Enterprise Resource Planning (ERP) system.
+
+After the data transfer, a decision is made based on whether parts are missing. If parts are missing, the missing parts are procured. Otherwise, if all parts are available, the process proceeds directly to the next step.
+
+After ensuring all parts are available, a notice is received from the system. Subsequently, the implementation is taken care of, and the order quality is checked. The process then ends.

@@ -1,0 +1,1 @@
+The process begins when a request to send transaction data is initiated. First, the transaction data request is sent. After this, the request is received and carefully reviewed. Once the review is complete, a response is provided to the inquiry. The process concludes after the response has been given.

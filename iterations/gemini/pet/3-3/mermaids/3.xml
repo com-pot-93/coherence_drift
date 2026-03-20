@@ -1,0 +1,34 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Register Claim)
+    1:task:(Register Claim) --> 2:exclusivegateway:{x}
+    2:exclusivegateway:{x} --> |Yes| 3:task:(Make Decision)
+    2:exclusivegateway:{x} --> |No| 24:endevent:(((endevent)))
+    3:task:(Make Decision) --> 4:exclusivegateway:{x}
+    4:exclusivegateway:{x} --> |Condition Met| 5:task:(Examine Claim)
+    4:exclusivegateway:{x} --> |Condition Not Met| 23:exclusivegateway:{O}
+    5:task:(Examine Claim) --> 6:exclusivegateway:{x}
+    6:exclusivegateway:{x} --> |Path A| 7:task:(Dual Path Task A)
+    6:exclusivegateway:{x} --> |Path B| 8:task:(Dual Path Task B)
+    7:task:(Dual Path Task A) --> 9:inclusivegateway:{O}
+    8:task:(Dual Path Task B) --> 9:inclusivegateway:{O}
+    9:inclusivegateway:{O} --> 10:exclusivegateway:{x}
+    10:exclusivegateway:{x} --> |Condition Met| 11:task:(Write Settlement Recommendation)
+    10:exclusivegateway:{x} --> |Condition Not Met| 23:exclusivegateway:{O}
+    11:task:(Write Settlement Recommendation) --> 12:task:(Check Recommendation)
+    12:task:(Check Recommendation) --> 13:task:(Mark Claim)
+    13:task:(Mark Claim) --> 14:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> |Send Back| 5:task:(Examine Claim)
+    14:exclusivegateway:{x} --> |Proceed| 15:task:(Handle Claim)
+    15:task:(Handle Claim) --> 16:exclusivegateway:{x}
+    16:exclusivegateway:{x} --> |Path C| 17:task:(Dual Path Task C)
+    16:exclusivegateway:{x} --> |Path D| 18:task:(Dual Path Task D)
+    17:task:(Dual Path Task C) --> 19:inclusivegateway:{O}
+    18:task:(Dual Path Task D) --> 19:inclusivegateway:{O}
+    19:inclusivegateway:{O} --> 20:inclusivegateway:{O}
+    5:task:(Examine Claim) --> 20:inclusivegateway:{O}
+    20:inclusivegateway:{O} --> 21:task:(Escalate)
+    21:task:(Escalate) --> 22:inclusivegateway:{O}
+    22:inclusivegateway:{O} --> 4:exclusivegateway:{x}
+    23:exclusivegateway:{O} --> 22:inclusivegateway:{O}
+```

@@ -1,0 +1,7 @@
+The process starts. First, a product is packaged, and then the packaged product is shipped. After the product is shipped, a decision is made: if a receipt is needed, it is printed and then posted. Otherwise, if no receipt is needed, this step is skipped. Regardless of whether a receipt was printed and posted, the next step is to deliver the product to the station. Following the delivery, two parallel paths are initiated.
+
+In the first path, it is determined whether the product was received. If it was, it is processed as received. If not, this step is skipped.
+
+In the second parallel path, it is again determined whether the product was received. If it was, it is processed as received. If not, this step is skipped.
+
+Once both parallel paths have completed, the process ends.

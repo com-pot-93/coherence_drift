@@ -1,0 +1,11 @@
+The process begins when a claim is registered. After the claim is registered, it is examined. Once the examination is complete, a decision is made about how to proceed.
+
+If the process continues, a settlement recommendation is written. This recommendation is then checked. After checking the recommendation, the claim is marked.
+
+At this point, there is another decision. If it is decided to send the claim back for further review, it is sent back for additional review. After this review, the process returns to the previous decision point, where it can be evaluated again.
+
+Alternatively, if the decision is to continue handling the claim, the process continues with claim handling. After this, the process also returns to the previous decision point for further evaluation.
+
+If, at any point, the process reaches a conclusion where no further action is needed, the process ends.
+
+This cycle of checking recommendations, marking claims, and deciding whether to send them back for review or continue handling can repeat as needed until the process is completed and ends.

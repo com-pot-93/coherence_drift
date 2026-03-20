@@ -1,0 +1,9 @@
+The process starts with initiating an assessment tool, followed by starting the tool and entering the incident type. The incident is then specified further. Depending on the situation, one of three exclusive paths is chosen.
+
+In the first path, a choice is made between entering user data or victim data. After the data entry, another exclusive choice is presented, leading to either contacting superiors or proceeding directly. If contacting superiors, this is followed by a merge back into the main flow. If proceeding directly, a parallel execution of contacting accident insurance and, based on a condition, contacting the labour inspectorate occurs. These two branches then merge.
+
+In the second path, accident insurance and the principal are contacted in parallel, followed by a merge.
+
+In the third path, based on a condition, private insurance is contacted or skipped.
+
+Finally, the process merges all paths, proposes tasks to the user, executes the proposed task, and then ends.

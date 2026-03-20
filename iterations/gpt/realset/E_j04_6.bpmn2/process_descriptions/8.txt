@@ -1,0 +1,28 @@
+The process begins with a starting point. Immediately, a decision is made about whether to proceed. If the choice is not to proceed, the process ends right away.
+
+If the decision is to proceed, an initial decision is made. After this, another decision point is reached. The process can either move forward or loop back, depending on the outcome of this decision.
+
+If the process continues, a second decision is made. This leads to another decision point, where the process can either proceed or not. If the choice is not to proceed, the process loops back to the previous decision point.
+
+If the process moves forward, a third decision is made. At this stage, another decision is required: whether to proceed or not. If the choice is not to proceed, the process loops back to the earlier decision point.
+
+If the process continues, a specific condition is checked. If the condition is met, the process moves forward. If the condition is not met, an escalation is handled, after which the process continues as if the condition had been met.
+
+Next, the front page is loaded. The process then passes through two consecutive decision points, after which a decision is made about whether to proceed. If the choice is not to proceed at any of these points, the process loops back to earlier stages.
+
+If the process continues, a front page decision is made. After this, several activities are carried out at the same time: topic activity, payment activity, experience activity, and hobbies activity. Once all these activities are completed, the process continues.
+
+A request is then sent, and the process waits for an offer. Once an offer is received, a decision is made about whether to proceed. If the choice is not to proceed, the process loops back to an earlier stage.
+
+If the process continues, an offer decision is made. If the decision is not to proceed, the process loops back again. If the process continues, other offers are invalidated, a weekly status update is sent, and a company status update is received.
+
+After receiving the company status update, a decision is made about whether to continue. If the choice is not to continue, the process ends. If the process continues, another decision is made about whether to continue. If the choice is not to continue at this point, the process ends.
+
+If the process continues, the internship is finished. After this, two consecutive decision points are reached. At the next decision point, there are several options:
+
+- If the choice is to post a tweet, the tweet is posted and the process moves forward.
+- If the choice is to escalate, an escalation is handled. After escalation, there is another decision: either end the process or return to the stage where the internship is finished. If the process returns, it loops back to the previous decision point.
+- If the choice is to end, the process ends.
+- If the choice is to repeat the cycle, the process returns to the stage where the front page is loaded and continues from there.
+
+The process continues in this way, with various loops and decisions, until it eventually reaches the end point.

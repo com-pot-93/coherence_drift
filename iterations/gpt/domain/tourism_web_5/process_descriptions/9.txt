@@ -1,0 +1,13 @@
+The process begins when a booking request is received. After receiving the request, the request is processed. At this point, a decision is made about whether to continue with the process or not. If the decision is not to continue, the process moves directly towards completion. If the decision is to continue, the process proceeds to the next step.
+
+Next, the process continues, and another decision is made based on the outcome. If the outcome is negative, the process moves towards completion. If the outcome is positive, the outcome is checked in detail.
+
+After checking the outcome in detail, the availability is checked. If the requested time or resource is not available, an alternative time is proposed and the requester is notified. If the requested time or resource is available, the requester is notified of the availability. After either notifying the requester of availability or proposing an alternative time, the process waits for a response from the requester.
+
+Once a response is received, a decision is made based on whether the booking is confirmed or not. If the booking is confirmed, the booking is marked as confirmed. After marking the booking as confirmed, the process checks if escalation is needed. If escalation is needed, escalation is handled.
+
+When handling escalation, availability is checked again. If the escalation is resolved, the process continues. If escalation is still needed, the escalation handling step is repeated until it is resolved. Once resolved, the process returns to the previous step and continues towards completion.
+
+If the booking is not confirmed, the booking is marked as not confirmed. Then, a decision is made about whether a bill needs to be sent. If no bill is needed, the process continues towards completion. If a bill is needed, a bill is sent. After sending the bill, a decision is made about whether further billing is needed. If further billing is needed, an additional bill is sent, and this step is repeated as necessary. If no further billing is needed, the process continues towards completion.
+
+Finally, after all necessary steps are completed, the process ends.

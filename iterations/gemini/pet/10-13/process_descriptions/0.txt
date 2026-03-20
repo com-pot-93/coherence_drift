@@ -1,0 +1,1 @@
+The process starts. First, INQ transmits the transaction data request. Next, IP checks the request from INQ. Then, IP answers the question from INQ. The process ends.

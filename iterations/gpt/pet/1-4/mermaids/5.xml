@@ -1,0 +1,37 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Decide Whether to Go Public)
+2:task:(Select Underwriters)
+3:task:(Prepare Registration Statement)
+4:task:(Submit Registration Statement)
+5:task:(Review Registration Statement)
+6:task:(Check Compliance Requirements)
+7:parallelgateway:{AND}
+8:task:(Determine Final Issue Price)
+9:task:(Prepare for Road Show)
+10:task:(Wait for Regulatory Approval)
+11:parallelgateway:{AND}
+12:task:(Receive Regulatory Clearance)
+13:task:(Set Final Issue Price)
+14:task:(Make Firm Commitment)
+15:task:(Offer Stock to Public)
+16:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Decide Whether to Go Public)
+1:task:(Decide Whether to Go Public) --> 2:task:(Select Underwriters)
+2:task:(Select Underwriters) --> 3:task:(Prepare Registration Statement)
+3:task:(Prepare Registration Statement) --> 4:task:(Submit Registration Statement)
+4:task:(Submit Registration Statement) --> 5:task:(Review Registration Statement)
+5:task:(Review Registration Statement) --> 6:task:(Check Compliance Requirements)
+6:task:(Check Compliance Requirements) --> 7:parallelgateway:{AND}
+7:parallelgateway:{AND} --> 8:task:(Determine Final Issue Price)
+7:parallelgateway:{AND} --> 9:task:(Prepare for Road Show)
+7:parallelgateway:{AND} --> 10:task:(Wait for Regulatory Approval)
+8:task:(Determine Final Issue Price) --> 11:parallelgateway:{AND}
+9:task:(Prepare for Road Show) --> 11:parallelgateway:{AND}
+10:task:(Wait for Regulatory Approval) --> 11:parallelgateway:{AND}
+11:parallelgateway:{AND} --> 12:task:(Receive Regulatory Clearance)
+12:task:(Receive Regulatory Clearance) --> 13:task:(Set Final Issue Price)
+13:task:(Set Final Issue Price) --> 14:task:(Make Firm Commitment)
+14:task:(Make Firm Commitment) --> 15:task:(Offer Stock to Public)
+15:task:(Offer Stock to Public) --> 16:endevent:(((endevent)))

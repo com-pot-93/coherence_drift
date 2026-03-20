@@ -1,0 +1,49 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(customer transmits data to the customer service department)
+  1:task:(customer transmits data to the customer service department) --> 2:task:(customer service receives the customer data)
+  2:task:(customer service receives the customer data) --> 3:task:(customer service enters customer data object into the CRM system)
+  3:task:(customer service enters customer data object into the CRM system) --> 4:task:(customer service compares entered data with the internal customer data)
+  4:task:(customer service compares entered data with the internal customer data) --> 5:task:(customer service checks customer data for completeness and plausibility)
+  5:task:(customer service checks customer data for completeness and plausibility) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |yes| 7:task:(customer service corrects customer data)
+  7:task:(customer service corrects customer data) --> 8:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |no| 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |yes| 10:task:(CIS checks the contract documents)
+  10:task:(CIS checks the contract documents) --> 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |yes| 12:task:(customer service analyzes the causing issues)
+  12:task:(customer service analyzes the causing issues) --> 13:task:(customer service resolves the causing issues)
+  13:task:(customer service resolves the causing issues) --> 14:task:(customer service generates contract documents)
+  14:task:(customer service generates contract documents) --> 15:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |no| 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> 16:task:(CIS sends out a confirmation document to the customer)
+  16:task:(CIS sends out a confirmation document to the customer) --> 17:task:(CIS sends out grid operator request)
+  17:task:(CIS sends out grid operator request) --> 18:task:(grid operator checks request for supplier concurrence)
+  18:task:(grid operator checks request for supplier concurrence) --> 19:task:(grid operator transmits a response comment)
+  19:task:(grid operator transmits a response comment) --> 20:exclusivegateway:{x}
+  20:exclusivegateway:{x} --> |yes| 21:task:(grid operator informs all suppliers)
+  21:task:(grid operator informs all suppliers) --> 22:task:(grid operator demands the resolution of the conflict)
+  22:task:(grid operator demands the resolution of the conflict) --> 23:exclusivegateway:{x}
+  20:exclusivegateway:{x} --> |no| 23:exclusivegateway:{x}
+  23:exclusivegateway:{x} --> 24:task:(grid operator communicates with the old supplier)
+  24:task:(grid operator communicates with the old supplier) --> 25:task:(grid operator terminates the sales agreement)
+  25:task:(grid operator terminates the sales agreement) --> 26:task:(customer service creates a CIS contract)
+  26:task:(customer service creates a CIS contract) --> 27:task:(customer checks the contract details)
+  27:task:(customer checks the contract details) --> 28:exclusivegateway:{x}
+  28:exclusivegateway:{x} --> 29:task:(customer confirms the switch contract)
+  29:task:(customer confirms the switch contract) --> 30:parallelgateway:{AND}
+  30:parallelgateway:{AND} --> 31:task:(grid operator transmits the power meter data)
+  30:parallelgateway:{AND} --> 32:task:(grid operator computes the final billing)
+  32:task:(grid operator computes the final billing) --> 33:task:(grid operator sends billing to the old supplier)
+  30:parallelgateway:{AND} --> 34:task:(old supplier creates final billing)
+  31:task:(grid operator transmits the power meter data) --> 35:parallelgateway:{AND}
+  33:task:(grid operator sends billing to the old supplier) --> 35:parallelgateway:{AND}
+  34:task:(old supplier creates final billing) --> 35:parallelgateway:{AND}
+  35:parallelgateway:{AND} --> 36:task:(customer services receive the meter data)
+  36:task:(customer services receive the meter data) --> 37:exclusivegateway:{x}
+  28:exclusivegateway:{x} --> 38:task:(customer withdraws from the switch contract)
+  38:task:(customer withdraws from the switch contract) --> 37:exclusivegateway:{x}
+  37:exclusivegateway:{x} --> 39:endevent:(((endevent)))
+  9:exclusivegateway:{x} --> |no| 39:endevent:(((endevent)))
+```

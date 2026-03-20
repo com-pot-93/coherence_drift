@@ -1,0 +1,32 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(report the vacancy to HR)
+2:task:(HR creates a job description)
+3:exclusivegateway:{x}
+4:task:(HR asks the Department)
+5:exclusivegateway:{x}
+6:task:(HR submits the job description for consideration)
+7:task:(HR waits for the approval)
+8:exclusivegateway:{x}
+9:task:(Department requests a correction)
+10:task:(HR corrects the description)
+11:exclusivegateway:{x}
+12:task:(HR posts the job)
+13:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(report the vacancy to HR)
+1:task:(report the vacancy to HR) --> 2:task:(HR creates a job description)
+2:task:(HR creates a job description) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Department input needed|4:task:(HR asks the Department)
+3:exclusivegateway:{x} --> |No input needed|5:exclusivegateway:{x}
+4:task:(HR asks the Department) --> 5:exclusivegateway:{x}
+5:exclusivegateway:{x} --> 6:task:(HR submits the job description for consideration)
+6:task:(HR submits the job description for consideration) --> 7:task:(HR waits for the approval)
+7:task:(HR waits for the approval) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Correction requested|9:task:(Department requests a correction)
+8:exclusivegateway:{x} --> |Approved|11:exclusivegateway:{x}
+9:task:(Department requests a correction) --> 10:task:(HR corrects the description)
+10:task:(HR corrects the description) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |true|6:task:(HR submits the job description for consideration)
+11:exclusivegateway:{x} --> |false|12:task:(HR posts the job)
+12:task:(HR posts the job) --> 13:endevent:(((endevent)))

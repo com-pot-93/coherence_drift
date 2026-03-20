@@ -1,0 +1,17 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Customer submits a claim)
+  1:task:(Customer submits a claim) --> 2:task:(Notification department checks the documents)
+  2:task:(Notification department checks the documents) --> 3:task:(Notification department registers the claim)
+  3:task:(Notification department registers the claim) --> 4:task:(Handling department picks up the claim)
+  4:task:(Handling department picks up the claim) --> 5:task:(Handling department checks the insurance)
+  5:task:(Handling department checks the insurance) --> 6:task:(Handling department performs asessment)
+  6:task:(Handling department performs asessment) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Authorise repairs| 8:task:(Handling department phones garage to authorise the repairs)
+  8:task:(Handling department phones garage to authorise the repairs) --> 9:task:(Handling department schedules the payment)
+  9:task:(Handling department schedules the payment) --> 11:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Reject claim| 10:task:(Handling department rejects the claim)
+  10:task:(Handling department rejects the claim) --> 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> 12:task:(Handling department sends a letter to the customer)
+  12:task:(Handling department sends a letter to the customer) --> 13:endevent:(((endevent)))
+```

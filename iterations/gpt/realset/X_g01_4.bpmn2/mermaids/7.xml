@@ -1,0 +1,115 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Initiate Procedure)
+  2:exclusivegateway:{x}
+  3:task:(Select Course)
+  4:exclusivegateway:{x}
+  5:task:(Show Available Dates)
+  6:task:(Select Date)
+  7:exclusivegateway:{x}
+  8:task:(Check Account Status)
+  9:exclusivegateway:{x}
+  10:subprocess:(Account in Good Standing)
+  11:subprocess:(Account NOT in Good Standing)
+  12:endevent:(((endevent)))
+
+  %% Account in Good Standing subprocess
+  13:task:(Prompt User to Log In)
+  14:task:(Provide Payment Information)
+  15:task:(Complete Registration)
+  16:exclusivegateway:{x}
+  17:parallelgateway:{AND}
+  18:task:(Send Message to Friends)
+  19:task:(Receive Ticket)
+  20:parallelgateway:{AND}
+
+  %% Account NOT in Good Standing subprocess
+  21:task:(Check University Eligibility)
+  22:exclusivegateway:{x}
+  23:subprocess:(Eligible Path)
+  24:subprocess:(Not Eligible Path)
+
+  %% Eligible Path
+  25:task:(Register for Course)
+  26:exclusivegateway:{x}
+  27:task:(Complete Registration)
+  28:exclusivegateway:{x}
+  29:parallelgateway:{AND}
+  30:task:(Send Message to Friends)
+  31:task:(Receive Ticket)
+  32:parallelgateway:{AND}
+
+  %% Not Eligible Path
+  33:task:(Send Activation Request)
+  34:task:(Wait for Activation Response)
+  35:exclusivegateway:{x}
+  36:task:(Complete Registration)
+  37:exclusivegateway:{x}
+  38:parallelgateway:{AND}
+  39:task:(Send Message to Friends)
+  40:task:(Receive Ticket)
+  41:parallelgateway:{AND}
+
+  %% Main flow
+  0:startevent:((startevent)) --> 1:task:(Initiate Procedure)
+  1:task:(Initiate Procedure) --> 2:exclusivegateway:{x}
+  2:exclusivegateway:{x} --> |Proceed|3:task:(Select Course)
+  2:exclusivegateway:{x} --> |Do not proceed|12:endevent:(((endevent)))
+  3:task:(Select Course) --> 4:exclusivegateway:{x}
+  4:exclusivegateway:{x} --> |Continue|5:task:(Show Available Dates)
+  4:exclusivegateway:{x} --> |Stop|12:endevent:(((endevent)))
+  5:task:(Show Available Dates) --> 6:task:(Select Date)
+  6:task:(Select Date) --> 7:exclusivegateway:{x}
+  7:exclusivegateway:{x} --> |Continue|8:task:(Check Account Status)
+  7:exclusivegateway:{x} --> |Stop|12:endevent:(((endevent)))
+  8:task:(Check Account Status) --> 9:exclusivegateway:{x}
+  9:exclusivegateway:{x} --> |Good Standing|10:subprocess:(Account in Good Standing)
+  9:exclusivegateway:{x} --> |Not in Good Standing|11:subprocess:(Account NOT in Good Standing)
+
+  %% Account in Good Standing subprocess
+  10:subprocess:(Account in Good Standing) --> 13:task:(Prompt User to Log In)
+  13:task:(Prompt User to Log In) --> 14:task:(Provide Payment Information)
+  14:task:(Provide Payment Information) --> 15:task:(Complete Registration)
+  15:task:(Complete Registration) --> 16:exclusivegateway:{x}
+  16:exclusivegateway:{x} --> |Stop|12:endevent:(((endevent)))
+  16:exclusivegateway:{x} --> |Continue|17:parallelgateway:{AND}
+  17:parallelgateway:{AND} --> 18:task:(Send Message to Friends)
+  17:parallelgateway:{AND} --> 19:task:(Receive Ticket)
+  18:task:(Send Message to Friends) --> 20:parallelgateway:{AND}
+  19:task:(Receive Ticket) --> 20:parallelgateway:{AND}
+  20:parallelgateway:{AND} --> 12:endevent:(((endevent)))
+
+  %% Account NOT in Good Standing subprocess
+  11:subprocess:(Account NOT in Good Standing) --> 21:task:(Check University Eligibility)
+  21:task:(Check University Eligibility) --> 22:exclusivegateway:{x}
+  22:exclusivegateway:{x} --> |Eligible|23:subprocess:(Eligible Path)
+  22:exclusivegateway:{x} --> |Not Eligible|24:subprocess:(Not Eligible Path)
+
+  %% Eligible Path
+  23:subprocess:(Eligible Path) --> 25:task:(Register for Course)
+  25:task:(Register for Course) --> 26:exclusivegateway:{x}
+  26:exclusivegateway:{x} --> |Registration Failed|12:endevent:(((endevent)))
+  26:exclusivegateway:{x} --> |Registration Successful|27:task:(Complete Registration)
+  27:task:(Complete Registration) --> 28:exclusivegateway:{x}
+  28:exclusivegateway:{x} --> |Stop|12:endevent:(((endevent)))
+  28:exclusivegateway:{x} --> |Continue|29:parallelgateway:{AND}
+  29:parallelgateway:{AND} --> 30:task:(Send Message to Friends)
+  29:parallelgateway:{AND} --> 31:task:(Receive Ticket)
+  30:task:(Send Message to Friends) --> 32:parallelgateway:{AND}
+  31:task:(Receive Ticket) --> 32:parallelgateway:{AND}
+  32:parallelgateway:{AND} --> 12:endevent:(((endevent)))
+
+  %% Not Eligible Path
+  24:subprocess:(Not Eligible Path) --> 33:task:(Send Activation Request)
+  33:task:(Send Activation Request) --> 34:task:(Wait for Activation Response)
+  34:task:(Wait for Activation Response) --> 35:exclusivegateway:{x}
+  35:exclusivegateway:{x} --> |Activation Failed|12:endevent:(((endevent)))
+  35:exclusivegateway:{x} --> |Activation Successful|36:task:(Complete Registration)
+  36:task:(Complete Registration) --> 37:exclusivegateway:{x}
+  37:exclusivegateway:{x} --> |Stop|12:endevent:(((endevent)))
+  37:exclusivegateway:{x} --> |Continue|38:parallelgateway:{AND}
+  38:parallelgateway:{AND} --> 39:task:(Send Message to Friends)
+  38:parallelgateway:{AND} --> 40:task:(Receive Ticket)
+  39:task:(Send Message to Friends) --> 41:parallelgateway:{AND}
+  40:task:(Receive Ticket) --> 41:parallelgateway:{AND}
+  41:parallelgateway:{AND} --> 12:endevent:(((endevent)))

@@ -1,0 +1,48 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Collect Requirements)
+  1:task:(Collect Requirements) --> 2:exclusivegateway:{x}
+  2:exclusivegateway:{x} --> |Yes| 3:task:(Send Requirements)
+  2:exclusivegateway:{x} --> |No| 2:exclusivegateway:{x}
+  3:task:(Send Requirements) --> 4:task:(Receive Draft)
+  4:task:(Receive Draft) --> 5:task:(Check Feasibility)
+  5:task:(Check Feasibility) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Yes| 7:task:(Refine Requirements)
+  6:exclusivegateway:{x} --> |No| 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |Yes| 9:task:(Create Report)
+  8:exclusivegateway:{x} --> |No| 10:task:(Create Order List)
+  9:task:(Create Report) --> 10:task:(Create Order List)
+  10:task:(Create Order List) --> 11:task:(Place Order)
+  11:task:(Place Order) --> 12:task:(Calculate Effort)
+  12:task:(Calculate Effort) --> 13:parallelgateway:{AND}
+  13:parallelgateway:{AND} --> 14:task:(Get Order)
+  13:parallelgateway:{AND} --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |Yes| 16:task:(Call Friends)
+  15:exclusivegateway:{x} --> |No| 17:task:(Hire Company)
+  14:task:(Get Order) --> 18:parallelgateway:{AND}
+  16:task:(Call Friends) --> 18:parallelgateway:{AND}
+  17:task:(Hire Company) --> 18:parallelgateway:{AND}
+  18:parallelgateway:{AND} --> 7:task:(Refine Requirements)
+  7:task:(Refine Requirements) --> 3:task:(Send Requirements)
+  3:task:(Send Requirements) --> 4:task:(Receive Draft)
+  4:task:(Receive Draft) --> 5:task:(Check Feasibility)
+  5:task:(Check Feasibility) --> 6:exclusivegateway:{x}
+  6:exclusivegateway:{x} --> |Yes| 7:task:(Refine Requirements)
+  6:exclusivegateway:{x} --> |No| 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |Yes| 9:task:(Create Report)
+  8:exclusivegateway:{x} --> |No| 10:task:(Create Order List)
+  9:task:(Create Report) --> 10:task:(Create Order List)
+  10:task:(Create Order List) --> 11:task:(Place Order)
+  11:task:(Place Order) --> 12:task:(Calculate Effort)
+  12:task:(Calculate Effort) --> 13:parallelgateway:{AND}
+  13:parallelgateway:{AND} --> 14:task:(Get Order)
+  13:parallelgateway:{AND} --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |Yes| 16:task:(Call Friends)
+  15:exclusivegateway:{x} --> |No| 17:task:(Hire Company)
+  14:task:(Get Order) --> 18:parallelgateway:{AND}
+  16:task:(Call Friends) --> 18:parallelgateway:{AND}
+  17:task:(Hire Company) --> 18:parallelgateway:{AND}
+  18:parallelgateway:{AND} --> 7:task:(Refine Requirements)
+  7:task:(Refine Requirements) --> 3:task:(Send Requirements)
+  2:exclusivegateway:{x} --> 19:endevent:(((endevent)))
+```

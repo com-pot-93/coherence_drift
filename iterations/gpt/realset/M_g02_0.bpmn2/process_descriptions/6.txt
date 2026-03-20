@@ -1,0 +1,15 @@
+The process begins with the initiation of the project. Once the project is initiated, the next step is to develop a basic design. After the basic design is developed, Lego brick sets are ordered. When the brick sets arrive, they are received and then sorted by size.
+
+After sorting the bricks by size, three activities take place at the same time: big bricks are placed in a container, medium bricks are placed in a container, and small bricks are placed in a container. Once all the bricks have been placed in their respective containers, the process continues.
+
+At this point, a decision is made. If the condition is met (for example, if everything is ready), the process moves forward. If not, the process loops back as described below.
+
+If the process moves forward, another decision is made. If it is time to proceed, the project continues. If not, there is a waiting period until it is ready to proceed. After waiting, the process checks again and either continues to wait or moves forward.
+
+When it is time to proceed, the next step is to build subcomponents. After building subcomponents, a decision is made: if more subcomponents are needed, additional subcomponents are built; if more bricks are needed, more Lego bricks are ordered. After either of these actions, the process returns to the point after building subcomponents.
+
+If neither more subcomponents nor more bricks are needed, the subcomponents are tested. After testing, another decision is made: if a redesign is needed, the subcomponent is redesigned and then tested again; if the subcomponents are ready to assemble, they are assembled. After assembling, the process returns to the point after testing subcomponents.
+
+Once all subcomponents are assembled and no further redesign or assembly is needed, the process moves forward and checks again if it is time to proceed. If not, it waits until ready and repeats the check. If it is time, the process continues.
+
+If at any decision point the condition is not met, the process loops back to the earlier decision point and repeats the necessary steps. The process ends when all conditions are satisfied and no further actions are required.

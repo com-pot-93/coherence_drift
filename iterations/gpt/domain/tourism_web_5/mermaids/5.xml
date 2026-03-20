@@ -1,0 +1,44 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Receive Booking Request)
+  2:task:(Process Booking Request)
+  3:exclusivegateway:{x}
+  4:task:(Check Availability)
+  5:exclusivegateway:{x}
+  6:task:(Propose Alternative Time)
+  7:task:(Notify Requester of Alternative)
+  8:task:(Notify Requester of Availability)
+  9:task:(Wait for Requester Response)
+  10:exclusivegateway:{x}
+  11:task:(Send Bill)
+  12:exclusivegateway:{x}
+  13:task:(Send Additional Bill)
+  14:task:(Confirm Booking)
+  15:exclusivegateway:{x}
+  16:task:(Handle Escalation)
+  17:exclusivegateway:{x}
+  18:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Receive Booking Request)
+  1:task:(Receive Booking Request) --> 2:task:(Process Booking Request)
+  2:task:(Process Booking Request) --> 3:exclusivegateway:{x}
+  3:exclusivegateway:{x} --> |Continue|4:task:(Check Availability)
+  3:exclusivegateway:{x} --> |Do Not Continue|18:endevent:(((endevent)))
+  4:task:(Check Availability) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Not Available|6:task:(Propose Alternative Time)
+  5:exclusivegateway:{x} --> |Available|8:task:(Notify Requester of Availability)
+  6:task:(Propose Alternative Time) --> 7:task:(Notify Requester of Alternative)
+  7:task:(Notify Requester of Alternative) --> 9:task:(Wait for Requester Response)
+  8:task:(Notify Requester of Availability) --> 9:task:(Wait for Requester Response)
+  9:task:(Wait for Requester Response) --> 10:exclusivegateway:{x}
+  10:exclusivegateway:{x} --> |Bill Needed|11:task:(Send Bill)
+  10:exclusivegateway:{x} --> |No Bill Needed|14:task:(Confirm Booking)
+  11:task:(Send Bill) --> 12:exclusivegateway:{x}
+  12:exclusivegateway:{x} --> |Further Billing Needed|13:task:(Send Additional Bill)
+  12:exclusivegateway:{x} --> |No Further Billing|14:task:(Confirm Booking)
+  13:task:(Send Additional Bill) --> 12:exclusivegateway:{x}
+  14:task:(Confirm Booking) --> 15:exclusivegateway:{x}
+  15:exclusivegateway:{x} --> |Escalation Needed|16:task:(Handle Escalation)
+  15:exclusivegateway:{x} --> |No Escalation|17:exclusivegateway:{x}
+  16:task:(Handle Escalation) --> 17:exclusivegateway:{x}
+  17:exclusivegateway:{x} --> 4:task:(Check Availability)

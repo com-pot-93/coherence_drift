@@ -1,0 +1,29 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Send out invitations)
+  1:task:(Send out invitations) --> 2:task:(Request game preferences)
+  2:task:(Request game preferences) --> 3:task:(Choose games)
+  3:task:(Choose games) --> 4:parallelgateway:{AND}
+  4:parallelgateway:{AND} --> 5:exclusivegateway:{x}
+  4:parallelgateway:{AND} --> 17:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |true| 6:task:(Propose LAN party date)
+  5:exclusivegateway:{x} --> |false| 16:parallelgateway:{AND}
+  6:task:(Propose LAN party date) --> 7:task:(Request to send date)
+  7:task:(Request to send date) --> 8:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |Date needs to be changed| 6:task:(Propose LAN party date)
+  8:exclusivegateway:{x} --> |Issue arises| 5:exclusivegateway:{x}
+  8:exclusivegateway:{x} --> |Date accepted| 16:parallelgateway:{AND}
+  17:exclusivegateway:{x} --> |true| 18:task:(Ask guests about games)
+  17:exclusivegateway:{x} --> |false| 16:parallelgateway:{AND}
+  18:task:(Ask guests about games) --> 19:exclusivegateway:{x}
+  19:exclusivegateway:{x} --> |Games need to be changed| 18:task:(Ask guests about games)
+  19:exclusivegateway:{x} --> |Issue arises| 17:exclusivegateway:{x}
+  19:exclusivegateway:{x} --> |Games accepted| 16:parallelgateway:{AND}
+  16:parallelgateway:{AND} --> 20:task:(Download games)
+  20:task:(Download games) --> 21:task:(Request beer preferences)
+  21:task:(Request beer preferences) --> 22:exclusivegateway:{x}
+  22:exclusivegateway:{x} --> |Beer is missing| 23:task:(Buy missing beer)
+  22:exclusivegateway:{x} --> |All beer present| 24:task:(Prepare for LAN party)
+  23:task:(Buy missing beer) --> 24:task:(Prepare for LAN party)
+  24:task:(Prepare for LAN party) --> 25:endevent:(((endevent)))
+```

@@ -1,0 +1,11 @@
+The process begins with the start of the procedure. The first step is to run the machine. After the machine is running, the next step is to check the connection.
+
+Once the connection has been checked, a decision is made. If the outcome of this decision is positive, the process continues to another decision point. Here, if the result is negative, the process loops back to the previous decision, creating a cycle between these two decision points. If the result is positive, the next step is to collect information or take measurements.
+
+After collecting information or measuring, another decision is made. If the result of this decision is positive, the process returns to the information collection or measurement step, creating a loop. After collecting information or measuring again, an escalation occurs, and the process moves forward.
+
+If the result of the decision after collecting information or measuring is not positive, the process continues to the next step, which is to calculate the OEE (Overall Equipment Effectiveness).
+
+Once the OEE has been calculated, another decision is made. If the result is positive, the process returns to the information collection or measurement step, repeating the earlier loop. If the result is not positive, the process continues to a point where two actions happen at the same time: the machine is stopped, and an email is sent to the engineer. Both actions must be completed before the process can continue.
+
+After both the machine has been stopped and the email has been sent, the process moves forward and eventually reaches the end, concluding the procedure.

@@ -1,0 +1,23 @@
+The process begins when a shipment request is received. Once the request is received, two activities are initiated at the same time:
+
+1. The goods are packaged.
+2. A decision is made about whether additional arrangements are needed for the shipment.
+
+While the goods are being packaged, the process also checks if any special shipping arrangements are required. This is done through two separate checks that can happen independently:
+
+**First Check: Carrier Requirement**
+
+- The process checks if a carrier is required for the shipment.
+  - If a carrier is required, the process requests quotes from carriers, assigns a carrier, and prepares the necessary paperwork for the carrier.
+  - If a carrier is not required, this part of the process is skipped.
+
+**Second Check: Postal Requirement**
+
+- The process checks if postal services are required.
+  - If postal services are required, the process fills out a post label and then checks if extra insurance is needed.
+    - If extra insurance is needed, it is arranged before continuing.
+    - If no extra insurance is needed, this step is skipped.
+  - After handling insurance (if needed), the process prepares the necessary paperwork for postal services.
+  - If postal services are not required, this part of the process is skipped.
+
+Once all necessary arrangements for carriers and postal services are completed (or skipped if not needed), and the goods have been packaged, the process continues. All the paperwork that has been prepared is added to the package. Finally, the package is moved to the pickup area, and the process ends.

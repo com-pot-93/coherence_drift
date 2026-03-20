@@ -1,0 +1,15 @@
+The process starts. It then proceeds based on one of two exclusive conditions. Either a Service Provider, Public Utility, or Government Organization requests changes to the MPO, or the MPO causes a change.
+
+If a request for change is initiated, the process continues with a review of the change request. Alternatively, if the MPO causes a change, the process also continues with a review of the change request.
+
+Following the review, the process diverges again based on whether the MPO rejects the change or confirms the change.
+
+If the MPO rejects the change, the process continues by rejecting the change. Alternatively, if the MPO confirms the change, the process continues by confirming the change.
+
+After either rejecting or confirming the change, the process continues by performing the change.
+
+Following the execution of the change, the process diverges based on whether the MPO reports the implementation or notifies about the failure.
+
+If the MPO reports the implementation, the process continues by reporting the implementation. Alternatively, if the MPO notifies about the failure, the process continues by notifying about the failure.
+
+Finally, after either reporting the implementation or notifying about the failure, the process ends.

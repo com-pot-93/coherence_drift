@@ -1,0 +1,85 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Travel Request)
+2:task:(Prepare Tour Plan)
+3:task:(Send Tour Plan)
+4:exclusivegateway:{x}
+5:endevent:(((endevent)))
+6:exclusivegateway:{x}
+7:endevent:(((endevent)))
+8:task:(Wait for Response)
+9:exclusivegateway:{x}
+10:endevent:(((endevent)))
+11:exclusivegateway:{x}
+12:endevent:(((endevent)))
+13:task:(Book Tour)
+14:exclusivegateway:{x}
+15:endevent:(((endevent)))
+16:task:(Charge Customer)
+17:exclusivegateway:{x}
+18:endevent:(((endevent)))
+19:exclusivegateway:{x}
+20:task:(Contact Customer)
+21:task:(Send Bill)
+22:task:(Send Booking Confirmation)
+23:exclusivegateway:{x}
+24:task:(Contact Customer)
+25:task:(Send Bill)
+26:task:(Send Booking Confirmation)
+27:exclusivegateway:{x}
+28:task:(Contact Customer)
+29:task:(Send Bill)
+30:task:(Send Booking Confirmation)
+31:exclusivegateway:{x}
+32:task:(Contact Customer)
+33:task:(Send Bill)
+34:task:(Send Booking Confirmation)
+35:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Travel Request)
+1:task:(Receive Travel Request) --> 2:task:(Prepare Tour Plan)
+2:task:(Prepare Tour Plan) --> 3:task:(Send Tour Plan)
+3:task:(Send Tour Plan) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Do not continue|5:endevent:(((endevent)))
+4:exclusivegateway:{x} --> |Continue|6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Negative outcome|7:endevent:(((endevent)))
+6:exclusivegateway:{x} --> |No negative outcome|8:task:(Wait for Response)
+8:task:(Wait for Response) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Do not continue|10:endevent:(((endevent)))
+9:exclusivegateway:{x} --> |Continue|11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Do not continue|12:endevent:(((endevent)))
+11:exclusivegateway:{x} --> |Continue|13:task:(Book Tour)
+13:task:(Book Tour) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |Do not continue|15:endevent:(((endevent)))
+14:exclusivegateway:{x} --> |Continue|16:task:(Charge Customer)
+16:task:(Charge Customer) --> 17:exclusivegateway:{x}
+17:exclusivegateway:{x} --> |Do not continue|18:endevent:(((endevent)))
+17:exclusivegateway:{x} --> |Continue|19:exclusivegateway:{x}
+%% First repetition
+19:exclusivegateway:{x} --> |Contact customer|20:task:(Contact Customer)
+20:task:(Contact Customer) --> 23:exclusivegateway:{x}
+19:exclusivegateway:{x} --> |Send bill and confirmation|21:task:(Send Bill)
+21:task:(Send Bill) --> 22:task:(Send Booking Confirmation)
+22:task:(Send Booking Confirmation) --> 23:exclusivegateway:{x}
+19:exclusivegateway:{x} --> |No further action|23:exclusivegateway:{x}
+%% Second repetition
+23:exclusivegateway:{x} --> |Contact customer|24:task:(Contact Customer)
+24:task:(Contact Customer) --> 27:exclusivegateway:{x}
+23:exclusivegateway:{x} --> |Send bill and confirmation|25:task:(Send Bill)
+25:task:(Send Bill) --> 26:task:(Send Booking Confirmation)
+26:task:(Send Booking Confirmation) --> 27:exclusivegateway:{x}
+23:exclusivegateway:{x} --> |No further action|27:exclusivegateway:{x}
+%% Third repetition
+27:exclusivegateway:{x} --> |Contact customer|28:task:(Contact Customer)
+28:task:(Contact Customer) --> 31:exclusivegateway:{x}
+27:exclusivegateway:{x} --> |Send bill and confirmation|29:task:(Send Bill)
+29:task:(Send Bill) --> 30:task:(Send Booking Confirmation)
+30:task:(Send Booking Confirmation) --> 31:exclusivegateway:{x}
+27:exclusivegateway:{x} --> |No further action|31:exclusivegateway:{x}
+%% Fourth repetition
+31:exclusivegateway:{x} --> |Contact customer|32:task:(Contact Customer)
+32:task:(Contact Customer) --> 35:endevent:(((endevent)))
+31:exclusivegateway:{x} --> |Send bill and confirmation|33:task:(Send Bill)
+33:task:(Send Bill) --> 34:task:(Send Booking Confirmation)
+34:task:(Send Booking Confirmation) --> 35:endevent:(((endevent)))
+31:exclusivegateway:{x} --> |No further action|35:endevent:(((endevent)))

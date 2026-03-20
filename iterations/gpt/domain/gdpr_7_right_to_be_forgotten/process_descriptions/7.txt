@@ -1,0 +1,8 @@
+The process begins when a data subject request is received. After receiving the request, the next step is to retrieve the relevant data associated with the request. Once the data has been retrieved, it is checked to determine its relevance.
+
+At this point, there are two possible paths:
+
+- If the data is found to be relevant, an explanation is prepared regarding the data. After the explanation is prepared, the process moves towards completion.
+- If the data is not relevant, the data is eliminated. After eliminating the data, a notification about the elimination is sent. Once the notification has been sent, the process moves towards completion.
+
+In both cases, after either preparing the explanation or sending the elimination notification, the process ends.

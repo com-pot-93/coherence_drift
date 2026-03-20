@@ -1,0 +1,11 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Send transaction data request)
+2:task:(Receive and review request)
+3:task:(Provide response to INQ)
+4:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Send transaction data request)
+1:task:(Send transaction data request) --> 2:task:(Receive and review request)
+2:task:(Receive and review request) --> 3:task:(Provide response to INQ)
+3:task:(Provide response to INQ) --> 4:endevent:(((endevent)))

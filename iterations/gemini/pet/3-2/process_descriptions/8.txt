@@ -1,0 +1,5 @@
+The process starts when the process is initiated. First, the files are checked. Based on the outcome, the process either proceeds when the files are okay, or when the files are missing.
+If the files are okay, they are physically tracked. Alternatively, if the files are missing, a search is initiated to find the missing files.
+After either physically tracking the files or searching for the missing files, the process continues to a parallel execution.
+In parallel, the files are handed to an associate, and the judge's law list is distributed.
+Once both tasks are completed, a directions hearing is conducted, and the process ends.

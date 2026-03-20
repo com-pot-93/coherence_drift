@@ -1,0 +1,77 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Employee purchases product)
+2:task:(Submit expense report)
+3:exclusivegateway:{x}
+4:task:(Send report to supervisor)
+5:task:(Supervisor reviews report)
+6:exclusivegateway:{x}
+7:exclusivegateway:{x}
+8:task:(Supervisor approves report)
+9:exclusivegateway:{x}
+10:task:(Series of checks)
+11:exclusivegateway:{x}
+12:task:(Send report to treasurer)
+13:task:(Treasurer checks receipts)
+14:task:(Treasurer matches items with receipts)
+15:exclusivegateway:{x}
+16:task:(Send back to employee for editing)
+17:task:(Employee edits report)
+18:exclusivegateway:{x}
+19:task:(Send to supervisor for approval)
+20:task:(Send to treasurer for receipt check)
+21:task:(Treasurer checks receipts again)
+22:task:(Supervisor approves report)
+23:task:(Treasurer confirms payment)
+24:exclusivegateway:{x}
+25:task:(Send back to supervisor for approval)
+26:task:(Final checks)
+27:exclusivegateway:{x}
+28:task:(Escalate to supervisor for approval)
+29:task:(Checkpoint)
+30:task:(Additional checks)
+31:exclusivegateway:{x}
+32:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Employee purchases product)
+1:task:(Employee purchases product) --> 2:task:(Submit expense report)
+2:task:(Submit expense report) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Do not continue|32:endevent:(((endevent)))
+3:exclusivegateway:{x} --> |Continue|4:task:(Send report to supervisor)
+4:task:(Send report to supervisor) --> 5:task:(Supervisor reviews report)
+5:task:(Supervisor reviews report) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Do not continue|32:endevent:(((endevent)))
+6:exclusivegateway:{x} --> |Continue|7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |Negative outcome|32:endevent:(((endevent)))
+7:exclusivegateway:{x} --> |Positive outcome|9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Condition not met|32:endevent:(((endevent)))
+9:exclusivegateway:{x} --> |Condition met|8:task:(Supervisor approves report)
+8:task:(Supervisor approves report) --> 10:task:(Series of checks)
+10:task:(Series of checks) --> 11:exclusivegateway:{x}
+11:exclusivegateway:{x} --> |Check failed|32:endevent:(((endevent)))
+11:exclusivegateway:{x} --> |All checks passed|12:task:(Send report to treasurer)
+12:task:(Send report to treasurer) --> 13:task:(Treasurer checks receipts)
+13:task:(Treasurer checks receipts) --> 14:task:(Treasurer matches items with receipts)
+14:task:(Treasurer matches items with receipts) --> 15:exclusivegateway:{x}
+15:exclusivegateway:{x} --> |Issues found|16:task:(Send back to employee for editing)
+15:exclusivegateway:{x} --> |No issues|23:task:(Treasurer confirms payment)
+16:task:(Send back to employee for editing) --> 17:task:(Employee edits report)
+17:task:(Employee edits report) --> 18:exclusivegateway:{x}
+18:exclusivegateway:{x} --> |Send to supervisor|19:task:(Send to supervisor for approval)
+18:exclusivegateway:{x} --> |Send to treasurer|20:task:(Send to treasurer for receipt check)
+19:task:(Send to supervisor for approval) --> 22:task:(Supervisor approves report)
+22:task:(Supervisor approves report) --> 10:task:(Series of checks)
+20:task:(Send to treasurer for receipt check) --> 21:task:(Treasurer checks receipts again)
+21:task:(Treasurer checks receipts again) --> 14:task:(Treasurer matches items with receipts)
+23:task:(Treasurer confirms payment) --> 24:exclusivegateway:{x}
+24:exclusivegateway:{x} --> |Return to supervisor|25:task:(Send back to supervisor for approval)
+24:exclusivegateway:{x} --> |Proceed to final checks|26:task:(Final checks)
+25:task:(Send back to supervisor for approval) --> 22:task:(Supervisor approves report)
+26:task:(Final checks) --> 27:exclusivegateway:{x}
+27:exclusivegateway:{x} --> |Escalation needed|28:task:(Escalate to supervisor for approval)
+27:exclusivegateway:{x} --> |All checks satisfied|29:task:(Checkpoint)
+28:task:(Escalate to supervisor for approval) --> 22:task:(Supervisor approves report)
+29:task:(Checkpoint) --> 30:task:(Additional checks)
+30:task:(Additional checks) --> 31:exclusivegateway:{x}
+31:exclusivegateway:{x} --> |Check failed|32:endevent:(((endevent)))
+31:exclusivegateway:{x} --> |All checks passed|32:endevent:(((endevent)))

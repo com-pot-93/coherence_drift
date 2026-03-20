@@ -1,0 +1,13 @@
+The process starts with sending invitations to friends. After the invitations are sent, a question is sent to the friends asking which games they want to play. The list of games is then received, and the games are chosen.
+
+Following this, the process splits into parallel paths.
+
+In the first path, a date for the LAN party is proposed, and a request to send it is made. If the date needs to be changed, a date change task is performed, and a new date for the LAN party is proposed.
+
+In the second parallel path, guests are asked which games they want to play. If the guest games need to be changed, a task to change guest games is performed, and the guests are asked again which games they want to play.
+
+After both of the above paths are completed, the process continues with downloading the games.
+
+Next, a question is sent to the friends asking how much beer they want to drink. After receiving the estimated number of beers required, a decision is made whether to go to the supermarket. If it is decided to go to the supermarket, the missing beer is bought.
+
+Finally, preparations for the LAN party are made, and the process ends.

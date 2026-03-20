@@ -1,0 +1,46 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Initiate Assessment Tool)
+2:task:(Specify Incident Type)
+3:exclusivegateway:{x}
+4:task:(Confirm Accident)
+5:task:(Confirm Almost Accident)
+6:task:(Confirm Severe Safety/Health Risk)
+7:task:(Confirm Defective Equipment)
+8:exclusivegateway:{x}
+9:task:(Provide Incident Details)
+10:parallelgateway:{AND}
+11:subprocess:(Notifications & Actions Path 1)
+12:subprocess:(Notifications & Actions Path 2)
+13:parallelgateway:{AND}
+14:exclusivegateway:{x}
+15:task:(Review List of Tasks)
+16:task:(Contact Private Insurance)
+17:exclusivegateway:{x}
+18:task:(Execute Proposed Tasks)
+19:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Initiate Assessment Tool)
+1:task:(Initiate Assessment Tool) --> 2:task:(Specify Incident Type)
+2:task:(Specify Incident Type) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Accident|4:task:(Confirm Accident)
+3:exclusivegateway:{x} --> |Almost Accident|5:task:(Confirm Almost Accident)
+3:exclusivegateway:{x} --> |Severe Safety/Health Risk|6:task:(Confirm Severe Safety/Health Risk)
+3:exclusivegateway:{x} --> |Defective Protective Equipment|7:task:(Confirm Defective Equipment)
+4:task:(Confirm Accident) --> 8:exclusivegateway:{x}
+5:task:(Confirm Almost Accident) --> 8:exclusivegateway:{x}
+6:task:(Confirm Severe Safety/Health Risk) --> 8:exclusivegateway:{x}
+7:task:(Confirm Defective Equipment) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> 9:task:(Provide Incident Details)
+9:task:(Provide Incident Details) --> 10:parallelgateway:{AND}
+10:parallelgateway:{AND} --> 11:subprocess:(Notifications & Actions Path 1)
+10:parallelgateway:{AND} --> 12:subprocess:(Notifications & Actions Path 2)
+11:subprocess:(Notifications & Actions Path 1) --> 13:parallelgateway:{AND}
+12:subprocess:(Notifications & Actions Path 2) --> 13:parallelgateway:{AND}
+13:parallelgateway:{AND} --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> |Proceed Directly|15:task:(Review List of Tasks)
+14:exclusivegateway:{x} --> |Contact Private Insurance|16:task:(Contact Private Insurance)
+15:task:(Review List of Tasks) --> 17:exclusivegateway:{x}
+16:task:(Contact Private Insurance) --> 17:exclusivegateway:{x}
+17:exclusivegateway:{x} --> 18:task:(Execute Proposed Tasks)
+18:task:(Execute Proposed Tasks) --> 19:endevent:(((endevent)))

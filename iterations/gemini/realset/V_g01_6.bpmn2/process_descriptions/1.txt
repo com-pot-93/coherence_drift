@@ -1,0 +1,11 @@
+The process starts. Then, a decision is made. If the "Only burger" condition is met, the process proceeds to another decision point. Otherwise, the process splits into two parallel paths.
+
+In the first parallel path, a drink is prepared.
+
+In the second parallel path, a decision is made. If "Wedges" are selected, wedges are prepared, and the process continues to another decision point. If "Fries" are selected, fries are prepared, and the process continues to the same decision point.
+
+After preparing either wedges or fries, or after the first decision if the "Only burger" condition is met, the two parallel paths merge.
+
+The process then splits into two parallel paths again. In the first path, a burger is prepared. In the second parallel path, a decision is made, and based on the outcome, either enthusiastic status updates are given, followed by escalation, and the process loops back to the same decision point, or the process continues to the merge point.
+
+After both the burger is prepared and the second parallel path is completed, the two parallel paths merge. Finally, the order is put on a conveyor belt, and the process ends.

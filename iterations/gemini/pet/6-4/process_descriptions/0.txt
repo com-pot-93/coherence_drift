@@ -1,0 +1,15 @@
+The process starts when the company determines the contact details of potential customers. Then, based on certain conditions, the process follows one of three paths: the company buys details for cold calls, marketing staff participates in exhibitions, or the company already knows a person interested in the product.
+
+After any of these options, the call center staff calls the customer, determines the contact person, determines the budget, and assesses customer interest.
+
+Next, the process diverges based on certain conditions. It can either proceed with the head of development acquiring the customer, or directly to the next set of activities.
+
+If the head of development acquires the customer, then, based on certain conditions, either a sales representative or a pre-sales employee makes an online presentation. After the presentation, the process waits for the customer.
+
+Following this, based on certain conditions, either a sales representative calls the customer, or the process loops back for the sales representative to call the customer again. After the call, the company creates a quotation.
+
+Alternatively, if the process did not involve the head of development, then, based on certain conditions, either a sales representative or a pre-sales employee makes an online presentation. After the presentation, the process waits for the customer.
+
+Following this, based on certain conditions, either a sales representative calls the customer, or the process loops back for the sales representative to call the customer again. After the call, the company creates a quotation.
+
+After the quotation is created, the process ends.

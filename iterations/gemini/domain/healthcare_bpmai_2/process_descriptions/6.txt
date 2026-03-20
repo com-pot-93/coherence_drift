@@ -1,0 +1,9 @@
+The process starts with a visit to the patient. Following this, the insurance is checked. A decision is then made based on whether the patient is registered.
+
+If the patient is not registered, their registration status is checked. Another decision is made based on the registration status. If the patient is not registered, they are registered, and a fee is paid. If the patient is already registered, this step is skipped.
+
+Regardless of the registration path taken, an appointment is booked. Following the appointment booking, the patient undergoes a doctor's examination.
+
+After the examination, a decision is made. If the decision is to hospitalize the patient, one path is taken. If the decision is to send the patient to the pharmacy, medicine is ordered and paid for, then the medicine is received.
+
+Regardless of the path taken after the examination, another appointment is booked, followed by another doctor's examination. The process concludes after this second examination.

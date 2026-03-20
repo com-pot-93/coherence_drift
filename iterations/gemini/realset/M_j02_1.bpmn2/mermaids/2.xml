@@ -1,0 +1,31 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Receive Customized Airplane Order)
+    1:task:(Receive Customized Airplane Order) --> 2:task:(Process Order)
+    2:task:(Process Order) --> 3:parallelgateway:{AND}
+    3:parallelgateway:{AND} --> 4:task:(Build Airplane Base Model)
+    3:parallelgateway:{AND} --> 5:task:(Transmit Customization Requirements)
+    4:task:(Build Airplane Base Model) --> 6:parallelgateway:{AND}
+    5:task:(Transmit Customization Requirements) --> 6:parallelgateway:{AND}
+    6:parallelgateway:{AND} --> 7:exclusivegateway:{x}
+    7:exclusivegateway:{x} -->|Condition is True| 8:task:(Wait for 14 Days)
+    7:exclusivegateway:{x} -->|Condition is False| 17:task:(Install Bits and Pieces)
+    8:task:(Wait for 14 Days) --> 9:exclusivegateway:{x}
+    9:exclusivegateway:{x} -->|Condition Met| 10:task:(Send Reminder)
+    9:exclusivegateway:{x} -->|Condition Not Met| 12:parallelgateway:{AND}
+    10:task:(Send Reminder) --> 11:task:(Wait for 14 Days)
+    11:task:(Wait for 14 Days) --> 12:parallelgateway:{AND}
+    12:parallelgateway:{AND} --> 17:task:(Install Bits and Pieces)
+    17:task:(Install Bits and Pieces) --> 18:task:(Control Engines and Risk Factors)
+    18:task:(Control Engines and Risk Factors) --> 19:task:(Prepare for Test Flight)
+    19:task:(Prepare for Test Flight) --> 20:task:(Receive Test Flight Protocol)
+    20:task:(Receive Test Flight Protocol) --> 21:task:(Forward Protocol to Customer)
+    21:task:(Forward Protocol to Customer) --> 22:exclusivegateway:{x}
+    22:exclusivegateway:{x} -->|Standard Shipping| 23:task:(Ship Airplane - Standard)
+    22:exclusivegateway:{x} -->|Premium Shipping| 24:task:(Ship Airplane - Premium)
+    23:task:(Ship Airplane - Standard) --> 25:task:(Receive Confirmation Email)
+    24:task:(Ship Airplane - Premium) --> 25:task:(Receive Confirmation Email)
+    25:task:(Receive Confirmation Email) --> 26:exclusivegateway:{x}
+    26:exclusivegateway:{x} -->|Condition is True| 7:exclusivegateway:{x}
+    26:exclusivegateway:{x} -->|Condition is False| 27:endevent:(((endevent)))
+```

@@ -1,0 +1,907 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="1">
+    <parameters>
+      <label>report the vacancy to HR</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="2">
+    <parameters>
+      <label>HR creates a job description</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="3">
+    <alternative condition="Department input needed" language="text/javascript">
+      <call id="a7" endpoint="" a:alt_id="4">
+        <parameters>
+          <label>HR asks the Department</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No input needed" language="text/javascript"/>
+  </choose>
+  <call id="a13" endpoint="" a:alt_id="6">
+    <parameters>
+      <label>HR submits the job description for consideration</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a15" endpoint="" a:alt_id="7">
+    <parameters>
+      <label>HR waits for the approval</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="8">
+    <alternative condition="Branch 1" language="text/javascript">
+      <choose mode="exclusive" a:alt_id="9">
+        <alternative condition="">
+          <choose mode="exclusive" a:alt_id="10">
+            <alternative condition="">
+              <choose mode="exclusive" a:alt_id="11">
+                <alternative condition="Department requests correction" language="text/javascript">
+                  <call id="a31" endpoint="" a:alt_id="12">
+                    <parameters>
+                      <label>Department requests a correction</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a35" endpoint="" a:alt_id="13">
+                    <parameters>
+                      <label>HR corrects the description</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Approved" language="text/javascript"/>
+              </choose>
+            </alternative>
+            <alternative condition="Branch 2" language="text/javascript"/>
+          </choose>
+          <choose mode="exclusive" a:alt_id="16">
+            <alternative condition="Department requests correction" language="text/javascript">
+              <call id="a43" endpoint="" a:alt_id="18">
+                <parameters>
+                  <label>Department requests a correction</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a47" endpoint="" a:alt_id="19">
+                <parameters>
+                  <label>HR corrects the description</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Approved" language="text/javascript"/>
+          </choose>
+        </alternative>
+        <alternative condition="Branch 2" language="text/javascript"/>
+      </choose>
+      <choose mode="exclusive" a:alt_id="22">
+        <alternative condition="Branch 1" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="23">
+            <alternative condition="Branch 1" language="text/javascript">
+              <choose mode="exclusive" a:alt_id="24">
+                <alternative condition="Department requests correction" language="text/javascript">
+                  <call id="a63" endpoint="" a:alt_id="25">
+                    <parameters>
+                      <label>Department requests a correction</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a67" endpoint="" a:alt_id="26">
+                    <parameters>
+                      <label>HR corrects the description</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Approved" language="text/javascript"/>
+              </choose>
+              <choose mode="exclusive" a:alt_id="27">
+                <alternative condition=""/>
+                <alternative condition="Branch 1" language="text/javascript">
+                  <choose mode="exclusive" a:alt_id="41">
+                    <alternative condition="">
+                      <choose mode="exclusive" a:alt_id="42">
+                        <alternative condition="Department requests correction" language="text/javascript">
+                          <call id="a93" endpoint="" a:alt_id="43">
+                            <parameters>
+                              <label>Department requests a correction</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a97" endpoint="" a:alt_id="44">
+                            <parameters>
+                              <label>HR corrects the description</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Approved" language="text/javascript"/>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Branch 2" language="text/javascript"/>
+                  </choose>
+                  <choose mode="exclusive" a:alt_id="46">
+                    <alternative condition="Department requests correction" language="text/javascript">
+                      <call id="a103" endpoint="" a:alt_id="48">
+                        <parameters>
+                          <label>Department requests a correction</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a107" endpoint="" a:alt_id="49">
+                        <parameters>
+                          <label>HR corrects the description</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Approved" language="text/javascript"/>
+                  </choose>
+                  <choose mode="exclusive" a:alt_id="52">
+                    <alternative condition="">
+                      <choose mode="exclusive" a:alt_id="53">
+                        <alternative condition="">
+                          <choose mode="exclusive" a:alt_id="54">
+                            <alternative condition="Department requests correction" language="text/javascript">
+                              <call id="a123" endpoint="" a:alt_id="55">
+                                <parameters>
+                                  <label>Department requests a correction</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a127" endpoint="" a:alt_id="56">
+                                <parameters>
+                                  <label>HR corrects the description</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="Approved" language="text/javascript"/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="Branch 2" language="text/javascript"/>
+                      </choose>
+                      <choose mode="exclusive" a:alt_id="58">
+                        <alternative condition="Department requests correction" language="text/javascript">
+                          <call id="a133" endpoint="" a:alt_id="60">
+                            <parameters>
+                              <label>Department requests a correction</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a137" endpoint="" a:alt_id="61">
+                            <parameters>
+                              <label>HR corrects the description</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Approved" language="text/javascript"/>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Branch 2" language="text/javascript"/>
+                  </choose>
+                  <choose mode="exclusive" a:alt_id="64">
+                    <alternative condition="">
+                      <choose mode="exclusive" a:alt_id="65">
+                        <alternative condition="">
+                          <choose mode="exclusive" a:alt_id="66">
+                            <alternative condition="Department requests correction" language="text/javascript">
+                              <call id="a153" endpoint="" a:alt_id="67">
+                                <parameters>
+                                  <label>Department requests a correction</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a157" endpoint="" a:alt_id="68">
+                                <parameters>
+                                  <label>HR corrects the description</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="Approved" language="text/javascript"/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="Branch 2" language="text/javascript"/>
+                      </choose>
+                      <choose mode="exclusive" a:alt_id="70">
+                        <alternative condition="Department requests correction" language="text/javascript">
+                          <call id="a163" endpoint="" a:alt_id="72">
+                            <parameters>
+                              <label>Department requests a correction</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a167" endpoint="" a:alt_id="73">
+                            <parameters>
+                              <label>HR corrects the description</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Approved" language="text/javascript"/>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Branch 2" language="text/javascript"/>
+                  </choose>
+                  <choose mode="exclusive" a:alt_id="76">
+                    <alternative condition="">
+                      <choose mode="exclusive" a:alt_id="77">
+                        <alternative condition="Department requests correction" language="text/javascript">
+                          <call id="a179" endpoint="" a:alt_id="78">
+                            <parameters>
+                              <label>Department requests a correction</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Approved" language="text/javascript"/>
+                      </choose>
+                      <call id="a181" endpoint="" a:alt_id="79">
+                        <parameters>
+                          <label>HR corrects the description</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Branch 2" language="text/javascript"/>
+                  </choose>
+                  <choose mode="exclusive" a:alt_id="81">
+                    <alternative condition="">
+                      <call id="a189" endpoint="" a:alt_id="82">
+                        <parameters>
+                          <label>HR posts the job</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="">
+                      <call id="a191" endpoint="" a:alt_id="83">
+                        <parameters>
+                          <label>HR submits the job description for consideration</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a195" endpoint="" a:alt_id="84">
+                        <parameters>
+                          <label>HR submits the job description for consideration</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition="Branch 2" language="text/javascript">
+                  <choose mode="exclusive" a:alt_id="52">
+                    <alternative condition="">
+                      <choose mode="exclusive" a:alt_id="53">
+                        <alternative condition="">
+                          <choose mode="exclusive" a:alt_id="54">
+                            <alternative condition="Department requests correction" language="text/javascript">
+                              <call id="a123" endpoint="" a:alt_id="55">
+                                <parameters>
+                                  <label>Department requests a correction</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a127" endpoint="" a:alt_id="56">
+                                <parameters>
+                                  <label>HR corrects the description</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="Approved" language="text/javascript"/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="Branch 2" language="text/javascript"/>
+                      </choose>
+                      <choose mode="exclusive" a:alt_id="58">
+                        <alternative condition="Department requests correction" language="text/javascript">
+                          <call id="a133" endpoint="" a:alt_id="60">
+                            <parameters>
+                              <label>Department requests a correction</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a137" endpoint="" a:alt_id="61">
+                            <parameters>
+                              <label>HR corrects the description</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Approved" language="text/javascript"/>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Branch 2" language="text/javascript"/>
+                  </choose>
+                  <choose mode="exclusive" a:alt_id="64">
+                    <alternative condition="">
+                      <choose mode="exclusive" a:alt_id="65">
+                        <alternative condition="">
+                          <choose mode="exclusive" a:alt_id="66">
+                            <alternative condition="Department requests correction" language="text/javascript">
+                              <call id="a153" endpoint="" a:alt_id="67">
+                                <parameters>
+                                  <label>Department requests a correction</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                              <call id="a157" endpoint="" a:alt_id="68">
+                                <parameters>
+                                  <label>HR corrects the description</label>
+                                  <method/>
+                                  <type>:task</type>
+                                  <arguments/>
+                                </parameters>
+                              </call>
+                            </alternative>
+                            <alternative condition="Approved" language="text/javascript"/>
+                          </choose>
+                        </alternative>
+                        <alternative condition="Branch 2" language="text/javascript"/>
+                      </choose>
+                      <choose mode="exclusive" a:alt_id="70">
+                        <alternative condition="Department requests correction" language="text/javascript">
+                          <call id="a163" endpoint="" a:alt_id="72">
+                            <parameters>
+                              <label>Department requests a correction</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                          <call id="a167" endpoint="" a:alt_id="73">
+                            <parameters>
+                              <label>HR corrects the description</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Approved" language="text/javascript"/>
+                      </choose>
+                    </alternative>
+                    <alternative condition="Branch 2" language="text/javascript"/>
+                  </choose>
+                  <choose mode="exclusive" a:alt_id="76">
+                    <alternative condition="">
+                      <choose mode="exclusive" a:alt_id="77">
+                        <alternative condition="Department requests correction" language="text/javascript">
+                          <call id="a179" endpoint="" a:alt_id="78">
+                            <parameters>
+                              <label>Department requests a correction</label>
+                              <method/>
+                              <type>:task</type>
+                              <arguments/>
+                            </parameters>
+                          </call>
+                        </alternative>
+                        <alternative condition="Approved" language="text/javascript"/>
+                      </choose>
+                      <call id="a181" endpoint="" a:alt_id="79">
+                        <parameters>
+                          <label>HR corrects the description</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Branch 2" language="text/javascript"/>
+                  </choose>
+                  <choose mode="exclusive" a:alt_id="81">
+                    <alternative condition="">
+                      <call id="a189" endpoint="" a:alt_id="82">
+                        <parameters>
+                          <label>HR posts the job</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="">
+                      <call id="a191" endpoint="" a:alt_id="83">
+                        <parameters>
+                          <label>HR submits the job description for consideration</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a195" endpoint="" a:alt_id="84">
+                        <parameters>
+                          <label>HR submits the job description for consideration</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                  </choose>
+                </alternative>
+              </choose>
+            </alternative>
+            <alternative condition="Branch 2" language="text/javascript"/>
+          </choose>
+        </alternative>
+        <alternative condition="">
+          <choose mode="exclusive" a:alt_id="34">
+            <alternative condition="Department requests correction" language="text/javascript">
+              <call id="a73" endpoint="" a:alt_id="36">
+                <parameters>
+                  <label>Department requests a correction</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a77" endpoint="" a:alt_id="37">
+                <parameters>
+                  <label>HR corrects the description</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Approved" language="text/javascript"/>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="Branch 2" language="text/javascript">
+      <choose mode="exclusive" a:alt_id="27">
+        <alternative condition=""/>
+        <alternative condition="Branch 1" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="41">
+            <alternative condition="">
+              <choose mode="exclusive" a:alt_id="42">
+                <alternative condition="Department requests correction" language="text/javascript">
+                  <call id="a93" endpoint="" a:alt_id="43">
+                    <parameters>
+                      <label>Department requests a correction</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a97" endpoint="" a:alt_id="44">
+                    <parameters>
+                      <label>HR corrects the description</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Approved" language="text/javascript"/>
+              </choose>
+            </alternative>
+            <alternative condition="Branch 2" language="text/javascript"/>
+          </choose>
+          <choose mode="exclusive" a:alt_id="46">
+            <alternative condition="Department requests correction" language="text/javascript">
+              <call id="a103" endpoint="" a:alt_id="48">
+                <parameters>
+                  <label>Department requests a correction</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a107" endpoint="" a:alt_id="49">
+                <parameters>
+                  <label>HR corrects the description</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Approved" language="text/javascript"/>
+          </choose>
+          <choose mode="exclusive" a:alt_id="52">
+            <alternative condition="">
+              <choose mode="exclusive" a:alt_id="53">
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="54">
+                    <alternative condition="Department requests correction" language="text/javascript">
+                      <call id="a123" endpoint="" a:alt_id="55">
+                        <parameters>
+                          <label>Department requests a correction</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a127" endpoint="" a:alt_id="56">
+                        <parameters>
+                          <label>HR corrects the description</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Approved" language="text/javascript"/>
+                  </choose>
+                </alternative>
+                <alternative condition="Branch 2" language="text/javascript"/>
+              </choose>
+              <choose mode="exclusive" a:alt_id="58">
+                <alternative condition="Department requests correction" language="text/javascript">
+                  <call id="a133" endpoint="" a:alt_id="60">
+                    <parameters>
+                      <label>Department requests a correction</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a137" endpoint="" a:alt_id="61">
+                    <parameters>
+                      <label>HR corrects the description</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Approved" language="text/javascript"/>
+              </choose>
+            </alternative>
+            <alternative condition="Branch 2" language="text/javascript"/>
+          </choose>
+          <choose mode="exclusive" a:alt_id="64">
+            <alternative condition="">
+              <choose mode="exclusive" a:alt_id="65">
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="66">
+                    <alternative condition="Department requests correction" language="text/javascript">
+                      <call id="a153" endpoint="" a:alt_id="67">
+                        <parameters>
+                          <label>Department requests a correction</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a157" endpoint="" a:alt_id="68">
+                        <parameters>
+                          <label>HR corrects the description</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Approved" language="text/javascript"/>
+                  </choose>
+                </alternative>
+                <alternative condition="Branch 2" language="text/javascript"/>
+              </choose>
+              <choose mode="exclusive" a:alt_id="70">
+                <alternative condition="Department requests correction" language="text/javascript">
+                  <call id="a163" endpoint="" a:alt_id="72">
+                    <parameters>
+                      <label>Department requests a correction</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a167" endpoint="" a:alt_id="73">
+                    <parameters>
+                      <label>HR corrects the description</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Approved" language="text/javascript"/>
+              </choose>
+            </alternative>
+            <alternative condition="Branch 2" language="text/javascript"/>
+          </choose>
+          <choose mode="exclusive" a:alt_id="76">
+            <alternative condition="">
+              <choose mode="exclusive" a:alt_id="77">
+                <alternative condition="Department requests correction" language="text/javascript">
+                  <call id="a179" endpoint="" a:alt_id="78">
+                    <parameters>
+                      <label>Department requests a correction</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Approved" language="text/javascript"/>
+              </choose>
+              <call id="a181" endpoint="" a:alt_id="79">
+                <parameters>
+                  <label>HR corrects the description</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Branch 2" language="text/javascript"/>
+          </choose>
+          <choose mode="exclusive" a:alt_id="81">
+            <alternative condition="">
+              <call id="a189" endpoint="" a:alt_id="82">
+                <parameters>
+                  <label>HR posts the job</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="">
+              <call id="a191" endpoint="" a:alt_id="83">
+                <parameters>
+                  <label>HR submits the job description for consideration</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a195" endpoint="" a:alt_id="84">
+                <parameters>
+                  <label>HR submits the job description for consideration</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="Branch 2" language="text/javascript">
+          <choose mode="exclusive" a:alt_id="52">
+            <alternative condition="">
+              <choose mode="exclusive" a:alt_id="53">
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="54">
+                    <alternative condition="Department requests correction" language="text/javascript">
+                      <call id="a123" endpoint="" a:alt_id="55">
+                        <parameters>
+                          <label>Department requests a correction</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a127" endpoint="" a:alt_id="56">
+                        <parameters>
+                          <label>HR corrects the description</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Approved" language="text/javascript"/>
+                  </choose>
+                </alternative>
+                <alternative condition="Branch 2" language="text/javascript"/>
+              </choose>
+              <choose mode="exclusive" a:alt_id="58">
+                <alternative condition="Department requests correction" language="text/javascript">
+                  <call id="a133" endpoint="" a:alt_id="60">
+                    <parameters>
+                      <label>Department requests a correction</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a137" endpoint="" a:alt_id="61">
+                    <parameters>
+                      <label>HR corrects the description</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Approved" language="text/javascript"/>
+              </choose>
+            </alternative>
+            <alternative condition="Branch 2" language="text/javascript"/>
+          </choose>
+          <choose mode="exclusive" a:alt_id="64">
+            <alternative condition="">
+              <choose mode="exclusive" a:alt_id="65">
+                <alternative condition="">
+                  <choose mode="exclusive" a:alt_id="66">
+                    <alternative condition="Department requests correction" language="text/javascript">
+                      <call id="a153" endpoint="" a:alt_id="67">
+                        <parameters>
+                          <label>Department requests a correction</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                      <call id="a157" endpoint="" a:alt_id="68">
+                        <parameters>
+                          <label>HR corrects the description</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="Approved" language="text/javascript"/>
+                  </choose>
+                </alternative>
+                <alternative condition="Branch 2" language="text/javascript"/>
+              </choose>
+              <choose mode="exclusive" a:alt_id="70">
+                <alternative condition="Department requests correction" language="text/javascript">
+                  <call id="a163" endpoint="" a:alt_id="72">
+                    <parameters>
+                      <label>Department requests a correction</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <call id="a167" endpoint="" a:alt_id="73">
+                    <parameters>
+                      <label>HR corrects the description</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Approved" language="text/javascript"/>
+              </choose>
+            </alternative>
+            <alternative condition="Branch 2" language="text/javascript"/>
+          </choose>
+          <choose mode="exclusive" a:alt_id="76">
+            <alternative condition="">
+              <choose mode="exclusive" a:alt_id="77">
+                <alternative condition="Department requests correction" language="text/javascript">
+                  <call id="a179" endpoint="" a:alt_id="78">
+                    <parameters>
+                      <label>Department requests a correction</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition="Approved" language="text/javascript"/>
+              </choose>
+              <call id="a181" endpoint="" a:alt_id="79">
+                <parameters>
+                  <label>HR corrects the description</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Branch 2" language="text/javascript"/>
+          </choose>
+          <choose mode="exclusive" a:alt_id="81">
+            <alternative condition="">
+              <call id="a189" endpoint="" a:alt_id="82">
+                <parameters>
+                  <label>HR posts the job</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="">
+              <call id="a191" endpoint="" a:alt_id="83">
+                <parameters>
+                  <label>HR submits the job description for consideration</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a195" endpoint="" a:alt_id="84">
+                <parameters>
+                  <label>HR submits the job description for consideration</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

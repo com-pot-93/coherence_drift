@@ -1,0 +1,12 @@
+The process begins with the start event.
+First, the Coordination Unit finalizes the dates.
+Next, the Support Officer updates all group calendars.
+Then, the Support Officer creates meeting folders.
+After that, the Support Officer ensures all appropriate documents are uploaded to the system.
+Subsequently, the Support Officer advises Committee Members to read all documents.
+Following this, the Committee Members hold a meeting.
+After the meeting, the Support Office produces minutes.
+Then, the Coordination Unit conducts a QA check on the minutes.
+Next, the Coordination Unit sends the QA check to all Committee Members.
+After that, the Support Officer updates departmental records.
+The process concludes with the end event.

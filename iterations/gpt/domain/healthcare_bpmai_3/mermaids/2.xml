@@ -1,0 +1,38 @@
+flowchart LR
+  0:startevent:((startevent))
+  1:task:(Receive Call)
+  2:exclusivegateway:{x}
+  3:task:(Add Patient to List)
+  4:task:(Perform Checks)
+  5:exclusivegateway:{x}
+  6:task:(Escalate Case)
+  7:exclusivegateway:{x}
+  8:task:(Call Patient to Hospital)
+  9:task:(Hospitalize Patient)
+  10:task:(Childbirth)
+  11:exclusivegateway:{x}
+  12:task:(Post-Hospitalization Care)
+  13:task:(Special Treatment)
+  14:exclusivegateway:{x}
+  15:endevent:(((endevent)))
+
+  0:startevent:((startevent)) --> 1:task:(Receive Call)
+  1:task:(Receive Call) --> 2:exclusivegateway:{x}
+  2:exclusivegateway:{x} --> |Patient not accepted|15:endevent:(((endevent)))
+  2:exclusivegateway:{x} --> |Patient accepted|3:task:(Add Patient to List)
+  3:task:(Add Patient to List) --> 4:task:(Perform Checks)
+  4:task:(Perform Checks) --> 5:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Checks positive|7:exclusivegateway:{x}
+  5:exclusivegateway:{x} --> |Checks negative|6:task:(Escalate Case)
+  6:task:(Escalate Case) --> 4:task:(Perform Checks)
+  7:exclusivegateway:{x} --> |Proceed to hospital|8:task:(Call Patient to Hospital)
+  7:exclusivegateway:{x} --> |Do not proceed|6:task:(Escalate Case)
+  8:task:(Call Patient to Hospital) --> 9:task:(Hospitalize Patient)
+  9:task:(Hospitalize Patient) --> 10:task:(Childbirth)
+  10:task:(Childbirth) --> 11:exclusivegateway:{x}
+  11:exclusivegateway:{x} --> |Post-hospitalization care|12:task:(Post-Hospitalization Care)
+  11:exclusivegateway:{x} --> |Special treatment|13:task:(Special Treatment)
+  12:task:(Post-Hospitalization Care) --> 14:exclusivegateway:{x}
+  13:task:(Special Treatment) --> 14:exclusivegateway:{x}
+  14:exclusivegateway:{x} --> |Further checks needed|4:task:(Perform Checks)
+  14:exclusivegateway:{x} --> |Process complete|15:endevent:(((endevent)))

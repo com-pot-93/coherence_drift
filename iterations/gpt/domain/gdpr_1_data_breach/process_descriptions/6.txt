@@ -1,0 +1,11 @@
+The process begins when an incident is detected. After detecting the incident, the next step is to retrieve the data that has been breached. Once the breached data is retrieved, the process continues by identifying the individuals who have been affected.
+
+After identifying the affected individuals, two activities are carried out at the same time. One activity is to take action to limit any further loss of data. The other activity is to notify the national authority about the incident. Both of these activities are performed independently and in parallel.
+
+Once both actions are completed, the process continues by evaluating the data that was stolen. Based on this evaluation, a decision is made about whether a notification regarding the stolen data is required. If a notification is required, a notification about the stolen data is sent. If no notification is needed, this step is skipped. Regardless of the decision, the process continues to the next step.
+
+Next, the process involves evaluating the security standards. Again, a decision is made about whether a notification regarding the security standards is required. If a notification is required, a notification about the security standards is sent. If no notification is needed, this step is skipped. The process then moves forward in either case.
+
+Following this, a request for clarification is made. After the request is sent, a response to the clarification is received. Once the response is received, a decision is made about whether a notification regarding the clarification is required. If a notification is required, a notification about the clarification is sent. If no notification is needed, this step is skipped.
+
+Finally, after all these steps are completed, the process comes to an end.

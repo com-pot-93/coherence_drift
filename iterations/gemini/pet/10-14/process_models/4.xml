@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <choose mode="exclusive" a:alt_id="1">
+    <alternative condition="Send equipment acquisition bill to MPON" language="text/javascript">
+      <call id="a3" endpoint="" a:alt_id="2">
+        <parameters>
+          <label>Send equipment acquisition bill to MPON</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a7" endpoint="" a:alt_id="3">
+        <parameters>
+          <label>Examine the bill</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="4">
+        <alternative condition="MPON confirms the bill" language="text/javascript">
+          <call id="a11" endpoint="" a:alt_id="5">
+            <parameters>
+              <label>Confirm invoice with payment advice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="MPON rejects the bill" language="text/javascript">
+          <call id="a13" endpoint="" a:alt_id="6">
+            <parameters>
+              <label>Reject invoice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="Other path" language="text/javascript">
+      <choose mode="exclusive" a:alt_id="11">
+        <alternative condition="Metering Point Operations Bill" language="text/javascript">
+          <call id="a23" endpoint="" a:alt_id="12">
+            <parameters>
+              <label>Send Metering Point Operations Bill to GO</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Measurement Bill" language="text/javascript">
+          <call id="a25" endpoint="" a:alt_id="13">
+            <parameters>
+              <label>Send Measurement Bill to GO</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Additional Readings Bill" language="text/javascript">
+          <call id="a27" endpoint="" a:alt_id="14">
+            <parameters>
+              <label>Send Additional Readings Bill to GO</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Equipment Acquisition Bill" language="text/javascript">
+          <call id="a29" endpoint="" a:alt_id="15">
+            <parameters>
+              <label>Send Equipment Acquisition Bill to GO</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a39" endpoint="" a:alt_id="17">
+        <parameters>
+          <label>Examine the bill</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="18">
+        <alternative condition="GO rejects the bill" language="text/javascript">
+          <call id="a43" endpoint="" a:alt_id="19">
+            <parameters>
+              <label>Reject invoice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="GO confirms the bill" language="text/javascript">
+          <call id="a45" endpoint="" a:alt_id="20">
+            <parameters>
+              <label>Confirm invoice with payment advice</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

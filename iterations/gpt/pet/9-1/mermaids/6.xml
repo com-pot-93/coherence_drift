@@ -1,0 +1,64 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Backup Database)
+2:task:(Check Database)
+3:exclusivegateway:{x}
+4:task:(Check CRM System)
+5:exclusivegateway:{x}
+6:task:(Register Defaulting Accounts and Customers)
+7:exclusivegateway:{x}
+8:task:(Produce Table of Defaulting Accounts)
+9:task:(Send Table to Account Management)
+10:exclusivegateway:{x}
+11:task:(Send Alert to Supervisor)
+12:exclusivegateway:{x}
+13:task:(Check CRM System Again)
+14:exclusivegateway:{x}
+15:task:(Perform Reconciliation)
+16:exclusivegateway:{x}
+17:task:(Send Message to Supervisor)
+18:task:(Complete Reconciliation)
+19:task:(Final Step)
+20:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Backup Database)
+1:task:(Backup Database) --> 2:task:(Check Database)
+2:task:(Check Database) --> 3:exclusivegateway:{x}
+
+3:exclusivegateway:{x} --> |Continue|4:task:(Check CRM System)
+3:exclusivegateway:{x} --> |Skip|5:exclusivegateway:{x}
+
+4:task:(Check CRM System) --> 5:exclusivegateway:{x}
+
+5:exclusivegateway:{x} --> |Continue|6:task:(Register Defaulting Accounts and Customers)
+5:exclusivegateway:{x} --> |Skip|7:exclusivegateway:{x}
+
+6:task:(Register Defaulting Accounts and Customers) --> 7:exclusivegateway:{x}
+
+7:exclusivegateway:{x} --> |Continue|8:task:(Produce Table of Defaulting Accounts)
+7:exclusivegateway:{x} --> |Skip|10:exclusivegateway:{x}
+
+8:task:(Produce Table of Defaulting Accounts) --> 9:task:(Send Table to Account Management)
+9:task:(Send Table to Account Management) --> 10:exclusivegateway:{x}
+
+10:exclusivegateway:{x} --> |Alert needed|11:task:(Send Alert to Supervisor)
+10:exclusivegateway:{x} --> |No alert|12:exclusivegateway:{x}
+
+11:task:(Send Alert to Supervisor) --> 12:exclusivegateway:{x}
+
+12:exclusivegateway:{x} --> 13:task:(Check CRM System Again)
+
+13:task:(Check CRM System Again) --> 14:exclusivegateway:{x}
+
+14:exclusivegateway:{x} --> |Reconciliation needed|15:task:(Perform Reconciliation)
+14:exclusivegateway:{x} --> |No reconciliation|16:exclusivegateway:{x}
+
+15:task:(Perform Reconciliation) --> 16:exclusivegateway:{x}
+
+16:exclusivegateway:{x} --> |Send message|17:task:(Send Message to Supervisor)
+16:exclusivegateway:{x} --> |Complete reconciliation|18:task:(Complete Reconciliation)
+16:exclusivegateway:{x} --> |Continue|19:task:(Final Step)
+
+17:task:(Send Message to Supervisor) --> 19:task:(Final Step)
+18:task:(Complete Reconciliation) --> 19:task:(Final Step)
+19:task:(Final Step) --> 20:endevent:(((endevent)))

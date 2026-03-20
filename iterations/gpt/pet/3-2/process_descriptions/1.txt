@@ -1,0 +1,7 @@
+The process begins with an initial step. After this, the files are checked. At this point, there is a decision to be made based on the outcome of the file check.
+
+If the files can be tracked, the next step is to physically track the files. If the files are missing, a search is conducted to find the missing files. Regardless of which path is taken—either tracking the files or searching for missing ones—the process continues to the next stage.
+
+At this stage, two activities happen at the same time. One activity is handing the files to an associate. The other activity is distributing the judge’s lawlist. Both of these activities are carried out in parallel.
+
+Once both activities are completed, the process moves forward to conducting directions hearings. After the directions hearings are conducted, the process comes to an end.

@@ -1,0 +1,66 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Collect requirements)
+2:task:(Send requirements)
+3:task:(draft received)
+4:task:(Check feasibility)
+5:exclusivegateway:{x} %% D1 split
+6:exclusivegateway:{x} %% D2 split
+7:task:(Report for builing permit)
+8:exclusivegateway:{x} %% D2 merge
+9:task:(Create order list)
+10:task:(Place order)
+11:task:(Calculate effort)
+12:parallelgateway:{AND} %% PG1 split
+13:task:(Get order)
+14:exclusivegateway:{x} %% D3 split
+15:task:(Call friends)
+16:task:(Hire building company)
+17:exclusivegateway:{x} %% D3 merge
+18:parallelgateway:{AND} %% PG1 merge
+19:task:(Build house)
+20:exclusivegateway:{x} %% D1 merge
+21:task:(Refine requirements)
+22:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Collect requirements)
+1:task:(Collect requirements) --> 2:task:(Send requirements)
+2:task:(Send requirements) --> 3:task:(draft received)
+3:task:(draft received) --> 4:task:(Check feasibility)
+4:task:(Check feasibility) --> 5:exclusivegateway:{x}
+
+%% D1 branches
+5:exclusivegateway:{x} --> |Standard process|6:exclusivegateway:{x}
+5:exclusivegateway:{x} --> |Refinement needed|21:task:(Refine requirements)
+
+%% D2 branches
+6:exclusivegateway:{x} --> |Permit required|7:task:(Report for builing permit)
+6:exclusivegateway:{x} --> |No permit|8:exclusivegateway:{x}
+7:task:(Report for builing permit) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> 9:task:(Create order list)
+
+%% Continue standard process
+9:task:(Create order list) --> 10:task:(Place order)
+10:task:(Place order) --> 11:task:(Calculate effort)
+11:task:(Calculate effort) --> 12:parallelgateway:{AND}
+
+%% PG1 branches
+12:parallelgateway:{AND} --> 13:task:(Get order)
+12:parallelgateway:{AND} --> 14:exclusivegateway:{x}
+
+13:task:(Get order) --> 18:parallelgateway:{AND}
+
+%% D3 branches
+14:exclusivegateway:{x} --> |Friends|15:task:(Call friends)
+14:exclusivegateway:{x} --> |Company|16:task:(Hire building company)
+15:task:(Call friends) --> 17:exclusivegateway:{x}
+16:task:(Hire building company) --> 17:exclusivegateway:{x}
+17:exclusivegateway:{x} --> 18:parallelgateway:{AND}
+
+%% PG1 merge
+18:parallelgateway:{AND} --> 19:task:(Build house)
+19:task:(Build house) --> 20:exclusivegateway:{x}
+
+%% D1 merge
+21:task:(Refine requirements) --> 20:exclusivegateway:{x}
+20:exclusivegateway:{x} --> 22:endevent:(((endevent)))

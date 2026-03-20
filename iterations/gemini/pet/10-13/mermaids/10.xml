@@ -1,0 +1,7 @@
+```mermaid
+graph LR
+  0:startevent:((startevent)) --> 1:task:(Transmit Transaction Data Request)
+  1:task:(Transmit Transaction Data Request) --> 2:task:(Check Request from INQ)
+  2:task:(Check Request from INQ) --> 3:task:(Answer Question from INQ)
+  3:task:(Answer Question from INQ) --> 4:endevent:(((endevent)))
+```

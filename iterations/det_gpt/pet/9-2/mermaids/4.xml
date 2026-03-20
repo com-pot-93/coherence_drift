@@ -1,0 +1,55 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Customer Service Representative (CSR) sends a Mortgage offer)
+2:task:(CSR waits for a customer reply)
+3:exclusivegateway:{x}
+4:task:(CSR updates the case details)
+5:task:(CSR archives the work)
+6:task:(CSR performs cancellation)
+7:exclusivegateway:{x}
+8:task:(CSR moves case to administration)
+9:exclusivegateway:{x}
+10:task:(CSR  generates request for outstanding documents)
+11:exclusivegateway:{x}
+12:task:(CSR updates the case details)
+13:task:(CSR archives the work)
+14:task:(CSR performs cancellation)
+15:exclusivegateway:{x}
+16:exclusivegateway:{x}
+17:exclusivegateway:{x}
+18:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Customer Service Representative (CSR) sends a Mortgage offer)
+1:task:(Customer Service Representative (CSR) sends a Mortgage offer) --> 2:task:(CSR waits for a customer reply)
+2:task:(CSR waits for a customer reply) --> 3:exclusivegateway:{x}
+%% D1 split
+3:exclusivegateway:{x} --> |Branch 1|4:task:(CSR updates the case details)
+3:exclusivegateway:{x} --> |Otherwise|8:task:(CSR moves case to administration)
+%% D1 Branch 1
+4:task:(CSR updates the case details) --> 5:task:(CSR archives the work)
+5:task:(CSR archives the work) --> 6:task:(CSR performs cancellation)
+6:task:(CSR performs cancellation) --> 7:exclusivegateway:{x}
+%% D1 Branch 2
+8:task:(CSR moves case to administration) --> 9:exclusivegateway:{x}
+%% D2 split
+9:exclusivegateway:{x} --> |Branch 1|10:task:(CSR  generates request for outstanding documents)
+9:exclusivegateway:{x} --> |Otherwise|16:exclusivegateway:{x}
+%% D2 Branch 1
+10:task:(CSR  generates request for outstanding documents) --> 11:exclusivegateway:{x}
+%% D3 split
+11:exclusivegateway:{x} --> |Branch 1|12:task:(CSR updates the case details)
+11:exclusivegateway:{x} --> |Otherwise|15:exclusivegateway:{x}
+%% D3 Branch 1
+12:task:(CSR updates the case details) --> 13:task:(CSR archives the work)
+13:task:(CSR archives the work) --> 14:task:(CSR performs cancellation)
+14:task:(CSR performs cancellation) --> 15:exclusivegateway:{x}
+%% D3 merge
+15:exclusivegateway:{x} --> 17:exclusivegateway:{x}
+%% D3 Branch 2
+%% (direct merge)
+%% D2 Branch 2
+16:exclusivegateway:{x} --> 17:exclusivegateway:{x}
+%% D2 merge
+%% D1 merge
+7:exclusivegateway:{x} --> 18:endevent:(((endevent)))
+17:exclusivegateway:{x} --> 7:exclusivegateway:{x}

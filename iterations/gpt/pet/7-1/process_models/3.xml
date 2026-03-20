@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <loop mode="pre_test" condition="Proceed">
+    <choose mode="exclusive" a:alt_id="3">
+      <alternative condition="False" language="text/javascript"/>
+      <alternative condition="True" language="text/javascript">
+        <call id="a9" endpoint="" a:alt_id="5">
+          <parameters>
+            <label>Call Customer</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="6">
+          <alternative condition="Note Required" language="text/javascript">
+            <call id="a15" endpoint="" a:alt_id="9">
+              <parameters>
+                <label>Send Note to Manager</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a19" endpoint="" a:alt_id="10">
+              <parameters>
+                <label>Manager Processes Lead</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="11">
+              <alternative condition="Continue" language="text/javascript">
+                <choose mode="exclusive" a:alt_id="12">
+                  <alternative condition="Proceed" language="text/javascript">
+                    <choose mode="exclusive" a:alt_id="13">
+                      <alternative condition="Proceed" language="text/javascript">
+                        <choose mode="exclusive" a:alt_id="14">
+                          <alternative condition="Proceed" language="text/javascript"/>
+                          <alternative condition="Escalate" language="text/javascript">
+                            <call id="a37" endpoint="" a:alt_id="15">
+                              <parameters>
+                                <label>Escalate Issue</label>
+                                <method/>
+                                <type>:task</type>
+                                <arguments/>
+                              </parameters>
+                            </call>
+                            <choose mode="exclusive" a:alt_id="16">
+                              <alternative condition="Continue" language="text/javascript">
+                                <choose mode="exclusive" a:alt_id="17">
+                                  <alternative condition="Proceed" language="text/javascript">
+                                    <choose mode="exclusive" a:alt_id="18">
+                                      <alternative condition="Proceed" language="text/javascript"/>
+                                      <alternative condition="Return to Call" language="text/javascript">
+                                        <call id="a9" endpoint="" a:alt_id="5">
+                                          <parameters>
+                                            <label>Call Customer</label>
+                                            <method/>
+                                            <type>:task</type>
+                                            <arguments/>
+                                          </parameters>
+                                        </call>
+                                      </alternative>
+                                    </choose>
+                                  </alternative>
+                                  <alternative condition="Return to Call" language="text/javascript">
+                                    <call id="a9" endpoint="" a:alt_id="5">
+                                      <parameters>
+                                        <label>Call Customer</label>
+                                        <method/>
+                                        <type>:task</type>
+                                        <arguments/>
+                                      </parameters>
+                                    </call>
+                                  </alternative>
+                                </choose>
+                              </alternative>
+                              <alternative condition="Return to Call" language="text/javascript">
+                                <call id="a9" endpoint="" a:alt_id="5">
+                                  <parameters>
+                                    <label>Call Customer</label>
+                                    <method/>
+                                    <type>:task</type>
+                                    <arguments/>
+                                  </parameters>
+                                </call>
+                              </alternative>
+                            </choose>
+                          </alternative>
+                        </choose>
+                      </alternative>
+                      <alternative condition="Return to Call" language="text/javascript">
+                        <call id="a9" endpoint="" a:alt_id="5">
+                          <parameters>
+                            <label>Call Customer</label>
+                            <method/>
+                            <type>:task</type>
+                            <arguments/>
+                          </parameters>
+                        </call>
+                      </alternative>
+                    </choose>
+                  </alternative>
+                  <alternative condition="Return to Call" language="text/javascript">
+                    <call id="a9" endpoint="" a:alt_id="5">
+                      <parameters>
+                        <label>Call Customer</label>
+                        <method/>
+                        <type>:task</type>
+                        <arguments/>
+                      </parameters>
+                    </call>
+                  </alternative>
+                </choose>
+              </alternative>
+              <alternative condition="Return to Call" language="text/javascript">
+                <call id="a9" endpoint="" a:alt_id="5">
+                  <parameters>
+                    <label>Call Customer</label>
+                    <method/>
+                    <type>:task</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+            </choose>
+          </alternative>
+          <alternative condition="No Note Required" language="text/javascript">
+            <call id="a9" endpoint="" a:alt_id="5">
+              <parameters>
+                <label>Call Customer</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+        <escape a:alt_id="-1"/>
+      </alternative>
+    </choose>
+  </loop>
+</description>

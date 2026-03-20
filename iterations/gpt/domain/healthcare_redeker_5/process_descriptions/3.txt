@@ -1,0 +1,7 @@
+The process begins when a person arrives at the hospital. After the person arrives, preparations are made to ready a room for surgery. Once the room is prepared, the surgery is performed.
+
+After the surgery is completed, two activities take place at the same time: the patient is discharged, and the room is sanitized. Both of these actions must be finished before the process continues.
+
+Once the patient has been discharged and the room has been sanitized, a report is filled out. After the report is completed, it is determined whether payment is required. If payment is required, the bill is paid. If no payment is required, the process moves forward without this step.
+
+The process ends after either the bill is paid or it is determined that no payment is necessary.

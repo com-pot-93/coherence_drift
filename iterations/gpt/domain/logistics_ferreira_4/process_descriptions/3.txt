@@ -1,0 +1,14 @@
+The process begins with the collection of temperature values. Once these values are obtained, a decision is made based on whether a certain condition is met. If the condition is met, a standard notification is generated. If the condition is not met, the process skips this step. Regardless of the outcome, the process continues to the next phase.
+
+At this point, three activities are carried out independently and at the same time:
+
+1. **Retrieving the status of the container:**  
+   After the container status is retrieved, the condition of the container is estimated. Based on this estimation, a decision is made about whether a change to the container is needed. If a change is needed, a request for a container change is made. If no change is needed, this step is skipped. In either case, the process continues.
+
+2. **Obtaining the client’s location:**  
+   Once the client’s location is obtained, the distance to the client is estimated. After estimating the distance, a decision is made about whether an estimation of delivery time is necessary. If it is, the delivery time is estimated. Then, another decision is made about whether a change to the delivery route is needed. If a route change is needed, a request for a route change is made. If no route change is needed, this step is skipped. If the estimation of delivery time is not needed, the process skips directly to the next phase. In all cases, the process continues.
+
+3. **Obtaining the status of the goods:**  
+   After the goods status is obtained, the condition of the goods is estimated. Based on this estimation, a decision is made about whether damages should be evaluated. If damages are suspected, an evaluation of damages is performed. After evaluating damages, a decision is made about whether the goods need to be removed. If removal is needed, a request for removal of goods is made. If no removal is needed, this step is skipped. If no damages are suspected, the process skips directly to the next step. After this, a request for a price change is made, and the process continues.
+
+Once all three parallel activities are completed, the process moves forward. At this stage, all generated messages are sent out. The process then ends.

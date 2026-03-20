@@ -1,0 +1,17 @@
+The process begins with a starting point. Immediately after, a decision is made. If the condition is met, the process loops back to this decision point and waits until the condition is not met. Once the process moves forward, the following steps are carried out in order:
+
+1. Production planning is performed.
+2. Workers are assigned to the production.
+3. The production design is created.
+4. The product is delivered.
+5. The production logout is completed.
+6. Quality control is conducted.
+
+After quality control, another decision is made. If the process needs to repeat, it returns to the initial decision point and follows the same steps again. If not, the process continues to the next decision point.
+
+At this stage, there are two possible paths:
+
+- In the first path, the product is registered to the finished stock, then moved to the finished goods stock.
+- In the second path, the product is registered to the semi-finished stock, then loaded into the semi-finished stock.
+
+Both paths eventually come together at a common point, and the process ends.

@@ -1,0 +1,47 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Create list of necessary parts)
+    1:task:(Create list of necessary parts) --> 2:task:(Query Webshops fo, and the process ends.
+ necessary 
+parts)
+    2:task:(Query Webshops fo, and the process ends.
+ necessary 
+parts) --> 3:task:(Choose the shop wiht cheapest parts)
+    3:task:(Choose the shop wiht cheapest parts) --> 4:task:(Make an order to the Webshop)
+    4:task:(Make an order to the Webshop) --> 5:task:(The webshop receives an order)
+    5:task:(The webshop receives an order) --> 6:parallelgateway:{AND}
+    6:parallelgateway:{AND} --> 7:task:(The webshop sends an invoice)
+    6:parallelgateway:{AND} --> 8:task:(The webshop delivers an order)
+    6:parallelgateway:{AND} --> 9:task:(The webshop updates Inventory)
+    7:task:(The webshop sends an invoice) --> 10:parallelgateway:{AND}
+    8:task:(The webshop delivers an order) --> 10:parallelgateway:{AND}
+    9:task:(The webshop updates Inventory) --> 10:parallelgateway:{AND}
+    10:parallelgateway:{AND} --> 11:task:(The Manufacturer receives an order and starts buiding)
+    11:task:(The Manufacturer receives an order and starts buiding) --> 12:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |condition1| 13:exclusivegateway:{x}
+    12:exclusivegateway:{x} --> |condition2| 26:task:(finish the project)
+    13:exclusivegateway:{x} --> |condition1| 14:exclusivegateway:{x}
+    13:exclusivegateway:{x} --> |condition2| 23:task:(write an compliament email)
+    14:exclusivegateway:{x} --> |condition1| 15:exclusivegateway:{x}
+    14:exclusivegateway:{x} --> |condition2| 21:task:(order the part with faster delivery)
+    15:exclusivegateway:{x} --> |condition1| 16:task:(order the cheapest part)
+    15:exclusivegateway:{x} --> |condition2| 17:task:(finish the project)
+    16:task:(order the cheapest part) --> 18:exclusivegateway:{x}
+    17:task:(finish the project) --> 18:exclusivegateway:{x}
+    18:exclusivegateway:{x} --> 19:endevent:(((endevent)))
+    18:exclusivegateway:{x} --> 20:endevent:(((endevent)))
+    18:exclusivegateway:{x} --> 19:endevent:(((endevent)))
+    21:task:(order the part with faster delivery) --> 22:exclusivegateway:{x}
+    22:exclusivegateway:{x} --> 19:endevent:(((endevent)))
+    22:exclusivegateway:{x} --> 20:endevent:(((endevent)))
+    22:exclusivegateway:{x} --> 19:endevent:(((endevent)))
+    23:task:(write an compliament email) --> 24:task:(finish the project)
+    24:task:(finish the project) --> 25:exclusivegateway:{x}
+    25:exclusivegateway:{x} --> 19:endevent:(((endevent)))
+    25:exclusivegateway:{x} --> 20:endevent:(((endevent)))
+    25:exclusivegateway:{x} --> 19:endevent:(((endevent)))
+    26:task:(finish the project) --> 27:exclusivegateway:{x}
+    27:exclusivegateway:{x} --> 19:endevent:(((endevent)))
+    27:exclusivegateway:{x} --> 20:endevent:(((endevent)))
+    27:exclusivegateway:{x} --> 19:endevent:(((endevent)))
+```

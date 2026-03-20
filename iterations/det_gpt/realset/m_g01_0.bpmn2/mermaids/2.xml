@@ -1,0 +1,9 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive File)
+2:subprocess:(Print Loop)
+3:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive File)
+1:task:(Receive File) --> 2:subprocess:(Print Loop)
+2:subprocess:(Print Loop) --> 3:endevent:(((endevent)))

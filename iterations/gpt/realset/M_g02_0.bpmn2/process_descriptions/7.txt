@@ -1,0 +1,40 @@
+Here is a detailed, step-by-step description of the process depicted in your model:
+
+1. The process begins with the start of the project.
+2. The first step is to initiate the project.
+3. After the project is initiated, a basic design is developed.
+4. Once the basic design is ready, Lego brick sets are ordered.
+5. When the order is placed, the Lego brick sets are received.
+6. After receiving the brick sets, the bricks are sorted by size.
+7. Once sorting is complete, three activities happen at the same time:
+   - The big bricks are placed in a container.
+   - The medium bricks are placed in a container.
+   - The small bricks are placed in a container.
+8. After all bricks are placed in their respective containers, the process continues.
+9. The process then checks a condition and, if true, moves forward.
+10. The next step is to check if it is the right time to proceed. If it is not the right time, the process waits until it is ready, and then checks again.
+11. When it is the right time, the project proceeds.
+12. Another check is made, and if the condition is met, the process continues to the next step.
+13. The next step is to build subcomponents.
+14. After building subcomponents, the process checks if more subcomponents are needed:
+    - If more subcomponents are needed, the process checks if additional subcomponents or more bricks are required:
+      - If more subcomponents are needed, additional subcomponents are built, and the process returns to building subcomponents.
+      - If more bricks are needed, more Lego bricks are ordered, and the process returns to building subcomponents.
+      - If neither is needed, the process continues.
+    - If no more subcomponents are needed, the process continues.
+15. The process then checks another condition and, if met, continues.
+16. The next step is to test the subcomponents.
+17. After testing, the process checks if a redesign is needed:
+    - If a redesign is needed, the subcomponent is redesigned and tested again.
+    - If the subcomponent is ready to assemble, the subcomponents are assembled.
+18. After assembly, the process checks if more assembly is needed:
+    - If more assembly is needed, the process returns to testing subcomponents.
+    - If assembly is complete, the process moves forward after assembly.
+19. The process then checks if it is time to proceed:
+    - If it is not time, the process waits until it is ready after assembly, and then checks again.
+    - If it is time, the process continues.
+20. The process continues through a series of checks, and if all conditions are met, the process moves forward.
+21. If at any point an escalation is needed, the process returns to a previous check and continues from there.
+22. Finally, when all steps and checks are completed successfully, the process ends.
+
+This description follows the exact sequence and logic of the process as depicted in your model, ensuring that every step and decision is included and described in clear, plain language.

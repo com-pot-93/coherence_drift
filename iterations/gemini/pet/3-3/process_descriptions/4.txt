@@ -1,0 +1,11 @@
+The process starts with registering a claim. Then, a decision is made, and based on this decision, the process either loops back to the decision-making step or proceeds to examine the claim if the decision is "Yes".
+
+If the claim is examined, the process splits into two parallel paths: Path A and Path B. Path A involves a task, and Path B involves another task. After both paths are completed, the process continues to another parallel split.
+
+From here, the process either writes a settlement recommendation if the answer is "Yes", or proceeds without it if the answer is "No". If a settlement recommendation is written, it is then checked. After checking the recommendation, the claim is marked and then handled.
+
+Following the handling of the claim, the process splits into two parallel paths: Path C and Path D. Path C involves a task, and Path D involves another task. After both paths are completed, the process escalates.
+
+After escalation, there are two options: the process either sends the claim back to be examined again or escalates further. If the claim is sent back for examination, it loops back to the "Examine Claim" task.
+
+If no settlement recommendation is written, the process continues without it. The process then merges back and loops back to the initial decision, or it ends.

@@ -1,0 +1,23 @@
+```mermaid
+graph LR
+    0:startevent:((startevent)) --> 1:task:(Receive customer order)
+    1:task:(Receive customer order) --> 2:task:(Pick stock items)
+    2:task:(Pick stock items) --> 3:task:(Pack items into parcels)
+    3:task:(Pack items into parcels) --> 4:task:(Weight parcels)
+    4:task:(Weight parcels) --> 5:task:(Print shipping labels)
+    5:task:(Print shipping labels) --> 6:parallelgateway:{AND}
+    6:parallelgateway:{AND} --> 7:task:(Move parcels to loading dock)
+    6:parallelgateway:{AND} --> 8:task:(Check parcel count)
+    6:parallelgateway:{AND} --> 9:task:(inspect packing quality)
+    7:task:(Move parcels to loading dock) --> 10:parallelgateway:{AND}
+    8:task:(Check parcel count) --> 10:parallelgateway:{AND}
+    9:task:(inspect packing quality) --> 10:parallelgateway:{AND}
+    10:parallelgateway:{AND} --> 11:parallelgateway:{AND}
+    11:parallelgateway:{AND} --> 12:task:(Load parcels on truck)
+    11:parallelgateway:{AND} --> 13:task:(Update order status)
+    12:task:(Load parcels on truck) --> 14:task:(Send delivery instructions to transporter)
+    13:task:(Update order status) --> 15:task:(Update stock levels)
+    14:task:(Send delivery instructions to transporter) --> 16:parallelgateway:{AND}
+    15:task:(Update stock levels) --> 16:parallelgateway:{AND}
+    16:parallelgateway:{AND} --> 17:endevent:(((endevent)))
+```

@@ -1,0 +1,7 @@
+The process starts when a customer brings in a defective computer. A customer service representative (CRS) then checks the defect and hands out a repair cost calculation to the customer. The process then splits into two alternative paths based on a decision.
+
+In the first path, the customer declines the repair, takes the computer home, and the process ends.
+
+In the second path, if the customer agrees with the repair cost calculation, the process proceeds to a parallel section where hardware and software checks are performed simultaneously. The CRS checks the hardware and then repairs it. In parallel, the CRS checks the software and configures it. After both the hardware and software tasks are completed, the CRS tests the system functionality.
+
+Following the system functionality test, the process merges back to a single path and returns to the decision point where the customer agreed to the repair. From there, the process merges with the first path and ends.

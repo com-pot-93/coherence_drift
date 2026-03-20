@@ -1,0 +1,49 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Get travel request)
+2:task:(Prepare the tour plan)
+3:task:(Send the tour  plan)
+4:task:(Receive response)
+5:exclusivegateway:{x}
+6:task:(Book the tour)
+7:exclusivegateway:{x}
+8:task:(Charge  customer)
+9:exclusivegateway:{x}
+10:task:(Contact customer)
+11:task:(Send the bill)
+12:exclusivegateway:{x}
+13:task:(Send booking confirmation)
+14:exclusivegateway:{x}
+15:exclusivegateway:{x}
+16:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Get travel request)
+1:task:(Get travel request) --> 2:task:(Prepare the tour plan)
+2:task:(Prepare the tour plan) --> 3:task:(Send the tour  plan)
+3:task:(Send the tour  plan) --> 4:task:(Receive response)
+4:task:(Receive response) --> 5:exclusivegateway:{x}
+
+%% D1 branches
+5:exclusivegateway:{x} --> |Approve|6:task:(Book the tour)
+5:exclusivegateway:{x} --> |Reject|15:exclusivegateway:{x}
+
+%% D2 branches after Book the tour
+6:task:(Book the tour) --> 7:exclusivegateway:{x}
+7:exclusivegateway:{x} --> |true|8:task:(Charge  customer)
+7:exclusivegateway:{x} --> |false|14:exclusivegateway:{x}
+
+%% D3 branches after Charge customer
+8:task:(Charge  customer) --> 9:exclusivegateway:{x}
+9:exclusivegateway:{x} --> |Need contact|10:task:(Contact customer)
+9:exclusivegateway:{x} --> |No contact|11:task:(Send the bill)
+10:task:(Contact customer) --> 12:exclusivegateway:{x}
+11:task:(Send the bill) --> 12:exclusivegateway:{x}
+%% D3 merge
+12:exclusivegateway:{x} --> 13:task:(Send booking confirmation)
+
+%% D2 merge
+13:task:(Send booking confirmation) --> 14:exclusivegateway:{x}
+14:exclusivegateway:{x} --> 15:exclusivegateway:{x}
+
+%% D1 merge
+15:exclusivegateway:{x} --> 16:endevent:(((endevent)))

@@ -1,0 +1,33 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Identify Need for Personnel)
+2:task:(Determine Personnel Requirements)
+3:task:(Report Vacancy to Personnel Department)
+4:exclusivegateway:{x}
+5:task:(Receive Job Description)
+6:exclusivegateway:{x}
+7:task:(Examine Job Description)
+8:exclusivegateway:{x}
+9:task:(Check if Job Description is Satisfactory)
+10:exclusivegateway:{x}
+11:task:(Advertise Vacancy)
+12:endevent:(((endevent)))
+13:task:(Request Corrections)
+
+0:startevent:((startevent)) --> 1:task:(Identify Need for Personnel)
+1:task:(Identify Need for Personnel) --> 2:task:(Determine Personnel Requirements)
+2:task:(Determine Personnel Requirements) --> 3:task:(Report Vacancy to Personnel Department)
+3:task:(Report Vacancy to Personnel Department) --> 4:exclusivegateway:{x}
+4:exclusivegateway:{x} --> |Proceed|5:task:(Receive Job Description)
+4:exclusivegateway:{x} --> |Do not proceed|1:task:(Identify Need for Personnel)
+5:task:(Receive Job Description) --> 6:exclusivegateway:{x}
+6:exclusivegateway:{x} --> |Proceed|7:task:(Examine Job Description)
+6:exclusivegateway:{x} --> |Do not proceed|3:task:(Report Vacancy to Personnel Department)
+7:task:(Examine Job Description) --> 8:exclusivegateway:{x}
+8:exclusivegateway:{x} --> |Proceed|9:task:(Check if Job Description is Satisfactory)
+8:exclusivegateway:{x} --> |Do not proceed|5:task:(Receive Job Description)
+9:task:(Check if Job Description is Satisfactory) --> 10:exclusivegateway:{x}
+10:exclusivegateway:{x} --> |Satisfactory|11:task:(Advertise Vacancy)
+10:exclusivegateway:{x} --> |Unsatisfactory|13:task:(Request Corrections)
+11:task:(Advertise Vacancy) --> 12:endevent:(((endevent)))
+13:task:(Request Corrections) --> 5:task:(Receive Job Description)

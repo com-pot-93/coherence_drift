@@ -1,0 +1,41 @@
+flowchart LR
+0:startevent:((startevent))
+1:task:(Receive Production Order)
+2:task:(Prepare Production Order)
+3:exclusivegateway:{x}
+4:task:(Collect Raw Materials)
+5:task:(Cut Materials)
+6:parallelgateway:{AND}
+7:task:(Stitching)
+8:task:(Printing)
+9:parallelgateway:{AND}
+10:task:(Complete Production)
+11:task:(Check Quality)
+12:task:(Create Quality Report)
+13:exclusivegateway:{x}
+14:task:(Adjust Settings)
+15:task:(Send Data to Warehouse)
+16:exclusivegateway:{x}
+17:endevent:(((endevent)))
+
+0:startevent:((startevent)) --> 1:task:(Receive Production Order)
+1:task:(Receive Production Order) --> 2:task:(Prepare Production Order)
+2:task:(Prepare Production Order) --> 3:exclusivegateway:{x}
+3:exclusivegateway:{x} --> |Continue|4:task:(Collect Raw Materials)
+3:exclusivegateway:{x} --> |Do not continue|16:exclusivegateway:{x}
+4:task:(Collect Raw Materials) --> 5:task:(Cut Materials)
+5:task:(Cut Materials) --> 6:parallelgateway:{AND}
+6:parallelgateway:{AND} --> 7:task:(Stitching)
+6:parallelgateway:{AND} --> 8:task:(Printing)
+7:task:(Stitching) --> 9:parallelgateway:{AND}
+8:task:(Printing) --> 9:parallelgateway:{AND}
+9:parallelgateway:{AND} --> 10:task:(Complete Production)
+10:task:(Complete Production) --> 11:task:(Check Quality)
+11:task:(Check Quality) --> 12:task:(Create Quality Report)
+12:task:(Create Quality Report) --> 13:exclusivegateway:{x}
+13:exclusivegateway:{x} --> |Adjustments needed|14:task:(Adjust Settings)
+13:exclusivegateway:{x} --> |No adjustments needed|15:task:(Send Data to Warehouse)
+14:task:(Adjust Settings) --> 16:exclusivegateway:{x}
+15:task:(Send Data to Warehouse) --> 16:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |Further evaluation|3:exclusivegateway:{x}
+16:exclusivegateway:{x} --> |End process|17:endevent:(((endevent)))

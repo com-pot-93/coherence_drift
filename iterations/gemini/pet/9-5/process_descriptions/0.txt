@@ -1,0 +1,21 @@
+The process starts, and then proceeds to a decision point. Depending on the outcome of this decision, the process either continues to another decision point or proceeds directly to the task "company receives expense report".
+
+If the process continues to the task "company receives expense report", then the process moves to another decision point. From here, the process either proceeds to the task "company creates new employee account" or directly to another decision point.
+
+If the process continues to the task "company creates new employee account", then the process moves to another decision point. From here, the process continues to the task "company reviews report for automatic approval".
+
+After the task "company reviews report for automatic approval", the process reaches another decision point. Depending on the outcome, the process either proceeds to the task "supervisor approves the report" or to the task "company automatically approves the report".
+
+If the process continues to the task "supervisor approves the report", then the process reaches another decision point. Depending on the outcome, the process either proceeds to the task "company sends reimbursement to employee's bank account" or to the task "employee receives a rejection notice".
+
+After the task "company sends reimbursement to employee's bank account" and after the task "employee receives a rejection notice", the process merges into another decision point. From here, the process continues to another decision point.
+
+If the process continues to the task "company automatically approves the report", then the process moves to another decision point. From here, the process continues to another decision point.
+
+From the decision point, the process either proceeds to the task "company stops the process", to the task "employee receives an approval in progress email", or directly to another decision point.
+
+If the process continues to the task "company stops the process", then the process moves to the task "employee receives an email cancellation notice", followed by the task "employee re-submits the expense report", and then to another decision point.
+
+After the task "employee receives an approval in progress email" and from the decision point, the process merges into another decision point. From here, the process loops back to the second decision point in the process.
+
+From the second decision point in the process, the process merges into another decision point, and then the process ends.
