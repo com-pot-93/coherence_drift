@@ -8,7 +8,7 @@ This folder provides code, prompts, generated artifacts, and evaluation reports.
 
 ## Dependencies
 
-Code for template-based model-to-text transformation and process-model transformation into TypeScript (TS transformation):
+Code for template-based model-to-text transformation and process-model transformation into traversal sequences (TS transformation):
 
 👉 https://github.com/etm/cpee-transformation
 
@@ -21,6 +21,8 @@ The repository must be cloned into a separate folder at the same directory level
 > ```
 >
 > Otherwise, relative import paths must be adjusted accordingly.
+
+Required gems: `daru`, `caxlsx`, `roo`, `gruff`, `optparse`, `csv`, `damerau-levenshtein`, `rag\_embeddings`, `hungarian\_algorithm`, `hungarian\_algorithm\_c`, `curb`, `json`, `net-http-post-multipart`, `uri`, `stringio`, `xml-smart`.
 
 ---
 
