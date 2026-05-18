@@ -60,7 +60,7 @@ end
 
 require 'roo'
 require 'daru'
-require_relative 'trace_sim_threshold'
+require_relative 'trace_sim_welements'
 
 iterations = 10
 data_path = File.join(Dir.pwd, "evaluation", deterministic ? "det_#{llm}_#{dataset}.xlsx" : "#{llm}_#{dataset}.xlsx")

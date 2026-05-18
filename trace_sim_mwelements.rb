@@ -3,6 +3,7 @@
 
 require_relative '../cpee-transformation/lib/cpee/transformation/transformer' rescue nil
 require_relative '../cpee-transformation/lib/cpee/transformation/cpee' rescue nil
+require_relative 'all_functions'
 
 require 'rubygems'
 require "damerau-levenshtein"
@@ -88,6 +89,26 @@ def make_square_matrix(omatrix, dummy_value = 0)
     matrix.each { |row| row.concat(Array.new(diff, dummy_value)) }
   end
   return matrix
+end
+
+def control_flow_penalty(first_path,last_path)
+  fel = get_model_info(first_path)
+  lel = get_model_info(last_path)
+  a = update_model_info(fel)
+  b = update_model_info(lel)
+  number_all_elements = a.sum + b.sum
+  number_diff_elements = a[1..-1].zip(b[1..-1]).sum { |x, y| (x - y).abs }
+  penalty = number_diff_elements.to_f/number_all_elements
+  fel = get_model_info(first_path)
+  lel = get_model_info(last_path)
+  a = update_model_info(fel)
+  b = update_model_info(lel)
+  sum_el = a.sum + b.sum
+  pp sum_el
+  diff_sum = a[1..-1].zip(b[1..-1]).sum { |x, y| (x - y).abs }
+  pp diff_sum
+  pp 1 - diff_sum.to_f/sum_el
+  return penalty
 end
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -211,6 +232,8 @@ def get_trace_similarity(first_path,last_path)
   end
   pp sum
   trace_sim = sum/[lev_matrix.length, lev_matrix[0].length].max
+
+  final_sim = (trace_sim + (1 - control_flow_penalty(first_path,last_path)))/2
 
   pp "SIMILARITY --------------------------------------------------------"
   pp trace_sim

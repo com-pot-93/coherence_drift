@@ -160,7 +160,8 @@ def get_trace_similarity(first_path,last_path)
     end
   end
   task_sim = sum.to_f/[ftasks.length,ltasks.length].max
-  pp task_pairs
+  #pp task_pairs
+  pp "here"
 
   new_ftraces = []
   ftraces.each do |t|
@@ -196,11 +197,15 @@ def get_trace_similarity(first_path,last_path)
   square_lev_matrix = make_square_matrix(lev_matrix)
 
   df = Daru::DataFrame.rows(lev_matrix)
-  pp df
+  pp "there"
+  #pp df
+
 
   begin
     hung_output = HungarianAlgorithmC.find_pairings(square_lev_matrix)
   rescue SystemStackError => e
+    return task_sim, "failed"
+  rescue => e
     return task_sim, "failed"
   end
 

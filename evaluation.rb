@@ -37,7 +37,7 @@ end
 require 'optparse'
 
 require_relative 'all_functions' rescue nil
-require_relative 'trace_sim_threshold'
+require_relative 'trace_sim_welements'
 
 deterministic = false
 
@@ -88,7 +88,11 @@ Dir.glob(File.join(data_path, "*.xml")).each do |f|
     if count != 0
       last_path = File.join(models_path, "#{count}.xml")
       pp "=====================similarity"
-      task_sim, trace_sim = get_trace_similarity(f,last_path)
+      if llm == "gpt" && !deterministic && (f.include?("M_j03_2") || f.include?("R_j01_5"))
+        task_sim, trace_sim = "failed", "failed"
+      else
+        task_sim, trace_sim = get_trace_similarity(f,last_path)
+      end
       pp "#{count}, #{task_sim}, #{trace_sim}"
       results << [file_name,count,task_sim,trace_sim]
     else

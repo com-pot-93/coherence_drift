@@ -83,8 +83,10 @@ Use the corresponding scripts (`scripts\_to\_run\_full.sh`, `scripts\_to\_info.s
 
 ### Traversal Sequence Similarity (TS Sim)
 
-- **`trace\_sim\_threshold.rb`** – Calculates sequence similarity between two process models.
-- **`trace\_sim\_multi.rb`** – Identifies the start of drift (`true/false`).
+- **`trace\_sim\_threshold.rb`** – Calculates sequence similarity between two process models without control flow penalty.
+- **`trace\_sim\_multi.rb`** – Identifies the start of drift (`true/false`) without control flow penalty.
+- **`trace\_sim\_welements.rb`** – Calculates sequence similarity between two process models (current implementation).
+- **`trace\_sim\_mwelements.rb`** – Identifies the start of drift (`true/false`) (current implementation).
 > Works only with TS transformation.
 
 ---
