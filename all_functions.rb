@@ -25,6 +25,19 @@ def get_model_info(first_path)
   return [tasks,parallels,decisions,loops,escapes]
 end
 
+def update_model_info(arr)
+  result = arr.each_with_index.map do |val, i|
+    if i == 1 || i == 2
+      val * 2
+    elsif i == arr.length - 1
+      val + 2
+    else
+      val
+    end
+  end
+  return result
+end
+
 def check_children(process_model)
   doc = XML::Smart.string(process_model)
   doc.register_namespace 'd', 'http://cpee.org/ns/description/1.0'
