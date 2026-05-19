@@ -35,7 +35,7 @@ def text_distance_cached(s, l)
 end
 
 def process_model(path)
-  Timeout.timeout(60) do
+  Timeout.timeout(20) do
     model = CPEE::Transformation::Source::CPEE.new(File.read(path))
     trans = CPEE::Transformation::Transformer.new(model)
     traces = trans.build_traces
@@ -224,7 +224,8 @@ def get_trace_similarity(first_path,last_path)
   pp sum
   trace_sim = sum/[lev_matrix.length, lev_matrix[0].length].max
   #gateway_penalty
-  final_sim = (trace_sim + (1 - control_flow_penalty(first_path,last_path)))/2
+  #final_sim = (trace_sim + (1 - control_flow_penalty(first_path,last_path)))/2
+  final_sim = trace_sim * (1 - control_flow_penalty(first_path,last_path))
   return task_sim, final_sim
 
 end
